@@ -1,0 +1,587 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Работа с сессиями | Рекомендации по работе с Sabre APIs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="./search.html" />
+    
+    
+    <link rel="prev" href="./introduction.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2"
+        data-chapter-title="Работа с сессиями"
+        data-filepath="sessions.md"
+        data-basepath="."
+        data-revision="Mon Apr 18 2016 20:47:15 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Рекомендации по работе с Sabre APIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="introduction.html">
+            
+                
+                    <a href="./introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Начало работы
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="sessions.html">
+            
+                
+                    <a href="./sessions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Работа с сессиями
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="search.html">
+            
+                
+                    <a href="./search.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Поиск перелетов
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="create-booking.html">
+            
+                
+                    <a href="./create-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Создание бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="edit-booking.html">
+            
+                
+                    <a href="./edit-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Чтение и редактирование бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="cancel-booking.html">
+            
+                
+                    <a href="./cancel-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Отмена бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="issue-ticket.html">
+            
+                
+                    <a href="./issue-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Оформление билетов
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="void-ticket.html">
+            
+                
+                    <a href="./void-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Войдирование билетов
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="currency-rates.html">
+            
+                
+                    <a href="./currency-rates.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Получение курсов валют
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="fare-rules.html">
+            
+                
+                    <a href="./fare-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Получение правил тарифа
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Рекомендации по работе с Sabre APIs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;-&#x441;-&#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;&#x43C;&#x438;">&#x420;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x441; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;&#x43C;&#x438;</h1>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#&#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435;-&#x441;&#x435;&#x441;&#x441;&#x438;&#x438;">&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</a></li>
+<li><a href="#&#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x435;-&#x441;&#x435;&#x441;&#x441;&#x438;&#x438;">&#x417;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</a></li>
+<li><a href="#&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;-&#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x43E;&#x432;-&#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;">&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x43E;&#x432; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;</a></li>
+</ul>
+<!-- toc stop -->
+<hr>
+<p>&#x414;&#x43B;&#x44F; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x43B;&#x44E;&#x431;&#x43E;&#x433;&#x43E; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x432; Sabre Web Services &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x435;&#x434;&#x432;&#x430;&#x440;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;. &#x41F;&#x440;&#x438; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x438; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x430;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x437;&#x430;&#x446;&#x438;&#x44F; &#x432; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x435; &#x43F;&#x43E; &#x438;&#x43C;&#x435;&#x43D;&#x438; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; (EPR, &#x440;&#x435;&#x444;&#x435;&#x440;&#x435;&#x43D;&#x446;&#x438;&#x44F;), &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44E; &#x438; PCC.</p>
+<p>&#x421;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x2014; &#x430;&#x43D;&#x430;&#x43B;&#x43E;&#x433; &#x432;&#x43A;&#x43B;&#x430;&#x434;&#x43A;&#x438; &#x432; Sabre Red Workspace. &#x41E;&#x434;&#x43D;&#x43E;&#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E; &#x432; &#x43E;&#x434;&#x43D;&#x43E;&#x439; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x438;&#x434;&#x442;&#x438; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x441; &#x43E;&#x434;&#x43D;&#x438;&#x43C; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C;, &#x43F;&#x440;&#x438; &#x44D;&#x442;&#x43E;&#x43C; &#x432; &#x440;&#x430;&#x437;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;&#x445; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x44C;&#x441;&#x44F; &#x43F;&#x430;&#x440;&#x430;&#x43B;&#x43B;&#x435;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x43D;&#x430;&#x434; &#x440;&#x430;&#x437;&#x43D;&#x44B;&#x43C;&#x438; &#x431;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;&#x43C;&#x438;. &#x41C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x43E;&#x434;&#x43D;&#x43E;&#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x44B;&#x445; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x43E; &#x432; &#x434;&#x43E;&#x433;&#x43E;&#x432;&#x43E;&#x440;&#x435;.</p>
+<p>&#x41A;&#x430;&#x436;&#x434;&#x430;&#x44F; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x43C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x436;&#x438;&#x437;&#x43D;&#x438; &#x2014; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44E;. &#x422;&#x430;&#x43A;&#x436;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x442;&#x430;&#x439;&#x43C;&#x430;&#x443;&#x442; &#x2014; 15 &#x43C;&#x438;&#x43D;&#x443;&#x442;. &#x415;&#x441;&#x43B;&#x438; &#x437;&#x430; &#x44D;&#x442;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x43D;&#x435; &#x431;&#x44B;&#x43B;&#x430; &#x43D;&#x438; &#x440;&#x430;&#x437;&#x443; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x430;, &#x43E;&#x43D;&#x430; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x440;&#x438;&#x43D;&#x443;&#x434;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x430;. &#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E;, &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x43D;&#x435; &#x431;&#x44B;&#x43B;&#x430; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x430; &#x43F;&#x43E; &#x442;&#x430;&#x439;&#x43C;&#x430;&#x443;&#x442;&#x443; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/soap_apis/session_management/refresh_session/resources" target="_blank">OTA_PingRQ</a>.</p>
+<p>&#x421;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x442; &#x434;&#x432;&#x435; &#x441;&#x442;&#x440;&#x430;&#x442;&#x435;&#x433;&#x438;&#x438; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x441; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;&#x43C;&#x438;:</p>
+<ul>
+<li>&#x421;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x434; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x43E;&#x439; &#x43B;&#x44E;&#x431;&#x43E;&#x433;&#x43E; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; (&#x438;&#x43B;&#x438; &#x433;&#x440;&#x443;&#x43F;&#x43F;&#x44B; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432;) &#x438; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x441;&#x43B;&#x435;</li>
+<li>&#x41F;&#x443;&#x43B; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439;. &#x41D;&#x430; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x435; &#x430;&#x433;&#x435;&#x43D;&#x442;&#x441;&#x442;&#x432;&#x430; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x431;&#x440;&#x43E;&#x43A;&#x435;&#x440; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x432;&#x441;&#x435;&#x433;&#x434;&#x430; &#x434;&#x435;&#x440;&#x436;&#x438;&#x442; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x44B;&#x43C;&#x438;, &#x438; &#x43F;&#x43E; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x443; &#x440;&#x430;&#x441;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;&#x43C;&#x438; &#x432; Sabre</li>
+</ul>
+<p>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; &#x441; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;&#x43C;&#x438; &#x434;&#x43B;&#x44F; &#x43E;&#x431;&#x435;&#x438;&#x445; &#x441;&#x442;&#x440;&#x430;&#x442;&#x435;&#x433;&#x438;&#x439; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x44B; &#x432; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x435; <a href="http://webservices.sabre.com/drc/servicedoc/SOAP_Based_Sabre_APIs_Connection_Management_Best_Practices.pdf" target="_blank">Connection Management: Best Practices and Strategies</a>.</p>
+<p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x435; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; &#x432; 00:15 &#x43F;&#x43E; &#x426;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x430;&#x43C;&#x435;&#x440;&#x438;&#x43A;&#x430;&#x43D;&#x441;&#x43A;&#x43E;&#x43C;&#x443; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x438; (08:15 &#x43F;&#x43E; &#x41C;&#x43E;&#x441;&#x43A;&#x43E;&#x432;&#x441;&#x43A;&#x43E;&#x43C;&#x443; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x438;) &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43E;&#x447;&#x438;&#x441;&#x442;&#x43A;&#x430; &#x432;&#x441;&#x435;&#x445; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439;. &#x412; &#x44D;&#x442;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x432; &#x442;&#x435;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x438;&#x431;&#x43B;&#x438;&#x437;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x43F;&#x44F;&#x442;&#x438; &#x43C;&#x438;&#x43D;&#x443;&#x442; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x44B; &#x43D;&#x435; &#x431;&#x443;&#x434;&#x443;&#x442; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x442;&#x44C;&#x441;&#x44F;, &#x430; &#x432;&#x441;&#x435; &#x43D;&#x435;&#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x431;&#x443;&#x434;&#x443;&#x442; &#x443;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x44B;. &#x414;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F; &#x43E;&#x431; &#x43E;&#x447;&#x438;&#x441;&#x442;&#x43A;&#x438; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439; &#x438; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; &#x441; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x43E;&#x439; &#x432; &#x44D;&#x442;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B; &#x432; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x435; <a href="http://files.developer.sabre.com/doc/developmentpatterns/NORMOAA_Pattern_2015-2-20.pdf" target="_blank">Sabre APIs Pattern: SABRE SESSION HOUSEKEEPING (NORM OAA)</a>.</p>
+<p>&#x41F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x435;&#x435; &#x43E; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;&#x445; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43F;&#x440;&#x43E;&#x447;&#x435;&#x441;&#x442;&#x44C; &#x43D;&#x430; <a href="https://developer.sabre.com/docs/read/soap_basics/Authentication" target="_blank">Sabre Dev Studio</a>.</p>
+<h2 id="&#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435;-&#x441;&#x435;&#x441;&#x441;&#x438;&#x438;">&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</h2>
+<p>&#x414;&#x43B;&#x44F; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/soap_apis/session_management/create_session/resources" target="_blank">SessionCreateRQ</a>.</p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li>&#x418;&#x43C;&#x44F; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; (&#x440;&#x435;&#x444;&#x435;&#x440;&#x435;&#x43D;&#x446;&#x438;&#x44F;, EPR) <code>wsse:Username</code> &#x2014; &#x43E;&#x442; 2 &#x434;&#x43E; 6 &#x446;&#x438;&#x444;&#x440;</li>
+<li>&#x41F;&#x430;&#x440;&#x43E;&#x43B;&#x44C; <code>wsse:Password</code> &#x2014; &#x43E;&#x442; 7 &#x434;&#x43E; 8 &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B;&#x43E;&#x432; (&#x446;&#x438;&#x444;&#x440;&#x44B; &#x438; &#x431;&#x443;&#x43A;&#x432;&#x44B; &#x43B;&#x430;&#x442;&#x438;&#x43D;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x430;&#x43B;&#x444;&#x430;&#x432;&#x438;&#x442;&#x430;)</li>
+<li>iPCC <code>Organization</code>, <code>Source/@PseudoCityCode</code> &#x2014; 4 &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B;&#x430; (&#x446;&#x438;&#x444;&#x440;&#x44B; &#x438; &#x431;&#x443;&#x43A;&#x432;&#x44B; &#x43B;&#x430;&#x442;&#x438;&#x43D;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x430;&#x43B;&#x444;&#x430;&#x432;&#x438;&#x442;&#x430;)</li>
+<li>&#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; <code>Domain</code> &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>DEFAULT</code></li>
+</ul>
+<p>&#x41E;&#x442;&#x432;&#x435;&#x442; &#x431;&#x443;&#x434;&#x435;&#x442; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; <code>wsse:BinarySecurityToken</code>, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43F;&#x440;&#x438; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x435; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432;.</p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="526105"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="526105"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Envelope</span> <span class="hljs-attribute">xmlns:SOAP-ENV</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="hljs-attribute">xmlns:eb</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span> <span class="hljs-attribute">xmlns:xlink</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attribute">xmlns:xsd</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/XMLSchema&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageHeader</span> <span class="hljs-attribute">xmlns:ns4</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span> <span class="hljs-attribute">xmlns:ns5</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attribute">xmlns:ns6</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span> <span class="hljs-attribute">xmlns:ns7</span>=<span class="hljs-value">&quot;http://www.opentravel.org/OTA/2003/05&quot;</span> <span class="hljs-attribute">xmlns:ns8</span>=<span class="hljs-value">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="hljs-attribute">xmlns:ns9</span>=<span class="hljs-value">&quot;https://webservices.sabre.com/websvc&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:PartyId</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:PartyId</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:CPAId</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:CPAId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:ConversationId</span>&gt;</span>b86df219-72e1-40aa-90f2-13f01ba055ee<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Service</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;sabreXML&quot;</span>&gt;</span>SessionCreateRQ<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Service</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Action</span>&gt;</span>SessionCreateRQ<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageId</span>&gt;</span>176ac2fa-2f59-455e-816c-b38097588226<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Timestamp</span>&gt;</span>2016-02-01T07:32:09<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Timestamp</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Timeout</span>&gt;</span>60<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Timeout</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Security</span> <span class="hljs-attribute">xmlns:wsse</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span> <span class="hljs-attribute">xmlns:wsu</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/utility&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">wsse:UsernameToken</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Username</span>&gt;</span>1234<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Username</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Password</span>&gt;</span>PASSWORD<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Password</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Organization</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">Organization</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Domain</span>&gt;</span>DEFAULT<span class="hljs-tag">&lt;/<span class="hljs-title">Domain</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:UsernameToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">SessionCreateRQ</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">POS</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Source</span> <span class="hljs-attribute">PseudoCityCode</span>=<span class="hljs-value">&quot;PCC&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">POS</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">SessionCreateRQ</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Envelope</span>&gt;</span>
+</code></pre></div></div></div></p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="514524"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="514524"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Envelope</span> <span class="hljs-attribute">xmlns:soap-env</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageHeader</span> <span class="hljs-attribute">eb:version</span>=<span class="hljs-value">&quot;1.0&quot;</span> <span class="hljs-attribute">soap-env:mustUnderstand</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">xmlns:eb</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:PartyId</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-title">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:PartyId</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-title">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:CPAId</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">eb:CPAId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:ConversationId</span>&gt;</span>b86df219-72e1-40aa-90f2-13f01ba055ee<span class="hljs-tag">&lt;/<span class="hljs-title">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:Service</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;sabreXML&quot;</span>&gt;</span>Session<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Service</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:Action</span>&gt;</span>SessionCreateRS<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageId</span>&gt;</span>32c1642c-3462-4b27-b6da-fa5ae54b1694@61<span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:Timestamp</span>&gt;</span>2016-02-01T07:32:09<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Timestamp</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:RefToMessageId</span>&gt;</span>176ac2fa-2f59-455e-816c-b38097588226<span class="hljs-tag">&lt;/<span class="hljs-title">eb:RefToMessageId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Security</span> <span class="hljs-attribute">xmlns:wsse</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">wsse:BinarySecurityToken</span> <span class="hljs-attribute">EncodingType</span>=<span class="hljs-value">&quot;wsse:Base64Binary&quot;</span> <span class="hljs-attribute">valueType</span>=<span class="hljs-value">&quot;String&quot;</span>&gt;</span>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTD!ICESMSLB\/CRT.LB!-3441864286690984928!93787!0<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:BinarySecurityToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">SessionCreateRS</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">&quot;Approved&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.opentravel.org/OTA/2002/11&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ConversationId</span>&gt;</span>Polyak<span class="hljs-tag">&lt;/<span class="hljs-title">ConversationId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">SessionCreateRS</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Envelope</span>&gt;</span>
+</code></pre></div></div></div></p>
+<h2 id="&#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x435;-&#x441;&#x435;&#x441;&#x441;&#x438;&#x438;">&#x417;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</h2>
+<p>&#x414;&#x43B;&#x44F; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/soap_apis/session_management/close_session/resources" target="_blank">SessionCloseRQ</a>.</p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li>iPCC <code>POS/Source@PseudoCityCode</code></li>
+<li>&#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; <code>wsse:BinarySecurityToken</code></li>
+</ul>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="780020"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="780020"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Envelope</span> <span class="hljs-attribute">xmlns:SOAP-ENV</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="hljs-attribute">xmlns:eb</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span> <span class="hljs-attribute">xmlns:xlink</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attribute">xmlns:xsd</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/XMLSchema&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageHeader</span> <span class="hljs-attribute">xmlns:ns4</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span> <span class="hljs-attribute">xmlns:ns5</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attribute">xmlns:ns6</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span> <span class="hljs-attribute">xmlns:ns7</span>=<span class="hljs-value">&quot;http://www.opentravel.org/OTA/2003/05&quot;</span> <span class="hljs-attribute">xmlns:ns8</span>=<span class="hljs-value">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="hljs-attribute">xmlns:ns9</span>=<span class="hljs-value">&quot;https://webservices.sabre.com/websvc&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:PartyId</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:PartyId</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:CPAId</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:CPAId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:ConversationId</span>&gt;</span>4398d321-e8e6-4a81-adae-724edca13047<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Service</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;sabreXML&quot;</span>&gt;</span>SessionCloseRQ<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Service</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Action</span>&gt;</span>SessionCloseRQ<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageId</span>&gt;</span>17e2590d-6258-4b7e-ac81-247c1cf78daa<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Timestamp</span>&gt;</span>2016-02-01T07:40:58<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Timestamp</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Timeout</span>&gt;</span>60<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Timeout</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Security</span> <span class="hljs-attribute">xmlns:wsse</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">wsse:BinarySecurityToken</span> <span class="hljs-attribute">EncodingType</span>=<span class="hljs-value">&quot;wsse:Base64Binary&quot;</span> <span class="hljs-attribute">valueType</span>=<span class="hljs-value">&quot;String&quot;</span>&gt;</span>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTD!ICESMSLB\/CRT.LB!-3441864286690984928!93787!0<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:BinarySecurityToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">SessionCloseRQ</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">POS</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Source</span> <span class="hljs-attribute">PseudoCityCode</span>=<span class="hljs-value">&quot;9LSC&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">POS</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">SessionCloseRQ</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Envelope</span>&gt;</span>
+</code></pre></div></div></div></p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="794655"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="794655"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Envelope</span> <span class="hljs-attribute">xmlns:soap-env</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageHeader</span> <span class="hljs-attribute">eb:version</span>=<span class="hljs-value">&quot;1.0&quot;</span> <span class="hljs-attribute">soap-env:mustUnderstand</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">xmlns:eb</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:PartyId</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-title">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:PartyId</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-title">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:CPAId</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">eb:CPAId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:ConversationId</span>&gt;</span>4398d321-e8e6-4a81-adae-724edca13047<span class="hljs-tag">&lt;/<span class="hljs-title">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:Service</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;sabreXML&quot;</span>&gt;</span>Session<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Service</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:Action</span>&gt;</span>SessionCloseRS<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageId</span>&gt;</span>f06e8097-9336-4bf0-b3fc-c31a2814d02e@61<span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:Timestamp</span>&gt;</span>2016-02-01T07:40:58<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Timestamp</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:RefToMessageId</span>&gt;</span>17e2590d-6258-4b7e-ac81-247c1cf78daa<span class="hljs-tag">&lt;/<span class="hljs-title">eb:RefToMessageId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Security</span> <span class="hljs-attribute">xmlns:wsse</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">wsse:BinarySecurityToken</span> <span class="hljs-attribute">EncodingType</span>=<span class="hljs-value">&quot;wsse:Base64Binary&quot;</span> <span class="hljs-attribute">valueType</span>=<span class="hljs-value">&quot;String&quot;</span>&gt;</span>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTD!ICESMSLB\/CRT.LB!-3441864286690984928!93787!0<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:BinarySecurityToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">SessionCloseRS</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">&quot;Approved&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.opentravel.org/OTA/2002/11&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Envelope</span>&gt;</span>
+</code></pre></div></div></div></p>
+<h2 id="&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;-&#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x43E;&#x432;-&#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;">&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x43E;&#x432; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;</h2>
+<p>&#x422;&#x43E;&#x43A;&#x435;&#x43D;&#x44B; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; &#x2014; &#x430;&#x43B;&#x44C;&#x442;&#x435;&#x440;&#x43D;&#x430;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x430;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x432; Sabre. &#x412; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x438;&#x435; &#x43E;&#x442; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x44B; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;:</p>
+<ul>
+<li>&#x43C;&#x43E;&#x433;&#x443;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x44B; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x434;&#x43B;&#x44F; &#x438;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430; Bargain Finder Max (&#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/bargain_finder_max/resources" target="_blank">BargainFinderMaxRQ</a>)</li>
+<li>&#x442;&#x430;&#x439;&#x43C;&#x430;&#x443;&#x442; &#x440;&#x430;&#x432;&#x435;&#x43D; 1 &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x435;</li>
+<li>&#x43D;&#x435; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x44B; &#x438;&#x43B;&#x438; &#x43E;&#x431;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x44B;</li>
+<li>&#x43C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x43E;&#x432; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; &#x43D;&#x435; &#x43E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x43E;</li>
+<li>&#x43E;&#x434;&#x438;&#x43D; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D; &#x434;&#x43B;&#x44F; &#x43E;&#x434;&#x43D;&#x43E;&#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x438;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432;</li>
+</ul>
+<p>&#x414;&#x43B;&#x44F; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/session_management/create_access_token/resources" target="_blank">TokenCreateRQ</a>.</p>
+<p>&#x41E;&#x442;&#x432;&#x435;&#x442; &#x431;&#x443;&#x434;&#x435;&#x442; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; <code>wsse:BinarySecurityToken</code>, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43F;&#x440;&#x438; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; &#x43A; Bargain Finder Max.</p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="703917"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="703917"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Envelope</span> <span class="hljs-attribute">xmlns:SOAP-ENV</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="hljs-attribute">xmlns:eb</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span> <span class="hljs-attribute">xmlns:xlink</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attribute">xmlns:xsd</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/XMLSchema&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageHeader</span> <span class="hljs-attribute">xmlns:ns4</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span> <span class="hljs-attribute">xmlns:ns5</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attribute">xmlns:ns6</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span> <span class="hljs-attribute">xmlns:ns7</span>=<span class="hljs-value">&quot;http://www.opentravel.org/OTA/2003/05&quot;</span> <span class="hljs-attribute">xmlns:ns8</span>=<span class="hljs-value">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span> <span class="hljs-attribute">xmlns:ns9</span>=<span class="hljs-value">&quot;https://webservices.sabre.com/websvc&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:PartyId</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:PartyId</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:CPAId</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:CPAId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:ConversationId</span>&gt;</span>b112c918-8f76-4f6a-8100-c031f4a13e35<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Service</span> <span class="hljs-attribute">ns4:type</span>=<span class="hljs-value">&quot;sabreXML&quot;</span>&gt;</span>TokenCreateRQ<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Service</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Action</span>&gt;</span>TokenCreateRQ<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:MessageId</span>&gt;</span>83308b8c-af29-40f6-9a1f-1749cdd024d2<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Timestamp</span>&gt;</span>2016-02-01T08:09:22<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Timestamp</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ns4:Timeout</span>&gt;</span>60<span class="hljs-tag">&lt;/<span class="hljs-title">ns4:Timeout</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ns4:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Security</span> <span class="hljs-attribute">xmlns:wsse</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span> <span class="hljs-attribute">xmlns:wsu</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/utility&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">wsse:UsernameToken</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Username</span>&gt;</span>1234<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Username</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Password</span>&gt;</span>PASSWORD<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Password</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Organization</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">Organization</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Domain</span>&gt;</span>DEFAULT<span class="hljs-tag">&lt;/<span class="hljs-title">Domain</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:UsernameToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">SOAP-ENV:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">sws:TokenCreateRQ</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.0&quot;</span> <span class="hljs-attribute">xmlns:sws</span>=<span class="hljs-value">&quot;http://webservices.sabre.com&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">SOAP-ENV:Envelope</span>&gt;</span>
+</code></pre></div></div></div></p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="593278"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="593278"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Envelope</span> <span class="hljs-attribute">xmlns:soap-env</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageHeader</span> <span class="hljs-attribute">eb:version</span>=<span class="hljs-value">&quot;1.0&quot;</span> <span class="hljs-attribute">soap-env:mustUnderstand</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">xmlns:eb</span>=<span class="hljs-value">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:PartyId</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-title">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:PartyId</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;urn:x12.org:IO5:01&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-title">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:CPAId</span>&gt;</span>PCC<span class="hljs-tag">&lt;/<span class="hljs-title">eb:CPAId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:ConversationId</span>&gt;</span>b112c918-8f76-4f6a-8100-c031f4a13e35<span class="hljs-tag">&lt;/<span class="hljs-title">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:Service</span> <span class="hljs-attribute">eb:type</span>=<span class="hljs-value">&quot;sabreXML&quot;</span>&gt;</span>Session<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Service</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:Action</span>&gt;</span>TokenCreateRS<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:MessageId</span>&gt;</span>2347a2b0-c685-44a3-ab15-d5fa03052435@61<span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:Timestamp</span>&gt;</span>2016-02-01T08:09:22<span class="hljs-tag">&lt;/<span class="hljs-title">eb:Timestamp</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">eb:RefToMessageId</span>&gt;</span>83308b8c-af29-40f6-9a1f-1749cdd024d2<span class="hljs-tag">&lt;/<span class="hljs-title">eb:RefToMessageId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">wsse:Security</span> <span class="hljs-attribute">xmlns:wsse</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">wsse:BinarySecurityToken</span> <span class="hljs-attribute">EncodingType</span>=<span class="hljs-value">&quot;wsse:Base64Binary&quot;</span> <span class="hljs-attribute">valueType</span>=<span class="hljs-value">&quot;String&quot;</span>&gt;</span>T1RLAQKvPjj30ggbQTbhb2O/zH02nlUl9RBa8bpNbmqlYNPALKlysadPAACw8Er5iIebJRfZ/2DSRciUm9v8kOEC6mxPpC3PWu0c7O6/wYEV6wQD1sJCeBii6JIMy/m/FA6uV29p2ZJcjZgkfmn0OqpRCA/d2hW1XqSK/taYnnzph3ihvKJ7zQH1guEFQ5dKa0lPGJEKVrfa2xheaqWXcPXkQR/+3rcmA7/kyXKIIwx8i9VBSARvme+GnME7O8ff5A2syDefRGFJbwmtI+GgW5Pb2I3ZdSLzpeEjhz8*<span class="hljs-tag">&lt;/<span class="hljs-title">wsse:BinarySecurityToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">sws:TokenCreateRS</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.0&quot;</span> <span class="hljs-attribute">xmlns:sws</span>=<span class="hljs-value">&quot;http://webservices.sabre.com&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">sws:Success</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">sws:TokenCreateRS</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">soap-env:Envelope</span>&gt;</span>
+</code></pre></div></div></div></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./introduction.html" class="navigation navigation-prev " aria-label="Previous page: Начало работы"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./search.html" class="navigation navigation-next " aria-label="Next page: Поиск перелетов"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-hide-published-with/plugin.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/sectionx.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/redraw.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

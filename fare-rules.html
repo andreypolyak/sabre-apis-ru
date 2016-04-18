@@ -1,0 +1,538 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Получение правил тарифа | Рекомендации по работе с Sabre APIs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="./currency-rates.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="10"
+        data-chapter-title="Получение правил тарифа"
+        data-filepath="fare-rules.md"
+        data-basepath="."
+        data-revision="Mon Apr 18 2016 20:47:15 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Рекомендации по работе с Sabre APIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="introduction.html">
+            
+                
+                    <a href="./introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Начало работы
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="sessions.html">
+            
+                
+                    <a href="./sessions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Работа с сессиями
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="search.html">
+            
+                
+                    <a href="./search.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Поиск перелетов
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="create-booking.html">
+            
+                
+                    <a href="./create-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Создание бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="edit-booking.html">
+            
+                
+                    <a href="./edit-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Чтение и редактирование бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="cancel-booking.html">
+            
+                
+                    <a href="./cancel-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Отмена бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="issue-ticket.html">
+            
+                
+                    <a href="./issue-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Оформление билетов
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="void-ticket.html">
+            
+                
+                    <a href="./void-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Войдирование билетов
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="currency-rates.html">
+            
+                
+                    <a href="./currency-rates.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Получение курсов валют
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="10" data-path="fare-rules.html">
+            
+                
+                    <a href="./fare-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Получение правил тарифа
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Рекомендации по работе с Sabre APIs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x430;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</h1>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x442;&#x435;&#x43A;&#x441;&#x442;&#x430;-&#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x430;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x430; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</a></li>
+<li><a href="#&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445;-&#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x430;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</a></li>
+</ul>
+<!-- toc stop -->
+<hr>
+<h2 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x442;&#x435;&#x43A;&#x441;&#x442;&#x430;-&#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x430;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x430; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</h2>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x430; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; (&#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x439; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F;) &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/soap_apis/air/book/air_fare_rules/resources" target="_blank">OTA_AirRulesLLSRQ</a>.</p>
+<p>&#x41E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x430;&#x43C;&#x438; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x44F;&#x432;&#x43B;&#x44F;&#x44E;&#x442;&#x441;&#x44F;:</p>
+<ul>
+<li>&#x43F;&#x430;&#x440;&#x430; &#x433;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x432;</li>
+<li>&#x434;&#x430;&#x442;&#x430; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430;</li>
+<li>&#x43A;&#x43E;&#x434; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</li>
+<li>&#x43A;&#x43E;&#x434; &#x43C;&#x430;&#x440;&#x43A;&#x435;&#x442;&#x438;&#x43D;&#x433;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430;</li>
+</ul>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x43E;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x438;&#x435; Account Code &#x438;&#x43B;&#x438; Corporate ID.</p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="71231"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="71231"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">OTA_AirRulesRQ</span> <span class="hljs-attribute">ReturnHostCommand</span>=<span class="hljs-value">&quot;true&quot;</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.2.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">OriginDestinationInformation</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">FlightSegment</span> <span class="hljs-attribute">DepartureDateTime</span>=<span class="hljs-value">&quot;04-15&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">DestinationLocation</span> <span class="hljs-attribute">LocationCode</span>=<span class="hljs-value">&quot;MOW&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">MarketingCarrier</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;SU&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">OriginLocation</span> <span class="hljs-attribute">LocationCode</span>=<span class="hljs-value">&quot;LON&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">FlightSegment</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">OriginDestinationInformation</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">RuleReqInfo</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">FareBasis</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;YNRT&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">RuleReqInfo</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">OTA_AirRulesRQ</span>&gt;</span>
+</code></pre></div></div></div></p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="382048"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="382048"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">OTA_AirRulesRS</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.2.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attribute">xmlns:stl</span>=<span class="hljs-value">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">stl:ApplicationResults</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">&quot;Complete&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">stl:Success</span> <span class="hljs-attribute">timeStamp</span>=<span class="hljs-value">&quot;2016-01-31T09:05:04-06:00&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">stl:HostCommand</span> <span class="hljs-attribute">LNIATA</span>=<span class="hljs-value">&quot;222222&quot;</span>&gt;</span>RDLONMOW15APRYNRT-SU<span class="hljs-tag">&lt;/<span class="hljs-title">stl:HostCommand</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">stl:Success</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">stl:ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">FareRuleInfo</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Header</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Legend&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>V FARE BASIS     BK    FARE   TRAVEL-TICKET AP  MINMAX  RTG<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Fare&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>1   YNRT           Y R   110890     ----      -    -/365 EH01<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Passenger Type&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>PASSENGER TYPE-ADT                 AUTO PRICE-YES<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Origin Destination&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>FROM-LON TO-MOW    CXR-SU    TVL-15APR16  RULE-NM02 IPREURP/21<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Fare Basis&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>FARE BASIS-YNRT              NORMAL FARE  DIS-N   VENDOR-ATP<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Fare Type&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>FARE TYPE-EU      RT-ECONOMY UNRESTRICTED<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Currency&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>GBP   999.00  0015  E01DEC15 D-INFINITY   FC-YNRT  FN-<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Line</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;System Dates&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>SYSTEM DATES - CREATED 30NOV15/0319  EXPIRES INFINITY<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Line</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ParsedData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">CurrencyLine</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Amount</span>&gt;</span>999.00<span class="hljs-tag">&lt;/<span class="hljs-title">Amount</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">CurrencyCode</span>&gt;</span>GBP<span class="hljs-tag">&lt;/<span class="hljs-title">CurrencyCode</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Discontinue</span>&gt;</span>INFINITY<span class="hljs-tag">&lt;/<span class="hljs-title">Discontinue</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Effective</span>&gt;</span>2015-12-01<span class="hljs-tag">&lt;/<span class="hljs-title">Effective</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">FareClass</span>&gt;</span>YNRT<span class="hljs-tag">&lt;/<span class="hljs-title">FareClass</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">RoutingNumberOrMPM</span>&gt;</span>0015<span class="hljs-tag">&lt;/<span class="hljs-title">RoutingNumberOrMPM</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">CurrencyLine</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FareBasisLine</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">DisplayType</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;N&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">FareBasis</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;YNRT&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">FareVendor</span>&gt;</span>ATP<span class="hljs-tag">&lt;/<span class="hljs-title">FareVendor</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>NORMAL FARE<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FareBasisLine</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FareTypeLine</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">FareDescription</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;RT&quot;</span>&gt;</span>ECONOMY UNRESTRICTED<span class="hljs-tag">&lt;/<span class="hljs-title">FareDescription</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">FareType</span>&gt;</span>EU<span class="hljs-tag">&lt;/<span class="hljs-title">FareType</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FareTypeLine</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">OriginDestinationLine</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Airline</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;SU&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">DestinationLocation</span> <span class="hljs-attribute">LocationCode</span>=<span class="hljs-value">&quot;MOW&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">OriginLocation</span> <span class="hljs-attribute">LocationCode</span>=<span class="hljs-value">&quot;LON&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Rule</span>&gt;</span>NM02<span class="hljs-tag">&lt;/<span class="hljs-title">Rule</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">TariffDescriptionNumber</span>&gt;</span>IPREURP/21<span class="hljs-tag">&lt;/<span class="hljs-title">TariffDescriptionNumber</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">TravelDate</span>&gt;</span>2016-04-15<span class="hljs-tag">&lt;/<span class="hljs-title">TravelDate</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">OriginDestinationLine</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">PassengerTypeLine</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">AutoPrice</span>&gt;</span>YES<span class="hljs-tag">&lt;/<span class="hljs-title">AutoPrice</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">PassengerType</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;ADT&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">PassengerTypeLine</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">SystemDatesLine</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">CreateDateTime</span>&gt;</span>2015-11-30T03:19<span class="hljs-tag">&lt;/<span class="hljs-title">CreateDateTime</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ExpireDateTime</span>&gt;</span>INFINITY<span class="hljs-tag">&lt;/<span class="hljs-title">ExpireDateTime</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">SystemDatesLine</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ParsedData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Rules</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Paragraph</span> <span class="hljs-attribute">RPH</span>=<span class="hljs-value">&quot;50&quot;</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">&quot;RULE APPLICATION AND OTHER CONDITIONS&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>NOTE - THE FOLLOWING TEXT IS INFORMATIONAL AND NOT
+        VALIDATED FOR AUTOPRICING.
+        SU CARRIER PREMIUM-ECONOMY FARES
+        APPLICATION
+        CLASS OF SERVICE
+        THESE FARES APPLY FOR ECONOMY CLASS SERVICE.
+        TYPES OF TRANSPORTATION
+        FARES GOVERNED BY THIS RULE CAN BE USED TO CREATE
+        ONE-WAY/ROUND-TRIP/CIRCLE-TRIP/SINGLE OPEN-JAW/
+        DOUBLE OPEN-JAW JOURNEYS.
+        CAPACITY LIMITATIONS
+        THE CARRIER SHALL LIMIT THE NUMBER OF PASSENGERS
+        CARRIED ON ANY ONE FLIGHT AT FARES GOVERNED BY
+        THIS RULE AND SUCH FARES WILL NOT NECESSARILY BE
+        AVAILABLE ON ALL FLIGHTS. THE NUMBER OF SEATS,
+        WHICH THE CARRIER SHALL MAKE AVAILABLE ON A GIVEN
+        FLIGHT, WILL BE DETERMINED BY THE CARRIER&apos;S BEST
+        JUDGEMENT.<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Paragraph</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">...</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Rules</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">FareRuleInfo</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">OTA_AirRulesRS</span>&gt;</span>
+</code></pre></div></div></div></p>
+<h2 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445;-&#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x430;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</h2>
+<p>&#x421;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/soap_apis/air/utility/get_structured_fare_rules/resources" target="_blank">StructureFareRulesRQ</a> &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x438; &#x432;&#x44B;&#x432;&#x43E;&#x434;&#x438;&#x442; &#x438;&#x445; &#x432; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x43C; &#x432;&#x438;&#x434;&#x435;.</p>
+<p>&#x412; &#x447;&#x430;&#x441;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x432; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x435; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x441;&#x44F;:</p>
+<ul>
+<li>&#x43F;&#x440;&#x438;&#x437;&#x43D;&#x430;&#x43A; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x431;&#x43C;&#x435;&#x43D;&#x430; &#x438;&#x43B;&#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442;&#x430; &#x430;&#x432;&#x438;&#x430;&#x431;&#x438;&#x43B;&#x435;&#x442;&#x430;</li>
+<li>&#x440;&#x430;&#x437;&#x43C;&#x435;&#x440; &#x448;&#x442;&#x440;&#x430;&#x444;&#x430; &#x437;&#x430; &#x43E;&#x431;&#x43C;&#x435;&#x43D; &#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442;</li>
+</ul>
+<p>&#x41E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x430;&#x43C;&#x438; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x44F;&#x432;&#x43B;&#x44F;&#x44E;&#x442;&#x441;&#x44F;:</p>
+<ul>
+<li>&#x43F;&#x430;&#x440;&#x430; &#x433;&#x43E;&#x440;&#x43E;&#x434;&#x43E;&#x432;</li>
+<li>&#x434;&#x430;&#x442;&#x430; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430;</li>
+<li>&#x43A;&#x43E;&#x434; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</li>
+<li>&#x43A;&#x43E;&#x434; &#x43C;&#x430;&#x440;&#x43A;&#x435;&#x442;&#x438;&#x43D;&#x433;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430;</li>
+</ul>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x43E;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x438;&#x435; Account Code &#x438;&#x43B;&#x438; Corporate ID.</p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="98064"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="98064"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">StructureFareRulesRQ</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">AirItinerary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">OriginDestinationOptions</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">OriginDestinationOption</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FlightSegment</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-04-15T00:00:00&quot;</span> <span class="hljs-attribute">SegmentType</span>=<span class="hljs-value">&quot;A&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">DepartureAirport</span> <span class="hljs-attribute">LocationCode</span>=<span class="hljs-value">&quot;MOW&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ArrivalAirport</span> <span class="hljs-attribute">LocationCode</span>=<span class="hljs-value">&quot;LON&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">MarketingAirline</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;SU&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FlightSegment</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">SegmentInformation</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;NPX&quot;</span> <span class="hljs-attribute">FareComponentNumber</span>=<span class="hljs-value">&quot;1&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">OriginDestinationOption</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">OriginDestinationOptions</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">AirItinerary</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">StructureFareRulesRQ</span>&gt;</span>
+</code></pre></div></div></div></p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="308"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="308"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">StructureFareRulesRS</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Success</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Summary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Total</span> <span class="hljs-attribute">CurrencyCode</span>=<span class="hljs-value">&quot;EUR&quot;</span> <span class="hljs-attribute">Price</span>=<span class="hljs-value">&quot;53.00&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">PurchaseSummary</span> <span class="hljs-attribute">IATASalesCode</span>=<span class="hljs-value">&quot;SITI&quot;</span> <span class="hljs-attribute">SalesLocation</span>=<span class="hljs-value">&quot;MOW&quot;</span> <span class="hljs-attribute">SimultaneousResInd</span>=<span class="hljs-value">&quot;false&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ValidatingCarrier</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;SU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">PrivateFare</span> <span class="hljs-attribute">Ind</span>=<span class="hljs-value">&quot;false&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Ancillaries</span> <span class="hljs-attribute">NotGuaranteedInd</span>=<span class="hljs-value">&quot;true&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">PassengerDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">PassengerDetail</span> <span class="hljs-attribute">PassengerTypeCode</span>=<span class="hljs-value">&quot;ADT&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Endorsements</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>NONREF/HEBO3BPATEH<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Endorsements</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Warnings</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Text</span>&gt;</span>VALIDATING CARRIER - SU<span class="hljs-tag">&lt;/<span class="hljs-title">Text</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Warnings</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">PassengerFare</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">BaseFare</span> <span class="hljs-attribute">Amount</span>=<span class="hljs-value">&quot;53.00&quot;</span> <span class="hljs-attribute">CurrencyCode</span>=<span class="hljs-value">&quot;EUR&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">EquivalentFare</span> <span class="hljs-attribute">Amount</span>=<span class="hljs-value">&quot;4480&quot;</span> <span class="hljs-attribute">CurrencyCode</span>=<span class="hljs-value">&quot;RUB&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Commission</span> <span class="hljs-attribute">Amount</span>=<span class="hljs-value">&quot;0&quot;</span> <span class="hljs-attribute">Percentage</span>=<span class="hljs-value">&quot;0&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">PassengerFare</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">TicketFareVendor</span> <span class="hljs-attribute">Source</span>=<span class="hljs-value">&quot;ATPC&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">AccompaniedTravelData</span> <span class="hljs-attribute">Data</span>=<span class="hljs-value">&quot;ADT 1 ADT 0 1 1 1 8 NPX RE01 21 - &quot;</span> <span class="hljs-attribute">RequestedData</span>=<span class="hljs-value">&quot;F&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">OptionNumber</span> <span class="hljs-attribute">Value</span>=<span class="hljs-value">&quot;1&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ExchangeRateOne</span> <span class="hljs-attribute">NumberOfDecimalPlaces</span>=<span class="hljs-value">&quot;13&quot;</span> <span class="hljs-attribute">Value</span>=<span class="hljs-value">&quot;0.91840400000000&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Cat35</span> <span class="hljs-attribute">Ind</span>=<span class="hljs-value">&quot;false&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">PenaltiesInfo</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Penalty</span> <span class="hljs-attribute">Amount</span>=<span class="hljs-value">&quot;4225&quot;</span> <span class="hljs-attribute">Applicability</span>=<span class="hljs-value">&quot;Before&quot;</span> <span class="hljs-attribute">CurrencyCode</span>=<span class="hljs-value">&quot;RUB&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Exchange&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Penalty</span> <span class="hljs-attribute">Amount</span>=<span class="hljs-value">&quot;4225&quot;</span> <span class="hljs-attribute">Applicability</span>=<span class="hljs-value">&quot;After&quot;</span> <span class="hljs-attribute">CurrencyCode</span>=<span class="hljs-value">&quot;RUB&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Exchange&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Penalty</span> <span class="hljs-attribute">Applicability</span>=<span class="hljs-value">&quot;Before&quot;</span> <span class="hljs-attribute">NonApplicable</span>=<span class="hljs-value">&quot;true&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Refund&quot;</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Penalty</span> <span class="hljs-attribute">Applicability</span>=<span class="hljs-value">&quot;After&quot;</span> <span class="hljs-attribute">NonApplicable</span>=<span class="hljs-value">&quot;true&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;Refund&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">PenaltiesInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">PassengerDetail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">PassengerDetails</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Summary</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">StructureFareRulesRS</span>&gt;</span>
+</code></pre></div></div></div></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./currency-rates.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Получение курсов валют"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-hide-published-with/plugin.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/sectionx.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/redraw.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

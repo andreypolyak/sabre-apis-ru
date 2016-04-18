@@ -1,0 +1,17 @@
+/* CSS for website */
+.navigation-prev, .navigation-next {
+  display: none !important;
+}
+
+.page-inner {
+  margin: 0 !important;
+}
+
+.normal {
+  padding-left: 23px !important;
+  padding-right: 23px !important;
+}
+
+.book .book-header h1 {
+  padding: 0px !important;
+}
