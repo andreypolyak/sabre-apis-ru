@@ -15,3 +15,7 @@
 .book .book-header h1 {
   padding: 0px !important;
 }
+
+.book .book-body .page-wrapper .page-inner {
+  max-width: 1000px !important;
+}
