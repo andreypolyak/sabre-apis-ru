@@ -51,7 +51,7 @@
         
     
     
-    <link rel="next" href="./commands.html" />
+    <link rel="next" href="./availability.html" />
     
     
     <link rel="prev" href="./fare-rules.html" />
@@ -67,7 +67,7 @@
         data-chapter-title="Получение расписаний"
         data-filepath="schedules.md"
         data-basepath="."
-        data-revision="Tue Jul 05 2016 17:14:42 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-revision="Tue Jul 05 2016 18:15:17 GMT+0300 (Russia TZ 2 Standard Time)"
         data-innerlanguage="">
     
 
@@ -378,14 +378,29 @@
             
         </li>
     
-        <li class="chapter " data-level="16" data-path="commands.html">
+        <li class="chapter " data-level="16" data-path="availability.html">
+            
+                
+                    <a href="./availability.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Наличие мест
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="commands.html">
             
                 
                     <a href="./commands.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>16.</b>
+                            <b>17.</b>
                         
                         Отправка терминальных команд
                     </a>
@@ -393,14 +408,14 @@
             
         </li>
     
-        <li class="chapter " data-level="17" data-path="queues.html">
+        <li class="chapter " data-level="18" data-path="queues.html">
             
                 
                     <a href="./queues.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>17.</b>
+                            <b>18.</b>
                         
                         Использование очередей
                     </a>
@@ -442,6 +457,16 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;</h1>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F;-&#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;</a></li>
+<li><a href="#&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;-&#x434;&#x43B;&#x44F;-&#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445;-&#x440;&#x435;&#x439;&#x441;&#x43E;&#x432;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439; &#x434;&#x43B;&#x44F; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x440;&#x435;&#x439;&#x441;&#x43E;&#x432;</a></li>
+</ul>
+<!-- toc stop -->
+<hr>
+<h2 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F;-&#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;</h2>
 <p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/flight_schedules/resources" target="_blank">OTA_AirScheduleLLSRQ</a>.</p>
 <p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x44F; &#x440;&#x435;&#x439;&#x441;&#x43E;&#x432; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435;:</p>
 <ul>
@@ -458,7 +483,7 @@
 <li><code>/OTA_AirScheduleRQ/OriginDestinationInformation/FlightSegment/ConnectionLocations/ConnectionLocation/@LocationCode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x43F;&#x443;&#x43D;&#x43A;&#x442;&#x430; &#x43F;&#x435;&#x440;&#x435;&#x441;&#x430;&#x434;&#x43A;&#x438;</li>
 <li><code>/OTA_AirScheduleRQ/OriginDestinationInformation/FlightSegment/ConnectionLocations/ConnectTimeOverrides/@Min</code> &#x438; <code>@Max</code> &#x2014; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x438; &#x43C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x441;&#x442;&#x44B;&#x43A;&#x43E;&#x432;&#x43A;&#x438;</li>
 </ul>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="130250"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="130250"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="983023"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="983023"><div class="panel-body"><pre class="XML"><code class="lang-XML">
 <span class="hljs-tag">&lt;<span class="hljs-title">OTA_AirScheduleRQ</span> <span class="hljs-attribute">ReturnHostCommand</span>=<span class="hljs-value">&quot;true&quot;</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.1.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">OptionalQualifiers</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">FlightQualifiers</span> <span class="hljs-attribute">DirectOnly</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
@@ -475,7 +500,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-title">OriginDestinationInformation</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">OTA_AirScheduleRQ</span>&gt;</span>
 </code></pre></div></div></div></p>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="420694"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="420694"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="45660"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="45660"><div class="panel-body"><pre class="XML"><code class="lang-XML">
 <span class="hljs-tag">&lt;<span class="hljs-title">OTA_AirScheduleRS</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.1.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attribute">xmlns:stl</span>=<span class="hljs-value">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">stl:ApplicationResults</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">stl:Success</span> <span class="hljs-attribute">timeStamp</span>=<span class="hljs-value">&quot;2016-07-05T09:09:20-05:00&quot;</span>&gt;</span>
@@ -976,13 +1001,15 @@
   <span class="hljs-tag">&lt;/<span class="hljs-title">OriginDestinationOptions</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">OTA_AirScheduleRS</span>&gt;</span>
 </code></pre></div></div></div></p>
+<h2 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;-&#x434;&#x43B;&#x44F;-&#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445;-&#x440;&#x435;&#x439;&#x441;&#x43E;&#x432;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439; &#x434;&#x43B;&#x44F; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x440;&#x435;&#x439;&#x441;&#x43E;&#x432;</h2>
 <p>&#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x43E;&#x442;&#x432;&#x435;&#x442; &#x431;&#x443;&#x434;&#x435;&#x442; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; &#x43D;&#x435; &#x431;&#x43E;&#x43B;&#x435;&#x435; 12 &#x440;&#x435;&#x439;&#x441;&#x43E;&#x432;. &#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x44F; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;:</p>
-<pre><code class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-title">OTA_AirScheduleRQ</span> <span class="hljs-attribute">ReturnHostCommand</span>=<span class="hljs-value">&quot;true&quot;</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.1.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="417427"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="417427"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">OTA_AirScheduleRQ</span> <span class="hljs-attribute">ReturnHostCommand</span>=<span class="hljs-value">&quot;true&quot;</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.1.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">OptionalQualifiers</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">AdditionalAvailability</span> <span class="hljs-attribute">Ind</span>=<span class="hljs-value">&quot;true&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">OptionalQualifiers</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">OTA_AirScheduleRQ</span>&gt;</span>
-</code></pre>
+</code></pre></div></div></div></p>
 
                     
                     </section>
@@ -996,7 +1023,7 @@
         <a href="./fare-rules.html" class="navigation navigation-prev " aria-label="Previous page: Получение правил тарифа"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./commands.html" class="navigation navigation-next " aria-label="Next page: Отправка терминальных команд"><i class="fa fa-angle-right"></i></a>
+        <a href="./availability.html" class="navigation navigation-next " aria-label="Next page: Наличие мест"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
@@ -1021,6 +1048,10 @@
     
 
     
+    <script src="gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
+    
+
+    
     <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
     
 
@@ -1034,7 +1065,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"ga":{"token":"UA-80320390-1","configuration":"auto"},"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
