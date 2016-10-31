@@ -51,7 +51,7 @@ Other:
 - Review Branded Fares S7
 - parse TL SSR remarks
 - AE SSR remarks
-
+- Branded Fares -- multiple branded fares in shopping response example
 
 Glossary:
 - PNR
