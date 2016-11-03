@@ -32,7 +32,6 @@ Other:
 - Finalize Automated Exchanges
 - Hotels
 - VerifyFlightDetailsLLSRQ
-- New queue workflow: Get list of bookings -> Open booking by TIR -> QR
 - TIR 3.8.0
 - Use PassengerDetailsRQ to edit existing PNR
 - parse TL SSR remarks
