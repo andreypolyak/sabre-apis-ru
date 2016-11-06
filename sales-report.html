@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Отчет о продажах | Рекомендации по работе с Sabre APIs</title>
+        <title>Формирование отчетов | Рекомендации по работе с Sabre APIs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -62,10 +62,10 @@
         
     <div class="book"
         data-level="19"
-        data-chapter-title="Отчет о продажах"
+        data-chapter-title="Формирование отчетов"
         data-filepath="sales-report.md"
         data-basepath="."
-        data-revision="Fri Nov 04 2016 01:19:18 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-revision="Sun Nov 06 2016 22:05:59 GMT+0300 (Russia TZ 2 Standard Time)"
         data-innerlanguage="">
     
 
@@ -151,6 +151,42 @@
                         Поиск перелетов
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="alternate-date.html">
+            
+                
+                    <a href="./alternate-date.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Поиск с гибкими датами
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="shop-by-fare.html">
+            
+                
+                    <a href="./shop-by-fare.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Поиск по коду тарифа
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -430,7 +466,7 @@
                         
                             <b>19.</b>
                         
-                        Отчет о продажах
+                        Формирование отчетов
                     </a>
             
             
@@ -469,7 +505,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x43E;&#x442;&#x447;&#x435;&#x442;-&#x43E;-&#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445;">&#x41E;&#x442;&#x447;&#x435;&#x442; &#x43E; &#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445;</h1>
+                        <h1 id="&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;-&#x43E;&#x442;&#x447;&#x435;&#x442;&#x43E;&#x432;">&#x424;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x43E;&#x432;</h1>
 <p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430; &#x43E; &#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/display_audit_trail/resources" target="_blank">TKT_TravelAgencyReportsRQ</a>.</p>
 <p>&#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; (&#x432; &#x441;&#x43A;&#x43E;&#x431;&#x43A;&#x430;&#x445; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; &#x438;&#x445; &#x43A;&#x43E;&#x434;):</p>
 <ul>
@@ -480,8 +516,8 @@
 </ul>
 <p>&#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;, EMD &#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442;&#x43E;&#x432; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43D;&#x435;&#x439; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x43E;&#x439; &#x434;&#x430;&#x442;&#x44B; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x445; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B;&#x445; &#x441;&#x442;&#x43E;&#x43A;&#x43E;&#x432; (BSP, &#x43F;&#x440;&#x44F;&#x43C;&#x44B;&#x435; &#x441;&#x442;&#x43E;&#x43A;&#x438; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x43E;&#x432;, &#x422;&#x41A;&#x41F;) &#x432; iPCC. &#x414;&#x43B;&#x44F; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;:</p>
 <pre><code class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-title">DailySalesSummaryRQ</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span> <span class="hljs-attribute">xmlns:stl</span>=<span class="hljs-value">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1.2.1&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">Header</span>/&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">SelectionCriteria</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Header</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">SelectionCriteria</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">DailySalesSummaryRQ</span>&gt;</span>
 </code></pre>
 <p>&#x414;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
@@ -493,7 +529,7 @@
 <li><code>/DailySalesSummaryRQ/SelectionCriteria/DocumentType</code> &#x2014; &#x442;&#x438;&#x43F; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430; (&#x441;&#x43C;. &#x43A;&#x43E;&#x434;&#x44B; &#x432;&#x44B;&#x448;&#x435;)</li>
 <li><code>/DailySalesSummaryRQ/SelectionCriteria/DocumentNumber</code> &#x2014; &#x43D;&#x43E;&#x43C;&#x435;&#x440; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430; (&#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x438;&#x43B;&#x438; EMD, 13 &#x446;&#x438;&#x444;&#x440;)</li>
 </ul>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="191505"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="191505"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="453523"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="453523"><div class="panel-body"><pre class="XML"><code class="lang-XML">
 <span class="hljs-tag">&lt;<span class="hljs-title">DailySalesSummaryRQ</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span> <span class="hljs-attribute">xmlns:stl</span>=<span class="hljs-value">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1.2.1&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Header</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">SelectionCriteria</span>&gt;</span>
@@ -503,7 +539,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-title">SelectionCriteria</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">DailySalesSummaryRQ</span>&gt;</span>
 </code></pre></div></div></div></p>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="718852"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="718852"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="82669"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="82669"><div class="panel-body"><pre class="XML"><code class="lang-XML">
 <span class="hljs-tag">&lt;<span class="hljs-title">asr:DailySalesSummaryRS</span> <span class="hljs-attribute">isQueryStillRunning</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1.2.1&quot;</span> <span class="hljs-attribute">xmlns:asr</span>=<span class="hljs-value">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">asr:Header</span> <span class="hljs-attribute">messageID</span>=<span class="hljs-value">&quot;TKTVLC650-27533-1709554849-1473005809989-1210202-asrwsDqb&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">OrchestrationID</span> <span class="hljs-attribute">seq</span>=<span class="hljs-value">&quot;0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attribute">xmlns:ns2</span>=<span class="hljs-value">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span> <span class="hljs-attribute">xmlns:ns3</span>=<span class="hljs-value">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span> <span class="hljs-attribute">xmlns:ns4</span>=<span class="hljs-value">&quot;http://services.sabre.com/STL/Catalog/v01&quot;</span>&gt;</span>TKTVLC650-27533-1709554849-1473005809989-1210202-asrwsDqb<span class="hljs-tag">&lt;/<span class="hljs-title">OrchestrationID</span>&gt;</span>

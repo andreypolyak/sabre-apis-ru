@@ -1,0 +1,754 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Поиск по коду тарифа | Рекомендации по работе с Sabre APIs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="./create-booking.html" />
+    
+    
+    <link rel="prev" href="./alternate-date.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.2"
+        data-chapter-title="Поиск по коду тарифа"
+        data-filepath="shop-by-fare.md"
+        data-basepath="."
+        data-revision="Sun Nov 06 2016 22:05:59 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Рекомендации по работе с Sabre APIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="introduction.html">
+            
+                
+                    <a href="./introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Начало работы
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="configuration.html">
+            
+                
+                    <a href="./configuration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Конфигурация Sabre
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="sessions.html">
+            
+                
+                    <a href="./sessions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Сессии
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="search.html">
+            
+                
+                    <a href="./search.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Поиск перелетов
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="alternate-date.html">
+            
+                
+                    <a href="./alternate-date.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Поиск с гибкими датами
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="shop-by-fare.html">
+            
+                
+                    <a href="./shop-by-fare.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Поиск по коду тарифа
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="create-booking.html">
+            
+                
+                    <a href="./create-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Создание бронирований
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="alternate-fares.html">
+            
+                
+                    <a href="./alternate-fares.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Branded Fares
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unconfirmed.html">
+            
+                
+                    <a href="./unconfirmed.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Неподтвержденные места
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ancillaries.html">
+            
+                
+                    <a href="./ancillaries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Бронирование доп. услуг
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="air-seats.html">
+            
+                
+                    <a href="./air-seats.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Бронирование мест в салоне
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="edit-booking.html">
+            
+                
+                    <a href="./edit-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Редактирование бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="split-booking.html">
+            
+                
+                    <a href="./split-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Деление бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="cancel-booking.html">
+            
+                
+                    <a href="./cancel-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Отмена бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="issue-ticket.html">
+            
+                
+                    <a href="./issue-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Оформление билетов и EMD
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1" data-path="reprice.html">
+            
+                
+                    <a href="./reprice.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                        Перерасчет стоимости
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="void-ticket.html">
+            
+                
+                    <a href="./void-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Войдирование билетов и EMD
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="currency-rates.html">
+            
+                
+                    <a href="./currency-rates.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Получение курсов валют
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="fare-rules.html">
+            
+                
+                    <a href="./fare-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        Получение правил тарифа
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="schedules.html">
+            
+                
+                    <a href="./schedules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Получение расписаний
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="availability.html">
+            
+                
+                    <a href="./availability.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Наличие мест
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="commands.html">
+            
+                
+                    <a href="./commands.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Отправка терминальных команд
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="queues.html">
+            
+                
+                    <a href="./queues.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        Использование очередей
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="sales-report.html">
+            
+                
+                    <a href="./sales-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                        Формирование отчетов
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Рекомендации по работе с Sabre APIs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x43F;&#x43E;&#x438;&#x441;&#x43A;-&#x43F;&#x43E;-&#x43A;&#x43E;&#x434;&#x443;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x430;">&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x43E; &#x43A;&#x43E;&#x434;&#x443; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</h1>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#pcc">PCC</a></li>
+<li><a href="#&#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F;-&#x43E;-&#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x435;">&#x418;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F; &#x43E; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x435;</a></li>
+<li><a href="#&#x434;&#x430;&#x442;&#x44B;">&#x414;&#x430;&#x442;&#x44B;</a></li>
+<li><a href="#&#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x435;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x44B;">&#x41F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x435; &#x442;&#x430;&#x440;&#x438;&#x444;&#x44B;</a></li>
+<li><a href="#&#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F;-&#x43E;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x435;">&#x418;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F; &#x43E; &#x442;&#x430;&#x440;&#x438;&#x444;&#x435;</a></li>
+<li><a href="#&#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E;-&#x438;-&#x442;&#x438;&#x43F;-&#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;">&#x41A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x438; &#x442;&#x438;&#x43F; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;</a></li>
+<li><a href="#&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;">&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;</a></li>
+</ul>
+<!-- toc stop -->
+<hr>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x43C;&#x435;&#x441;&#x442; &#x43F;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x43A;&#x43E;&#x434;&#x443; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x432; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43F;&#x440;&#x43E;&#x43C;&#x435;&#x436;&#x443;&#x442;&#x43E;&#x43A; &#x434;&#x430;&#x442; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/shop_by_specific_fare/resources" target="_blank">PromotionalShoppingRQ</a>. &#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x432; &#x43A;&#x430;&#x43A;&#x438;&#x435; &#x434;&#x43D;&#x438; &#x443; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430; &#x435;&#x441;&#x442;&#x44C; &#x43C;&#x435;&#x441;&#x442;&#x430; &#x432; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x438; &#x432; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x434;&#x430;&#x442;&#x44B;</p>
+<p>&#x414;&#x430;&#x43B;&#x435;&#x435; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x44B; &#x43E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x438; &#x43E;&#x43F;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;.</p>
+<h2 id="pcc">PCC</h2>
+<ul>
+<li><code>/OTA_BestFareFinderRQ/POS/@CompanyCode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x438;, &#x432;&#x441;&#x435;&#x433;&#x434;&#x430; <code>TN</code></li>
+<li><code>/OTA_BestFareFinderRQ/POS/@PseudoCityCode</code> &#x2014; PCC, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x430; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x44C;&#x441;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x430; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x43C;&#x435;&#x441;&#x442;</li>
+</ul>
+<h2 id="&#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F;-&#x43E;-&#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x435;">&#x418;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F; &#x43E; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x435;</h2>
+<ul>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/@ArrivalCity</code> &#x2014; &#x43A;&#x43E;&#x434; &#x433;&#x43E;&#x440;&#x43E;&#x434;&#x430; &#x438;&#x43B;&#x438; &#x430;&#x44D;&#x440;&#x43E;&#x43F;&#x43E;&#x440;&#x442;&#x430; &#x43F;&#x440;&#x438;&#x431;&#x44B;&#x442;&#x438;&#x44F;</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/@Carrier</code> &#x2014; &#x43A;&#x43E;&#x434; &#x43C;&#x430;&#x440;&#x43A;&#x435;&#x442;&#x438;&#x43D;&#x433;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430; (&#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430;, &#x43F;&#x43E;&#x438;&#x441;&#x43A; &#x43C;&#x435;&#x441;&#x442; &#x43F;&#x43E; &#x442;&#x430;&#x440;&#x438;&#x444;&#x443; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E;, &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x431;&#x44B;&#x442;&#x44C; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x435;&#x434;&#x435;&#x43D;)</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/@DepartureCity</code> &#x2014; &#x43A;&#x43E;&#x434; &#x433;&#x43E;&#x440;&#x43E;&#x434;&#x430; &#x438;&#x43B;&#x438; &#x430;&#x44D;&#x440;&#x43E;&#x43F;&#x43E;&#x440;&#x442;&#x430; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430;</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/@RequestStep</code> &#x2014; &#x432;&#x441;&#x435;&#x433;&#x434;&#x430; <code>1</code></li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/@RequestType</code> &#x2014; &#x442;&#x438;&#x43F; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;: <code>O</code> &#x434;&#x43B;&#x44F; one-way &#x438;&#x43B;&#x438; <code>R</code> &#x434;&#x43B;&#x44F; round-trip</li>
+</ul>
+<h2 id="&#x434;&#x430;&#x442;&#x44B;">&#x414;&#x430;&#x442;&#x44B;</h2>
+<p>&#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44E; &#x43E; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x438; &#x43C;&#x435;&#x441;&#x442; &#x43D;&#x430; &#x441;&#x440;&#x43E;&#x43A; &#x434;&#x43E; 3 &#x43C;&#x435;&#x441;&#x44F;&#x446;&#x435;&#x432; (93 &#x434;&#x43D;&#x44F;) &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x434;&#x430;&#x442;&#x44B;.</p>
+<p>&#x424;&#x43E;&#x440;&#x43C;&#x443;&#x43B;&#x430; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430;:</p>
+<ul>
+<li><strong>&#x41D;&#x430;&#x447;&#x430;&#x43B;&#x43E; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430;</strong>: <code>/@OutboundDate</code></li>
+<li><p>**&#x41E;&#x43A;&#x43E;&#x43D;&#x447;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430;<code>:</code>/@OutboundDate<code>+</code>/@DateRange``` - 1</p>
+</li>
+<li><p><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/DateRange/@DateRange</code> &#x2014; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43F;&#x440;&#x43E;&#x43C;&#x435;&#x436;&#x443;&#x442;&#x43E;&#x43A; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438;</p>
+</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/DateRange/@OutboundDate</code> &#x2014; &#x434;&#x430;&#x442;&#x430; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x430; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438; </li>
+</ul>
+<h2 id="&#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x435;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x44B;">&#x41F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x435; &#x442;&#x430;&#x440;&#x438;&#x444;&#x44B;</h2>
+<p>&#x423;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x43D;&#x438;&#x436;&#x435; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x44B; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x44B; &#x431;&#x44B;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x44B; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x432; &#x442;&#x43E;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x43E;&#x43C;&#x443; &#x442;&#x430;&#x440;&#x438;&#x444;&#x443;, &#x442;&#x440;&#x435;&#x431;&#x443;&#x44E;&#x449;&#x435;&#x43C;&#x443; &#x437;&#x430;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; Account Code &#x438;&#x43B;&#x438; Corporate ID.</p>
+<ul>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/PrivateFareData/AccountCode/@Code</code> &#x2014; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; Account Code</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/PrivateFareData/CorporateId/@Code</code> &#x2014; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; Corporate ID</li>
+</ul>
+<h2 id="&#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F;-&#x43E;-&#x442;&#x430;&#x440;&#x438;&#x444;&#x435;">&#x418;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44F; &#x43E; &#x442;&#x430;&#x440;&#x438;&#x444;&#x435;</h2>
+<ul>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/RequestedFares/RequestedFare/@FareAmount</code> &#x2014; &#x432;&#x435;&#x43B;&#x438;&#x447;&#x438;&#x43D;&#x430; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/RequestedFares/RequestedFare/@FareBasisCode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/RequestedFares/RequestedFare/@FareCurrency</code> &#x2014; &#x43A;&#x43E;&#x434; &#x432;&#x430;&#x43B;&#x44E;&#x442;&#x44B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</li>
+</ul>
+<h2 id="&#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E;-&#x438;-&#x442;&#x438;&#x43F;-&#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;">&#x41A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x438; &#x442;&#x438;&#x43F; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;</h2>
+<p>&#x42D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; <code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/PassengerTypes/PassengerType</code> &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x44F;&#x442;&#x44C;&#x441;&#x44F; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x439; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x438; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430;</p>
+<ul>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/PassengerTypes/PassengerType/@Count</code> &#x2014; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;</li>
+<li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/PassengerTypes/PassengerType/@Type</code> &#x2014; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x44F; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430;</li>
+</ul>
+<h2 id="&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;">&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;</h2>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="744020"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="744020"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">OTA_BestFareFinderRQ</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.4&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.sabre.com/OTA/BFF/2010/07&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">POS</span> <span class="hljs-attribute">CompanyCode</span>=<span class="hljs-value">&quot;TN&quot;</span> <span class="hljs-attribute">PseudoCityCode</span>=<span class="hljs-value">&quot;8XFG&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">BestFareFinderPreferences</span> <span class="hljs-attribute">ArrivalCity</span>=<span class="hljs-value">&quot;LON&quot;</span> <span class="hljs-attribute">Carrier</span>=<span class="hljs-value">&quot;SU&quot;</span> <span class="hljs-attribute">DepartureCity</span>=<span class="hljs-value">&quot;SVO&quot;</span> <span class="hljs-attribute">RequestStep</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">RequestType</span>=<span class="hljs-value">&quot;R&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">DateRange</span> <span class="hljs-attribute">DateRange</span>=<span class="hljs-value">&quot;93&quot;</span> <span class="hljs-attribute">OutboundDate</span>=<span class="hljs-value">&quot;2016-11-10&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">RequestedFares</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">RequestedFare</span> <span class="hljs-attribute">FareAmount</span>=<span class="hljs-value">&quot;195&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span> <span class="hljs-attribute">FareCurrency</span>=<span class="hljs-value">&quot;EUR&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">RequestedFares</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">PassengerTypes</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">PassengerType</span> <span class="hljs-attribute">Count</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;ADT&quot;</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">PassengerType</span> <span class="hljs-attribute">Count</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;CNN&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">PassengerTypes</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">BestFareFinderPreferences</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">OTA_BestFareFinderRQ</span>&gt;</span>
+</code></pre></div></div></div></p>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="867203"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="867203"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-title">OTA_BestFareFinderRS</span> <span class="hljs-attribute">BestFareFinderOptions</span>=<span class="hljs-value">&quot;93&quot;</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.4&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.sabre.com/OTA/BFF/2010/07&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Success</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Warnings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Warning</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;TRANSACTIONID&quot;</span> <span class="hljs-attribute">MessageClass</span>=<span class="hljs-value">&quot;I&quot;</span> <span class="hljs-attribute">Text</span>=<span class="hljs-value">&quot;4975166243216392417&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;WORKERTHREAD&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Warning</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;TTFHLP791&quot;</span> <span class="hljs-attribute">MessageClass</span>=<span class="hljs-value">&quot;I&quot;</span> <span class="hljs-attribute">Text</span>=<span class="hljs-value">&quot;27038&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;SERVER&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Warning</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;RULEID&quot;</span> <span class="hljs-attribute">MessageClass</span>=<span class="hljs-value">&quot;I&quot;</span> <span class="hljs-attribute">Text</span>=<span class="hljs-value">&quot;17627&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;DEFAULT&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Warning</span> <span class="hljs-attribute">Code</span>=<span class="hljs-value">&quot;RULEID&quot;</span> <span class="hljs-attribute">MessageClass</span>=<span class="hljs-value">&quot;I&quot;</span> <span class="hljs-attribute">Text</span>=<span class="hljs-value">&quot;14431&quot;</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;DRE&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Warnings</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Solutions</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-10&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-11&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-12&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-13&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-14&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-15&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-16&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-17&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-18&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-19&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-20&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-21&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-22&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-23&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-24&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-25&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-26&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-27&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-28&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-29&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-11-30&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-01&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-02&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-03&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-04&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-05&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-06&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-07&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-08&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-09&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-10&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-11&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-12&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-13&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-14&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-15&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-16&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-17&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-18&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-19&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-20&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-21&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-22&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-23&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-24&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-25&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-26&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-27&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-28&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-29&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-30&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2016-12-31&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-01&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-02&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-03&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-04&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-05&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-06&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-07&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-08&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">Availability</span>=<span class="hljs-value">&quot;false&quot;</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-09&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-10&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-11&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-12&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-13&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-14&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-15&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-16&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-17&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-18&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-19&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-20&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-21&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-22&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-23&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-24&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-25&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-26&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-27&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-28&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-29&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-30&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-01-31&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-01&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-02&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-03&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-04&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-05&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-06&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-07&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-08&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-09&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Outbound</span> <span class="hljs-attribute">DepartureDate</span>=<span class="hljs-value">&quot;2017-02-10&quot;</span> <span class="hljs-attribute">FareBasisCode</span>=<span class="hljs-value">&quot;TVU&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Solutions</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">OTA_BestFareFinderRS</span>&gt;</span>
+</code></pre></div></div></div></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./alternate-date.html" class="navigation navigation-prev " aria-label="Previous page: Поиск с гибкими датами"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./create-booking.html" class="navigation navigation-next " aria-label="Next page: Создание бронирований"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-hide-published-with/plugin.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/sectionx.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/redraw.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"ga":{"token":"UA-80320390-1","configuration":"auto"},"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

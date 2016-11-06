@@ -1,0 +1,658 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Поиск с гибкими датами | Рекомендации по работе с Sabre APIs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="./shop-by-fare.html" />
+    
+    
+    <link rel="prev" href="./search.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.1"
+        data-chapter-title="Поиск с гибкими датами"
+        data-filepath="alternate-date.md"
+        data-basepath="."
+        data-revision="Sun Nov 06 2016 22:05:59 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Рекомендации по работе с Sabre APIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="introduction.html">
+            
+                
+                    <a href="./introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Начало работы
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="configuration.html">
+            
+                
+                    <a href="./configuration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Конфигурация Sabre
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="sessions.html">
+            
+                
+                    <a href="./sessions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Сессии
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="search.html">
+            
+                
+                    <a href="./search.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Поиск перелетов
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1" data-path="alternate-date.html">
+            
+                
+                    <a href="./alternate-date.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Поиск с гибкими датами
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="shop-by-fare.html">
+            
+                
+                    <a href="./shop-by-fare.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Поиск по коду тарифа
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="create-booking.html">
+            
+                
+                    <a href="./create-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Создание бронирований
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="alternate-fares.html">
+            
+                
+                    <a href="./alternate-fares.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Branded Fares
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="unconfirmed.html">
+            
+                
+                    <a href="./unconfirmed.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Неподтвержденные места
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ancillaries.html">
+            
+                
+                    <a href="./ancillaries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Бронирование доп. услуг
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="air-seats.html">
+            
+                
+                    <a href="./air-seats.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Бронирование мест в салоне
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="edit-booking.html">
+            
+                
+                    <a href="./edit-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Редактирование бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="split-booking.html">
+            
+                
+                    <a href="./split-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Деление бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="cancel-booking.html">
+            
+                
+                    <a href="./cancel-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Отмена бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="issue-ticket.html">
+            
+                
+                    <a href="./issue-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Оформление билетов и EMD
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1" data-path="reprice.html">
+            
+                
+                    <a href="./reprice.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                        Перерасчет стоимости
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="void-ticket.html">
+            
+                
+                    <a href="./void-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Войдирование билетов и EMD
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="currency-rates.html">
+            
+                
+                    <a href="./currency-rates.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Получение курсов валют
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="fare-rules.html">
+            
+                
+                    <a href="./fare-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        Получение правил тарифа
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="schedules.html">
+            
+                
+                    <a href="./schedules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Получение расписаний
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="availability.html">
+            
+                
+                    <a href="./availability.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Наличие мест
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="commands.html">
+            
+                
+                    <a href="./commands.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Отправка терминальных команд
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="queues.html">
+            
+                
+                    <a href="./queues.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        Использование очередей
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="sales-report.html">
+            
+                
+                    <a href="./sales-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                        Формирование отчетов
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Рекомендации по работе с Sabre APIs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x43F;&#x43E;&#x438;&#x441;&#x43A;-&#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;-&#x441;-&#x433;&#x438;&#x431;&#x43A;&#x438;&#x43C;&#x438;-&#x434;&#x430;&#x442;&#x430;&#x43C;&#x438;">&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x433;&#x438;&#x431;&#x43A;&#x438;&#x43C;&#x438; &#x434;&#x430;&#x442;&#x430;&#x43C;&#x438;</h1>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#&#x442;&#x438;&#x43F;-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;">&#x422;&#x438;&#x43F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;</a></li>
+<li><a href="#&#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;-&#x438;-&#x434;&#x430;&#x442;&#x44B;-&#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;">&#x41C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442; &#x438; &#x434;&#x430;&#x442;&#x44B; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;</a></li>
+<li><a href="#&#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E;-&#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432;-&#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;">&#x41A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;</a></li>
+</ul>
+<!-- toc stop -->
+<hr>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x443; &#x441; &#x433;&#x438;&#x431;&#x43A;&#x438;&#x43C;&#x438; &#x434;&#x430;&#x442;&#x430;&#x43C;&#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; Bargain Finder Max Alternate Dates (<a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad/resources" target="_blank">BargainFinderMax_ADRQ</a>).</p>
+<p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x438; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x445; &#x442;&#x438;&#x43F;&#x43E;&#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442; &#x430;&#x43A;&#x442;&#x438;&#x432;&#x430;&#x446;&#x438;&#x438; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x433;&#x43E; iPCC. &#x41F;&#x43E;&#x436;&#x430;&#x43B;&#x443;&#x439;&#x441;&#x442;&#x430;, &#x43E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435;&#x441;&#x44C; &#x43A; &#x432;&#x430;&#x448;&#x435;&#x43C;&#x443; &#x43A;&#x443;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x443; &#x432; Sabre &#x434;&#x43B;&#x44F; &#x443;&#x442;&#x43E;&#x447;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x434;&#x435;&#x442;&#x430;&#x43B;&#x435;&#x439;.</p>
+<p>&#x421;&#x445;&#x435;&#x43C;&#x430; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x438; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; BargainFinderMax_ADRQ, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x430; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; &#x441;&#x43E;&#x432;&#x43F;&#x430;&#x434;&#x430;&#x44E;&#x442; &#x441; &#x442;&#x430;&#x43A;&#x43E;&#x432;&#x44B;&#x43C;&#x438; &#x434;&#x43B;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; BargainFinderMaxRQ (&#x441;&#x43C;. <a href="search.html">&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;</a>) &#x437;&#x430; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x43F;&#x435;&#x440;&#x435;&#x447;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x43D;&#x438;&#x436;&#x435; &#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x435;&#x439;.</p>
+<h2 id="&#x442;&#x438;&#x43F;-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;">&#x422;&#x438;&#x43F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;</h2>
+<p>&#x422;&#x438;&#x43F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x435; <code>/OTA_AirLowFareSearchRQ/TPA_Extensions/IntelliSellTransaction/RequestType/@Name</code>.</p>
+<p>&#x412;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x44B;:</p>
+<ul>
+<li><code>AD1</code> &#x2014; &#x43F;&#x43E;&#x438;&#x441;&#x43A; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x434;&#x430;&#x442;&#x43E;&#x439; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (&#x438;&#x43B;&#x438; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x43E;&#x432; &#x442;&#x443;&#x434;&#x430;-&#x43E;&#x431;&#x440;&#x430;&#x442;&#x43D;&#x43E;) &#xB1; 1 &#x434;&#x435;&#x43D;&#x44C; (&#x43C;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430; &#x43B;&#x443;&#x447;&#x448;&#x438;&#x445; &#x446;&#x435;&#x43D; 3x3)</li>
+<li><code>AD3</code> &#x2014; &#x43F;&#x43E;&#x438;&#x441;&#x43A; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x434;&#x430;&#x442;&#x43E;&#x439; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (&#x438;&#x43B;&#x438; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x43E;&#x432; &#x442;&#x443;&#x434;&#x430;-&#x43E;&#x431;&#x440;&#x430;&#x442;&#x43D;&#x43E;) &#xB1; 3 &#x434;&#x43D;&#x44F; (&#x43C;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430; &#x43B;&#x443;&#x447;&#x448;&#x438;&#x445; &#x446;&#x435;&#x43D; 7x7)</li>
+<li><code>AD7</code> &#x2014; &#x43F;&#x43E;&#x438;&#x441;&#x43A; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x434;&#x430;&#x442;&#x43E;&#x439; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (&#x438;&#x43B;&#x438; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x43E;&#x432; &#x442;&#x443;&#x434;&#x430;-&#x43E;&#x431;&#x440;&#x430;&#x442;&#x43D;&#x43E;) &#xB1; 7 &#x434;&#x43D;&#x435;&#x439; &#x438;&#x43B;&#x438; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x433;&#x438;&#x431;&#x43A;&#x43E;&#x439; &#x434;&#x430;&#x442;&#x43E;&#x439; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (&#x43C;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430; &#x43B;&#x443;&#x447;&#x448;&#x438;&#x445; &#x446;&#x435;&#x43D; c &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x43C;&#x44B;&#x43C;&#x438; &#x440;&#x430;&#x437;&#x43C;&#x435;&#x440;&#x430;&#x43C;&#x438;)</li>
+</ul>
+<p>&#x41D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x435;&#x441;&#x43B;&#x438; &#x437;&#x430;&#x434;&#x430;&#x43D; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442; &#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x430;-&#x41F;&#x430;&#x440;&#x438;&#x436;-&#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x430; &#x441; &#x434;&#x430;&#x442;&#x43E;&#x439; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; &#x438;&#x437; &#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x44B; 1 &#x438;&#x44E;&#x43D;&#x44F;, &#x434;&#x430;&#x442;&#x43E;&#x439; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; &#x438;&#x437; &#x41F;&#x430;&#x440;&#x438;&#x436;&#x430; 15 &#x438;&#x44E;&#x43D;&#x44F; &#x438; &#x442;&#x438;&#x43F;&#x43E;&#x43C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; <code>AD1</code> &#x43C;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430; &#x43B;&#x443;&#x447;&#x448;&#x438;&#x445; &#x446;&#x435;&#x43D; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x432;&#x44B;&#x433;&#x43B;&#x44F;&#x434;&#x435;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x43C; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x43C;:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>31 &#x43C;&#x430;&#x44F;</strong></th>
+<th><strong>1 &#x438;&#x44E;&#x43D;&#x44F;</strong></th>
+<th><strong>2 &#x438;&#x44E;&#x43D;&#x44F;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>14 &#x438;&#x44E;&#x43D;&#x44F;</strong></td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+</tr>
+<tr>
+<td><strong>15 &#x438;&#x44E;&#x43D;&#x44F;</strong></td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+</tr>
+<tr>
+<td><strong>16 &#x438;&#x44E;&#x43D;&#x44F;</strong></td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<p>&#x433;&#x434;&#x435; &#x43A;&#x430;&#x436;&#x434;&#x430;&#x44F; &#x431;&#x443;&#x43A;&#x432;&#x430; &#x43E;&#x431;&#x43E;&#x437;&#x43D;&#x430;&#x447;&#x430;&#x435;&#x442; &#x441;&#x430;&#x43C;&#x44B;&#x439; &#x434;&#x435;&#x448;&#x435;&#x432;&#x44B;&#x439; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x430; &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x43F;&#x430;&#x440;&#x44B; &#x434;&#x430;&#x442;.</p>
+<h2 id="&#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;-&#x438;-&#x434;&#x430;&#x442;&#x44B;-&#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;">&#x41C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442; &#x438; &#x434;&#x430;&#x442;&#x44B; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;</h2>
+<p>&#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x435;&#x43D; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x434;&#x43B;&#x44F; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x43E;&#x432; &#x432; &#x43E;&#x434;&#x43D;&#x443; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x443; (One Way) &#x438;&#x43B;&#x438; &#x442;&#x443;&#x434;&#x430;-&#x43E;&#x431;&#x440;&#x430;&#x442;&#x43D;&#x43E; (Round Trip).</p>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x438;&#x43F;&#x43E;&#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; <code>AD1</code> &#x438; <code>AD3</code> &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43A; &#x43D;&#x435; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F;.</p>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x438;&#x43F;&#x430; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; <code>AD7</code> &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x433;&#x43E; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; (&#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x432;&#x44B;&#x431;&#x440;&#x430;&#x442;&#x44C; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43E;&#x434;&#x438;&#x43D; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;):</p>
+<ul>
+<li>&#x432;&#x435;&#x440;&#x442;&#x438;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x438;&#x43B;&#x438; &#x433;&#x43E;&#x440;&#x438;&#x437;&#x43E;&#x43D;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x440;&#x430;&#x437;&#x43C;&#x435;&#x440; &#x43C;&#x430;&#x442;&#x440;&#x438;&#x446;&#x44B; &#x43B;&#x443;&#x447;&#x448;&#x438;&#x445; &#x446;&#x435;&#x43D; (<code>/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/DateFlexibility</code>):<ul>
+<li><code>/@NbrOfDays</code> &#x2014; &#x43F;&#x43B;&#x44E;&#x441;/&#x43C;&#x438;&#x43D;&#x443;&#x441; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x434;&#x43D;&#x435;&#x439; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43A; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; &#x434;&#x430;&#x442;&#x435; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430;</li>
+<li><code>/@Plus</code> &#x2014; &#x43F;&#x43B;&#x44E;&#x441; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x434;&#x43D;&#x435;&#x439; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43A; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; &#x434;&#x430;&#x442;&#x435; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430;</li>
+<li><code>/@Minus</code> &#x2014; &#x43C;&#x438;&#x43D;&#x443;&#x441; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x434;&#x43D;&#x435;&#x439; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43A; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; &#x434;&#x430;&#x442;&#x435; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430;</li>
+</ul>
+</li>
+<li>&#x434;&#x43D;&#x438; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x438; &#x434;&#x43B;&#x44F; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (<code>/OTA_AirLowFareSearchRQ/OriginDestinationInformation/DepartureDates/DaysRange</code>):<ul>
+<li><code>/@WeekDays</code> &#x2014; &#x434;&#x43D;&#x438; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x438; &#x434;&#x43B;&#x44F; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430;. &#x417;&#x430;&#x43F;&#x43E;&#x43B;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43A;&#x430;&#x43A;: <code>&quot;SM_____&quot;</code> (&#x432;&#x44B;&#x43B;&#x435;&#x442; &#x432; &#x432;&#x43E;&#x441;&#x43A;&#x440;&#x435;&#x441;&#x435;&#x43D;&#x44C;&#x435; &#x438; &#x43F;&#x43E;&#x43D;&#x435;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;), <code>&quot;_____F_&quot;</code> (&#x432;&#x44B;&#x43B;&#x435;&#x442; &#x432; &#x43F;&#x44F;&#x442;&#x43D;&#x438;&#x446;&#x443;), <code>&quot;SMTWTFS&quot;</code> (&#x432;&#x44B;&#x43B;&#x435;&#x442; &#x432;&#x43E; &#x432;&#x441;&#x435; &#x434;&#x43D;&#x438; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x438;)</li>
+<li><code>/@FromDate</code> &#x2014; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x43E; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x432; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x434;&#x43D;&#x438; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x438;</li>
+<li><code>/@ToDate</code> &#x2014; &#x43E;&#x43A;&#x43E;&#x43D;&#x447;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x432; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x434;&#x43D;&#x438; &#x43D;&#x435;&#x434;&#x435;&#x43B;&#x438;</li>
+</ul>
+</li>
+<li>&#x43F;&#x440;&#x43E;&#x434;&#x43E;&#x43B;&#x436;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x43F;&#x440;&#x435;&#x431;&#x44B;&#x432;&#x430;&#x43D;&#x438;&#x44F;:<ul>
+<li><code>/OTA_AirLowFareSearchRQ/OriginDestinationInformation/DepartureDates/LengthOfStay/@Days</code> &#x2014; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x434;&#x43D;&#x435;&#x439; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x434;&#x430;&#x442;&#x430;&#x43C;&#x438; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x435;&#x434;&#x44B;&#x434;&#x443;&#x449;&#x435;&#x433;&#x43E; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x438; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x433;&#x43E;</li>
+<li><code>/OTA_AirLowFareSearchRQ/OriginDestinationInformation/DepartureDates/LengthOfStayRange/@MinDays</code> &#x438; <code>/@MaxDays</code> &#x2014; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x438; &#x43C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x434;&#x43D;&#x435;&#x439; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x434;&#x430;&#x442;&#x430;&#x43C;&#x438; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x435;&#x434;&#x44B;&#x434;&#x443;&#x449;&#x435;&#x433;&#x43E; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x438; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x433;&#x43E;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E;-&#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432;-&#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;">&#x41A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;</h2>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x438;&#x43F;&#x43E;&#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; <code>AD1</code> &#x438; <code>AD3</code> &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x430;&#x445; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x431;&#x443;&#x434;&#x435;&#x442; 9 &#x438; 49 &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x430; &#x442;&#x443;&#x434;&#x430;-&#x43E;&#x431;&#x440;&#x430;&#x442;&#x43D;&#x43E; &#x438; 3 &#x438; 7 &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x430; &#x432; &#x43E;&#x434;&#x43D;&#x443; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x443;, &#x442;.&#x435;. &#x43F;&#x43E; &#x43E;&#x434;&#x43D;&#x43E;&#x43C;&#x443; &#x441;&#x430;&#x43C;&#x43E;&#x43C;&#x443; &#x434;&#x435;&#x448;&#x435;&#x432;&#x43E;&#x43C;&#x443; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x443; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x430; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x439; &#x434;&#x430;&#x442;&#x44B;.</p>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x438;&#x43F;&#x430; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; <code>AD7</code> &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x43E;&#x442;&#x432;&#x435;&#x442; &#x431;&#x443;&#x434;&#x435;&#x442; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; 49 (Round Trip) &#x438;&#x43B;&#x438; 7 (One Way) &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;. &#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E;, &#x432; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430; <code>/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/NumTrips</code> &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x442;&#x440;&#x435;&#x431;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43A; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x443; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x449;&#x430;&#x435;&#x43C;&#x44B;&#x445; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;:</p>
+<ul>
+<li><code>/@Number</code> &#x2014; &#x43E;&#x431;&#x449;&#x435;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x432; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x435;</li>
+<li><code>/@PerDateMax</code> &#x2014; &#x43C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x439; &#x43F;&#x430;&#x440;&#x44B; &#x434;&#x430;&#x442; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (Round Trip) &#x438;&#x43B;&#x438; &#x434;&#x430;&#x442;&#x44B; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (One Way)</li>
+<li><code>/@PerDateMin</code> &#x2014; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x439; &#x43F;&#x430;&#x440;&#x44B; &#x434;&#x430;&#x442; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (Round Trip) &#x438;&#x43B;&#x438; &#x434;&#x430;&#x442;&#x44B; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; (One Way)</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./search.html" class="navigation navigation-prev " aria-label="Previous page: Поиск перелетов"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./shop-by-fare.html" class="navigation navigation-next " aria-label="Next page: Поиск по коду тарифа"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-hide-published-with/plugin.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/sectionx.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/redraw.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"ga":{"token":"UA-80320390-1","configuration":"auto"},"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
