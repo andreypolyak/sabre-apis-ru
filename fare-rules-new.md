@@ -1507,7 +1507,7 @@
 Для каждого забронированного сегмента необходимо запросить правила тарифа при помощи сервиса [RulesFromPriceLLSRQ](https://developer.sabre.com/docs/soap_apis/air/book/fare_rules_from_air_price/resources) (см. [Алгоритм получения текста правил тарифа для текущего бронирования (RulesFromPriceLLSRQ)](#RulesFromPriceLLSRQ)).
 
 {% xmlsec "Пример запроса" %}
-<RulesFromPriceRQ ReturnHostCommand="true" Version="2.0.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<RulesFromPriceRQ ReturnHostCommand="true" Version="2.0.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10">
   <RuleReqInfo>
     <Category>16</Category>
     <SegmentSelect Number="1"/>
@@ -1771,7 +1771,7 @@
 После того, как правила тарифа были запрошены для всех сегментов, необходимо игнорировать созданное бронирование при помощи сервиса [IgnoreTransactionLLSRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/ignore_transaction/resources).
 
 {% xmlsec "Пример запроса" %}
-<IgnoreTransactionRQ xmlns="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ReturnHostCommand="true" Version="2.0.0"/>
+<IgnoreTransactionRQ ReturnHostCommand="true" Version="2.0.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10"/>
 {% endxmlsec %}
 
 {% xmlsec "Пример ответа" %}
@@ -1792,7 +1792,7 @@
 
 Для получения текста правил (условий применения) тарифа без необходимости создания бронирования используется сервис [OTA_AirRulesLLSRQ](https://developer.sabre.com/docs/soap_apis/air/book/air_fare_rules/resources).
 
-Обязательными параметрами запроса являются:
+В запросе необходимо указать:
 - ```/OTA_AirRulesRQ/OriginDestinationInformation/FlightSegment/OriginLocation/@LocationCode``` — аэропорт отправления
 - ```/OTA_AirRulesRQ/OriginDestinationInformation/FlightSegment/DestinationLocation/@LocationCode``` — аэропорт прибытия
 
@@ -1805,7 +1805,7 @@
 Для получения правил приватного тарифа также может потребоваться указание Account Code (```/OTA_AirRulesRQ/OptionalQualifiers/PricingQualifiers/Account/Code```) или Corporate ID (```/OTA_AirRulesRQ/OptionalQualifiers/PricingQualifiers/Corporate/ID```).
 
 {% xmlsec "Пример запроса" %}
-<OTA_AirRulesRQ ReturnHostCommand="true" Version="2.2.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirRulesRQ ReturnHostCommand="true" Version="2.2.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10">
   <OriginDestinationInformation>
     <FlightSegment DepartureDateTime="04-15">
       <DestinationLocation LocationCode="MOW"/>
@@ -1933,7 +1933,7 @@
 В случае необходимости показать только определенные категории правил тарифа, их можно указать в качестве значений элементов ```/RulesFromPriceRQ/RuleReqInfo/Category```.
 
 {% xmlsec "Пример запроса" %}
-<RulesFromPriceRQ ReturnHostCommand="true" Version="2.0.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<RulesFromPriceRQ ReturnHostCommand="true" Version="2.0.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10">
   <RuleReqInfo>
     <Category>16</Category>
     <SegmentSelect Number="1"/>
@@ -2216,8 +2216,7 @@
 
 
 
-Обязательными параметрами запроса являются:
-
+В запросе необходимо указать:
 - пара городов
 - дата вылета
 - код тарифа
@@ -2226,7 +2225,7 @@
 Для получения правил приватного тарифа также может потребоваться указание Account Code или Corporate ID.
 
 {% xmlsec "Пример запроса" %}
-<StructureFareRulesRQ Version="1.0.0" xmlns="http://webservices.sabre.com/sabreXML/2003/07" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<StructureFareRulesRQ Version="1.0.0" xmlns="http://webservices.sabre.com/sabreXML/2003/07">
   <AirItinerary>
     <OriginDestinationOptions>
       <OriginDestinationOption>

@@ -23,7 +23,7 @@
 
 ## Чтение бронирования (TravelItineraryReadRQ)
 
-Используется сервис [TravelItineraryReadRQ](https://developer.sabre.com/docs/read/soap_apis/management/itinerary/get_itinerary/resources). В качестве параметра ```UniqueID/@ID``` в запросе указывается код бронирования (PNR Record Locator).
+Используется сервис [TravelItineraryReadRQ](https://developer.sabre.com/docs/read/soap_apis/management/itinerary/get_itinerary/resources). В качестве значения атрибута ```/TravelItineraryReadRQ/UniqueID/@ID``` в запросе указывается код бронирования (PNR Record Locator).
 
 {% xmlsec "Пример запроса" %}
 
@@ -75,7 +75,7 @@
 
 Производится отмена (удаление) тех сегментов, которые должны быть изменены при проведении обмена. Для этого используется сервис [OTA_CancelLLSRQ](https://developer.sabre.com/docs/read/soap_apis/air/book/cancel_itinerary_segments/resources).
 
-В качестве параметра в запросе указывается какие именно сегменты необходимо отменить:
+В запросе к сервису необходимо указать какие именно сегменты должны быть отменены:
 - ```<Segment Type="entire"/>``` — все сегменты
 - ```<Segment Type="air"/>``` — все авиасегменты
 - ```<Segment Number="1"/>``` — первый сегмент
@@ -206,7 +206,7 @@
 
 ## Чтение бронирования (TravelItineraryReadRQ)
 
-Используется сервис [TravelItineraryReadRQ](https://developer.sabre.com/docs/read/soap_apis/management/itinerary/get_itinerary/resources). В качестве параметра ```UniqueID/@ID``` в запросе указывается код бронирования (PNR Record Locator).
+Используется сервис [TravelItineraryReadRQ](https://developer.sabre.com/docs/read/soap_apis/management/itinerary/get_itinerary/resources). В качестве значения атрибута ```/TravelItineraryReadRQ/UniqueID/@ID``` в запросе указывается код бронирования (PNR Record Locator).
 
 {% xmlsec "Пример запроса" %}
 

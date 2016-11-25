@@ -67,7 +67,7 @@
         data-chapter-title="Поиск по коду тарифа"
         data-filepath="shop-by-fare.md"
         data-basepath="."
-        data-revision="Sun Nov 06 2016 22:05:59 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-revision="Fri Nov 25 2016 11:15:27 GMT+0300 (Russia TZ 2 Standard Time)"
         data-innerlanguage="">
     
 
@@ -523,7 +523,7 @@
 <!-- toc stop -->
 <hr>
 <p>&#x414;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x43C;&#x435;&#x441;&#x442; &#x43F;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x43A;&#x43E;&#x434;&#x443; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x432; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43F;&#x440;&#x43E;&#x43C;&#x435;&#x436;&#x443;&#x442;&#x43E;&#x43A; &#x434;&#x430;&#x442; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/shop_by_specific_fare/resources" target="_blank">PromotionalShoppingRQ</a>. &#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x432; &#x43A;&#x430;&#x43A;&#x438;&#x435; &#x434;&#x43D;&#x438; &#x443; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430; &#x435;&#x441;&#x442;&#x44C; &#x43C;&#x435;&#x441;&#x442;&#x430; &#x432; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x438; &#x432; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x434;&#x430;&#x442;&#x44B;</p>
-<p>&#x414;&#x430;&#x43B;&#x435;&#x435; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x44B; &#x43E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x438; &#x43E;&#x43F;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;.</p>
+<p>&#x414;&#x430;&#x43B;&#x435;&#x435; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x44B; &#x43E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x438; &#x43E;&#x43F;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x44B; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;.</p>
 <h2 id="pcc">PCC</h2>
 <ul>
 <li><code>/OTA_BestFareFinderRQ/POS/@CompanyCode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x438;, &#x432;&#x441;&#x435;&#x433;&#x434;&#x430; <code>TN</code></li>
@@ -542,7 +542,7 @@
 <p>&#x424;&#x43E;&#x440;&#x43C;&#x443;&#x43B;&#x430; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430;:</p>
 <ul>
 <li><strong>&#x41D;&#x430;&#x447;&#x430;&#x43B;&#x43E; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430;</strong>: <code>/@OutboundDate</code></li>
-<li><p>**&#x41E;&#x43A;&#x43E;&#x43D;&#x447;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430;<code>:</code>/@OutboundDate<code>+</code>/@DateRange``` - 1</p>
+<li><p><strong>&#x41E;&#x43A;&#x43E;&#x43D;&#x447;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x435;&#x440;&#x438;&#x43E;&#x434;&#x430;</strong>: <code>/@OutboundDate</code> + <code>/@DateRange</code> - 1</p>
 </li>
 <li><p><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/DateRange/@DateRange</code> &#x2014; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43F;&#x440;&#x43E;&#x43C;&#x435;&#x436;&#x443;&#x442;&#x43E;&#x43A; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438;</p>
 </li>
@@ -567,7 +567,7 @@
 <li><code>/OTA_BestFareFinderRQ/BestFareFinderPreferences/PassengerTypes/PassengerType/@Type</code> &#x2014; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x44F; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430;</li>
 </ul>
 <h2 id="&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;">&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;</h2>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="744020"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="744020"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="198796"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="198796"><div class="panel-body"><pre class="XML"><code class="lang-XML">
 <span class="hljs-tag">&lt;<span class="hljs-title">OTA_BestFareFinderRQ</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.4&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.sabre.com/OTA/BFF/2010/07&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">POS</span> <span class="hljs-attribute">CompanyCode</span>=<span class="hljs-value">&quot;TN&quot;</span> <span class="hljs-attribute">PseudoCityCode</span>=<span class="hljs-value">&quot;8XFG&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">BestFareFinderPreferences</span> <span class="hljs-attribute">ArrivalCity</span>=<span class="hljs-value">&quot;LON&quot;</span> <span class="hljs-attribute">Carrier</span>=<span class="hljs-value">&quot;SU&quot;</span> <span class="hljs-attribute">DepartureCity</span>=<span class="hljs-value">&quot;SVO&quot;</span> <span class="hljs-attribute">RequestStep</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">RequestType</span>=<span class="hljs-value">&quot;R&quot;</span>&gt;</span>
@@ -582,7 +582,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-title">BestFareFinderPreferences</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">OTA_BestFareFinderRQ</span>&gt;</span>
 </code></pre></div></div></div></p>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="867203"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="867203"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="369163"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="369163"><div class="panel-body"><pre class="XML"><code class="lang-XML">
 <span class="hljs-tag">&lt;<span class="hljs-title">OTA_BestFareFinderRS</span> <span class="hljs-attribute">BestFareFinderOptions</span>=<span class="hljs-value">&quot;93&quot;</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;1.0.4&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.sabre.com/OTA/BFF/2010/07&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Success</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Warnings</span>&gt;</span>

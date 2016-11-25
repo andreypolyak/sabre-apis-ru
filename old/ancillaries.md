@@ -74,7 +74,7 @@
 
 ## Чтение бронирования (TravelItineraryReadRQ)
 
-В качестве параметра ```UniqueID/@ID``` в запросе указывается код бронирования (PNR Record Locator).
+В качестве значения атрибута ```/TravelItineraryReadRQ/UniqueID/@ID``` в запросе указывается код бронирования (PNR Record Locator).
 
 {% xmlsec "Пример запроса" %}
 <TravelItineraryReadRQ Version="3.6.0" xmlns="http://services.sabre.com/res/tir/v3_6">
