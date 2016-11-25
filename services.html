@@ -1,0 +1,869 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Список сервисов | Рекомендации по работе с Sabre APIs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="./sessions.html" />
+    
+    
+    <link rel="prev" href="./configuration.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="Список сервисов"
+        data-filepath="services.md"
+        data-basepath="."
+        data-revision="Fri Nov 25 2016 16:49:02 GMT+0300 (Russia TZ 2 Standard Time)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Рекомендации по работе с Sabre APIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="introduction.html">
+            
+                
+                    <a href="./introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Начало работы
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="configuration.html">
+            
+                
+                    <a href="./configuration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Конфигурация Sabre
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="services.html">
+            
+                
+                    <a href="./services.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Список сервисов
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="sessions.html">
+            
+                
+                    <a href="./sessions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Сессии
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="search.html">
+            
+                
+                    <a href="./search.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Поиск перелетов
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="alternate-date.html">
+            
+                
+                    <a href="./alternate-date.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Поиск с гибкими датами
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="shop-by-fare.html">
+            
+                
+                    <a href="./shop-by-fare.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Поиск по коду тарифа
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="create-booking.html">
+            
+                
+                    <a href="./create-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Создание бронирований
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="alternate-fares.html">
+            
+                
+                    <a href="./alternate-fares.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Branded Fares
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="unconfirmed.html">
+            
+                
+                    <a href="./unconfirmed.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Неподтвержденные места
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="ancillaries.html">
+            
+                
+                    <a href="./ancillaries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Бронирование доп. услуг
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="air-seats.html">
+            
+                
+                    <a href="./air-seats.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Бронирование мест в салоне
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="edit-booking.html">
+            
+                
+                    <a href="./edit-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Редактирование бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="split-booking.html">
+            
+                
+                    <a href="./split-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Деление бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="cancel-booking.html">
+            
+                
+                    <a href="./cancel-booking.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Отмена бронирований
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="issue-ticket.html">
+            
+                
+                    <a href="./issue-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Оформление билетов и EMD
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="reprice.html">
+            
+                
+                    <a href="./reprice.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Перерасчет стоимости
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="void-ticket.html">
+            
+                
+                    <a href="./void-ticket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Войдирование билетов и EMD
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="currency-rates.html">
+            
+                
+                    <a href="./currency-rates.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        Получение курсов валют
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="fare-rules.html">
+            
+                
+                    <a href="./fare-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Получение правил тарифа
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="schedules.html">
+            
+                
+                    <a href="./schedules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Получение расписаний
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="availability.html">
+            
+                
+                    <a href="./availability.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Наличие мест
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="commands.html">
+            
+                
+                    <a href="./commands.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        Отправка терминальных команд
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="queues.html">
+            
+                
+                    <a href="./queues.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                        Использование очередей
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="20" data-path="sales-report.html">
+            
+                
+                    <a href="./sales-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>20.</b>
+                        
+                        Формирование отчетов
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Рекомендации по работе с Sabre APIs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A;-&#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432;">&#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432;</h1>
+<p>&#x412; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D; &#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C;&#x44B;&#x445; &#x432; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x44F;&#x445; &#x43F;&#x43E; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; &#x441; Sabre APIs.</p>
+<table>
+<thead>
+<tr>
+<th>&#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x438; &#x430;&#x43A;&#x442;&#x443;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x432;&#x435;&#x440;&#x441;&#x438;&#x44F;</th>
+<th>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</th>
+<th>&#x414;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x446;&#x438;&#x44F; &#x438; WSDL</th>
+<th>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x430;&#x43D;&#x430;&#x43B;&#x43E;&#x433;&#x438;&#x447;&#x43D;&#x43E;&#x439; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x44B;</th>
+<th>&#x420;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x44B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/book/cancel_air_seat/resources" target="_blank">AirSeatCancelLLSRQ</a> <em>(2.1.0)</em></td>
+<td>&#x423;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x437;&#x430;&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/AirSeatCancelLLSRQ_v2.1.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/AirSeatCancelLLSRS_v2.1.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/AirSeatCancelLLS2.1.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>4GXALL</code></td>
+<td><a href="air-seats.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/book/reserve_air_seat/resources" target="_blank">AirSeatLLSRQ</a> <em>(2.0.0)</em></td>
+<td>&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/AirSeatLLSRQ_v2.0.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/AirSeatLLSRS_v2.0.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/AirSeatLLS2.0.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>4G1/25A-1.1</code></td>
+<td><a href="air-seats.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/fulfill/issue_air_ticket/resources" target="_blank">AirTicketLLSRQ</a> <em>(2.9.0)</em></td>
+<td>&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438;&#x43B;&#x438; EMD</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/AirTicketLLSRQ_v2.9.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/AirTicketLLSRS_v2.9.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/AirTicketLLS2.9.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>W&#xA5;PQ1</code></td>
+<td><a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad/resources" target="_blank">BargainFinderMax_ADRQ</a> <em>(1.9.7)</em></td>
+<td>&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x433;&#x438;&#x431;&#x43A;&#x438;&#x43C;&#x438; &#x434;&#x430;&#x442;&#x430;&#x43C;&#x438;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/shopping/BargainFinderMax_ADRQ_v1-9-7_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/shopping/BargainFinderMax_ADRS_v1-9-7_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/shopping/GroupedItineraryResponse_v2016Q3.0_Design.xml" target="_blank">GIR &#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/shopping/BargainFinderMax_ADRQ_v1-9-7.wsdl" target="_blank">WSDL</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/shopping/BargainFinderMax_ADRQ_GIR_v2016Q3.0.wsdl" target="_blank">GIR WSDL</a></td>
+<td>-</td>
+<td><a href="alternate-date.html">&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x433;&#x438;&#x431;&#x43A;&#x438;&#x43C;&#x438; &#x434;&#x430;&#x442;&#x430;&#x43C;&#x438;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/resources" target="_blank">BargainFinderMaxRQ</a> <em>(1.9.7)</em></td>
+<td>&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/shopping/BargainFinderMaxRQ_v1-9-7_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/shopping/BargainFinderMaxRS_v1-9-7_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/shopping/GroupedItineraryResponse_v2016Q3.0_Design.xml" target="_blank">GIR &#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/shopping/BargainFinderMaxRQ_v1-9-7.wsdl" target="_blank">WSDL</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/shopping/BargainFinderMaxRQ_GIR_v2016Q3.0.wsdl" target="_blank">GIR WSDL</a></td>
+<td>-</td>
+<td><a href="search.html">&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/utility/change_aaa/resources" target="_blank">ContextChangeLLSRQ</a> <em>(2.0.3)</em></td>
+<td>&#x41F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; PCC</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/ContextChangeLLSRQ_v2.0.3_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/ContextChangeLLSRS_v2.0.3_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/ContextChangeLLS2.0.3RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>AAA9LSC</code></td>
+<td><a href="create-booking.html">&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>, <a href="void-ticket.html">&#x412;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/air/book/create_passenger_name_record/resources" target="_blank">CreatePassengerNameRecordRQ</a> <em>(1.0.0)</em></td>
+<td>&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/ServicesPlatform/CreatePassengerNameRecordRQ_v1.0.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/ServicesPlatform/CreatePassengerNameRecordRS_v1.0.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/ServicesPlatform/CreatePassengerNameRecord1.0.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="create-booking.html">&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/designate_printer/resources" target="_blank">DesignatePrinterLLSRQ</a> <em>(2.0.1)</em></td>
+<td>&#x412;&#x44B;&#x431;&#x43E;&#x440; &#x43F;&#x440;&#x438;&#x43D;&#x442;&#x435;&#x440;&#x430; &#x438;&#x43B;&#x438; &#x441;&#x442;&#x43E;&#x43A;&#x430;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/DesignatePrinterLLSRQ_v2.0.1_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/DesignatePrinterLLSRS_v2.0.1_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/DesignatePrinterLLS2.0.1RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>W*RU</code></td>
+<td><a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>, <a href="void-ticket.html">&#x412;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/utility/get_currency_conversion/resources" target="_blank">DisplayCurrencyLLSRQ</a> <em>(2.1.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x43E;&#x432; &#x432;&#x430;&#x43B;&#x44E;&#x442;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/DisplayCurrencyLLSRQ_v2.1.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/DisplayCurrencyLLSRS_v2.1.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/DisplayCurrencyLLS2.1.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>DC*RU/EUR*</code></td>
+<td><a href="currency-rates.html">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x43E;&#x432; &#x432;&#x430;&#x43B;&#x44E;&#x442;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/end_transaction/resources" target="_blank">EndTransactionLLSRQ</a> <em>(2.0.6)</em></td>
+<td>&#x421;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/EndTransactionLLSRQ_v2.0.6_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/EndTransactionLLSRS_v2.0.6_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/EndTransactionLLS2.0.6RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>E</code></td>
+<td><a href="ancillaries.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x443;&#x433;</a>, <a href="air-seats.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</a>, <a href="edit-booking.html">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="split-booking.html">&#x414;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="cancel-booking.html">&#x41E;&#x442;&#x43C;&#x435;&#x43D;&#x430; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="reprice.html">&#x41F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</a>, <a href="queues.html">&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x435;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/book/orchestrated_air_booking/resources" target="_blank">EnhancedAirBookRQ</a> <em>(3.7.0)</em></td>
+<td>&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x438; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/ServicesPlatform/EnhancedAirBookRQ_v3.7.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/ServicesPlatform/EnhancedAirBookRS_v3.7.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/ServicesPlatform/EnhancedAirBook3.7.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td></td>
+<td><a href="create-booking.html">&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="alternate-fares.html">Branded Fares</a>, <a href="unconfirmed.html">&#x41D;&#x435;&#x43F;&#x43E;&#x434;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x43C;&#x435;&#x441;&#x442;&#x430;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/air/book/seat_map/resources" target="_blank">EnhancedSeatMapRQ</a> <em>(4.0.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43A;&#x430;&#x440;&#x442;&#x44B; &#x43C;&#x435;&#x441;&#x442;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/Merchandising/EnhancedSeatMapRQ_v4_0_Design_TN.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/Merchandising/EnhancedSeatMapRS_v4_0_Design_TN.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/Merchandising/EnhancedSeatMap_4_0_0.wsdl" target="_blank">WSDL</a></td>
+<td><code>4G1*</code></td>
+<td><a href="air-seats.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/fulfill/get_eticket_details/resources" target="_blank">eTicketCouponLLSRQ</a> <em>(2.0.0)</em></td>
+<td>&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x43C;&#x430;&#x441;&#x43A;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x438;&#x43B;&#x438; EMD</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/eTicketCouponLLSRQ_v2.0.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/eTicketCouponLLSRS_v2.0.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/eTicketCouponLLS2.0.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>WETR*DS5552481359014</code></td>
+<td><a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/air/search/get_brand_marketing_text/resources" target="_blank">GetMarketingTextRQ</a> <em>(1.0.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x438; &#x43E; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x430;&#x445; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430;</td>
+<td><a href="http://webservices.sabre.com/drc/providerdoc/Merchandising/GetMarketingTextRQ_v1.0.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/providerdoc/Merchandising/GetMarketingTextRS_v1.0.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/sabreXML1.0.00/Merchandising/GetMarketingText.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="alternate-fares.html">Branded Fares</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/ignore_transaction/resources" target="_blank">IgnoreTransactionLLSRQ</a> <em>(2.0.0)</em></td>
+<td>&#x418;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/IgnoreTransactionLLSRQ_v2.0.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/IgnoreTransactionLLSRS_v2.0.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/IgnoreTransactionLLS2.0.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>I</code></td>
+<td><a href="ancillaries.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x443;&#x433;</a>, <a href="air-seats.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</a>, <a href="edit-booking.html">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="fare-rules.html">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/search/air_availability/resources" target="_blank">OTA_AirAvailLLSRQ</a> <em>(2.3.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x438; &#x43E; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x438; &#x43C;&#x435;&#x441;&#x442;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirAvailLLSRQ_v2.3.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirAvailLLSRS_v2.3.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/OTA_AirAvailLLS2.3.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>131DECMOWLED0000/D&#xA5;SU</code></td>
+<td><a href="availability.html">&#x41D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/book/price_air_itinerary/resources" target="_blank">OTA_AirPriceLLSRQ</a> <em>(2.14.0)</em></td>
+<td>&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirPriceLLSRQ_v2.14.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirPriceLLSRS_v2.14.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/OTA_AirPriceLLS2.14.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>WP</code></td>
+<td><a href="air-seats.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</a>, <a href="reprice.html">&#x41F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/book/air_fare_rules/resources" target="_blank">OTA_AirRulesLLSRQ</a> <em>(2.2.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x430; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirRulesLLSRQ_v2.2.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirRulesLLSRS_v2.2.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/OTA_AirRulesLLS2.2.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>RDLONMOW15APRYNRT-SU</code></td>
+<td><a href="fare-rules.html">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/search/flight_schedules/resources" target="_blank">OTA_AirScheduleLLSRQ</a> <em>(2.1.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirScheduleLLSRQ_v2.1.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/OTA_AirScheduleLLSRS_v2.1.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/OTA_AirScheduleLLS2.1.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>S31DECMOWLED0000/D&#xA5;SU</code></td>
+<td><a href="schedules.html">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x430;&#x441;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/book/cancel_itinerary_segments/resources" target="_blank">OTA_CancelLLSRQ</a> <em>(2.0.2)</em></td>
+<td>&#x423;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/OTA_CancelLLSRQ_v2.0.2_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/OTA_CancelLLSRS_v2.0.2_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/OTA_CancelLLS2.0.2RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>XI</code></td>
+<td><a href="cancel-booking.html">&#x41E;&#x442;&#x43C;&#x435;&#x43D;&#x430; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/session_management/refresh_session/resources" target="_blank">OTA_PingRQ</a> <em>(1.0.0)</em></td>
+<td>&#x41E;&#x431;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/OTA_PingRQ_v1.0.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/OTA_PingRS_v1.0.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/sabreXML1.0.00/usg/OTA_PingRQ.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="sessions.html">&#x421;&#x435;&#x441;&#x441;&#x438;&#x438;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/Passenger_Details/resources" target="_blank">PassengerDetailsRQ</a> <em>(3.3.0)</em></td>
+<td>&#x414;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43E; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430;&#x445;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/ServicesPlatform/PassengerDetailsRQ_v3.3.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/ServicesPlatform/PassengerDetailsRS_v3.3.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/ServicesPlatform/PassengerDetails3.3.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="create-booking.html">&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/search/Shop_by_Specific_Fare/resources" target="_blank">PromotionalShoppingRQ</a> <em>(1.0.4)</em></td>
+<td>&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43C;&#x435;&#x441;&#x442; &#x43F;&#x43E; &#x43A;&#x43E;&#x434;&#x443; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/shopping/PromotionalRQ_v1-0-4_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/shopping/PromotionalRS_v1-0-4_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/shopping/PromotionalRQ_v1-0-4.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="shop-by-fare.html">&#x41F;&#x43E;&#x438;&#x441;&#x43A; &#x43F;&#x43E; &#x43A;&#x43E;&#x434;&#x443; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/queue/access_queue/resources" target="_blank">QueueAccessLLSRQ</a> <em>(2.0.7)</em></td>
+<td>&#x423;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x44F;&#x43C;&#x438;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/QueueAccessLLSRQ_v2.0.7_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/QueueAccessLLSRS_v2.0.7_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/QueueAccessLLS2.0.7RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>Q/7</code></td>
+<td><a href="queues.html">&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x435;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/queue/get_queue_count/resources" target="_blank">QueueCountLLSRQ</a> <em>(2.2.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x43F;&#x438;&#x441;&#x43A;&#x430; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x435;&#x439;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/QueueCountLLSRQ_v2.2.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/QueueCountLLSRS_v2.2.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/QueueCountLLS2.2.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>QC/</code></td>
+<td><a href="queues.html">&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x435;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/queue/place_queue_message/resources" target="_blank">QueuePlaceLLSRQ</a> <em>(2.0.4)</em></td>
+<td>&#x41F;&#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x430; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x432; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x44C;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/QueuePlaceLLSRQ_v2.0.4_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/QueuePlaceLLSRS_v2.0.4_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/QueuePlaceLLS2.0.4RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>QP/155/11</code></td>
+<td><a href="queues.html">&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x435;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/air/book/fare_rules_from_air_price/resources" target="_blank">RulesFromPriceLLSRQ</a> <em>(2.0.0)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x430; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x434;&#x43B;&#x44F; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/RulesFromPriceLLSRQ_v2.0.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/RulesFromPriceLLSRS_v2.0.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/RulesFromPriceLLS2.0.0RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>WPRD*S1&#xA5;C16</code></td>
+<td><a href="fare-rules.html">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/send_sabre_command/resources" target="_blank">SabreCommandLLSRQ</a> <em>(1.8.1)</em></td>
+<td>&#x41E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/SabreCommandLLSRQ_v1.8.1_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/SabreCommandLLSRS_v1.8.1_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/sabreXML1.0.00/tpf/SabreCommandLLS1.8.1RQ.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="SabreCommandLLSRQ">&#x41E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;</a>, <a href="ancillaries.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x443;&#x433;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/session_management/close_session/resources" target="_blank">SessionCloseRQ</a> <em>(1.0.1)</em></td>
+<td>&#x417;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</td>
+<td><a href="http://webservices.sabre.com/wsdl/sabreXML1.0.00/usg/SessionCloseRQ.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="sessions.html">&#x421;&#x435;&#x441;&#x441;&#x438;&#x438;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/session_management/create_session/resources" target="_blank">SessionCreateRQ</a> <em>(1.0.0)</em></td>
+<td>&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/SessionCreateRQ_Envelope_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/SessionCreateRS_Envelope_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/sabreXML1.0.00/usg/SessionCreateRQ.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="sessions.html">&#x421;&#x435;&#x441;&#x441;&#x438;&#x438;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/add_special_service/resources" target="_blank">SpecialServiceLLSRQ</a> <em>(2.2.1)</em></td>
+<td>&#x41E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; SSR</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/SpecialServiceLLSRQ_v2.2.1_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/SpecialServiceLLSRS_v2.2.1_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/SpecialServiceLLS2.2.1RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>3ABAG1/PREPAID-1.1</code></td>
+<td><a href="ancillaries.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x443;&#x433;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/air/utility/get_structured_fare_rules/resources" target="_blank">StructureFareRulesRQ</a> <em>(1.0.2)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/SabreAir/StructureFareRulesRQ_v1.0.2_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/SabreAir/StructureFareRulesRS_v1.0.2_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/SabreAir/StructureFareRulesRQ_v1.0.2.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="fare-rules.html">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/display_audit_trail/resources" target="_blank">TKT_TravelAgencyReportsRQ</a> <em>(1.2.1)</em></td>
+<td>&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430; &#x43E; &#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/Ticketing/TKT_TravelAgencyReportsRQ_v.1.2.1.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/Ticketing/TKT_TravelAgencyReportsRS_v.1.2.1.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/fulfillment/TKT_AsrServices_v.1.2.1.wsdl" target="_blank">WSDL</a></td>
+<td><code>DQB*</code></td>
+<td><a href="sales-report.html">&#x424;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x43E;&#x432;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/session_management/create_access_token/resources" target="_blank">TokenCreateRQ</a> <em>(1.0.0)</em></td>
+<td>&#x421;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;</td>
+<td><a href="http://files.developer.sabre.com/doc/servicedoc/TokenCreateRQ_Envelope_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/servicedoc/TokenCreateRS_Envelope_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/usg/TokenCreateRQ.wsdl" target="_blank">WSDL</a></td>
+<td>-</td>
+<td><a href="sessions.html">&#x421;&#x435;&#x441;&#x441;&#x438;&#x438;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/divide_itinerary/resources" target="_blank">TravelItineraryDivideLLSRQ</a> <em>(2.0.2)</em></td>
+<td>&#x414;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/TravelItineraryDivideLLSRQ_v2.0.2_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/TravelItineraryDivideLLSRS_v2.0.2_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/TravelItineraryDivideLLS2.0.2RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>D2.1</code></td>
+<td><a href="split-booking.html">&#x414;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/modify_itinerary/resources" target="_blank">TravelItineraryModifyInfoLLSRQ</a> <em>(2.1.1)</em></td>
+<td>&#x420;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/TravelItineraryModifyInfoLLSRQ_v2.1.1_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/TravelItineraryModifyInfoLLSRS_v2.1.1_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/TravelItineraryModifyInfoLLS2.1.1RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>PE1&#xA4;</code></td>
+<td><a href="edit-booking.html">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary/resources" target="_blank">TravelItineraryReadRQ</a> <em>(3.8.0)</em></td>
+<td>&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</td>
+<td><a href="http://files.developer.sabre.com/doc/providerdoc/pnrservices/TravelItineraryReadRQ_3.8.0_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://files.developer.sabre.com/doc/providerdoc/pnrservices/TravelItineraryReadRS_3.8.0_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://files.developer.sabre.com/wsdl/sabreXML1.0.00/pnrservices/TravelItineraryReadRQ3.8.0.wsdl" target="_blank">WSDL</a></td>
+<td><code>*ABCDEF</code></td>
+<td><a href="ancillaries.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x443;&#x441;&#x43B;&#x443;&#x433;</a>, <a href="air-seats.html">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x441;&#x442; &#x432; &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x435;</a>, <a href="edit-booking.html">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="split-booking.html">&#x414;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="cancel-booking.html">&#x41E;&#x442;&#x43C;&#x435;&#x43D;&#x430; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a>, <a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>, <a href="reprice.html">&#x41F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</a>, <a href="void-ticket.html">&#x412;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>, <a href="queues.html">&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x447;&#x435;&#x440;&#x435;&#x434;&#x435;&#x439;</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/Void_Air_Ticket/resources" target="_blank">VoidTicketLLSRQ</a> <em>(2.0.2)</em></td>
+<td>&#x412;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438;&#x43B;&#x438; EMD</td>
+<td><a href="http://webservices.sabre.com/drc/servicedoc/VoidTicketLLSRQ_v2.0.2_Design.xml" target="_blank">&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441;</a>, <a href="http://webservices.sabre.com/drc/servicedoc/VoidTicketLLSRS_v2.0.2_Design.xml" target="_blank">&#x41E;&#x442;&#x432;&#x435;&#x442;</a>, <a href="http://webservices.sabre.com/wsdl/tpfc/VoidTicketLLS2.0.2RQ.wsdl" target="_blank">WSDL</a></td>
+<td><code>WV2</code></td>
+<td><a href="void-ticket.html">&#x412;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a></td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./configuration.html" class="navigation navigation-prev " aria-label="Previous page: Конфигурация Sabre"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./sessions.html" class="navigation navigation-next " aria-label="Next page: Сессии"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-hide-published-with/plugin.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/sectionx.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-special-sections/redraw.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"ga":{"token":"UA-80320390-1","configuration":"auto"},"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
