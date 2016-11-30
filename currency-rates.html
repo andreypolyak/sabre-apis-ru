@@ -1,618 +1,632 @@
+
 <!DOCTYPE HTML>
-<html lang="en" >
-    
+<html lang="" >
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Получение курсов валют | Рекомендации по работе с Sabre APIs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Получение курсов валют · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
+    
     <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-special-sections/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-special-sections/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-special-sections/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
     
         
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/website.css">
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/sectionx.css">
+    
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-special-sections/website.css">
+    
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
-        
-    
-    
-        <link rel="stylesheet" href="./styles/website.css">
     
 
         
     
     
-    <link rel="next" href="./fare-rules.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fare-rules.html" />
     
     
-    <link rel="prev" href="./void-ticket.html" />
+    <link rel="prev" href="void-ticket.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="14"
-        data-chapter-title="Получение курсов валют"
-        data-filepath="currency-rates.md"
-        data-basepath="."
-        data-revision="Fri Nov 25 2016 16:49:02 GMT+0300 (Russia TZ 2 Standard Time)"
-        data-innerlanguage="">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="./index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Рекомендации по работе с Sabre APIs
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="introduction.html">
-            
-                
-                    <a href="./introduction.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Начало работы
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="configuration.html">
-            
-                
-                    <a href="./configuration.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        Конфигурация Sabre
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="services.html">
-            
-                
-                    <a href="./services.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        Список сервисов
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="sessions.html">
-            
-                
-                    <a href="./sessions.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        Сессии
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="search.html">
-            
-                
-                    <a href="./search.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        Поиск перелетов
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1" data-path="alternate-date.html">
-            
-                
-                    <a href="./alternate-date.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.1.</b>
-                        
-                        Поиск с гибкими датами
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2" data-path="shop-by-fare.html">
-            
-                
-                    <a href="./shop-by-fare.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.2.</b>
-                        
-                        Поиск по коду тарифа
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="create-booking.html">
-            
-                
-                    <a href="./create-booking.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        Создание бронирований
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1" data-path="alternate-fares.html">
-            
-                
-                    <a href="./alternate-fares.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.1.</b>
-                        
-                        Branded Fares
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.2" data-path="unconfirmed.html">
-            
-                
-                    <a href="./unconfirmed.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.2.</b>
-                        
-                        Неподтвержденные места
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="ancillaries.html">
-            
-                
-                    <a href="./ancillaries.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.</b>
-                        
-                        Бронирование доп. услуг
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8" data-path="air-seats.html">
-            
-                
-                    <a href="./air-seats.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.</b>
-                        
-                        Бронирование мест в салоне
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="9" data-path="edit-booking.html">
-            
-                
-                    <a href="./edit-booking.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>9.</b>
-                        
-                        Редактирование бронирований
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="10" data-path="split-booking.html">
-            
-                
-                    <a href="./split-booking.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>10.</b>
-                        
-                        Деление бронирований
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="11" data-path="cancel-booking.html">
-            
-                
-                    <a href="./cancel-booking.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>11.</b>
-                        
-                        Отмена бронирований
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="12" data-path="issue-ticket.html">
-            
-                
-                    <a href="./issue-ticket.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>12.</b>
-                        
-                        Оформление билетов и EMD
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="12.1" data-path="reprice.html">
-            
-                
-                    <a href="./reprice.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>12.1.</b>
-                        
-                        Перерасчет стоимости
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="13" data-path="void-ticket.html">
-            
-                
-                    <a href="./void-ticket.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>13.</b>
-                        
-                        Войдирование билетов и EMD
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="14" data-path="currency-rates.html">
-            
-                
-                    <a href="./currency-rates.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>14.</b>
-                        
-                        Получение курсов валют
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="15" data-path="fare-rules.html">
-            
-                
-                    <a href="./fare-rules.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>15.</b>
-                        
-                        Получение правил тарифа
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="16" data-path="schedules.html">
-            
-                
-                    <a href="./schedules.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.</b>
-                        
-                        Получение расписаний
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="17" data-path="availability.html">
-            
-                
-                    <a href="./availability.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>17.</b>
-                        
-                        Наличие мест
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="18" data-path="commands.html">
-            
-                
-                    <a href="./commands.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>18.</b>
-                        
-                        Отправка терминальных команд
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="19" data-path="queues.html">
-            
-                
-                    <a href="./queues.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>19.</b>
-                        
-                        Использование очередей
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="20" data-path="sales-report.html">
-            
-                
-                    <a href="./sales-report.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>20.</b>
-                        
-                        Формирование отчетов
-                    </a>
-            
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Published with GitBook
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Рекомендации по работе с Sabre APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Начало работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    Конфигурация Sabre
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="services.html">
+            
+                <a href="services.html">
+            
+                    
+                    Список сервисов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="sessions.html">
+            
+                <a href="sessions.html">
+            
+                    
+                    Сессии
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Поиск перелетов
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="alternate-date.html">
+            
+                <a href="alternate-date.html">
+            
+                    
+                    Поиск с гибкими датами
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="shop-by-fare.html">
+            
+                <a href="shop-by-fare.html">
+            
+                    
+                    Поиск по коду тарифа
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="create-booking.html">
+            
+                <a href="create-booking.html">
+            
+                    
+                    Создание бронирований
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="alternate-fares.html">
+            
+                <a href="alternate-fares.html">
+            
+                    
+                    Branded Fares
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="unconfirmed.html">
+            
+                <a href="unconfirmed.html">
+            
+                    
+                    Неподтвержденные места
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ancillaries.html">
+            
+                <a href="ancillaries.html">
+            
+                    
+                    Бронирование доп. услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="air-seats.html">
+            
+                <a href="air-seats.html">
+            
+                    
+                    Бронирование мест в салоне
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="edit-booking.html">
+            
+                <a href="edit-booking.html">
+            
+                    
+                    Редактирование бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="split-booking.html">
+            
+                <a href="split-booking.html">
+            
+                    
+                    Деление бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="cancel-booking.html">
+            
+                <a href="cancel-booking.html">
+            
+                    
+                    Отмена бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="issue-ticket.html">
+            
+                <a href="issue-ticket.html">
+            
+                    
+                    Оформление билетов и EMD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="reprice.html">
+            
+                <a href="reprice.html">
+            
+                    
+                    Перерасчет стоимости
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="void-ticket.html">
+            
+                <a href="void-ticket.html">
+            
+                    
+                    Войдирование билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15" data-path="currency-rates.html">
+            
+                <a href="currency-rates.html">
+            
+                    
+                    Получение курсов валют
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="fare-rules.html">
+            
+                <a href="fare-rules.html">
+            
+                    
+                    Получение правил тарифа
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="schedules.html">
+            
+                <a href="schedules.html">
+            
+                    
+                    Получение расписаний
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    Наличие мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="commands.html">
+            
+                <a href="commands.html">
+            
+                    
+                    Отправка терминальных команд
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="queues.html">
+            
+                <a href="queues.html">
+            
+                    
+                    Использование очередей
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="sales-report.html">
+            
+                <a href="sales-report.html">
+            
+                    
+                    Формирование отчетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >Рекомендации по работе с Sabre APIs</a>
+        <a href="." >Получение курсов валют</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x43A;&#x443;&#x440;&#x441;&#x43E;&#x432;-&#x432;&#x430;&#x43B;&#x44E;&#x442;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x43E;&#x432; &#x432;&#x430;&#x43B;&#x44E;&#x442;</h1>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x43A;&#x443;&#x440;&#x441;&#x43E;&#x432;-&#x432;&#x430;&#x43B;&#x44E;&#x442;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x43E;&#x432; &#x432;&#x430;&#x43B;&#x44E;&#x442;</h1>
 <p>&#x41A;&#x443;&#x440;&#x441;&#x44B; &#x432;&#x430;&#x43B;&#x44E;&#x442; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/get_currency_conversion/resources" target="_blank">DisplayCurrencyLLSRQ</a>.</p>
 <p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
 <ul>
 <li><code>/DisplayCurrencyRQ/CountryCode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x44B; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x433;&#x43E; PCC</li>
 <li><code>/DisplayCurrencyRQ/CurrencyCode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x432;&#x430;&#x43B;&#x44E;&#x442;&#x44B; &#x441; &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B;&#x43E;&#x43C; &#x437;&#x432;&#x435;&#x437;&#x434;&#x43E;&#x447;&#x43A;&#x430; (<code>*</code>) &#x43D;&#x430; &#x43A;&#x43E;&#x43D;&#x446;&#x435;</li>
 </ul>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="347172"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="347172"><div class="panel-body"><pre class="XML"><code class="lang-XML">
-<span class="hljs-tag">&lt;<span class="hljs-title">DisplayCurrencyRQ</span> <span class="hljs-attribute">ReturnHostCommand</span>=<span class="hljs-value">&quot;true&quot;</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.1.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">CountryCode</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-title">CountryCode</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">CurrencyCode</span>&gt;</span>EUR*<span class="hljs-tag">&lt;/<span class="hljs-title">CurrencyCode</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">DisplayCurrencyRQ</span>&gt;</span>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;<a class="pull-right section atTitle btn btn-default" target="929596"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="929596"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-name">DisplayCurrencyRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CountryCode</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">CountryCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span>&gt;</span>EUR*<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DisplayCurrencyRQ</span>&gt;</span>
 </code></pre></div></div></div></p>
-<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="618608"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="618608"><div class="panel-body"><pre class="XML"><code class="lang-XML">
-<span class="hljs-tag">&lt;<span class="hljs-title">DisplayCurrencyRS</span> <span class="hljs-attribute">Version</span>=<span class="hljs-value">&quot;2.1.0&quot;</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attribute">xmlns:stl</span>=<span class="hljs-value">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attribute">xmlns:xs</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">stl:ApplicationResults</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">&quot;Complete&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">stl:Success</span> <span class="hljs-attribute">timeStamp</span>=<span class="hljs-value">&quot;2016-01-31T09:58:21-06:00&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">stl:SystemSpecificResults</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">stl:HostCommand</span> <span class="hljs-attribute">LNIATA</span>=<span class="hljs-value">&quot;3731E9&quot;</span>&gt;</span>DC*RU/EUR*<span class="hljs-tag">&lt;/<span class="hljs-title">stl:HostCommand</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">stl:SystemSpecificResults</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">stl:Success</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">stl:ApplicationResults</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">Country</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">&quot;EUROPEAN UNION&quot;</span> <span class="hljs-attribute">RPH</span>=<span class="hljs-value">&quot;1&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">CurrencyCode</span>&gt;</span>EUR<span class="hljs-tag">&lt;/<span class="hljs-title">CurrencyCode</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">CurrencyName</span>&gt;</span>EURO<span class="hljs-tag">&lt;/<span class="hljs-title">CurrencyName</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">DecimalPlaces</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">DecimalPlaces</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">Rate</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">&quot;BSR&quot;</span>&gt;</span>84.500068022554<span class="hljs-tag">&lt;/<span class="hljs-title">Rate</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">Country</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">DisplayCurrencyRS</span>&gt;</span>
+<p><div class="panel panel-default"><div class="panel-heading"><strong>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;<a class="pull-right section atTitle btn btn-default" target="950881"><span class="fa fa-angle-up"></span></a></strong></div><div class="panel-collapse in" id="950881"><div class="panel-body"><pre class="XML"><code class="lang-XML">
+<span class="hljs-tag">&lt;<span class="hljs-name">DisplayCurrencyRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-01-31T09:58:21-06:00&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;3731E9&quot;</span>&gt;</span>DC*RU/EUR*<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Success</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Country</span> <span class="hljs-attr">Name</span>=<span class="hljs-string">&quot;EUROPEAN UNION&quot;</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span>&gt;</span>EUR<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyName</span>&gt;</span>EURO<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyName</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DecimalPlaces</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">DecimalPlaces</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Rate</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;BSR&quot;</span>&gt;</span>84.500068022554<span class="hljs-tag">&lt;/<span class="hljs-name">Rate</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Country</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DisplayCurrencyRS</span>&gt;</span>
 </code></pre></div></div></div></p>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="./void-ticket.html" class="navigation navigation-prev " aria-label="Previous page: Войдирование билетов и EMD"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="./fare-rules.html" class="navigation navigation-next " aria-label="Next page: Получение правил тарифа"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="void-ticket.html" class="navigation navigation-prev " aria-label="Previous page: Войдирование билетов и EMD">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fare-rules.html" class="navigation navigation-next " aria-label="Next page: Получение правил тарифа">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="gitbook/app.js"></script>
+    </div>
 
-    
-    <script src="gitbook/plugins/gitbook-plugin-hide-published-with/plugin.js"></script>
-    
-
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-special-sections/sectionx.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-special-sections/redraw.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"ga":{"token":"UA-80320390-1","configuration":"auto"},"hide-published-with":{},"special-sections":{},"toc":{},"highlight":{},"search":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Получение курсов валют","level":"1.15","depth":1,"next":{"title":"Получение правил тарифа","level":"1.16","depth":1,"path":"fare-rules.md","ref":"fare-rules.md","articles":[]},"previous":{"title":"Войдирование билетов и EMD","level":"1.14","depth":1,"path":"void-ticket.md","ref":"void-ticket.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","toc","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"special-sections":{},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-80320390-1"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"currency-rates.md","mtime":"2016-11-25T07:38:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-30T21:59:08.300Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
 
         
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/sectionx.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/redraw.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
-    
 </html>
+

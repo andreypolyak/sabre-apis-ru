@@ -3,7 +3,6 @@
 Air extras:
 - AE SSR formats
 - possible values in seat map: http://files.developer.sabre.com/wsdl/sabreXML1.0.00/Merchandising/EnhancedSeatMap_4_0_0.xsd + http://www.aidx.aero/LinkClick.aspx?fileticket=j3S5zeEynew%3D
-- Book air seats. Change workflow to ESM -> PD
 
 Shopping:
 - BFM response explanation
