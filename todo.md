@@ -12,8 +12,7 @@ Shopping:
 - no activation for BFM AD
 - BFM AD Example
 - BFM Simple example
-- OnlineIndicator from stops topic to carrier topic
-- check if valid interline indicator is in doc
+- Max stops quantity for all legs or one? also check max connections
 
 Pricing:
 - Price without booking WPNC
@@ -29,20 +28,17 @@ Booking:
 - USA 3DOCO
 - frequent flyer cards for all carriers (paxport mail chain)
 - Ignore booking if unsuccessful
-- Use PassengerDetailsRQ to edit existing PNR
 - Baggage info at pricing ???
+- 4DOCS
 
 Configuration:
-- TJR minimum connect time edit https://formatfinder.sabre.com/Content/TravelJournalRecordTJR/TJRPNR/TJRPNROptionalEditsSLWarnings.aspx?ItemID=4e549c762834415992406a2e084c0f9d
-- W/ALDUPT¥ON 
 - VITA
-- Configuration (commands for keywords and Branch Access)
+- Minimum Connect Time Edit -- doesn't work
 
 Other:
 - structurefarerulesrq - alghoritm
 - TCH ???
 - ENS
-- List of services with corresponding host commands
 - Corporate agencies ???
 - Sabre Profiles
 - Tripcase
@@ -66,5 +62,3 @@ Unconfirmed:
 - retry rebook in EAB
 - WPNCB
 - promotional shopping
-
-
