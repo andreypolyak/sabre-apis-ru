@@ -21,5 +21,10 @@
 }
 
 .book-summary {
-	width: 320px !important;
+	width: 330px !important;
 }
+
+@media (min-width: 600px) {
+.book.with-summary .book-body {
+    left: 330px !important;
+}}

@@ -30,6 +30,7 @@ Booking:
 - Ignore booking if unsuccessful
 - Baggage info at pricing ???
 - 4DOCS
+- PNR elements with links to TIR elements
 
 Configuration:
 - VITA
@@ -49,7 +50,6 @@ Other:
 - parse TL SSR remarks
 - rules from price PAX category
 - VendorCodesLLSRQ https://developer.sabre.com/docs/read/soap_apis/utility/get_vendor_codes
-- Glossary ???
 - https://developer.sabre.com/docs/read/soap_apis/air/book/table_display ???
 - Timeout in soap envelope -- see orch. guide
 
