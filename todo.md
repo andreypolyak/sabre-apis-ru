@@ -54,9 +54,6 @@ Other:
 - Timeout in soap envelope -- see orch. guide
 
 Updates:
-- TIR 3.8.0
-- AirTicketLLSRQ 2.9.0
-- OTA_AirPriceLLSRQ 2.14.0
 
 Unconfirmed:
 - retry rebook in EAB
