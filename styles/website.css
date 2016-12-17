@@ -28,3 +28,19 @@
 .book.with-summary .book-body {
     left: 330px !important;
 }}
+
+.textarea-tjr {
+	width: 100%;
+	overflow:hidden;
+	font-size:14px;
+	line-height: normal;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+.td-tjr {
+	width: 50%;
+}
+
+#tjr-alert-error, #tjr-alert-ok, #tjr-results-table, #tjr-results-label {
+	display: none;
+}
