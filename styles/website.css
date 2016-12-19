@@ -21,7 +21,8 @@
 }
 
 .book-summary {
-	width: 330px !important;
+	width: 330px;
+	left: -330px;
 }
 
 @media (min-width: 600px) {
