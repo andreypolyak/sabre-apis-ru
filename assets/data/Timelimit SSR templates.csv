@@ -1,0 +1,107 @@
+Авиакомпания;Часовой пояс;Шаблон
+4U;GMT;1S TO 4U ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD
+5N;GMT;1S 5N-{fltnum}/{fltdd}{fltMMM}{fltyy} BY {dd}{MMM}/{HH}{mm}Z OR CNL
+8Q;GMT;1S PLS ADTK OR CNL 8Q FLIGHT BY {dd}{MMM} {HH} {mm} GMT
+9U;Город в сообщении;1S.ISSUE TICKETS BY {dd}{MMM} {HH}{mm} LT {cty} OR CANX
+9W;Город в сообщении;1S TO 9W BY {dd}{MMM}{yy} {HH}{mm}{cty} {dd}{MMM}{yy} {HH}{mm}{country} ELSE WILL BE XXLD
+A3;Город в сообщении;1S AUTO XX IF ELECTRONIC TKT NR NOT RCVD BY {dd}{MMM}{yy} {HH}{mm} {cty} LT
+A9;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY {HH}{mm}/{dd}{MMM}/{cty} LT
+AB;GMT;1S AB WILL CXL OR SEND ADM IF NO TKT IS ISSUED BY {HH}{mm}GMT0/{dd}{MMM}{yy}
+AD;GMT;1S TO AD ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD
+AF;Не указано;1S TO AF BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD
+AI;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY AI BY {HH}{mm}/{dd}{MMM}/{cty} LT
+AR;CST (GMT-6);1S PLS ADV TKNO BY {HH}{mm} {dd}{MMM} CST OR WILL XXL SET {msgdd}{msgMMM}{msgyy}
+AT;Не указано;1S ADTK BY {HH}{mm} LOCAL TIME/{dd}{MMM}{yyyy} OR SPACE WILL BE CXLD
+AV;GMT;1S PLEASE SEND AVTA TKNA BY {HH}{mm}/{dd}{MMM} GMT USING ATN ENTRY
+AY;Город в сообщении;1S IF NO TKT IS ISSUED BY {dd}{MMM}{yyyy}/{HH}{mm} {cty} TIME
+AZ;Город в сообщении;1S TO AZ BY {dd}{MMM} {HH}{mm} {cty} OR AZ FLTS WILL BE CNLD
+AZ;Не указано;1S TO AZ BY {dd}{MMM} OR AZ FLTS WILL BE CNLD
+B2;Не указано;1S PLS ADV TKTNUMBR FOR B2 BY {dd}{MMM} {HH}{mm} OR AUTOCNL
+B2;Не указано;1S PLS ADV TKTNUMBR FOR B2 IN {cls} CLASS BY {dd}{MMM} {HH}{mm} OR AUTOCNL
+B6;Не указано;1S PLS TKT BY {dd}{MMM}{yy} {HH}{mm}{country} PER B6 AND SU BILATERAL
+BA;Не указано;1S ATTN FROM BA - ENTER VALID TICKET NBR BY {dd}{MMM}{yy}
+BT;GMT;1S PLS ADTK BY {dd}{MMM}{yy} {HH}{mm}Z OR BT SPACE WILL BE CANCELLED
+BT;GMT;1S REMINDER PLS ADTK BY {dd}{MMM}{yy} {HH}{mm}Z OR BT SPACE WILL BE CANCELLED
+CA;Не указано;1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL CA ALL SEGS
+CX;GMT;1S ADV TKT NBR TO CX/KA BY {dd}{MMM} {HH}{mm} GMT OR SUBJECT TO CANCEL
+CX;GMT;1S ADV TKT NBR TO CX/KA BY {dd}{MMM} GMT {HH}{mm} OR SUBJECT TO CANCEL
+CZ;Город в сообщении;1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL CZ BOOKING
+DE;GMT;1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}
+DK;GMT;1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}
+DL;Город в сообщении;AA {segstat}{paxnum}. PLS TKT BY {HH}{mm} {dd}{MMM}{yy} {cty}
+DV;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY DV BY {HH}{mm}/{dd}{MMM}/{cty} LT
+EK;Город в сообщении;AA  RITK/ADTKT BY {dd}{MMM} {HH}{mm} {cty} LT
+EK;Город в сообщении;AA  RITK/ADTKT BY {dd}{MMM} {HH}{mm} {cty} LT ELSE BKG WILL BE XXLD
+EL;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY EL BY {HH}{mm}/{dd}{MMM}/{cty} LT
+EY;Город в сообщении;1S ADTK BY {dd}{MMM}{yy} {HH}{mm} {cty} LT OR EY SPACE WILL BE CXLD
+FB;Не указано;1S ADTK BY {HH}{mm} LOCAL TIME/{dd}{MMM}{yyyy} OR SPACE WILL BE CXLD
+FI;GMT;1S PLS ADV TKT NBRS LATEST {dd}{MMM}{yy} {HH}{mm} GMT FI SEGMENTS OR ACC TO FARERULE IF EARLIER
+FJ;GMT;1S PLS ADTK ADV FJ TKTG DETAILS BY {dd}{MMM}{yy} {HH}{mm}Z
+FM;Город в сообщении;1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL FM{fltnum} {cls}{fltdd}{fltMMM}
+G3;GMT;1S SUBJ CXL ON/BEFORE {dd}{MMM} {HH}{mm}Z WITHOUT PAYMENT
+GF;GMT;1S BY {dd}{MMM}{yy} {HH}{mm}GMT OR GF WILL CANCEL
+HQ;GMT;1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}
+HU;Город в сообщении;1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL HU{fltnum} {cls}{fltdd}{fltMMM}
+HX;Город в сообщении;1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL HX{fltnum} {cls}{fltdd}{fltMMM}
+HY;Город в сообщении;1S.ISSUE TICKETS BY {dd}{MMM} {HH}{mm} LT {cty} OR CANX
+IB;GMT;1S IB REMINDS YOU TO ISSUE AND ADV E-TKT IN PNR BY {dd}{MMM}{yyyy} {HH}{mm} GMT0
+IZ;GMT;1S IZ PLZ PAY BY {dd}{MMM}{yy} {HH}{mm} GMT TO AVOID CANCELLATION
+J2;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY J2 BY {HH}{mm}/{dd}{MMM}/{cty} LT
+JL;Не указано;AA JL {cls}-CLS BY XX {dd}{MMM} XX USING SSR OR WILL BE XLD
+JU;Не указано;1S {****} ROBOTAUTO-PROCESS {dd}{MMM}{yyyy}/{HH}{mm} - SET {msgMM}/{msgdd}/{msgyy} {msgHH}{msgmm}
+KA;GMT;1S ADV TKT NBR TO CX/KA BY {dd}{MMM} {HH}{mm} GMT OR SUBJECT TO CANCEL
+KA;GMT;1S ADV TKT NBR TO CX/KA BY {dd}{MMM} GMT {HH}{mm} OR SUBJECT TO CANCEL
+KC;Город в сообщении;1S UNTIL {dd}{MMM}{yyyy}/{HH}{mm}/{cty}{dd}{MMM}{yyyy}/{HH}{mm}/{cty} OR XXLD
+KE;Город в сообщении;1S TO KE BY {dd}{MMM} {HH}{mm} {cty} OTHERWISE WILL BE XLD
+KK;Город в сообщении;1S TO KK BY {cty}{HH}{mm}/{dd}{MMM} OTHERWISE WILL BE XLD
+KL;GMT;1S TO KL BY {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE WILL BE XXLD
+KQ;GMT;1S TO KQ BY {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE WILL BE XXLD
+KQ;GMT;1S TO KQ/KL BY {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE WILL BE XXLD
+LA;Город в сообщении;1S PLS ADV TKT NBR BEFORE {dd}{MMM}{yy} {HH}{mm} {cty} LT OR AUTO CNL
+LH;GMT;1S PLS ISS AUTOMATIC TKT BY {dd}{MMM}{yy}/{HH}{mm}Z OR LH OPTG/MKTG SEGS WILL BE XLD. APPLIC FARE RULE APPLIES IF ITDEMANDS EARLIER TKTG.
+LO;Не указано;1S PLS ISSUE TKT BY {HH}{mm}/{dd}{MMM} OR LO ITIN WILL BE CXLD
+LX;GMT;1S PLS ADV TKT NBR FOR ITIN BY {dd}{MMM}{yy}/{HH}{mm}Z OR LX OPTG/MKTG FLTS WILL BE CNLD  {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}
+LY;Не указано;1S ADTK TO LY BY {dd}{MMM}{yyyy}/{HH}{mm} OR SPACE WILL BE CXLD AUTOMATICALLY
+MH;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY MH BY {HH}{mm}/{dd}{MMM}/{cty} LT
+MK;Не указано;1S PLS ADV TKT NO BY {HH}{mm}/{dd}{MMM}{yyyy} OR MK WILL CXL.
+MS;Не указано;1S TO MS BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD
+MT;GMT;1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}
+MU;Город в сообщении;1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL MU{fltnum} {cls}{fltdd}{fltMMM}
+OK;GMT;1S OK CANCELS IF NO TKT ADVISED BY {dd}{MMM} {HH}{mm}UTC
+OK;Не указано;1S KK1 TO OK BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE CANCELLED
+OS;GMT;1S PLS ADV TKT NBRS OF OS SEG LATEST {dd}{MMM}{yy} {HH}{mm}GMT OR SEG WILL BE CANX
+OZ;Не указано;1S TO OZ BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD
+PC;GMT;1S ADV TKNE OR XX BY {dd}{MMM} {HH} {mm} GMT
+PG;Город в сообщении;1S ADV TKTNBR BY {dd}{MMM}{yy} {HH}{mm} {cty} OR SEG WILL BE CXLD
+PR;Город в сообщении;1S ADV TKT BY {dd}{MMM}{yy} {HH}{mm} {cty} OR SEG WILL BE CXLD
+PS;Не указано;1S TO PS BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD
+PS;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY PS BY {HH}{mm}/{dd}{MMM}/{cty} LT
+QR;Не указано;1S PLS TICKET BY {HH}{mm}/{dd}{MMM}{yyyy} LCLT AT BOARD POINT OR QR WILL CXL
+R3;Город в сообщении;1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY R3 BY {HH}{mm}/{dd}{MMM}/{cty} LT
+RJ;Город в сообщении;1S AUTO XX IF SSR TKNA/E OR FA NOT RCVD BY RJ BY {dd}{MMM}{yy} {HH}{mm} {cty} LT
+RJ;Не указано;1S TO RJ BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD
+RO;Не указано;1S ADTK BY {HH}{mm}/{dd}{MMM}{yyyy} OR RO SPACE WILL BE CXLD
+S4;Город в сообщении;1S ADTK BY {HH}{mm} {cty}/{dd}{MMM}{yy} OR SP-S4 SPACE WILL BE CXLD
+S7;Город в сообщении;1S.ISSUE TKT BY {dd}{MMM} {HH}{mm} LT {cty} OR PNR WILL BE CXLD
+S7;Не указано;1S TO  S7  BY {dd}{MMM} OTHERWISE WILL BE XLD
+SK;Город в сообщении;1S ADTK WITHIN TKT DEADLINE OR SK WILL CNL AT {HH}{mm} {cty}/{dd}{MMM}{yy}
+SN;GMT;1S PLS ADV TKT NBR FOR ITIN BY {dd}{MMM}{yy}/{HH}{mm}Z OR SN OPTG/MKTG FLTS WILL BE CNLD  {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}
+SP;Город в сообщении;1S ADTK BY {HH}{mm} {cty}/{dd}{MMM}{yy} OR SP-S4 SPACE WILL BE CXLD
+SQ;Не указано;1S TO SQ BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD
+SU;Не указано;1S ATTN LAST DAY FOR TICKETING {dd}{MMM}{yy} OR PNR WILL BE CNLD
+SU;Не требуется;1S ATTN TKT MUST BE COMPLETED WITHIN {+HH} HOURS AFTER RES
+SU;Не требуется;1S ATTN CRT FLT TKT MUST BE COMPLETED WITHIN {+HH}H AFTER RES
+SU;Город в сообщении;1S ADV TKT BY {HH}{mm} {cty} {dd}{MMM} OR PNR WILL BE CXLD
+SU;Не указано;1S ATTN CRIT FLT LAST DAY FOR TICKETING {dd}{MMM}
+TG;Не указано;1S TO TG BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD
+TK;Не указано;AA TO  TK BY {dd}{MMM} {HH}{mm} IRC-2/ADV OTO TKT
+TK;Не указано;AA TO  TK BY {dd}{MMM} {HH}{mm} IRC-2/ADV MORE TKT
+TP;Город в сообщении;1S ADTK BY {HH}{mm} {cty}/{dd}{MMM}{yy} OR TP SPACE WILL BE CXLD
+U6;Город в сообщении;1S PLS ISSUE TKT BY {HH}{mm} {dd}{MMM}{yy}/{cty} OR SUBJECT TO AUTOCXL BY U6
+UA;Не указано;1S {segstat}{paxnum}.TKT UASEGS BY {dd}{MMM}{yy} TO AVOID AUTO CXL /EARLIER
+UT;GMT;1S UT-{fltnum}/{fltdd}{fltMMM}{fltyy} BY {dd}{MMM}/{HH}{mm}Z OR CNL
+UT;GMT;1S TO UT BY {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE CANCELLED
+UX;Не указано;1S PLS REMEMBER TO ADTK BY {HH}{mm}/{dd}{MMM}{yyyy} OR XX PNR/ UXSPCTRL
+VN;Город в сообщении;1S ADV TKT BY {dd}{MMM}{yy} {HH}{mm}{cty}RU OR WL BE CXLD
+VS;Не указано;1S {segstat}{paxnum}.UNTKTDVS SEGS MAY CANX {dd}{MM}{yy}
+YE;GMT;1S AUTO XX IF SSR TKNE NOT RCVD BY {HH}{mm}/{dd}{MMM}/UTC
