@@ -18,7 +18,8 @@ AZ;Город в сообщении;1S TO AZ BY {dd}{MMM} {HH}{mm} {cty} OR AZ F
 AZ;Не указано;1S TO AZ BY {dd}{MMM} OR AZ FLTS WILL BE CNLD
 B2;Не указано;1S PLS ADV TKTNUMBR FOR B2 BY {dd}{MMM} {HH}{mm} OR AUTOCNL
 B2;Не указано;1S PLS ADV TKTNUMBR FOR B2 IN {cls} CLASS BY {dd}{MMM} {HH}{mm} OR AUTOCNL
-B6;Не указано;1S PLS TKT BY {dd}{MMM}{yy} {HH}{mm}{country} PER B6 AND SU BILATERAL
+B6;Штат в сообщении;1S PLS TICKET OR CANCEL BY {dd}{MMM}{yy} {HH}{mm}{country}{state} PER GDS
+B6;Страна в сообщении;1S PLS TKT BY {dd}{MMM}{yy} {HH}{mm}{country} PER B6 AND SU BILATERAL
 BA;Не указано;1S ATTN FROM BA - ENTER VALID TICKET NBR BY {dd}{MMM}{yy}
 BT;GMT;1S PLS ADTK BY {dd}{MMM}{yy} {HH}{mm}Z OR BT SPACE WILL BE CANCELLED
 BT;GMT;1S REMINDER PLS ADTK BY {dd}{MMM}{yy} {HH}{mm}Z OR BT SPACE WILL BE CANCELLED
