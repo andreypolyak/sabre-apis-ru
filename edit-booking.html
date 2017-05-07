@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Редактирование бронирований · GitBook</title>
+        <title>Чтение и редактирование бронирований · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -111,7 +111,7 @@
 
     
         
-        <li class="header">С чего начать</li>
+        <li class="header">Введение</li>
         
         
     
@@ -167,12 +167,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="sessions.html">
+        <li class="chapter " data-level="2.5" data-path="authentication.html">
             
-                <a href="sessions.html">
+                <a href="authentication.html">
             
                     
-                    Сессии
+                    Аутентификация
             
                 </a>
             
@@ -205,7 +205,7 @@
                 <a href="alternate-date.html">
             
                     
-                    Поиск с гибкими датами
+                    Поиск по гибким датам
             
                 </a>
             
@@ -277,7 +277,7 @@
                 <a href="edit-booking.html">
             
                     
-                    Редактирование бронирований
+                    Чтение и редактирование бронирований
             
                 </a>
             
@@ -530,7 +530,7 @@
 
     
         
-        <li class="header">Другое</li>
+        <li class="header">Правила тарифов</li>
         
         
     
@@ -539,7 +539,7 @@
                 <a href="fare-rules.html">
             
                     
-                    Получение правил тарифа
+                    Получение текста правил
             
                 </a>
             
@@ -547,7 +547,27 @@
             
         </li>
     
-        <li class="chapter " data-level="8.2" data-path="currency-rates.html">
+        <li class="chapter " data-level="8.2" data-path="structure-fare-rules.html">
+            
+                <a href="structure-fare-rules.html">
+            
+                    
+                    Получение структурированных правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Другое</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="currency-rates.html">
             
                 <a href="currency-rates.html">
             
@@ -560,7 +580,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.3" data-path="schedules.html">
+        <li class="chapter " data-level="9.2" data-path="schedules.html">
             
                 <a href="schedules.html">
             
@@ -573,7 +593,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.4" data-path="availability.html">
+        <li class="chapter " data-level="9.3" data-path="availability.html">
             
                 <a href="availability.html">
             
@@ -586,7 +606,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.5" data-path="commands.html">
+        <li class="chapter " data-level="9.4" data-path="commands.html">
             
                 <a href="commands.html">
             
@@ -629,7 +649,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Редактирование бронирований</a>
+        <a href="." >Чтение и редактирование бронирований</a>
     </h1>
 </div>
 
@@ -644,7 +664,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;-&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;">&#x420;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</h1>
+                                <h1 id="&#x447;&#x442;&#x435;&#x43D;&#x438;&#x435;-&#x438;-&#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;-&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</h1>
 <hr>
 <p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
 <!-- toc -->
@@ -665,16 +685,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse255852">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse703892">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle255852"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle703892"></span>
                 </div>
               </div>
-              <div id="collapse255852" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse703892" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code255852">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code255852" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryReadRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;3.8.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/res/tir/v3_8&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code703892">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code703892" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryReadRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;3.8.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/res/tir/v3_8&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">MessagingDetails</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">SubjectAreas</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">SubjectArea</span>&gt;</span>FULL<span class="hljs-tag">&lt;/<span class="hljs-name">SubjectArea</span>&gt;</span>
@@ -690,16 +710,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse547930">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse84921">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle547930"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle84921"></span>
                 </div>
               </div>
-              <div id="collapse547930" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse84921" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code547930">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code547930" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">tir38:TravelItineraryReadRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;3.8.0&quot;</span> <span class="hljs-attr">xmlns:or18</span>=<span class="hljs-string">&quot;http://services.sabre.com/res/or/v1_8&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:tir38</span>=<span class="hljs-string">&quot;http://services.sabre.com/res/tir/v3_8&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code84921">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code84921" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">tir38:TravelItineraryReadRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;3.8.0&quot;</span> <span class="hljs-attr">xmlns:or18</span>=<span class="hljs-string">&quot;http://services.sabre.com/res/or/v1_8&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:tir38</span>=<span class="hljs-string">&quot;http://services.sabre.com/res/tir/v3_8&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-10T05:04:14.305-06:00&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
@@ -720,7 +740,7 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">tir38:GivenName</span>&gt;</span>ELENA MS<span class="hljs-tag">&lt;/<span class="hljs-name">tir38:GivenName</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">tir38:Surname</span>&gt;</span>IVANOVA<span class="hljs-tag">&lt;/<span class="hljs-name">tir38:Surname</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">tir38:PersonName</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">tir38:PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;03.01&quot;</span> <span class="hljs-attr">NameReference</span>=<span class="hljs-string">&quot;CHD&quot;</span> <span class="hljs-attr">PassengerType</span>=<span class="hljs-string">&quot;CNN&quot;</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">WithInfant</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">elementId</span>=<span class="hljs-string">&quot;pnr-7.3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tir38:PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;03.01&quot;</span> <span class="hljs-attr">PassengerType</span>=<span class="hljs-string">&quot;CNN&quot;</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">WithInfant</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">elementId</span>=<span class="hljs-string">&quot;pnr-7.3&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">tir38:Email</span> <span class="hljs-attr">Comment</span>=<span class="hljs-string">&quot;BC/&quot;</span>&gt;</span>AGENCY@AGENCY.COM<span class="hljs-tag">&lt;/<span class="hljs-name">tir38:Email</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">tir38:GivenName</span>&gt;</span>ANDREY<span class="hljs-tag">&lt;/<span class="hljs-name">tir38:GivenName</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">tir38:Surname</span>&gt;</span>IVANOV<span class="hljs-tag">&lt;/<span class="hljs-name">tir38:Surname</span>&gt;</span>
@@ -1177,16 +1197,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse609935">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse951549">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle609935"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle951549"></span>
                 </div>
               </div>
-              <div id="collapse609935" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse951549" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code609935">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code609935" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.7&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code951549">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code951549" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.7&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">EndTransaction</span> <span class="hljs-attr">Ind</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">ReceivedFrom</span>=<span class="hljs-string">&quot;SWS&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">EndTransactionRQ</span>&gt;</span>
@@ -1198,16 +1218,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse528265">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse605707">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle528265"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle605707"></span>
                 </div>
               </div>
-              <div id="collapse528265" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse605707" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code528265">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code528265" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.7&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code605707">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code605707" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.7&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-01-31T11:20:36-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1230,16 +1250,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse842687">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse811007">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle842687"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle811007"></span>
                 </div>
               </div>
-              <div id="collapse842687" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse811007" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code842687">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code842687" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>/&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code811007">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code811007" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>/&gt;</span>
 </code></pre>
                 </div>
               </div>
@@ -1248,16 +1268,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse826978">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse234049">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle826978"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle234049"></span>
                 </div>
               </div>
-              <div id="collapse826978" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse234049" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code826978">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code826978" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code234049">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code234049" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-02-01T02:43:23-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1314,16 +1334,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse259468">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse292788">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x434;&#x43B;&#x44F; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x442;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle259468"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle292788"></span>
                 </div>
               </div>
-              <div id="collapse259468" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse292788" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code259468">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code259468" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code292788">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code292788" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">CustomerInfo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ContactNumbers</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">ContactNumber</span> <span class="hljs-attr">Phone</span>=<span class="hljs-string">&quot;79852800029&quot;</span> <span class="hljs-attr">PhoneUseType</span>=<span class="hljs-string">&quot;M&quot;</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
@@ -1338,16 +1358,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse41718">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse456065">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle41718"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle456065"></span>
                 </div>
               </div>
-              <div id="collapse41718" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse456065" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code41718">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code41718" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code456065">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code456065" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T13:37:06-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1364,16 +1384,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse777253">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse955399">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x434;&#x43B;&#x44F; &#x443;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x442;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle777253"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle955399"></span>
                 </div>
               </div>
-              <div id="collapse777253" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse955399" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code777253">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code777253" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code955399">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code955399" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">CustomerInfo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ContactNumbers</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">ContactNumber</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
@@ -1388,16 +1408,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse548097">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse719197">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle548097"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle719197"></span>
                 </div>
               </div>
-              <div id="collapse548097" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse719197" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code548097">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code548097" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code719197">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code719197" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T13:37:41-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1414,16 +1434,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse488969">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse256884">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x434;&#x43B;&#x44F; &#x443;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x438;&#x445; &#x442;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D;&#x43E;&#x432;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle488969"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle256884"></span>
                 </div>
               </div>
-              <div id="collapse488969" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse256884" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code488969">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code488969" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code256884">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code256884" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">CustomerInfo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ContactNumbers</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">ContactNumber</span> <span class="hljs-attr">EndRPH</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
@@ -1438,16 +1458,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse311290">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse337662">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle311290"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle337662"></span>
                 </div>
               </div>
-              <div id="collapse311290" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse337662" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code311290">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code311290" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code337662">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code337662" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryModifyInfoRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T13:38:12-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1481,16 +1501,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse33105">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse932519">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x434;&#x43B;&#x44F; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x440;&#x435;&#x43C;&#x430;&#x440;&#x43A;&#x438;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle33105"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle932519"></span>
                 </div>
               </div>
-              <div id="collapse33105" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse932519" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code33105">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code33105" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code932519">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code932519" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">RemarkInfo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Remark</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;General&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>NEW REMARK<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
@@ -1505,16 +1525,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse380708">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse507788">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle380708"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle507788"></span>
                 </div>
               </div>
-              <div id="collapse380708" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse507788" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code380708">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code380708" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code507788">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code507788" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T12:57:48-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1531,16 +1551,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse721026">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse326885">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x434;&#x43B;&#x44F; &#x443;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x435;&#x43C;&#x430;&#x440;&#x43A;&#x438;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle721026"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle326885"></span>
                 </div>
               </div>
-              <div id="collapse721026" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse326885" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code721026">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code721026" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code326885">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code326885" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">RemarkInfo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Remark</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">RemarkInfo</span>&gt;</span>
@@ -1553,16 +1573,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse901855">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse343101">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle901855"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle343101"></span>
                 </div>
               </div>
-              <div id="collapse901855" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse343101" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code901855">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code901855" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code343101">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code343101" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T12:58:52-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1579,16 +1599,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse710668">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse249445">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x434;&#x43B;&#x44F; &#x443;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x438;&#x445; &#x440;&#x435;&#x43C;&#x430;&#x440;&#x43E;&#x43A;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle710668"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle249445"></span>
                 </div>
               </div>
-              <div id="collapse710668" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse249445" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code710668">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code710668" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code249445">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code249445" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">RemarkInfo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Remark</span> <span class="hljs-attr">EndNumber</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">RemarkInfo</span>&gt;</span>
@@ -1601,16 +1621,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse845159">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse536301">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle845159"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle536301"></span>
                 </div>
               </div>
-              <div id="collapse845159" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse536301" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code845159">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code845159" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code536301">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code536301" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ModifyRemarkRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.1.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T12:59:25-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1642,16 +1662,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse223252">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse77865">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle223252"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle77865"></span>
                 </div>
               </div>
-              <div id="collapse223252" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse77865" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code223252">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code223252" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">DeleteSpecialServiceRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.2.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code77865">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code77865" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">DeleteSpecialServiceRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.2.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">EndRPH</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">DeleteSpecialServiceRQ</span>&gt;</span>
 </code></pre>
@@ -1662,16 +1682,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse664539">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse767708">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle664539"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle767708"></span>
                 </div>
               </div>
-              <div id="collapse664539" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse767708" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code664539">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code664539" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">DeleteSpecialServiceRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.2.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code767708">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code767708" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">DeleteSpecialServiceRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.2.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T13:11:28-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1693,16 +1713,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse716376">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse854214">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle716376"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle854214"></span>
                 </div>
               </div>
-              <div id="collapse716376" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse854214" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code716376">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code716376" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRQ</span> <span class="hljs-attr">HaltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">IgnoreOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.3.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code854214">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code854214" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRQ</span> <span class="hljs-attr">HaltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">IgnoreOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.3.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PostProcessing</span> <span class="hljs-attr">IgnoreAfter</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">RedisplayReservation</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRQ</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">EndTransaction</span> <span class="hljs-attr">Ind</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
@@ -1730,16 +1750,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse866815">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse105016">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle866815"></span>
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle105016"></span>
                 </div>
               </div>
-              <div id="collapse866815" class="panel-collapse collapse" role="tabpanel">
+              <div id="collapse105016" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code866815">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code866815" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code105016">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code105016" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-11-03T08:31:17.242-05:00&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationResults</span>&gt;</span>
@@ -1793,7 +1813,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Редактирование бронирований","level":"4.3","depth":1,"next":{"title":"Отмена бронирований","level":"4.4","depth":1,"path":"cancel-booking.md","ref":"cancel-booking.md","articles":[]},"previous":{"title":"Неподтвержденные места","level":"4.2","depth":1,"path":"unconfirmed.md","ref":"unconfirmed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","toc","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"special-sections":{},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-80320390-1"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"edit-booking.md","mtime":"2017-03-31T18:15:53.455Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-02T22:02:30.358Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Чтение и редактирование бронирований","level":"4.3","depth":1,"next":{"title":"Отмена бронирований","level":"4.4","depth":1,"path":"cancel-booking.md","ref":"cancel-booking.md","articles":[]},"previous":{"title":"Неподтвержденные места","level":"4.2","depth":1,"path":"unconfirmed.md","ref":"unconfirmed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","toc","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"special-sections":{},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-80320390-1"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"edit-booking.md","mtime":"2017-05-04T19:53:19.969Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-07T09:38:06.740Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

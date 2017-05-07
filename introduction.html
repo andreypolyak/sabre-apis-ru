@@ -111,7 +111,7 @@
 
     
         
-        <li class="header">С чего начать</li>
+        <li class="header">Введение</li>
         
         
     
@@ -167,12 +167,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="sessions.html">
+        <li class="chapter " data-level="2.5" data-path="authentication.html">
             
-                <a href="sessions.html">
+                <a href="authentication.html">
             
                     
-                    Сессии
+                    Аутентификация
             
                 </a>
             
@@ -205,7 +205,7 @@
                 <a href="alternate-date.html">
             
                     
-                    Поиск с гибкими датами
+                    Поиск по гибким датам
             
                 </a>
             
@@ -277,7 +277,7 @@
                 <a href="edit-booking.html">
             
                     
-                    Редактирование бронирований
+                    Чтение и редактирование бронирований
             
                 </a>
             
@@ -530,7 +530,7 @@
 
     
         
-        <li class="header">Другое</li>
+        <li class="header">Правила тарифов</li>
         
         
     
@@ -539,7 +539,7 @@
                 <a href="fare-rules.html">
             
                     
-                    Получение правил тарифа
+                    Получение текста правил
             
                 </a>
             
@@ -547,7 +547,27 @@
             
         </li>
     
-        <li class="chapter " data-level="8.2" data-path="currency-rates.html">
+        <li class="chapter " data-level="8.2" data-path="structure-fare-rules.html">
+            
+                <a href="structure-fare-rules.html">
+            
+                    
+                    Получение структурированных правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Другое</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="currency-rates.html">
             
                 <a href="currency-rates.html">
             
@@ -560,7 +580,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.3" data-path="schedules.html">
+        <li class="chapter " data-level="9.2" data-path="schedules.html">
             
                 <a href="schedules.html">
             
@@ -573,7 +593,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.4" data-path="availability.html">
+        <li class="chapter " data-level="9.3" data-path="availability.html">
             
                 <a href="availability.html">
             
@@ -586,7 +606,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.5" data-path="commands.html">
+        <li class="chapter " data-level="9.4" data-path="commands.html">
             
                 <a href="commands.html">
             
@@ -704,16 +724,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse957884">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse530017">
                 <div class="panel-title">
                   SOAP &#x43A;&#x43E;&#x43D;&#x432;&#x435;&#x440;&#x442;
-                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle957884"></span>
+                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle530017"></span>
                 </div>
               </div>
-              <div id="collapse957884" class="panel-collapse collapse in" role="tabpanel">
+              <div id="collapse530017" class="panel-collapse collapse in" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code957884">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code957884" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SOAP-ENV:Envelope</span> <span class="hljs-attr">xmlns:SOAP-ENV</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code530017">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code530017" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SOAP-ENV:Envelope</span> <span class="hljs-attr">xmlns:SOAP-ENV</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">SOAP-ENV:Header</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- &#x417;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43E;&#x43A; &#x441;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x43D;&#x438;&#x44F;--&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">SOAP-ENV:Header</span>&gt;</span>
@@ -734,21 +754,21 @@
 <li><code>/SOAP-ENV:Envelope/SOAP-ENV:Header/MessageHeader/MessageData/MessageId</code> &#x2014; &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440; &#x441;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x43D;&#x438;&#x44F;</li>
 <li><code>/SOAP-ENV:Envelope/SOAP-ENV:Header/MessageHeader/MessageData/Timestamp</code> &#x2014; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x441;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x43D;&#x438;&#x44F;</li>
 <li><code>/SOAP-ENV:Envelope/SOAP-ENV:Header/MessageHeader/Action</code> &#x2014; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430;</li>
-<li><code>/SOAP-ENV:Envelope/SOAP-ENV:Header/Security/BinarySecurityToken</code> &#x2014; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; (&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; &#x43A;&#x440;&#x43E;&#x43C;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43D;&#x430; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;, &#x43F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x435;&#x435; &#x441;&#x43C;. &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B; &quot;&#x420;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x441; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;&#x43C;&#x438;&quot;)</li>
+<li><code>/SOAP-ENV:Envelope/SOAP-ENV:Header/Security/BinarySecurityToken</code> &#x2014; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; (&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; &#x43A;&#x440;&#x43E;&#x43C;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43D;&#x430; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;, &#x43F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x435;&#x435; &#x441;&#x43C;. <a href="authentication.html">&#x410;&#x443;&#x442;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x44F;</a>)</li>
 </ul>
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse117382">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse648090">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle117382"></span>
+                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle648090"></span>
                 </div>
               </div>
-              <div id="collapse117382" class="panel-collapse collapse in" role="tabpanel">
+              <div id="collapse648090" class="panel-collapse collapse in" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code117382">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code117382" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SOAP-ENV:Envelope</span> <span class="hljs-attr">xmlns:SOAP-ENV</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code648090">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code648090" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SOAP-ENV:Envelope</span> <span class="hljs-attr">xmlns:SOAP-ENV</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">SOAP-ENV:Header</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">MessageHeader</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">From</span>&gt;</span>
@@ -778,7 +798,25 @@
             </div>
           </div></p>
 <h3 id="&#x43A;&#x43E;&#x43C;&#x43F;&#x440;&#x435;&#x441;&#x441;&#x438;&#x44F;-&#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;">&#x41A;&#x43E;&#x43C;&#x43F;&#x440;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;</h3>
-<p>&#x414;&#x43B;&#x44F; &#x443;&#x441;&#x43A;&#x43E;&#x440;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x43E;&#x432; &#x43E;&#x442; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432; Sabre &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x442;&#x44C; gzip &#x43A;&#x43E;&#x43C;&#x43F;&#x440;&#x435;&#x441;&#x441;&#x438;&#x44E; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x43E;&#x432;, &#x443;&#x43A;&#x430;&#x437;&#x430;&#x432; &#x432; HTTP-&#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43A;&#x430;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440; <code>Accept-Encoding</code> &#x441;&#x43E; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435;&#x43C; <code>gzip</code>.</p>
+<p>&#x414;&#x43B;&#x44F; &#x443;&#x441;&#x43A;&#x43E;&#x440;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x43E;&#x432; &#x43E;&#x442; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432; Sabre &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x442;&#x44C; gzip &#x43A;&#x43E;&#x43C;&#x43F;&#x440;&#x435;&#x441;&#x441;&#x438;&#x44E; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x43E;&#x432;, &#x443;&#x43A;&#x430;&#x437;&#x430;&#x432; &#x432; HTTP-&#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43A;&#x430;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440; <code>Accept-Encoding</code> &#x441;&#x43E; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435;&#x43C; <code>gzip, deflate</code>:</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse509650">
+                <div class="panel-title">
+                  &#x417;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43E;&#x43A;
+                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle509650"></span>
+                </div>
+              </div>
+              <div id="collapse509650" class="panel-collapse collapse in" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code509650">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code509650" class="lang-XML">Accept-Encoding: gzip, deflate
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
 <h2 id="&#x441;&#x440;&#x435;&#x434;&#x44B;">&#x421;&#x440;&#x435;&#x434;&#x44B;</h2>
 <p>&#x412; Sabre &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x434;&#x432;&#x435; &#x441;&#x440;&#x435;&#x434;&#x44B; &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B;:</p>
 <ul>
@@ -790,16 +828,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse416132">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse165113">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle416132"></span>
+                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle165113"></span>
                 </div>
               </div>
-              <div id="collapse416132" class="panel-collapse collapse in" role="tabpanel">
+              <div id="collapse165113" class="panel-collapse collapse in" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code416132">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code416132" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>/&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code165113">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code165113" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>/&gt;</span>
 </code></pre>
                 </div>
               </div>
@@ -809,16 +847,16 @@
 <p>
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse124741">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse327541">
                 <div class="panel-title">
                   &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle124741"></span>
+                  <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle327541"></span>
                 </div>
               </div>
-              <div id="collapse124741" class="panel-collapse collapse in" role="tabpanel">
+              <div id="collapse327541" class="panel-collapse collapse in" role="tabpanel">
                 <div class="panel-body">
-                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code124741">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-                  <pre class="XML"><code id="code124741" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code327541">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code327541" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">IgnoreTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-02-01T12:25:33-06:00&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -885,7 +923,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Начало работы","level":"2.1","depth":1,"next":{"title":"Конфигурация Sabre","level":"2.2","depth":1,"path":"configuration.md","ref":"configuration.md","articles":[]},"previous":{"title":"Рекомендации по работе с Sabre APIs","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","toc","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"special-sections":{},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-80320390-1"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"introduction.md","mtime":"2017-02-13T10:12:35.967Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-02T22:02:30.358Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Начало работы","level":"2.1","depth":1,"next":{"title":"Конфигурация Sabre","level":"2.2","depth":1,"path":"configuration.md","ref":"configuration.md","articles":[]},"previous":{"title":"Рекомендации по работе с Sabre APIs","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","toc","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"special-sections":{},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-80320390-1"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"introduction.md","mtime":"2017-05-03T18:36:53.286Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-07T09:38:06.740Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
