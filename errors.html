@@ -1,0 +1,1528 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Обработка ошибок · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-special-sections/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="search.html" />
+    
+    
+    <link rel="prev" href="authentication.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Рекомендации по работе с Sabre APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Введение</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Начало работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    Конфигурация Sabre
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tjr-settings.html">
+            
+                <a href="tjr-settings.html">
+            
+                    
+                    Настройки PCC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="services.html">
+            
+                <a href="services.html">
+            
+                    
+                    Список сервисов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="authentication.html">
+            
+                <a href="authentication.html">
+            
+                    
+                    Аутентификация
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="errors.html">
+            
+                <a href="errors.html">
+            
+                    
+                    Обработка ошибок
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Поиск</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Поиск по заданным датам
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="alternate-date.html">
+            
+                <a href="alternate-date.html">
+            
+                    
+                    Поиск по гибким датам
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="alternate-airports.html">
+            
+                <a href="alternate-airports.html">
+            
+                    
+                    Поиск по гибким направлениям
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="shop-by-fare.html">
+            
+                <a href="shop-by-fare.html">
+            
+                    
+                    Поиск по коду тарифа
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="optimization.html">
+            
+                <a href="optimization.html">
+            
+                    
+                    Оптимизация времени поиска
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Бронирования</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="create-booking.html">
+            
+                <a href="create-booking.html">
+            
+                    
+                    Создание бронирований
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="create-booking-1step.html">
+            
+                <a href="create-booking-1step.html">
+            
+                    
+                    Создание бронирований в 1 шаг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="create-booking-2steps.html">
+            
+                <a href="create-booking-2steps.html">
+            
+                    
+                    Создание бронирований в 2 шага
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="unconfirmed.html">
+            
+                <a href="unconfirmed.html">
+            
+                    
+                    Неподтвержденные места
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="edit-booking.html">
+            
+                <a href="edit-booking.html">
+            
+                    
+                    Чтение и редактирование бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="cancel-booking.html">
+            
+                <a href="cancel-booking.html">
+            
+                    
+                    Отмена бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="split-booking.html">
+            
+                <a href="split-booking.html">
+            
+                    
+                    Деление бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="booking-history.html">
+            
+                <a href="booking-history.html">
+            
+                    
+                    История бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Air Merchandising</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="branded-fares.html">
+            
+                <a href="branded-fares.html">
+            
+                    
+                    Branded Fares
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="ancillaries.html">
+            
+                <a href="ancillaries.html">
+            
+                    
+                    Бронирование дополнительных услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="air-seats.html">
+            
+                <a href="air-seats.html">
+            
+                    
+                    Бронирование мест в салоне
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Билеты и EMD</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="issue-ticket.html">
+            
+                <a href="issue-ticket.html">
+            
+                    
+                    Оформление билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="issue-ticket-old.html">
+            
+                <a href="issue-ticket-old.html">
+            
+                    
+                    Низкоуровневое оформление
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="reprice.html">
+            
+                <a href="reprice.html">
+            
+                    
+                    Перерасчет стоимости
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="void-ticket.html">
+            
+                <a href="void-ticket.html">
+            
+                    
+                    Войдирование билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="exchange-ticket.html">
+            
+                <a href="exchange-ticket.html">
+            
+                    
+                    Обмен билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="revalidate-ticket.html">
+            
+                <a href="revalidate-ticket.html">
+            
+                    
+                    Ревалидация билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="sales-report.html">
+            
+                <a href="sales-report.html">
+            
+                    
+                    Формирование отчетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Очереди</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="queues.html">
+            
+                <a href="queues.html">
+            
+                    
+                    Обработка очередей
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="queue-place.html">
+            
+                <a href="queue-place.html">
+            
+                    
+                    Помещение бронирований в очереди
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="timelimit.html">
+            
+                <a href="timelimit.html">
+            
+                    
+                    Тайм-лимиты бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Правила тарифов</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="fare-rules.html">
+            
+                <a href="fare-rules.html">
+            
+                    
+                    Получение текста правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="structure-fare-rules.html">
+            
+                <a href="structure-fare-rules.html">
+            
+                    
+                    Получение структурированных правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Другое</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="currency-rates.html">
+            
+                <a href="currency-rates.html">
+            
+                    
+                    Получение курсов валют
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="schedules.html">
+            
+                <a href="schedules.html">
+            
+                    
+                    Получение расписаний
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    Проверка наличия мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="commands.html">
+            
+                <a href="commands.html">
+            
+                    
+                    Отправка терминальных команд
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Обработка ошибок</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430;-&#x43E;&#x448;&#x438;&#x431;&#x43E;&#x43A;">&#x41E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x43E;&#x448;&#x438;&#x431;&#x43E;&#x43A;</h1>
+<p><strong><em>&#x420;&#x430;&#x437;&#x434;&#x435;&#x43B; &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x432; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</em></strong></p>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#&#x432;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435;">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435;</a><ul>
+<li><a href="#invalidebxmlmessage">InvalidEbXmlMessage</a></li>
+<li><a href="#usgauthenticationnotallowed">USG_AUTHENTICATION_NOT_ALLOWED</a></li>
+<li><a href="#usginvalidsecuritytoken">USG_INVALID_SECURITY_TOKEN</a></li>
+<li><a href="#usgauthorizationfailed">USG_AUTHORIZATION_FAILED</a></li>
+<li><a href="#usginvalidsession">USG_INVALID_SESSION</a></li>
+<li><a href="#usginvalidaction">USG_INVALID_ACTION</a></li>
+<li><a href="#invalidversion">INVALID_VERSION</a></li>
+</ul>
+</li>
+<li><a href="#&#x434;&#x440;&#x443;&#x433;&#x438;&#x435;-&#x432;&#x43D;&#x443;&#x442;&#x440;&#x435;&#x43D;&#x43D;&#x438;&#x435;-&#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;">&#x414;&#x440;&#x443;&#x433;&#x438;&#x435; &#x432;&#x43D;&#x443;&#x442;&#x440;&#x435;&#x43D;&#x43D;&#x438;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;</a></li>
+<li><a href="#sessioncreaterq-&#x438;-tokencreaterq">SessionCreateRQ &#x438; TokenCreateRQ</a><ul>
+<li><a href="#usgauthenticationfailed">USG_AUTHENTICATION_FAILED</a></li>
+<li><a href="#usgsecurityiceerror">USG_SECURITY_ICE_ERROR</a></li>
+<li><a href="#usgpasswordnotfound">USG_PASSWORD_NOTFOUND</a></li>
+<li><a href="#usgorgnotfound">USG_ORG_NOTFOUND</a></li>
+<li><a href="#usgusernamenotfound">USG_USERNAME_NOTFOUND</a></li>
+<li><a href="#usgresourceunavailable">USG_RESOURCE_UNAVAILABLE</a></li>
+</ul>
+</li>
+<li><a href="#contextchangellsrq">ContextChangeLLSRQ</a><ul>
+<li><a href="#not-allowed-this-city">NOT ALLOWED THIS CITY&#x87;</a></li>
+<li><a href="#please-finish-or-ignore-the-current-transaction">PLEASE FINISH OR IGNORE THE CURRENT TRANSACTION</a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<hr>
+<h2 id="&#x432;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435;">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435;</h2>
+<p>&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x44B; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x447;&#x430;&#x441;&#x442;&#x43E; &#x432;&#x441;&#x442;&#x440;&#x435;&#x447;&#x430;&#x44E;&#x449;&#x438;&#x435;&#x441;&#x44F; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438; &#x43F;&#x440;&#x438; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; &#x441; Sbare APIs, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x438;&#x445; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;. &#x41F;&#x43E;&#x43B;&#x43D;&#x44B;&#x439; &#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x43E;&#x448;&#x438;&#x431;&#x43E;&#x43A; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x435;&#x43D; &#x432; <a href="https://formatfinder.sabre.com/" target="_blank">Format Finder</a>, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x430;&#x445; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432; &#x43D;&#x430; &#x43F;&#x43E;&#x440;&#x442;&#x430;&#x43B;&#x435; <a href="http://developer.sabre.com/" target="_blank">Sabre Dev Studio</a>.</p>
+<h3 id="invalidebxmlmessage">InvalidEbXmlMessage</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442; &#x43D;&#x435;&#x432;&#x430;&#x43B;&#x438;&#x434;&#x43D;&#x44B;&#x439; XML &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse981595">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle981595"></span>
+                </div>
+              </div>
+              <div id="collapse981595" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code981595">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code981595" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.InvalidEbXmlMessage<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>Unable to create envelope from given source: Error on line 1 of document  : The prefix &quot;SOAP-ENV&quot; for element &quot;SOAP-ENV:Envelope&quot; is not bound. Nested exception: The prefix &quot;SOAP-ENV&quot; for element &quot;SOAP-ENV:Envelope&quot; is not bound.<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>javax.xml.soap.SOAPException: Unable to create envelope from given source: Error on line 1 of document  : The prefix &quot;SOAP-ENV&quot; for element &quot;SOAP-ENV:Envelope&quot; is not bound. Nested exception: The prefix &quot;SOAP-ENV&quot; for element &quot;SOAP-ENV:Envelope&quot; is not bound.<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;.</p>
+<h3 id="usgauthenticationnotallowed">USG_AUTHENTICATION_NOT_ALLOWED</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x410;&#x443;&#x442;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x44F; &#x447;&#x435;&#x440;&#x435;&#x437; &#x44D;&#x442;&#x43E;&#x442; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43D;&#x435;&#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x430;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse85682">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle85682"></span>
+                </div>
+              </div>
+              <div id="collapse85682" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code85682">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code85682" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>ConversationId<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>1158049581147460610<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-25T16:08:34<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.AuthenticationNotAllowed<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>Authentication is not allowed for this service. Please use SessionCreateRQ<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.security.AuthenticationException: errors.authentication.USG_AUTHENTICATION_NOT_ALLOWED<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x423;&#x43A;&#x430;&#x436;&#x438;&#x442;&#x435; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430; &#x432;&#x43C;&#x435;&#x441;&#x442;&#x43E; &#x438;&#x43C;&#x435;&#x43D;&#x438; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;, &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44F; &#x438; iPCC.</p>
+<h3 id="usginvalidsecuritytoken">USG_INVALID_SECURITY_TOKEN</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x435;&#x43A;&#x43E;&#x440;&#x440;&#x435;&#x43A;&#x442;&#x43D;&#x44B;&#x439; &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse434873">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle434873"></span>
+                </div>
+              </div>
+              <div id="collapse434873" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code434873">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code434873" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>ConversationId<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>1219788579579240150<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-25T16:05:57<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">wsse:BinarySecurityToken</span> <span class="hljs-attr">EncodingType</span>=<span class="hljs-string">&quot;wsse:Base64Binary&quot;</span> <span class="hljs-attr">valueType</span>=<span class="hljs-string">&quot;String&quot;</span>&gt;</span>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTC!ICESMSLB\/CRT.LB!-3239673953977074035!1555234!0<span class="hljs-tag">&lt;/<span class="hljs-name">wsse:BinarySecurityToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.InvalidSecurityToken<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>Invalid or Expired binary security token: Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTC!ICESMSLB\/CRT.LB!-3239673953977074035!1555234!0<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.session.SessionException: errors.session.USG_INVALID_SECURITY_TOKEN<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x421;&#x43E;&#x437;&#x434;&#x430;&#x439;&#x442;&#x435; &#x43D;&#x43E;&#x432;&#x443;&#x44E; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44E; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x439;&#x442;&#x435; &#x438;&#x445; &#x434;&#x43B;&#x44F; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; (&#x441;&#x43C;. <a href="authentication.html">&#x410;&#x443;&#x442;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x44F;</a>).</p>
+<h3 id="usgauthorizationfailed">USG_AUTHORIZATION_FAILED</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x41E;&#x442;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F; &#x43A; &#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse669132">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle669132"></span>
+                </div>
+              </div>
+              <div id="collapse669132" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code669132">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code669132" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>MyConvID<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>6565898664233289748<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-24T14:53:56<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.AuthorizationFailed<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>Authorization failed<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.security.AuthorizationException: errors.authorization.USG_AUTHORIZATION_FAILED<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li>&#x41D;&#x435; &#x43F;&#x44B;&#x442;&#x430;&#x439;&#x442;&#x435;&#x441;&#x44C; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;.</li>
+<li>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x443; &#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x431;&#x44B;&#x442;&#x44C; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F; &#x43A; &#x432;&#x44B;&#x431;&#x440;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443;.</li>
+<li>&#x41D;&#x430;&#x43F;&#x438;&#x448;&#x438;&#x442;&#x435; &#x432; &#x441;&#x43B;&#x443;&#x436;&#x431;&#x443; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x43A;&#x438; Sabre.</li>
+</ol>
+<h3 id="usginvalidsession">USG_INVALID_SESSION</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x421;&#x435;&#x441;&#x441;&#x438;&#x44F; &#x43D;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x430;.</p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li>&#x417;&#x430;&#x43A;&#x440;&#x43E;&#x439;&#x442;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44E; &#x438; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x44B; &#x432; &#x43D;&#x43E;&#x432;&#x43E;&#x439; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;.</li>
+<li>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x432;&#x44B; &#x43D;&#x435; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x44B; &#x432; &#x43E;&#x434;&#x43D;&#x43E;&#x439; &#x438; &#x442;&#x43E;&#x439; &#x436;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x43F;&#x430;&#x440;&#x430;&#x43B;&#x43B;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;.</li>
+</ol>
+<h3 id="usginvalidaction">USG_INVALID_ACTION</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x423;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x43D;&#x435;&#x43A;&#x43E;&#x440;&#x440;&#x435;&#x43A;&#x442;&#x43D;&#x43E;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x438;&#x43B;&#x438; &#x43E;&#x43D;&#x43E; &#x43E;&#x442;&#x441;&#x443;&#x442;&#x441;&#x432;&#x443;&#x435;&#x442;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse542099">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle542099"></span>
+                </div>
+              </div>
+              <div id="collapse542099" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code542099">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code542099" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>ConversationId<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>1157073582503230151<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-25T16:10:50<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">wsse:BinarySecurityToken</span> <span class="hljs-attr">EncodingType</span>=<span class="hljs-string">&quot;wsse:Base64Binary&quot;</span> <span class="hljs-attr">valueType</span>=<span class="hljs-string">&quot;String&quot;</span>&gt;</span>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTC!ICESMSLB\/CRT.LB!-3239673953977074035!1555234!0<span class="hljs-tag">&lt;/<span class="hljs-name">wsse:BinarySecurityToken</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">wsse:Security</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.InvalidAction<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>Action specified in EbxmlMessage does not exist.<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.exception.ApplicationException: errors.xml.USG_INVALID_ACTION<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435; &#x43D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x432; <a href="http://developer.sabre.com/" target="_blank">Sabre Dev Studio</a> &#x438; &#x443;&#x43A;&#x430;&#x436;&#x438;&#x442;&#x435; &#x435;&#x433;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; (&#x441;&#x43C;. <a href="introduction.html#&#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B;-soap">&#x41D;&#x430;&#x447;&#x430;&#x43B;&#x43E; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B;</a>).</p>
+<h3 id="invalidversion">INVALID_VERSION</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x423;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x430; &#x43D;&#x435;&#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x430;&#x44F; &#x432;&#x435;&#x440;&#x441;&#x438;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x438;&#x43B;&#x438; &#x432;&#x435;&#x440;&#x441;&#x438;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x43D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x430;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse336865">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle336865"></span>
+                </div>
+              </div>
+              <div id="collapse336865" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code336865">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code336865" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">OTA_AirAvailRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TPA_Extensions</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>INVALID_VERSION<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">TPA_Extensions</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Errors</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Error</span> <span class="hljs-attr">ErrorCode</span>=<span class="hljs-string">&quot;SessionFailure-103&quot;</span> <span class="hljs-attr">ErrorMessage</span>=<span class="hljs-string">&quot;TPFAE:tpfc_liberty_lbthlc105.sabre.com_12400:129 2017-08-25 10:31:03&quot;</span> <span class="hljs-attr">Severity</span>=<span class="hljs-string">&quot;High&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ErrorInfo</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span>&gt;</span>errors.INVALID_VERSION<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ErrorInfo</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Error</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Errors</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">OTA_AirAvailRS</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435; &#x432;&#x435;&#x440;&#x441;&#x438;&#x44E; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x432; <a href="http://developer.sabre.com/" target="_blank">Sabre Dev Studio</a> &#x438; &#x443;&#x43A;&#x430;&#x436;&#x438;&#x442;&#x435; &#x435;&#x435; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435;.</p>
+<h2 id="&#x434;&#x440;&#x443;&#x433;&#x438;&#x435;-&#x432;&#x43D;&#x443;&#x442;&#x440;&#x435;&#x43D;&#x43D;&#x438;&#x435;-&#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;">&#x414;&#x440;&#x443;&#x433;&#x438;&#x435; &#x432;&#x43D;&#x443;&#x442;&#x440;&#x435;&#x43D;&#x43D;&#x438;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;</h2>
+<p>&#x41E;&#x442;&#x432;&#x435;&#x442;&#x44B; &#x441; &#x442;&#x430;&#x43A;&#x438;&#x43C;&#x438; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x430;&#x43C;&#x438; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li><code>/soap-env:Envelope/soap-env:Header/eb:MessageHeader/eb:Action</code> &#x2014; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>ErrorRS</code></li>
+<li><code>/soap-env:Envelope/soap-env:Body/soap-env:Fault/faultcode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;</li>
+<li><code>/soap-env:Envelope/soap-env:Body/soap-env:Fault/faultstring</code> &#x2014; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;</li>
+<li><code>/soap-env:Envelope/soap-env:Body/soap-env:Fault/detail/StackTrace</code> &#x2014; &#x43F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x43E;&#x435; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;</li>
+</ul>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li>&#x41F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x447;&#x435;&#x440;&#x435;&#x437; 500 &#x43C;&#x438;&#x43B;&#x43B;&#x438;&#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;.</li>
+<li>&#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x43D;&#x44B;&#x445; &#x43E;&#x448;&#x438;&#x431;&#x43E;&#x43A; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x435;&#x449;&#x435; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x440;&#x430;&#x437;: &#x441;&#x435;&#x440;&#x435;&#x437; 1, 2, 4, 8, 16, 32 &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;&#x44B;.</li>
+<li>&#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x430; &#x43D;&#x435; &#x438;&#x441;&#x447;&#x435;&#x437;&#x430;&#x435;&#x442;, &#x43D;&#x430;&#x43F;&#x438;&#x448;&#x438;&#x442;&#x435; &#x432; &#x441;&#x43B;&#x443;&#x436;&#x431;&#x443; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x43A;&#x438; Sabre.</li>
+</ol>
+<h2 id="sessioncreaterq-&#x438;-tokencreaterq">SessionCreateRQ &#x438; TokenCreateRQ</h2>
+<h3 id="usgauthenticationfailed">USG_AUTHENTICATION_FAILED</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x41E;&#x448;&#x438;&#x431;&#x43A;&#x430; &#x430;&#x443;&#x442;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x438; &#x432; Sabre.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse142160">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle142160"></span>
+                </div>
+              </div>
+              <div id="collapse142160" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code142160">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code142160" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>MyConvID<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>4938411465114090882<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-24T12:55:11<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.AuthenticationFailed<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>Authentication failed<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.security.AuthenticationException: errors.authentication.USG_AUTHENTICATION_FAILED<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x438;&#x43C;&#x435;&#x43D;&#x438; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; (EPR), &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44F; &#x438; iPCC. &#x410; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x443;&#x431;&#x435;&#x434;&#x438;&#x442;&#x435;&#x441;&#x44C;, &#x447;&#x442;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x434;&#x43E;&#x43C;&#x435;&#x43D;&#x430; (Domain) &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>DEFAULT</code>.</li>
+<li>&#x423;&#x431;&#x435;&#x434;&#x438;&#x442;&#x435;&#x441;&#x44C;, &#x447;&#x442;&#x43E; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;, &#x43F;&#x43E;&#x434; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x43C; &#x432;&#x44B; &#x43F;&#x44B;&#x442;&#x430;&#x435;&#x442;&#x435;&#x441;&#x44C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44E; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D;, &#x438;&#x43C;&#x435;&#x435;&#x442; &#x43F;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x43D;&#x44B;&#x439; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C;, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x430;&#x43A;&#x442;&#x438;&#x432;&#x435;&#x43D;. &#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; Sabre &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x438;&#x445; &#x43D;&#x435;&#x443;&#x434;&#x430;&#x447;&#x43D;&#x44B;&#x445; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43E;&#x43A; &#x430;&#x443;&#x442;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x446;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x431;&#x43B;&#x43E;&#x43A;&#x438;&#x440;&#x443;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;.</li>
+<li>&#x420;&#x430;&#x437;&#x431;&#x43B;&#x43E;&#x43A;&#x438;&#x440;&#x443;&#x439;&#x442;&#x435; &#x438; &#x43F;&#x43E;&#x43C;&#x435;&#x43D;&#x44F;&#x439;&#x442;&#x435; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;. &#x42D;&#x442;&#x43E; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x441;&#x434;&#x435;&#x43B;&#x430;&#x442;&#x44C; &#x441;&#x430;&#x43C;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x432; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x43D;&#x430;&#x43B;&#x435; &#x438;&#x43B;&#x438; &#x43E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x432;&#x448;&#x438;&#x441;&#x44C; &#x432; Sabre.</li>
+</ol>
+<h3 id="usgsecurityiceerror">USG_SECURITY_ICE_ERROR</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x41E;&#x442;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x442; &#x43F;&#x440;&#x430;&#x432;&#x430; &#x43D;&#x430; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse980687">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle980687"></span>
+                </div>
+              </div>
+              <div id="collapse980687" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code980687">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code980687" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>MyConvID<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>4951345466143100861<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-24T12:56:54<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Server.SystemFailure<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>Unable to connect to ICE security system : 606<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.exception.ApplicationICEException: errors.authentication.USG_SECURITY_ICE_ERROR<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li>&#x41D;&#x435; &#x43F;&#x44B;&#x442;&#x430;&#x439;&#x442;&#x435;&#x441;&#x44C; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;.</li>
+<li>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x432;&#x44B; &#x43F;&#x44B;&#x442;&#x430;&#x435;&#x442;&#x435;&#x441;&#x44C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;&#x44E; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x432; iPCC. &#x412; Sabre &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x43E;&#x432; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x432; &#x43D;&#x438;&#x445;. iPCC &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x43F;&#x43E; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44E; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438; <code>WEB SITE SUBSCRIBER</code> &#x432; <a href="tjr-settings.html">TJR</a>.</li>
+<li>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x432;&#x44B; &#x43F;&#x44B;&#x442;&#x430;&#x435;&#x442;&#x435;&#x441;&#x44C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;&#x44E; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43A;&#x435;&#x43D; &#x43F;&#x43E;&#x434; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x435;&#x43C;, &#x43F;&#x440;&#x435;&#x434;&#x43D;&#x430;&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x43C; &#x434;&#x43B;&#x44F; &#x44D;&#x442;&#x43E;&#x433;&#x43E;. &#x422;&#x430;&#x43A;&#x43E;&#x433;&#x43E; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C;, &#x441;&#x440;&#x435;&#x434;&#x438; &#x43F;&#x440;&#x43E;&#x447;&#x435;&#x433;&#x43E;, &#x43F;&#x43E; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44E; &#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x432;&#x43E;&#x433;&#x43E; &#x441;&#x43B;&#x43E;&#x432;&#x430; <code>ROBAP1</code> &#x432; <a href="configuration.html#&#x443;&#x447;&#x435;&#x442;&#x43D;&#x44B;&#x435;-&#x437;&#x430;&#x43F;&#x438;&#x441;&#x438;-&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x435;&#x439;-epr">EPR</a>.</li>
+</ol>
+<h3 id="usgpasswordnotfound">USG_PASSWORD_NOTFOUND</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse437145">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle437145"></span>
+                </div>
+              </div>
+              <div id="collapse437145" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code437145">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code437145" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>MyConvID<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>5459729506078250192<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-24T14:03:27<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.PasswordNodeNotFound<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>wsse:Password node not found<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.security.AuthenticationException: errors.authentication.USG_PASSWORD_NOTFOUND<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C;.</p>
+<h3 id="usgorgnotfound">USG_ORG_NOTFOUND</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; iPCC.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse330339">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle330339"></span>
+                </div>
+              </div>
+              <div id="collapse330339" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code330339">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code330339" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>MyConvID<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>5551837513173120550<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-24T14:15:17<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.OrganizationNodeNotFound<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>wsse:Organization node not found<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.security.AuthenticationException: errors.authentication.USG_ORG_NOTFOUND<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D; iPCC.</p>
+<h3 id="usgusernamenotfound">USG_USERNAME_NOTFOUND</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x438;&#x43C;&#x44F; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse16542">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle16542"></span>
+                </div>
+              </div>
+              <div id="collapse16542" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code16542">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code16542" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>MyConvID<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>5569103514429300201<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-24T14:17:22<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.UserNameNodeNotFound<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>wsse:Username node not found<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.security.AuthenticationException: errors.authentication.USG_USERNAME_NOTFOUND<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<p>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x438;&#x43C;&#x44F; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;.</p>
+<h3 id="usgresourceunavailable">USG_RESOURCE_UNAVAILABLE</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x414;&#x43E;&#x441;&#x442;&#x438;&#x433;&#x43D;&#x443;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse868956">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle868956"></span>
+                </div>
+              </div>
+              <div id="collapse868956" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code868956">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code868956" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Envelope</span> <span class="hljs-attr">xmlns:soap-env</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageHeader</span> <span class="hljs-attr">eb:version</span>=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-attr">soap-env:mustUnderstand</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">xmlns:eb</span>=<span class="hljs-string">&quot;http://www.ebxml.org/namespaces/messageHeader&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:From</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>SWS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:From</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:To</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:PartyId</span> <span class="hljs-attr">eb:type</span>=<span class="hljs-string">&quot;URI&quot;</span>&gt;</span>Agency<span class="hljs-tag">&lt;/<span class="hljs-name">eb:PartyId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:To</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:ConversationId</span>&gt;</span>MyConvID<span class="hljs-tag">&lt;/<span class="hljs-name">eb:ConversationId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:Action</span>&gt;</span>ErrorRS<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Action</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageData</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:MessageId</span>&gt;</span>6293824569546900872<span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">eb:Timestamp</span>&gt;</span>2017-08-24T15:49:14<span class="hljs-tag">&lt;/<span class="hljs-name">eb:Timestamp</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageData</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">eb:MessageHeader</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wsse:Security</span> <span class="hljs-attr">xmlns:wsse</span>=<span class="hljs-string">&quot;http://schemas.xmlsoap.org/ws/2002/12/secext&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultcode</span>&gt;</span>soap-env:Client.ReachedTALimit<span class="hljs-tag">&lt;/<span class="hljs-name">faultcode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">faultstring</span>&gt;</span>You have reached the limit of Host TAs allocated to you<span class="hljs-tag">&lt;/<span class="hljs-name">faultstring</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackTrace</span>&gt;</span>com.sabre.universalservices.base.exception.ApplicationICEException: errors.authentication.USG_RESOURCE_UNAVAILABLE<span class="hljs-tag">&lt;/<span class="hljs-name">StackTrace</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Fault</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap-env:Envelope</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li>&#x41F;&#x43E; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43E;&#x43F;&#x440;&#x43E;&#x431;&#x443;&#x439;&#x442;&#x435; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x44C; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B;&#x435; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x447;&#x435;&#x440;&#x435;&#x437; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="authentication.html#&#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x435;-&#x441;&#x435;&#x441;&#x441;&#x438;&#x438;-sessioncloserq">SessionCloseRQ</a>.</li>
+<li>&#x41F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x447;&#x435;&#x440;&#x435;&#x437; 10 &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;.</li>
+<li>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435; <a href="authentication.html#&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x438;-&#x43E;&#x431;-&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C;&#x44B;&#x445;-&#x441;&#x435;&#x441;&#x441;&#x438;&#x439;-oltmc-user-disp-name">&#x43C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x441;&#x441;&#x438;&#x439;</a> &#x438; &#x43F;&#x440;&#x438; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435;&#x441;&#x44C; &#x43A; &#x432;&#x430;&#x448;&#x435;&#x43C;&#x443; &#x43A;&#x443;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x443; &#x432; Sabre &#x434;&#x43B;&#x44F; &#x443;&#x432;&#x435;&#x43B;&#x438;&#x447;&#x435;&#x43D;&#x438;&#x44F;.</li>
+</ol>
+<h2 id="contextchangellsrq">ContextChangeLLSRQ</h2>
+<h3 id="not-allowed-this-city&#x87;">NOT ALLOWED THIS CITY&#x87;</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x41F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; PCC &#x43D;&#x435; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse258441">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle258441"></span>
+                </div>
+              </div>
+              <div id="collapse258441" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code258441">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code258441" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ContextChangeRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.3&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2017-08-24T11:45:01-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;60ED31&quot;</span>&gt;</span>AAAABCD*SWS-OVER*<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>&#x87;NOT ALLOWED THIS CITY&#x87;<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:ShortText</span>&gt;</span>ERR.SWS.HOST.ERROR_IN_RESPONSE<span class="hljs-tag">&lt;/<span class="hljs-name">stl:ShortText</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Error</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ContextChangeRS</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li>&#x41D;&#x435; &#x43F;&#x44B;&#x442;&#x430;&#x439;&#x442;&#x435;&#x441;&#x44C; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;.</li>
+<li>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44C;&#x442;&#x435; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x435; <a href="configuration.html#&#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;-&#x432;-&#x434;&#x440;&#x443;&#x433;&#x43E;&#x439;-pcc-branch-access">Branch Access</a> &#x443;&#x440;&#x43E;&#x432;&#x43D;&#x44F; C &#x43C;&#x435;&#x436;&#x434;&#x443; iPCC, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x430; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;, &#x438; PCC, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43F;&#x435;&#x440;&#x435;&#x439;&#x442;&#x438;.</li>
+</ol>
+<h3 id="please-finish-or-ignore-the-current-transaction">PLEASE FINISH OR IGNORE THE CURRENT TRANSACTION</h3>
+<p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
+<p>&#x41F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; PCC &#x43D;&#x435;&#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x435;&#x43D; &#x434;&#x43E; &#x442;&#x43E;&#x433;&#x43E;, &#x43A;&#x430;&#x43A; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x443;&#x434;&#x435;&#x442; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43E; &#x438;&#x43B;&#x438; &#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43E;.</p>
+<p>
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse635141">
+                <div class="panel-title">
+                  &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430; &#x441; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;
+                  <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle635141"></span>
+                </div>
+              </div>
+              <div id="collapse635141" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                  <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code635141">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+                  <pre class="XML"><code id="code635141" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ContextChangeRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.3&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2017-08-24T11:51:28-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;59A1F6&quot;</span>&gt;</span>AAAABCD*SWS-OVER*<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>PLEASE FINISH OR IGNORE THE CURRENT TRANSACTION<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:ShortText</span>&gt;</span>ERR.SWS.HOST.ERROR_IN_RESPONSE<span class="hljs-tag">&lt;/<span class="hljs-name">stl:ShortText</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Error</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SecurityToken</span> <span class="hljs-attr">Updated</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTD!ICESMSLB\/CRT.LB!-3240007418570077554!914587!0<span class="hljs-tag">&lt;/<span class="hljs-name">SecurityToken</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ContextChangeRS</span>&gt;</span>
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div></p>
+<p><strong>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;</strong></p>
+<ol>
+<li><a href="edit-booking.html#&#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435;-&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;-endtransactionllsrq">&#x421;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x438;&#x442;&#x435;</a> &#x438;&#x43B;&#x438; <a href="edit-booking.html#&#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;-&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;-ignoretransactionllsrq">&#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x443;&#x439;&#x442;&#x435;</a> &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;.</li>
+<li>&#x41F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="authentication.html" class="navigation navigation-prev " aria-label="Previous page: Аутентификация">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="search.html" class="navigation navigation-next " aria-label="Next page: Поиск по заданным датам">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Обработка ошибок","level":"2.6","depth":1,"next":{"title":"Поиск по заданным датам","level":"3.1","depth":1,"path":"search.md","ref":"search.md","articles":[]},"previous":{"title":"Аутентификация","level":"2.5","depth":1,"path":"authentication.md","ref":"authentication.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","toc","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"special-sections":{},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-80320390-1"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"errors.md","mtime":"2017-08-25T16:14:55.024Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-25T16:21:36.241Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/redraw.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/clipboard.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
