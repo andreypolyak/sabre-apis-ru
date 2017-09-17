@@ -96,3 +96,13 @@ a.btn.pull-left.js-toolbar-action {
 .collapse {
   position: relative;
 }
+
+.session {
+  font-weight: bold;
+  color: #808080;
+}
+
+.token {
+  font-weight: bold;
+  color: #0000ff;
+}
