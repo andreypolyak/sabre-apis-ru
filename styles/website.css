@@ -106,3 +106,18 @@ a.btn.pull-left.js-toolbar-action {
   font-weight: bold;
   color: #0000ff;
 }
+
+.book-summary ul.summary li a, .book-summary ul.summary li span {
+  padding: 4px 15px;
+}
+
+.book-summary ul.summary li.header {
+  padding: 10px 15px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+.anchorjs-link {
+  color: #333 !important;
+  text-decoration: none !important;
+}

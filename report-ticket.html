@@ -1,0 +1,1747 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Формирование отчетов · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-special-sections/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="queues.html" />
+    
+    
+    <link rel="prev" href="revalidate-ticket.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Рекомендации по работе с Sabre APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Введение</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Начало работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    Конфигурация Sabre
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tjr-settings.html">
+            
+                <a href="tjr-settings.html">
+            
+                    
+                    Настройки PCC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="services.html">
+            
+                <a href="services.html">
+            
+                    
+                    Список сервисов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="authentication.html">
+            
+                <a href="authentication.html">
+            
+                    
+                    Аутентификация
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="errors.html">
+            
+                <a href="errors.html">
+            
+                    
+                    Обработка ошибок
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Поиск перелетов</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="shop.html">
+            
+                <a href="shop.html">
+            
+                    
+                    Поиск по заданным датам
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="shop-alternate-dates.html">
+            
+                <a href="shop-alternate-dates.html">
+            
+                    
+                    Поиск по гибким датам
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="shop-alternate-airports.html">
+            
+                <a href="shop-alternate-airports.html">
+            
+                    
+                    Поиск по гибким направлениям
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="shop-by-fare.html">
+            
+                <a href="shop-by-fare.html">
+            
+                    
+                    Поиск по коду тарифа
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="shop-optimization.html">
+            
+                <a href="shop-optimization.html">
+            
+                    
+                    Оптимизация времени поиска
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Бронирования</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="create-booking.html">
+            
+                <a href="create-booking.html">
+            
+                    
+                    Создание бронирований
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="create-booking-1step.html">
+            
+                <a href="create-booking-1step.html">
+            
+                    
+                    Создание бронирований в 1 шаг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="create-booking-2steps.html">
+            
+                <a href="create-booking-2steps.html">
+            
+                    
+                    Создание бронирований в 2 шага
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="unconfirmed.html">
+            
+                <a href="unconfirmed.html">
+            
+                    
+                    Неподтвержденные места
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="get-booking.html">
+            
+                <a href="get-booking.html">
+            
+                    
+                    Чтение бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="get-archive-booking.html">
+            
+                <a href="get-archive-booking.html">
+            
+                    
+                    Чтение бронирований из архива
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="edit-booking.html">
+            
+                <a href="edit-booking.html">
+            
+                    
+                    Редактирование бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="cancel-booking.html">
+            
+                <a href="cancel-booking.html">
+            
+                    
+                    Отмена бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="split-booking.html">
+            
+                <a href="split-booking.html">
+            
+                    
+                    Деление бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="get-history-booking.html">
+            
+                <a href="get-history-booking.html">
+            
+                    
+                    История бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Air Merchandising</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="brands.html">
+            
+                <a href="brands.html">
+            
+                    
+                    Брендированные тарифы
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="price-all-brands.html">
+            
+                <a href="price-all-brands.html">
+            
+                    
+                    Расчет по всем брендам
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="get-brands-info.html">
+            
+                <a href="get-brands-info.html">
+            
+                    
+                    Информация о брендах
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="ancillaries.html">
+            
+                <a href="ancillaries.html">
+            
+                    
+                    Дополнительные услуги
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="get-ancillaries.html">
+            
+                <a href="get-ancillaries.html">
+            
+                    
+                    Получение списка услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="book-ancillaries.html">
+            
+                <a href="book-ancillaries.html">
+            
+                    
+                    Бронирование услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="cancel-ancillaries.html">
+            
+                <a href="cancel-ancillaries.html">
+            
+                    
+                    Отмена услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="air-seats.html">
+            
+                <a href="air-seats.html">
+            
+                    
+                    Места в салоне
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="get-air-seats.html">
+            
+                <a href="get-air-seats.html">
+            
+                    
+                    Получение карты мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="book-air-seats.html">
+            
+                <a href="book-air-seats.html">
+            
+                    
+                    Бронирование мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="cancel-air-seats.html">
+            
+                <a href="cancel-air-seats.html">
+            
+                    
+                    Отмена мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Билеты и EMD</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="issue-ticket.html">
+            
+                <a href="issue-ticket.html">
+            
+                    
+                    Оформление билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="get-ticket.html">
+            
+                <a href="get-ticket.html">
+            
+                    
+                    Чтение масок билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="reprice-booking.html">
+            
+                <a href="reprice-booking.html">
+            
+                    
+                    Перерасчет стоимости
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="void-ticket.html">
+            
+                <a href="void-ticket.html">
+            
+                    
+                    Войдирование билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="shop-exchange-ticket.html">
+            
+                <a href="shop-exchange-ticket.html">
+            
+                    
+                    Поиск перелетов для обмена
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="exchange-ticket.html">
+            
+                <a href="exchange-ticket.html">
+            
+                    
+                    Обмен билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="price-refund-ticket.html">
+            
+                <a href="price-refund-ticket.html">
+            
+                    
+                    Расчет стоимости возврата билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="refund-ticket.html">
+            
+                <a href="refund-ticket.html">
+            
+                    
+                    Возврат билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="revalidate-ticket.html">
+            
+                <a href="revalidate-ticket.html">
+            
+                    
+                    Ревалидация билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.10" data-path="report-ticket.html">
+            
+                <a href="report-ticket.html">
+            
+                    
+                    Формирование отчетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Очереди</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="queues.html">
+            
+                <a href="queues.html">
+            
+                    
+                    Обработка очередей
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="queue-place.html">
+            
+                <a href="queue-place.html">
+            
+                    
+                    Помещение бронирований в очереди
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="timelimit.html">
+            
+                <a href="timelimit.html">
+            
+                    
+                    Тайм-лимиты бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Правила тарифов</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="fare-rules.html">
+            
+                <a href="fare-rules.html">
+            
+                    
+                    Получение текста правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="structure-fare-rules.html">
+            
+                <a href="structure-fare-rules.html">
+            
+                    
+                    Получение структурированных правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="baggage.html">
+            
+                <a href="baggage.html">
+            
+                    
+                    Получение норм провоза багажа
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Другое</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="currency-rates.html">
+            
+                <a href="currency-rates.html">
+            
+                    
+                    Получение курсов валют
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="schedules.html">
+            
+                <a href="schedules.html">
+            
+                    
+                    Получение расписаний
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    Проверка наличия мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="commands.html">
+            
+                <a href="commands.html">
+            
+                    
+                    Отправка терминальных команд
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Формирование отчетов</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;-&#x43E;&#x442;&#x447;&#x435;&#x442;&#x43E;&#x432;">&#x424;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x43E;&#x432;</h1>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#otchet_o_prodazhah_tkttravelagencyreportsrq">&#x41E;&#x442;&#x447;&#x435;&#x442; &#x43E; &#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445; (TKT_TravelAgencyReportsRQ)</a></li>
+<li><a href="#otchet_o_neispolzovannih_biletah">&#x41E;&#x442;&#x447;&#x435;&#x442; &#x43E; &#x43D;&#x435;&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430;&#x445;</a><ul>
+<li><a href="#perehod_v_drugoi_pcc_contextchangellsrq">&#x41F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; PCC (ContextChangeLLSRQ)</a></li>
+<li><a href="#formirovanie_otcheta_unusedeticketreportllsrq">&#x424;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430; (UnusedeTicketReportLLSRQ)</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<hr>
+<h2 id="otchet_o_prodazhah_tkttravelagencyreportsrq">&#x41E;&#x442;&#x447;&#x435;&#x442; &#x43E; &#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445; (TKT_TravelAgencyReportsRQ)</h2>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430; &#x43E; &#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/display_audit_trail/resources" target="_blank">TKT_TravelAgencyReportsRQ</a>.</p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li><code>/DailySalesSummaryRQ/SelectionCriteria/PseudoCityCode</code> &#x2014; PCC, &#x434;&#x43B;&#x44F; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x431;&#x443;&#x434;&#x435;&#x442; &#x441;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D; &#x43E;&#x442;&#x447;&#x435;&#x442;. &#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x43F;&#x440;&#x438; &#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430; &#x434;&#x43B;&#x44F; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x433;&#x43E; PCC &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x430; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x430; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; (Branch Access, &#x441;&#x43C;. <a href="configuration.html">&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F; Sabre</a>) &#x43C;&#x435;&#x436;&#x434;&#x443; iPCC &#x438; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x44B;&#x43C; PCC</li>
+<li><code>/DailySalesSummaryRQ/SelectionCriteria/ReportDate</code> &#x2014; &#x434;&#x430;&#x442;&#x430;, &#x437;&#x430; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x443;&#x44E; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x43E;&#x442;&#x447;&#x435;&#x442; &#x43E; &#x43F;&#x440;&#x43E;&#x434;&#x430;&#x436;&#x430;&#x445;</li>
+<li><code>/DailySalesSummaryRQ/SelectionCriteria/SettlementType</code> &#x2014; &#x441;&#x442;&#x43E;&#x43A;, &#x434;&#x43B;&#x44F; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x441;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43E;&#x442;&#x447;&#x435;&#x442;. &#x412;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x44B;:<ul>
+<li><code>TKT</code> &#x2014; &#x441;&#x442;&#x43E;&#x43A; BSP</li>
+<li><code>TAT</code> &#x2014; &#x43F;&#x440;&#x44F;&#x43C;&#x44B;&#x435; &#x441;&#x442;&#x43E;&#x43A;&#x438; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x43E;&#x432;</li>
+<li><code>TCH</code> &#x2014; &#x441;&#x442;&#x43E;&#x43A; &#x422;&#x41A;&#x41F;</li>
+</ul>
+</li>
+<li><code>/DailySalesSummaryRQ/SelectionCriteria/DocumentType</code> &#x2014; &#x442;&#x438;&#x43F; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430;. &#x412;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x44B;:<ul>
+<li><code>TKT</code> &#x2014; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x44B;</li>
+<li><code>RFND</code> &#x2014; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44B; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;</li>
+<li><code>EMD</code> &#x2014; EMD</li>
+<li><code>RFEMD</code> &#x2014; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44B; EMD</li>
+</ul>
+</li>
+</ul>
+<p>&#x414;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li><code>/DailySalesSummaryRQ/SelectionCriteria/Airline/AirlineCode</code> &#x2014; &#x43A;&#x43E;&#x434; &#x430;&#x432;&#x438;&#x430;&#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x438; &#x438;&#x437; &#x434;&#x432;&#x443;&#x445; &#x431;&#x443;&#x43A;&#x432; (&#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, <code>SU</code> &#x434;&#x43B;&#x44F; &#x410;&#x44D;&#x440;&#x43E;&#x444;&#x43B;&#x43E;&#x442;&#x430;)</li>
+<li><code>/DailySalesSummaryRQ/SelectionCriteria/Airline/AirlineNumber</code> &#x2014; &#x43A;&#x43E;&#x434; &#x430;&#x432;&#x438;&#x430;&#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x438; &#x438;&#x437; &#x442;&#x440;&#x435;&#x445; &#x446;&#x438;&#x444;&#x440; (&#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, <code>555</code> &#x434;&#x43B;&#x44F; &#x410;&#x44D;&#x440;&#x43E;&#x444;&#x43B;&#x43E;&#x442;&#x430;)</li>
+<li><code>/DailySalesSummaryRQ/SelectionCriteria/DocumentNumber</code> &#x2014; &#x43D;&#x43E;&#x43C;&#x435;&#x440; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430; (&#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x438;&#x43B;&#x438; EMD, 13 &#x446;&#x438;&#x444;&#x440;)</li>
+</ul>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse501292">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle501292"></span>
+          </div>
+        </div>
+        <div id="collapse501292" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code501292">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code501292" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">DailySalesSummaryRQ</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.2.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SelectionCriteria</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">PseudoCityCode</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">PseudoCityCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ReportDate</span>&gt;</span>2017-12-22<span class="hljs-tag">&lt;/<span class="hljs-name">ReportDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">SelectionCriteria</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DailySalesSummaryRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse189912">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle189912"></span>
+          </div>
+        </div>
+        <div id="collapse189912" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code189912">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code189912" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">asr:DailySalesSummaryRS</span> <span class="hljs-attr">isQueryStillRunning</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.2.2&quot;</span> <span class="hljs-attr">xmlns:asr</span>=<span class="hljs-string">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">asr:Header</span> <span class="hljs-attr">messageID</span>=<span class="hljs-string">&quot;TKTVLC650-5532-657913467-1522749265847-199302-asrwsDqb&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ns2:OrchestrationID</span> <span class="hljs-attr">seq</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span> <span class="hljs-attr">xmlns:ns2</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:ns3</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/Catalog/v01&quot;</span>&gt;</span>TKTVLC650-5532-657913467-1522749265847-199302-asrwsDqb<span class="hljs-tag">&lt;/<span class="hljs-name">ns2:OrchestrationID</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ns2:Results</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span> <span class="hljs-attr">xmlns:ns2</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:ns3</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/Catalog/v01&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ns2:Success</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ns2:System</span>&gt;</span>T2-ASR<span class="hljs-tag">&lt;/<span class="hljs-name">ns2:System</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ns2:Success</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ns2:Results</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">asr:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">DSHeader</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span> <span class="hljs-attr">xmlns:ns2</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:ns3</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/Catalog/v01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">PseudoCityCode</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">PseudoCityCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AgencyName</span>&gt;</span>SABRE RUSSIAN TRA<span class="hljs-tag">&lt;/<span class="hljs-name">AgencyName</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">DSHeader</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">DailySalesReport</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.sabre.com/ns/Ticketing/AsrServices/1.0&quot;</span> <span class="hljs-attr">xmlns:ns2</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:ns3</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/Catalog/v01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ReportDate</span>&gt;</span>2017-12-22<span class="hljs-tag">&lt;/<span class="hljs-name">ReportDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;I&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>UJXGSX<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOVA/ELENA MS<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>6285764815690<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;628&quot;</span>&gt;</span>B2<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>156<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Percent</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span class="hljs-name">Percent</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T18:00:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;I&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>UJXGSX<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOV/IVAN MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>6285764815689<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;628&quot;</span>&gt;</span>B2<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>156<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Percent</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span class="hljs-name">Percent</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T18:00:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;I&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>QQPYJP<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>6285764815688<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;628&quot;</span>&gt;</span>B2<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:47:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;I&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AEBRGI<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOV/IVAN MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>6075764815687<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;607&quot;</span>&gt;</span>EY<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>839<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Percent</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span class="hljs-name">Percent</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>91554<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">cardType</span>=<span class="hljs-string">&quot;AX&quot;</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Credit&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CC&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>90554<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:42:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>QQMOVS<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOVA/ELENA MS<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815686<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>100<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">cardType</span>=<span class="hljs-string">&quot;AX&quot;</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Credit&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CC&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:32:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>QQMOVS<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOV/IVAN MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815685<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>100<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">cardType</span>=<span class="hljs-string">&quot;AX&quot;</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Credit&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CC&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:32:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AEZFRB<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOVA/ELENA MS<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815684<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>566<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Percent</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span class="hljs-name">Percent</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:31:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AEZFRB<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOV/IVAN MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815683<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>566<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Percent</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span class="hljs-name">Percent</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>60026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:31:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AETOZV<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815682<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:07:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AETOZV<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815681<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:06:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AETOZV<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815680<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:06:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AETOZV<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815679<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:03:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AETOZV<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815678<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:03:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AETOZV<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815677<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:02:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>AETOZV<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815676<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T16:01:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>PPLPXE<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOVA/ELENA MS<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815675<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentStatusCode</span>&gt;</span>V<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentStatusCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>58026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>58026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T13:23:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>PPLPXE<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOV/IVAN MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815674<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentStatusCode</span>&gt;</span>V<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentStatusCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>58026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>58026<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T13:23:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;D&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>UFEPAZ<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>5555764815673<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentStatusCode</span>&gt;</span>V<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentStatusCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;555&quot;</span>&gt;</span>SU<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>23054<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>HPA<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T12:40:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Transaction</span> <span class="hljs-attr">electronicDocument</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">itineraryType</span>=<span class="hljs-string">&quot;I&quot;</span> <span class="hljs-attr">nonInteractive</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PnrLocator</span>&gt;</span>UEHBVE<span class="hljs-tag">&lt;/<span class="hljs-name">PnrLocator</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PassengerName</span>&gt;</span>IVANOV/IVAN MR<span class="hljs-tag">&lt;/<span class="hljs-name">PassengerName</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">DocumentDetails</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentNumber</span>&gt;</span>6285764815672<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StockType</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">StockType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentStatusCode</span>&gt;</span>V<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentStatusCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TransactionCode</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AirlineCode</span> <span class="hljs-attr">AirlineNumber</span>=<span class="hljs-string">&quot;628&quot;</span>&gt;</span>B2<span class="hljs-tag">&lt;/<span class="hljs-name">AirlineCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Commission</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>100<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Commission</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Payments</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span> <span class="hljs-attr">decimalPlace</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DocumentPayment</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentTotal</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentTotal</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PaymentDetail</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;Cash&quot;</span> <span class="hljs-attr">fop</span>=<span class="hljs-string">&quot;CA&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">PaymentAmount</span>&gt;</span>16544<span class="hljs-tag">&lt;/<span class="hljs-name">PaymentAmount</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentDetail</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DocumentPayment</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Payments</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentSine</span>&gt;</span>AWS<span class="hljs-tag">&lt;/<span class="hljs-name">AgentSine</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AgentPseudoCity</span>&gt;</span>2FRH<span class="hljs-tag">&lt;/<span class="hljs-name">AgentPseudoCity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2017-12-22T11:30:00.000<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Transaction</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">TotalDailySales</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TransactionType</span>&gt;</span>SALE<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SalesBySettlement</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">SettlementType</span>&gt;</span>TKT<span class="hljs-tag">&lt;/<span class="hljs-name">SettlementType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">SaleTotals</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span>&gt;</span>RUB<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">CashTotals</span> <span class="hljs-attr">count</span>=<span class="hljs-string">&quot;13&quot;</span>&gt;</span>332062<span class="hljs-tag">&lt;/<span class="hljs-name">CashTotals</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">CreditTotals</span> <span class="hljs-attr">count</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>210606<span class="hljs-tag">&lt;/<span class="hljs-name">CreditTotals</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">CommissionTotals</span> <span class="hljs-attr">count</span>=<span class="hljs-string">&quot;7&quot;</span>&gt;</span>2483<span class="hljs-tag">&lt;/<span class="hljs-name">CommissionTotals</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">SaleTotals</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SalesBySettlement</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">TotalDailySales</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">DailySalesReport</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">asr:DailySalesSummaryRS</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<h2 id="otchet_o_neispolzovannih_biletah">&#x41E;&#x442;&#x447;&#x435;&#x442; &#x43E; &#x43D;&#x435;&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430;&#x445;</h2>
+<h3 id="perehod_v_drugoi_pcc_contextchangellsrq">&#x41F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; PCC (ContextChangeLLSRQ)</h3>
+<p>&#x414;&#x43B;&#x44F; &#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x43C; PCC &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43F;&#x435;&#x440;&#x435;&#x439;&#x442;&#x438; &#x432; &#x43D;&#x435;&#x433;&#x43E;, &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa/resources" target="_blank">ContextChangeLLSRQ</a>. &#x417;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43D;&#x435; &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F;, &#x435;&#x441;&#x43B;&#x438; &#x43E;&#x442;&#x447;&#x435;&#x442; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x441;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x434;&#x43B;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x445; iPCC.</p>
+<p><em>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x434;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434;&#x430; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; PCC &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x435; Branch Access &#x43C;&#x435;&#x436;&#x434;&#x443; &#x43D;&#x438;&#x43C; &#x438; iPCC, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x431;&#x44B;&#x43B;&#x430; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x430; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44F;. &#x41F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x435;&#x435; &#x43E; Branch Access &#x441;&#x43C;. &#x432; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x435; <a href="configuration.html">&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F; Sabre</a>.</em></p>
+<p>&#x412; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430; <code>/ContextChangeRQ/ChangeAAA/@PseudoCityCode</code> &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; PCC, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x43E; &#x431;&#x44B;&#x442;&#x44C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;.</p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse288765">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle288765"></span>
+          </div>
+        </div>
+        <div id="collapse288765" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code288765">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code288765" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ContextChangeRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.3&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ChangeAAA</span> <span class="hljs-attr">PseudoCityCode</span>=<span class="hljs-string">&quot;2FRH&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ContextChangeRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse944879">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle944879"></span>
+          </div>
+        </div>
+        <div id="collapse944879" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code944879">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code944879" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ContextChangeRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.3&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2018-04-03T10:43:41-05:00&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;1F6146&quot;</span>&gt;</span>AAA2FRH*SWS-OVER*<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Success</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SecurityToken</span> <span class="hljs-attr">Updated</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTC!ICESMSLB\/CRT.LB!-3161459150615433329!527018!0<span class="hljs-tag">&lt;/<span class="hljs-name">SecurityToken</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>2FRH.9LSC*AWS.A<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>NO MESSAGE..03APR<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ContextChangeRS</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<h3 id="formirovanie_otcheta_unusedeticketreportllsrq">&#x424;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x430; (UnusedeTicketReportLLSRQ)</h3>
+<p>&#x414;&#x43B;&#x44F; &#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x447;&#x435;&#x442;&#x43E;&#x432; &#x43E; &#x43D;&#x435;&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430;&#x445; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/get_unused_etickets/resources" target="_blank">UnusedeTicketReportLLSRQ</a>. &#x41D;&#x435;&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x43C; &#x441;&#x447;&#x438;&#x442;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;, &#x443; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x448;&#x43B;&#x43E; 5 &#x434;&#x43D;&#x435;&#x439; &#x441; &#x43C;&#x43E;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x432;&#x44B;&#x43B;&#x435;&#x442;&#x430; &#x443; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43D;&#x435;&#x433;&#x43E; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x438; &#x432; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x435; &#x438;&#x43C;&#x435;&#x44E;&#x442;&#x441;&#x44F; &#x43A;&#x443;&#x43F;&#x43E;&#x43D;&#x44B; &#x441;&#x43E; &#x441;&#x442;&#x430;&#x442;&#x443;&#x441;&#x43E;&#x43C; <code>OPEN</code>.</p>
+<p><em>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438; <a href="http://localhost:4000/tjr-settings.html#unused_electronic_ticket_report_formirovanie_otcheta_o_neispolzovannih_biletah" target="_blank">Unused Electronic Ticket Report</a>.</em></p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li><code>/Unused_eTicketReportRQ/eTicketReport/@CustomerIdentifier</code> &#x2014; DK &#x43A;&#x43E;&#x434; &#x43A;&#x43B;&#x438;&#x435;&#x43D;&#x442;&#x430;</li>
+<li><code>/Unused_eTicketReportRQ/eTicketReport/@StartDate</code> &#x2014; &#x434;&#x430;&#x442;&#x430; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x432; &#x43E;&#x442;&#x447;&#x435;&#x442; &#x438;&#x43B;&#x438; &#x434;&#x430;&#x442;&#x430; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x430; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x43C;&#x435;&#x436;&#x443;&#x442;&#x43A;&#x430; (&#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x432; &#x43E;&#x442;&#x447;&#x435;&#x442;)</li>
+<li><code>/Unused_eTicketReportRQ/eTicketReport/@EndDate</code> &#x2014; &#x434;&#x430;&#x442;&#x430; &#x43E;&#x43A;&#x43E;&#x43D;&#x447;&#x430;&#x43D;&#x438;&#x44F; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x43C;&#x435;&#x436;&#x443;&#x442;&#x43A;&#x430; (&#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x432; &#x43E;&#x442;&#x447;&#x435;&#x442;)</li>
+<li><code>/Unused_eTicketReportRQ/eTicketReport/VendorPrefs/Airline</code> &#x2014; &#x43A;&#x43E;&#x434; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430;</li>
+</ul>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse396082">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle396082"></span>
+          </div>
+        </div>
+        <div id="collapse396082" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code396082">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code396082" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">UnusedeTicketReportRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">eTicketReport</span> <span class="hljs-attr">EndDate</span>=<span class="hljs-string">&quot;03-31&quot;</span> <span class="hljs-attr">StartDate</span>=<span class="hljs-string">&quot;03-01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">VendorPrefs</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Airline</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;SU&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">VendorPrefs</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">eTicketReport</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">UnusedeTicketReportRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse809723">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle809723"></span>
+          </div>
+        </div>
+        <div id="collapse809723" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code809723">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code809723" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">UnusedeTicketReportRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2018-04-03T10:44:20-05:00&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;1F6146&quot;</span>&gt;</span>DQB*ETU/31MAR-01MAR/ASU<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Success</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SalesReport</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CreationDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">AgencyName</span>=<span class="hljs-string">&quot;SABRE RUSSIAN TRA&quot;</span> <span class="hljs-attr">CreateDateTime</span>=<span class="hljs-string">&quot;04-03&quot;</span> <span class="hljs-attr">PseudoCityCode</span>=<span class="hljs-string">&quot;2FRH&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">CreationDetails</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">TicketingInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Ticketing</span> <span class="hljs-attr">eTicketNumber</span>=<span class="hljs-string">&quot;5555670343979&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TicketingDetails</span> <span class="hljs-attr">TicketPurgeDate</span>=<span class="hljs-string">&quot;06-18&quot;</span> <span class="hljs-attr">TransactionDate</span>=<span class="hljs-string">&quot;03-25&quot;</span> <span class="hljs-attr">UnableToVerify</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Surname</span>&gt;</span>IVANOV/IVAN MR<span class="hljs-tag">&lt;/<span class="hljs-name">Surname</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PersonName</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">TicketingDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Ticketing</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Ticketing</span> <span class="hljs-attr">eTicketNumber</span>=<span class="hljs-string">&quot;5555670343978&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TicketingDetails</span> <span class="hljs-attr">TicketPurgeDate</span>=<span class="hljs-string">&quot;06-18&quot;</span> <span class="hljs-attr">TransactionDate</span>=<span class="hljs-string">&quot;03-28&quot;</span> <span class="hljs-attr">UnableToVerify</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Surname</span>&gt;</span>IVANOVA/ELENA MS<span class="hljs-tag">&lt;/<span class="hljs-name">Surname</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PersonName</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">TicketingDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Ticketing</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Ticketing</span> <span class="hljs-attr">eTicketNumber</span>=<span class="hljs-string">&quot;5555670343954&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TicketingDetails</span> <span class="hljs-attr">TicketPurgeDate</span>=<span class="hljs-string">&quot;6-18&quot;</span> <span class="hljs-attr">TransactionDate</span>=<span class="hljs-string">&quot;03-30&quot;</span> <span class="hljs-attr">UnableToVerify</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Surname</span>&gt;</span>IVANOVA/EKATERINA<span class="hljs-tag">&lt;/<span class="hljs-name">Surname</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">PersonName</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">TicketingDetails</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Ticketing</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">TicketingInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">SalesReport</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">UnusedeTicketReportRS</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="revalidate-ticket.html" class="navigation navigation-prev " aria-label="Previous page: Ревалидация билетов">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="queues.html" class="navigation navigation-next " aria-label="Next page: Обработка очередей">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Формирование отчетов","level":"6.10","depth":1,"next":{"title":"Обработка очередей","level":"7.1","depth":1,"path":"queues.md","ref":"queues.md","articles":[]},"previous":{"title":"Ревалидация билетов","level":"6.9","depth":1,"path":"revalidate-ticket.md","ref":"revalidate-ticket.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"report-ticket.md","mtime":"2018-04-06T10:06:34.061Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-06T14:34:23.539Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/redraw.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/clipboard.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/anchor.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
