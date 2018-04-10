@@ -121,3 +121,8 @@ a.btn.pull-left.js-toolbar-action {
   color: #333 !important;
   text-decoration: none !important;
 }
+
+table {
+  display: block !important;
+  overflow-x: auto !important;
+}
