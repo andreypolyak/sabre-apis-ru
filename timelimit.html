@@ -170,19 +170,6 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="errors.html">
-            
-                <a href="errors.html">
-            
-                    
-                    Обработка ошибок
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
         
@@ -216,20 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="shop-alternate-airports.html">
-            
-                <a href="shop-alternate-airports.html">
-            
-                    
-                    Поиск по гибким направлениям
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4" data-path="shop-by-fare.html">
+        <li class="chapter " data-level="3.3" data-path="shop-by-fare.html">
             
                 <a href="shop-by-fare.html">
             
@@ -242,12 +216,25 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="shop-optimization.html">
+        <li class="chapter " data-level="3.4" data-path="shop-optimization.html">
             
                 <a href="shop-optimization.html">
             
                     
                     Оптимизация времени поиска
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="get-availability.html">
+            
+                <a href="get-availability.html">
+            
+                    
+                    Получение данных о наличии мест
             
                 </a>
             
@@ -815,33 +802,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2" data-path="schedules.html">
-            
-                <a href="schedules.html">
-            
-                    
-                    Получение расписаний
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.3" data-path="availability.html">
-            
-                <a href="availability.html">
-            
-                    
-                    Проверка наличия мест
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.4" data-path="commands.html">
+        <li class="chapter " data-level="9.2" data-path="commands.html">
             
                 <a href="commands.html">
             
@@ -971,35 +932,35 @@
 </ul>
 <p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
 <ul>
-<li><code>/PassengerDetailsRQ/@HaltOnError</code> &#x2014; &#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x430; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438; &#x432; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
-<li><code>/PassengerDetailsRQ/@IgnoreOnError</code> &#x2014; &#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438; &#x432; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
+<li><code>/PassengerDetailsRQ/@haltOnError</code> &#x2014; &#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x430; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438; &#x432; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
+<li><code>/PassengerDetailsRQ/@ignoreOnError</code> &#x2014; &#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438; &#x432; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
 <li><code>/PassengerDetailsRQ/PostProcessing/EndTransactionRQ/EndTransaction/@Ind</code> &#x2014; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
 <li><code>/PassengerDetailsRQ/PostProcessing/EndTransactionRQ/Source/@ReceivedFrom</code> &#x2014; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x43E;&#x43B;&#x44F; Received From</li>
-<li><code>/PassengerDetailsRQ/PreProcessing/@IgnoreBefore</code> &#x2014; &#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x435;&#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x43F;&#x435;&#x440;&#x435;&#x434; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
-<li><code>/PassengerDetailsRQ/PreProcessing/UniqueID/@ID</code> &#x2014; &#x43A;&#x43E;&#x434; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (PNR Record Locator)</li>
+<li><code>/PassengerDetailsRQ/PreProcessing/@ignoreBefore</code> &#x2014; &#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x435;&#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x43F;&#x435;&#x440;&#x435;&#x434; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
+<li><code>/PassengerDetailsRQ/PreProcessing/UniqueID/@id</code> &#x2014; &#x43A;&#x43E;&#x434; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (PNR Record Locator)</li>
 <li>&#x442;&#x430;&#x439;&#x43C;-&#x43B;&#x438;&#x43C;&#x438;&#x442; (&#x441;&#x43C;. &#x432;&#x44B;&#x448;&#x435;)</li>
 </ul>
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse581985">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse295728">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle581985"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle295728"></span>
           </div>
         </div>
-        <div id="collapse581985" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse295728" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code581985">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code581985" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRQ</span> <span class="hljs-attr">HaltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">IgnoreOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.3.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code295728">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code295728" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRQ</span> <span class="hljs-attr">haltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">ignoreOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.4.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_4&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PostProcessing</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRQ</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">EndTransaction</span> <span class="hljs-attr">Ind</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">ReceivedFrom</span>=<span class="hljs-string">&quot;API&quot;</span>/&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">EndTransactionRQ</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">PostProcessing</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">PreProcessing</span> <span class="hljs-attr">IgnoreBefore</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">UniqueID</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;OMGFLS&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PreProcessing</span> <span class="hljs-attr">ignoreBefore</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">UniqueID</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;YPMIZR&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">PreProcessing</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryAddInfoRQ</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">AgencyInfo</span>&gt;</span>
@@ -1015,20 +976,20 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse119801">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse645761">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle119801"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle645761"></span>
           </div>
         </div>
-        <div id="collapse119801" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse645761" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code119801">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code119801" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code645761">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code645761" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_4&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2018-04-02T15:18:28.764-05:00&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-01-29T09:50:44.160-06:00&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationResults</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ItineraryRef</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;OMGFLS&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ItineraryRef</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;YPMIZR&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">PassengerDetailsRS</span>&gt;</span>
 </code></pre>
           </div>
@@ -1983,7 +1944,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Тайм-лимиты бронирований","level":"7.3","depth":1,"next":{"title":"Получение текста правил","level":"8.1","depth":1,"path":"fare-rules.md","ref":"fare-rules.md","articles":[]},"previous":{"title":"Помещение бронирований в очереди","level":"7.2","depth":1,"path":"queue-place.md","ref":"queue-place.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"timelimit.md","mtime":"2018-04-06T10:42:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-17T18:28:39.598Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Тайм-лимиты бронирований","level":"7.3","depth":1,"next":{"title":"Получение текста правил","level":"8.1","depth":1,"path":"fare-rules.md","ref":"fare-rules.md","articles":[]},"previous":{"title":"Помещение бронирований в очереди","level":"7.2","depth":1,"path":"queue-place.md","ref":"queue-place.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"timelimit.md","mtime":"2019-01-29T15:51:05.722Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-02-06T09:21:31.676Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
