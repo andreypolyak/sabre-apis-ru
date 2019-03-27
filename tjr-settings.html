@@ -938,7 +938,7 @@
     {code: 'PQPLUS', string: 'PQPLUS ACTIVE', name: 'Enhanced PQ (Улучшенные PQ)', default: true},
     {code: 'MCT', string: 'MCT', name: 'Minimum Connect Time Edit (Проверка соответствия пересадок минимальному допустимому времени)', default: true},
     {code: 'MTKTP', string: 'MULTI-TICKET SHOPPING AND PRICING ACTIVE', name: 'Multi-Ticket Shopping and Pricing (Поиск перелетов с оформлением на нескольких билетах)', default: true},
-    {code: 'PNAPNR', string: 'PASSENGER NAME ASSOCIATION FOR PNR FIELDS - ON', name: 'Passenger Name Association (Привязка элементов бронирования к пассажирам)', default: false},
+    {code: 'PNAPNR', string: 'PASSENGER NAME ASSOCIATION FOR PNR FIELDS - ON', name: 'Passenger Name Association (Привязка элементов бронирования к пассажирам)', default: true},
     {code: 'PQT', string: 'PRICE RETENTION TKTG ALERT', name: 'Price Retention Ticketing Alert (Предупреждение об изменении стоимости билетов)', default: false},
     {code: 'TKM', string: 'TICKETING ALERT PASSPORT/DOB - ACTIVE', name: 'PSPT Warning Message (Предупреждение об отсутствии паспортов в бронировании)', default: false},
     {code: 'RVCTVC', string: 'RESTRICT VAL CARRIER TO TRADITIONAL VAL CARRIER - ON', name: 'Restrict Validating Carrier to Traditional Validating Carrier (Традиционная логика выбора валидирующего перевозчика)', default: false},
@@ -1053,34 +1053,37 @@
 <p><a href="https://formatfinder.sabre.com/Content/TravelJournalRecordTJR/TJRComponents/ALERTTOPREVENTDUPLICATETICKETING.aspx?ItemID=dfe8106802df4777bf0a90e6f5406496&amp;tabtype=overview&amp;documentId=dfe8106802df4777bf0a90e6f5406496_overview" target="_blank">&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x432; Format Finder</a>.</p>
 <p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; Alert to Prevent Duplicate Ticketing &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x438; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x43D;&#x43E;&#x433;&#x43E; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x434;&#x43B;&#x44F; &#x442;&#x435;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x438; &#x442;&#x435;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x434;&#x43B;&#x44F; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x443;&#x436;&#x435; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
-<p>&#x41F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x434;&#x43B;&#x44F; &#x442;&#x435;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x438; &#x442;&#x435;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x434;&#x43B;&#x44F; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x443;&#x436;&#x435; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;, &#x432; &#x43E;&#x442;&#x432;&#x435;&#x442; &#x43D;&#x430; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; <a href="https://developer.sabre.com/docs/soap_apis/air/fulfill/issue_air_ticket/resources" target="_blank">AirTicketLLSRQ</a> &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;:</p>
+<p>&#x41F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x434;&#x43B;&#x44F; &#x442;&#x435;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x438; &#x442;&#x435;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x434;&#x43B;&#x44F; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x443;&#x436;&#x435; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;, &#x432; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x435; &#x43D;&#x430; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x440;&#x438;&#x441;&#x443;&#x442;&#x441;&#x442;&#x432;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x430; <code>DUPLICATE TICKETS FOUND</code>.</p>
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse676773">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse687937">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle676773"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle687937"></span>
           </div>
         </div>
-        <div id="collapse676773" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse687937" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code676773">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code676773" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AirTicketRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.11.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T09:12:28-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;764168&quot;</span>&gt;</span>W&#xA5;PQ1&#xA5;FCK&#xA5;K1<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>DUPLICATE TICKETS FOUND<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>USE &#x2021;DUPE TO OVERRIDE AND ISSUE TICKET OR CORRECT AND RETRY<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>POLYAK/ANDREY MR<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>5551060984420 SU11 LED SVO  1JAN<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>5551060984420 SU42 SVO LED  1JAN<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:ShortText</span>&gt;</span>ERR.SWS.HOST.ERROR_IN_RESPONSE<span class="hljs-tag">&lt;/<span class="hljs-name">stl:ShortText</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Error</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code687937">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code687937" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AirTicketRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/air/ticket/v1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Incomplete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-06T11:53:33.717-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Application&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;ERR.SP.PROVIDER_ERROR&quot;</span>&gt;</span>No new tickets have been issued<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Error</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-06T11:53:25.703-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Application&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;WARN.SP.PROVIDER_WARNING&quot;</span>&gt;</span>AirTicketLLS failed for /Ticketing[1] with Cause: AirTicketLLSRQ: DUPLICATE TICKETS FOUND<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Warning</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-06T11:53:33.717-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Application&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;WARN.SP.PROVIDER_ERROR&quot;</span>&gt;</span>TicketingDocumentServicesRQ: No new tickets have been issued<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Warning</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationResults</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">AirTicketRS</span>&gt;</span>
 </code></pre>
           </div>
@@ -1099,11 +1102,11 @@
 <p><em>&#x2713; &#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x443; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x442;&#x44C;</em> <span id="C35IT"></span></p>
 <p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
 <p><a href="https://formatfinder.sabre.com/Content/TravelJournalRecordTJR/TJRTicketing/TJRTicketFromStoredFare.aspx?ItemID=bc697c2d4b8348c18ddf34940088d8d2" target="_blank">&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x432; Format Finder</a>.</p>
-<p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; Allow Ticket CAT 35 IT/BT PQ Fare &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x430;&#x435;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C; &#x43F;&#x440;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x435; Ticket from Stored Fare (&#x441;&#x43C;. &#x43D;&#x438;&#x436;&#x435;).</p>
+<p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; Allow Ticket CAT 35 IT/BT PQ Fare &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x430;&#x435;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x43C; 35-&#x44E; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x44E; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;, &#x43F;&#x440;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x435; Ticket from Stored Fare (&#x441;&#x43C;. &#x43D;&#x438;&#x436;&#x435;).</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
-<p>&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C; &#x43F;&#x440;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x435; Ticket from Stored Fare &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x43E;.</p>
+<p>&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x43C; 35-&#x44E; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x44E; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;, &#x43F;&#x440;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x435; Ticket from Stored Fare &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x43E;.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
-<p>&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C; &#x43F;&#x440;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x435; Ticket from Stored Fare <strong>&#x43D;&#x435; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x43E;</strong>.</p>
+<p>&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x43C; 35-&#x44E; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x44E; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;, &#x43F;&#x440;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x435; Ticket from Stored Fare <strong>&#x43D;&#x435; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x43E;</strong>.</p>
 <p><strong>&#x412;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;</strong></p>
 <ul>
 <li><code>W/C35IT&#xA5;*</code> &#x2014; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438;</li>
@@ -1119,36 +1122,7 @@
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
 <p>&#x41F;&#x440;&#x438; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x438; (&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438;) &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x43E;&#x43D;&#x438; &#x431;&#x443;&#x434;&#x443;&#x442; &#x432;&#x44B;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;&#x44B; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x432; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x435;.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
-<p>&#x41F;&#x440;&#x438; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x438; (&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438;) &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x43E;&#x43D;&#x438; &#x431;&#x443;&#x434;&#x443;&#x442; &#x432;&#x44B;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;&#x44B; &#x432; &#x442;&#x43E;&#x43C; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x435;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x431;&#x44B;&#x43B;&#x438; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x44B;. &#x41F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x438; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/end_transaction/resources" target="_blank">EndTransactionLLSRQ</a> &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x430; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x430;:</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse470696">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle470696"></span>
-          </div>
-        </div>
-        <div id="collapse470696" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code470696">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code470696" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.6&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T08:17:00-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;764168&quot;</span>&gt;</span>6SWS&#xA7;E<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>SEGMENTS NOT IN DATE ORDER - VERIFY AND REENTER<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>VERIFY ORDER OF ITINERARY SEGMENTS - MODIFY OR END TRANSACTION<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:ShortText</span>&gt;</span>ERR.SWS.HOST.ERROR_IN_RESPONSE<span class="hljs-tag">&lt;/<span class="hljs-name">stl:ShortText</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Error</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">EndTransactionRS</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
+<p>&#x41F;&#x440;&#x438; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x438; (&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438;) &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x43E;&#x43D;&#x438; &#x431;&#x443;&#x434;&#x443;&#x442; &#x432;&#x44B;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;&#x44B; &#x432; &#x442;&#x43E;&#x43C; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x435;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x431;&#x44B;&#x43B;&#x438; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x44B;. &#x41F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x441; &#x43D;&#x435;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x43C; &#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x430; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x430; <code>SEGMENTS NOT IN DATE ORDER - VERIFY AND REENTER</code>.</p>
 <p><strong>&#x412;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;</strong></p>
 <ul>
 <li><code>W/TA*[PCC]</code> &#x437;&#x430;&#x442;&#x435;&#x43C; <code>MD/ARRANGE</code> &#x2014; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438;</li>
@@ -1161,7 +1135,6 @@
 <p><a href="https://formatfinder.sabre.com/Content/TravelJournalRecordTJR/TJRAutomaticallyEndTransactionatTicketingFulfillment.aspx?ItemID=291d963222634165968806b2e1ee77b7&amp;tabtype=format&amp;documentId=291d963222634165968806b2e1ee77b7_format" target="_blank">&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x432; Format Finder</a>.</p>
 <p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; Automatically End Transaction at Ticketing &#x430;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x44F;&#x435;&#x442; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43D;&#x430; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435;, &#x432;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438;&#x43B;&#x438; EMD, &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x447;&#x435;&#x433;&#x43E; &#x437;&#x430;&#x43D;&#x43E;&#x432;&#x43E; &#x447;&#x438;&#x442;&#x430;&#x435;&#x442; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;.</p>
 <p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x432;&#x441;&#x435; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x432; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x430;&#x445; <a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>, <a href="void-ticket.html">&#x412;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a> &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x44B; &#x441; &#x442;&#x435;&#x43C; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x43E;&#x43C;, &#x447;&#x442;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x430;&#x44F; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; <strong>&#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong>. &#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x435;&#x435; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x442;&#x44C; &#x438;&#x437; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x441;&#x43E;&#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43D;&#x430; &#x447;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43D;&#x430; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435;, &#x432;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x43B;&#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438;&#x43B;&#x438; EMD.</p>
-<p>&#x414;&#x430;&#x43D;&#x43D;&#x430;&#x44F; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x441;&#x43E;&#x432;&#x43C;&#x435;&#x441;&#x442;&#x438;&#x43C;&#x430; &#x441;&#x43E; &#x441;&#x43A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43C; &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430; &#x41D;&#x414;&#x421;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C;&#x43E;&#x43C; &#x432; Sabre Red Workspace.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
 <p>&#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43D;&#x430; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435;, &#x432;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x43B;&#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438;&#x43B;&#x438; EMD &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x43E; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438; &#x435;&#x433;&#x43E; &#x43F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x43D;&#x43E;&#x435; &#x447;&#x442;&#x435;&#x43D;&#x438;&#x435;. &#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x432; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x432;&#x43A;&#x43B;&#x430;&#x434;&#x43A;&#x435; &#x432; Sabre Red Workspace &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x43E;.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
@@ -1178,7 +1151,6 @@
 <p><a href="https://formatfinder.sabre.com/Content/TravelJournalRecordTJR/TJRAutomaticallyEndTransactionatTicketingFulfillment.aspx?ItemID=291d963222634165968806b2e1ee77b7&amp;tabtype=format&amp;documentId=291d963222634165968806b2e1ee77b7_format" target="_blank">&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x432; Format Finder</a>.</p>
 <p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; Automatically End Transaction at Ticketing &#x430;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x44F;&#x435;&#x442; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43D;&#x430; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435;, &#x432;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438;&#x43B;&#x438; EMD. &#x414;&#x430;&#x43D;&#x43D;&#x430;&#x44F; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43F;&#x43E;&#x432;&#x44B;&#x448;&#x430;&#x435;&#x442; &#x43D;&#x430;&#x434;&#x435;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;.</p>
 <p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x432;&#x441;&#x435; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x432; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x430;&#x445; <a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>, <a href="void-ticket.html">&#x412;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a> &#x438; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x44B; &#x441; &#x442;&#x435;&#x43C; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x43E;&#x43C;, &#x447;&#x442;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x430;&#x44F; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;.</p>
-<p>&#x422;&#x430;&#x43A;&#x436;&#x435; &#x43E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x430;&#x44F; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; <strong>&#x43D;&#x435; &#x441;&#x43E;&#x432;&#x43C;&#x435;&#x441;&#x442;&#x438;&#x43C;&#x430;</strong> &#x441;&#x43E; &#x441;&#x43A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x43C; &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430; &#x41D;&#x414;&#x421;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C;&#x43E;&#x43C; &#x432; Sabre Red Workspace. &#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x441;&#x43A;&#x440;&#x438;&#x43F;&#x442;&#x430; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x443; Automatically End Transaction and Redisplay the PNR at Ticketing (&#x441;&#x43C;. &#x43D;&#x438;&#x436;&#x435;).</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
 <p>&#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x43D;&#x430; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435;, &#x432;&#x43E;&#x439;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x43B;&#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438;&#x43B;&#x438; EMD &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x43E; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;. &#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x432; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438;&#x43B;&#x438; &#x432;&#x43A;&#x43B;&#x430;&#x434;&#x43A;&#x435; &#x432; Sabre Red Workspace &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; <strong>&#x43D;&#x435; &#x431;&#x443;&#x434;&#x435;&#x442;</strong> &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442;&#x43E;.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
@@ -1221,16 +1193,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse26447">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse402028">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle26447"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle402028"></span>
           </div>
         </div>
-        <div id="collapse26447" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse402028" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code26447">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code26447" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.9&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code402028">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code402028" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.9&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2017-10-20T04:32:24-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
@@ -1251,16 +1223,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse196939">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse572745">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle196939"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle572745"></span>
           </div>
         </div>
-        <div id="collapse196939" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse572745" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code196939">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code196939" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code572745">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code572745" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_3&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2017-10-20T04:35:41.087-05:00&quot;</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2017-10-20T04:35:40.653-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
@@ -1322,87 +1294,10 @@
 <p><em>&#x2717; &#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x443; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x442;&#x44C;</em> <span id="PQT"></span></p>
 <p><strong>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435;</strong></p>
 <p><a href="https://formatfinder.sabre.com/Content/PriceQuotePQ/FormatsPriceQuoteRecords/TJRPriceQuoteRecords.aspx?ItemID=0c8349ef85a24d95983603c226b1a22b" target="_blank">&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x432; Format Finder</a>.</p>
-<p>&#x412; Sabre &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; (&#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x43D;&#x435; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; <a href="tjr-settings.html#ticket_from_stored_fare_oformlenie_biletov_po_sohranennim_pq_bez_pererascheta">Ticket from Stored Fare</a>) &#x43A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x440;&#x430;&#x437; &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x44B; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x44F;&#x435;&#x43C;&#x44B;&#x445; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;. &#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; <a href="tjr-settings.html#price_retention_ticketing_alert_preduprezhdenie_ob_izmenenii_stoimosti_biletov">Price Retention Ticketing Alert</a> &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x443; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x438;&#x44F; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; (&#x438;&#x43B;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;), &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x432; PQ, &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x438;&#x43B;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x431;&#x443;&#x434;&#x443;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x44B; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;. &#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F;, &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;.</p>
-<p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; 1 PQ &#x43D;&#x430; &#x432;&#x441;&#x435;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x43E;&#x434;&#x43D;&#x43E;&#x439; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x438;, &#x438;, &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x43F;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; PQ &#x434;&#x43B;&#x44F; &#x43C;&#x435;&#x43D;&#x44C;&#x448;&#x435;&#x433;&#x43E; &#x447;&#x438;&#x441;&#x43B;&#x430; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;, &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;.</p>
-<p>&#x41D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; 3 &#x432;&#x437;&#x440;&#x43E;&#x441;&#x43B;&#x44B;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x438; 2 &#x434;&#x435;&#x442;&#x435;&#x439;, &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43E; 2 PQ: 1 &#x434;&#x43B;&#x44F; &#x432;&#x437;&#x440;&#x43E;&#x441;&#x43B;&#x44B;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x438; 1 &#x434;&#x43B;&#x44F; &#x434;&#x435;&#x442;&#x435;&#x439;. &#x41F;&#x440;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x44D;&#x442;&#x438;&#x43C; PQ &#x43F;&#x43E;-&#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43D;&#x43E; (&#x442;.&#x435;. &#x434;&#x43B;&#x44F; 1 &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430; &#x432; 1 &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x430; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430;) &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;.</p>
+<p>&#x412; Sabre &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; (&#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x43D;&#x435; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; <a href="tjr-settings.html#ticket_from_stored_fare_oformlenie_biletov_po_sohranennim_pq_bez_pererascheta">Ticket from Stored Fare</a>) &#x43A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x440;&#x430;&#x437; &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;. &#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; <a href="tjr-settings.html#price_retention_ticketing_alert_preduprezhdenie_ob_izmenenii_stoimosti_biletov">Price Retention Ticketing Alert</a> &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x443; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x438;&#x44F; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C;&#x44E; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; (&#x438;&#x43B;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;), &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x432; PQ (Price Quote) &#x438; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C;&#x44E; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; (&#x438;&#x43B;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;), &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;. &#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F;, &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;.</p>
+<p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; 1 PQ &#x43D;&#x430; &#x432;&#x441;&#x435;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x43E;&#x434;&#x43D;&#x43E;&#x439; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x438;, &#x438;, &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x43F;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; PQ &#x434;&#x43B;&#x44F; &#x43C;&#x435;&#x43D;&#x44C;&#x448;&#x435;&#x433;&#x43E; &#x447;&#x438;&#x441;&#x43B;&#x430; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;, &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;. &#x41D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; 3 &#x432;&#x437;&#x440;&#x43E;&#x441;&#x43B;&#x44B;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x438; 2 &#x434;&#x435;&#x442;&#x435;&#x439;, &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43E; 2 PQ: 1 &#x434;&#x43B;&#x44F; &#x432;&#x437;&#x440;&#x43E;&#x441;&#x43B;&#x44B;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x438; 1 &#x434;&#x43B;&#x44F; &#x434;&#x435;&#x442;&#x435;&#x439;. &#x41F;&#x440;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430; &#x43F;&#x43E;-&#x43E;&#x442;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438;, &#x430; &#x43D;&#x435; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x445; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x432; PQ, &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
-<p>&#x41F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43E;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x432; PQ &#x432; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x435; &#x43D;&#x430; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; <a href="https://developer.sabre.com/docs/soap_apis/air/fulfill/issue_air_ticket/resources" target="_blank">AirTicketLLSRQ</a> &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;:</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse906015">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle906015"></span>
-          </div>
-        </div>
-        <div id="collapse906015" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code906015">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code906015" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AirTicketRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.11.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T09:31:15-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;764168&quot;</span>&gt;</span>W&#xA5;PQ1N1.1&#xA5;FCK&#xA5;K1<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>VERIFY TKT TTL  RUB     23050 - PQ TTL  RUB     46100<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>TICKET?  ENTER Y OR N&amp;lt;.&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:ShortText</span>&gt;</span>ERR.SWS.HOST.ERROR_IN_RESPONSE<span class="hljs-tag">&lt;/<span class="hljs-name">stl:ShortText</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Error</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">AirTicketRS</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x432;&#x441;&#x435;-&#x442;&#x430;&#x43A;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/send_sabre_command/resources" target="_blank">SabreCommandLLSRQ</a> (&#x441;&#x43C;. <a href="commands.html">&#x41E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;</a>):</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse757545">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle757545"></span>
-          </div>
-        </div>
-        <div id="collapse757545" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code757545">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code757545" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SabreCommandLLSRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;1.8.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Request</span> <span class="hljs-attr">Output</span>=<span class="hljs-string">&quot;SCREEN&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>&lt;![CDATA[VE&lt;Y&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Request</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">SabreCommandLLSRQ</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x43E;&#x442;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x43E;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; SabreCommandLLSRQ:</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse382750">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle382750"></span>
-          </div>
-        </div>
-        <div id="collapse382750" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code382750">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code382750" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SabreCommandLLSRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;1.8.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Request</span> <span class="hljs-attr">Output</span>=<span class="hljs-string">&quot;SCREEN&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>&lt;![CDATA[VE&lt;N&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Request</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">SabreCommandLLSRQ</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x421;&#x435;&#x440;&#x432;&#x438;&#x441;-&#x43E;&#x431;&#x435;&#x440;&#x442;&#x43A;&#x430; (orchestrated service) AirTicketRQ &#x434;&#x43B;&#x44F; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x430;&#x442;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x435;&#x437; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; (&#x441;&#x43C;. <a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>).</p>
+<p>&#x41F;&#x440;&#x438; &#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x435; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442;, &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43E;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x432; PQ, &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;. &#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x434;&#x43B;&#x44F; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; AirTicketRQ  &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x430;&#x442;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x442;&#x430;&#x43A;&#x438;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x44F;, &#x441;&#x43C;. <a href="issue-ticket.html#post-obrabotka">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
 <p>&#x421;&#x440;&#x430;&#x432;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x438;&#x44F; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x44F;&#x435;&#x43C;&#x44B;&#x445; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43D;&#x435; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F;.</p>
 <p><strong>&#x412;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;</strong></p>
@@ -1426,16 +1321,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse53990">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse347453">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle53990"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle347453"></span>
           </div>
         </div>
-        <div id="collapse53990" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse347453" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code53990">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code53990" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;OSI&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code347453">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code347453" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;OSI&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;2.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>PSPT123456/DOB14JAN18<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">VendorPrefs</span>&gt;</span>
@@ -1452,73 +1347,44 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse12352">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse429868">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle12352"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle429868"></span>
           </div>
         </div>
-        <div id="collapse12352" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse429868" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code12352">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code12352" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AirTicketRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.11.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T08:27:57-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;764168&quot;</span>&gt;</span>W&#xA5;PQ1&#xA5;FCK&#xA5;K1<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>WARNING - NO PASSPORT AND/OR DOB DATA FOR SELECTED PAX<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>CONTINUE TICKETING Y OR N &amp;gt;&#xBB;&amp;lt;.&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:ShortText</span>&gt;</span>ERR.SWS.HOST.ERROR_IN_RESPONSE<span class="hljs-tag">&lt;/<span class="hljs-name">stl:ShortText</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Error</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code429868">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code429868" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AirTicketRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/air/ticket/v1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Incomplete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-27T14:21:56.948-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Application&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;ERR.SP.PROVIDER_ERROR&quot;</span>&gt;</span>No new tickets have been issued<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Error</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-27T14:21:52.332-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Application&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;WARN.SP.PROVIDER_WARNING&quot;</span>&gt;</span>AirTicketLLS failed for /Ticketing[1] with Cause: AirTicketLLSRQ: WARNING - NO PASSPORT AND/OR DOB DATA FOR SELECTED PAX<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Warning</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-27T14:21:56.947-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Application&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;WARN.SP.PROVIDER_ERROR&quot;</span>&gt;</span>TicketingDocumentServicesRQ: No new tickets have been issued<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Warning</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-27T14:21:57.034-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;WARN.SWS.HOST.ERROR_IN_RESPONSE&quot;</span>&gt;</span>DesignatePrinterLLSRQ: CONTINUE TICKETING Y OR N &amp;gt;&#xBB;&amp;lt;.&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Warning</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2019-03-27T14:21:57.159-05:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;WARN.SWS.HOST.ERROR_IN_RESPONSE&quot;</span>&gt;</span>DesignatePrinterLLSRQ: CONTINUE TICKETING Y OR N &amp;gt;&#xBB;&amp;lt;.&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Warning</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationResults</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">AirTicketRS</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x432;&#x441;&#x435;-&#x442;&#x430;&#x43A;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/send_sabre_command/resources" target="_blank">SabreCommandLLSRQ</a> (&#x441;&#x43C;. <a href="commands.html">&#x41E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;</a>):</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse291699">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle291699"></span>
-          </div>
-        </div>
-        <div id="collapse291699" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code291699">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code291699" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SabreCommandLLSRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;1.8.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Request</span> <span class="hljs-attr">Output</span>=<span class="hljs-string">&quot;SCREEN&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>&lt;![CDATA[WA&lt;Y&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Request</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">SabreCommandLLSRQ</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x43E;&#x442;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x43E;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; SabreCommandLLSRQ:</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse60169">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle60169"></span>
-          </div>
-        </div>
-        <div id="collapse60169" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code60169">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code60169" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SabreCommandLLSRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;1.8.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Request</span> <span class="hljs-attr">Output</span>=<span class="hljs-string">&quot;SCREEN&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>&lt;![CDATA[WA&lt;N&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Request</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">SabreCommandLLSRQ</span>&gt;</span>
 </code></pre>
           </div>
         </div>
@@ -1571,106 +1437,7 @@
 <p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x430;&#x44F; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x438;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x434;&#x430;&#x436;&#x435; &#x441; &#x43D;&#x430;&#x440;&#x443;&#x448;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x439; <a href="timelimit.html">&#x442;&#x430;&#x439;&#x43C;-&#x43B;&#x438;&#x43C;&#x438;&#x442;&#x430;</a>. &#x427;&#x442;&#x43E;&#x431;&#x44B; &#x438;&#x437;&#x431;&#x435;&#x436;&#x430;&#x442;&#x44C; &#x43F;&#x440;&#x43E;&#x431;&#x43B;&#x435;&#x43C;, &#x43F;&#x435;&#x440;&#x435;&#x434; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x430; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x442;&#x430;&#x439;&#x43C;-&#x43B;&#x438;&#x43C;&#x438;&#x442;&#x430;.</p>
 <p>&#x41F;&#x440;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x442;&#x44C; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x443; <a href="tjr-settings.html#allow_ticket_cat_35_itbt_pq_fare_oformlenie_biletov_po_sohranennim_v_pq_privatnim_tarifam_bez_pererascheta">Allow Ticket CAT 35 IT/BT PQ Fare</a> &#x434;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E;, &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x438;&#x43C;&#x435;&#x442;&#x44C; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x44F;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x44B; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
-<p>&#x41F;&#x440;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43D;&#x435; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; PQ. &#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x43F;&#x440;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43B;&#x441;&#x44F; PQ, &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43D;&#x435; &#x432; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x434;&#x435;&#x43D;&#x44C;, &#x430; &#x440;&#x430;&#x43D;&#x435;&#x435;, &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;:</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse548338">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle548338"></span>
-          </div>
-        </div>
-        <div id="collapse548338" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code548338">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code548338" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AirTicketRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.11.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;NotProcessed&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Error</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2016-12-09T10:12:21-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;764168&quot;</span>&gt;</span>W&#xA5;PQ1&#xA5;FCK&#xA5;K1<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>UNABLE TO TICKET STORED FARE - PQ EXPIRED<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:Message</span>&gt;</span>ENTER R-REPRICE/TKT OR Q-QUIT OR O-OVERRIDE/TKT&amp;lt;.&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-name">stl:Message</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">stl:ShortText</span>&gt;</span>ERR.SWS.HOST.ERROR_IN_RESPONSE<span class="hljs-tag">&lt;/<span class="hljs-name">stl:ShortText</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Error</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">AirTicketRS</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x44C; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x43F;&#x43E; &#x430;&#x43A;&#x442;&#x443;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/send_sabre_command/resources" target="_blank">SabreCommandLLSRQ</a> (&#x441;&#x43C;. <a href="commands.html">&#x41E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x442;&#x435;&#x440;&#x43C;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;</a>):</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse640981">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle640981"></span>
-          </div>
-        </div>
-        <div id="collapse640981" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code640981">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code640981" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SabreCommandLLSRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;1.8.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Request</span> <span class="hljs-attr">Output</span>=<span class="hljs-string">&quot;SCREEN&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>&lt;![CDATA[UN&lt;R&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Request</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">SabreCommandLLSRQ</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x43F;&#x43E; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; PQ &#x431;&#x435;&#x437; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430; (&#x432; &#x44D;&#x442;&#x43E;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x433;&#x430;&#x440;&#x430;&#x43D;&#x442;&#x438;&#x44F; Sabre &#x43D;&#x435; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x438;&#x442;&#x441;&#x44F;) &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; SabreCommandLLSRQ:</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse345140">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle345140"></span>
-          </div>
-        </div>
-        <div id="collapse345140" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code345140">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code345140" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SabreCommandLLSRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;1.8.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Request</span> <span class="hljs-attr">Output</span>=<span class="hljs-string">&quot;SCREEN&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>&lt;![CDATA[UN&lt;O&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Request</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">SabreCommandLLSRQ</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x43E;&#x442;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x43E;&#x442; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; SabreCommandLLSRQ:</p>
-<p>
-    <div class="panel-group" role="tablist">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse916262">
-          <div class="panel-title">
-            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle916262"></span>
-          </div>
-        </div>
-        <div id="collapse916262" class="panel-collapse collapse in" role="tabpanel">
-          <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code916262">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code916262" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SabreCommandLLSRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;1.8.1&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2003/07&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Request</span> <span class="hljs-attr">Output</span>=<span class="hljs-string">&quot;SCREEN&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">HostCommand</span>&gt;</span>&lt;![CDATA[UN&lt;Q&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">HostCommand</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Request</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">SabreCommandLLSRQ</span>&gt;</span>
-</code></pre>
-          </div>
-        </div>
-      </div>
-    </div></p>
-<p>&#x421;&#x435;&#x440;&#x432;&#x438;&#x441;-&#x43E;&#x431;&#x435;&#x440;&#x442;&#x43A;&#x430; (orchestrated service) AirTicketRQ &#x434;&#x43B;&#x44F; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x430;&#x442;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x435;&#x437; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432; (&#x441;&#x43C;. <a href="issue-ticket.html">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>).</p>
+<p>&#x41F;&#x440;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x43D;&#x435; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; PQ. &#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x43F;&#x440;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43B;&#x441;&#x44F; PQ, &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43D;&#x435; &#x432; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x438;&#x439; &#x434;&#x435;&#x43D;&#x44C;, &#x430; &#x440;&#x430;&#x43D;&#x435;&#x435;, &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x432;&#x430;&#x43D;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x435;. &#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x434;&#x43B;&#x44F; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; AirTicketRQ  &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x430;&#x442;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x442;&#x430;&#x43A;&#x438;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x443;&#x43F;&#x440;&#x435;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x44F;, &#x441;&#x43C;. <a href="issue-ticket.html#post-obrabotka">&#x41E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x438; EMD</a>.</p>
 <p><strong>&#x415;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x430;</strong></p>
 <p>&#x41F;&#x440;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438;.</p>
 <p><strong>&#x412;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;</strong></p>
@@ -1777,16 +1544,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse642978">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse342162">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle642978"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle342162"></span>
           </div>
         </div>
-        <div id="collapse642978" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse342162" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code642978">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code642978" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TicketingCxrDisplayRQ</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://stl.sabre.com/AirPricing/validating_cxr/v0&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code342162">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code342162" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TicketingCxrDisplayRQ</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://stl.sabre.com/AirPricing/validating_cxr/v0&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">POS</span> <span class="hljs-attr">multiHost</span>=<span class="hljs-string">&quot;1S&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Actual</span> <span class="hljs-attr">country</span>=<span class="hljs-string">&quot;RU&quot;</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Pcc</span>&gt;</span>9LSC<span class="hljs-tag">&lt;/<span class="hljs-name">Pcc</span>&gt;</span>
@@ -1801,16 +1568,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse478155">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse902481">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle478155"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle902481"></span>
           </div>
         </div>
-        <div id="collapse478155" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse902481" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code478155">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code478155" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TicketingCxrDisplayRS</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://stl.sabre.com/AirPricing/validating_cxr/v0&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code902481">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code902481" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TicketingCxrDisplayRS</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://stl.sabre.com/AirPricing/validating_cxr/v0&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Country</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;RU&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PrimeHost</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;1S&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ValidatingCxrDisplay</span> <span class="hljs-attr">settlementPlanCode</span>=<span class="hljs-string">&quot;BSP&quot;</span> <span class="hljs-attr">settlementPlanName</span>=<span class="hljs-string">&quot;BILLING AND SETTLEMENT PLAN&quot;</span>&gt;</span>
@@ -2461,7 +2228,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Настройки PCC","level":"2.3","depth":1,"next":{"title":"Список сервисов","level":"2.4","depth":1,"path":"services.md","ref":"services.md","articles":[]},"previous":{"title":"Конфигурация Sabre","level":"2.2","depth":1,"path":"configuration.md","ref":"configuration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tjr-settings.md","mtime":"2019-02-13T14:07:54.622Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-02-20T07:23:25.217Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Настройки PCC","level":"2.3","depth":1,"next":{"title":"Список сервисов","level":"2.4","depth":1,"path":"services.md","ref":"services.md","articles":[]},"previous":{"title":"Конфигурация Sabre","level":"2.2","depth":1,"path":"configuration.md","ref":"configuration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tjr-settings.md","mtime":"2019-03-27T19:24:49.197Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-03-27T22:11:49.741Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
