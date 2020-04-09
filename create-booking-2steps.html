@@ -881,6 +881,7 @@
 <li><a href="#algoritm_sozdaniya_bronirovanii">&#x410;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a></li>
 <li><a href="#bronirovanie_segmentov_enhancedairbookrq">&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; (EnhancedAirBookRQ)</a><ul>
 <li><a href="#kontrol_vipolneniya_zaprosa">&#x41A;&#x43E;&#x43D;&#x442;&#x440;&#x43E;&#x43B;&#x44C; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;</a></li>
+<li><a href="#proverka_minimalnogo_stikovochnogo_vremeni">&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x430; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x44B;&#x43A;&#x43E;&#x432;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x438;</a></li>
 <li><a href="#predvaritelnaya_obrabotka_bronirovaniya">&#x41F;&#x440;&#x435;&#x434;&#x432;&#x430;&#x440;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</a></li>
 <li><a href="#dobavlenie_segmentov">&#x414;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;</a></li>
 <li><a href="#raschet_stoimosti">&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438;</a></li>
@@ -909,10 +910,10 @@
 <p>
     <div class="panel-group panel-image-group" data-id="create-booking-2steps_0" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse631325">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse573232">
           <div class="panel-title">
             &#x421;&#x445;&#x435;&#x43C;&#x430;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle631325"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle573232"></span>
           </div>
         </div>
         <div id="collapse0" class="panel-collapse collapse in" role="tabpanel">
@@ -926,6 +927,30 @@
 <h3 id="kontrol_vipolneniya_zaprosa">&#x41A;&#x43E;&#x43D;&#x442;&#x440;&#x43E;&#x43B;&#x44C; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;</h3>
 <p>EnhancedAirBookRQ &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x43C;-&#x43E;&#x440;&#x43A;&#x435;&#x441;&#x442;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x445; &#x43D;&#x438;&#x437;&#x43A;&#x43E;&#x443;&#x440;&#x43E;&#x432;&#x43D;&#x435;&#x432;&#x44B;&#x445; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432;. &#x421;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x44C; &#x445;&#x43E;&#x434; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x432; &#x442;&#x43E;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x437;&#x430;&#x43F;&#x443;&#x441;&#x43A; &#x43B;&#x44E;&#x431;&#x43E;&#x433;&#x43E; &#x438;&#x437; &#x43D;&#x438;&#x437;&#x43A;&#x43E;&#x443;&#x440;&#x43E;&#x432;&#x43D;&#x435;&#x432;&#x44B;&#x445; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432; &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x438;&#x442;&#x441;&#x44F; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x43E;&#x439;. &#x414;&#x43B;&#x44F; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x44C; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code> &#x443; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430; <code>/EnhancedAirBookRQ/@HaltOnError</code>. &#x415;&#x441;&#x43B;&#x438; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x44C; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code> &#x443; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430; <code>/EnhancedAirBookRQ/@IgnoreOnError</code>, &#x442;&#x43E; &#x43F;&#x43E;&#x43C;&#x438;&#x43C;&#x43E; &#x43E;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x438; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;, &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; &#x442;&#x430;&#x43A;&#x436;&#x435; <a href="edit-booking.html#ignorirovanie_bronirovaniya_ignoretransactionllsrq">&#x43E;&#x447;&#x438;&#x441;&#x442;&#x438;&#x442;</a> &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x43C;&#x43E;&#x435; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; <a href="authentication.html#sessii">&#x441;&#x435;&#x441;&#x441;&#x438;&#x438;</a>.</p>
 <p>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x44C; <code>true</code> &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x439; &#x43E;&#x431;&#x43E;&#x438;&#x445; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x43E;&#x432;.</p>
+<h3 id="proverka_minimalnogo_stikovochnogo_vremeni">&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x430; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x44B;&#x43A;&#x43E;&#x432;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x438;</h3>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x44B;&#x43A;&#x43E;&#x432;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x438; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code> &#x443; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430; <code>/EnhancedAirBookRQ/@haltOnInvalidMCT</code>. &#x412; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x441; &#x43D;&#x430;&#x440;&#x443;&#x448;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x44B;&#x43A;&#x43E;&#x432;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x438;, &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x440;&#x435;&#x440;&#x432;&#x435;&#x442; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x438; &#x432;&#x435;&#x440;&#x43D;&#x435;&#x442; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x443; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x435;&#x433;&#x43E; &#x432;&#x438;&#x434;&#x430;:</p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse255512">
+          <div class="panel-title">
+            &#x41D;&#x430;&#x440;&#x443;&#x448;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B; &#x43C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x442;&#x44B;&#x43A;&#x43E;&#x432;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x438;
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle255512"></span>
+          </div>
+        </div>
+        <div id="collapse255512" class="panel-collapse collapse in" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code255512">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code255512" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;ERR.SP.BUSINESS_ERROR&quot;</span>&gt;</span>Invalid connect time between air segments - please verify itinerary<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Message</span> <span class="hljs-attr">code</span>=<span class="hljs-string">&quot;ERR.SP.PROVIDER_ERROR&quot;</span>&gt;</span>SabreCommandLLSRQ: INVALID CONNECT TIME SEGS 1 AND 2 - MINIMUM IS 60 MINUTES VERIFY ANY REMAINING SEGS<span class="hljs-tag">&lt;/<span class="hljs-name">Message</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">SystemSpecificResults</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>&#x411;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x432; &#x44D;&#x442;&#x43E;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43E; &#x43D;&#x435; &#x431;&#x443;&#x434;&#x435;&#x442;.</p>
 <h3 id="predvaritelnaya_obrabotka_bronirovaniya">&#x41F;&#x440;&#x435;&#x434;&#x432;&#x430;&#x440;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</h3>
 <h4 id="chtenie_bronirovaniya">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</h4>
 <p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x435;&#x441;&#x442;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x432; &#x443;&#x436;&#x435; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x435;&#x43C; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x43A;&#x43E;&#x434; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (PNR Record Locator) &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430; <code>/EnhancedAirBookRQ/PreProcessing/UniqueID/@ID</code>. &#x41F;&#x440;&#x438; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43D;&#x435; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x44D;&#x442;&#x43E;&#x442; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;.</p>
@@ -976,16 +1001,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse685061">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse544276">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; (3 &#x43C;&#x435;&#x441;&#x442;&#x430; &#x43D;&#x430; &#x440;&#x435;&#x439;&#x441;&#x435; SU1138 &#x438;&#x437; &#x428;&#x435;&#x440;&#x435;&#x43C;&#x435;&#x442;&#x44C;&#x435;&#x432;&#x43E; &#x432; &#x421;&#x43E;&#x447;&#x438; 15 &#x43C;&#x430;&#x440;&#x442;&#x430; &#x432; Y &#x43A;&#x43B;&#x430;&#x441;&#x441;&#x435;)
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle685061"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle544276"></span>
           </div>
         </div>
-        <div id="collapse685061" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse544276" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code685061">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code685061" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">FlightSegment</span> <span class="hljs-attr">DepartureDateTime</span>=<span class="hljs-string">&quot;2019-03-15T06:50&quot;</span> <span class="hljs-attr">FlightNumber</span>=<span class="hljs-string">&quot;1138&quot;</span> <span class="hljs-attr">NumberInParty</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">ResBookDesigCode</span>=<span class="hljs-string">&quot;Y&quot;</span> <span class="hljs-attr">Status</span>=<span class="hljs-string">&quot;NN&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code544276">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code544276" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">FlightSegment</span> <span class="hljs-attr">DepartureDateTime</span>=<span class="hljs-string">&quot;2019-03-15T06:50&quot;</span> <span class="hljs-attr">FlightNumber</span>=<span class="hljs-string">&quot;1138&quot;</span> <span class="hljs-attr">NumberInParty</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">ResBookDesigCode</span>=<span class="hljs-string">&quot;Y&quot;</span> <span class="hljs-attr">Status</span>=<span class="hljs-string">&quot;NN&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">DestinationLocation</span> <span class="hljs-attr">LocationCode</span>=<span class="hljs-string">&quot;AER&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">MarketingAirline</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;SU&quot;</span> <span class="hljs-attr">FlightNumber</span>=<span class="hljs-string">&quot;1138&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">MarriageGrp</span>&gt;</span>O<span class="hljs-tag">&lt;/<span class="hljs-name">MarriageGrp</span>&gt;</span>
@@ -1001,16 +1026,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse51440">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse285906">
           <div class="panel-title">
             &#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x43C;&#x44B;&#x439; &#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x441;&#x442;&#x430;&#x442;&#x443;&#x441;&#x43E;&#x432; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle51440"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle285906"></span>
           </div>
         </div>
-        <div id="collapse51440" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse285906" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code51440">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code51440" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">HaltOnStatus</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;HL&quot;</span>/&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code285906">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code285906" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">HaltOnStatus</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;HL&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">HaltOnStatus</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;HN&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">HaltOnStatus</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;HX&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">HaltOnStatus</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;LL&quot;</span>/&gt;</span>
@@ -1030,16 +1055,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse646582">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse487976">
           <div class="panel-title">
             &#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x43C;&#x44B;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; (10 &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43E;&#x43A; 500 &#x43C;&#x438;&#x43B;&#x43B;&#x438;&#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;)
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle646582"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle487976"></span>
           </div>
         </div>
-        <div id="collapse646582" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse487976" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code646582">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code646582" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">RedisplayReservation</span> <span class="hljs-attr">NumAttempts</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">WaitInterval</span>=<span class="hljs-string">&quot;500&quot;</span>/&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code487976">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code487976" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">RedisplayReservation</span> <span class="hljs-attr">NumAttempts</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">WaitInterval</span>=<span class="hljs-string">&quot;500&quot;</span>/&gt;</span>
 </code></pre>
           </div>
         </div>
@@ -1103,7 +1128,7 @@
 <li><code>INS</code> &#x2014; &#x43C;&#x43B;&#x430;&#x434;&#x435;&#x43D;&#x435;&#x446; &#x441; &#x43C;&#x435;&#x441;&#x442;&#x43E;&#x43C; (&#x434;&#x43E; 2 &#x43B;&#x435;&#x442;)</li>
 </ul>
 <p><em>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x432; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x44F;&#x445; &#x432;&#x43E;&#x437;&#x440;&#x430;&#x441;&#x442; &#x440;&#x435;&#x431;&#x435;&#x43D;&#x43A;&#x430; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x432;&#x43B;&#x438;&#x44F;&#x442;&#x44C; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x430;. &#x412; &#x44D;&#x442;&#x438;&#x445; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x44F;&#x445; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x432;&#x43E;&#x437;&#x440;&#x430;&#x441;&#x442; &#x440;&#x435;&#x431;&#x435;&#x43D;&#x43A;&#x430; &#x432; &#x43A;&#x43E;&#x434;&#x435; &#x43A;&#x430;&#x442;&#x435;&#x433;&#x43E;&#x440;&#x438;&#x438; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430;. &#x41D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, <code>C05</code> &#x434;&#x43B;&#x44F; &#x43F;&#x44F;&#x442;&#x438;&#x43B;&#x435;&#x442;&#x43D;&#x435;&#x433;&#x43E; &#x440;&#x435;&#x431;&#x435;&#x43D;&#x43A;&#x430;.</em></p>
-<h4 id="raschet_po_branded_fares">&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x43F;&#x43E; Branded Fares</h4>
+<h4 id="raschet_stoimosti_po_brendirovannim_tarifam">&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43E; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;</h4>
 <p>&#x410;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C; &#x432;&#x43D;&#x435;&#x441;&#x435;&#x43D;&#x438;&#x44F; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x438; &#x43E; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x435; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x437;&#x430;&#x432;&#x438;&#x441;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x442; &#x442;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43B;&#x438; &#x43E;&#x434;&#x438;&#x43D; &#x438; &#x442;&#x43E;&#x442; &#x436;&#x435; &#x431;&#x440;&#x435;&#x43D;&#x434; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x438;&#x43B;&#x438; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x440;&#x430;&#x437;&#x43D;&#x44B;&#x445; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x43E;&#x432; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x44E;&#x442;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x437;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;.</p>
 <p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x44D;&#x442;&#x43E;&#x439; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x438; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43F;&#x440;&#x43E;&#x430;&#x43D;&#x430;&#x43B;&#x438;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43E;&#x442;&#x432;&#x435;&#x442; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; BargainFinderMaxRQ &#x438;&#x43B;&#x438; RevalidateItinRQ:</p>
 <ul>
@@ -1113,7 +1138,7 @@
 <h5 id="vibor_brenda_dlya_vsego_bronirovaniya">&#x412;&#x44B;&#x431;&#x43E;&#x440; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x430; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</h5>
 <p>&#x41A;&#x43E;&#x434; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x430; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x432; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x435; <code>/EnhancedAirBookRQ/OTA_AirPriceRQ/PriceRequestInformation/OptionalQualifiers/PricingQualifiers/Brand</code>.</p>
 <p><em>&#x412;&#x44B;&#x431;&#x440;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x431;&#x440;&#x435;&#x43D;&#x434; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x438;&#x442;&#x44C; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x440;&#x435;&#x43C;&#x430;&#x440;&#x43A;&#x438; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x435;&#x433;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x438; &#x43F;&#x435;&#x440;&#x435;&#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x435; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438;.</em></p>
-<h5 id="posegmentnii_vibor_brenda">&#x41F;&#x43E;&#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43D;&#x44B;&#x439; &#x432;&#x44B;&#x431;&#x43E;&#x440; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x430;</h5>
+<h5 id="posegmentnii_vibor_brendov">&#x41F;&#x43E;&#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43D;&#x44B;&#x439; &#x432;&#x44B;&#x431;&#x43E;&#x440; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x43E;&#x432;</h5>
 <p><em>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x43C;&#x43D;&#x43E;&#x433;&#x438;&#x435; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x438; &#x438;&#x43C;&#x435;&#x44E;&#x442; &#x436;&#x435;&#x441;&#x442;&#x43A;&#x438;&#x435; &#x442;&#x440;&#x435;&#x431;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43E;&#x442;&#x43D;&#x43E;&#x441;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x43A;&#x43E;&#x43C;&#x431;&#x438;&#x43D;&#x430;&#x446;&#x438;&#x438; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x445; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x43E;&#x432;. &#x41D;&#x435; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43A;&#x43E;&#x43C;&#x431;&#x438;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x438;&#x445; &#x441;&#x430;&#x43C;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;! &#x420;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x44B; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; Bargain Finder Max &#x431;&#x443;&#x434;&#x443;&#x442; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x442;&#x435; &#x43A;&#x43E;&#x43C;&#x431;&#x438;&#x43D;&#x430;&#x446;&#x438;&#x438; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x43E;&#x432;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x44B; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x43E;&#x43C;.</em></p>
 <p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x44B;&#x431;&#x43E;&#x440;&#x430; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x430; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x43E;&#x432; &#x43F;&#x43E; &#x432;&#x441;&#x435;&#x43C; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x430;&#x43C; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x430;&#x445; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; (&#x441;&#x435;&#x440;&#x432;&#x438;&#x441; BargainFinderMaxRQ) &#x438;&#x43B;&#x438; &#x43F;&#x440;&#x438; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x435; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x438; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x44F; &#x43C;&#x435;&#x441;&#x442; (&#x441;&#x435;&#x440;&#x432;&#x438;&#x441; RevalidateItinRQ) &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x438;&#x435; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438; <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (&#x434;&#x43B;&#x44F; &#x441;&#x430;&#x43C;&#x43E;&#x439; &#x434;&#x435;&#x448;&#x435;&#x432;&#x43E;&#x439; &#x43A;&#x43E;&#x43C;&#x431;&#x438;&#x43D;&#x430;&#x446;&#x438;&#x438; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x43E;&#x432;) &#x438;&#x43B;&#x438; <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (&#x434;&#x43B;&#x44F; &#x434;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432;) &#x438; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438;. &#x414;&#x43B;&#x44F; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x43A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442; <code>/FareComponent</code> &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442; &#x434;&#x43E;&#x447;&#x435;&#x440;&#x43D;&#x438;&#x435; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x44B; <code>/Segment</code>, &#x43A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x438;&#x437; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x443;&#x435;&#x442; &#x43E;&#x434;&#x43D;&#x43E;&#x43C;&#x443; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x443; &#x432; &#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x435; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x430;. &#x414;&#x43B;&#x44F; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x442;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x43E;&#x43E;&#x442;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x438;&#x44F; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x43C; <code>/Segment</code> &#x438; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438; &#x432; &#x43F;&#x443;&#x442;&#x435;&#x448;&#x435;&#x441;&#x442;&#x432;&#x438;&#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x44B;:</p>
 <ul>
@@ -1165,16 +1190,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse875888">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse760186">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle875888"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle760186"></span>
           </div>
         </div>
-        <div id="collapse875888" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse760186" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code875888">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code875888" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PricingQualifiers</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code760186">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code760186" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PricingQualifiers</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Brand</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>AA<span class="hljs-tag">&lt;/<span class="hljs-name">Brand</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Brand</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Brand</span> <span class="hljs-attr">RPH</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>BB<span class="hljs-tag">&lt;/<span class="hljs-name">Brand</span>&gt;</span>
@@ -1190,7 +1215,7 @@
       </div>
     </div></p>
 <p>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x437;&#x435;&#x43C;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; (&#x434;&#x43E; &#x43C;&#x43E;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438;, &#x441;&#x43C;. &#x43D;&#x438;&#x436;&#x435;) &#x432;&#x43B;&#x438;&#x44F;&#x435;&#x442; &#x43D;&#x430; &#x43D;&#x443;&#x43C;&#x435;&#x440;&#x430;&#x446;&#x438;&#x44E; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438;. &#x41D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x435;&#x441;&#x43B;&#x438; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x44B; &#x434;&#x432;&#x430; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430; SVO-KRR &#x438; AER-SVO &#x438; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x448;&#x435;&#x43D;&#x43E; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x437;&#x435;&#x43C;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x442;&#x43E; &#x432; &#x43C;&#x43E;&#x43C;&#x435;&#x43D;&#x442; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442; AER-SVO &#x431;&#x443;&#x434;&#x435;&#x442; &#x442;&#x440;&#x435;&#x442;&#x44C;&#x438;&#x43C; &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438;.</p>
-<h4 id="raschet_po_privatnim_tarifam">&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;</h4>
+<h4 id="raschet_stoimosti_po_privatnim_tarifam">&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;</h4>
 <p>&#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x442; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x43F;&#x43E; &#x441;&#x430;&#x43C;&#x43E;&#x43C;&#x443; &#x434;&#x435;&#x448;&#x435;&#x432;&#x43E;&#x43C;&#x443; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x43E;&#x43C;&#x443; &#x442;&#x430;&#x440;&#x438;&#x444;&#x443;, &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x43E;&#x43C;&#x443; &#x434;&#x43B;&#x44F; &#x432;&#x44B;&#x431;&#x440;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x432;&#x43D;&#x435; &#x437;&#x430;&#x432;&#x438;&#x441;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x442; &#x435;&#x433;&#x43E; &#x442;&#x438;&#x43F;&#x430;: &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x439; &#x438;&#x43B;&#x438; &#x43F;&#x443;&#x431;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x439;.</p>
 <p>&#x41E;&#x434;&#x43D;&#x430;&#x43A;&#x43E; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43C;&#x43E;&#x436;&#x43D;&#x43E; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x438;&#x43B;&#x441;&#x44F; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x43E; &#x43F;&#x443;&#x431;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x43C; &#x438;&#x43B;&#x438; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x43E; &#x43F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C;:</p>
 <ul>
@@ -1202,6 +1227,27 @@
 <li>&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x43A;&#x43E;&#x434;&#x43E;&#x432; &#x43A;&#x43E;&#x440;&#x43F;&#x43E;&#x440;&#x430;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x441;&#x43A;&#x438;&#x434;&#x43E;&#x43A; (Corporate ID) &#x437;&#x430;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x445; <code>/EnhancedAirBookRQ/OTA_AirPriceRQ/PriceRequestInformation/OptionalQualifiers/PricingQualifiers/Corporate/ID</code></li>
 <li>&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x430;&#x43A;&#x43A;&#x430;&#x443;&#x43D;&#x442; &#x43A;&#x43E;&#x434;&#x43E;&#x432; (Account Code) &#x437;&#x430;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x445; <code>/EnhancedAirBookRQ/OTA_AirPriceRQ/PriceRequestInformation/OptionalQualifiers/PricingQualifiers/Account/Code</code></li>
 </ul>
+<h4 id="raschet_stoimosti_po_kodam_tarifov">&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43E; &#x43A;&#x43E;&#x434;&#x430;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432;</h4>
+<p><strong>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x442;&#x43E;, &#x447;&#x442;&#x43E; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43E; &#x43A;&#x43E;&#x434;&#x430;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x430; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x430;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x431;&#x44B;&#x43B; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D; &#x432; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x430;&#x445; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; &#x441; &#x43D;&#x430;&#x43B;&#x438;&#x447;&#x438;&#x435;&#x43C; &#x431;&#x430;&#x433;&#x430;&#x436;&#x430; &#x438;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x43D;&#x435; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x43C;. &#x412; &#x43F;&#x440;&#x43E;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x441;&#x442;&#x430;&#x43D;&#x434;&#x430;&#x440;&#x442;&#x43D;&#x44B;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x430; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x43B;&#x435;&#x442;&#x43E;&#x432; (&#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x44F; &#x438;&#x43B;&#x438; &#x43D;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x44F; &#x43A;&#x43E;&#x434;&#x44B; &#x431;&#x440;&#x435;&#x43D;&#x434;&#x43E;&#x432;).</strong></p>
+<p><strong>&#x414;&#x43B;&#x44F; &#x443;&#x441;&#x43F;&#x435;&#x448;&#x43D;&#x43E;&#x433;&#x43E; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;, &#x432; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;&#x445;, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x431;&#x44B;&#x43B; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43E; &#x43A;&#x43E;&#x434;&#x430;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432;, &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438; <a href="tjr-settings.html#ticket_from_stored_fare_oformlenie_biletov_po_sohranennim_pq_bez_pererascheta">Ticket from Stored Fare</a> &#x432; PCC, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x44F;&#x44E;&#x442;&#x441;&#x44F; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x44B;.</strong></p>
+<p>&#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43E; &#x43A;&#x43E;&#x434;&#x430;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x43F;&#x440;&#x438;&#x432;&#x43E;&#x434;&#x438;&#x442;&#x44C; &#x43A; &#x43D;&#x435;&#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x442;&#x44C; &#x431;&#x438;&#x43B;&#x435;&#x442; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x43A;&#x43E;&#x434;&#x43E;&#x432; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x447;&#x438;&#x43A;&#x430;, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x432; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x43D;&#x435;&#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x437;&#x430;&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x432;&#x44B;&#x431;&#x440;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43A;&#x43B;&#x430;&#x441;&#x441; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;.</p>
+<h5 id="vibor_koda_tarifa_dlya_vsego_bronirovaniya">&#x412;&#x44B;&#x431;&#x43E;&#x440; &#x43A;&#x43E;&#x434;&#x430; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</h5>
+<p>&#x41A;&#x43E;&#x434; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x432; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x435; <code>/EnhancedAirBookRQ/OTA_AirPriceRQ/PriceRequestInformation/OptionalQualifiers/PricingQualifiers/SpecificFare/FareBasis</code>.</p>
+<h5 id="posegmentnii_vibor_kodov_tarifov">&#x41F;&#x43E;&#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43D;&#x44B;&#x439; &#x432;&#x44B;&#x431;&#x43E;&#x440; &#x43A;&#x43E;&#x434;&#x43E;&#x432; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432;</h5>
+<p>&#x41F;&#x43E;&#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43D;&#x44B;&#x439; &#x432;&#x44B;&#x431;&#x43E;&#x440; &#x43A;&#x43E;&#x434;&#x43E;&#x432; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x442;&#x435;&#x445; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x44F;&#x445;, &#x43A;&#x43E;&#x433;&#x434;&#x430; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x431;&#x44B;&#x442;&#x44C; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D; &#x43F;&#x43E; &#x440;&#x430;&#x437;&#x43D;&#x44B;&#x43C; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;&#x43C; &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x437;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;. &#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x44B;&#x431;&#x43E;&#x440;&#x430; &#x43A;&#x43E;&#x434;&#x43E;&#x432; &#x442;&#x430;&#x440;&#x438;&#x444;&#x43E;&#x432; &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li>&#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;, &#x438;&#x43C;&#x435;&#x44E;&#x449;&#x438;&#x445; &#x43E;&#x434;&#x438;&#x43D;&#x430;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43A;&#x43E;&#x434; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;, &#x432; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x445; <code>/EnhancedAirBookRQ/OTA_AirPriceRQ/PriceRequestInformation/OptionalQualifiers/PricingQualifiers/ItineraryOptions/SegmentSelect</code> &#x441;&#x43E; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x43C;&#x438; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430;&#x43C;&#x438;:<ul>
+<li><code>/@Number</code> &#x2014; &#x43D;&#x43E;&#x43C;&#x435;&#x440; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x430; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438;</li>
+<li><code>/@EndNumber</code> &#x2014; &#x43D;&#x43E;&#x43C;&#x435;&#x440; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x430; &#x43A;&#x43E;&#x43D;&#x446;&#x430; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438; (&#x43E;&#x43F;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;)</li>
+<li><code>/@RPH</code> &#x2014; &#x43F;&#x43E;&#x440;&#x44F;&#x434;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438;</li>
+</ul>
+</li>
+<li>&#x442;&#x430;&#x440;&#x438;&#x444;&#x44B; &#x432; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x445; <code>/EnhancedAirBookRQ/OTA_AirPriceRQ/PriceRequestInformation/OptionalQualifiers/PricingQualifiers/SpecificFare</code> &#x441;&#x43E; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x43C;&#x438; &#x434;&#x43E;&#x447;&#x435;&#x440;&#x43D;&#x438;&#x43C;&#x438; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438; &#x438; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430;&#x43C;&#x438;:<ul>
+<li><code>/@RPH</code> &#x2014; &#x43D;&#x43E;&#x43C;&#x435;&#x440; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x438;&#x437; &#x43F;&#x440;&#x435;&#x434;&#x44B;&#x434;&#x443;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x443;&#x43D;&#x43A;&#x442;&#x430;</li>
+<li><code>/FareBasis</code> &#x2014; &#x43A;&#x43E;&#x434; &#x442;&#x430;&#x440;&#x438;&#x444;&#x430;</li>
+</ul>
+</li>
+</ul>
 <h4 id="poluchenie_uslovii_obmenov_i_vozvratov">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x439; &#x43E;&#x431;&#x43C;&#x435;&#x43D;&#x43E;&#x432; &#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442;&#x43E;&#x432;</h4>
 <p>&#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x432; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x435; &#x43D;&#x430; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x439; &#x43E;&#x431;&#x43C;&#x435;&#x43D;&#x43E;&#x432; &#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x442;&#x43E;&#x432; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code> &#x443; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430; <code>/EnhancedAirBookRQ/OTA_AirPriceRQ/PriceRequestInformation/OptionalQualifiers/PricingQualifiers/SpecificPenalty/@AdditionalInfo</code>.</p>
 <h4 id="sravnenie_s_zadannoi_stoimostyu">&#x421;&#x440;&#x430;&#x432;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x441; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C;&#x44E;</h4>
@@ -1211,16 +1257,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse569582">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse805190">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; (&#x440;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43F;&#x440;&#x435;&#x440;&#x432;&#x430;&#x43D;&#x430;, &#x435;&#x441;&#x43B;&#x438; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x435;&#x432;&#x44B;&#x448;&#x430;&#x435;&#x442; 10500 &#x440;&#x443;&#x431;&#x43B;&#x435;&#x439;)
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle569582"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle805190"></span>
           </div>
         </div>
-        <div id="collapse569582" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse805190" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code569582">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code569582" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PriceComparison</span> <span class="hljs-attr">AmountSpecified</span>=<span class="hljs-string">&quot;10000&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code805190">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code805190" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PriceComparison</span> <span class="hljs-attr">AmountSpecified</span>=<span class="hljs-string">&quot;10000&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">AcceptablePriceIncrease</span> <span class="hljs-attr">HaltOnNonAcceptablePrice</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>500<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">AcceptablePriceIncrease</span>&gt;</span>
@@ -1239,16 +1285,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse109039">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse327793">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle109039"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle327793"></span>
           </div>
         </div>
-        <div id="collapse109039" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse327793" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code109039">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code109039" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedAirBookRQ</span> <span class="hljs-attr">HaltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">IgnoreOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.10.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eab/v3_10&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code327793">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code327793" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedAirBookRQ</span> <span class="hljs-attr">HaltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">haltOnInvalidMCT</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">IgnoreOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.10.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eab/v3_10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">OTA_AirBookRQ</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">RetryRebook</span> <span class="hljs-attr">Option</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">HaltOnStatus</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;HL&quot;</span>/&gt;</span>
@@ -1308,16 +1354,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse839732">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse252621">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle839732"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle252621"></span>
           </div>
         </div>
-        <div id="collapse839732" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse252621" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code839732">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code839732" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedAirBookRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eab/v3_10&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code252621">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code252621" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedAirBookRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eab/v3_10&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2020-01-22T03:20:06.857-06:00&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationResults</span>&gt;</span>
@@ -2884,16 +2930,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse808519">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse600982">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle808519"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle600982"></span>
           </div>
         </div>
-        <div id="collapse808519" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse600982" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code808519">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code808519" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">PassengerType</span>=<span class="hljs-string">&quot;ADT&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code600982">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code600982" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">PassengerType</span>=<span class="hljs-string">&quot;ADT&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">GivenName</span>&gt;</span>IVAN IVANOVICH MR<span class="hljs-tag">&lt;/<span class="hljs-name">GivenName</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Surname</span>&gt;</span>IVANOV<span class="hljs-tag">&lt;/<span class="hljs-name">Surname</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">PersonName</span>&gt;</span>
@@ -2919,16 +2965,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse488882">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse884334">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle488882"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle884334"></span>
           </div>
         </div>
-        <div id="collapse488882" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse884334" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code488882">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code488882" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">nameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">record</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code884334">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code884334" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">nameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">record</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">nameNumber</span>=<span class="hljs-string">&quot;2.1&quot;</span> <span class="hljs-attr">record</span>=<span class="hljs-string">&quot;1&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">nameNumber</span>=<span class="hljs-string">&quot;3.1&quot;</span> <span class="hljs-attr">record</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">nameNumber</span>=<span class="hljs-string">&quot;4.1&quot;</span> <span class="hljs-attr">record</span>=<span class="hljs-string">&quot;3&quot;</span>/&gt;</span>
@@ -2955,16 +3001,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse36510">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse811290">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; (&#x442;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D; &#x430;&#x433;&#x435;&#x43D;&#x442;&#x441;&#x442;&#x432;&#x430; &#x438; &#x43F;&#x435;&#x440;&#x432;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430;)
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle36510"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle811290"></span>
           </div>
         </div>
-        <div id="collapse36510" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse811290" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code36510">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code36510" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ContactNumber</span> <span class="hljs-attr">Phone</span>=<span class="hljs-string">&quot;74991234567&quot;</span> <span class="hljs-attr">PhoneUseType</span>=<span class="hljs-string">&quot;A&quot;</span>/&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code811290">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code811290" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">ContactNumber</span> <span class="hljs-attr">Phone</span>=<span class="hljs-string">&quot;74991234567&quot;</span> <span class="hljs-attr">PhoneUseType</span>=<span class="hljs-string">&quot;A&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ContactNumber</span> <span class="hljs-attr">Phone</span>=<span class="hljs-string">&quot;79851234567&quot;</span> <span class="hljs-attr">PhoneUseType</span>=<span class="hljs-string">&quot;M&quot;</span>/&gt;</span>
 </code></pre>
           </div>
@@ -2988,16 +3034,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse277480">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse156644">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; (&#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430; &#x438; &#x430;&#x433;&#x435;&#x43D;&#x442;&#x441;&#x442;&#x432;&#x430; (&#x434;&#x43B;&#x44F; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x441;&#x43A;&#x440;&#x44B;&#x442;&#x43E;&#x439; &#x43A;&#x43E;&#x43F;&#x438;&#x438;))
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle277480"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle156644"></span>
           </div>
         </div>
-        <div id="collapse277480" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse156644" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code277480">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code277480" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Email</span> <span class="hljs-attr">Address</span>=<span class="hljs-string">&quot;customer@customer.com&quot;</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;TO&quot;</span>/&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code156644">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code156644" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Email</span> <span class="hljs-attr">Address</span>=<span class="hljs-string">&quot;customer@customer.com&quot;</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;TO&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">Email</span> <span class="hljs-attr">Address</span>=<span class="hljs-string">&quot;agency@agency.com&quot;</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;BC&quot;</span>/&gt;</span>
 </code></pre>
           </div>
@@ -3015,16 +3061,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse970484">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse389593">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; (&#x443; &#x43F;&#x435;&#x440;&#x432;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430; &#x43A;&#x430;&#x440;&#x442;&#x430; KL &#x434;&#x43B;&#x44F; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; SU, &#x443; &#x432;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x430; &#x43A;&#x430;&#x440;&#x442;&#x430; SU &#x434;&#x43B;&#x44F; &#x441;&#x435;&#x433;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432; SU)
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle970484"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle389593"></span>
           </div>
         </div>
-        <div id="collapse970484" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse389593" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code970484">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code970484" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">CustLoyalty</span> <span class="hljs-attr">MembershipID</span>=<span class="hljs-string">&quot;1234567890&quot;</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">ProgramID</span>=<span class="hljs-string">&quot;KL&quot;</span> <span class="hljs-attr">TravelingCarrierCode</span>=<span class="hljs-string">&quot;SU&quot;</span>/&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code389593">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code389593" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">CustLoyalty</span> <span class="hljs-attr">MembershipID</span>=<span class="hljs-string">&quot;1234567890&quot;</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span> <span class="hljs-attr">ProgramID</span>=<span class="hljs-string">&quot;KL&quot;</span> <span class="hljs-attr">TravelingCarrierCode</span>=<span class="hljs-string">&quot;SU&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">CustLoyalty</span> <span class="hljs-attr">MembershipID</span>=<span class="hljs-string">&quot;0987654321&quot;</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;2.1&quot;</span> <span class="hljs-attr">ProgramID</span>=<span class="hljs-string">&quot;SU&quot;</span> <span class="hljs-attr">TravelingCarrierCode</span>=<span class="hljs-string">&quot;SU&quot;</span>/&gt;</span>
 </code></pre>
           </div>
@@ -3063,16 +3109,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse634150">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse319697">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x43F;&#x430;&#x441;&#x43F;&#x43E;&#x440;&#x442;&#x430; &#x434;&#x43B;&#x44F; &#x432;&#x437;&#x440;&#x43E;&#x441;&#x43B;&#x43E;&#x433;&#x43E;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle634150"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle319697"></span>
           </div>
         </div>
-        <div id="collapse634150" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse319697" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code634150">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code634150" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code319697">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code319697" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Document</span> <span class="hljs-attr">ExpirationDate</span>=<span class="hljs-string">&quot;2020-11-20&quot;</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;1234567890&quot;</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;P&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">IssueCountry</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">IssueCountry</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">NationalityCountry</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">NationalityCountry</span>&gt;</span>
@@ -3091,16 +3137,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse790685">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse720963">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x43F;&#x430;&#x441;&#x43F;&#x43E;&#x440;&#x442;&#x430; &#x434;&#x43B;&#x44F; &#x43C;&#x43B;&#x430;&#x434;&#x435;&#x43D;&#x446;&#x430; &#x431;&#x435;&#x437; &#x43C;&#x435;&#x441;&#x442;&#x430; (&#x43F;&#x440;&#x438;&#x432;&#x44F;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43A; &#x441;&#x43E;&#x43F;&#x440;&#x43E;&#x432;&#x43E;&#x436;&#x434;&#x430;&#x44E;&#x449;&#x435;&#x43C;&#x443; &#x432;&#x437;&#x440;&#x43E;&#x441;&#x43B;&#x43E;&#x43C;&#x443; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x443; &#x441; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 1.1)
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle790685"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle720963"></span>
           </div>
         </div>
-        <div id="collapse790685" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse720963" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code790685">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code790685" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code720963">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code720963" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Document</span> <span class="hljs-attr">ExpirationDate</span>=<span class="hljs-string">&quot;2017-04-15&quot;</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;1234567890&quot;</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;P&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">IssueCountry</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">IssueCountry</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">NationalityCountry</span>&gt;</span>RU<span class="hljs-tag">&lt;/<span class="hljs-name">NationalityCountry</span>&gt;</span>
@@ -3131,16 +3177,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse582528">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse662750">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle582528"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle662750"></span>
           </div>
         </div>
-        <div id="collapse582528" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse662750" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code582528">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code582528" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;FOID&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code662750">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code662750" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;FOID&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>PPRU1234567890<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span>
@@ -3168,16 +3214,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse851269">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse847033">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle851269"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle847033"></span>
           </div>
         </div>
-        <div id="collapse851269" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse847033" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code851269">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code851269" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code847033">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code847033" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Document</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;1234567890&quot;</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;V&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Visa</span> <span class="hljs-attr">IssueDate</span>=<span class="hljs-string">&quot;2016-12-20&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">ApplicableCountry</span>&gt;</span>US<span class="hljs-tag">&lt;/<span class="hljs-name">ApplicableCountry</span>&gt;</span>
@@ -3215,16 +3261,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse160579">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse809143">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle160579"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle809143"></span>
           </div>
         </div>
-        <div id="collapse160579" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse809143" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code160579">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code160579" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code809143">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code809143" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">AdvancePassenger</span> <span class="hljs-attr">SegmentNumber</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ResidentDestinationAddress</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;D&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">City</span>&gt;</span>LONDON<span class="hljs-tag">&lt;/<span class="hljs-name">City</span>&gt;</span>
@@ -3255,16 +3301,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse934588">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse801133">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle934588"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle801133"></span>
           </div>
         </div>
-        <div id="collapse934588" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse801133" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code934588">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code934588" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;INFT&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code801133">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code801133" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;INFT&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>IVANOVA/EKATERINA/20FEB16<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span>
@@ -3288,16 +3334,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse65373">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse528482">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle65373"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle528482"></span>
           </div>
         </div>
-        <div id="collapse65373" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse528482" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code65373">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code65373" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CHLD&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code528482">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code528482" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CHLD&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;3.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>15JAN10<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span>
@@ -3321,16 +3367,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse435041">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse403681">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle435041"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle403681"></span>
           </div>
         </div>
-        <div id="collapse435041" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse403681" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code435041">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code435041" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CTCM&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code403681">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code403681" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CTCM&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>79851234567/RU<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span>
@@ -3358,16 +3404,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse646477">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse538672">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle646477"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle538672"></span>
           </div>
         </div>
-        <div id="collapse646477" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse538672" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code646477">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code646477" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CTCE&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code538672">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code538672" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CTCE&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>CUSTOMER//CUSTOMER.COM/RU<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span>
@@ -3390,16 +3436,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse228862">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse827325">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle228862"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle827325"></span>
           </div>
         </div>
-        <div id="collapse228862" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse827325" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code228862">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code228862" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CTCR&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code827325">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code827325" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;CTCR&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>REFUSED<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span>
@@ -3423,16 +3469,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse371461">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse630870">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle371461"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle630870"></span>
           </div>
         </div>
-        <div id="collapse371461" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse630870" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code371461">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code371461" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;OTHS&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code630870">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code630870" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;OTHS&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;1.1&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>SSR TEXT HERE<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span>
@@ -3452,16 +3498,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse458584">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse760657">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle458584"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle760657"></span>
           </div>
         </div>
-        <div id="collapse458584" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse760657" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code458584">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code458584" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;OSI&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code760657">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code760657" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">SSR_Code</span>=<span class="hljs-string">&quot;OSI&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>OSI TEXT<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">VendorPrefs</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Airline</span> <span class="hljs-attr">Code</span>=<span class="hljs-string">&quot;SU&quot;</span>/&gt;</span>
@@ -3482,16 +3528,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse286114">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse939884">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle286114"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle939884"></span>
           </div>
         </div>
-        <div id="collapse286114" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse939884" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code286114">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code286114" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Remark</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;General&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code939884">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code939884" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">Remark</span> <span class="hljs-attr">Type</span>=<span class="hljs-string">&quot;General&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>TEST REMARK<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Remark</span>&gt;</span>
 </code></pre>
@@ -3555,16 +3601,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse399088">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse27630">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle399088"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle27630"></span>
           </div>
         </div>
-        <div id="collapse399088" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse27630" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code399088">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code399088" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">QueueInfo</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code27630">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code27630" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">QueueInfo</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">QueueIdentifier</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">PseudoCityCode</span>=<span class="hljs-string">&quot;8XFG&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">QueueInfo</span>&gt;</span>
 </code></pre>
@@ -3576,16 +3622,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse960900">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse485194">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;
-            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle960900"></span>
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle485194"></span>
           </div>
         </div>
-        <div id="collapse960900" class="panel-collapse collapse in" role="tabpanel">
+        <div id="collapse485194" class="panel-collapse collapse in" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code960900">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code960900" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">MultiQueuePlace</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code485194">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code485194" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">MultiQueuePlace</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">QueueIdentifier</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">PseudoCityCode</span>=<span class="hljs-string">&quot;8XFG&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">QueueIdentifier</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;101&quot;</span> <span class="hljs-attr">PseudoCityCode</span>=<span class="hljs-string">&quot;8XFG&quot;</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">QueueIdentifier</span> <span class="hljs-attr">Number</span>=<span class="hljs-string">&quot;102&quot;</span> <span class="hljs-attr">PseudoCityCode</span>=<span class="hljs-string">&quot;8XFG&quot;</span>/&gt;</span>
@@ -3599,16 +3645,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse538639">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse867798">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle538639"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle867798"></span>
           </div>
         </div>
-        <div id="collapse538639" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse867798" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code538639">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code538639" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRQ</span> <span class="hljs-attr">haltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">ignoreOnError</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.4.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_4&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code867798">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code867798" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRQ</span> <span class="hljs-attr">haltOnError</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">ignoreOnError</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;3.4.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_4&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">PostProcessing</span> <span class="hljs-attr">ignoreAfter</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">RedisplayReservation</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">EndTransactionRQ</span>&gt;</span>
@@ -3729,16 +3775,16 @@
 <p>
     <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse856177">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse919730">
           <div class="panel-title">
             &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
-            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle856177"></span>
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle919730"></span>
           </div>
         </div>
-        <div id="collapse856177" class="panel-collapse collapse" role="tabpanel">
+        <div id="collapse919730" class="panel-collapse collapse" role="tabpanel">
           <div class="panel-body">
-            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code856177">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
-            <pre class="XML"><code id="code856177" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_4&quot;</span>&gt;</span>
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code919730">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code919730" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">PassengerDetailsRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/pd/v3_4&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2020-01-22T03:20:13.167-06:00&quot;</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Warning</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2020-01-22T03:20:12.849-06:00&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;BusinessLogic&quot;</span>&gt;</span>
@@ -4554,7 +4600,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Создание бронирований в 2 шага","level":"4.2.2","depth":2,"next":{"title":"Перерасчет стоимости","level":"4.3","depth":1,"path":"reprice-booking.md","ref":"reprice-booking.md","articles":[]},"previous":{"title":"Создание бронирований в 1 шаг","level":"4.2.1","depth":2,"path":"create-booking-1step.md","ref":"create-booking-1step.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"create-booking-2steps.md","mtime":"2020-01-31T16:03:58.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-02T16:53:42.533Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Создание бронирований в 2 шага","level":"4.2.2","depth":2,"next":{"title":"Перерасчет стоимости","level":"4.3","depth":1,"path":"reprice-booking.md","ref":"reprice-booking.md","articles":[]},"previous":{"title":"Создание бронирований в 1 шаг","level":"4.2.1","depth":2,"path":"create-booking-1step.md","ref":"create-booking-1step.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"create-booking-2steps.md","mtime":"2020-04-09T09:01:20.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-09T09:13:14.893Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
