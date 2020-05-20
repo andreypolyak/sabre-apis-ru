@@ -1,0 +1,2097 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Деление бронирований · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-special-sections/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="get-history-booking.html" />
+    
+    
+    <link rel="prev" href="cancel-booking.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Рекомендации по работе с Sabre APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Введение</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Начало работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    Конфигурация Sabre
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tjr-settings.html">
+            
+                <a href="tjr-settings.html">
+            
+                    
+                    Настройки PCC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="authentication.html">
+            
+                <a href="authentication.html">
+            
+                    
+                    Аутентификация
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="services.html">
+            
+                <a href="services.html">
+            
+                    
+                    Список сервисов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="postman.html">
+            
+                <a href="postman.html">
+            
+                    
+                    Коллекция Postman
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Поиск перелетов</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="shop.html">
+            
+                <a href="shop.html">
+            
+                    
+                    Поиск по заданным датам
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="shop-alternate-dates.html">
+            
+                <a href="shop-alternate-dates.html">
+            
+                    
+                    Поиск по гибким датам
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="shop-by-fare.html">
+            
+                <a href="shop-by-fare.html">
+            
+                    
+                    Поиск по кодам тарифов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="get-availability.html">
+            
+                <a href="get-availability.html">
+            
+                    
+                    Поиск по расписаниям
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="shop-optimization.html">
+            
+                <a href="shop-optimization.html">
+            
+                    
+                    Оптимизация времени поиска
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Бронирования</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="revalidate-itinerary.html">
+            
+                <a href="revalidate-itinerary.html">
+            
+                    
+                    Проверка стоимости и наличия мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="create-booking.html">
+            
+                <a href="create-booking.html">
+            
+                    
+                    Создание бронирований
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="create-booking-1step.html">
+            
+                <a href="create-booking-1step.html">
+            
+                    
+                    Создание бронирований в 1 шаг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="create-booking-2steps.html">
+            
+                <a href="create-booking-2steps.html">
+            
+                    
+                    Создание бронирований в 2 шага
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="reprice-booking.html">
+            
+                <a href="reprice-booking.html">
+            
+                    
+                    Перерасчет стоимости
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="get-booking.html">
+            
+                <a href="get-booking.html">
+            
+                    
+                    Чтение бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="get-archive-booking.html">
+            
+                <a href="get-archive-booking.html">
+            
+                    
+                    Чтение бронирований из архива
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="edit-booking.html">
+            
+                <a href="edit-booking.html">
+            
+                    
+                    Редактирование бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="cancel-booking.html">
+            
+                <a href="cancel-booking.html">
+            
+                    
+                    Отмена бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.8" data-path="split-booking.html">
+            
+                <a href="split-booking.html">
+            
+                    
+                    Деление бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="get-history-booking.html">
+            
+                <a href="get-history-booking.html">
+            
+                    
+                    История бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Дополнительный контент</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="brands.html">
+            
+                <a href="brands.html">
+            
+                    
+                    Брендированные тарифы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="ancillaries.html">
+            
+                <a href="ancillaries.html">
+            
+                    
+                    Дополнительные услуги
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="get-ancillaries.html">
+            
+                <a href="get-ancillaries.html">
+            
+                    
+                    Получение списка услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="book-ancillaries.html">
+            
+                <a href="book-ancillaries.html">
+            
+                    
+                    Бронирование услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="cancel-ancillaries.html">
+            
+                <a href="cancel-ancillaries.html">
+            
+                    
+                    Отмена услуг
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="air-seats.html">
+            
+                <a href="air-seats.html">
+            
+                    
+                    Места в салоне
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="get-air-seats.html">
+            
+                <a href="get-air-seats.html">
+            
+                    
+                    Получение карты мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="book-air-seats.html">
+            
+                <a href="book-air-seats.html">
+            
+                    
+                    Бронирование мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="cancel-air-seats.html">
+            
+                <a href="cancel-air-seats.html">
+            
+                    
+                    Отмена мест
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Билеты и EMD</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="fop.html">
+            
+                <a href="fop.html">
+            
+                    
+                    Выбор форм оплаты
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="issue-ticket.html">
+            
+                <a href="issue-ticket.html">
+            
+                    
+                    Оформление билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="get-ticket.html">
+            
+                <a href="get-ticket.html">
+            
+                    
+                    Чтение масок билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="void-ticket.html">
+            
+                <a href="void-ticket.html">
+            
+                    
+                    Войдирование билетов и EMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="exchanges-refunds.html">
+            
+                <a href="exchanges-refunds.html">
+            
+                    
+                    Обмены и возвраты билетов
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.5.1" data-path="shop-exchange-ticket.html">
+            
+                <a href="shop-exchange-ticket.html">
+            
+                    
+                    Поиск перелетов для обмена
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5.2" data-path="exchange-ticket.html">
+            
+                <a href="exchange-ticket.html">
+            
+                    
+                    Обмен билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5.3" data-path="involuntary-exchange-ticket.html">
+            
+                <a href="involuntary-exchange-ticket.html">
+            
+                    
+                    Вынужденный обмен билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5.4" data-path="price-refund-ticket.html">
+            
+                <a href="price-refund-ticket.html">
+            
+                    
+                    Расчет стоимости возврата билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5.5" data-path="refund-ticket.html">
+            
+                <a href="refund-ticket.html">
+            
+                    
+                    Возврат билетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="report-ticket.html">
+            
+                <a href="report-ticket.html">
+            
+                    
+                    Формирование отчетов
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Очереди</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="queues.html">
+            
+                <a href="queues.html">
+            
+                    
+                    Обработка очередей
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="queue-place.html">
+            
+                <a href="queue-place.html">
+            
+                    
+                    Помещение бронирований в очереди
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="timelimit.html">
+            
+                <a href="timelimit.html">
+            
+                    
+                    Тайм-лимиты бронирований
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Правила тарифов</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="fare-rules.html">
+            
+                <a href="fare-rules.html">
+            
+                    
+                    Получение текста правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="structure-fare-rules.html">
+            
+                <a href="structure-fare-rules.html">
+            
+                    
+                    Получение структурированных правил
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="baggage.html">
+            
+                <a href="baggage.html">
+            
+                    
+                    Получение норм провоза багажа
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Другое</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="change-pcc.html">
+            
+                <a href="change-pcc.html">
+            
+                    
+                    Переход в другие PCC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="currency-rates.html">
+            
+                <a href="currency-rates.html">
+            
+                    
+                    Получение курсов валют
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="commands.html">
+            
+                <a href="commands.html">
+            
+                    
+                    Отправка терминальных команд
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Деление бронирований</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435;-&#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;">&#x414;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</h1>
+<hr>
+<p><strong>&#x41E;&#x433;&#x43B;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;:</strong></p>
+<!-- toc -->
+<ul>
+<li><a href="#vvedenie">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435;</a></li>
+<li><a href="#algoritm_deleniya_bronirovanii">&#x410;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C; &#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</a></li>
+<li><a href="#chtenie_bronirovaniya_travelitineraryreadrq">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (TravelItineraryReadRQ)</a></li>
+<li><a href="#vibor_passazhirov_dlya_perenosa_v_drugoe_bronirovanie_travelitinerarydividellsrq">&#x412;&#x44B;&#x431;&#x43E;&#x440; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x43D;&#x43E;&#x441;&#x430; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; (TravelItineraryDivideLLSRQ)</a></li>
+<li><a href="#dobavlenie_polya_received_from_v_novoe_bronirovanie_enhancedendtransactionrq">&#x414;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x43E;&#x43B;&#x44F; Received From &#x432; &#x43D;&#x43E;&#x432;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; (EnhancedEndTransactionRQ)</a></li>
+<li><a href="#sohranenie_novogo_bronirovaniya_travelitinerarydividellsrq">&#x421;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (TravelItineraryDivideLLSRQ)</a></li>
+<li><a href="#sohranenie_originalnogo_bronirovaniya_enhancedendtransactionrq">&#x421;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x43E;&#x440;&#x438;&#x433;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (EnhancedEndTransactionRQ)</a></li>
+</ul>
+<!-- tocstop -->
+<hr>
+<h2 id="vvedenie">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435;</h2>
+<p>&#x412; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x44F;&#x445;, &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x43F;&#x440;&#x438; &#x43E;&#x442;&#x43A;&#x430;&#x437;&#x435; &#x43E;&#x442; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x432; PNR &#x438;&#x43B;&#x438; &#x43F;&#x440;&#x438; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x438; &#x443;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x439; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x43E;&#x437;&#x43A;&#x438; &#x434;&#x43B;&#x44F; &#x447;&#x430;&#x441;&#x442;&#x438; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;, &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x438;&#x442;&#x44C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;. &#x41F;&#x440;&#x438; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x432; &#x43D;&#x43E;&#x432;&#x44B;&#x439; PNR &#x430;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x43F;&#x435;&#x440;&#x435;&#x43C;&#x435;&#x449;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x432;&#x441;&#x435; &#x430;&#x441;&#x441;&#x43E;&#x446;&#x438;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x441; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x43C; &#x44D;&#x43B;&#x435;&#x43C;&#x435;&#x43D;&#x442;&#x44B;, &#x430; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x430; &#x432;&#x441;&#x435;&#x445; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x431;&#x438;&#x43B;&#x435;&#x442;&#x43E;&#x432;.</p>
+<h2 id="algoritm_deleniya_bronirovanii">&#x410;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C; &#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;</h2>
+<p>
+    <div class="panel-group panel-image-group" data-id="split-booking_0" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse885773">
+          <div class="panel-title">
+            &#x421;&#x445;&#x435;&#x43C;&#x430;
+            <span class="fa fa-angle-up pull-right toggle-angle" id="toggleangle885773"></span>
+          </div>
+        </div>
+        <div id="collapse0" class="panel-collapse collapse in" role="tabpanel">
+          <div class="panel-body"><img class="panel-image" src="assets/svg/split-booking/split-booking.svg"></div>
+        </div>
+      </div>
+    </div></p>
+<h2 id="chtenie_bronirovaniya_travelitineraryreadrq">&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (TravelItineraryReadRQ)</h2>
+<p><em>&#x414;&#x43B;&#x44F; &#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; &#x432; &#x434;&#x440;&#x443;&#x433;&#x438;&#x445; PCC &#x43F;&#x440;&#x435;&#x434;&#x432;&#x430;&#x440;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa" target="_blank">ContextChangeLLSRQ</a> (&#x441;&#x43C;. <a href="change-pcc.html">&#x41F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434; &#x432; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435; PCC</a>).</em></p>
+<p>&#x414;&#x43B;&#x44F; &#x447;&#x442;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/Get_Itinerary" target="_blank">TravelItineraryReadRQ</a>.</p>
+<p>&#x412; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x430; <code>/TravelItineraryReadRQ/UniqueID/@ID</code> &#x432; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43A;&#x43E;&#x434; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (PNR Record Locator).</p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse929324">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle929324"></span>
+          </div>
+        </div>
+        <div id="collapse929324" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code929324">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code929324" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryReadRQ</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;3.10.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/res/tir/v3_10&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MessagingDetails</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">SubjectAreas</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SubjectArea</span>&gt;</span>FULL<span class="hljs-tag">&lt;/<span class="hljs-name">SubjectArea</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">SubjectAreas</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">MessagingDetails</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">UniqueID</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;XXKNFS&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">TravelItineraryReadRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse992381">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle992381"></span>
+          </div>
+        </div>
+        <div id="collapse992381" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code992381">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code992381" class="lang-XML">&lt;&lt;tir310:TravelItineraryReadRS Version=&quot;3.10.0&quot; xmlns:or110=&quot;http://services.sabre.com/res/or/v1_11&quot; xmlns:stl=&quot;http://services.sabre.com/STL/v01&quot; xmlns:tir310=&quot;http://services.sabre.com/res/tir/v3_10&quot;&gt;
+  &lt;stl:ApplicationResults status=&quot;Complete&quot;&gt;
+    &lt;stl:Success timeStamp=&quot;2020-01-22T08:57:20.830-06:00&quot;/&gt;
+  &lt;/stl:ApplicationResults&gt;
+  &lt;tir310:TravelItinerary&gt;
+    &lt;tir310:CustomerInfo&gt;
+      &lt;tir310:ContactNumbers&gt;
+        &lt;tir310:ContactNumber Id=&quot;14&quot; LocationCode=&quot;MOW&quot; Phone=&quot;74991234567-A&quot; RPH=&quot;001&quot;/&gt;
+        &lt;tir310:ContactNumber Id=&quot;15&quot; LocationCode=&quot;MOW&quot; Phone=&quot;79851234567-M&quot; RPH=&quot;002&quot;/&gt;
+      &lt;/tir310:ContactNumbers&gt;
+      &lt;tir310:PersonName NameNumber=&quot;01.01&quot; PassengerType=&quot;ADT&quot; RPH=&quot;1&quot; WithInfant=&quot;false&quot; elementId=&quot;pnr-2.1&quot;&gt;
+        &lt;tir310:Email Comment=&quot;BC/&quot; Id=&quot;13&quot; Type=&quot;BC&quot;&gt;AGENCY@AGENCY.COM&lt;/tir310:Email&gt;
+        &lt;tir310:Email Comment=&quot;TO/&quot; Id=&quot;12&quot; Type=&quot;TO&quot;&gt;CUSTOMER@CUSTOMER.COM&lt;/tir310:Email&gt;
+        &lt;tir310:GivenName&gt;IVAN MR&lt;/tir310:GivenName&gt;
+        &lt;tir310:Surname&gt;IVANOV&lt;/tir310:Surname&gt;
+      &lt;/tir310:PersonName&gt;
+      &lt;tir310:PersonName NameNumber=&quot;02.01&quot; PassengerType=&quot;ADT&quot; RPH=&quot;2&quot; WithInfant=&quot;false&quot; elementId=&quot;pnr-4.2&quot;&gt;
+        &lt;tir310:Email Comment=&quot;BC/&quot; Id=&quot;13&quot; Type=&quot;BC&quot;&gt;AGENCY@AGENCY.COM&lt;/tir310:Email&gt;
+        &lt;tir310:GivenName&gt;ELENA MS&lt;/tir310:GivenName&gt;
+        &lt;tir310:Surname&gt;IVANOVA&lt;/tir310:Surname&gt;
+      &lt;/tir310:PersonName&gt;
+      &lt;tir310:PersonName NameNumber=&quot;03.01&quot; PassengerType=&quot;CNN&quot; RPH=&quot;3&quot; WithInfant=&quot;false&quot; elementId=&quot;pnr-6.3&quot;&gt;
+        &lt;tir310:Email Comment=&quot;BC/&quot; Id=&quot;13&quot; Type=&quot;BC&quot;&gt;AGENCY@AGENCY.COM&lt;/tir310:Email&gt;
+        &lt;tir310:GivenName&gt;ANDREY&lt;/tir310:GivenName&gt;
+        &lt;tir310:Surname&gt;IVANOV&lt;/tir310:Surname&gt;
+      &lt;/tir310:PersonName&gt;
+      &lt;tir310:PersonName NameNumber=&quot;04.01&quot; PassengerType=&quot;INF&quot; RPH=&quot;4&quot; WithInfant=&quot;true&quot; elementId=&quot;pnr-8.4&quot;&gt;
+        &lt;tir310:Email Comment=&quot;BC/&quot; Id=&quot;13&quot; Type=&quot;BC&quot;&gt;AGENCY@AGENCY.COM&lt;/tir310:Email&gt;
+        &lt;tir310:GivenName&gt;EKATERINA&lt;/tir310:GivenName&gt;
+        &lt;tir310:Surname&gt;IVANOVA&lt;/tir310:Surname&gt;
+      &lt;/tir310:PersonName&gt;
+    &lt;/tir310:CustomerInfo&gt;
+    &lt;tir310:ItineraryInfo&gt;
+      &lt;tir310:ItineraryPricing&gt;
+        &lt;tir310:PriceQuote RPH=&quot;1&quot;&gt;
+          &lt;tir310:MiscInformation&gt;
+            &lt;tir310:SignatureLine ExpirationDateTime=&quot;00:00&quot; Source=&quot;SYS&quot; Status=&quot;ACTIVE&quot;&gt;
+              &lt;tir310:Text&gt;2FRH 9LSC*AWT 1757/22JAN20&lt;/tir310:Text&gt;
+            &lt;/tir310:SignatureLine&gt;
+          &lt;/tir310:MiscInformation&gt;
+          &lt;tir310:PricedItinerary DisplayOnly=&quot;false&quot; InputMessage=&quot;WPASU&#xA5;MP-I&#xA5;BREC&#xA5;RQ&quot; RPH=&quot;1&quot; StatusCode=&quot;A&quot; StoredDateTime=&quot;2020-01-22T17:57&quot; TaxExempt=&quot;false&quot; ValidatingCarrier=&quot;SU&quot;&gt;
+            &lt;tir310:AirItineraryPricingInfo&gt;
+              &lt;tir310:ItinTotalFare&gt;
+                &lt;tir310:BaseFare Amount=&quot;58000&quot; CurrencyCode=&quot;RUB&quot;/&gt;
+                &lt;tir310:Taxes&gt;
+                  &lt;tir310:Tax Amount=&quot;6008&quot; TaxCode=&quot;XT&quot;/&gt;
+                  &lt;tir310:TaxBreakdownCode TaxPaid=&quot;false&quot;&gt;5400YQ&lt;/tir310:TaxBreakdownCode&gt;
+                  &lt;tir310:TaxBreakdownCode TaxPaid=&quot;false&quot;&gt;608RI&lt;/tir310:TaxBreakdownCode&gt;
+                &lt;/tir310:Taxes&gt;
+                &lt;tir310:TotalFare Amount=&quot;64008&quot; CurrencyCode=&quot;RUB&quot;/&gt;
+                &lt;tir310:Totals&gt;
+                  &lt;tir310:BaseFare Amount=&quot;116000&quot;/&gt;
+                  &lt;tir310:Taxes&gt;
+                    &lt;tir310:Tax Amount=&quot;12016&quot;/&gt;
+                  &lt;/tir310:Taxes&gt;
+                  &lt;tir310:TotalFare Amount=&quot;128016&quot;/&gt;
+                &lt;/tir310:Totals&gt;
+              &lt;/tir310:ItinTotalFare&gt;
+              &lt;tir310:PassengerTypeQuantity Code=&quot;ADT&quot; Quantity=&quot;02&quot;/&gt;
+              &lt;tir310:PTC_FareBreakdown&gt;
+                &lt;tir310:Endorsements&gt;
+                  &lt;tir310:Endorsement type=&quot;PRICING_PARAMETER&quot;&gt;
+                    &lt;tir310:Text&gt;WPASU$MP-I$BREC$RQ&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;VALIDATING CARRIER SPECIFIED - SU&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;CHG BEF DEP UP TO RUB2600/CHG AFT DEP UP TO RUB2600/REF BEF DEP&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;UP TO RUB2600/REF AFT DEP UP TO RUB5200/OTHERWISE NON-CHG&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;NON-REF/SEE RULES&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                &lt;/tir310:Endorsements&gt;
+                &lt;tir310:FareBasis Code=&quot;YCLR/YCLR&quot;/&gt;
+                &lt;tir310:FareCalculation&gt;
+                  &lt;tir310:Text&gt;MOW SU AER29000SU MOW29000RUB58000END&lt;/tir310:Text&gt;
+                &lt;/tir310:FareCalculation&gt;
+                &lt;tir310:FareSource&gt;ATPC&lt;/tir310:FareSource&gt;
+                &lt;tir310:FlightSegment ConnectionInd=&quot;O&quot; DepartureDateTime=&quot;09-01T07:45&quot; FlightNumber=&quot;1138&quot; ResBookDesigCode=&quot;Y&quot; SegmentNumber=&quot;1&quot; Status=&quot;OK&quot;&gt;
+                  &lt;tir310:BaggageAllowance Number=&quot;01P&quot;/&gt;
+                  &lt;tir310:FareBasis Code=&quot;YCLR&quot;/&gt;
+                  &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1138&quot;/&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;SVO&quot;/&gt;
+                  &lt;tir310:ValidityDates&gt;
+                    &lt;tir310:NotValidAfter&gt;2020-09-01&lt;/tir310:NotValidAfter&gt;
+                    &lt;tir310:NotValidBefore&gt;2020-09-01&lt;/tir310:NotValidBefore&gt;
+                  &lt;/tir310:ValidityDates&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FlightSegment ConnectionInd=&quot;O&quot; DepartureDateTime=&quot;09-08T02:45&quot; FlightNumber=&quot;1129&quot; ResBookDesigCode=&quot;Y&quot; SegmentNumber=&quot;2&quot; Status=&quot;OK&quot;&gt;
+                  &lt;tir310:BaggageAllowance Number=&quot;01P&quot;/&gt;
+                  &lt;tir310:FareBasis Code=&quot;YCLR&quot;/&gt;
+                  &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1129&quot;/&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;AER&quot;/&gt;
+                  &lt;tir310:ValidityDates&gt;
+                    &lt;tir310:NotValidAfter&gt;2020-09-08&lt;/tir310:NotValidAfter&gt;
+                    &lt;tir310:NotValidBefore&gt;2020-09-08&lt;/tir310:NotValidBefore&gt;
+                  &lt;/tir310:ValidityDates&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FlightSegment&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;SVO&quot;/&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FareComponent Amount=&quot;29000&quot; FareBasisCode=&quot;YCLR&quot; FareComponentNumber=&quot;1&quot; FareDirectionality=&quot;FROM&quot; GoverningCarrier=&quot;SU&quot; TicketDesignator=&quot;&quot;&gt;
+                  &lt;tir310:Location Destination=&quot;AER&quot; Origin=&quot;MOW&quot;/&gt;
+                  &lt;tir310:Dates ArrivalDateTime=&quot;09-01T10:15&quot; DepartureDateTime=&quot;09-01T07:45&quot;/&gt;
+                  &lt;tir310:FlightSegmentNumbers&gt;
+                    &lt;tir310:FlightSegmentNumber&gt;1&lt;/tir310:FlightSegmentNumber&gt;
+                  &lt;/tir310:FlightSegmentNumbers&gt;
+                &lt;/tir310:FareComponent&gt;
+                &lt;tir310:FareComponent Amount=&quot;29000&quot; FareBasisCode=&quot;YCLR&quot; FareComponentNumber=&quot;2&quot; FareDirectionality=&quot;TO&quot; GoverningCarrier=&quot;SU&quot; TicketDesignator=&quot;&quot;&gt;
+                  &lt;tir310:Location Destination=&quot;MOW&quot; Origin=&quot;AER&quot;/&gt;
+                  &lt;tir310:Dates ArrivalDateTime=&quot;09-08T05:20&quot; DepartureDateTime=&quot;09-08T02:45&quot;/&gt;
+                  &lt;tir310:FlightSegmentNumbers&gt;
+                    &lt;tir310:FlightSegmentNumber&gt;2&lt;/tir310:FlightSegmentNumber&gt;
+                  &lt;/tir310:FlightSegmentNumbers&gt;
+                &lt;/tir310:FareComponent&gt;
+                &lt;tir310:ResTicketingRestrictions&gt;LAST DAY TO PURCHASE 27AUG/2359&lt;/tir310:ResTicketingRestrictions&gt;
+                &lt;tir310:ResTicketingRestrictions&gt;GUARANTEED FARE APPL IF PURCHASED BEFORE 27AUG&lt;/tir310:ResTicketingRestrictions&gt;
+              &lt;/tir310:PTC_FareBreakdown&gt;
+            &lt;/tir310:AirItineraryPricingInfo&gt;
+          &lt;/tir310:PricedItinerary&gt;
+          &lt;tir310:ResponseHeader&gt;
+            &lt;tir310:Text&gt;FARE - PRICE RETAINED&lt;/tir310:Text&gt;
+            &lt;tir310:Text&gt;FARE NOT GUARANTEED UNTIL TICKETED&lt;/tir310:Text&gt;
+          &lt;/tir310:ResponseHeader&gt;
+          &lt;tir310:PriceQuotePlus DiscountAmount=&quot;0&quot; DisplayOnly=&quot;false&quot; DomesticIntlInd=&quot;I&quot; IT_BT_Fare=&quot;BT&quot; ItineraryChanged=&quot;false&quot; ManualFare=&quot;false&quot; NUCSuppresion=&quot;false&quot; NegotiatedFare=&quot;false&quot; PricingStatus=&quot;S&quot; SubjToGovtApproval=&quot;false&quot; SystemIndicator=&quot;S&quot; VerifyFareCalc=&quot;false&quot;&gt;
+            &lt;tir310:PassengerInfo PassengerType=&quot;ADT&quot;&gt;
+              &lt;tir310:PassengerData NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PassengerData&gt;
+              &lt;tir310:PassengerData NameNumber=&quot;02.01&quot;&gt;IVANOVA/ELENA MS&lt;/tir310:PassengerData&gt;
+            &lt;/tir310:PassengerInfo&gt;
+            &lt;tir310:TicketingInstructionsInfo/&gt;
+          &lt;/tir310:PriceQuotePlus&gt;
+        &lt;/tir310:PriceQuote&gt;
+        &lt;tir310:PriceQuote RPH=&quot;2&quot;&gt;
+          &lt;tir310:MiscInformation&gt;
+            &lt;tir310:SignatureLine ExpirationDateTime=&quot;00:00&quot; Source=&quot;SYS&quot; Status=&quot;ACTIVE&quot;&gt;
+              &lt;tir310:Text&gt;2FRH 9LSC*AWT 1757/22JAN20&lt;/tir310:Text&gt;
+            &lt;/tir310:SignatureLine&gt;
+          &lt;/tir310:MiscInformation&gt;
+          &lt;tir310:PricedItinerary DisplayOnly=&quot;false&quot; InputMessage=&quot;WPASU&#xA5;MP-I&#xA5;BREC&#xA5;RQ&quot; RPH=&quot;2&quot; StatusCode=&quot;A&quot; StoredDateTime=&quot;2020-01-22T17:57&quot; TaxExempt=&quot;false&quot; ValidatingCarrier=&quot;SU&quot;&gt;
+            &lt;tir310:AirItineraryPricingInfo&gt;
+              &lt;tir310:ItinTotalFare&gt;
+                &lt;tir310:BaseFare Amount=&quot;43500&quot; CurrencyCode=&quot;RUB&quot;/&gt;
+                &lt;tir310:Taxes&gt;
+                  &lt;tir310:Tax Amount=&quot;5704&quot; TaxCode=&quot;XT&quot;/&gt;
+                  &lt;tir310:TaxBreakdownCode TaxPaid=&quot;false&quot;&gt;5400YQ&lt;/tir310:TaxBreakdownCode&gt;
+                  &lt;tir310:TaxBreakdownCode TaxPaid=&quot;false&quot;&gt;304RI&lt;/tir310:TaxBreakdownCode&gt;
+                &lt;/tir310:Taxes&gt;
+                &lt;tir310:TotalFare Amount=&quot;49204&quot; CurrencyCode=&quot;RUB&quot;/&gt;
+                &lt;tir310:Totals&gt;
+                  &lt;tir310:BaseFare Amount=&quot;43500&quot;/&gt;
+                  &lt;tir310:Taxes&gt;
+                    &lt;tir310:Tax Amount=&quot;5704&quot;/&gt;
+                  &lt;/tir310:Taxes&gt;
+                  &lt;tir310:TotalFare Amount=&quot;49204&quot;/&gt;
+                &lt;/tir310:Totals&gt;
+              &lt;/tir310:ItinTotalFare&gt;
+              &lt;tir310:PassengerTypeQuantity Code=&quot;CNN&quot; Quantity=&quot;01&quot;/&gt;
+              &lt;tir310:PTC_FareBreakdown&gt;
+                &lt;tir310:Endorsements&gt;
+                  &lt;tir310:Endorsement type=&quot;PRICING_PARAMETER&quot;&gt;
+                    &lt;tir310:Text&gt;WPASU$MP-I$BREC$RQ&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;VALIDATING CARRIER SPECIFIED - SU&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;CHG BEF DEP UP TO RUB2600/CHG AFT DEP UP TO RUB2600/REF BEF DEP&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;UP TO RUB2600/REF AFT DEP UP TO RUB5200/OTHERWISE NON-CHG&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;NON-REF/SEE RULES&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                &lt;/tir310:Endorsements&gt;
+                &lt;tir310:FareBasis Code=&quot;YCLR/CH25/YCLR/CH25&quot;/&gt;
+                &lt;tir310:FareCalculation&gt;
+                  &lt;tir310:Text&gt;MOW SU AER21750SU MOW21750RUB43500END&lt;/tir310:Text&gt;
+                &lt;/tir310:FareCalculation&gt;
+                &lt;tir310:FareSource&gt;ATPC&lt;/tir310:FareSource&gt;
+                &lt;tir310:FlightSegment ConnectionInd=&quot;O&quot; DepartureDateTime=&quot;09-01T07:45&quot; FlightNumber=&quot;1138&quot; ResBookDesigCode=&quot;Y&quot; SegmentNumber=&quot;1&quot; Status=&quot;OK&quot;&gt;
+                  &lt;tir310:BaggageAllowance Number=&quot;01P&quot;/&gt;
+                  &lt;tir310:FareBasis Code=&quot;YCLR/CH25&quot;/&gt;
+                  &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1138&quot;/&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;SVO&quot;/&gt;
+                  &lt;tir310:ValidityDates&gt;
+                    &lt;tir310:NotValidAfter&gt;2020-09-01&lt;/tir310:NotValidAfter&gt;
+                    &lt;tir310:NotValidBefore&gt;2020-09-01&lt;/tir310:NotValidBefore&gt;
+                  &lt;/tir310:ValidityDates&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FlightSegment ConnectionInd=&quot;O&quot; DepartureDateTime=&quot;09-08T02:45&quot; FlightNumber=&quot;1129&quot; ResBookDesigCode=&quot;Y&quot; SegmentNumber=&quot;2&quot; Status=&quot;OK&quot;&gt;
+                  &lt;tir310:BaggageAllowance Number=&quot;01P&quot;/&gt;
+                  &lt;tir310:FareBasis Code=&quot;YCLR/CH25&quot;/&gt;
+                  &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1129&quot;/&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;AER&quot;/&gt;
+                  &lt;tir310:ValidityDates&gt;
+                    &lt;tir310:NotValidAfter&gt;2020-09-08&lt;/tir310:NotValidAfter&gt;
+                    &lt;tir310:NotValidBefore&gt;2020-09-08&lt;/tir310:NotValidBefore&gt;
+                  &lt;/tir310:ValidityDates&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FlightSegment&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;SVO&quot;/&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FareComponent Amount=&quot;21750&quot; FareBasisCode=&quot;YCLR/CH25&quot; FareComponentNumber=&quot;1&quot; FareDirectionality=&quot;FROM&quot; GoverningCarrier=&quot;SU&quot; TicketDesignator=&quot;CH25&quot;&gt;
+                  &lt;tir310:Location Destination=&quot;AER&quot; Origin=&quot;MOW&quot;/&gt;
+                  &lt;tir310:Dates ArrivalDateTime=&quot;09-01T10:15&quot; DepartureDateTime=&quot;09-01T07:45&quot;/&gt;
+                  &lt;tir310:FlightSegmentNumbers&gt;
+                    &lt;tir310:FlightSegmentNumber&gt;1&lt;/tir310:FlightSegmentNumber&gt;
+                  &lt;/tir310:FlightSegmentNumbers&gt;
+                &lt;/tir310:FareComponent&gt;
+                &lt;tir310:FareComponent Amount=&quot;21750&quot; FareBasisCode=&quot;YCLR/CH25&quot; FareComponentNumber=&quot;2&quot; FareDirectionality=&quot;TO&quot; GoverningCarrier=&quot;SU&quot; TicketDesignator=&quot;CH25&quot;&gt;
+                  &lt;tir310:Location Destination=&quot;MOW&quot; Origin=&quot;AER&quot;/&gt;
+                  &lt;tir310:Dates ArrivalDateTime=&quot;09-08T05:20&quot; DepartureDateTime=&quot;09-08T02:45&quot;/&gt;
+                  &lt;tir310:FlightSegmentNumbers&gt;
+                    &lt;tir310:FlightSegmentNumber&gt;2&lt;/tir310:FlightSegmentNumber&gt;
+                  &lt;/tir310:FlightSegmentNumbers&gt;
+                &lt;/tir310:FareComponent&gt;
+                &lt;tir310:ResTicketingRestrictions&gt;LAST DAY TO PURCHASE 27AUG/2359&lt;/tir310:ResTicketingRestrictions&gt;
+                &lt;tir310:ResTicketingRestrictions&gt;GUARANTEED FARE APPL IF PURCHASED BEFORE 27AUG&lt;/tir310:ResTicketingRestrictions&gt;
+              &lt;/tir310:PTC_FareBreakdown&gt;
+            &lt;/tir310:AirItineraryPricingInfo&gt;
+          &lt;/tir310:PricedItinerary&gt;
+          &lt;tir310:ResponseHeader&gt;
+            &lt;tir310:Text&gt;FARE - PRICE RETAINED&lt;/tir310:Text&gt;
+            &lt;tir310:Text&gt;FARE NOT GUARANTEED UNTIL TICKETED&lt;/tir310:Text&gt;
+          &lt;/tir310:ResponseHeader&gt;
+          &lt;tir310:PriceQuotePlus DiscountAmount=&quot;0&quot; DisplayOnly=&quot;false&quot; DomesticIntlInd=&quot;I&quot; IT_BT_Fare=&quot;BT&quot; ItineraryChanged=&quot;false&quot; ManualFare=&quot;false&quot; NUCSuppresion=&quot;false&quot; NegotiatedFare=&quot;false&quot; PricingStatus=&quot;S&quot; SubjToGovtApproval=&quot;false&quot; SystemIndicator=&quot;S&quot; VerifyFareCalc=&quot;false&quot;&gt;
+            &lt;tir310:PassengerInfo PassengerType=&quot;CNN&quot;&gt;
+              &lt;tir310:PassengerData NameNumber=&quot;03.01&quot;&gt;IVANOV/ANDREY&lt;/tir310:PassengerData&gt;
+            &lt;/tir310:PassengerInfo&gt;
+            &lt;tir310:TicketingInstructionsInfo/&gt;
+          &lt;/tir310:PriceQuotePlus&gt;
+        &lt;/tir310:PriceQuote&gt;
+        &lt;tir310:PriceQuote RPH=&quot;3&quot;&gt;
+          &lt;tir310:MiscInformation&gt;
+            &lt;tir310:SignatureLine ExpirationDateTime=&quot;00:00&quot; Source=&quot;SYS&quot; Status=&quot;ACTIVE&quot;&gt;
+              &lt;tir310:Text&gt;2FRH 9LSC*AWT 1757/22JAN20&lt;/tir310:Text&gt;
+            &lt;/tir310:SignatureLine&gt;
+          &lt;/tir310:MiscInformation&gt;
+          &lt;tir310:PricedItinerary DisplayOnly=&quot;false&quot; InputMessage=&quot;WPASU&#xA5;MP-I&#xA5;BREC&#xA5;RQ&quot; RPH=&quot;3&quot; StatusCode=&quot;A&quot; StoredDateTime=&quot;2020-01-22T17:57&quot; TaxExempt=&quot;false&quot; ValidatingCarrier=&quot;SU&quot;&gt;
+            &lt;tir310:AirItineraryPricingInfo&gt;
+              &lt;tir310:ItinTotalFare&gt;
+                &lt;tir310:BaseFare Amount=&quot;0&quot; CurrencyCode=&quot;RUB&quot;/&gt;
+                &lt;tir310:Taxes&gt;
+                  &lt;tir310:Tax Amount=&quot;0&quot; TaxCode=&quot;TE&quot;/&gt;
+                &lt;/tir310:Taxes&gt;
+                &lt;tir310:TotalFare Amount=&quot;0&quot; CurrencyCode=&quot;RUB&quot;/&gt;
+                &lt;tir310:Totals&gt;
+                  &lt;tir310:BaseFare Amount=&quot;0&quot;/&gt;
+                  &lt;tir310:Taxes&gt;
+                    &lt;tir310:Tax Amount=&quot;0&quot;/&gt;
+                  &lt;/tir310:Taxes&gt;
+                  &lt;tir310:TotalFare Amount=&quot;0&quot;/&gt;
+                &lt;/tir310:Totals&gt;
+              &lt;/tir310:ItinTotalFare&gt;
+              &lt;tir310:PassengerTypeQuantity Code=&quot;INF&quot; Quantity=&quot;01&quot;/&gt;
+              &lt;tir310:PTC_FareBreakdown&gt;
+                &lt;tir310:Endorsements&gt;
+                  &lt;tir310:Endorsement type=&quot;PRICING_PARAMETER&quot;&gt;
+                    &lt;tir310:Text&gt;WPASU$MP-I$BREC$RQ&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;REQUIRES ACCOMPANYING ADT PASSENGER&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;EACH INF REQUIRES ACCOMPANYING ADT PASSENGER&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;VALIDATING CARRIER SPECIFIED - SU&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;CHG BEF DEP UP TO RUB0/CHG AFT DEP UP TO RUB0/REF BEF DEP UP TO&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;RUB0/REF AFT DEP UP TO RUB5200/OTHERWISE NON-CHG NON-REF/SEE&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                  &lt;tir310:Endorsement type=&quot;WARNING&quot;&gt;
+                    &lt;tir310:Text&gt;RULES&lt;/tir310:Text&gt;
+                  &lt;/tir310:Endorsement&gt;
+                &lt;/tir310:Endorsements&gt;
+                &lt;tir310:FareBasis Code=&quot;YCLR/IN00/YCLR/IN00&quot;/&gt;
+                &lt;tir310:FareCalculation&gt;
+                  &lt;tir310:Text&gt;MOW SU AER0SU MOW0RUB0END&lt;/tir310:Text&gt;
+                &lt;/tir310:FareCalculation&gt;
+                &lt;tir310:FareSource&gt;ATPC&lt;/tir310:FareSource&gt;
+                &lt;tir310:FlightSegment ConnectionInd=&quot;O&quot; DepartureDateTime=&quot;09-01T07:45&quot; FlightNumber=&quot;1138&quot; ResBookDesigCode=&quot;Y&quot; SegmentNumber=&quot;1&quot; Status=&quot;NS&quot;&gt;
+                  &lt;tir310:BaggageAllowance Number=&quot;01P&quot;/&gt;
+                  &lt;tir310:FareBasis Code=&quot;YCLR/IN00&quot;/&gt;
+                  &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1138&quot;/&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;SVO&quot;/&gt;
+                  &lt;tir310:ValidityDates&gt;
+                    &lt;tir310:NotValidAfter&gt;2020-09-01&lt;/tir310:NotValidAfter&gt;
+                    &lt;tir310:NotValidBefore&gt;2020-09-01&lt;/tir310:NotValidBefore&gt;
+                  &lt;/tir310:ValidityDates&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FlightSegment ConnectionInd=&quot;O&quot; DepartureDateTime=&quot;09-08T02:45&quot; FlightNumber=&quot;1129&quot; ResBookDesigCode=&quot;Y&quot; SegmentNumber=&quot;2&quot; Status=&quot;NS&quot;&gt;
+                  &lt;tir310:BaggageAllowance Number=&quot;01P&quot;/&gt;
+                  &lt;tir310:FareBasis Code=&quot;YCLR/IN00&quot;/&gt;
+                  &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1129&quot;/&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;AER&quot;/&gt;
+                  &lt;tir310:ValidityDates&gt;
+                    &lt;tir310:NotValidAfter&gt;2020-09-08&lt;/tir310:NotValidAfter&gt;
+                    &lt;tir310:NotValidBefore&gt;2020-09-08&lt;/tir310:NotValidBefore&gt;
+                  &lt;/tir310:ValidityDates&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FlightSegment&gt;
+                  &lt;tir310:OriginLocation LocationCode=&quot;SVO&quot;/&gt;
+                &lt;/tir310:FlightSegment&gt;
+                &lt;tir310:FareComponent Amount=&quot;0&quot; FareBasisCode=&quot;YCLR/IN00&quot; FareComponentNumber=&quot;1&quot; FareDirectionality=&quot;FROM&quot; GoverningCarrier=&quot;SU&quot; TicketDesignator=&quot;IN00&quot;&gt;
+                  &lt;tir310:Location Destination=&quot;AER&quot; Origin=&quot;MOW&quot;/&gt;
+                  &lt;tir310:Dates ArrivalDateTime=&quot;09-01T10:15&quot; DepartureDateTime=&quot;09-01T07:45&quot;/&gt;
+                  &lt;tir310:FlightSegmentNumbers&gt;
+                    &lt;tir310:FlightSegmentNumber&gt;1&lt;/tir310:FlightSegmentNumber&gt;
+                  &lt;/tir310:FlightSegmentNumbers&gt;
+                &lt;/tir310:FareComponent&gt;
+                &lt;tir310:FareComponent Amount=&quot;0&quot; FareBasisCode=&quot;YCLR/IN00&quot; FareComponentNumber=&quot;2&quot; FareDirectionality=&quot;TO&quot; GoverningCarrier=&quot;SU&quot; TicketDesignator=&quot;IN00&quot;&gt;
+                  &lt;tir310:Location Destination=&quot;MOW&quot; Origin=&quot;AER&quot;/&gt;
+                  &lt;tir310:Dates ArrivalDateTime=&quot;09-08T05:20&quot; DepartureDateTime=&quot;09-08T02:45&quot;/&gt;
+                  &lt;tir310:FlightSegmentNumbers&gt;
+                    &lt;tir310:FlightSegmentNumber&gt;2&lt;/tir310:FlightSegmentNumber&gt;
+                  &lt;/tir310:FlightSegmentNumbers&gt;
+                &lt;/tir310:FareComponent&gt;
+                &lt;tir310:ResTicketingRestrictions&gt;LAST DAY TO PURCHASE 27AUG/2359&lt;/tir310:ResTicketingRestrictions&gt;
+                &lt;tir310:ResTicketingRestrictions&gt;GUARANTEED FARE APPL IF PURCHASED BEFORE 27AUG&lt;/tir310:ResTicketingRestrictions&gt;
+              &lt;/tir310:PTC_FareBreakdown&gt;
+            &lt;/tir310:AirItineraryPricingInfo&gt;
+          &lt;/tir310:PricedItinerary&gt;
+          &lt;tir310:ResponseHeader&gt;
+            &lt;tir310:Text&gt;FARE - PRICE RETAINED&lt;/tir310:Text&gt;
+            &lt;tir310:Text&gt;FARE USED TO CALCULATE DISCOUNT&lt;/tir310:Text&gt;
+            &lt;tir310:Text&gt;FARE NOT GUARANTEED UNTIL TICKETED&lt;/tir310:Text&gt;
+          &lt;/tir310:ResponseHeader&gt;
+          &lt;tir310:PriceQuotePlus DiscountAmount=&quot;0&quot; DisplayOnly=&quot;false&quot; DomesticIntlInd=&quot;I&quot; IT_BT_Fare=&quot;BT&quot; ItineraryChanged=&quot;false&quot; ManualFare=&quot;false&quot; NUCSuppresion=&quot;false&quot; NegotiatedFare=&quot;false&quot; PricingStatus=&quot;S&quot; SubjToGovtApproval=&quot;false&quot; SystemIndicator=&quot;S&quot; VerifyFareCalc=&quot;false&quot;&gt;
+            &lt;tir310:PassengerInfo PassengerType=&quot;INF&quot;&gt;
+              &lt;tir310:PassengerData NameNumber=&quot;04.01&quot;&gt;IVANOVA/EKATERINA&lt;/tir310:PassengerData&gt;
+            &lt;/tir310:PassengerInfo&gt;
+            &lt;tir310:TicketingInstructionsInfo/&gt;
+          &lt;/tir310:PriceQuotePlus&gt;
+        &lt;/tir310:PriceQuote&gt;
+        &lt;tir310:PriceQuoteTotals&gt;
+          &lt;tir310:BaseFare Amount=&quot;159500.00&quot;/&gt;
+          &lt;tir310:Taxes&gt;
+            &lt;tir310:Tax Amount=&quot;17720.00&quot;/&gt;
+          &lt;/tir310:Taxes&gt;
+          &lt;tir310:TotalFare Amount=&quot;177220.00&quot;/&gt;
+        &lt;/tir310:PriceQuoteTotals&gt;
+      &lt;/tir310:ItineraryPricing&gt;
+      &lt;tir310:ReservationItems&gt;
+        &lt;tir310:Item RPH=&quot;1&quot;&gt;
+          &lt;tir310:FlightSegment AirMilesFlown=&quot;0873&quot; ArrivalDateTime=&quot;09-01T10:15&quot; CodeShare=&quot;false&quot; DayOfWeekInd=&quot;2&quot; DepartureDateTime=&quot;2020-09-01T07:45&quot; ElapsedTime=&quot;02.30&quot; FlightNumber=&quot;1138&quot; Id=&quot;16&quot; IsPast=&quot;false&quot; NumberInParty=&quot;03&quot; ResBookDesigCode=&quot;Y&quot; SegmentBookedDate=&quot;2020-01-22T08:57:00&quot; SegmentNumber=&quot;0001&quot; SmokingAllowed=&quot;false&quot; SpecialMeal=&quot;false&quot; Status=&quot;HK&quot; StopQuantity=&quot;00&quot; eTicket=&quot;true&quot;&gt;
+            &lt;tir310:DestinationLocation LocationCode=&quot;AER&quot;/&gt;
+            &lt;tir310:Equipment AirEquipType=&quot;73H&quot;/&gt;
+            &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1138&quot; ResBookDesigCode=&quot;Y&quot;&gt;
+              &lt;tir310:Banner&gt;MARKETED BY AEROFLOT&lt;/tir310:Banner&gt;
+            &lt;/tir310:MarketingAirline&gt;
+            &lt;tir310:Meal Code=&quot;S&quot;/&gt;
+            &lt;tir310:OperatingAirline Code=&quot;SU&quot; FlightNumber=&quot;1138&quot; ResBookDesigCode=&quot;Y&quot;&gt;
+              &lt;tir310:Banner&gt;OPERATED BY AEROFLOT&lt;/tir310:Banner&gt;
+            &lt;/tir310:OperatingAirline&gt;
+            &lt;tir310:OperatingAirlinePricing Code=&quot;SU&quot;/&gt;
+            &lt;tir310:DisclosureCarrier Code=&quot;SU&quot; DOT=&quot;false&quot;&gt;
+              &lt;tir310:Banner&gt;AEROFLOT&lt;/tir310:Banner&gt;
+            &lt;/tir310:DisclosureCarrier&gt;
+            &lt;tir310:OriginLocation LocationCode=&quot;SVO&quot; Terminal=&quot;TERMINAL B - DOMESTIC&quot; TerminalCode=&quot;B&quot;/&gt;
+            &lt;tir310:SupplierRef ID=&quot;DCSU*XXKNOT&quot;/&gt;
+            &lt;tir310:UpdatedArrivalTime&gt;09-01T10:15&lt;/tir310:UpdatedArrivalTime&gt;
+            &lt;tir310:UpdatedDepartureTime&gt;09-01T07:45&lt;/tir310:UpdatedDepartureTime&gt;
+          &lt;/tir310:FlightSegment&gt;
+          &lt;tir310:Product&gt;
+            &lt;or110:ProductDetails productCategory=&quot;AIR&quot;&gt;
+              &lt;or110:ProductName type=&quot;AIR&quot;/&gt;
+              &lt;or110:Air segmentAssociationId=&quot;2&quot; sequence=&quot;1&quot;&gt;
+                &lt;or110:DepartureAirport&gt;SVO&lt;/or110:DepartureAirport&gt;
+                &lt;or110:DepartureTerminalName&gt;TERMINAL B - DOMESTIC&lt;/or110:DepartureTerminalName&gt;
+                &lt;or110:DepartureTerminalCode&gt;B&lt;/or110:DepartureTerminalCode&gt;
+                &lt;or110:ArrivalAirport&gt;AER&lt;/or110:ArrivalAirport&gt;
+                &lt;or110:EquipmentType&gt;73H&lt;/or110:EquipmentType&gt;
+                &lt;or110:MarketingAirlineCode&gt;SU&lt;/or110:MarketingAirlineCode&gt;
+                &lt;or110:MarketingFlightNumber&gt;1138&lt;/or110:MarketingFlightNumber&gt;
+                &lt;or110:MarketingClassOfService&gt;Y&lt;/or110:MarketingClassOfService&gt;
+                &lt;or110:MealCode&gt;S&lt;/or110:MealCode&gt;
+                &lt;or110:ElapsedTime&gt;150&lt;/or110:ElapsedTime&gt;
+                &lt;or110:AirMilesFlown&gt;873&lt;/or110:AirMilesFlown&gt;
+                &lt;or110:FunnelFlight&gt;false&lt;/or110:FunnelFlight&gt;
+                &lt;or110:ChangeOfGauge&gt;false&lt;/or110:ChangeOfGauge&gt;
+                &lt;or110:DisclosureCarrier Code=&quot;SU&quot; DOT=&quot;false&quot;&gt;
+                  &lt;or110:Banner&gt;AEROFLOT&lt;/or110:Banner&gt;
+                &lt;/or110:DisclosureCarrier&gt;
+                &lt;or110:AirlineRefId&gt;DCSU*XXKNOT&lt;/or110:AirlineRefId&gt;
+                &lt;or110:Eticket&gt;true&lt;/or110:Eticket&gt;
+                &lt;or110:DepartureDateTime&gt;2020-09-01T07:45:00&lt;/or110:DepartureDateTime&gt;
+                &lt;or110:ArrivalDateTime&gt;2020-09-01T10:15:00&lt;/or110:ArrivalDateTime&gt;
+                &lt;or110:FlightNumber&gt;1138&lt;/or110:FlightNumber&gt;
+                &lt;or110:ClassOfService&gt;Y&lt;/or110:ClassOfService&gt;
+                &lt;or110:ActionCode&gt;HK&lt;/or110:ActionCode&gt;
+                &lt;or110:NumberInParty&gt;3&lt;/or110:NumberInParty&gt;
+                &lt;or110:inboundConnection&gt;false&lt;/or110:inboundConnection&gt;
+                &lt;or110:outboundConnection&gt;false&lt;/or110:outboundConnection&gt;
+                &lt;or110:SegmentBookedDate&gt;2020-01-22T08:57:00&lt;/or110:SegmentBookedDate&gt;
+              &lt;/or110:Air&gt;
+            &lt;/or110:ProductDetails&gt;
+          &lt;/tir310:Product&gt;
+        &lt;/tir310:Item&gt;
+        &lt;tir310:Item RPH=&quot;2&quot;&gt;
+          &lt;tir310:FlightSegment AirMilesFlown=&quot;0873&quot; ArrivalDateTime=&quot;09-08T05:20&quot; CodeShare=&quot;false&quot; DayOfWeekInd=&quot;2&quot; DepartureDateTime=&quot;2020-09-08T02:45&quot; ElapsedTime=&quot;02.35&quot; FlightNumber=&quot;1129&quot; Id=&quot;17&quot; IsPast=&quot;false&quot; NumberInParty=&quot;03&quot; ResBookDesigCode=&quot;Y&quot; SegmentBookedDate=&quot;2020-01-22T08:57:00&quot; SegmentNumber=&quot;0002&quot; SmokingAllowed=&quot;false&quot; SpecialMeal=&quot;false&quot; Status=&quot;HK&quot; StopQuantity=&quot;00&quot; eTicket=&quot;true&quot;&gt;
+            &lt;tir310:DestinationLocation LocationCode=&quot;SVO&quot; Terminal=&quot;TERMINAL B - DOMESTIC&quot; TerminalCode=&quot;B&quot;/&gt;
+            &lt;tir310:Equipment AirEquipType=&quot;73H&quot;/&gt;
+            &lt;tir310:MarketingAirline Code=&quot;SU&quot; FlightNumber=&quot;1129&quot; ResBookDesigCode=&quot;Y&quot;&gt;
+              &lt;tir310:Banner&gt;MARKETED BY AEROFLOT&lt;/tir310:Banner&gt;
+            &lt;/tir310:MarketingAirline&gt;
+            &lt;tir310:Meal Code=&quot;S&quot;/&gt;
+            &lt;tir310:OperatingAirline Code=&quot;SU&quot; FlightNumber=&quot;1129&quot; ResBookDesigCode=&quot;Y&quot;&gt;
+              &lt;tir310:Banner&gt;OPERATED BY AEROFLOT&lt;/tir310:Banner&gt;
+            &lt;/tir310:OperatingAirline&gt;
+            &lt;tir310:OperatingAirlinePricing Code=&quot;SU&quot;/&gt;
+            &lt;tir310:DisclosureCarrier Code=&quot;SU&quot; DOT=&quot;false&quot;&gt;
+              &lt;tir310:Banner&gt;AEROFLOT&lt;/tir310:Banner&gt;
+            &lt;/tir310:DisclosureCarrier&gt;
+            &lt;tir310:OriginLocation LocationCode=&quot;AER&quot;/&gt;
+            &lt;tir310:SupplierRef ID=&quot;DCSU*XXKNOT&quot;/&gt;
+            &lt;tir310:UpdatedArrivalTime&gt;09-08T05:20&lt;/tir310:UpdatedArrivalTime&gt;
+            &lt;tir310:UpdatedDepartureTime&gt;09-08T02:45&lt;/tir310:UpdatedDepartureTime&gt;
+          &lt;/tir310:FlightSegment&gt;
+          &lt;tir310:Product&gt;
+            &lt;or110:ProductDetails productCategory=&quot;AIR&quot;&gt;
+              &lt;or110:ProductName type=&quot;AIR&quot;/&gt;
+              &lt;or110:Air segmentAssociationId=&quot;3&quot; sequence=&quot;2&quot;&gt;
+                &lt;or110:DepartureAirport&gt;AER&lt;/or110:DepartureAirport&gt;
+                &lt;or110:ArrivalAirport&gt;SVO&lt;/or110:ArrivalAirport&gt;
+                &lt;or110:ArrivalTerminalName&gt;TERMINAL B - DOMESTIC&lt;/or110:ArrivalTerminalName&gt;
+                &lt;or110:ArrivalTerminalCode&gt;B&lt;/or110:ArrivalTerminalCode&gt;
+                &lt;or110:EquipmentType&gt;73H&lt;/or110:EquipmentType&gt;
+                &lt;or110:MarketingAirlineCode&gt;SU&lt;/or110:MarketingAirlineCode&gt;
+                &lt;or110:MarketingFlightNumber&gt;1129&lt;/or110:MarketingFlightNumber&gt;
+                &lt;or110:MarketingClassOfService&gt;Y&lt;/or110:MarketingClassOfService&gt;
+                &lt;or110:MealCode&gt;S&lt;/or110:MealCode&gt;
+                &lt;or110:ElapsedTime&gt;155&lt;/or110:ElapsedTime&gt;
+                &lt;or110:AirMilesFlown&gt;873&lt;/or110:AirMilesFlown&gt;
+                &lt;or110:FunnelFlight&gt;false&lt;/or110:FunnelFlight&gt;
+                &lt;or110:ChangeOfGauge&gt;false&lt;/or110:ChangeOfGauge&gt;
+                &lt;or110:DisclosureCarrier Code=&quot;SU&quot; DOT=&quot;false&quot;&gt;
+                  &lt;or110:Banner&gt;AEROFLOT&lt;/or110:Banner&gt;
+                &lt;/or110:DisclosureCarrier&gt;
+                &lt;or110:AirlineRefId&gt;DCSU*XXKNOT&lt;/or110:AirlineRefId&gt;
+                &lt;or110:Eticket&gt;true&lt;/or110:Eticket&gt;
+                &lt;or110:DepartureDateTime&gt;2020-09-08T02:45:00&lt;/or110:DepartureDateTime&gt;
+                &lt;or110:ArrivalDateTime&gt;2020-09-08T05:20:00&lt;/or110:ArrivalDateTime&gt;
+                &lt;or110:FlightNumber&gt;1129&lt;/or110:FlightNumber&gt;
+                &lt;or110:ClassOfService&gt;Y&lt;/or110:ClassOfService&gt;
+                &lt;or110:ActionCode&gt;HK&lt;/or110:ActionCode&gt;
+                &lt;or110:NumberInParty&gt;3&lt;/or110:NumberInParty&gt;
+                &lt;or110:inboundConnection&gt;false&lt;/or110:inboundConnection&gt;
+                &lt;or110:outboundConnection&gt;false&lt;/or110:outboundConnection&gt;
+                &lt;or110:SegmentBookedDate&gt;2020-01-22T08:57:00&lt;/or110:SegmentBookedDate&gt;
+              &lt;/or110:Air&gt;
+            &lt;/or110:ProductDetails&gt;
+          &lt;/tir310:Product&gt;
+        &lt;/tir310:Item&gt;
+      &lt;/tir310:ReservationItems&gt;
+      &lt;tir310:Ticketing RPH=&quot;01&quot; TicketTimeLimit=&quot;TAW/&quot;/&gt;
+    &lt;/tir310:ItineraryInfo&gt;
+    &lt;tir310:ItineraryRef AirExtras=&quot;false&quot; ID=&quot;XXKNFS&quot; InhibitCode=&quot;U&quot; PartitionID=&quot;AA&quot; PrimeHostID=&quot;1S&quot;&gt;
+      &lt;tir310:Header&gt;PRICE QUOTE RECORD EXISTS - SYSTEM&lt;/tir310:Header&gt;
+      &lt;tir310:Source AAA_PseudoCityCode=&quot;9LSC&quot; CreateDateTime=&quot;2020-01-22T08:57&quot; CreationAgent=&quot;AWT&quot; HomePseudoCityCode=&quot;9LSC&quot; LastUpdateDateTime=&quot;2020-01-22T08:57&quot; PseudoCityCode=&quot;2FRH&quot; ReceivedFrom=&quot;API&quot; SequenceNumber=&quot;2&quot;/&gt;
+    &lt;/tir310:ItineraryRef&gt;
+    &lt;tir310:RemarkInfo&gt;
+      &lt;tir310:Remark Id=&quot;26&quot; RPH=&quot;001&quot; Type=&quot;General&quot;&gt;
+        &lt;tir310:Text&gt;TEXT REMARK&lt;/tir310:Text&gt;
+      &lt;/tir310:Remark&gt;
+    &lt;/tir310:RemarkInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;9&quot; RPH=&quot;001&quot; Type=&quot;AFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;OSI&quot;&gt;
+        &lt;tir310:PersonName NameNumber=&quot;04.01&quot;&gt;I/IVANOVA/EKATERINA&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;AA INF&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;29&quot; RPH=&quot;002&quot; Type=&quot;AFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;INFT&quot;&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;30&quot; RPH=&quot;003&quot; Type=&quot;AFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;INFT&quot;&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;18&quot; RPH=&quot;001&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;INFT&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;19&quot; RPH=&quot;002&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;INFT&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;20&quot; RPH=&quot;003&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;CTCM&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;HK1/79851234567/RU&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;21&quot; RPH=&quot;004&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;CTCE&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;HK1/CUSTOMER//CUSTOMER.COM/RU&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;22&quot; RPH=&quot;005&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;DOCS&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;23&quot; RPH=&quot;006&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;DOCS&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;02.01&quot;&gt;IVANOVA/ELENA MS&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;24&quot; RPH=&quot;007&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;DOCS&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;03.01&quot;&gt;IVANOV/ANDREY&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:SpecialServiceInfo Id=&quot;25&quot; RPH=&quot;008&quot; Type=&quot;GFX&quot;&gt;
+      &lt;tir310:Service SSR_Code=&quot;SSR&quot; SSR_Type=&quot;DOCS&quot;&gt;
+        &lt;tir310:Airline Code=&quot;SU&quot;/&gt;
+        &lt;tir310:PersonName NameNumber=&quot;01.01&quot;&gt;IVANOV/IVAN MR&lt;/tir310:PersonName&gt;
+        &lt;tir310:Text&gt;HK1/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA&lt;/tir310:Text&gt;
+      &lt;/tir310:Service&gt;
+    &lt;/tir310:SpecialServiceInfo&gt;
+    &lt;tir310:OpenReservationElements&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-9&quot; id=&quot;9&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest airlineCode=&quot;AA&quot; serviceType=&quot;OSI&quot; ssrType=&quot;AFX&quot;&gt;
+          &lt;or110:FreeText&gt;INF&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;AA INF&lt;/or110:FullText&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOVA&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;EKATERINA&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;4&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;04.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-29&quot; id=&quot;29&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;KK&quot; airlineCode=&quot;SU&quot; code=&quot;INFT&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;AFX&quot;&gt;
+          &lt;or110:FreeText&gt;/IVANOVA/EKATERINA/20FEB19&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19&lt;/or110:FullText&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:SegmentAssociation Id=&quot;16&quot; SegmentAssociationId=&quot;2&quot;&gt;
+          &lt;or110:AirSegment&gt;
+            &lt;or110:CarrierCode&gt;SU&lt;/or110:CarrierCode&gt;
+            &lt;or110:FlightNumber&gt;1138&lt;/or110:FlightNumber&gt;
+            &lt;or110:DepartureDate&gt;2020-09-01&lt;/or110:DepartureDate&gt;
+            &lt;or110:BoardPoint&gt;SVO&lt;/or110:BoardPoint&gt;
+            &lt;or110:OffPoint&gt;AER&lt;/or110:OffPoint&gt;
+            &lt;or110:ClassOfService&gt;Y&lt;/or110:ClassOfService&gt;
+          &lt;/or110:AirSegment&gt;
+        &lt;/or110:SegmentAssociation&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-30&quot; id=&quot;30&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;KK&quot; airlineCode=&quot;SU&quot; code=&quot;INFT&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;AFX&quot;&gt;
+          &lt;or110:FreeText&gt;/IVANOVA/EKATERINA/20FEB19&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19&lt;/or110:FullText&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:SegmentAssociation Id=&quot;17&quot; SegmentAssociationId=&quot;3&quot;&gt;
+          &lt;or110:AirSegment&gt;
+            &lt;or110:CarrierCode&gt;SU&lt;/or110:CarrierCode&gt;
+            &lt;or110:FlightNumber&gt;1129&lt;/or110:FlightNumber&gt;
+            &lt;or110:DepartureDate&gt;2020-09-08&lt;/or110:DepartureDate&gt;
+            &lt;or110:BoardPoint&gt;AER&lt;/or110:BoardPoint&gt;
+            &lt;or110:OffPoint&gt;SVO&lt;/or110:OffPoint&gt;
+            &lt;or110:ClassOfService&gt;Y&lt;/or110:ClassOfService&gt;
+          &lt;/or110:AirSegment&gt;
+        &lt;/or110:SegmentAssociation&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-or-16&quot; id=&quot;16&quot;/&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-or-16&quot; id=&quot;16&quot;/&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-or-17&quot; id=&quot;17&quot;/&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-or-17&quot; id=&quot;17&quot;/&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-18&quot; id=&quot;18&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;NN&quot; airlineCode=&quot;SU&quot; code=&quot;INFT&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:FreeText&gt;/IVANOVA/EKATERINA/20FEB19&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19&lt;/or110:FullText&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:SegmentAssociation Id=&quot;16&quot; SegmentAssociationId=&quot;2&quot;&gt;
+          &lt;or110:AirSegment&gt;
+            &lt;or110:CarrierCode&gt;SU&lt;/or110:CarrierCode&gt;
+            &lt;or110:FlightNumber&gt;1138&lt;/or110:FlightNumber&gt;
+            &lt;or110:DepartureDate&gt;2020-09-01&lt;/or110:DepartureDate&gt;
+            &lt;or110:BoardPoint&gt;SVO&lt;/or110:BoardPoint&gt;
+            &lt;or110:OffPoint&gt;AER&lt;/or110:OffPoint&gt;
+            &lt;or110:ClassOfService&gt;Y&lt;/or110:ClassOfService&gt;
+          &lt;/or110:AirSegment&gt;
+        &lt;/or110:SegmentAssociation&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-19&quot; id=&quot;19&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;NN&quot; airlineCode=&quot;SU&quot; code=&quot;INFT&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:FreeText&gt;/IVANOVA/EKATERINA/20FEB19&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19&lt;/or110:FullText&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:SegmentAssociation Id=&quot;17&quot; SegmentAssociationId=&quot;3&quot;&gt;
+          &lt;or110:AirSegment&gt;
+            &lt;or110:CarrierCode&gt;SU&lt;/or110:CarrierCode&gt;
+            &lt;or110:FlightNumber&gt;1129&lt;/or110:FlightNumber&gt;
+            &lt;or110:DepartureDate&gt;2020-09-08&lt;/or110:DepartureDate&gt;
+            &lt;or110:BoardPoint&gt;AER&lt;/or110:BoardPoint&gt;
+            &lt;or110:OffPoint&gt;SVO&lt;/or110:OffPoint&gt;
+            &lt;or110:ClassOfService&gt;Y&lt;/or110:ClassOfService&gt;
+          &lt;/or110:AirSegment&gt;
+        &lt;/or110:SegmentAssociation&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-20&quot; id=&quot;20&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;HK&quot; airlineCode=&quot;SU&quot; code=&quot;CTCM&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:FreeText&gt;/79851234567/RU&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;CTCM SU HK1/79851234567/RU&lt;/or110:FullText&gt;
+          &lt;or110:PassengerContactMobilePhone&gt;
+            &lt;or110:PhoneNumber&gt;79851234567&lt;/or110:PhoneNumber&gt;
+            &lt;or110:Language&gt;RU&lt;/or110:Language&gt;
+          &lt;/or110:PassengerContactMobilePhone&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-21&quot; id=&quot;21&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;HK&quot; airlineCode=&quot;SU&quot; code=&quot;CTCE&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:Comment&gt;COM/RU&lt;/or110:Comment&gt;
+          &lt;or110:FreeText&gt;/CUSTOMER//CUSTOMER.COM/RU&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU&lt;/or110:FullText&gt;
+          &lt;or110:PassengerContactEmail&gt;
+            &lt;or110:Email&gt;CUSTOMER@CUSTOMER.COM&lt;/or110:Email&gt;
+            &lt;or110:Language&gt;RU&lt;/or110:Language&gt;
+          &lt;/or110:PassengerContactEmail&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-22&quot; id=&quot;22&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;HK&quot; airlineCode=&quot;SU&quot; code=&quot;DOCS&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:FreeText&gt;/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;DOCS SU HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H&lt;/or110:FullText&gt;
+          &lt;or110:TravelDocument&gt;
+            &lt;or110:Type&gt;P&lt;/or110:Type&gt;
+            &lt;or110:DocumentIssueCountry&gt;RU&lt;/or110:DocumentIssueCountry&gt;
+            &lt;or110:DocumentNumber&gt;1234567890&lt;/or110:DocumentNumber&gt;
+            &lt;or110:DocumentNationalityCountry&gt;RU&lt;/or110:DocumentNationalityCountry&gt;
+            &lt;or110:DocumentExpirationDate&gt;20NOV2025&lt;/or110:DocumentExpirationDate&gt;
+            &lt;or110:DateOfBirth&gt;20NOV1980&lt;/or110:DateOfBirth&gt;
+            &lt;or110:Gender&gt;M&lt;/or110:Gender&gt;
+            &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+            &lt;or110:FirstName&gt;IVAN&lt;/or110:FirstName&gt;
+            &lt;or110:MiddleName&gt;IVANOVICH&lt;/or110:MiddleName&gt;
+            &lt;or110:Infant&gt;false&lt;/or110:Infant&gt;
+            &lt;or110:PrimaryDocHolderInd&gt;true&lt;/or110:PrimaryDocHolderInd&gt;
+            &lt;or110:HasDocumentData&gt;true&lt;/or110:HasDocumentData&gt;
+          &lt;/or110:TravelDocument&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-23&quot; id=&quot;23&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;HK&quot; airlineCode=&quot;SU&quot; code=&quot;DOCS&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:FreeText&gt;/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;DOCS SU HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA&lt;/or110:FullText&gt;
+          &lt;or110:TravelDocument&gt;
+            &lt;or110:Type&gt;P&lt;/or110:Type&gt;
+            &lt;or110:DocumentIssueCountry&gt;RU&lt;/or110:DocumentIssueCountry&gt;
+            &lt;or110:DocumentNumber&gt;2234567890&lt;/or110:DocumentNumber&gt;
+            &lt;or110:DocumentNationalityCountry&gt;RU&lt;/or110:DocumentNationalityCountry&gt;
+            &lt;or110:DocumentExpirationDate&gt;15AUG2025&lt;/or110:DocumentExpirationDate&gt;
+            &lt;or110:DateOfBirth&gt;20JAN1980&lt;/or110:DateOfBirth&gt;
+            &lt;or110:Gender&gt;F&lt;/or110:Gender&gt;
+            &lt;or110:LastName&gt;IVANOVA&lt;/or110:LastName&gt;
+            &lt;or110:FirstName&gt;ELENA&lt;/or110:FirstName&gt;
+            &lt;or110:MiddleName&gt;IVANOVNA&lt;/or110:MiddleName&gt;
+            &lt;or110:Infant&gt;false&lt;/or110:Infant&gt;
+            &lt;or110:PrimaryDocHolderInd&gt;false&lt;/or110:PrimaryDocHolderInd&gt;
+            &lt;or110:HasDocumentData&gt;true&lt;/or110:HasDocumentData&gt;
+          &lt;/or110:TravelDocument&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOVA&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;ELENA MS&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;2&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;02.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-24&quot; id=&quot;24&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;HK&quot; airlineCode=&quot;SU&quot; code=&quot;DOCS&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:FreeText&gt;/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;DOCS SU HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH&lt;/or110:FullText&gt;
+          &lt;or110:TravelDocument&gt;
+            &lt;or110:Type&gt;P&lt;/or110:Type&gt;
+            &lt;or110:DocumentIssueCountry&gt;RU&lt;/or110:DocumentIssueCountry&gt;
+            &lt;or110:DocumentNumber&gt;3234567890&lt;/or110:DocumentNumber&gt;
+            &lt;or110:DocumentNationalityCountry&gt;RU&lt;/or110:DocumentNationalityCountry&gt;
+            &lt;or110:DocumentExpirationDate&gt;20NOV2025&lt;/or110:DocumentExpirationDate&gt;
+            &lt;or110:DateOfBirth&gt;15JAN2012&lt;/or110:DateOfBirth&gt;
+            &lt;or110:Gender&gt;M&lt;/or110:Gender&gt;
+            &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+            &lt;or110:FirstName&gt;ANDREY&lt;/or110:FirstName&gt;
+            &lt;or110:MiddleName&gt;IVANOVICH&lt;/or110:MiddleName&gt;
+            &lt;or110:Infant&gt;false&lt;/or110:Infant&gt;
+            &lt;or110:PrimaryDocHolderInd&gt;false&lt;/or110:PrimaryDocHolderInd&gt;
+            &lt;or110:HasDocumentData&gt;true&lt;/or110:HasDocumentData&gt;
+          &lt;/or110:TravelDocument&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;ANDREY&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;3&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;03.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-25&quot; id=&quot;25&quot; type=&quot;SRVC&quot;&gt;
+        &lt;or110:ServiceRequest actionCode=&quot;HK&quot; airlineCode=&quot;SU&quot; code=&quot;DOCS&quot; serviceCount=&quot;1&quot; serviceType=&quot;SSR&quot; ssrType=&quot;GFX&quot;&gt;
+          &lt;or110:FreeText&gt;/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA&lt;/or110:FreeText&gt;
+          &lt;or110:FullText&gt;DOCS SU HK1/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA&lt;/or110:FullText&gt;
+          &lt;or110:TravelDocument&gt;
+            &lt;or110:Type&gt;P&lt;/or110:Type&gt;
+            &lt;or110:DocumentIssueCountry&gt;RU&lt;/or110:DocumentIssueCountry&gt;
+            &lt;or110:DocumentNumber&gt;1234567890&lt;/or110:DocumentNumber&gt;
+            &lt;or110:DocumentNationalityCountry&gt;RU&lt;/or110:DocumentNationalityCountry&gt;
+            &lt;or110:DocumentExpirationDate&gt;15APR2025&lt;/or110:DocumentExpirationDate&gt;
+            &lt;or110:DateOfBirth&gt;20FEB2019&lt;/or110:DateOfBirth&gt;
+            &lt;or110:Gender&gt;FI&lt;/or110:Gender&gt;
+            &lt;or110:LastName&gt;IVANOVA&lt;/or110:LastName&gt;
+            &lt;or110:FirstName&gt;EKATERINA&lt;/or110:FirstName&gt;
+            &lt;or110:MiddleName&gt;IVANOVNA&lt;/or110:MiddleName&gt;
+            &lt;or110:Infant&gt;true&lt;/or110:Infant&gt;
+            &lt;or110:PrimaryDocHolderInd&gt;false&lt;/or110:PrimaryDocHolderInd&gt;
+            &lt;or110:HasDocumentData&gt;true&lt;/or110:HasDocumentData&gt;
+          &lt;/or110:TravelDocument&gt;
+        &lt;/or110:ServiceRequest&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-13&quot; id=&quot;13&quot; type=&quot;PSG_DETAILS_MAIL&quot;&gt;
+        &lt;or110:Email comment=&quot;BC/&quot; type=&quot;BC&quot;&gt;
+          &lt;or110:Address&gt;AGENCY@AGENCY.COM&lt;/or110:Address&gt;
+        &lt;/or110:Email&gt;
+      &lt;/or110:OpenReservationElement&gt;
+      &lt;or110:OpenReservationElement elementId=&quot;pnr-12&quot; id=&quot;12&quot; type=&quot;PSG_DETAILS_MAIL&quot;&gt;
+        &lt;or110:Email comment=&quot;TO/&quot; type=&quot;TO&quot;&gt;
+          &lt;or110:Address&gt;CUSTOMER@CUSTOMER.COM&lt;/or110:Address&gt;
+        &lt;/or110:Email&gt;
+        &lt;or110:NameAssociation&gt;
+          &lt;or110:LastName&gt;IVANOV&lt;/or110:LastName&gt;
+          &lt;or110:FirstName&gt;IVAN MR&lt;/or110:FirstName&gt;
+          &lt;or110:ReferenceId&gt;1&lt;/or110:ReferenceId&gt;
+          &lt;or110:NameRefNumber&gt;01.01&lt;/or110:NameRefNumber&gt;
+        &lt;/or110:NameAssociation&gt;
+      &lt;/or110:OpenReservationElement&gt;
+    &lt;/tir310:OpenReservationElements&gt;
+  &lt;/tir310:TravelItinerary&gt;
+&lt;/tir310:TravelItineraryReadRS&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<h2 id="vibor_passazhirov_dlya_perenosa_v_drugoe_bronirovanie_travelitinerarydividellsrq">&#x412;&#x44B;&#x431;&#x43E;&#x440; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x434;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x43D;&#x43E;&#x441;&#x430; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; (TravelItineraryDivideLLSRQ)</h2>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x432;&#x44B;&#x431;&#x440;&#x430;&#x442;&#x44C; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432; &#x432; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x43C; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x434;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x43D;&#x43E;&#x441;&#x430; &#x432; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441; <a href="https://developer.sabre.com/docs/read/soap_apis/management/itinerary/divide_itinerary" target="_blank">TravelItineraryDivideLLSRQ</a>.</p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x43E;&#x434;&#x438;&#x43D; &#x438;&#x43B;&#x438; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x432; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x43E;&#x432;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x43F;&#x435;&#x440;&#x435;&#x43D;&#x435;&#x441;&#x442;&#x438; &#x432; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;:</p>
+<ul>
+<li><code>&lt;PersonName NameNumber=&quot;2.1&quot;/&gt;</code> &#x2014; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440; &#x441; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&#x43E;&#x43C; 2.1</li>
+<li><code>&lt;PersonName EndNameNumber=&quot;3.1&quot; NameNumber=&quot;1.1&quot;/&gt;</code> &#x2014; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x44B; 1.1, 2.1, 3.1</li>
+<li><code>&lt;PersonName EndNameNumber=&quot;2.1&quot; NameNumber=&quot;1.1&quot;/&gt; &lt;PersonName NameNumber=&quot;4.1&quot;/&gt;</code> &#x2014; &#x43F;&#x430;&#x441;&#x441;&#x430;&#x436;&#x438;&#x440;&#x44B; 1.1, 2.1, 4.1</li>
+</ul>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse718864">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle718864"></span>
+          </div>
+        </div>
+        <div id="collapse718864" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code718864">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code718864" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryDivideRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.3&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Divide</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CustomerInfo</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PersonName</span> <span class="hljs-attr">NameNumber</span>=<span class="hljs-string">&quot;2.1&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">CustomerInfo</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Divide</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">TravelItineraryDivideRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse498648">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle498648"></span>
+          </div>
+        </div>
+        <div id="collapse498648" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code498648">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code498648" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryDivideRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.3&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2020-01-22T08:57:25-06:00&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;3A82F8&quot;</span>&gt;</span>D2.1<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Success</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ItineraryRef</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;XXLRAD&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">AAA_PseudoCityCode</span>=<span class="hljs-string">&quot;2FRH&quot;</span> <span class="hljs-attr">CreateDateTime</span>=<span class="hljs-string">&quot;2020-01-22T08:57&quot;</span> <span class="hljs-attr">CreationAgent</span>=<span class="hljs-string">&quot;AWT&quot;</span> <span class="hljs-attr">HomePseudoCityCode</span>=<span class="hljs-string">&quot;9LSC&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ItineraryRef</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">TravelItineraryDivideRS</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<h2 id="dobavlenie_polya_received_from_v_novoe_bronirovanie_enhancedendtransactionrq">&#x414;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x43E;&#x43B;&#x44F; Received From &#x432; &#x43D;&#x43E;&#x432;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; (EnhancedEndTransactionRQ)</h2>
+<p>&#x41F;&#x435;&#x440;&#x435;&#x434; &#x442;&#x435;&#x43C; &#x43A;&#x430;&#x43A; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x438;&#x442;&#x44C; &#x43D;&#x43E;&#x432;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x43F;&#x43E;&#x43B;&#x435; Received From, &#x434;&#x43B;&#x44F; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/soap_apis/utility/reservation/enhanced_end_transaction" target="_blank">EnhancedEndTransactionRQ</a>.</p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li><code>/EnhancedEndTransactionRQ/Source/@ReceivedFrom</code> &#x2014; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x44F; Received From. &#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x438; &#x438;&#x43D;&#x438;&#x446;&#x438;&#x430;&#x442;&#x43E;&#x440;&#x430; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x432; &#x438;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</li>
+</ul>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse986910">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle986910"></span>
+          </div>
+        </div>
+        <div id="collapse986910" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code986910">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code986910" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedEndTransactionRQ</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eet/v1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">ReceivedFrom</span>=<span class="hljs-string">&quot;API&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">EnhancedEndTransactionRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse456193">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle456193"></span>
+          </div>
+        </div>
+        <div id="collapse456193" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code456193">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code456193" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedEndTransactionRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eet/v1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2020-01-22T08:57:30.581-06:00&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">EnhancedEndTransactionRS</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<h2 id="sohranenie_novogo_bronirovaniya_travelitinerarydividellsrq">&#x421;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (TravelItineraryDivideLLSRQ)</h2>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x438;&#x442;&#x44C; &#x43D;&#x43E;&#x432;&#x43E;&#x435; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/read/soap_apis/management/itinerary/divide_itinerary" target="_blank">TravelItineraryDivideLLSRQ</a>.</p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse521106">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle521106"></span>
+          </div>
+        </div>
+        <div id="collapse521106" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code521106">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code521106" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryDivideRQ</span> <span class="hljs-attr">ReturnHostCommand</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.2&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">File</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">TravelItineraryDivideRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse589980">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle589980"></span>
+          </div>
+        </div>
+        <div id="collapse589980" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code589980">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code589980" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">TravelItineraryDivideRS</span> <span class="hljs-attr">Version</span>=<span class="hljs-string">&quot;2.0.3&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://webservices.sabre.com/sabreXML/2011/10&quot;</span> <span class="hljs-attr">xmlns:stl</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL/v01&quot;</span> <span class="hljs-attr">xmlns:xs</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">stl:ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stl:Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2020-01-22T08:57:37-06:00&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">stl:HostCommand</span> <span class="hljs-attr">LNIATA</span>=<span class="hljs-string">&quot;3A82F8&quot;</span>&gt;</span>F<span class="hljs-tag">&lt;/<span class="hljs-name">stl:HostCommand</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">stl:SystemSpecificResults</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">stl:Success</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">stl:ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ItineraryRef</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;XXKNFS&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">AAA_PseudoCityCode</span>=<span class="hljs-string">&quot;2FRH&quot;</span> <span class="hljs-attr">CreateDateTime</span>=<span class="hljs-string">&quot;2020-01-22T08:57&quot;</span> <span class="hljs-attr">CreationAgent</span>=<span class="hljs-string">&quot;AWT&quot;</span> <span class="hljs-attr">HomePseudoCityCode</span>=<span class="hljs-string">&quot;9LSC&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ItineraryRef</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">TravelItineraryDivideRS</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<h2 id="sohranenie_originalnogo_bronirovaniya_enhancedendtransactionrq">&#x421;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x43E;&#x440;&#x438;&#x433;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (EnhancedEndTransactionRQ)</h2>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x438;&#x442;&#x44C; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x432; &#x43E;&#x440;&#x438;&#x433;&#x438;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x43A; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x443; <a href="https://developer.sabre.com/docs/soap_apis/utility/reservation/enhanced_end_transaction" target="_blank">EnhancedEndTransactionRQ</a>.</p>
+<p>&#x412; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C;:</p>
+<ul>
+<li><code>/EnhancedEndTransactionRQ/EndTransaction/@Ind</code> &#x2014; &#x43F;&#x440;&#x438;&#x437;&#x43D;&#x430;&#x43A; &#x441;&#x43E;&#x445;&#x440;&#x430;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; (&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>)</li>
+<li><code>/EnhancedEndTransactionRQ/Source/@ReceivedFrom</code> &#x2014; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x44F; Received From. &#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x438; &#x438;&#x43D;&#x438;&#x446;&#x438;&#x430;&#x442;&#x43E;&#x440;&#x430; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x439; &#x432; &#x438;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x431;&#x440;&#x43E;&#x43D;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</li>
+</ul>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse480426">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle480426"></span>
+          </div>
+        </div>
+        <div id="collapse480426" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code480426">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code480426" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedEndTransactionRQ</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0.0&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eet/v1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">EndTransaction</span> <span class="hljs-attr">Ind</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">ReceivedFrom</span>=<span class="hljs-string">&quot;API&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">EnhancedEndTransactionRQ</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+<p>
+    <div class="panel-group" role="tablist">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" data-toggle="collapse" data-target="#collapse196300">
+          <div class="panel-title">
+            &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x430;
+            <span class="fa fa-angle-down pull-right toggle-angle" id="toggleangle196300"></span>
+          </div>
+        </div>
+        <div id="collapse196300" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <span class="clipboard-button btn btn-sm btn-default" data-clipboard-target="#code196300">&#x41A;&#x43E;&#x43F;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</span>
+            <pre class="XML"><code id="code196300" class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">EnhancedEndTransactionRS</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/sp/eet/v1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationResults</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;Complete&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://services.sabre.com/STL_Payload/v02_01&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Success</span> <span class="hljs-attr">timeStamp</span>=<span class="hljs-string">&quot;2020-01-22T08:57:42.227-06:00&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationResults</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ItineraryRef</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;XXKNFS&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Source</span> <span class="hljs-attr">CreateDateTime</span>=<span class="hljs-string">&quot;2020-01-22T08:57&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ItineraryRef</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>OK 0857 XXKNFS<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">EnhancedEndTransactionRS</span>&gt;</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="cancel-booking.html" class="navigation navigation-prev " aria-label="Previous page: Отмена бронирований">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="get-history-booking.html" class="navigation navigation-next " aria-label="Next page: История бронирований">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Деление бронирований","level":"4.8","depth":1,"next":{"title":"История бронирований","level":"4.9","depth":1,"path":"get-history-booking.md","ref":"get-history-booking.md","articles":[]},"previous":{"title":"Отмена бронирований","level":"4.7","depth":1,"path":"cancel-booking.md","ref":"cancel-booking.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with","-sharing","special-sections","ga"],"root":"./source","styles":{"website":"./styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80320390-1"},"hide-published-with":{},"special-sections":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":10000000000},"theme":"default","lunr":{"maxIndexSize":10000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"split-booking.md","mtime":"2020-01-23T10:30:07.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-20T07:43:55.487Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/redraw.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/clipboard.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-special-sections/anchor.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
