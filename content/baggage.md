@@ -1160,18 +1160,32 @@ title: Получение норм провоза багажа
 
 {{< details title="Пример запроса" >}}
 ```XML
-<EnhancedAirBookRQ HaltOnError="true" haltOnInvalidMCT="true" IgnoreOnError="true" version="3.10.0" xmlns="http://services.sabre.com/sp/eab/v3_10">
+<EnhancedAirBookRQ HaltOnError="true" IgnoreOnError="true" haltOnInvalidMCT="true" version="3.10.0" xmlns="http://services.sabre.com/sp/eab/v3_10">
   <OTA_AirBookRQ>
     <OriginDestinationInformation>
-      <FlightSegment DepartureDateTime="2019-09-01T00:00:00" FlightNumber="1138" NumberInParty="3" ResBookDesigCode="Y" Status="QF">
-        <DestinationLocation LocationCode="AER"/>
-        <MarketingAirline Code="SU" FlightNumber="1138"/>
-        <OriginLocation LocationCode="SVO"/>
+      <FlightSegment DepartureDateTime="2022-12-01T00:00:00" FlightNumber="2463" NumberInParty="3" ResBookDesigCode="Y" Status="QF">
+        <DestinationLocation LocationCode="AUH"/>
+        <MarketingAirline Code="EY" FlightNumber="2463"/>
+        <MarriageGrp>O</MarriageGrp>
+        <OriginLocation LocationCode="SYD"/>
       </FlightSegment>
-      <FlightSegment DepartureDateTime="2019-09-08T00:00:00" FlightNumber="1129" NumberInParty="3" ResBookDesigCode="Y" Status="QF">
-        <DestinationLocation LocationCode="SVO"/>
-        <MarketingAirline Code="SU" FlightNumber="1129"/>
-        <OriginLocation LocationCode="AER"/>
+      <FlightSegment DepartureDateTime="2022-12-02T00:00:00" FlightNumber="25" NumberInParty="3" ResBookDesigCode="Y" Status="QF">
+        <DestinationLocation LocationCode="LHR"/>
+        <MarketingAirline Code="EY" FlightNumber="25"/>
+        <MarriageGrp>I</MarriageGrp>
+        <OriginLocation LocationCode="AUH"/>
+      </FlightSegment>
+      <FlightSegment DepartureDateTime="2022-12-08T00:00:00" FlightNumber="12" NumberInParty="3" ResBookDesigCode="Y" Status="QF">
+        <DestinationLocation LocationCode="AUH"/>
+        <MarketingAirline Code="EY" FlightNumber="12"/>
+        <MarriageGrp>I</MarriageGrp>
+        <OriginLocation LocationCode="LHR"/>
+      </FlightSegment>
+      <FlightSegment DepartureDateTime="2022-12-08T00:00:00" FlightNumber="464" NumberInParty="3" ResBookDesigCode="Y" Status="QF">
+        <DestinationLocation LocationCode="SYD"/>
+        <MarketingAirline Code="EY" FlightNumber="464"/>
+        <MarriageGrp>I</MarriageGrp>
+        <OriginLocation LocationCode="AUH"/>
       </FlightSegment>
     </OriginDestinationInformation>
   </OTA_AirBookRQ>
@@ -1180,11 +1194,11 @@ title: Получение норм провоза багажа
       <OptionalQualifiers>
         <FlightQualifiers>
           <VendorPrefs>
-            <Airline Code="SU"/>
+            <Airline Code="EY"/>
           </VendorPrefs>
         </FlightQualifiers>
         <PricingQualifiers>
-          <Brand>EC</Brand>
+          <Brand>YF</Brand>
           <PassengerType Code="ADT" Quantity="2"/>
           <PassengerType Code="CNN" Quantity="1"/>
           <PassengerType Code="INF" Quantity="1"/>
@@ -1201,20 +1215,30 @@ title: Получение норм провоза багажа
 {{< details title="Пример ответа" >}}
 ```XML
 <EnhancedAirBookRS xmlns="http://services.sabre.com/sp/eab/v3_10">
-  <ApplicationResults status="Complete" xmlns="http://services.sabre.com/STL_Payload/v02_01">
-    <Success timeStamp="2019-06-06T16:57:53.855-05:00"/>
+  <ApplicationResults status="Complete" xmlns="http://services.sabre.com/STL_Payload/v02_01" xmlns:ns10="http://services.sabre.com/STL_Header/v120" xmlns:ns11="http://services.sabre.com/STL_Header/v02_01" xmlns:ns12="http://webservices.sabre.com/servicesplatform/eiapi/1.0.0" xmlns:ns13="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:ns14="http://services.sabre.com/sp/preferences/v1" xmlns:ns15="http://services.sabre.com/STL/v01" xmlns:ns16="http://services.sabre.com/ssse/trace/v01" xmlns:ns2="http://services.sabre.com/essm/diagnostic/v1" xmlns:ns3="http://services.sabre.com/essm/core/v1" xmlns:ns4="http://opentravel.org/common/v02" xmlns:ns5="http://opentravel.org/common/message/v02" xmlns:ns6="http://services.sabre.com/STL_Payload/v02_02" xmlns:ns7="http://services.sabre.com/sp/ssp/v1" xmlns:ns8="http://services.sabre.com/STL_Header/v02_02" xmlns:ns9="http://services.sabre.com/essm/session/v1">
+    <Success timeStamp="2022-05-24T11:59:42.698-05:00"/>
   </ApplicationResults>
   <OTA_AirBookRS>
     <OriginDestinationOption>
-      <FlightSegment ArrivalDateTime="09-01T10:15" DepartureDateTime="09-01T07:45" FlightNumber="1138" NumberInParty="003" ResBookDesigCode="Y" Status="QF" eTicket="true">
-        <DestinationLocation LocationCode="AER"/>
-        <MarketingAirline Code="SU" FlightNumber="1138"/>
-        <OriginLocation LocationCode="SVO"/>
+      <FlightSegment ArrivalDateTime="12-02T06:40" DepartureDateTime="12-01T23:25" FlightNumber="2463" NumberInParty="003" ResBookDesigCode="Y" Status="QF" eTicket="true">
+        <DestinationLocation LocationCode="AUH"/>
+        <MarketingAirline Code="EY" FlightNumber="2463"/>
+        <OriginLocation LocationCode="SYD"/>
       </FlightSegment>
-      <FlightSegment ArrivalDateTime="09-08T05:20" DepartureDateTime="09-08T02:45" FlightNumber="1129" NumberInParty="003" ResBookDesigCode="Y" Status="QF" eTicket="true">
-        <DestinationLocation LocationCode="SVO"/>
-        <MarketingAirline Code="SU" FlightNumber="1129"/>
-        <OriginLocation LocationCode="AER"/>
+      <FlightSegment ArrivalDateTime="12-02T14:10" DepartureDateTime="12-02T10:35" FlightNumber="0025" NumberInParty="003" ResBookDesigCode="Y" Status="QF" eTicket="true">
+        <DestinationLocation LocationCode="LHR"/>
+        <MarketingAirline Code="EY" FlightNumber="0025"/>
+        <OriginLocation LocationCode="AUH"/>
+      </FlightSegment>
+      <FlightSegment ArrivalDateTime="12-08T19:20" DepartureDateTime="12-08T08:30" FlightNumber="0012" NumberInParty="003" ResBookDesigCode="Y" Status="QF" eTicket="true">
+        <DestinationLocation LocationCode="AUH"/>
+        <MarketingAirline Code="EY" FlightNumber="0012"/>
+        <OriginLocation LocationCode="LHR"/>
+      </FlightSegment>
+      <FlightSegment ArrivalDateTime="12-09T17:55" DepartureDateTime="12-08T22:10" FlightNumber="0464" NumberInParty="003" ResBookDesigCode="Y" Status="QF" eTicket="true">
+        <DestinationLocation LocationCode="SYD"/>
+        <MarketingAirline Code="EY" FlightNumber="0464"/>
+        <OriginLocation LocationCode="AUH"/>
       </FlightSegment>
     </OriginDestinationOption>
   </OTA_AirBookRS>
@@ -1224,292 +1248,106 @@ title: Получение норм провоза багажа
         <BaggageInfo>
           <SubCodeProperties RPH="1" SolutionSequenceNmbr="1">
             <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
-            <AncillaryService SubGroupCode="CY">
-              <Text>CARRY ON HAND BAGGAGE</Text>
-            </AncillaryService>
-            <CommercialNameofBaggageItemType>CARRYON HAND BAGGAGE ALLOWANCE</CommercialNameofBaggageItemType>
+            <CommercialNameofBaggageItemType>FREE BAGGAGE ALLOWANCE</CommercialNameofBaggageItemType>
             <EMD_Type>4</EMD_Type>
-            <ExtendedSubCodeKey>0LNABSU</ExtendedSubCodeKey>
+            <ExtendedSubCodeKey>0DFAAEY</ExtendedSubCodeKey>
           </SubCodeProperties>
           <SubCodeProperties RPH="2" SolutionSequenceNmbr="1">
             <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
             <AncillaryService SubGroupCode="CY">
               <Text>CARRY ON HAND BAGGAGE</Text>
             </AncillaryService>
-            <CommercialNameofBaggageItemType>CARRY10KG 22LB 55L X 40W X 25H</CommercialNameofBaggageItemType>
-            <DescriptionOne Code="10">
-              <Text>UP TO 22 POUNDS/10 KILOGRAMS</Text>
-            </DescriptionOne>
-            <DescriptionTwo Code="55">
-              <Text>55CM LENGTH X 40CM WIDTH X 25CM HEIGHT</Text>
-            </DescriptionTwo>
+            <CommercialNameofBaggageItemType>CARRYON HAND BAGGAGE ALLOWANCE</CommercialNameofBaggageItemType>
             <EMD_Type>4</EMD_Type>
-            <ExtendedSubCodeKey>08AACSU</ExtendedSubCodeKey>
+            <ExtendedSubCodeKey>0LNABEY</ExtendedSubCodeKey>
             <RFIC>C</RFIC>
-            <SizeWeightInfo>
-              <MaximumWeightInAlternate Units="K">10</MaximumWeightInAlternate>
-              <MaximumWeight Units="L">22</MaximumWeight>
-            </SizeWeightInfo>
-          </SubCodeProperties>
-          <SubCodeProperties RPH="3" SolutionSequenceNmbr="1">
-            <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
-            <CommercialNameofBaggageItemType>FREE BAGGAGE ALLOWANCE</CommercialNameofBaggageItemType>
-            <EMD_Type>4</EMD_Type>
-            <ExtendedSubCodeKey>0DFAASU</ExtendedSubCodeKey>
-          </SubCodeProperties>
-          <SubCodeProperties RPH="4" SolutionSequenceNmbr="1">
-            <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
-            <CommercialNameofBaggageItemType>UPTO 22LB 10KG AND45LI 115LCM</CommercialNameofBaggageItemType>
-            <DescriptionOne Code="10">
-              <Text>UP TO 22 POUNDS/10 KILOGRAMS</Text>
-            </DescriptionOne>
-            <DescriptionTwo Code="4U">
-              <Text>UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-            </DescriptionTwo>
-            <EMD_Type>4</EMD_Type>
-            <ExtendedSubCodeKey>0E3ACSU</ExtendedSubCodeKey>
-            <RFIC>C</RFIC>
-            <SizeWeightInfo>
-              <MaximumSizeInAlternate Units="C">115</MaximumSizeInAlternate>
-              <MaximumSize Units="I">45</MaximumSize>
-              <MaximumWeightInAlternate Units="K">10</MaximumWeightInAlternate>
-              <MaximumWeight Units="L">22</MaximumWeight>
-            </SizeWeightInfo>
-          </SubCodeProperties>
-          <SubCodeProperties RPH="5" SolutionSequenceNmbr="1">
-            <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
-            <CommercialNameofBaggageItemType>UPTO50LB 23KG AND62LI 158LCM</CommercialNameofBaggageItemType>
-            <DescriptionOne Code="23">
-              <Text>UP TO 50 POUNDS/23 KILOGRAMS</Text>
-            </DescriptionOne>
-            <DescriptionTwo Code="6U">
-              <Text>UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-            </DescriptionTwo>
-            <EMD_Type>2</EMD_Type>
-            <ExtendedSubCodeKey>0GOACSU</ExtendedSubCodeKey>
-            <RFIC>C</RFIC>
-            <SizeWeightInfo>
-              <MaximumSizeInAlternate Units="C">158</MaximumSizeInAlternate>
-              <MaximumSize Units="I">62</MaximumSize>
-              <MaximumWeightInAlternate Units="K">23</MaximumWeightInAlternate>
-              <MaximumWeight Units="L">50</MaximumWeight>
-            </SizeWeightInfo>
           </SubCodeProperties>
         </BaggageInfo>
         <HeaderInformation SolutionSequenceNmbr="1">
           <BargainFinder>
             <AlternateBooking ResBookDesigCode="1Y"/>
             <AlternateBooking ResBookDesigCode="2Y"/>
+            <AlternateBooking ResBookDesigCode="3Y"/>
+            <AlternateBooking ResBookDesigCode="4Y"/>
           </BargainFinder>
-          <DepartureDate>2019-09-01</DepartureDate>
-          <LastTicketingDate>08-27T23:59</LastTicketingDate>
+          <DepartureDate>2022-12-01</DepartureDate>
           <Text>VALIDATING CARRIER SPECIFIED</Text>
-          <Text>BSP - SU</Text>
-          <Text>RUT - SU</Text>
-          <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-          <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-          <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-          <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-          <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+          <Text>BSP - EY</Text>
+          <Text>TCH - EY</Text>
+          <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+          <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
           <Text>CARRY ON ALLOWANCE</Text>
-          <Text>SVOAER AERSVO-01P/SU</Text>
-          <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-          <Text>25CM HEIGHT</Text>
+          <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
           <Text>CARRY ON CHARGES</Text>
-          <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+          <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+          <Text>RRIER</Text>
           <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
           <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
           <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
-          <Text>EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT</Text>
           <Text>VALIDATING CARRIER SPECIFIED</Text>
-          <Text>BSP - SU</Text>
-          <Text>RUT - SU</Text>
-          <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-          <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-          <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-          <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-          <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+          <Text>BSP - EY</Text>
+          <Text>TCH - EY</Text>
+          <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+          <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
           <Text>CARRY ON ALLOWANCE</Text>
-          <Text>SVOAER AERSVO-01P/SU</Text>
-          <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-          <Text>25CM HEIGHT</Text>
+          <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
           <Text>CARRY ON CHARGES</Text>
-          <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+          <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+          <Text>RRIER</Text>
           <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
           <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
           <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
           <Text>REQUIRES ACCOMPANYING ADT PASSENGER</Text>
           <Text>EACH INF REQUIRES ACCOMPANYING ADT PASSENGER</Text>
           <Text>VALIDATING CARRIER SPECIFIED</Text>
-          <Text>BSP - SU</Text>
-          <Text>RUT - SU</Text>
-          <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-          <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-          <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-          <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-          <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-          <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-          <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+          <Text>BSP - EY</Text>
+          <Text>TCH - EY</Text>
+          <Text>BAG ALLOWANCE     -SYDLHR-10KG/EY</Text>
+          <Text>BAG ALLOWANCE     -LHRSYD-10KG/EY</Text>
           <Text>CARRY ON ALLOWANCE</Text>
-          <Text>SVOAER AERSVO-01P/SU</Text>
-          <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-          <Text>25CM HEIGHT</Text>
+          <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/05KG/EY</Text>
           <Text>CARRY ON CHARGES</Text>
-          <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+          <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+          <Text>RRIER</Text>
           <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
           <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
           <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
-          <Text>01SEP DEPARTURE DATE-----LAST DAY TO PURCHASE 27AUG/2359</Text>
-          <ValidatingCarrier Code="SU"/>
+          <ValidatingCarrier Code="EY"/>
         </HeaderInformation>
         <SolutionInformation SolutionSequenceNmbr="1">
-          <BaseFareCurrencyCode>RUB</BaseFareCurrencyCode>
+          <BaseFareCurrencyCode>AUD</BaseFareCurrencyCode>
           <CurrencyCode>RUB</CurrencyCode>
-          <GrandTotalEquivFareAmount>159500</GrandTotalEquivFareAmount>
-          <GrandTotalTaxes>17690</GrandTotalTaxes>
+          <GrandTotalBaseFareAmount>485270</GrandTotalBaseFareAmount>
+          <GrandTotalEquivFareAmount>11693.00</GrandTotalEquivFareAmount>
+          <GrandTotalTaxes>45582</GrandTotalTaxes>
           <RequiresRebook>false</RequiresRebook>
           <TicketNumber>0</TicketNumber>
-          <TotalAmount>177190</TotalAmount>
+          <TotalAmount>530852</TotalAmount>
         </SolutionInformation>
         <ValidatingCarrier NewValidatingProcess="true" SolutionSequenceNmbr="1">
           <SettlementMethod>BSP</SettlementMethod>
-          <Ticket CarrierCode="SU" Type="ETKTREQ" ValidatingCarrierType="Default"/>
+          <Ticket CarrierCode="EY" Type="ETKTREQ" ValidatingCarrierType="Default"/>
         </ValidatingCarrier>
         <ValidatingCarrier NewValidatingProcess="true" SolutionSequenceNmbr="1">
-          <SettlementMethod>RUT</SettlementMethod>
-          <Ticket CarrierCode="SU" Type="PTKTPREF" ValidatingCarrierType="Default"/>
+          <SettlementMethod>TCH</SettlementMethod>
+          <Ticket CarrierCode="EY" Type="ETKTPREF" ValidatingCarrierType="Default"/>
         </ValidatingCarrier>
       </MiscInformation>
-      <PricedItinerary AlternativePricing="false" CurrencyCode="RUB" MultiTicket="false" TotalAmount="177190">
+      <PricedItinerary AlternativePricing="false" CurrencyCode="RUB" MultiTicket="false" TotalAmount="530852">
         <AirItineraryPricingInfo SolutionSequenceNmbr="1">
           <BaggageProvisions RPH="1">
             <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <PNR_Segment RPH="1">2</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
-            <ProvisionType>A</ProvisionType>
-            <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="2">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <PNR_Segment RPH="1">2</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <Commissionable>N</Commissionable>
-            <FeeApplicationIndicator>4</FeeApplicationIndicator>
-            <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-            <FirstOccurrence>1</FirstOccurrence>
-            <Interlineable>Y</Interlineable>
-            <LastOccurrence>1</LastOccurrence>
-            <PassengerType Code="ADT"/>
-            <PriceInformation>
-              <Base Amount="2500" CurrencyCode="RUB"/>
-              <Equiv Amount="2500" CurrencyCode="RUB"/>
-              <TaxIndicator>X</TaxIndicator>
-              <Total>2500</Total>
-            </PriceInformation>
-            <ProvisionType>C</ProvisionType>
-            <RefundForm>1</RefundForm>
-            <RefundReissue>Y</RefundReissue>
-            <SubCodeInfo>
-              <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="3">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="SVO" RPH="1"/>
-              <FlightNumber RPH="1">1129</FlightNumber>
-              <OriginLocation LocationCode="AER" RPH="1"/>
-              <PNR_Segment RPH="1">3</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
-            <ProvisionType>A</ProvisionType>
-            <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="4">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="SVO" RPH="1"/>
-              <FlightNumber RPH="1">1129</FlightNumber>
-              <OriginLocation LocationCode="AER" RPH="1"/>
-              <PNR_Segment RPH="1">3</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <Commissionable>N</Commissionable>
-            <FeeApplicationIndicator>4</FeeApplicationIndicator>
-            <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-            <FirstOccurrence>1</FirstOccurrence>
-            <Interlineable>Y</Interlineable>
-            <LastOccurrence>1</LastOccurrence>
-            <PassengerType Code="ADT"/>
-            <PriceInformation>
-              <Base Amount="2500" CurrencyCode="RUB"/>
-              <Equiv Amount="2500" CurrencyCode="RUB"/>
-              <TaxIndicator>X</TaxIndicator>
-              <Total>2500</Total>
-            </PriceInformation>
-            <ProvisionType>C</ProvisionType>
-            <RefundForm>1</RefundForm>
-            <RefundReissue>Y</RefundReissue>
-            <SubCodeInfo>
-              <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="5">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CarrierCode RPH="2">SU</CarrierCode>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
               <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DepartureDate RPH="2">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <DestinationLocation LocationCode="SVO" RPH="2"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <FlightNumber RPH="2">1129</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <OriginLocation LocationCode="AER" RPH="2"/>
+              <DepartureDate RPH="1">2022-12-01</DepartureDate>
+              <DepartureDate RPH="2">2022-12-02</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="LHR" RPH="2"/>
+              <FlightNumber RPH="1">2463</FlightNumber>
+              <FlightNumber RPH="2">25</FlightNumber>
+              <OriginLocation LocationCode="SYD" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
               <PNR_Segment RPH="1">2</PNR_Segment>
               <PNR_Segment RPH="2">3</PNR_Segment>
               <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
@@ -1517,213 +1355,221 @@ title: Получение норм провоза багажа
               <StatusCode RPH="1">QF</StatusCode>
               <StatusCode RPH="2">QF</StatusCode>
             </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+            <ProvisionType>A</ProvisionType>
+            <SubCodeInfo>
+              <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+            </SubCodeInfo>
+            <WeightLimit Units="K">35</WeightLimit>
+          </BaggageProvisions>
+          <BaggageProvisions RPH="2">
+            <Associations>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
+              <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
+              <DepartureDate RPH="1">2022-12-08</DepartureDate>
+              <DepartureDate RPH="2">2022-12-08</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="SYD" RPH="2"/>
+              <FlightNumber RPH="1">12</FlightNumber>
+              <FlightNumber RPH="2">464</FlightNumber>
+              <OriginLocation LocationCode="LHR" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
+              <PNR_Segment RPH="1">4</PNR_Segment>
+              <PNR_Segment RPH="2">5</PNR_Segment>
+              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+              <StatusCode RPH="1">QF</StatusCode>
+              <StatusCode RPH="2">QF</StatusCode>
+            </Associations>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+            <ProvisionType>A</ProvisionType>
+            <SubCodeInfo>
+              <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+            </SubCodeInfo>
+            <WeightLimit Units="K">35</WeightLimit>
+          </BaggageProvisions>
+          <BaggageProvisions RPH="3">
+            <Associations>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
+              <CarrierCode RPH="3">EY</CarrierCode>
+              <CarrierCode RPH="4">EY</CarrierCode>
+              <CountForSegmentAssociatedID>4</CountForSegmentAssociatedID>
+              <DepartureDate RPH="1">2022-12-01</DepartureDate>
+              <DepartureDate RPH="2">2022-12-02</DepartureDate>
+              <DepartureDate RPH="3">2022-12-08</DepartureDate>
+              <DepartureDate RPH="4">2022-12-08</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="LHR" RPH="2"/>
+              <DestinationLocation LocationCode="AUH" RPH="3"/>
+              <DestinationLocation LocationCode="SYD" RPH="4"/>
+              <FlightNumber RPH="1">2463</FlightNumber>
+              <FlightNumber RPH="2">25</FlightNumber>
+              <FlightNumber RPH="3">12</FlightNumber>
+              <FlightNumber RPH="4">464</FlightNumber>
+              <OriginLocation LocationCode="SYD" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
+              <OriginLocation LocationCode="LHR" RPH="3"/>
+              <OriginLocation LocationCode="AUH" RPH="4"/>
+              <PNR_Segment RPH="1">2</PNR_Segment>
+              <PNR_Segment RPH="2">3</PNR_Segment>
+              <PNR_Segment RPH="3">4</PNR_Segment>
+              <PNR_Segment RPH="4">5</PNR_Segment>
+              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="3">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="4">Y</ResBookDesigCode>
+              <StatusCode RPH="1">QF</StatusCode>
+              <StatusCode RPH="2">QF</StatusCode>
+              <StatusCode RPH="3">QF</StatusCode>
+              <StatusCode RPH="4">QF</StatusCode>
+            </Associations>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
             <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
             <ProvisionType>B</ProvisionType>
             <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">08AACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0LNABSU</SubCodeForChargesOthers>
+              <SubCodeForChargesOthers>0LNABEY</SubCodeForChargesOthers>
             </SubCodeInfo>
+            <WeightLimit Units="K">7</WeightLimit>
           </BaggageProvisions>
           <FareCalculation>
-            <Text>MOW SU AER29000SU MOW29000RUB58000END</Text>
+            <Text>SYD EY X/AUH EY LON Q25.00 1531.08EY X/AUH Q25.00EY SYD1504.72NUC3085.80END ROE1.328146</Text>
           </FareCalculation>
           <FareCalculationBreakdown>
-            <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-            <Departure AirlineCode="SU" AirportCode="SVO" ArrivalAirportCode="AER" ArrivalCityCode="AER" CityCode="MOW" GenericInd="O"/>
-            <FareBasis Cabin="Y" Code="YCLR" FareAmount="29000" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TripTypeInd="R"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
-            <RuleCategoryIndicator>10</RuleCategoryIndicator>
-            <RuleCategoryIndicator>16</RuleCategoryIndicator>
+            <Departure AirlineCode="EY" AirportCode="SYD" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="SYD" GenericInd="X"/>
+            <FareBasis Cabin="Y" Code="YLWF2AU" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
           </FareCalculationBreakdown>
           <FareCalculationBreakdown>
-            <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-            <Departure AirlineCode="SU" AirportCode="AER" ArrivalAirportCode="SVO" ArrivalCityCode="MOW" CityCode="AER" GenericInd="O"/>
-            <FareBasis Cabin="Y" Code="YCLR" FareAmount="29000" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TripTypeInd="R"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+            <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="LHR" ArrivalCityCode="LON" CityCode="AUH" GenericInd="O"/>
+            <FareBasis Cabin="Y" Code="YLWF2AU" FareAmount="1531.08" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <RuleCategoryIndicator>2</RuleCategoryIndicator>
+            <RuleCategoryIndicator>3</RuleCategoryIndicator>
+            <RuleCategoryIndicator>4</RuleCategoryIndicator>
+            <RuleCategoryIndicator>5</RuleCategoryIndicator>
+            <RuleCategoryIndicator>7</RuleCategoryIndicator>
+            <RuleCategoryIndicator>8</RuleCategoryIndicator>
+            <RuleCategoryIndicator>9</RuleCategoryIndicator>
             <RuleCategoryIndicator>10</RuleCategoryIndicator>
+            <RuleCategoryIndicator>12</RuleCategoryIndicator>
+            <RuleCategoryIndicator>15</RuleCategoryIndicator>
             <RuleCategoryIndicator>16</RuleCategoryIndicator>
+            <RuleCategoryIndicator>18</RuleCategoryIndicator>
+            <RuleCategoryIndicator>23</RuleCategoryIndicator>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
           </FareCalculationBreakdown>
-          <ItinTotalFare NonRefundableInd="N">
+          <FareCalculationBreakdown>
+            <Departure AirlineCode="EY" AirportCode="LHR" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="LON" GenericInd="X"/>
+            <FareBasis Cabin="Y" Code="YLXF2AU" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+          </FareCalculationBreakdown>
+          <FareCalculationBreakdown>
+            <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+            <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="SYD" ArrivalCityCode="SYD" CityCode="AUH" GenericInd="O"/>
+            <FareBasis Cabin="Y" Code="YLXF2AU" FareAmount="1504.72" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <RuleCategoryIndicator>2</RuleCategoryIndicator>
+            <RuleCategoryIndicator>3</RuleCategoryIndicator>
+            <RuleCategoryIndicator>4</RuleCategoryIndicator>
+            <RuleCategoryIndicator>5</RuleCategoryIndicator>
+            <RuleCategoryIndicator>7</RuleCategoryIndicator>
+            <RuleCategoryIndicator>8</RuleCategoryIndicator>
+            <RuleCategoryIndicator>9</RuleCategoryIndicator>
+            <RuleCategoryIndicator>10</RuleCategoryIndicator>
+            <RuleCategoryIndicator>12</RuleCategoryIndicator>
+            <RuleCategoryIndicator>15</RuleCategoryIndicator>
+            <RuleCategoryIndicator>16</RuleCategoryIndicator>
+            <RuleCategoryIndicator>18</RuleCategoryIndicator>
+            <RuleCategoryIndicator>23</RuleCategoryIndicator>
+          </FareCalculationBreakdown>
+          <ItinTotalFare NonRefundableInd="O">
             <BaggageInfo>
               <NonUS_DOT_Disclosure>
-                <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-                <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-                <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-                <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-                <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-                <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-                <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-                <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+                <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+                <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
                 <Text>CARRY ON ALLOWANCE</Text>
-                <Text>SVOAER AERSVO-01P/SU</Text>
-                <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-                <Text>25CM HEIGHT</Text>
+                <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
                 <Text>CARRY ON CHARGES</Text>
-                <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+                <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+                <Text>RRIER</Text>
                 <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
                 <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
                 <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
               </NonUS_DOT_Disclosure>
             </BaggageInfo>
-            <BaseFare Amount="58000" CurrencyCode="RUB"/>
-            <Construction Amount="58000" CurrencyCode="RUB" RateOfExchange="65.400000"/>
-            <Taxes TotalAmount="5996">
-              <Tax Amount="5400" TaxCode="YQF" TaxName="SERVICE FEE - FUEL" TicketingTaxCode="YQ"/>
-              <Tax Amount="596" TaxCode="RI3" TaxName="TERMINAL USE CHARGE DOMESTIC D" TicketingTaxCode="RI"/>
+            <BaseFare Amount="4099.00" CurrencyCode="AUD"/>
+            <Construction Amount="3085.80" CurrencyCode="NUC" RateOfExchange="1.328146"/>
+            <Endorsements>
+              <Text>NON ENDO/ REF</Text>
+            </Endorsements>
+            <EquivFare Amount="170110" CurrencyCode="RUB"/>
+            <Taxes TotalAmount="16713">
+              <Tax Amount="2490" TaxCode="AU" TaxName="PASSENGER MOVEMENT CHARGE  PMC" TicketingTaxCode="AU"/>
+              <Tax Amount="2598" TaxCode="WY" TaxName="PASSENGER SERVICES CHARGE DEPA" TicketingTaxCode="WY"/>
+              <Tax Amount="158" TaxCode="ZR2" TaxName="INTERNATIONAL ADVANCED PASSENG" TicketingTaxCode="ZR"/>
+              <Tax Amount="1102" TaxCode="F62" TaxName="PASSENGER FACILITIES CHARGE" TicketingTaxCode="F6"/>
+              <Tax Amount="6216" TaxCode="GB" TaxName="AIR PASSENGER DUTY APD" TicketingTaxCode="GB"/>
+              <Tax Amount="4149" TaxCode="UB" TaxName="PASSENGER SERVICE CHARGE DEPAR" TicketingTaxCode="UB"/>
             </Taxes>
-            <TotalFare Amount="63996" CurrencyCode="RUB"/>
+            <TotalFare Amount="186823" CurrencyCode="RUB"/>
             <Warnings>
               <Warning ShortText="MIXED PASSENGER TYPES - VERIFY RESTRICTIONS"/>
             </Warnings>
           </ItinTotalFare>
           <PassengerTypeQuantity Code="ADT" Quantity="2"/>
           <PTC_FareBreakdown>
-            <BrandedFareInformation>
-              <BrandCode>EC</BrandCode>
-              <BrandName>ECONOMY CLASSIC</BrandName>
-              <ProgramCode>CFF1S</ProgramCode>
-              <ProgramName>NEW BRANDS AFL</ProgramName>
-            </BrandedFareInformation>
             <Cabin>Y</Cabin>
-            <FareBasis Code="YCLR" FareAmount="29000" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <FareBasis Code="YLWF2AU" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
           </PTC_FareBreakdown>
           <PTC_FareBreakdown>
             <BrandedFareInformation>
-              <BrandCode>EC</BrandCode>
-              <BrandName>ECONOMY CLASSIC</BrandName>
-              <ProgramCode>CFF1S</ProgramCode>
-              <ProgramName>NEW BRANDS AFL</ProgramName>
+              <BrandCode>YF</BrandCode>
+              <BrandName>ECONOMY CHOICE PLUS</BrandName>
+              <ProgramCode>CFFEY</ProgramCode>
+              <ProgramName>17AUD BP30</ProgramName>
             </BrandedFareInformation>
             <Cabin>Y</Cabin>
-            <FareBasis Code="YCLR" FareAmount="29000" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <FareBasis Code="YLWF2AU" FareAmount="1531.08" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <Cabin>Y</Cabin>
+            <FareBasis Code="YLXF2AU" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <BrandedFareInformation>
+              <BrandCode>YF</BrandCode>
+              <BrandName>ECONOMY CHOICE PLUS</BrandName>
+              <ProgramCode>CFFEY</ProgramCode>
+              <ProgramName>17AUD BP30</ProgramName>
+            </BrandedFareInformation>
+            <Cabin>Y</Cabin>
+            <FareBasis Code="YLXF2AU" FareAmount="1504.72" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
           </PTC_FareBreakdown>
         </AirItineraryPricingInfo>
         <AirItineraryPricingInfo SolutionSequenceNmbr="1">
           <BaggageProvisions RPH="1">
             <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <PNR_Segment RPH="1">2</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
-            <ProvisionType>A</ProvisionType>
-            <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="2">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <PNR_Segment RPH="1">2</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <Commissionable>N</Commissionable>
-            <FeeApplicationIndicator>4</FeeApplicationIndicator>
-            <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-            <FirstOccurrence>1</FirstOccurrence>
-            <Interlineable>Y</Interlineable>
-            <LastOccurrence>1</LastOccurrence>
-            <PassengerType Code="CNN"/>
-            <PriceInformation>
-              <Base Amount="2500" CurrencyCode="RUB"/>
-              <Equiv Amount="2500" CurrencyCode="RUB"/>
-              <TaxIndicator>X</TaxIndicator>
-              <Total>2500</Total>
-            </PriceInformation>
-            <ProvisionType>C</ProvisionType>
-            <RefundForm>1</RefundForm>
-            <RefundReissue>Y</RefundReissue>
-            <SubCodeInfo>
-              <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="3">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="SVO" RPH="1"/>
-              <FlightNumber RPH="1">1129</FlightNumber>
-              <OriginLocation LocationCode="AER" RPH="1"/>
-              <PNR_Segment RPH="1">3</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
-            <ProvisionType>A</ProvisionType>
-            <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="4">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="SVO" RPH="1"/>
-              <FlightNumber RPH="1">1129</FlightNumber>
-              <OriginLocation LocationCode="AER" RPH="1"/>
-              <PNR_Segment RPH="1">3</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <Commissionable>N</Commissionable>
-            <FeeApplicationIndicator>4</FeeApplicationIndicator>
-            <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-            <FirstOccurrence>1</FirstOccurrence>
-            <Interlineable>Y</Interlineable>
-            <LastOccurrence>1</LastOccurrence>
-            <PassengerType Code="CNN"/>
-            <PriceInformation>
-              <Base Amount="2500" CurrencyCode="RUB"/>
-              <Equiv Amount="2500" CurrencyCode="RUB"/>
-              <TaxIndicator>X</TaxIndicator>
-              <Total>2500</Total>
-            </PriceInformation>
-            <ProvisionType>C</ProvisionType>
-            <RefundForm>1</RefundForm>
-            <RefundReissue>Y</RefundReissue>
-            <SubCodeInfo>
-              <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="5">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CarrierCode RPH="2">SU</CarrierCode>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
               <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DepartureDate RPH="2">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <DestinationLocation LocationCode="SVO" RPH="2"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <FlightNumber RPH="2">1129</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <OriginLocation LocationCode="AER" RPH="2"/>
+              <DepartureDate RPH="1">2022-12-01</DepartureDate>
+              <DepartureDate RPH="2">2022-12-02</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="LHR" RPH="2"/>
+              <FlightNumber RPH="1">2463</FlightNumber>
+              <FlightNumber RPH="2">25</FlightNumber>
+              <OriginLocation LocationCode="SYD" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
               <PNR_Segment RPH="1">2</PNR_Segment>
               <PNR_Segment RPH="2">3</PNR_Segment>
               <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
@@ -1731,215 +1577,221 @@ title: Получение норм провоза багажа
               <StatusCode RPH="1">QF</StatusCode>
               <StatusCode RPH="2">QF</StatusCode>
             </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+            <ProvisionType>A</ProvisionType>
+            <SubCodeInfo>
+              <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+            </SubCodeInfo>
+            <WeightLimit Units="K">35</WeightLimit>
+          </BaggageProvisions>
+          <BaggageProvisions RPH="2">
+            <Associations>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
+              <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
+              <DepartureDate RPH="1">2022-12-08</DepartureDate>
+              <DepartureDate RPH="2">2022-12-08</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="SYD" RPH="2"/>
+              <FlightNumber RPH="1">12</FlightNumber>
+              <FlightNumber RPH="2">464</FlightNumber>
+              <OriginLocation LocationCode="LHR" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
+              <PNR_Segment RPH="1">4</PNR_Segment>
+              <PNR_Segment RPH="2">5</PNR_Segment>
+              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+              <StatusCode RPH="1">QF</StatusCode>
+              <StatusCode RPH="2">QF</StatusCode>
+            </Associations>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+            <ProvisionType>A</ProvisionType>
+            <SubCodeInfo>
+              <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+            </SubCodeInfo>
+            <WeightLimit Units="K">35</WeightLimit>
+          </BaggageProvisions>
+          <BaggageProvisions RPH="3">
+            <Associations>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
+              <CarrierCode RPH="3">EY</CarrierCode>
+              <CarrierCode RPH="4">EY</CarrierCode>
+              <CountForSegmentAssociatedID>4</CountForSegmentAssociatedID>
+              <DepartureDate RPH="1">2022-12-01</DepartureDate>
+              <DepartureDate RPH="2">2022-12-02</DepartureDate>
+              <DepartureDate RPH="3">2022-12-08</DepartureDate>
+              <DepartureDate RPH="4">2022-12-08</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="LHR" RPH="2"/>
+              <DestinationLocation LocationCode="AUH" RPH="3"/>
+              <DestinationLocation LocationCode="SYD" RPH="4"/>
+              <FlightNumber RPH="1">2463</FlightNumber>
+              <FlightNumber RPH="2">25</FlightNumber>
+              <FlightNumber RPH="3">12</FlightNumber>
+              <FlightNumber RPH="4">464</FlightNumber>
+              <OriginLocation LocationCode="SYD" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
+              <OriginLocation LocationCode="LHR" RPH="3"/>
+              <OriginLocation LocationCode="AUH" RPH="4"/>
+              <PNR_Segment RPH="1">2</PNR_Segment>
+              <PNR_Segment RPH="2">3</PNR_Segment>
+              <PNR_Segment RPH="3">4</PNR_Segment>
+              <PNR_Segment RPH="4">5</PNR_Segment>
+              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="3">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="4">Y</ResBookDesigCode>
+              <StatusCode RPH="1">QF</StatusCode>
+              <StatusCode RPH="2">QF</StatusCode>
+              <StatusCode RPH="3">QF</StatusCode>
+              <StatusCode RPH="4">QF</StatusCode>
+            </Associations>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
             <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
             <ProvisionType>B</ProvisionType>
             <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">08AACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0LNABSU</SubCodeForChargesOthers>
+              <SubCodeForChargesOthers>0LNABEY</SubCodeForChargesOthers>
             </SubCodeInfo>
+            <WeightLimit Units="K">7</WeightLimit>
           </BaggageProvisions>
           <FareCalculation>
-            <Text>MOW SU AER21750SU MOW21750RUB43500END</Text>
+            <Text>SYD EY X/AUH EY LON Q25.00 1148.31EY X/AUH Q25.00EY SYD1128.54NUC2326.85END ROE1.328146</Text>
           </FareCalculation>
           <FareCalculationBreakdown>
-            <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-            <Departure AirlineCode="SU" AirportCode="SVO" ArrivalAirportCode="AER" ArrivalCityCode="AER" CityCode="MOW" GenericInd="O"/>
-            <FareBasis Cabin="Y" Code="YCLR/CH25" FareAmount="21750" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25" TripTypeInd="R"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
-            <RuleCategoryIndicator>10</RuleCategoryIndicator>
-            <RuleCategoryIndicator>16</RuleCategoryIndicator>
-            <RuleCategoryIndicator>19</RuleCategoryIndicator>
+            <Departure AirlineCode="EY" AirportCode="SYD" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="SYD" GenericInd="X"/>
+            <FareBasis Cabin="Y" Code="YLWF2AUCH" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
           </FareCalculationBreakdown>
           <FareCalculationBreakdown>
-            <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-            <Departure AirlineCode="SU" AirportCode="AER" ArrivalAirportCode="SVO" ArrivalCityCode="MOW" CityCode="AER" GenericInd="O"/>
-            <FareBasis Cabin="Y" Code="YCLR/CH25" FareAmount="21750" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25" TripTypeInd="R"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+            <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="LHR" ArrivalCityCode="LON" CityCode="AUH" GenericInd="O"/>
+            <FareBasis Cabin="Y" Code="YLWF2AUCH" FareAmount="1148.31" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <RuleCategoryIndicator>2</RuleCategoryIndicator>
+            <RuleCategoryIndicator>3</RuleCategoryIndicator>
+            <RuleCategoryIndicator>4</RuleCategoryIndicator>
+            <RuleCategoryIndicator>5</RuleCategoryIndicator>
+            <RuleCategoryIndicator>7</RuleCategoryIndicator>
+            <RuleCategoryIndicator>8</RuleCategoryIndicator>
+            <RuleCategoryIndicator>9</RuleCategoryIndicator>
             <RuleCategoryIndicator>10</RuleCategoryIndicator>
+            <RuleCategoryIndicator>12</RuleCategoryIndicator>
+            <RuleCategoryIndicator>15</RuleCategoryIndicator>
             <RuleCategoryIndicator>16</RuleCategoryIndicator>
+            <RuleCategoryIndicator>18</RuleCategoryIndicator>
             <RuleCategoryIndicator>19</RuleCategoryIndicator>
+            <RuleCategoryIndicator>23</RuleCategoryIndicator>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
           </FareCalculationBreakdown>
-          <ItinTotalFare NonRefundableInd="N">
+          <FareCalculationBreakdown>
+            <Departure AirlineCode="EY" AirportCode="LHR" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="LON" GenericInd="X"/>
+            <FareBasis Cabin="Y" Code="YLXF2AUCH" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+          </FareCalculationBreakdown>
+          <FareCalculationBreakdown>
+            <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+            <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="SYD" ArrivalCityCode="SYD" CityCode="AUH" GenericInd="O"/>
+            <FareBasis Cabin="Y" Code="YLXF2AUCH" FareAmount="1128.54" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <RuleCategoryIndicator>2</RuleCategoryIndicator>
+            <RuleCategoryIndicator>3</RuleCategoryIndicator>
+            <RuleCategoryIndicator>4</RuleCategoryIndicator>
+            <RuleCategoryIndicator>5</RuleCategoryIndicator>
+            <RuleCategoryIndicator>7</RuleCategoryIndicator>
+            <RuleCategoryIndicator>8</RuleCategoryIndicator>
+            <RuleCategoryIndicator>9</RuleCategoryIndicator>
+            <RuleCategoryIndicator>10</RuleCategoryIndicator>
+            <RuleCategoryIndicator>12</RuleCategoryIndicator>
+            <RuleCategoryIndicator>15</RuleCategoryIndicator>
+            <RuleCategoryIndicator>16</RuleCategoryIndicator>
+            <RuleCategoryIndicator>18</RuleCategoryIndicator>
+            <RuleCategoryIndicator>19</RuleCategoryIndicator>
+            <RuleCategoryIndicator>23</RuleCategoryIndicator>
+          </FareCalculationBreakdown>
+          <ItinTotalFare NonRefundableInd="O">
             <BaggageInfo>
               <NonUS_DOT_Disclosure>
-                <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-                <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-                <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-                <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-                <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-                <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-                <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-                <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+                <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+                <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
                 <Text>CARRY ON ALLOWANCE</Text>
-                <Text>SVOAER AERSVO-01P/SU</Text>
-                <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-                <Text>25CM HEIGHT</Text>
+                <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
                 <Text>CARRY ON CHARGES</Text>
-                <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+                <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+                <Text>RRIER</Text>
                 <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
                 <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
                 <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
               </NonUS_DOT_Disclosure>
             </BaggageInfo>
-            <BaseFare Amount="43500" CurrencyCode="RUB"/>
-            <Construction Amount="43500" CurrencyCode="RUB" RateOfExchange="65.400000"/>
-            <Taxes TotalAmount="5698">
-              <Tax Amount="5400" TaxCode="YQF" TaxName="SERVICE FEE - FUEL" TicketingTaxCode="YQ"/>
-              <Tax Amount="298" TaxCode="RI3" TaxName="TERMINAL USE CHARGE DOMESTIC D" TicketingTaxCode="RI"/>
+            <BaseFare Amount="3091.00" CurrencyCode="AUD"/>
+            <Construction Amount="2326.85" CurrencyCode="NUC" RateOfExchange="1.328146"/>
+            <Endorsements>
+              <Text>NON ENDO/ REF</Text>
+            </Endorsements>
+            <EquivFare Amount="128280" CurrencyCode="RUB"/>
+            <Taxes TotalAmount="8007">
+              <Tax Amount="2598" TaxCode="WY" TaxName="PASSENGER SERVICES CHARGE DEPA" TicketingTaxCode="WY"/>
+              <Tax Amount="158" TaxCode="ZR2" TaxName="INTERNATIONAL ADVANCED PASSENG" TicketingTaxCode="ZR"/>
+              <Tax Amount="1102" TaxCode="F62" TaxName="PASSENGER FACILITIES CHARGE" TicketingTaxCode="F6"/>
+              <Tax Amount="4149" TaxCode="UB" TaxName="PASSENGER SERVICE CHARGE DEPAR" TicketingTaxCode="UB"/>
             </Taxes>
-            <TotalFare Amount="49198" CurrencyCode="RUB"/>
+            <TotalFare Amount="136287" CurrencyCode="RUB"/>
             <Warnings>
               <Warning ShortText="MIXED PASSENGER TYPES - VERIFY RESTRICTIONS"/>
             </Warnings>
           </ItinTotalFare>
           <PassengerTypeQuantity Code="CNN" Quantity="1"/>
           <PTC_FareBreakdown>
-            <BrandedFareInformation>
-              <BrandCode>EC</BrandCode>
-              <BrandName>ECONOMY CLASSIC</BrandName>
-              <ProgramCode>CFF1S</ProgramCode>
-              <ProgramName>NEW BRANDS AFL</ProgramName>
-            </BrandedFareInformation>
             <Cabin>Y</Cabin>
-            <FareBasis Code="YCLR/CH25" FareAmount="21750" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <FareBasis Code="YLWF2AUCH" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
           </PTC_FareBreakdown>
           <PTC_FareBreakdown>
             <BrandedFareInformation>
-              <BrandCode>EC</BrandCode>
-              <BrandName>ECONOMY CLASSIC</BrandName>
-              <ProgramCode>CFF1S</ProgramCode>
-              <ProgramName>NEW BRANDS AFL</ProgramName>
+              <BrandCode>YF</BrandCode>
+              <BrandName>ECONOMY CHOICE PLUS</BrandName>
+              <ProgramCode>CFFEY</ProgramCode>
+              <ProgramName>17AUD BP30</ProgramName>
             </BrandedFareInformation>
             <Cabin>Y</Cabin>
-            <FareBasis Code="YCLR/CH25" FareAmount="21750" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <FareBasis Code="YLWF2AUCH" FareAmount="1148.31" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <Cabin>Y</Cabin>
+            <FareBasis Code="YLXF2AUCH" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+            <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <BrandedFareInformation>
+              <BrandCode>YF</BrandCode>
+              <BrandName>ECONOMY CHOICE PLUS</BrandName>
+              <ProgramCode>CFFEY</ProgramCode>
+              <ProgramName>17AUD BP30</ProgramName>
+            </BrandedFareInformation>
+            <Cabin>Y</Cabin>
+            <FareBasis Code="YLXF2AUCH" FareAmount="1128.54" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+            <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
           </PTC_FareBreakdown>
         </AirItineraryPricingInfo>
         <AirItineraryPricingInfo SolutionSequenceNmbr="1">
           <BaggageProvisions RPH="1">
             <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <PNR_Segment RPH="1">2</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
-            <ProvisionType>A</ProvisionType>
-            <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">0E3ACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="2">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <PNR_Segment RPH="1">2</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <Commissionable>N</Commissionable>
-            <FeeApplicationIndicator>4</FeeApplicationIndicator>
-            <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-            <FirstOccurrence>1</FirstOccurrence>
-            <Interlineable>Y</Interlineable>
-            <LastOccurrence>1</LastOccurrence>
-            <PassengerType Code="INF"/>
-            <PriceInformation>
-              <Base Amount="2500" CurrencyCode="RUB"/>
-              <Equiv Amount="2500" CurrencyCode="RUB"/>
-              <TaxIndicator>X</TaxIndicator>
-              <Total>2500</Total>
-            </PriceInformation>
-            <ProvisionType>C</ProvisionType>
-            <RefundForm>1</RefundForm>
-            <RefundReissue>Y</RefundReissue>
-            <SubCodeInfo>
-              <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="3">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="SVO" RPH="1"/>
-              <FlightNumber RPH="1">1129</FlightNumber>
-              <OriginLocation LocationCode="AER" RPH="1"/>
-              <PNR_Segment RPH="1">3</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
-            <ProvisionType>A</ProvisionType>
-            <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">0E3ACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="4">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="SVO" RPH="1"/>
-              <FlightNumber RPH="1">1129</FlightNumber>
-              <OriginLocation LocationCode="AER" RPH="1"/>
-              <PNR_Segment RPH="1">3</PNR_Segment>
-              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-              <StatusCode RPH="1">QF</StatusCode>
-            </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-            <Commissionable>N</Commissionable>
-            <FeeApplicationIndicator>4</FeeApplicationIndicator>
-            <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-            <FirstOccurrence>1</FirstOccurrence>
-            <Interlineable>Y</Interlineable>
-            <LastOccurrence>1</LastOccurrence>
-            <PassengerType Code="INF"/>
-            <PriceInformation>
-              <Base Amount="2500" CurrencyCode="RUB"/>
-              <Equiv Amount="2500" CurrencyCode="RUB"/>
-              <TaxIndicator>X</TaxIndicator>
-              <Total>2500</Total>
-            </PriceInformation>
-            <ProvisionType>C</ProvisionType>
-            <RefundForm>1</RefundForm>
-            <RefundReissue>Y</RefundReissue>
-            <SubCodeInfo>
-              <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-            </SubCodeInfo>
-          </BaggageProvisions>
-          <BaggageProvisions RPH="5">
-            <Associations>
-              <CarrierCode RPH="1">SU</CarrierCode>
-              <CarrierCode RPH="2">SU</CarrierCode>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
               <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
-              <DepartureDate RPH="1">2019-09-01</DepartureDate>
-              <DepartureDate RPH="2">2019-09-08</DepartureDate>
-              <DestinationLocation LocationCode="AER" RPH="1"/>
-              <DestinationLocation LocationCode="SVO" RPH="2"/>
-              <FlightNumber RPH="1">1138</FlightNumber>
-              <FlightNumber RPH="2">1129</FlightNumber>
-              <OriginLocation LocationCode="SVO" RPH="1"/>
-              <OriginLocation LocationCode="AER" RPH="2"/>
+              <DepartureDate RPH="1">2022-12-01</DepartureDate>
+              <DepartureDate RPH="2">2022-12-02</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="LHR" RPH="2"/>
+              <FlightNumber RPH="1">2463</FlightNumber>
+              <FlightNumber RPH="2">25</FlightNumber>
+              <OriginLocation LocationCode="SYD" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
               <PNR_Segment RPH="1">2</PNR_Segment>
               <PNR_Segment RPH="2">3</PNR_Segment>
               <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
@@ -1947,88 +1799,198 @@ title: Получение норм провоза багажа
               <StatusCode RPH="1">QF</StatusCode>
               <StatusCode RPH="2">QF</StatusCode>
             </Associations>
-            <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+            <ProvisionType>A</ProvisionType>
+            <SubCodeInfo>
+              <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+            </SubCodeInfo>
+            <WeightLimit Units="K">10</WeightLimit>
+          </BaggageProvisions>
+          <BaggageProvisions RPH="2">
+            <Associations>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
+              <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
+              <DepartureDate RPH="1">2022-12-08</DepartureDate>
+              <DepartureDate RPH="2">2022-12-08</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="SYD" RPH="2"/>
+              <FlightNumber RPH="1">12</FlightNumber>
+              <FlightNumber RPH="2">464</FlightNumber>
+              <OriginLocation LocationCode="LHR" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
+              <PNR_Segment RPH="1">4</PNR_Segment>
+              <PNR_Segment RPH="2">5</PNR_Segment>
+              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+              <StatusCode RPH="1">QF</StatusCode>
+              <StatusCode RPH="2">QF</StatusCode>
+            </Associations>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+            <ProvisionType>A</ProvisionType>
+            <SubCodeInfo>
+              <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+            </SubCodeInfo>
+            <WeightLimit Units="K">10</WeightLimit>
+          </BaggageProvisions>
+          <BaggageProvisions RPH="3">
+            <Associations>
+              <CarrierCode RPH="1">EY</CarrierCode>
+              <CarrierCode RPH="2">EY</CarrierCode>
+              <CarrierCode RPH="3">EY</CarrierCode>
+              <CarrierCode RPH="4">EY</CarrierCode>
+              <CountForSegmentAssociatedID>4</CountForSegmentAssociatedID>
+              <DepartureDate RPH="1">2022-12-01</DepartureDate>
+              <DepartureDate RPH="2">2022-12-02</DepartureDate>
+              <DepartureDate RPH="3">2022-12-08</DepartureDate>
+              <DepartureDate RPH="4">2022-12-08</DepartureDate>
+              <DestinationLocation LocationCode="AUH" RPH="1"/>
+              <DestinationLocation LocationCode="LHR" RPH="2"/>
+              <DestinationLocation LocationCode="AUH" RPH="3"/>
+              <DestinationLocation LocationCode="SYD" RPH="4"/>
+              <FlightNumber RPH="1">2463</FlightNumber>
+              <FlightNumber RPH="2">25</FlightNumber>
+              <FlightNumber RPH="3">12</FlightNumber>
+              <FlightNumber RPH="4">464</FlightNumber>
+              <OriginLocation LocationCode="SYD" RPH="1"/>
+              <OriginLocation LocationCode="AUH" RPH="2"/>
+              <OriginLocation LocationCode="LHR" RPH="3"/>
+              <OriginLocation LocationCode="AUH" RPH="4"/>
+              <PNR_Segment RPH="1">2</PNR_Segment>
+              <PNR_Segment RPH="2">3</PNR_Segment>
+              <PNR_Segment RPH="3">4</PNR_Segment>
+              <PNR_Segment RPH="4">5</PNR_Segment>
+              <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="3">Y</ResBookDesigCode>
+              <ResBookDesigCode RPH="4">Y</ResBookDesigCode>
+              <StatusCode RPH="1">QF</StatusCode>
+              <StatusCode RPH="2">QF</StatusCode>
+              <StatusCode RPH="3">QF</StatusCode>
+              <StatusCode RPH="4">QF</StatusCode>
+            </Associations>
+            <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
             <NumPiecesBDI>1</NumPiecesBDI>
-            <NumPiecesITR>1</NumPiecesITR>
             <ProvisionType>B</ProvisionType>
             <SubCodeInfo>
-              <SubCodeForAllowance RPH="1">08AACSU</SubCodeForAllowance>
-              <SubCodeForChargesOthers>0LNABSU</SubCodeForChargesOthers>
+              <SubCodeForChargesOthers>0LNABEY</SubCodeForChargesOthers>
             </SubCodeInfo>
+            <WeightLimit Units="K">5</WeightLimit>
           </BaggageProvisions>
           <FareCalculation>
-            <Text>MOW SU AER0SU MOW0RUB0END</Text>
+            <Text>SYD EY X/AUH EY LON153.10EY X/AUH EY SYD150.47NUC303.57END ROE1.328146</Text>
           </FareCalculation>
           <FareCalculationBreakdown>
-            <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-            <Departure AirlineCode="SU" AirportCode="SVO" ArrivalAirportCode="AER" ArrivalCityCode="AER" CityCode="MOW" GenericInd="O"/>
-            <FareBasis Cabin="Y" Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00" TripTypeInd="R"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
-            <RuleCategoryIndicator>10</RuleCategoryIndicator>
-            <RuleCategoryIndicator>16</RuleCategoryIndicator>
-            <RuleCategoryIndicator>19</RuleCategoryIndicator>
+            <Departure AirlineCode="EY" AirportCode="SYD" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="SYD" GenericInd="X"/>
+            <FareBasis Cabin="Y" Code="YLWF2AUIN" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
           </FareCalculationBreakdown>
           <FareCalculationBreakdown>
-            <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-            <Departure AirlineCode="SU" AirportCode="AER" ArrivalAirportCode="SVO" ArrivalCityCode="MOW" CityCode="AER" GenericInd="O"/>
-            <FareBasis Cabin="Y" Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00" TripTypeInd="R"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+            <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="LHR" ArrivalCityCode="LON" CityCode="AUH" GenericInd="O"/>
+            <FareBasis Cabin="Y" Code="YLWF2AUIN" FareAmount="153.10" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+            <RuleCategoryIndicator>2</RuleCategoryIndicator>
+            <RuleCategoryIndicator>3</RuleCategoryIndicator>
+            <RuleCategoryIndicator>4</RuleCategoryIndicator>
+            <RuleCategoryIndicator>5</RuleCategoryIndicator>
+            <RuleCategoryIndicator>7</RuleCategoryIndicator>
+            <RuleCategoryIndicator>8</RuleCategoryIndicator>
+            <RuleCategoryIndicator>9</RuleCategoryIndicator>
             <RuleCategoryIndicator>10</RuleCategoryIndicator>
+            <RuleCategoryIndicator>12</RuleCategoryIndicator>
+            <RuleCategoryIndicator>15</RuleCategoryIndicator>
             <RuleCategoryIndicator>16</RuleCategoryIndicator>
+            <RuleCategoryIndicator>18</RuleCategoryIndicator>
             <RuleCategoryIndicator>19</RuleCategoryIndicator>
+            <RuleCategoryIndicator>23</RuleCategoryIndicator>
           </FareCalculationBreakdown>
-          <ItinTotalFare NonRefundableInd="N">
+          <FareCalculationBreakdown>
+            <Departure AirlineCode="EY" AirportCode="LHR" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="LON" GenericInd="X"/>
+            <FareBasis Cabin="Y" Code="YLXF2AUIN" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+          </FareCalculationBreakdown>
+          <FareCalculationBreakdown>
+            <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+            <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="SYD" ArrivalCityCode="SYD" CityCode="AUH" GenericInd="O"/>
+            <FareBasis Cabin="Y" Code="YLXF2AUIN" FareAmount="150.47" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+            <RuleCategoryIndicator>2</RuleCategoryIndicator>
+            <RuleCategoryIndicator>3</RuleCategoryIndicator>
+            <RuleCategoryIndicator>4</RuleCategoryIndicator>
+            <RuleCategoryIndicator>5</RuleCategoryIndicator>
+            <RuleCategoryIndicator>7</RuleCategoryIndicator>
+            <RuleCategoryIndicator>8</RuleCategoryIndicator>
+            <RuleCategoryIndicator>9</RuleCategoryIndicator>
+            <RuleCategoryIndicator>10</RuleCategoryIndicator>
+            <RuleCategoryIndicator>12</RuleCategoryIndicator>
+            <RuleCategoryIndicator>15</RuleCategoryIndicator>
+            <RuleCategoryIndicator>16</RuleCategoryIndicator>
+            <RuleCategoryIndicator>18</RuleCategoryIndicator>
+            <RuleCategoryIndicator>19</RuleCategoryIndicator>
+            <RuleCategoryIndicator>23</RuleCategoryIndicator>
+          </FareCalculationBreakdown>
+          <ItinTotalFare NonRefundableInd="O">
             <BaggageInfo>
               <NonUS_DOT_Disclosure>
-                <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-                <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-                <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-                <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-                <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-                <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-                <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-                <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+                <Text>BAG ALLOWANCE     -SYDLHR-10KG/EY</Text>
+                <Text>BAG ALLOWANCE     -LHRSYD-10KG/EY</Text>
                 <Text>CARRY ON ALLOWANCE</Text>
-                <Text>SVOAER AERSVO-01P/SU</Text>
-                <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-                <Text>25CM HEIGHT</Text>
+                <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/05KG/EY</Text>
                 <Text>CARRY ON CHARGES</Text>
-                <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+                <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+                <Text>RRIER</Text>
                 <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
                 <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
                 <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
               </NonUS_DOT_Disclosure>
             </BaggageInfo>
-            <BaseFare Amount="0" CurrencyCode="RUB"/>
-            <Construction Amount="0" CurrencyCode="RUB" RateOfExchange="65.400000"/>
-            <Taxes TotalAmount="0"/>
-            <TotalFare Amount="0" CurrencyCode="RUB"/>
+            <BaseFare Amount="404.00" CurrencyCode="AUD"/>
+            <Construction Amount="303.57" CurrencyCode="NUC" RateOfExchange="1.328146"/>
+            <Endorsements>
+              <Text>NON ENDO/ REF</Text>
+            </Endorsements>
+            <EquivFare Amount="16770" CurrencyCode="RUB"/>
+            <Taxes TotalAmount="4149">
+              <Tax Amount="4149" TaxCode="UB" TaxName="PASSENGER SERVICE CHARGE DEPAR" TicketingTaxCode="UB"/>
+            </Taxes>
+            <TotalFare Amount="20919" CurrencyCode="RUB"/>
             <Warnings>
               <Warning ShortText="MIXED PASSENGER TYPES - VERIFY RESTRICTIONS"/>
             </Warnings>
           </ItinTotalFare>
           <PassengerTypeQuantity Code="INF" Quantity="1"/>
           <PTC_FareBreakdown>
-            <BrandedFareInformation>
-              <BrandCode>EC</BrandCode>
-              <BrandName>ECONOMY CLASSIC</BrandName>
-              <ProgramCode>CFF1S</ProgramCode>
-              <ProgramName>NEW BRANDS AFL</ProgramName>
-            </BrandedFareInformation>
             <Cabin>Y</Cabin>
-            <FareBasis Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <FareBasis Code="YLWF2AUIN" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
           </PTC_FareBreakdown>
           <PTC_FareBreakdown>
             <BrandedFareInformation>
-              <BrandCode>EC</BrandCode>
-              <BrandName>ECONOMY CLASSIC</BrandName>
-              <ProgramCode>CFF1S</ProgramCode>
-              <ProgramName>NEW BRANDS AFL</ProgramName>
+              <BrandCode>YF</BrandCode>
+              <BrandName>ECONOMY CHOICE PLUS</BrandName>
+              <ProgramCode>CFFEY</ProgramCode>
+              <ProgramName>17AUD BP30</ProgramName>
             </BrandedFareInformation>
             <Cabin>Y</Cabin>
-            <FareBasis Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00"/>
-            <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+            <FareBasis Code="YLWF2AUIN" FareAmount="153.10" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <Cabin>Y</Cabin>
+            <FareBasis Code="YLXF2AUIN" FilingCarrier="EY"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <BrandedFareInformation>
+              <BrandCode>YF</BrandCode>
+              <BrandName>ECONOMY CHOICE PLUS</BrandName>
+              <ProgramCode>CFFEY</ProgramCode>
+              <ProgramName>17AUD BP30</ProgramName>
+            </BrandedFareInformation>
+            <Cabin>Y</Cabin>
+            <FareBasis Code="YLXF2AUIN" FareAmount="150.47" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+            <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
           </PTC_FareBreakdown>
         </AirItineraryPricingInfo>
       </PricedItinerary>
@@ -2567,15 +2529,15 @@ title: Получение норм провоза багажа
 {{< details title="Пример запроса" >}}
 ```XML
 <OTA_AirPriceRQ ReturnHostCommand="true" Version="2.17.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10">
-  <PriceRequestInformation Retain="true">
+  <PriceRequestInformation>
     <OptionalQualifiers>
       <FlightQualifiers>
         <VendorPrefs>
-          <Airline Code="SU"/>
+          <Airline Code="EY"/>
         </VendorPrefs>
       </FlightQualifiers>
       <PricingQualifiers>
-        <Brand>EC</Brand>
+        <Brand>YF</Brand>
         <PassengerType Code="ADT" Quantity="2"/>
         <PassengerType Code="CNN" Quantity="1"/>
         <PassengerType Code="INF" Quantity="1"/>
@@ -2590,9 +2552,9 @@ title: Получение норм провоза багажа
 ```XML
 <OTA_AirPriceRS Version="2.17.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10" xmlns:stl="http://services.sabre.com/STL/v01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <stl:ApplicationResults status="Complete">
-    <stl:Success timeStamp="2019-02-05T08:55:30-06:00">
+    <stl:Success timeStamp="2022-05-24T12:02:01-05:00">
       <stl:SystemSpecificResults>
-        <stl:HostCommand LNIATA="222222">WPASU¥P2ADT/1CNN/1INF¥BREC¥RQ</stl:HostCommand>
+        <stl:HostCommand LNIATA="222222">WPAEY¥P2ADT/1CNN/1INF¥BRYF</stl:HostCommand>
       </stl:SystemSpecificResults>
     </stl:Success>
   </stl:ApplicationResults>
@@ -2601,289 +2563,101 @@ title: Получение норм провоза багажа
       <BaggageInfo>
         <SubCodeProperties RPH="1" SolutionSequenceNmbr="1">
           <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
-          <AncillaryService SubGroupCode="CY">
-            <Text>CARRY ON HAND BAGGAGE</Text>
-          </AncillaryService>
-          <CommercialNameofBaggageItemType>CARRY10KG 22LB 55L X 40W X 25H</CommercialNameofBaggageItemType>
-          <DescriptionOne Code="10">
-            <Text>UP TO 22 POUNDS/10 KILOGRAMS</Text>
-          </DescriptionOne>
-          <DescriptionTwo Code="55">
-            <Text>55CM LENGTH X 40CM WIDTH X 25CM HEIGHT</Text>
-          </DescriptionTwo>
-          <EMD_Type>4</EMD_Type>
-          <ExtendedSubCodeKey>08AACSU</ExtendedSubCodeKey>
-          <RFIC>C</RFIC>
-          <SizeWeightInfo>
-            <MaximumWeightInAlternate Units="K">10</MaximumWeightInAlternate>
-            <MaximumWeight Units="L">22</MaximumWeight>
-          </SizeWeightInfo>
-        </SubCodeProperties>
-        <SubCodeProperties RPH="2" SolutionSequenceNmbr="1">
-          <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
           <CommercialNameofBaggageItemType>FREE BAGGAGE ALLOWANCE</CommercialNameofBaggageItemType>
           <EMD_Type>4</EMD_Type>
-          <ExtendedSubCodeKey>0DFAASU</ExtendedSubCodeKey>
+          <ExtendedSubCodeKey>0DFAAEY</ExtendedSubCodeKey>
         </SubCodeProperties>
-        <SubCodeProperties RPH="3" SolutionSequenceNmbr="1">
-          <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
-          <CommercialNameofBaggageItemType>UPTO 22LB 10KG AND45LI 115LCM</CommercialNameofBaggageItemType>
-          <DescriptionOne Code="10">
-            <Text>UP TO 22 POUNDS/10 KILOGRAMS</Text>
-          </DescriptionOne>
-          <DescriptionTwo Code="4U">
-            <Text>UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-          </DescriptionTwo>
-          <EMD_Type>4</EMD_Type>
-          <ExtendedSubCodeKey>0E3ACSU</ExtendedSubCodeKey>
-          <RFIC>C</RFIC>
-          <SizeWeightInfo>
-            <MaximumSizeInAlternate Units="C">115</MaximumSizeInAlternate>
-            <MaximumSize Units="I">45</MaximumSize>
-            <MaximumWeightInAlternate Units="K">10</MaximumWeightInAlternate>
-            <MaximumWeight Units="L">22</MaximumWeight>
-          </SizeWeightInfo>
-        </SubCodeProperties>
-        <SubCodeProperties RPH="4" SolutionSequenceNmbr="1">
-          <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
-          <CommercialNameofBaggageItemType>UPTO50LB 23KG AND62LI 158LCM</CommercialNameofBaggageItemType>
-          <DescriptionOne Code="23">
-            <Text>UP TO 50 POUNDS/23 KILOGRAMS</Text>
-          </DescriptionOne>
-          <DescriptionTwo Code="6U">
-            <Text>UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-          </DescriptionTwo>
-          <EMD_Type>2</EMD_Type>
-          <ExtendedSubCodeKey>0GOACSU</ExtendedSubCodeKey>
-          <RFIC>C</RFIC>
-          <SizeWeightInfo>
-            <MaximumSizeInAlternate Units="C">158</MaximumSizeInAlternate>
-            <MaximumSize Units="I">62</MaximumSize>
-            <MaximumWeightInAlternate Units="K">23</MaximumWeightInAlternate>
-            <MaximumWeight Units="L">50</MaximumWeight>
-          </SizeWeightInfo>
-        </SubCodeProperties>
-        <SubCodeProperties RPH="5" SolutionSequenceNmbr="1">
+        <SubCodeProperties RPH="2" SolutionSequenceNmbr="1">
           <AncillaryFeeGroupCode>BG</AncillaryFeeGroupCode>
           <AncillaryService SubGroupCode="CY">
             <Text>CARRY ON HAND BAGGAGE</Text>
           </AncillaryService>
           <CommercialNameofBaggageItemType>CARRYON HAND BAGGAGE ALLOWANCE</CommercialNameofBaggageItemType>
           <EMD_Type>4</EMD_Type>
-          <ExtendedSubCodeKey>0LNABSU</ExtendedSubCodeKey>
+          <ExtendedSubCodeKey>0LNABEY</ExtendedSubCodeKey>
+          <RFIC>C</RFIC>
         </SubCodeProperties>
       </BaggageInfo>
       <HeaderInformation SolutionSequenceNmbr="1">
-        <DepartureDate>2019-09-01</DepartureDate>
-        <LastTicketingDate>08-27T23:59</LastTicketingDate>
+        <DepartureDate>2022-12-01</DepartureDate>
         <Text>VALIDATING CARRIER SPECIFIED</Text>
-        <Text>BSP - SU</Text>
-        <Text>RUT - SU</Text>
-        <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-        <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-        <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-        <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-        <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-        <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-        <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-        <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+        <Text>BSP - EY</Text>
+        <Text>TCH - EY</Text>
+        <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+        <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
         <Text>CARRY ON ALLOWANCE</Text>
-        <Text>SVOAER AERSVO-01P/SU</Text>
-        <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-        <Text>25CM HEIGHT</Text>
+        <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
         <Text>CARRY ON CHARGES</Text>
-        <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+        <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+        <Text>RRIER</Text>
         <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
         <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
         <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
-        <Text>EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT</Text>
         <Text>VALIDATING CARRIER SPECIFIED</Text>
-        <Text>BSP - SU</Text>
-        <Text>RUT - SU</Text>
-        <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-        <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-        <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-        <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-        <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-        <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-        <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-        <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+        <Text>BSP - EY</Text>
+        <Text>TCH - EY</Text>
+        <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+        <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
         <Text>CARRY ON ALLOWANCE</Text>
-        <Text>SVOAER AERSVO-01P/SU</Text>
-        <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-        <Text>25CM HEIGHT</Text>
+        <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
         <Text>CARRY ON CHARGES</Text>
-        <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+        <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+        <Text>RRIER</Text>
         <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
         <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
         <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
         <Text>REQUIRES ACCOMPANYING ADT PASSENGER</Text>
         <Text>EACH INF REQUIRES ACCOMPANYING ADT PASSENGER</Text>
         <Text>VALIDATING CARRIER SPECIFIED</Text>
-        <Text>BSP - SU</Text>
-        <Text>RUT - SU</Text>
-        <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-        <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-        <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-        <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-        <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-        <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-        <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-        <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+        <Text>BSP - EY</Text>
+        <Text>TCH - EY</Text>
+        <Text>BAG ALLOWANCE     -SYDLHR-10KG/EY</Text>
+        <Text>BAG ALLOWANCE     -LHRSYD-10KG/EY</Text>
         <Text>CARRY ON ALLOWANCE</Text>
-        <Text>SVOAER AERSVO-01P/SU</Text>
-        <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-        <Text>25CM HEIGHT</Text>
+        <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/05KG/EY</Text>
         <Text>CARRY ON CHARGES</Text>
-        <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+        <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+        <Text>RRIER</Text>
         <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
         <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
         <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
         <Text>ELECTRONIC TICKETING NOT VALID FOR INFANTS</Text>
-        <Text>01SEP DEPARTURE DATE-----LAST DAY TO PURCHASE 27AUG/2359</Text>
-        <ValidatingCarrier Code="SU"/>
+        <ValidatingCarrier Code="EY"/>
       </HeaderInformation>
       <SolutionInformation SolutionSequenceNmbr="1">
-        <BaseFareCurrencyCode>RUB</BaseFareCurrencyCode>
+        <BaseFareCurrencyCode>AUD</BaseFareCurrencyCode>
         <CurrencyCode>RUB</CurrencyCode>
-        <GrandTotalEquivFareAmount>164725</GrandTotalEquivFareAmount>
-        <GrandTotalTaxes>15080</GrandTotalTaxes>
+        <GrandTotalBaseFareAmount>485270</GrandTotalBaseFareAmount>
+        <GrandTotalEquivFareAmount>11693.00</GrandTotalEquivFareAmount>
+        <GrandTotalTaxes>45582</GrandTotalTaxes>
         <RequiresRebook>false</RequiresRebook>
         <TicketNumber>0</TicketNumber>
-        <TotalAmount>179805</TotalAmount>
+        <TotalAmount>530852</TotalAmount>
       </SolutionInformation>
       <ValidatingCarrier NewValidatingProcess="true" SolutionSequenceNmbr="1">
         <SettlementMethod>BSP</SettlementMethod>
-        <Ticket CarrierCode="SU" Type="ETKTREQ" ValidatingCarrierType="Default"/>
+        <Ticket CarrierCode="EY" Type="ETKTREQ" ValidatingCarrierType="Default"/>
       </ValidatingCarrier>
       <ValidatingCarrier NewValidatingProcess="true" SolutionSequenceNmbr="1">
-        <SettlementMethod>RUT</SettlementMethod>
-        <Ticket CarrierCode="SU" Type="PTKTPREF" ValidatingCarrierType="Default"/>
+        <SettlementMethod>TCH</SettlementMethod>
+        <Ticket CarrierCode="EY" Type="ETKTPREF" ValidatingCarrierType="Default"/>
       </ValidatingCarrier>
     </MiscInformation>
-    <PricedItinerary AlternativePricing="false" CurrencyCode="RUB" MultiTicket="false" TotalAmount="179805">
+    <PricedItinerary AlternativePricing="false" CurrencyCode="RUB" MultiTicket="false" TotalAmount="530852">
       <AirItineraryPricingInfo SolutionSequenceNmbr="1">
         <BaggageProvisions RPH="1">
           <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <PNR_Segment RPH="1">2</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
-          <ProvisionType>A</ProvisionType>
-          <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="2">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <PNR_Segment RPH="1">2</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <Commissionable>N</Commissionable>
-          <FeeApplicationIndicator>4</FeeApplicationIndicator>
-          <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-          <FirstOccurrence>1</FirstOccurrence>
-          <Interlineable>Y</Interlineable>
-          <LastOccurrence>1</LastOccurrence>
-          <PassengerType Code="ADT"/>
-          <PriceInformation>
-            <Base Amount="2500" CurrencyCode="RUB"/>
-            <Equiv Amount="2500" CurrencyCode="RUB"/>
-            <TaxIndicator>X</TaxIndicator>
-            <Total>2500</Total>
-          </PriceInformation>
-          <ProvisionType>C</ProvisionType>
-          <RefundForm>1</RefundForm>
-          <RefundReissue>Y</RefundReissue>
-          <SubCodeInfo>
-            <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="3">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="SVO" RPH="1"/>
-            <FlightNumber RPH="1">1129</FlightNumber>
-            <OriginLocation LocationCode="AER" RPH="1"/>
-            <PNR_Segment RPH="1">3</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
-          <ProvisionType>A</ProvisionType>
-          <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="4">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="SVO" RPH="1"/>
-            <FlightNumber RPH="1">1129</FlightNumber>
-            <OriginLocation LocationCode="AER" RPH="1"/>
-            <PNR_Segment RPH="1">3</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <Commissionable>N</Commissionable>
-          <FeeApplicationIndicator>4</FeeApplicationIndicator>
-          <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-          <FirstOccurrence>1</FirstOccurrence>
-          <Interlineable>Y</Interlineable>
-          <LastOccurrence>1</LastOccurrence>
-          <PassengerType Code="ADT"/>
-          <PriceInformation>
-            <Base Amount="2500" CurrencyCode="RUB"/>
-            <Equiv Amount="2500" CurrencyCode="RUB"/>
-            <TaxIndicator>X</TaxIndicator>
-            <Total>2500</Total>
-          </PriceInformation>
-          <ProvisionType>C</ProvisionType>
-          <RefundForm>1</RefundForm>
-          <RefundReissue>Y</RefundReissue>
-          <SubCodeInfo>
-            <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="5">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CarrierCode RPH="2">SU</CarrierCode>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
             <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DepartureDate RPH="2">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <DestinationLocation LocationCode="SVO" RPH="2"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <FlightNumber RPH="2">1129</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <OriginLocation LocationCode="AER" RPH="2"/>
+            <DepartureDate RPH="1">2022-12-01</DepartureDate>
+            <DepartureDate RPH="2">2022-12-02</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="LHR" RPH="2"/>
+            <FlightNumber RPH="1">2463</FlightNumber>
+            <FlightNumber RPH="2">25</FlightNumber>
+            <OriginLocation LocationCode="SYD" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
             <PNR_Segment RPH="1">2</PNR_Segment>
             <PNR_Segment RPH="2">3</PNR_Segment>
             <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
@@ -2891,213 +2665,221 @@ title: Получение норм провоза багажа
             <StatusCode RPH="1">HK</StatusCode>
             <StatusCode RPH="2">HK</StatusCode>
           </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+          <ProvisionType>A</ProvisionType>
+          <SubCodeInfo>
+            <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+          </SubCodeInfo>
+          <WeightLimit Units="K">35</WeightLimit>
+        </BaggageProvisions>
+        <BaggageProvisions RPH="2">
+          <Associations>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
+            <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
+            <DepartureDate RPH="1">2022-12-08</DepartureDate>
+            <DepartureDate RPH="2">2022-12-08</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="SYD" RPH="2"/>
+            <FlightNumber RPH="1">12</FlightNumber>
+            <FlightNumber RPH="2">464</FlightNumber>
+            <OriginLocation LocationCode="LHR" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
+            <PNR_Segment RPH="1">4</PNR_Segment>
+            <PNR_Segment RPH="2">5</PNR_Segment>
+            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+            <StatusCode RPH="1">HK</StatusCode>
+            <StatusCode RPH="2">HK</StatusCode>
+          </Associations>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+          <ProvisionType>A</ProvisionType>
+          <SubCodeInfo>
+            <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+          </SubCodeInfo>
+          <WeightLimit Units="K">35</WeightLimit>
+        </BaggageProvisions>
+        <BaggageProvisions RPH="3">
+          <Associations>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
+            <CarrierCode RPH="3">EY</CarrierCode>
+            <CarrierCode RPH="4">EY</CarrierCode>
+            <CountForSegmentAssociatedID>4</CountForSegmentAssociatedID>
+            <DepartureDate RPH="1">2022-12-01</DepartureDate>
+            <DepartureDate RPH="2">2022-12-02</DepartureDate>
+            <DepartureDate RPH="3">2022-12-08</DepartureDate>
+            <DepartureDate RPH="4">2022-12-08</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="LHR" RPH="2"/>
+            <DestinationLocation LocationCode="AUH" RPH="3"/>
+            <DestinationLocation LocationCode="SYD" RPH="4"/>
+            <FlightNumber RPH="1">2463</FlightNumber>
+            <FlightNumber RPH="2">25</FlightNumber>
+            <FlightNumber RPH="3">12</FlightNumber>
+            <FlightNumber RPH="4">464</FlightNumber>
+            <OriginLocation LocationCode="SYD" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
+            <OriginLocation LocationCode="LHR" RPH="3"/>
+            <OriginLocation LocationCode="AUH" RPH="4"/>
+            <PNR_Segment RPH="1">2</PNR_Segment>
+            <PNR_Segment RPH="2">3</PNR_Segment>
+            <PNR_Segment RPH="3">4</PNR_Segment>
+            <PNR_Segment RPH="4">5</PNR_Segment>
+            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="3">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="4">Y</ResBookDesigCode>
+            <StatusCode RPH="1">HK</StatusCode>
+            <StatusCode RPH="2">HK</StatusCode>
+            <StatusCode RPH="3">HK</StatusCode>
+            <StatusCode RPH="4">HK</StatusCode>
+          </Associations>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
           <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
           <ProvisionType>B</ProvisionType>
           <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">08AACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0LNABSU</SubCodeForChargesOthers>
+            <SubCodeForChargesOthers>0LNABEY</SubCodeForChargesOthers>
           </SubCodeInfo>
+          <WeightLimit Units="K">7</WeightLimit>
         </BaggageProvisions>
         <FareCalculation>
-          <Text>MOW SU AER29950SU MOW29950RUB59900END</Text>
+          <Text>SYD EY X/AUH EY LON Q25.00 1531.08EY X/AUH Q25.00EY SYD1504.72NUC3085.80END ROE1.328146</Text>
         </FareCalculation>
         <FareCalculationBreakdown>
-          <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-          <Departure AirlineCode="SU" AirportCode="SVO" ArrivalAirportCode="AER" ArrivalCityCode="AER" CityCode="MOW" GenericInd="O"/>
-          <FareBasis Cabin="Y" Code="YCLR" FareAmount="29950" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TripTypeInd="R"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
-          <RuleCategoryIndicator>10</RuleCategoryIndicator>
-          <RuleCategoryIndicator>16</RuleCategoryIndicator>
+          <Departure AirlineCode="EY" AirportCode="SYD" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="SYD" GenericInd="X"/>
+          <FareBasis Cabin="Y" Code="YLWF2AU" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
         </FareCalculationBreakdown>
         <FareCalculationBreakdown>
-          <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-          <Departure AirlineCode="SU" AirportCode="AER" ArrivalAirportCode="SVO" ArrivalCityCode="MOW" CityCode="AER" GenericInd="O"/>
-          <FareBasis Cabin="Y" Code="YCLR" FareAmount="29950" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TripTypeInd="R"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+          <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="LHR" ArrivalCityCode="LON" CityCode="AUH" GenericInd="O"/>
+          <FareBasis Cabin="Y" Code="YLWF2AU" FareAmount="1531.08" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <RuleCategoryIndicator>2</RuleCategoryIndicator>
+          <RuleCategoryIndicator>3</RuleCategoryIndicator>
+          <RuleCategoryIndicator>4</RuleCategoryIndicator>
+          <RuleCategoryIndicator>5</RuleCategoryIndicator>
+          <RuleCategoryIndicator>7</RuleCategoryIndicator>
+          <RuleCategoryIndicator>8</RuleCategoryIndicator>
+          <RuleCategoryIndicator>9</RuleCategoryIndicator>
           <RuleCategoryIndicator>10</RuleCategoryIndicator>
+          <RuleCategoryIndicator>12</RuleCategoryIndicator>
+          <RuleCategoryIndicator>15</RuleCategoryIndicator>
           <RuleCategoryIndicator>16</RuleCategoryIndicator>
+          <RuleCategoryIndicator>18</RuleCategoryIndicator>
+          <RuleCategoryIndicator>23</RuleCategoryIndicator>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
         </FareCalculationBreakdown>
-        <ItinTotalFare NonRefundableInd="N">
+        <FareCalculationBreakdown>
+          <Departure AirlineCode="EY" AirportCode="LHR" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="LON" GenericInd="X"/>
+          <FareBasis Cabin="Y" Code="YLXF2AU" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+        </FareCalculationBreakdown>
+        <FareCalculationBreakdown>
+          <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+          <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="SYD" ArrivalCityCode="SYD" CityCode="AUH" GenericInd="O"/>
+          <FareBasis Cabin="Y" Code="YLXF2AU" FareAmount="1504.72" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <RuleCategoryIndicator>2</RuleCategoryIndicator>
+          <RuleCategoryIndicator>3</RuleCategoryIndicator>
+          <RuleCategoryIndicator>4</RuleCategoryIndicator>
+          <RuleCategoryIndicator>5</RuleCategoryIndicator>
+          <RuleCategoryIndicator>7</RuleCategoryIndicator>
+          <RuleCategoryIndicator>8</RuleCategoryIndicator>
+          <RuleCategoryIndicator>9</RuleCategoryIndicator>
+          <RuleCategoryIndicator>10</RuleCategoryIndicator>
+          <RuleCategoryIndicator>12</RuleCategoryIndicator>
+          <RuleCategoryIndicator>15</RuleCategoryIndicator>
+          <RuleCategoryIndicator>16</RuleCategoryIndicator>
+          <RuleCategoryIndicator>18</RuleCategoryIndicator>
+          <RuleCategoryIndicator>23</RuleCategoryIndicator>
+        </FareCalculationBreakdown>
+        <ItinTotalFare NonRefundableInd="O">
           <BaggageInfo>
             <NonUS_DOT_Disclosure>
-              <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-              <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-              <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-              <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-              <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-              <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-              <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-              <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+              <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+              <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
               <Text>CARRY ON ALLOWANCE</Text>
-              <Text>SVOAER AERSVO-01P/SU</Text>
-              <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-              <Text>25CM HEIGHT</Text>
+              <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
               <Text>CARRY ON CHARGES</Text>
-              <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+              <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+              <Text>RRIER</Text>
               <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
               <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
               <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
             </NonUS_DOT_Disclosure>
           </BaggageInfo>
-          <BaseFare Amount="59900" CurrencyCode="RUB"/>
-          <Construction Amount="59900" CurrencyCode="RUB" RateOfExchange="69.100000"/>
-          <Taxes TotalAmount="5126">
-            <Tax Amount="4530" TaxCode="YQF" TaxName="SERVICE FEE - FUEL" TicketingTaxCode="YQ"/>
-            <Tax Amount="596" TaxCode="RI3" TaxName="TERMINAL USE CHARGE DOMESTIC D" TicketingTaxCode="RI"/>
+          <BaseFare Amount="4099.00" CurrencyCode="AUD"/>
+          <Construction Amount="3085.80" CurrencyCode="NUC" RateOfExchange="1.328146"/>
+          <Endorsements>
+            <Text>NON ENDO/ REF</Text>
+          </Endorsements>
+          <EquivFare Amount="170110" CurrencyCode="RUB"/>
+          <Taxes TotalAmount="16713">
+            <Tax Amount="2490" TaxCode="AU" TaxName="PASSENGER MOVEMENT CHARGE  PMC" TicketingTaxCode="AU"/>
+            <Tax Amount="2598" TaxCode="WY" TaxName="PASSENGER SERVICES CHARGE DEPA" TicketingTaxCode="WY"/>
+            <Tax Amount="158" TaxCode="ZR2" TaxName="INTERNATIONAL ADVANCED PASSENG" TicketingTaxCode="ZR"/>
+            <Tax Amount="1102" TaxCode="F62" TaxName="PASSENGER FACILITIES CHARGE" TicketingTaxCode="F6"/>
+            <Tax Amount="6216" TaxCode="GB" TaxName="AIR PASSENGER DUTY APD" TicketingTaxCode="GB"/>
+            <Tax Amount="4149" TaxCode="UB" TaxName="PASSENGER SERVICE CHARGE DEPAR" TicketingTaxCode="UB"/>
           </Taxes>
-          <TotalFare Amount="65026" CurrencyCode="RUB"/>
+          <TotalFare Amount="186823" CurrencyCode="RUB"/>
           <Warnings>
             <Warning ShortText="MIXED PASSENGER TYPES - VERIFY RESTRICTIONS"/>
           </Warnings>
         </ItinTotalFare>
         <PassengerTypeQuantity Code="ADT" Quantity="2"/>
         <PTC_FareBreakdown>
-          <BrandedFareInformation>
-            <BrandCode>EC</BrandCode>
-            <BrandName>ECONOMY CLASSIC</BrandName>
-            <ProgramCode>CFF1S</ProgramCode>
-            <ProgramName>NEW BRANDS AFL</ProgramName>
-          </BrandedFareInformation>
           <Cabin>Y</Cabin>
-          <FareBasis Code="YCLR" FareAmount="29950" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <FareBasis Code="YLWF2AU" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
         </PTC_FareBreakdown>
         <PTC_FareBreakdown>
           <BrandedFareInformation>
-            <BrandCode>EC</BrandCode>
-            <BrandName>ECONOMY CLASSIC</BrandName>
-            <ProgramCode>CFF1S</ProgramCode>
-            <ProgramName>NEW BRANDS AFL</ProgramName>
+            <BrandCode>YF</BrandCode>
+            <BrandName>ECONOMY CHOICE PLUS</BrandName>
+            <ProgramCode>CFFEY</ProgramCode>
+            <ProgramName>17AUD BP30</ProgramName>
           </BrandedFareInformation>
           <Cabin>Y</Cabin>
-          <FareBasis Code="YCLR" FareAmount="29950" FarePassengerType="ADT" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <FareBasis Code="YLWF2AU" FareAmount="1531.08" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+        </PTC_FareBreakdown>
+        <PTC_FareBreakdown>
+          <Cabin>Y</Cabin>
+          <FareBasis Code="YLXF2AU" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+        </PTC_FareBreakdown>
+        <PTC_FareBreakdown>
+          <BrandedFareInformation>
+            <BrandCode>YF</BrandCode>
+            <BrandName>ECONOMY CHOICE PLUS</BrandName>
+            <ProgramCode>CFFEY</ProgramCode>
+            <ProgramName>17AUD BP30</ProgramName>
+          </BrandedFareInformation>
+          <Cabin>Y</Cabin>
+          <FareBasis Code="YLXF2AU" FareAmount="1504.72" FarePassengerType="ADT" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
         </PTC_FareBreakdown>
       </AirItineraryPricingInfo>
       <AirItineraryPricingInfo SolutionSequenceNmbr="1">
         <BaggageProvisions RPH="1">
           <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <PNR_Segment RPH="1">2</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
-          <ProvisionType>A</ProvisionType>
-          <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="2">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <PNR_Segment RPH="1">2</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <Commissionable>N</Commissionable>
-          <FeeApplicationIndicator>4</FeeApplicationIndicator>
-          <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-          <FirstOccurrence>1</FirstOccurrence>
-          <Interlineable>Y</Interlineable>
-          <LastOccurrence>1</LastOccurrence>
-          <PassengerType Code="CNN"/>
-          <PriceInformation>
-            <Base Amount="2500" CurrencyCode="RUB"/>
-            <Equiv Amount="2500" CurrencyCode="RUB"/>
-            <TaxIndicator>X</TaxIndicator>
-            <Total>2500</Total>
-          </PriceInformation>
-          <ProvisionType>C</ProvisionType>
-          <RefundForm>1</RefundForm>
-          <RefundReissue>Y</RefundReissue>
-          <SubCodeInfo>
-            <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="3">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="SVO" RPH="1"/>
-            <FlightNumber RPH="1">1129</FlightNumber>
-            <OriginLocation LocationCode="AER" RPH="1"/>
-            <PNR_Segment RPH="1">3</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
-          <ProvisionType>A</ProvisionType>
-          <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">0GOACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="4">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="SVO" RPH="1"/>
-            <FlightNumber RPH="1">1129</FlightNumber>
-            <OriginLocation LocationCode="AER" RPH="1"/>
-            <PNR_Segment RPH="1">3</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <Commissionable>N</Commissionable>
-          <FeeApplicationIndicator>4</FeeApplicationIndicator>
-          <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-          <FirstOccurrence>1</FirstOccurrence>
-          <Interlineable>Y</Interlineable>
-          <LastOccurrence>1</LastOccurrence>
-          <PassengerType Code="CNN"/>
-          <PriceInformation>
-            <Base Amount="2500" CurrencyCode="RUB"/>
-            <Equiv Amount="2500" CurrencyCode="RUB"/>
-            <TaxIndicator>X</TaxIndicator>
-            <Total>2500</Total>
-          </PriceInformation>
-          <ProvisionType>C</ProvisionType>
-          <RefundForm>1</RefundForm>
-          <RefundReissue>Y</RefundReissue>
-          <SubCodeInfo>
-            <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="5">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CarrierCode RPH="2">SU</CarrierCode>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
             <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DepartureDate RPH="2">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <DestinationLocation LocationCode="SVO" RPH="2"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <FlightNumber RPH="2">1129</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <OriginLocation LocationCode="AER" RPH="2"/>
+            <DepartureDate RPH="1">2022-12-01</DepartureDate>
+            <DepartureDate RPH="2">2022-12-02</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="LHR" RPH="2"/>
+            <FlightNumber RPH="1">2463</FlightNumber>
+            <FlightNumber RPH="2">25</FlightNumber>
+            <OriginLocation LocationCode="SYD" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
             <PNR_Segment RPH="1">2</PNR_Segment>
             <PNR_Segment RPH="2">3</PNR_Segment>
             <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
@@ -3105,215 +2887,221 @@ title: Получение норм провоза багажа
             <StatusCode RPH="1">HK</StatusCode>
             <StatusCode RPH="2">HK</StatusCode>
           </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+          <ProvisionType>A</ProvisionType>
+          <SubCodeInfo>
+            <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+          </SubCodeInfo>
+          <WeightLimit Units="K">35</WeightLimit>
+        </BaggageProvisions>
+        <BaggageProvisions RPH="2">
+          <Associations>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
+            <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
+            <DepartureDate RPH="1">2022-12-08</DepartureDate>
+            <DepartureDate RPH="2">2022-12-08</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="SYD" RPH="2"/>
+            <FlightNumber RPH="1">12</FlightNumber>
+            <FlightNumber RPH="2">464</FlightNumber>
+            <OriginLocation LocationCode="LHR" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
+            <PNR_Segment RPH="1">4</PNR_Segment>
+            <PNR_Segment RPH="2">5</PNR_Segment>
+            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+            <StatusCode RPH="1">HK</StatusCode>
+            <StatusCode RPH="2">HK</StatusCode>
+          </Associations>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+          <ProvisionType>A</ProvisionType>
+          <SubCodeInfo>
+            <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+          </SubCodeInfo>
+          <WeightLimit Units="K">35</WeightLimit>
+        </BaggageProvisions>
+        <BaggageProvisions RPH="3">
+          <Associations>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
+            <CarrierCode RPH="3">EY</CarrierCode>
+            <CarrierCode RPH="4">EY</CarrierCode>
+            <CountForSegmentAssociatedID>4</CountForSegmentAssociatedID>
+            <DepartureDate RPH="1">2022-12-01</DepartureDate>
+            <DepartureDate RPH="2">2022-12-02</DepartureDate>
+            <DepartureDate RPH="3">2022-12-08</DepartureDate>
+            <DepartureDate RPH="4">2022-12-08</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="LHR" RPH="2"/>
+            <DestinationLocation LocationCode="AUH" RPH="3"/>
+            <DestinationLocation LocationCode="SYD" RPH="4"/>
+            <FlightNumber RPH="1">2463</FlightNumber>
+            <FlightNumber RPH="2">25</FlightNumber>
+            <FlightNumber RPH="3">12</FlightNumber>
+            <FlightNumber RPH="4">464</FlightNumber>
+            <OriginLocation LocationCode="SYD" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
+            <OriginLocation LocationCode="LHR" RPH="3"/>
+            <OriginLocation LocationCode="AUH" RPH="4"/>
+            <PNR_Segment RPH="1">2</PNR_Segment>
+            <PNR_Segment RPH="2">3</PNR_Segment>
+            <PNR_Segment RPH="3">4</PNR_Segment>
+            <PNR_Segment RPH="4">5</PNR_Segment>
+            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="3">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="4">Y</ResBookDesigCode>
+            <StatusCode RPH="1">HK</StatusCode>
+            <StatusCode RPH="2">HK</StatusCode>
+            <StatusCode RPH="3">HK</StatusCode>
+            <StatusCode RPH="4">HK</StatusCode>
+          </Associations>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
           <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
           <ProvisionType>B</ProvisionType>
           <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">08AACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0LNABSU</SubCodeForChargesOthers>
+            <SubCodeForChargesOthers>0LNABEY</SubCodeForChargesOthers>
           </SubCodeInfo>
+          <WeightLimit Units="K">7</WeightLimit>
         </BaggageProvisions>
         <FareCalculation>
-          <Text>MOW SU AER22462SU MOW22463RUB44925END</Text>
+          <Text>SYD EY X/AUH EY LON Q25.00 1148.31EY X/AUH Q25.00EY SYD1128.54NUC2326.85END ROE1.328146</Text>
         </FareCalculation>
         <FareCalculationBreakdown>
-          <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-          <Departure AirlineCode="SU" AirportCode="SVO" ArrivalAirportCode="AER" ArrivalCityCode="AER" CityCode="MOW" GenericInd="O"/>
-          <FareBasis Cabin="Y" Code="YCLR/CH25" FareAmount="22462" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25" TripTypeInd="R"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
-          <RuleCategoryIndicator>10</RuleCategoryIndicator>
-          <RuleCategoryIndicator>16</RuleCategoryIndicator>
-          <RuleCategoryIndicator>19</RuleCategoryIndicator>
+          <Departure AirlineCode="EY" AirportCode="SYD" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="SYD" GenericInd="X"/>
+          <FareBasis Cabin="Y" Code="YLWF2AUCH" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
         </FareCalculationBreakdown>
         <FareCalculationBreakdown>
-          <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-          <Departure AirlineCode="SU" AirportCode="AER" ArrivalAirportCode="SVO" ArrivalCityCode="MOW" CityCode="AER" GenericInd="O"/>
-          <FareBasis Cabin="Y" Code="YCLR/CH25" FareAmount="22463" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25" TripTypeInd="R"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+          <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="LHR" ArrivalCityCode="LON" CityCode="AUH" GenericInd="O"/>
+          <FareBasis Cabin="Y" Code="YLWF2AUCH" FareAmount="1148.31" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <RuleCategoryIndicator>2</RuleCategoryIndicator>
+          <RuleCategoryIndicator>3</RuleCategoryIndicator>
+          <RuleCategoryIndicator>4</RuleCategoryIndicator>
+          <RuleCategoryIndicator>5</RuleCategoryIndicator>
+          <RuleCategoryIndicator>7</RuleCategoryIndicator>
+          <RuleCategoryIndicator>8</RuleCategoryIndicator>
+          <RuleCategoryIndicator>9</RuleCategoryIndicator>
           <RuleCategoryIndicator>10</RuleCategoryIndicator>
+          <RuleCategoryIndicator>12</RuleCategoryIndicator>
+          <RuleCategoryIndicator>15</RuleCategoryIndicator>
           <RuleCategoryIndicator>16</RuleCategoryIndicator>
+          <RuleCategoryIndicator>18</RuleCategoryIndicator>
           <RuleCategoryIndicator>19</RuleCategoryIndicator>
+          <RuleCategoryIndicator>23</RuleCategoryIndicator>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
         </FareCalculationBreakdown>
-        <ItinTotalFare NonRefundableInd="N">
+        <FareCalculationBreakdown>
+          <Departure AirlineCode="EY" AirportCode="LHR" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="LON" GenericInd="X"/>
+          <FareBasis Cabin="Y" Code="YLXF2AUCH" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+        </FareCalculationBreakdown>
+        <FareCalculationBreakdown>
+          <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+          <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="SYD" ArrivalCityCode="SYD" CityCode="AUH" GenericInd="O"/>
+          <FareBasis Cabin="Y" Code="YLXF2AUCH" FareAmount="1128.54" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <RuleCategoryIndicator>2</RuleCategoryIndicator>
+          <RuleCategoryIndicator>3</RuleCategoryIndicator>
+          <RuleCategoryIndicator>4</RuleCategoryIndicator>
+          <RuleCategoryIndicator>5</RuleCategoryIndicator>
+          <RuleCategoryIndicator>7</RuleCategoryIndicator>
+          <RuleCategoryIndicator>8</RuleCategoryIndicator>
+          <RuleCategoryIndicator>9</RuleCategoryIndicator>
+          <RuleCategoryIndicator>10</RuleCategoryIndicator>
+          <RuleCategoryIndicator>12</RuleCategoryIndicator>
+          <RuleCategoryIndicator>15</RuleCategoryIndicator>
+          <RuleCategoryIndicator>16</RuleCategoryIndicator>
+          <RuleCategoryIndicator>18</RuleCategoryIndicator>
+          <RuleCategoryIndicator>19</RuleCategoryIndicator>
+          <RuleCategoryIndicator>23</RuleCategoryIndicator>
+        </FareCalculationBreakdown>
+        <ItinTotalFare NonRefundableInd="O">
           <BaggageInfo>
             <NonUS_DOT_Disclosure>
-              <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-              <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-              <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-              <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-              <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 50 POUNDS/23</Text>
-              <Text>KILOGRAMS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-              <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-              <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+              <Text>BAG ALLOWANCE     -SYDLHR-35KG/EY</Text>
+              <Text>BAG ALLOWANCE     -LHRSYD-35KG/EY</Text>
               <Text>CARRY ON ALLOWANCE</Text>
-              <Text>SVOAER AERSVO-01P/SU</Text>
-              <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-              <Text>25CM HEIGHT</Text>
+              <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/07KG/EY</Text>
               <Text>CARRY ON CHARGES</Text>
-              <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+              <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+              <Text>RRIER</Text>
               <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
               <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
               <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
             </NonUS_DOT_Disclosure>
           </BaggageInfo>
-          <BaseFare Amount="44925" CurrencyCode="RUB"/>
-          <Construction Amount="44925" CurrencyCode="RUB" RateOfExchange="69.100000"/>
-          <Taxes TotalAmount="4828">
-            <Tax Amount="4530" TaxCode="YQF" TaxName="SERVICE FEE - FUEL" TicketingTaxCode="YQ"/>
-            <Tax Amount="298" TaxCode="RI3" TaxName="TERMINAL USE CHARGE DOMESTIC D" TicketingTaxCode="RI"/>
+          <BaseFare Amount="3091.00" CurrencyCode="AUD"/>
+          <Construction Amount="2326.85" CurrencyCode="NUC" RateOfExchange="1.328146"/>
+          <Endorsements>
+            <Text>NON ENDO/ REF</Text>
+          </Endorsements>
+          <EquivFare Amount="128280" CurrencyCode="RUB"/>
+          <Taxes TotalAmount="8007">
+            <Tax Amount="2598" TaxCode="WY" TaxName="PASSENGER SERVICES CHARGE DEPA" TicketingTaxCode="WY"/>
+            <Tax Amount="158" TaxCode="ZR2" TaxName="INTERNATIONAL ADVANCED PASSENG" TicketingTaxCode="ZR"/>
+            <Tax Amount="1102" TaxCode="F62" TaxName="PASSENGER FACILITIES CHARGE" TicketingTaxCode="F6"/>
+            <Tax Amount="4149" TaxCode="UB" TaxName="PASSENGER SERVICE CHARGE DEPAR" TicketingTaxCode="UB"/>
           </Taxes>
-          <TotalFare Amount="49753" CurrencyCode="RUB"/>
+          <TotalFare Amount="136287" CurrencyCode="RUB"/>
           <Warnings>
             <Warning ShortText="MIXED PASSENGER TYPES - VERIFY RESTRICTIONS"/>
           </Warnings>
         </ItinTotalFare>
         <PassengerTypeQuantity Code="CNN" Quantity="1"/>
         <PTC_FareBreakdown>
-          <BrandedFareInformation>
-            <BrandCode>EC</BrandCode>
-            <BrandName>ECONOMY CLASSIC</BrandName>
-            <ProgramCode>CFF1S</ProgramCode>
-            <ProgramName>NEW BRANDS AFL</ProgramName>
-          </BrandedFareInformation>
           <Cabin>Y</Cabin>
-          <FareBasis Code="YCLR/CH25" FareAmount="22462" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <FareBasis Code="YLWF2AUCH" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
         </PTC_FareBreakdown>
         <PTC_FareBreakdown>
           <BrandedFareInformation>
-            <BrandCode>EC</BrandCode>
-            <BrandName>ECONOMY CLASSIC</BrandName>
-            <ProgramCode>CFF1S</ProgramCode>
-            <ProgramName>NEW BRANDS AFL</ProgramName>
+            <BrandCode>YF</BrandCode>
+            <BrandName>ECONOMY CHOICE PLUS</BrandName>
+            <ProgramCode>CFFEY</ProgramCode>
+            <ProgramName>17AUD BP30</ProgramName>
           </BrandedFareInformation>
           <Cabin>Y</Cabin>
-          <FareBasis Code="YCLR/CH25" FareAmount="22463" FarePassengerType="CNN" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="CH25"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <FareBasis Code="YLWF2AUCH" FareAmount="1148.31" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+        </PTC_FareBreakdown>
+        <PTC_FareBreakdown>
+          <Cabin>Y</Cabin>
+          <FareBasis Code="YLXF2AUCH" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
+          <Surcharges Ind="Q" Type="UNK">25.00</Surcharges>
+        </PTC_FareBreakdown>
+        <PTC_FareBreakdown>
+          <BrandedFareInformation>
+            <BrandCode>YF</BrandCode>
+            <BrandName>ECONOMY CHOICE PLUS</BrandName>
+            <ProgramCode>CFFEY</ProgramCode>
+            <ProgramName>17AUD BP30</ProgramName>
+          </BrandedFareInformation>
+          <Cabin>Y</Cabin>
+          <FareBasis Code="YLXF2AUCH" FareAmount="1128.54" FarePassengerType="CNN" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+          <FreeBaggageAllowance>KG035</FreeBaggageAllowance>
         </PTC_FareBreakdown>
       </AirItineraryPricingInfo>
       <AirItineraryPricingInfo SolutionSequenceNmbr="1">
         <BaggageProvisions RPH="1">
           <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <PNR_Segment RPH="1">2</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
-          <ProvisionType>A</ProvisionType>
-          <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">0E3ACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="2">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <PNR_Segment RPH="1">2</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <Commissionable>N</Commissionable>
-          <FeeApplicationIndicator>4</FeeApplicationIndicator>
-          <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-          <FirstOccurrence>1</FirstOccurrence>
-          <Interlineable>Y</Interlineable>
-          <LastOccurrence>1</LastOccurrence>
-          <PassengerType Code="INF"/>
-          <PriceInformation>
-            <Base Amount="2500" CurrencyCode="RUB"/>
-            <Equiv Amount="2500" CurrencyCode="RUB"/>
-            <TaxIndicator>X</TaxIndicator>
-            <Total>2500</Total>
-          </PriceInformation>
-          <ProvisionType>C</ProvisionType>
-          <RefundForm>1</RefundForm>
-          <RefundReissue>Y</RefundReissue>
-          <SubCodeInfo>
-            <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="3">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="SVO" RPH="1"/>
-            <FlightNumber RPH="1">1129</FlightNumber>
-            <OriginLocation LocationCode="AER" RPH="1"/>
-            <PNR_Segment RPH="1">3</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
-          <ProvisionType>A</ProvisionType>
-          <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">0E3ACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0DFAASU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="4">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CountForSegmentAssociatedID>1</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="SVO" RPH="1"/>
-            <FlightNumber RPH="1">1129</FlightNumber>
-            <OriginLocation LocationCode="AER" RPH="1"/>
-            <PNR_Segment RPH="1">3</PNR_Segment>
-            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
-            <StatusCode RPH="1">HK</StatusCode>
-          </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
-          <Commissionable>N</Commissionable>
-          <FeeApplicationIndicator>4</FeeApplicationIndicator>
-          <FeeNotGuaranteedIndicator>N</FeeNotGuaranteedIndicator>
-          <FirstOccurrence>1</FirstOccurrence>
-          <Interlineable>Y</Interlineable>
-          <LastOccurrence>1</LastOccurrence>
-          <PassengerType Code="INF"/>
-          <PriceInformation>
-            <Base Amount="2500" CurrencyCode="RUB"/>
-            <Equiv Amount="2500" CurrencyCode="RUB"/>
-            <TaxIndicator>X</TaxIndicator>
-            <Total>2500</Total>
-          </PriceInformation>
-          <ProvisionType>C</ProvisionType>
-          <RefundForm>1</RefundForm>
-          <RefundReissue>Y</RefundReissue>
-          <SubCodeInfo>
-            <SubCodeForChargesOthers>0GOACSU</SubCodeForChargesOthers>
-          </SubCodeInfo>
-        </BaggageProvisions>
-        <BaggageProvisions RPH="5">
-          <Associations>
-            <CarrierCode RPH="1">SU</CarrierCode>
-            <CarrierCode RPH="2">SU</CarrierCode>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
             <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
-            <DepartureDate RPH="1">2019-09-01</DepartureDate>
-            <DepartureDate RPH="2">2019-09-08</DepartureDate>
-            <DestinationLocation LocationCode="AER" RPH="1"/>
-            <DestinationLocation LocationCode="SVO" RPH="2"/>
-            <FlightNumber RPH="1">1138</FlightNumber>
-            <FlightNumber RPH="2">1129</FlightNumber>
-            <OriginLocation LocationCode="SVO" RPH="1"/>
-            <OriginLocation LocationCode="AER" RPH="2"/>
+            <DepartureDate RPH="1">2022-12-01</DepartureDate>
+            <DepartureDate RPH="2">2022-12-02</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="LHR" RPH="2"/>
+            <FlightNumber RPH="1">2463</FlightNumber>
+            <FlightNumber RPH="2">25</FlightNumber>
+            <OriginLocation LocationCode="SYD" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
             <PNR_Segment RPH="1">2</PNR_Segment>
             <PNR_Segment RPH="2">3</PNR_Segment>
             <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
@@ -3321,88 +3109,198 @@ title: Получение норм провоза багажа
             <StatusCode RPH="1">HK</StatusCode>
             <StatusCode RPH="2">HK</StatusCode>
           </Associations>
-          <CarrierWhoseBaggageProvisionsApply>SU</CarrierWhoseBaggageProvisionsApply>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+          <ProvisionType>A</ProvisionType>
+          <SubCodeInfo>
+            <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+          </SubCodeInfo>
+          <WeightLimit Units="K">10</WeightLimit>
+        </BaggageProvisions>
+        <BaggageProvisions RPH="2">
+          <Associations>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
+            <CountForSegmentAssociatedID>2</CountForSegmentAssociatedID>
+            <DepartureDate RPH="1">2022-12-08</DepartureDate>
+            <DepartureDate RPH="2">2022-12-08</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="SYD" RPH="2"/>
+            <FlightNumber RPH="1">12</FlightNumber>
+            <FlightNumber RPH="2">464</FlightNumber>
+            <OriginLocation LocationCode="LHR" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
+            <PNR_Segment RPH="1">4</PNR_Segment>
+            <PNR_Segment RPH="2">5</PNR_Segment>
+            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+            <StatusCode RPH="1">HK</StatusCode>
+            <StatusCode RPH="2">HK</StatusCode>
+          </Associations>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
+          <ProvisionType>A</ProvisionType>
+          <SubCodeInfo>
+            <SubCodeForChargesOthers>0DFAAEY</SubCodeForChargesOthers>
+          </SubCodeInfo>
+          <WeightLimit Units="K">10</WeightLimit>
+        </BaggageProvisions>
+        <BaggageProvisions RPH="3">
+          <Associations>
+            <CarrierCode RPH="1">EY</CarrierCode>
+            <CarrierCode RPH="2">EY</CarrierCode>
+            <CarrierCode RPH="3">EY</CarrierCode>
+            <CarrierCode RPH="4">EY</CarrierCode>
+            <CountForSegmentAssociatedID>4</CountForSegmentAssociatedID>
+            <DepartureDate RPH="1">2022-12-01</DepartureDate>
+            <DepartureDate RPH="2">2022-12-02</DepartureDate>
+            <DepartureDate RPH="3">2022-12-08</DepartureDate>
+            <DepartureDate RPH="4">2022-12-08</DepartureDate>
+            <DestinationLocation LocationCode="AUH" RPH="1"/>
+            <DestinationLocation LocationCode="LHR" RPH="2"/>
+            <DestinationLocation LocationCode="AUH" RPH="3"/>
+            <DestinationLocation LocationCode="SYD" RPH="4"/>
+            <FlightNumber RPH="1">2463</FlightNumber>
+            <FlightNumber RPH="2">25</FlightNumber>
+            <FlightNumber RPH="3">12</FlightNumber>
+            <FlightNumber RPH="4">464</FlightNumber>
+            <OriginLocation LocationCode="SYD" RPH="1"/>
+            <OriginLocation LocationCode="AUH" RPH="2"/>
+            <OriginLocation LocationCode="LHR" RPH="3"/>
+            <OriginLocation LocationCode="AUH" RPH="4"/>
+            <PNR_Segment RPH="1">2</PNR_Segment>
+            <PNR_Segment RPH="2">3</PNR_Segment>
+            <PNR_Segment RPH="3">4</PNR_Segment>
+            <PNR_Segment RPH="4">5</PNR_Segment>
+            <ResBookDesigCode RPH="1">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="2">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="3">Y</ResBookDesigCode>
+            <ResBookDesigCode RPH="4">Y</ResBookDesigCode>
+            <StatusCode RPH="1">HK</StatusCode>
+            <StatusCode RPH="2">HK</StatusCode>
+            <StatusCode RPH="3">HK</StatusCode>
+            <StatusCode RPH="4">HK</StatusCode>
+          </Associations>
+          <CarrierWhoseBaggageProvisionsApply>EY</CarrierWhoseBaggageProvisionsApply>
           <NumPiecesBDI>1</NumPiecesBDI>
-          <NumPiecesITR>1</NumPiecesITR>
           <ProvisionType>B</ProvisionType>
           <SubCodeInfo>
-            <SubCodeForAllowance RPH="1">08AACSU</SubCodeForAllowance>
-            <SubCodeForChargesOthers>0LNABSU</SubCodeForChargesOthers>
+            <SubCodeForChargesOthers>0LNABEY</SubCodeForChargesOthers>
           </SubCodeInfo>
+          <WeightLimit Units="K">5</WeightLimit>
         </BaggageProvisions>
         <FareCalculation>
-          <Text>MOW SU AER0SU MOW0RUB0END</Text>
+          <Text>SYD EY X/AUH EY LON153.10EY X/AUH EY SYD150.47NUC303.57END ROE1.328146</Text>
         </FareCalculation>
         <FareCalculationBreakdown>
-          <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-          <Departure AirlineCode="SU" AirportCode="SVO" ArrivalAirportCode="AER" ArrivalCityCode="AER" CityCode="MOW" GenericInd="O"/>
-          <FareBasis Cabin="Y" Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00" TripTypeInd="R"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
-          <RuleCategoryIndicator>10</RuleCategoryIndicator>
-          <RuleCategoryIndicator>16</RuleCategoryIndicator>
-          <RuleCategoryIndicator>19</RuleCategoryIndicator>
+          <Departure AirlineCode="EY" AirportCode="SYD" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="SYD" GenericInd="X"/>
+          <FareBasis Cabin="Y" Code="YLWF2AUIN" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
         </FareCalculationBreakdown>
         <FareCalculationBreakdown>
-          <Branch FirstJointCarrier="SU" PCC="9LSC"/>
-          <Departure AirlineCode="SU" AirportCode="AER" ArrivalAirportCode="SVO" ArrivalCityCode="MOW" CityCode="AER" GenericInd="O"/>
-          <FareBasis Cabin="Y" Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00" TripTypeInd="R"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+          <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="LHR" ArrivalCityCode="LON" CityCode="AUH" GenericInd="O"/>
+          <FareBasis Cabin="Y" Code="YLWF2AUIN" FareAmount="153.10" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+          <RuleCategoryIndicator>2</RuleCategoryIndicator>
+          <RuleCategoryIndicator>3</RuleCategoryIndicator>
+          <RuleCategoryIndicator>4</RuleCategoryIndicator>
+          <RuleCategoryIndicator>5</RuleCategoryIndicator>
+          <RuleCategoryIndicator>7</RuleCategoryIndicator>
+          <RuleCategoryIndicator>8</RuleCategoryIndicator>
+          <RuleCategoryIndicator>9</RuleCategoryIndicator>
           <RuleCategoryIndicator>10</RuleCategoryIndicator>
+          <RuleCategoryIndicator>12</RuleCategoryIndicator>
+          <RuleCategoryIndicator>15</RuleCategoryIndicator>
           <RuleCategoryIndicator>16</RuleCategoryIndicator>
+          <RuleCategoryIndicator>18</RuleCategoryIndicator>
           <RuleCategoryIndicator>19</RuleCategoryIndicator>
+          <RuleCategoryIndicator>23</RuleCategoryIndicator>
         </FareCalculationBreakdown>
-        <ItinTotalFare NonRefundableInd="N">
+        <FareCalculationBreakdown>
+          <Departure AirlineCode="EY" AirportCode="LHR" ArrivalAirportCode="AUH" ArrivalCityCode="AUH" CityCode="LON" GenericInd="X"/>
+          <FareBasis Cabin="Y" Code="YLXF2AUIN" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+        </FareCalculationBreakdown>
+        <FareCalculationBreakdown>
+          <Branch FirstJointCarrier="EY" PCC="9LSC"/>
+          <Departure AirlineCode="EY" AirportCode="AUH" ArrivalAirportCode="SYD" ArrivalCityCode="SYD" CityCode="AUH" GenericInd="O"/>
+          <FareBasis Cabin="Y" Code="YLXF2AUIN" FareAmount="150.47" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON" TripTypeInd="R"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+          <RuleCategoryIndicator>2</RuleCategoryIndicator>
+          <RuleCategoryIndicator>3</RuleCategoryIndicator>
+          <RuleCategoryIndicator>4</RuleCategoryIndicator>
+          <RuleCategoryIndicator>5</RuleCategoryIndicator>
+          <RuleCategoryIndicator>7</RuleCategoryIndicator>
+          <RuleCategoryIndicator>8</RuleCategoryIndicator>
+          <RuleCategoryIndicator>9</RuleCategoryIndicator>
+          <RuleCategoryIndicator>10</RuleCategoryIndicator>
+          <RuleCategoryIndicator>12</RuleCategoryIndicator>
+          <RuleCategoryIndicator>15</RuleCategoryIndicator>
+          <RuleCategoryIndicator>16</RuleCategoryIndicator>
+          <RuleCategoryIndicator>18</RuleCategoryIndicator>
+          <RuleCategoryIndicator>19</RuleCategoryIndicator>
+          <RuleCategoryIndicator>23</RuleCategoryIndicator>
+        </FareCalculationBreakdown>
+        <ItinTotalFare NonRefundableInd="O">
           <BaggageInfo>
             <NonUS_DOT_Disclosure>
-              <Text>BAG ALLOWANCE     -SVOAER-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-              <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-              <Text>2NDCHECKED BAG FEE-SVOAER-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-              <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
-              <Text>BAG ALLOWANCE     -AERSVO-01P/SU/EACH PIECE UP TO 22 POUNDS/10</Text>
-              <Text>KILOGRAMS AND UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS</Text>
-              <Text>2NDCHECKED BAG FEE-AERSVO-RUB2500/SU/UP TO 50 POUNDS/23 KILOGRA</Text>
-              <Text>MS AND UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS</Text>
+              <Text>BAG ALLOWANCE     -SYDLHR-10KG/EY</Text>
+              <Text>BAG ALLOWANCE     -LHRSYD-10KG/EY</Text>
               <Text>CARRY ON ALLOWANCE</Text>
-              <Text>SVOAER AERSVO-01P/SU</Text>
-              <Text>01/UP TO 22 POUNDS/10 KILOGRAMS AND 55CM LENGTH X 40CM WIDTH X</Text>
-              <Text>25CM HEIGHT</Text>
+              <Text>SYDAUH AUHLHR LHRAUH AUHSYD-01P/05KG/EY</Text>
               <Text>CARRY ON CHARGES</Text>
-              <Text>SVOAER AERSVO-SU-CARRY ON FEES UNKNOWN-CONTACT CARRIER</Text>
+              <Text>SYDAUH AUHLHR LHRAUH AUHSYD-EY-CARRY ON FEES UNKNOWN-CONTACT CA</Text>
+              <Text>RRIER</Text>
               <Text>ADDITIONAL ALLOWANCES AND/OR DISCOUNTS MAY APPLY DEPENDING ON</Text>
               <Text>FLYER-SPECIFIC FACTORS /E.G. FREQUENT FLYER STATUS/MILITARY/</Text>
               <Text>CREDIT CARD FORM OF PAYMENT/EARLY PURCHASE OVER INTERNET,ETC./</Text>
             </NonUS_DOT_Disclosure>
           </BaggageInfo>
-          <BaseFare Amount="0" CurrencyCode="RUB"/>
-          <Construction Amount="0" CurrencyCode="RUB" RateOfExchange="69.100000"/>
-          <Taxes TotalAmount="0"/>
-          <TotalFare Amount="0" CurrencyCode="RUB"/>
+          <BaseFare Amount="404.00" CurrencyCode="AUD"/>
+          <Construction Amount="303.57" CurrencyCode="NUC" RateOfExchange="1.328146"/>
+          <Endorsements>
+            <Text>NON ENDO/ REF</Text>
+          </Endorsements>
+          <EquivFare Amount="16770" CurrencyCode="RUB"/>
+          <Taxes TotalAmount="4149">
+            <Tax Amount="4149" TaxCode="UB" TaxName="PASSENGER SERVICE CHARGE DEPAR" TicketingTaxCode="UB"/>
+          </Taxes>
+          <TotalFare Amount="20919" CurrencyCode="RUB"/>
           <Warnings>
             <Warning ShortText="MIXED PASSENGER TYPES - VERIFY RESTRICTIONS"/>
           </Warnings>
         </ItinTotalFare>
         <PassengerTypeQuantity Code="INF" Quantity="1"/>
         <PTC_FareBreakdown>
-          <BrandedFareInformation>
-            <BrandCode>EC</BrandCode>
-            <BrandName>ECONOMY CLASSIC</BrandName>
-            <ProgramCode>CFF1S</ProgramCode>
-            <ProgramName>NEW BRANDS AFL</ProgramName>
-          </BrandedFareInformation>
           <Cabin>Y</Cabin>
-          <FareBasis Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <FareBasis Code="YLWF2AUIN" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
         </PTC_FareBreakdown>
         <PTC_FareBreakdown>
           <BrandedFareInformation>
-            <BrandCode>EC</BrandCode>
-            <BrandName>ECONOMY CLASSIC</BrandName>
-            <ProgramCode>CFF1S</ProgramCode>
-            <ProgramName>NEW BRANDS AFL</ProgramName>
+            <BrandCode>YF</BrandCode>
+            <BrandName>ECONOMY CHOICE PLUS</BrandName>
+            <ProgramCode>CFFEY</ProgramCode>
+            <ProgramName>17AUD BP30</ProgramName>
           </BrandedFareInformation>
           <Cabin>Y</Cabin>
-          <FareBasis Code="YCLR/IN00" FareAmount="0" FarePassengerType="INF" FareType="P" FilingCarrier="SU" GlobalInd="EH" Market="MOWAER" TicketDesignator="IN00"/>
-          <FreeBaggageAllowance>PC001</FreeBaggageAllowance>
+          <FareBasis Code="YLWF2AUIN" FareAmount="153.10" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+        </PTC_FareBreakdown>
+        <PTC_FareBreakdown>
+          <Cabin>Y</Cabin>
+          <FareBasis Code="YLXF2AUIN" FilingCarrier="EY"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
+        </PTC_FareBreakdown>
+        <PTC_FareBreakdown>
+          <BrandedFareInformation>
+            <BrandCode>YF</BrandCode>
+            <BrandName>ECONOMY CHOICE PLUS</BrandName>
+            <ProgramCode>CFFEY</ProgramCode>
+            <ProgramName>17AUD BP30</ProgramName>
+          </BrandedFareInformation>
+          <Cabin>Y</Cabin>
+          <FareBasis Code="YLXF2AUIN" FareAmount="150.47" FarePassengerType="INF" FareType="P" FilingCarrier="EY" GlobalInd="EH" Market="SYDLON"/>
+          <FreeBaggageAllowance>KG010</FreeBaggageAllowance>
         </PTC_FareBreakdown>
       </AirItineraryPricingInfo>
     </PricedItinerary>

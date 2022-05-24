@@ -27,7 +27,7 @@ title: Помещение бронирований в очереди
 
 Для отправки открытого в текущей сессии бронирования в определенную очередь используется сервис [QueuePlaceLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/queue/place_queue_message).
 
-В запросе к сервису QueuePlaceLLSRQ необходимо указать:
+В запросе к сервису [QueuePlaceLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/queue/place_queue_message) необходимо указать:
 - ```/QueuePlaceRQ/QueueInfo/QueueIdentifier/@Number``` — номер очереди
 
 Дополнительно можно указать:

@@ -17,7 +17,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.f99435cde5efa46f15f527928db5713540168e4852b93abb573cbb0aa533a25f.css" integrity="sha256-&#43;ZQ1zeXvpG8V9SeSjbVxNUAWjkhSuTq7Vzy7CqUzol8=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/en.search.min.c5a0a076512a10819de7bd698657f6350ee586ac25ab709380764ae0bbc9e9fd.js" integrity="sha256-xaCgdlEqEIGd571phlf2NQ7lhqwlq3CTgHZK4LvJ6f0=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/en.search.min.57e2694763aafc009bb20aae785fbba28168a67ae037759f6cc17a49ad6b4148.js" integrity="sha256-V&#43;JpR2Oq/ACbsgqueF&#43;7ooFopnrgN3WfbMF6Sa1rQUg=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -301,14 +301,22 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li><code>/OriginLocation/@LocationCode</code> —  код пункта отправления</li>
 </ul>
-<details open><summary>Пример (3 места на рейсе SU1138 из Шереметьево в Сочи 15 марта в Y классе)</summary>
+<details open><summary>Пример (перелет LON-SYD с пересадкой)</summary>
   <div class="markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;2019-03-15T06:50&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;1138&#34;</span> <span style="color:#00c">NumberInParty=</span><span style="background-color:#fff0f0">&#34;3&#34;</span> <span style="color:#00c">ResBookDesigCode=</span><span style="background-color:#fff0f0">&#34;Y&#34;</span> <span style="color:#00c">Status=</span><span style="background-color:#fff0f0">&#34;NN&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AER&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;MarketingAirline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;1138&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;MarriageGrp&gt;</span>O<span style="color:#070">&lt;/MarriageGrp&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;SVO&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/FlightSegment&gt;</span>
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;OriginDestinationInformation&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;2022-12-01T00:00:00&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;2463&#34;</span> <span style="color:#00c">NumberInParty=</span><span style="background-color:#fff0f0">&#34;3&#34;</span> <span style="color:#00c">ResBookDesigCode=</span><span style="background-color:#fff0f0">&#34;Y&#34;</span> <span style="color:#00c">Status=</span><span style="background-color:#fff0f0">&#34;NN&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AUH&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarketingAirline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;EY&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;2463&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarriageGrp&gt;</span>O<span style="color:#070">&lt;/MarriageGrp&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;SYD&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/FlightSegment&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;2022-12-02T00:00:00&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;25&#34;</span> <span style="color:#00c">NumberInParty=</span><span style="background-color:#fff0f0">&#34;3&#34;</span> <span style="color:#00c">ResBookDesigCode=</span><span style="background-color:#fff0f0">&#34;Y&#34;</span> <span style="color:#00c">Status=</span><span style="background-color:#fff0f0">&#34;NN&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;LHR&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarketingAirline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;EY&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;25&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarriageGrp&gt;</span>I<span style="color:#070">&lt;/MarriageGrp&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AUH&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/FlightSegment&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/OriginDestinationInformation&gt;</span>
 </span></span></code></pre></div>
   </div>
 </details>

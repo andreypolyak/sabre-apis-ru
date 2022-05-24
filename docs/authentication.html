@@ -19,7 +19,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.f99435cde5efa46f15f527928db5713540168e4852b93abb573cbb0aa533a25f.css" integrity="sha256-&#43;ZQ1zeXvpG8V9SeSjbVxNUAWjkhSuTq7Vzy7CqUzol8=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/en.search.min.c5a0a076512a10819de7bd698657f6350ee586ac25ab709380764ae0bbc9e9fd.js" integrity="sha256-xaCgdlEqEIGd571phlf2NQ7lhqwlq3CTgHZK4LvJ6f0=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/en.search.min.57e2694763aafc009bb20aae785fbba28168a67ae037759f6cc17a49ad6b4148.js" integrity="sha256-V&#43;JpR2Oq/ACbsgqueF&#43;7ooFopnrgN3WfbMF6Sa1rQUg=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -612,8 +612,8 @@ END OF DISPLAY
   Использование сессий, созданных в Sabre Red (OIATH)
   <a class="anchor" href="#%d0%b8%d1%81%d0%bf%d0%be%d0%bb%d1%8c%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d1%81%d0%b5%d1%81%d1%81%d0%b8%d0%b9-%d1%81%d0%be%d0%b7%d0%b4%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d0%b2-sabre-red-oiath">#</a>
 </h3>
-<p>Во время процесса разработки может быть полезно использование <em>общего состояния</em>, как при работе через Sabre APIs, так и при работе в терминале Sabre Red. Под <em>общим состоянием</em> подразумевается текущие несохраненные данные в бронировании, очередях и других объектах системы. Например, использование <em>общего состояния</em> позволяет добавить в бронирование сегменты при помощи сервиса EnhancedAirBookRQ без его сохранения, а затем увидеть эти сегменты в терминале Sabre Red, отправив команду <code>*A</code>.</p>
-<p>Для этого необходимо в терминале Sabre Red отправить команду <code>OIATH</code> и получить в виде ответа токен сессии. Данный токен можно использовать при отправке запросов так же, как и токен созданный при помощи сервиса SessionCreateRQ.</p>
+<p>Во время процесса разработки может быть полезно использование <em>общего состояния</em>, как при работе через Sabre APIs, так и при работе в терминале Sabre Red. Под <em>общим состоянием</em> подразумевается текущие несохраненные данные в бронировании, очередях и других объектах системы. Например, использование <em>общего состояния</em> позволяет добавить в бронирование сегменты при помощи сервиса <a href="https://developer.sabre.com/docs/soap_apis/air/book/orchestrated_air_booking">EnhancedAirBookRQ</a> без его сохранения, а затем увидеть эти сегменты в терминале Sabre Red, отправив команду <code>*A</code>.</p>
+<p>Для этого необходимо в терминале Sabre Red отправить команду <code>OIATH</code> и получить в виде ответа токен сессии. Данный токен можно использовать при отправке запросов так же, как и токен созданный при помощи сервиса <a href="https://developer.sabre.com/docs/soap_apis/session_management/create_session">SessionCreateRQ</a>.</p>
 <blockquote class="book-hint warning">
   Обратите внимание на то, что идентификатор сессии будет только та часть ответа, которая находится после <code>ATH:</code> в начале ответа и перед <code>!X!E2E-1</code> в конце ответа (<code>X</code> — любая цифра).
 </blockquote>
@@ -657,7 +657,7 @@ SESSION ID COPIED TO CLIPBOARD
   <a class="anchor" href="#%d1%81%d0%be%d0%b7%d0%b4%d0%b0%d0%bd%d0%b8%d0%b5-%d1%82%d0%be%d0%ba%d0%b5%d0%bd%d0%b0-%d0%b4%d0%be%d1%81%d1%82%d1%83%d0%bf%d0%b0-tokencreaterq">#</a>
 </h3>
 <p>Для создания токена доступа используется сервис <a href="https://developer.sabre.com/docs/read/soap_apis/session_management/create_access_token">TokenCreateRQ</a>.</p>
-<p>Ответ будет содержать токен доступа <code>wsse:BinarySecurityToken</code>, который необходимо использовать при отправке запросов к Bargain Finder Max.</p>
+<p>Ответ будет содержать токен доступа <code>wsse:BinarySecurityToken</code>, который необходимо использовать при отправке других запросов.</p>
 <details ><summary>Пример запроса</summary>
   <div class="markdown-inner">
     <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SOAP-ENV:Envelope</span> <span style="color:#00c">xmlns:SOAP-ENV=</span><span style="background-color:#fff0f0">&#34;http://schemas.xmlsoap.org/soap/envelope/&#34;</span><span style="color:#070">&gt;</span>

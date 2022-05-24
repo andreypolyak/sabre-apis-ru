@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Операция поиска перелетов является одной из самых критичных операций с точки зрения времени ожидания ответа. Увеличение времени ожидания поисковых результатов может приводить к серьезному снижению показателя конверсии. Среднее время ожидания ответа на поисковый запрос (One Way или Round Trip) Sabre составляет 2-3 секунды. Если у вашего решения это время выше, то рекомендуется ознакомиться c перечисленными ниже рекомендациями:
- Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: Bargain Finder Max, Bargain Finder Alternate Date.">
+ Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: BargainFinderMaxRQ, BargainFinderMax_ADRQ.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Оптимизация времени поиска" />
 <meta property="og:description" content="Операция поиска перелетов является одной из самых критичных операций с точки зрения времени ожидания ответа. Увеличение времени ожидания поисковых результатов может приводить к серьезному снижению показателя конверсии. Среднее время ожидания ответа на поисковый запрос (One Way или Round Trip) Sabre составляет 2-3 секунды. Если у вашего решения это время выше, то рекомендуется ознакомиться c перечисленными ниже рекомендациями:
- Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: Bargain Finder Max, Bargain Finder Alternate Date." />
+ Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: BargainFinderMaxRQ, BargainFinderMax_ADRQ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andreypolyak.github.io/sabre-apis-ru/shop-optimization.html" /><meta property="article:section" content="" />
 
@@ -19,7 +19,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.f99435cde5efa46f15f527928db5713540168e4852b93abb573cbb0aa533a25f.css" integrity="sha256-&#43;ZQ1zeXvpG8V9SeSjbVxNUAWjkhSuTq7Vzy7CqUzol8=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/en.search.min.c5a0a076512a10819de7bd698657f6350ee586ac25ab709380764ae0bbc9e9fd.js" integrity="sha256-xaCgdlEqEIGd571phlf2NQ7lhqwlq3CTgHZK4LvJ6f0=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/en.search.min.57e2694763aafc009bb20aae785fbba28168a67ae037759f6cc17a49ad6b4148.js" integrity="sha256-V&#43;JpR2Oq/ACbsgqueF&#43;7ooFopnrgN3WfbMF6Sa1rQUg=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -214,7 +214,7 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><p>Операция поиска перелетов является одной из самых критичных операций с точки зрения времени ожидания ответа. Увеличение времени ожидания поисковых результатов может приводить к серьезному снижению показателя конверсии. Среднее время ожидания ответа на поисковый запрос (One Way или Round Trip) Sabre составляет 2-3 секунды. Если у вашего решения это время выше, то рекомендуется ознакомиться c перечисленными ниже рекомендациями:</p>
 <ol>
-<li>Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max">Bargain Finder Max</a>, <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad">Bargain Finder Alternate Date</a>.</li>
+<li>Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max">BargainFinderMaxRQ</a>, <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad">BargainFinderMax_ADRQ</a>.</li>
 <li>Используйте токены вместо сессий для аутентификации в Sabre. За счет долгого времени жизни и возможности отправки параллельных запросов через один токен пропадает необходимость создавать токен перед каждым запросом. Рекомендуется создавать один токен раз в неделю или при инвалидации предыдущего и использовать его для всех всех поисковых запросов. Подробнее см. <a href="authentication.html">Аутентификация</a>.</li>
 <li>Используйте в качестве адреса для отправки запросов <code>https://webservices.havail.sabre.com</code>.</li>
 <li>Используйте компрессию данных на уровне HTTP протокола для всех отправляемых запросов. Для этого необходимо указать в HTTP-заголовках запросов параметр <code>Accept-Encoding</code> со значением <code>gzip, deflate</code>.</li>
@@ -222,7 +222,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Используйте <a href="https://files.developer.sabre.com/doc/developmentpatterns/Sabre-APIs-Persistent-Connections.pdf">постоянное HTTP соедиенение</a> (HTTP persistent connection).</li>
 <li>Не отправляйте несколько поисковых запросов в Sabre или другие системы для одного запроса пользователя. Если это невозможно, то не ждите выполнения всех запросов, а показывайте пользователю данные по мере их появления.</li>
 <li>Запрашивайте меньше <a href="shop.html#%d0%ba%d0%be%d0%bb%d0%b8%d1%87%d0%b5%d1%81%d1%82%d0%b2%d0%be-%d1%80%d0%b5%d0%ba%d0%be%d0%bc%d0%b5%d0%bd%d0%b4%d0%b0%d1%86%d0%b8%d0%b9">рекомендаций</a>, если это некритично для результатов поиска.</li>
-<li>Используйте <a href="shop.html#%d0%b2%d0%b8%d0%b4-%d0%be%d1%82%d0%b2%d0%b5%d1%82%d0%b0">группированный вид ответа</a> (Grouped Itinerary Response, GIR) в сервисах BargainFinderMaxRQ и BargainFinderMax_ADRQ.</li>
+<li>Используйте <a href="shop.html#%d0%b2%d0%b8%d0%b4-%d0%be%d1%82%d0%b2%d0%b5%d1%82%d0%b0">группированный вид ответа</a> (Grouped Itinerary Response, GIR) в сервисах <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max">BargainFinderMaxRQ</a> и <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad">BargainFinderMax_ADRQ</a>.</li>
 <li>Не используйте функции, которые увеличивают размер ответа и, как следствие, время ответа. Например, функции для получения:
 <ul>
 <li><a href="shop.html#%d1%80%d0%b0%d1%81%d1%87%d0%b5%d1%82-%d1%81%d1%82%d0%be%d0%b8%d0%bc%d0%be%d1%81%d1%82%d0%b8-%d0%bf%d0%be-%d0%b2%d1%81%d0%b5%d0%bc-%d0%b4%d0%be%d1%81%d1%82%d1%83%d0%bf%d0%bd%d1%8b%d0%bc-%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b0%d0%bc">расчетов стоимости по всем доступным брендам</a> (Multiple Branded Fares) — в качестве альтернативы может быть рассмотрен алгоритм выбора бренда в отдельном запросе после выбора перелета в результатах поиска. Подробнее см. <a href="brands.html">Брендированные тарифы</a>.</li>

@@ -212,15 +212,15 @@ title: Настройки PCC
 
 #### Описание
 
-Настройка Multi-Ticket Shopping and Pricing позволяет производить [поиск перелетов с оформлением на нескольких билетах](shop.html#оформление-на-нескольких-билетах) в сервисе Bargain Finder Max.
+Настройка Multi-Ticket Shopping and Pricing позволяет производить [поиск перелетов с оформлением на нескольких билетах](shop.html#оформление-на-нескольких-билетах) в сервисе [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max).
 
 #### Если настройка включена
 
-В результатах поиска в сервисе Bargain Finder Max могут присутствовать рекомендации с оформлением на нескольких билетах.
+В результатах поиска в сервисе [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) могут присутствовать рекомендации с оформлением на нескольких билетах.
 
 #### Если настройка отключена
 
-В результатах поиска в сервисе Bargain Finder Max могут присутствовать рекомендации только с оформлением на одном билете.
+В результатах поиска в сервисе [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) могут присутствовать рекомендации только с оформлением на одном билете.
 
 #### Включение и отключение
 
@@ -271,7 +271,7 @@ title: Настройки PCC
 
 #### Если настройка включена
 
-При попытке оформить билет, стоимость которого отличается от стоимости сохраненной в PQ, будет вызвано предупреждение. Сервис для оформления билетов AirTicketRQ  позволяет обрабатывать такие предупреждения, см. [Оформление билетов и EMD](issue-ticket.html#пост-обработка).
+При попытке оформить билет, стоимость которого отличается от стоимости сохраненной в PQ, будет вызвано предупреждение. Сервис для оформления билетов [AirTicketRQ](https://developer.sabre.com/docs/soap_apis/air/fulfill/enhanced_air_ticket)  позволяет обрабатывать такие предупреждения, см. [Оформление билетов и EMD](issue-ticket.html#пост-обработка).
 
 #### Если настройка отключена
 
@@ -321,7 +321,7 @@ OSI сообщение должно быть отправлено тому пе�
   <PersonName NameNumber="2.1"/>
   <Text>PSPT123456/DOB14JAN18</Text>
   <VendorPrefs>
-    <Airline Code="SU"/>
+    <Airline Code="EY"/>
   </VendorPrefs>
 </Service>
 ```
@@ -451,7 +451,7 @@ OSI сообщение должно быть отправлено тому пе�
 
 #### Если настройка включена
 
-При оформлении билетов не производится перерасчет стоимости PQ. В случае, если при оформлении билетов, использовался PQ, созданный не в текущий день, а ранее, будет вызвано предупреждение. Сервис для оформления билетов AirTicketRQ позволяет обрабатывать такие предупреждения, см. [Оформление билетов и EMD](issue-ticket.html#пост-обработка).
+При оформлении билетов не производится перерасчет стоимости PQ. В случае, если при оформлении билетов, использовался PQ, созданный не в текущий день, а ранее, будет вызвано предупреждение. Сервис для оформления билетов [AirTicketRQ](https://developer.sabre.com/docs/soap_apis/air/fulfill/enhanced_air_ticket) позволяет обрабатывать такие предупреждения, см. [Оформление билетов и EMD](issue-ticket.html#пост-обработка).
 
 #### Если настройка отключена
 
@@ -569,7 +569,7 @@ OSI сообщение должно быть отправлено тому пе�
 - предупреждение о наличии дополнительных ограничений в 15 категории правил тарифов в неструктурированном (текстовом) виде
 - выбор GSA (General Sales Agent) в качестве валидирующего перевозчика в случае невозможности оформления билетов другими перевозчиками на выбранном стоке (по умолчанию BSP)
 - выбор нейтрального валидирующего перевозчика в качестве валидирующего перевозчика в случае невозможности оформления билетов другими перевозчиками на выбранном стоке (по умолчанию BSP)
-- возможность управлять выбором валидирующего перевозчика в запросе к сервису BargainFinderMaxRQ (см. [Поиск перелетов по заданным датам](shop.html)).
+- возможность управлять выбором валидирующего перевозчика в запросе к сервису [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) (см. [Поиск перелетов по заданным датам](shop.html)).
 
 По умолчанию настройка поддерживает работу только на стоке BSP. Для того чтобы добавить поддержку других стоков, необходимо активировать возможность работы со множественными стоками во всех iPCC и PCC, в которых будет производиться поиск перелетов, расчет стоимости и оформление билетов. Для этого для каждого стока (включая BSP) необходимо последовательно отправить в каждом PCC команду ```W/VMSM¥A[код стока]```. Для деактивации стока необходимо отправить команду ```W/VMSM¥D[код стока]```. Для просмотра всех активированных стоков необходимо отправить команду ```W/VMSM¥*```.
 
@@ -609,7 +609,7 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="5F"/>
       <Carrier code="5N"/>
       <Carrier code="6H"/>
-      <Carrier code="7C"/>
+      <Carrier code="7N"/>
       <Carrier code="7R"/>
       <Carrier code="8Q"/>
       <Carrier code="9U"/>
@@ -622,7 +622,6 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="AF"/>
       <Carrier code="AH"/>
       <Carrier code="AI"/>
-      <Carrier code="AM"/>
       <Carrier code="AR"/>
       <Carrier code="AT"/>
       <Carrier code="AY"/>
@@ -656,7 +655,6 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="GA"/>
       <Carrier code="GF"/>
       <Carrier code="GP"/>
-      <Carrier code="GQ"/>
       <Carrier code="HA"/>
       <Carrier code="HM"/>
       <Carrier code="HO"/>
@@ -666,6 +664,7 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="HY"/>
       <Carrier code="IB"/>
       <Carrier code="IG"/>
+      <Carrier code="IY"/>
       <Carrier code="IZ"/>
       <Carrier code="J2"/>
       <Carrier code="JD"/>
@@ -689,12 +688,16 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="MF"/>
       <Carrier code="MH"/>
       <Carrier code="MK"/>
+      <Carrier code="MR"/>
       <Carrier code="MS"/>
       <Carrier code="MU"/>
+      <Carrier code="N4"/>
+      <Carrier code="NN"/>
       <Carrier code="NT"/>
       <Carrier code="NX"/>
       <Carrier code="NZ"/>
       <Carrier code="O6"/>
+      <Carrier code="OA"/>
       <Carrier code="OK"/>
       <Carrier code="OM"/>
       <Carrier code="OS"/>
@@ -703,6 +706,7 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="OZ"/>
       <Carrier code="PC"/>
       <Carrier code="PG"/>
+      <Carrier code="PK"/>
       <Carrier code="PR"/>
       <Carrier code="PS"/>
       <Carrier code="QF"/>
@@ -728,8 +732,10 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="TU"/>
       <Carrier code="TX"/>
       <Carrier code="U6"/>
+      <Carrier code="U9"/>
       <Carrier code="UA"/>
       <Carrier code="UL"/>
+      <Carrier code="UN"/>
       <Carrier code="UT"/>
       <Carrier code="UX"/>
       <Carrier code="VN"/>
@@ -739,6 +745,7 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="WY"/>
       <Carrier code="YE"/>
       <Carrier code="YM"/>
+      <Carrier code="Z6"/>
       <Carrier code="ZI"/>
     </ValidatingCxrs>
     <GeneralSalesAgents carrierName="2I">
@@ -748,23 +755,29 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="GP"/>
       <Carrier code="HR"/>
     </GeneralSalesAgents>
+    <GeneralSalesAgents carrierName="2K">
+      <Carrier code="HR"/>
+    </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="3K">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="3M">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
+    <GeneralSalesAgents carrierName="3P">
+      <Carrier code="HR"/>
+    </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="4M">
       <Carrier code="LA"/>
+    </GeneralSalesAgents>
+    <GeneralSalesAgents carrierName="4Q">
+      <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="4U">
       <Carrier code="LH"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="5Q">
       <Carrier code="HR"/>
-    </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="5U">
-      <Carrier code="GP"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="5W">
       <Carrier code="HR"/>
@@ -786,9 +799,6 @@ OSI сообщение должно быть отправлено тому пе�
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="9K">
       <Carrier code="HR"/>
-    </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="A1">
-      <Carrier code="GP"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="A5">
       <Carrier code="AF"/>
@@ -823,9 +833,6 @@ OSI сообщение должно быть отправлено тому пе�
     <GeneralSalesAgents carrierName="CN">
       <Carrier code="HU"/>
     </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="CY">
-      <Carrier code="S7"/>
-    </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="D6">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
@@ -853,13 +860,13 @@ OSI сообщение должно быть отправлено тому пе�
     <GeneralSalesAgents carrierName="GK">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
+    <GeneralSalesAgents carrierName="GQ">
+      <Carrier code="HR"/>
+    </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="H1">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="H2">
-      <Carrier code="HR"/>
-    </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="H9">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="HQ">
@@ -868,8 +875,8 @@ OSI сообщение должно быть отправлено тому пе�
     <GeneralSalesAgents carrierName="HZ">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="ID">
-      <Carrier code="GP"/>
+    <GeneralSalesAgents carrierName="I9">
+      <Carrier code="IG"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="IE">
       <Carrier code="HR"/>
@@ -910,12 +917,11 @@ OSI сообщение должно быть отправлено тому пе�
     <GeneralSalesAgents carrierName="LM">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="LQ">
+    <GeneralSalesAgents carrierName="LR">
       <Carrier code="HR"/>
-      <Carrier code="W2"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="ME">
-      <Carrier code="GP"/>
+      <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="MI">
       <Carrier code="SQ"/>
@@ -931,9 +937,6 @@ OSI сообщение должно быть отправлено тому пе�
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="NU">
       <Carrier code="JL"/>
-    </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="O2">
-      <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="OD">
       <Carrier code="GP"/>
@@ -968,22 +971,20 @@ OSI сообщение должно быть отправлено тому пе�
     <GeneralSalesAgents carrierName="R2">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="RA">
-      <Carrier code="GP"/>
-    </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="RQ">
-      <Carrier code="GP"/>
       <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="S2">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="S4">
-      <Carrier code="GP"/>
+    <GeneralSalesAgents carrierName="S3">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="SE">
-      <Carrier code="GP"/>
+    <GeneralSalesAgents carrierName="S4">
+      <Carrier code="HR"/>
+    </GeneralSalesAgents>
+    <GeneralSalesAgents carrierName="SP">
+      <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="SS">
       <Carrier code="HR"/>
@@ -1021,6 +1022,9 @@ OSI сообщение должно быть отправлено тому пе�
     <GeneralSalesAgents carrierName="UU">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
+    <GeneralSalesAgents carrierName="V0">
+      <Carrier code="HR"/>
+    </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="V2">
       <Carrier code="HR"/>
     </GeneralSalesAgents>
@@ -1028,7 +1032,6 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="V7">
-      <Carrier code="GP"/>
       <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="VA">
@@ -1054,9 +1057,6 @@ OSI сообщение должно быть отправлено тому пе�
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="WF">
       <Carrier code="SK"/>
-    </GeneralSalesAgents>
-    <GeneralSalesAgents carrierName="WG">
-      <Carrier code="HR"/>
     </GeneralSalesAgents>
     <GeneralSalesAgents carrierName="WM">
       <Carrier code="HR"/>
@@ -1093,7 +1093,6 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="HR"/>
     </GeneralSalesAgents>
     <NeutralValidatingCxrs>
-      <Carrier code="GP"/>
       <Carrier code="HR"/>
     </NeutralValidatingCxrs>
   </ValidatingCxrDisplay>
@@ -1105,7 +1104,6 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="GH"/>
       <Carrier code="HR"/>
       <Carrier code="UT"/>
-      <Carrier code="Z9"/>
     </ValidatingCxrs>
     <ValidatingCxrs ticketType="ETKTPREF">
       <Carrier code="5N"/>
@@ -1143,7 +1141,6 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="JJ"/>
       <Carrier code="S7"/>
       <Carrier code="U6"/>
-      <Carrier code="UT"/>
       <Carrier code="VA"/>
       <Carrier code="VN"/>
     </ValidatingCxrs>
@@ -1161,6 +1158,7 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="3K"/>
       <Carrier code="4N"/>
       <Carrier code="7M"/>
+      <Carrier code="8P"/>
       <Carrier code="BH"/>
       <Carrier code="BL"/>
       <Carrier code="E0"/>
@@ -1168,7 +1166,6 @@ OSI сообщение должно быть отправлено тому пе�
       <Carrier code="GK"/>
       <Carrier code="JF"/>
       <Carrier code="JQ"/>
-      <Carrier code="MO"/>
       <Carrier code="NK"/>
       <Carrier code="O1"/>
       <Carrier code="Q0"/>

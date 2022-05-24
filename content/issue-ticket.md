@@ -20,7 +20,7 @@ aliases:
 - что дополнительные услуги подтверждены (статус ```HD``` в качестве значения атрибута ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ReservationItems/Item/Ancillaries/AncillaryService/@ActionCode```) — в случае оформления EMD
 
 Кроме того, при оформлении билетов необходимо проверить наличие PQ (Price Quote, сохраненный расчет), а также то, что они подходит для выписки билетов:
-1. **Проверка наличия PQ**. Каждому PQ в бронировании соответствует один элемент ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ItineraryPricing/PriceQuote``` в ответе на запрос TravelItineraryReadRQ. Номер PQ будет присутствовать в качестве значения атрибута ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ItineraryPricing/PriceQuote/PricedItinerary/@RPH```.
+1. **Проверка наличия PQ**. Каждому PQ в бронировании соответствует один элемент ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ItineraryPricing/PriceQuote``` в ответе на запрос [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary). Номер PQ будет присутствовать в качестве значения атрибута ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ItineraryPricing/PriceQuote/PricedItinerary/@RPH```.
 2. **Проверка статуса PQ**. PQ может иметь один из двух статусов (значение атрибута ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ItineraryPricing/PriceQuote/MiscInformation/SignatureLine/@Status```):
     - ```ACTIVE``` — активный PQ, который можно использовать для оформления билетов
     - ```HISTORY``` — удаленный PQ, который нельзя использовать для оформления билетов
@@ -1094,7 +1094,7 @@ aliases:
 
 ### Оформление билетов и EMD
 
-Сервис AirTicketRQ позволяет одну или несколько инструкций по оформлению билетов или EMD в последовательно расположенных элементах ```/AirTicketRQ/Ticketing```. Инструкции будут выполнены последовательно: одна за другой. В случае, если в PCC, в котором производится оформление билетов или EMD, не включены настройки [Automatically End Transaction at Ticketing](tjr-settings.html#automatically-end-transaction-at-ticketing-автоматическое-сохранение-бронирований-при-оформлении-билетов) или [Automatically End Transaction and Redisplay the PNR at Ticketing](tjr-settings.html#automatically-end-transaction-and-redisplay-the-pnr-at-ticketing-автоматическое-сохранение-бронирований-и-повторное-их-открытие-при-оформлении-билетов), то все инструкции будут выполнены без промежуточного сохранения бронирования, а бронирование может быть сохранено только при [пост-обработке](/issue-ticket.html#пост-обработка). Если одна из указанных настроек включена, то после выполнения каждой инструкции оформления билетов или EMD бронирование будет сохранено и вновь открыто.
+Сервис [AirTicketRQ](https://developer.sabre.com/docs/soap_apis/air/fulfill/enhanced_air_ticket) позволяет одну или несколько инструкций по оформлению билетов или EMD в последовательно расположенных элементах ```/AirTicketRQ/Ticketing```. Инструкции будут выполнены последовательно: одна за другой. В случае, если в PCC, в котором производится оформление билетов или EMD, не включены настройки [Automatically End Transaction at Ticketing](tjr-settings.html#automatically-end-transaction-at-ticketing-автоматическое-сохранение-бронирований-при-оформлении-билетов) или [Automatically End Transaction and Redisplay the PNR at Ticketing](tjr-settings.html#automatically-end-transaction-and-redisplay-the-pnr-at-ticketing-автоматическое-сохранение-бронирований-и-повторное-их-открытие-при-оформлении-билетов), то все инструкции будут выполнены без промежуточного сохранения бронирования, а бронирование может быть сохранено только при [пост-обработке](/issue-ticket.html#пост-обработка). Если одна из указанных настроек включена, то после выполнения каждой инструкции оформления билетов или EMD бронирование будет сохранено и вновь открыто.
 
 В одном запросе в разных инструкциях могут быть оформлены одновременно и билеты и EMD.
 
@@ -1200,7 +1200,7 @@ aliases:
 - форму оплаты (см. выше)
 - один или несколько номеров дополнительных услуг, для которых необходимо оформить EMD (```/AirTicketRQ/Ticketing/MiscQualifiers/AirExtras/@Number``` для одной дополнительной услуги, если дополнительных услуг несколько, то в атрибуте ```/@Number``` задается номер первой дополнительной услуги, а в атрибуте ```/@EndNumber``` — номер последней дополнительной услуги).
 
-Номер дополнительной услуги в бронировании может быть получен в атрибуте ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ReservationItems/Item/Ancillaries/AncillaryService/@SequenceNumber``` из ответа на запрос TravelItineraryReadRQ.
+Номер дополнительной услуги в бронировании может быть получен в атрибуте ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ReservationItems/Item/Ancillaries/AncillaryService/@SequenceNumber``` из ответа на запрос [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary).
 
 ### Проверка минимального стыковочного времени
 

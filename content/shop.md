@@ -25,17 +25,17 @@ aliases:
 - ```OriginDestinationInformation/OriginLocation/@LocationCode``` — код города или аэропорта вылета
 - ```OriginDestinationInformation/DestinationLocation/@LocationCode``` — код города или аэропорта прилета
 
-{{< details title="Поиск перелетов по маршруту Москва-Сочи-Москва" open=true >}}
+{{< details title="Поиск перелетов по маршруту Сидней-Лондон-Сидней" open=true >}}
 ```XML
 <OriginDestinationInformation RPH="1">
-  <DepartureDateTime>2020-09-01T11:00:00</DepartureDateTime>
-  <OriginLocation LocationCode="MOW"/>
-  <DestinationLocation LocationCode="AER"/>
+  <DepartureDateTime>2022-12-01T11:00:00</DepartureDateTime>
+  <OriginLocation LocationCode="SYD"/>
+  <DestinationLocation LocationCode="LON"/>
 </OriginDestinationInformation>
 <OriginDestinationInformation RPH="2">
-  <DepartureDateTime>2020-09-08T11:00:00</DepartureDateTime>
-  <OriginLocation LocationCode="AER"/>
-  <DestinationLocation LocationCode="MOW"/>
+  <DepartureDateTime>2022-09-08T11:00:00</DepartureDateTime>
+  <OriginLocation LocationCode="LON"/>
+  <DestinationLocation LocationCode="SYD"/>
 </OriginDestinationInformation>
 ```
 {{< /details >}}
@@ -50,7 +50,7 @@ aliases:
 
 #### Альтернативные аэропорты
 
-Для поиска перелетов с альтернативными аэропортами в Bargain Finder Max можно или указать альтернативные коды аэропортов и городов в запросе или указать радиус для автоматического выбора альтернативных аэропортов:
+Для поиска перелетов с альтернативными аэропортами в [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) можно или указать альтернативные коды аэропортов и городов в запросе или указать радиус для автоматического выбора альтернативных аэропортов:
 - ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/SisterDestinationLocation/@LocationCode``` — альтернативные коды городов или аэропортов вылета (не более 4)
 - ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/SisterOriginLocation/@LocationCode``` — альтернативные коды городов или аэропортов прилета (не более 4)
 - ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/SisterDestinationMileage/@Number``` — максимальное расстояние в милях для автоматического поиска альтернативных аэропортов вылета (не более ```100```)
@@ -61,7 +61,7 @@ aliases:
 {{< details title="Поиск перелетов с альтернативными аэропортами" open=true >}}
 ```XML
 <OriginDestinationInformation RPH="1">
-  <DepartureDateTime>2020-09-01T11:00:00</DepartureDateTime>
+  <DepartureDateTime>2022-09-01T11:00:00</DepartureDateTime>
   <OriginLocation LocationCode="BER"/>
   <DestinationLocation LocationCode="PAR"/>
   <TPA_Extensions>
@@ -77,7 +77,7 @@ aliases:
 {{< details title="Поиск перелетов с альтернативными аэропортами" open=true >}}
 ```XML
 <OriginDestinationInformation RPH="1">
-  <DepartureDateTime>2020-09-01T11:00:00</DepartureDateTime>
+  <DepartureDateTime>2022-09-01T11:00:00</DepartureDateTime>
   <OriginLocation LocationCode="BER"/>
   <DestinationLocation LocationCode="PAR"/>
   <TPA_Extensions>
@@ -119,24 +119,24 @@ aliases:
 {{< details title="Поиск перелетов с известными рейсами на втором плече" open=true >}}
 ```XML
 <OriginDestinationInformation RPH="1">
-  <DepartureDateTime>2020-09-01T11:00:00</DepartureDateTime>
-  <OriginLocation LocationCode="LED"/>
-  <DestinationLocation LocationCode="AER"/>
+  <DepartureDateTime>2022-12-01T11:00:00</DepartureDateTime>
+  <OriginLocation LocationCode="SYD"/>
+  <DestinationLocation LocationCode="LON"/>
 </OriginDestinationInformation>
 <OriginDestinationInformation RPH="2">
-  <DepartureDateTime>2020-09-08T06:50:00</DepartureDateTime>
-  <OriginLocation LocationCode="AER"/>
-  <DestinationLocation LocationCode="LED"/>
+  <DepartureDateTime>2022-12-08T08:30:00</DepartureDateTime>
+  <OriginLocation LocationCode="LON"/>
+  <DestinationLocation LocationCode="SYD"/>
     <TPA_Extensions>
-      <Flight ArrivalDateTime="2020-09-08T09:20:00" DepartureDateTime="2020-09-08T06:50:00" Number="1141" Type="A">
-        <OriginLocation LocationCode="AER"/>
-        <DestinationLocation LocationCode="SVO"/>
-        <Airline Marketing="SU" Operating="SU"/>
+      <Flight ArrivalDateTime="2022-12-08T19:20:00" DepartureDateTime="2022-12-08T08:30:00" Number="12" Type="A">
+        <OriginLocation LocationCode="LHR"/>
+        <DestinationLocation LocationCode="AUH"/>
+        <Airline Marketing="EY" Operating="EY"/>
       </Flight>
-      <Flight ArrivalDateTime="2020-09-08T12:20:00" DepartureDateTime="2020-09-08T10:55:00" Number="14" Type="A">
-        <OriginLocation LocationCode="SVO"/>
-        <DestinationLocation LocationCode="LED"/>
-        <Airline Marketing="SU" Operating="SU"/>
+      <Flight ArrivalDateTime="2022-12-09T17:55:00" DepartureDateTime="2022-12-08T22:10:00" Number="464" Type="A">
+        <OriginLocation LocationCode="AUH"/>
+        <DestinationLocation LocationCode="SYD"/>
+        <Airline Marketing="EY" Operating="EY"/>
       </Flight>
     </TPA_Extensions>
 </OriginDestinationInformation>
@@ -201,12 +201,12 @@ aliases:
 {{< details title="Поиск перелета из Москвы в Нью-Йорк с пересадкой длиной более 24 часов в Стамбуле и временем вылета в промежутке между 10:00 и 22:00" open=true >}}
 ```XML
 <OriginDestinationInformation RPH="1">
-  <DepartureDateTime>2020-09-01T11:00:00</DepartureDateTime>
+  <DepartureDateTime>2022-09-01T11:00:00</DepartureDateTime>
   <OriginLocation LocationCode="MOW"/>
   <DestinationLocation LocationCode="NYC"/>
   <TPA_Extensions>
     <Stopover>
-      <DepartureDateTime>2020-09-03T00:00:00</DepartureDateTime>
+      <DepartureDateTime>2022-09-03T00:00:00</DepartureDateTime>
       <DepartureWindow>10002200</DepartureWindow>
       <StopoverPoint LocationCode="IST" LocationType="C"/>
     </Stopover>
@@ -480,7 +480,7 @@ aliases:
 Обратите внимание на то, что в одном поисковом запросе невозможно одновременное получение дополнительных расчетов стоимости по заданным критериям и получение расчетов по всем брендам (см. выше).
 {{< /hint >}}
 
-Ответ Bargain Finder Max по умолчанию содержит расчет стоимости по самому дешевому доступному тарифу (или тарифам) для каждой найденной рекомендации. Описанная ниже функциональность позволяет получить дополнительные расчеты стоимости для каждой найденной рекомендации по указанным в запросе группам критериев. Таким образом, ответ на запрос к сервису Bargain Finder Max в этом случае может содержать несколько вариантов расчета стоимости одной и той же рекомендации:
+Ответ [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) по умолчанию содержит расчет стоимости по самому дешевому доступному тарифу (или тарифам) для каждой найденной рекомендации. Описанная ниже функциональность позволяет получить дополнительные расчеты стоимости для каждой найденной рекомендации по указанным в запросе группам критериев. Таким образом, ответ на запрос к сервису [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) в этом случае может содержать несколько вариантов расчета стоимости одной и той же рекомендации:
 - расчет стоимости по самому дешевому доступному тарифу (или тарифам)
 - дополнительные расчеты стоимости по тарифам, выбранным по заданным в запросе группам критериев
 
@@ -566,7 +566,7 @@ aliases:
 - повышенная комиссия перевозчика
 - и т.д.
 
-Для этого в сервисе Bargain Finder Max предусмотрена возможность изменения разнообразия поисковой выдачи. Для этого предлагается разбить поисковую выдачу на две части (корзины):
+Для этого в сервисе [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) предусмотрена возможность изменения разнообразия поисковой выдачи. Для этого предлагается разбить поисковую выдачу на две части (корзины):
 - корзина с самыми дешевыми перелетами
 - корзина с перелетами, отвечающими определенным заданным критериям
 
@@ -783,7 +783,7 @@ aliases:
 
 ## Публичные и приватные тарифы
 
-По умолчанию BargainFinderMaxRQ предлагает рекомендации с расчетом, как по публичным, так и по приватным тарифам. Однако, указав значение атрибута ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PublicFare/@Ind``` или ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PrivateFare/@Ind``` равное ```true``` можно запросить расчет только по публичным или приватным тарифам, соответственно.
+По умолчанию [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) предлагает рекомендации с расчетом, как по публичным, так и по приватным тарифам. Однако, указав значение атрибута ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PublicFare/@Ind``` или ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PrivateFare/@Ind``` равное ```true``` можно запросить расчет только по публичным или приватным тарифам, соответственно.
 
 Список кодов корпоративных скидок (Corporate ID) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/NegotiatedFareCode```. Для каждого кода необходимо указать его значение в атрибуте ```NegotiatedFareCode/@Code```. Дополнительно можно задать список перевозчиков, для которых действует данный код. Данный список задается в последовательно расположенных элементах ```NegotiatedFareCode/Supplier```. Для каждого элемента необходимо задать код перевозчика в атрибуте ```NegotiatedFareCode/Supplier/@Code```.
 
@@ -821,7 +821,7 @@ aliases:
 
 ## PCC
 
-Запрос к сервису BargainFinderMaxRQ должен содержать элемент ```/OTA_AirLowFareSearchRQ/POS``` в корневом элементе:
+Запрос к сервису [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) должен содержать элемент ```/OTA_AirLowFareSearchRQ/POS``` в корневом элементе:
 
 {{< details title="Пример" open=true >}}
 ```XML
@@ -837,7 +837,7 @@ aliases:
 
 В атрибуте ```/OTA_AirLowFareSearchRQ/POS/Source/@PseudoCityCode``` необходимо указать PCC, из которого производится запрос. Остальные атрибуты должны быть заполнены как в примере выше.
 
-Сервис Bargain Finder Max позволяет искать рекомендации в нескольких PCC одновременно. Это может быть актуально для получения приватных тарифов, которые зафайлированы в разных PCC, или для получения рекомендаций, которые доступны не во всех странах.
+Сервис [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) позволяет искать рекомендации в нескольких PCC одновременно. Это может быть актуально для получения приватных тарифов, которые зафайлированы в разных PCC, или для получения рекомендаций, которые доступны не во всех странах.
 
 В случае использования этой опции один PCC будет основным и должен быть задан в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/POS/Source/@PseudoCityCode``` (см. выше). Для каждого дополнительного PCC (всего не более 4) должен быть создан элемент ```/OTA_AirLowFareSearchRQ/TPA_Extensions/AlternatePCC```, у которого в качестве значения атрибута ```/@PseudoCityCode``` указан PCC.
 
@@ -860,7 +860,7 @@ aliases:
 
 ## Вид ответа
 
-У сервиса BargainFinderMaxRQ существует два основных вида представления ответов, код которого должен быть указан в атрибуте ```/OTA_AirLowFareSearchRQ/@ResponseType``` запроса:
+У сервиса [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) существует два основных вида представления ответов, код которого должен быть указан в атрибуте ```/OTA_AirLowFareSearchRQ/@ResponseType``` запроса:
 - ```OTA``` — стандартный вид ответа, в котором вся информация представлена в иерархическом виде. Ответ содержит список элементов, каждый из которых содержит информацию о предложенной опции, например, информацию о перелетах, расчет стоимости и т.д. Эти элементы, в свою очередь, могут содержать другие элементы, например, расчет стоимости содержит информацию о таксах (величина, код, название)
 - ```GIR``` — группированный или нормализованный вид ответа. Ответ содержит информацию отдельно о рейсах, расчетах стоимости, таксах и т.д. Связность между элементами достигается за счет использования идентификаторов элементов
 

@@ -526,7 +526,7 @@ TP
   <RequestType commitTransaction="true" initialIgnore="true">Stateless</RequestType>
   <ReturnOptions IncludeUpdateDetails="true" RetrievePNR="true"/>
   <ReservationUpdateList>
-    <Locator>BOMALP</Locator>
+    <Locator>EIWRCV</Locator>
     <ReservationUpdateItem>
       <OpenReservationElementUpdate op="C">
         <OpenReservationElement type="FP">
@@ -552,23 +552,23 @@ TP
   <stl19:Success>OK</stl19:Success>
   <stl19:Reservation NumberInSegment="3" numberInParty="4" numberOfInfants="1">
     <stl19:BookingDetails>
-      <stl19:RecordLocator>BOMALP</stl19:RecordLocator>
-      <stl19:CreationTimestamp>2020-04-16T07:05:00</stl19:CreationTimestamp>
-      <stl19:SystemCreationTimestamp>2020-04-16T07:05:00</stl19:SystemCreationTimestamp>
+      <stl19:RecordLocator>EIWRCV</stl19:RecordLocator>
+      <stl19:CreationTimestamp>2022-05-24T12:01:00</stl19:CreationTimestamp>
+      <stl19:SystemCreationTimestamp>2022-05-24T12:01:00</stl19:SystemCreationTimestamp>
       <stl19:CreationAgentID>AWT</stl19:CreationAgentID>
-      <stl19:UpdateTimestamp>2020-04-16T07:05:39</stl19:UpdateTimestamp>
-      <stl19:PNRSequence>3</stl19:PNRSequence>
-      <stl19:FlightsRange End="2020-09-08T05:20:00" Start="2020-09-01T07:45:00"/>
+      <stl19:UpdateTimestamp>2022-05-24T12:19:52</stl19:UpdateTimestamp>
+      <stl19:PNRSequence>4</stl19:PNRSequence>
+      <stl19:FlightsRange End="2022-12-09T17:55:00" Start="2022-12-01T23:25:00"/>
       <stl19:DivideSplitDetails/>
-      <stl19:EstimatedPurgeTimestamp>2020-09-08T00:00:00</stl19:EstimatedPurgeTimestamp>
-      <stl19:UpdateToken>-14a6d420a8e47cde731ac0df54cd5e3259bf05b78960d930</stl19:UpdateToken>
+      <stl19:EstimatedPurgeTimestamp>2022-12-08T00:00:00</stl19:EstimatedPurgeTimestamp>
+      <stl19:UpdateToken>2a18d7cd412e0913ad053ff4701edec70a034e788264d860</stl19:UpdateToken>
     </stl19:BookingDetails>
     <stl19:POS AirExtras="false" InhibitCode="U">
       <stl19:Source AgentDutyCode="*" AgentSine="AWT" AirlineVendorID="AA" BookingSource="2FRH" HomePseudoCityCode="9LSC" ISOCountry="RU" PrimeHostID="1S" PseudoCityCode="2FRH"/>
     </stl19:POS>
     <stl19:PassengerReservation>
       <stl19:Passengers>
-        <stl19:Passenger elementId="pnr-2.1" id="2" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
+        <stl19:Passenger elementId="pnr-3.1" id="3" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>IVAN MR</stl19:FirstName>
           <stl19:EmailAddress id="12">
@@ -576,56 +576,56 @@ TP
             <stl19:Comment>TO/</stl19:Comment>
           </stl19:EmailAddress>
           <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
             <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="28" msgType="S" type="G">
               <stl19:Code>CTCM</stl19:Code>
               <stl19:FreeText>/79851234567/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCM SU HK1/79851234567/RU</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/79851234567/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+            <stl19:GenericSpecialRequest id="29" msgType="S" type="G">
               <stl19:Code>CTCE</stl19:Code>
               <stl19:FreeText>/CUSTOMER//CUSTOMER.COM/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="18" type="G">
+              <stl19:DOCSEntry id="20" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
@@ -640,16 +640,16 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="21" type="G">
+              <stl19:DOCSEntry id="23" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
                 <stl19:DocumentNationalityCountry>RU</stl19:DocumentNationalityCountry>
-                <stl19:DateOfBirth>2019-02-20</stl19:DateOfBirth>
+                <stl19:DateOfBirth>2022-02-20</stl19:DateOfBirth>
                 <stl19:Gender>FI</stl19:Gender>
                 <stl19:DocumentExpirationDate>2025-04-15</stl19:DocumentExpirationDate>
                 <stl19:Surname>IVANOVA</stl19:Surname>
@@ -659,18 +659,50 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-4.2" id="4" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
+        <stl19:Passenger elementId="pnr-5.2" id="5" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>ELENA MS</stl19:FirstName>
           <stl19:SpecialRequests>
+            <stl19:GenericSpecialRequest id="34" msgType="S" type="G">
+              <stl19:Code>CTCM</stl19:Code>
+              <stl19:FreeText>/9851234567</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/9851234567</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="39" msgType="S" type="G">
+              <stl19:Code>CTCE</stl19:Code>
+              <stl19:FreeText>/CUSTOMER//CUSTOMER.COM</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="33" msgType="S" type="A">
+              <stl19:Code>CTCM</stl19:Code>
+              <stl19:FreeText>/9851234567</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/9851234567</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="38" msgType="S" type="A">
+              <stl19:Code>CTCE</stl19:Code>
+              <stl19:FreeText>/CUSTOMER//CUSTOMER.COM</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</stl19:FullText>
+            </stl19:GenericSpecialRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="19" type="G">
+              <stl19:DOCSEntry id="21" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>2234567890</stl19:DocumentNumber>
@@ -685,18 +717,50 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-6.3" id="6" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
+        <stl19:Passenger elementId="pnr-7.3" id="7" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>ANDREY</stl19:FirstName>
           <stl19:SpecialRequests>
+            <stl19:GenericSpecialRequest id="36" msgType="S" type="G">
+              <stl19:Code>CTCM</stl19:Code>
+              <stl19:FreeText>/9851234567</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/9851234567</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="41" msgType="S" type="G">
+              <stl19:Code>CTCE</stl19:Code>
+              <stl19:FreeText>/CUSTOMER//CUSTOMER.COM</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="35" msgType="S" type="A">
+              <stl19:Code>CTCM</stl19:Code>
+              <stl19:FreeText>/9851234567</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/9851234567</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="40" msgType="S" type="A">
+              <stl19:Code>CTCE</stl19:Code>
+              <stl19:FreeText>/CUSTOMER//CUSTOMER.COM</stl19:FreeText>
+              <stl19:ActionCode>HK</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</stl19:FullText>
+            </stl19:GenericSpecialRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="20" type="G">
+              <stl19:DOCSEntry id="22" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>3234567890</stl19:DocumentNumber>
@@ -711,135 +775,204 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-8.4" id="8" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
+        <stl19:Passenger elementId="pnr-9.4" id="9" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>EKATERINA</stl19:FirstName>
-          <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="9" msgType="O" type="A">
-              <stl19:FreeText>INF</stl19:FreeText>
-              <stl19:AirlineCode>AA</stl19:AirlineCode>
-              <stl19:FullText>AA INF</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-          </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
       </stl19:Passengers>
       <stl19:Segments>
         <stl19:Poc>
-          <stl19:Airport>SVO</stl19:Airport>
-          <stl19:Departure>2020-09-01T07:45:00</stl19:Departure>
+          <stl19:Airport>SYD</stl19:Airport>
+          <stl19:Departure>2022-12-01T23:25:00</stl19:Departure>
         </stl19:Poc>
         <stl19:Segment id="16" sequence="1">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
-            <stl19:DepartureAirport>SVO</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
+            <stl19:DepartureAirport>SYD</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>AER</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1138</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1138</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>2463</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>2463</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*VVTPVA</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*EXERLF</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-01T07:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-01T10:15:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1138</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-01T23:25:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T06:40:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>2463</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-              </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-                <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
-                <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
-            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:05:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:01:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
         <stl19:Segment id="17" sequence="2">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
-            <stl19:DepartureAirport>AER</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="5" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>SVO</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>LHR</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1129</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1129</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0025</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0025</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*VVTPVA</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*EXERLF</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-08T02:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-08T05:20:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1129</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-02T10:35:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T14:10:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0025</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
+            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:01:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="18" sequence="3">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="18" isPast="false" segmentAssociationId="4" sequence="3">
+            <stl19:DepartureAirport>LHR</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0012</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType/>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0012</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*EXERLF</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T08:30:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-08T19:20:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0012</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:01:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="19" sequence="4">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="19" isPast="false" segmentAssociationId="5" sequence="4">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>SYD</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0464</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0464</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*EXERLF</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T22:10:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-09T17:55:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0464</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+                <stl19:Code>INFT</stl19:Code>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
+                <stl19:NumberInParty>1</stl19:NumberInParty>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+              </stl19:GenericSpecialRequest>
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
             <stl19:outboundConnection>false</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:05:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:01:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
@@ -865,14 +998,14 @@ TP
       </stl19:PhoneNumber>
     </stl19:PhoneNumbers>
     <stl19:Remarks>
-      <stl19:Remark elementId="pnr-26" id="26" index="1" type="REG">
+      <stl19:Remark elementId="pnr-30" id="30" index="1" type="REG">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
             <stl19:Text>TEXT REMARK</stl19:Text>
           </stl19:RemarkLine>
         </stl19:RemarkLines>
       </stl19:Remark>
-      <stl19:Remark elementId="pnr-32" id="32" index="2" type="FOP">
+      <stl19:Remark elementId="pnr-43" id="43" index="2" type="FOP">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
             <stl19:Text>CASH</stl19:Text>
@@ -887,73 +1020,79 @@ TP
       </stl19:EmailAddress>
     </stl19:EmailAddresses>
     <stl19:OpenReservationElements>
-      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-5" id="5" type="FP">
+      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-6" id="6" type="FP">
         <or114:FormOfPayment migrated="false">
           <or114:Cash>
             <or114:Custom>CASH</or114:Custom>
           </or114:Cash>
         </or114:FormOfPayment>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-9" id="9" type="SRVC">
-        <or114:ServiceRequest airlineCode="AA" serviceType="OSI" ssrType="AFX">
-          <or114:FreeText>INF</or114:FreeText>
-          <or114:FullText>AA INF</or114:FullText>
+      <or114:OpenReservationElement elementId="pnr-33" id="33" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="AFX">
+          <or114:FreeText>/9851234567</or114:FreeText>
+          <or114:FullText>CTCM EY HK1/9851234567</or114:FullText>
+          <or114:PassengerContactMobilePhone>
+            <or114:PhoneNumber>9851234567</or114:PhoneNumber>
+          </or114:PassengerContactMobilePhone>
         </or114:ServiceRequest>
         <or114:NameAssociation>
           <or114:LastName>IVANOVA</or114:LastName>
-          <or114:FirstName>EKATERINA</or114:FirstName>
-          <or114:ReferenceId>4</or114:ReferenceId>
-          <or114:NameRefNumber>04.01</or114:NameRefNumber>
+          <or114:FirstName>ELENA MS</or114:FirstName>
+          <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
+      <or114:OpenReservationElement elementId="pnr-35" id="35" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="AFX">
+          <or114:FreeText>/9851234567</or114:FreeText>
+          <or114:FullText>CTCM EY HK1/9851234567</or114:FullText>
+          <or114:PassengerContactMobilePhone>
+            <or114:PhoneNumber>9851234567</or114:PhoneNumber>
+          </or114:PassengerContactMobilePhone>
         </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:FirstName>ANDREY</or114:FirstName>
+          <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-30" id="30" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
+      <or114:OpenReservationElement elementId="pnr-38" id="38" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="AFX">
+          <or114:Comment>COM</or114:Comment>
+          <or114:FreeText>/CUSTOMER//CUSTOMER.COM</or114:FreeText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</or114:FullText>
+          <or114:PassengerContactEmail>
+            <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
+          </or114:PassengerContactEmail>
         </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOVA</or114:LastName>
+          <or114:FirstName>ELENA MS</or114:FirstName>
+          <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-40" id="40" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="AFX">
+          <or114:Comment>COM</or114:Comment>
+          <or114:FreeText>/CUSTOMER//CUSTOMER.COM</or114:FreeText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</or114:FullText>
+          <or114:PassengerContactEmail>
+            <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
+          </or114:PassengerContactEmail>
+        </or114:ServiceRequest>
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:FirstName>ANDREY</or114:FirstName>
+          <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-18" id="18" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -973,14 +1112,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-19" id="19" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -1000,14 +1139,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOVA</or114:LastName>
           <or114:FirstName>ELENA MS</or114:FirstName>
-          <or114:ReferenceId>2</or114:ReferenceId>
           <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -1027,21 +1166,21 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>ANDREY</or114:FirstName>
-          <or114:ReferenceId>3</or114:ReferenceId>
           <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
+      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
             <or114:DocumentNumber>1234567890</or114:DocumentNumber>
             <or114:DocumentNationalityCountry>RU</or114:DocumentNationalityCountry>
             <or114:DocumentExpirationDate>15APR2025</or114:DocumentExpirationDate>
-            <or114:DateOfBirth>20FEB2019</or114:DateOfBirth>
+            <or114:DateOfBirth>20FEB2022</or114:DateOfBirth>
             <or114:Gender>FI</or114:Gender>
             <or114:LastName>IVANOVA</or114:LastName>
             <or114:FirstName>EKATERINA</or114:FirstName>
@@ -1054,58 +1193,106 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
           <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-24" id="24" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>2463</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-01</or114:DepartureDate>
+            <or114:BoardPoint>SYD</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0025</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-02</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>LHR</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-26" id="26" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="18" SegmentAssociationId="4">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0012</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>LHR</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-27" id="27" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="19" SegmentAssociationId="5">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0464</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>SYD</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-28" id="28" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/79851234567/RU</or114:FreeText>
-          <or114:FullText>CTCM SU HK1/79851234567/RU</or114:FullText>
+          <or114:FullText>CTCM EY HK1/79851234567/RU</or114:FullText>
           <or114:PassengerContactMobilePhone>
             <or114:PhoneNumber>79851234567</or114:PhoneNumber>
             <or114:Language>RU</or114:Language>
@@ -1114,15 +1301,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:Comment>COM/RU</or114:Comment>
           <or114:FreeText>/CUSTOMER//CUSTOMER.COM/RU</or114:FreeText>
-          <or114:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
           <or114:PassengerContactEmail>
             <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
             <or114:Language>RU</or114:Language>
@@ -1131,8 +1318,70 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-34" id="34" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/9851234567</or114:FreeText>
+          <or114:FullText>CTCM EY HK1/9851234567</or114:FullText>
+          <or114:PassengerContactMobilePhone>
+            <or114:PhoneNumber>9851234567</or114:PhoneNumber>
+          </or114:PassengerContactMobilePhone>
+        </or114:ServiceRequest>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOVA</or114:LastName>
+          <or114:FirstName>ELENA MS</or114:FirstName>
+          <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-36" id="36" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/9851234567</or114:FreeText>
+          <or114:FullText>CTCM EY HK1/9851234567</or114:FullText>
+          <or114:PassengerContactMobilePhone>
+            <or114:PhoneNumber>9851234567</or114:PhoneNumber>
+          </or114:PassengerContactMobilePhone>
+        </or114:ServiceRequest>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>ANDREY</or114:FirstName>
+          <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-39" id="39" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:Comment>COM</or114:Comment>
+          <or114:FreeText>/CUSTOMER//CUSTOMER.COM</or114:FreeText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</or114:FullText>
+          <or114:PassengerContactEmail>
+            <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
+          </or114:PassengerContactEmail>
+        </or114:ServiceRequest>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOVA</or114:LastName>
+          <or114:FirstName>ELENA MS</or114:FirstName>
+          <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-41" id="41" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:Comment>COM</or114:Comment>
+          <or114:FreeText>/CUSTOMER//CUSTOMER.COM</or114:FreeText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM</or114:FullText>
+          <or114:PassengerContactEmail>
+            <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
+          </or114:PassengerContactEmail>
+        </or114:ServiceRequest>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>ANDREY</or114:FirstName>
+          <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-13" id="13" type="PSG_DETAILS_MAIL">
@@ -1147,15 +1396,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
     </stl19:OpenReservationElements>
   </stl19:Reservation>
   <stl19:Results>
     <stl19:UpdateResult Status="SUCCESS" UpdateId="">
-      <stl19:Item id="32" op="C"/>
+      <stl19:Item id="43" op="C"/>
     </stl19:UpdateResult>
   </stl19:Results>
 </stl19:UpdateReservationRS>
@@ -1174,7 +1423,7 @@ TP
   <RequestType commitTransaction="true" initialIgnore="true">Stateless</RequestType>
   <ReturnOptions IncludeUpdateDetails="true" RetrievePNR="true"/>
   <ReservationUpdateList>
-    <Locator>VVURXG</Locator>
+    <Locator>EIDXVQ</Locator>
     <ReservationUpdateItem>
       <OpenReservationElementUpdate op="C">
         <OpenReservationElement type="FP">
@@ -1200,23 +1449,23 @@ TP
   <stl19:Success>OK</stl19:Success>
   <stl19:Reservation NumberInSegment="3" numberInParty="4" numberOfInfants="1">
     <stl19:BookingDetails>
-      <stl19:RecordLocator>VVURXG</stl19:RecordLocator>
-      <stl19:CreationTimestamp>2020-04-16T07:06:00</stl19:CreationTimestamp>
-      <stl19:SystemCreationTimestamp>2020-04-16T07:06:00</stl19:SystemCreationTimestamp>
+      <stl19:RecordLocator>EIDXVQ</stl19:RecordLocator>
+      <stl19:CreationTimestamp>2022-05-24T12:20:00</stl19:CreationTimestamp>
+      <stl19:SystemCreationTimestamp>2022-05-24T12:20:00</stl19:SystemCreationTimestamp>
       <stl19:CreationAgentID>AWT</stl19:CreationAgentID>
-      <stl19:UpdateTimestamp>2020-04-16T07:06:28</stl19:UpdateTimestamp>
-      <stl19:PNRSequence>3</stl19:PNRSequence>
-      <stl19:FlightsRange End="2020-09-08T05:20:00" Start="2020-09-01T07:45:00"/>
+      <stl19:UpdateTimestamp>2022-05-24T12:20:25</stl19:UpdateTimestamp>
+      <stl19:PNRSequence>2</stl19:PNRSequence>
+      <stl19:FlightsRange End="2022-12-09T17:55:00" Start="2022-12-01T23:25:00"/>
       <stl19:DivideSplitDetails/>
-      <stl19:EstimatedPurgeTimestamp>2020-09-08T00:00:00</stl19:EstimatedPurgeTimestamp>
-      <stl19:UpdateToken>-14a6d420a8e47cdec946c33208fb92110308233916981ae7</stl19:UpdateToken>
+      <stl19:EstimatedPurgeTimestamp>2022-12-08T00:00:00</stl19:EstimatedPurgeTimestamp>
+      <stl19:UpdateToken>2c7975cb165eb7d16e267509c18a8304645f3da346f3b5b9</stl19:UpdateToken>
     </stl19:BookingDetails>
     <stl19:POS AirExtras="false" InhibitCode="U">
       <stl19:Source AgentDutyCode="*" AgentSine="AWT" AirlineVendorID="AA" BookingSource="2FRH" HomePseudoCityCode="9LSC" ISOCountry="RU" PrimeHostID="1S" PseudoCityCode="2FRH"/>
     </stl19:POS>
     <stl19:PassengerReservation>
       <stl19:Passengers>
-        <stl19:Passenger elementId="pnr-2.1" id="2" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
+        <stl19:Passenger elementId="pnr-3.1" id="3" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>IVAN MR</stl19:FirstName>
           <stl19:EmailAddress id="12">
@@ -1224,56 +1473,56 @@ TP
             <stl19:Comment>TO/</stl19:Comment>
           </stl19:EmailAddress>
           <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
             <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="28" msgType="S" type="G">
               <stl19:Code>CTCM</stl19:Code>
               <stl19:FreeText>/79851234567/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCM SU HK1/79851234567/RU</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/79851234567/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+            <stl19:GenericSpecialRequest id="29" msgType="S" type="G">
               <stl19:Code>CTCE</stl19:Code>
               <stl19:FreeText>/CUSTOMER//CUSTOMER.COM/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="18" type="G">
+              <stl19:DOCSEntry id="20" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
@@ -1288,16 +1537,16 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="21" type="G">
+              <stl19:DOCSEntry id="23" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
                 <stl19:DocumentNationalityCountry>RU</stl19:DocumentNationalityCountry>
-                <stl19:DateOfBirth>2019-02-20</stl19:DateOfBirth>
+                <stl19:DateOfBirth>2022-02-20</stl19:DateOfBirth>
                 <stl19:Gender>FI</stl19:Gender>
                 <stl19:DocumentExpirationDate>2025-04-15</stl19:DocumentExpirationDate>
                 <stl19:Surname>IVANOVA</stl19:Surname>
@@ -1307,18 +1556,18 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-4.2" id="4" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
+        <stl19:Passenger elementId="pnr-5.2" id="5" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>ELENA MS</stl19:FirstName>
           <stl19:SpecialRequests>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="19" type="G">
+              <stl19:DOCSEntry id="21" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>2234567890</stl19:DocumentNumber>
@@ -1333,18 +1582,18 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-6.3" id="6" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
+        <stl19:Passenger elementId="pnr-7.3" id="7" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>ANDREY</stl19:FirstName>
           <stl19:SpecialRequests>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="20" type="G">
+              <stl19:DOCSEntry id="22" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>3234567890</stl19:DocumentNumber>
@@ -1359,135 +1608,204 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-8.4" id="8" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
+        <stl19:Passenger elementId="pnr-9.4" id="9" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>EKATERINA</stl19:FirstName>
-          <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="9" msgType="O" type="A">
-              <stl19:FreeText>INF</stl19:FreeText>
-              <stl19:AirlineCode>AA</stl19:AirlineCode>
-              <stl19:FullText>AA INF</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-          </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
       </stl19:Passengers>
       <stl19:Segments>
         <stl19:Poc>
-          <stl19:Airport>SVO</stl19:Airport>
-          <stl19:Departure>2020-09-01T07:45:00</stl19:Departure>
+          <stl19:Airport>SYD</stl19:Airport>
+          <stl19:Departure>2022-12-01T23:25:00</stl19:Departure>
         </stl19:Poc>
         <stl19:Segment id="16" sequence="1">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
-            <stl19:DepartureAirport>SVO</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
+            <stl19:DepartureAirport>SYD</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>AER</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1138</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1138</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>2463</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>2463</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*FNUBJL</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*EIDXNS</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-01T07:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-01T10:15:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1138</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-01T23:25:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T06:40:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>2463</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-              </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-                <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
-                <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
-            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:06:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:20:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
         <stl19:Segment id="17" sequence="2">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
-            <stl19:DepartureAirport>AER</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="5" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>SVO</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>LHR</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1129</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1129</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0025</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0025</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*FNUBJL</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*EIDXNS</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-08T02:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-08T05:20:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1129</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-02T10:35:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T14:10:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0025</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
+            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:20:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="18" sequence="3">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="18" isPast="false" segmentAssociationId="4" sequence="3">
+            <stl19:DepartureAirport>LHR</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0012</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType/>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0012</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*EIDXNS</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T08:30:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-08T19:20:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0012</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:20:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="19" sequence="4">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="19" isPast="false" segmentAssociationId="5" sequence="4">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>SYD</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0464</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0464</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*EIDXNS</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T22:10:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-09T17:55:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0464</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+                <stl19:Code>INFT</stl19:Code>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
+                <stl19:NumberInParty>1</stl19:NumberInParty>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+              </stl19:GenericSpecialRequest>
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
             <stl19:outboundConnection>false</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:06:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:20:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
@@ -1513,14 +1831,14 @@ TP
       </stl19:PhoneNumber>
     </stl19:PhoneNumbers>
     <stl19:Remarks>
-      <stl19:Remark elementId="pnr-26" id="26" index="1" type="REG">
+      <stl19:Remark elementId="pnr-30" id="30" index="1" type="REG">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
             <stl19:Text>TEXT REMARK</stl19:Text>
           </stl19:RemarkLine>
         </stl19:RemarkLines>
       </stl19:Remark>
-      <stl19:Remark elementId="pnr-32" id="32" index="2" type="FOP">
+      <stl19:Remark elementId="pnr-33" id="33" index="2" type="FOP">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
             <stl19:Text>CHECK</stl19:Text>
@@ -1535,73 +1853,17 @@ TP
       </stl19:EmailAddress>
     </stl19:EmailAddresses>
     <stl19:OpenReservationElements>
-      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-5" id="5" type="FP">
+      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-4" id="4" type="FP">
         <or114:FormOfPayment migrated="false">
           <or114:Check>
             <or114:Custom>CHECK</or114:Custom>
           </or114:Check>
         </or114:FormOfPayment>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-9" id="9" type="SRVC">
-        <or114:ServiceRequest airlineCode="AA" serviceType="OSI" ssrType="AFX">
-          <or114:FreeText>INF</or114:FreeText>
-          <or114:FullText>AA INF</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOVA</or114:LastName>
-          <or114:FirstName>EKATERINA</or114:FirstName>
-          <or114:ReferenceId>4</or114:ReferenceId>
-          <or114:NameRefNumber>04.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-30" id="30" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-18" id="18" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -1621,14 +1883,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-19" id="19" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -1648,14 +1910,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOVA</or114:LastName>
           <or114:FirstName>ELENA MS</or114:FirstName>
-          <or114:ReferenceId>2</or114:ReferenceId>
           <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -1675,21 +1937,21 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>ANDREY</or114:FirstName>
-          <or114:ReferenceId>3</or114:ReferenceId>
           <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
+      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
             <or114:DocumentNumber>1234567890</or114:DocumentNumber>
             <or114:DocumentNationalityCountry>RU</or114:DocumentNationalityCountry>
             <or114:DocumentExpirationDate>15APR2025</or114:DocumentExpirationDate>
-            <or114:DateOfBirth>20FEB2019</or114:DateOfBirth>
+            <or114:DateOfBirth>20FEB2022</or114:DateOfBirth>
             <or114:Gender>FI</or114:Gender>
             <or114:LastName>IVANOVA</or114:LastName>
             <or114:FirstName>EKATERINA</or114:FirstName>
@@ -1702,58 +1964,106 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
           <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-24" id="24" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>2463</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-01</or114:DepartureDate>
+            <or114:BoardPoint>SYD</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0025</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-02</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>LHR</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-26" id="26" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="18" SegmentAssociationId="4">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0012</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>LHR</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-27" id="27" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="19" SegmentAssociationId="5">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0464</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>SYD</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-28" id="28" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/79851234567/RU</or114:FreeText>
-          <or114:FullText>CTCM SU HK1/79851234567/RU</or114:FullText>
+          <or114:FullText>CTCM EY HK1/79851234567/RU</or114:FullText>
           <or114:PassengerContactMobilePhone>
             <or114:PhoneNumber>79851234567</or114:PhoneNumber>
             <or114:Language>RU</or114:Language>
@@ -1762,15 +2072,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:Comment>COM/RU</or114:Comment>
           <or114:FreeText>/CUSTOMER//CUSTOMER.COM/RU</or114:FreeText>
-          <or114:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
           <or114:PassengerContactEmail>
             <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
             <or114:Language>RU</or114:Language>
@@ -1779,8 +2089,8 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-13" id="13" type="PSG_DETAILS_MAIL">
@@ -1795,15 +2105,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
     </stl19:OpenReservationElements>
   </stl19:Reservation>
   <stl19:Results>
     <stl19:UpdateResult Status="SUCCESS" UpdateId="">
-      <stl19:Item id="32" op="C"/>
+      <stl19:Item id="33" op="C"/>
     </stl19:UpdateResult>
   </stl19:Results>
 </stl19:UpdateReservationRS>
@@ -1842,7 +2152,7 @@ TP
   <RequestType commitTransaction="true" initialIgnore="true">Stateless</RequestType>
   <ReturnOptions IncludeUpdateDetails="true" RetrievePNR="true"/>
   <ReservationUpdateList>
-    <Locator>BOMFID</Locator>
+    <Locator>XVLEYD</Locator>
     <ReservationUpdateItem>
       <OpenReservationElementUpdate op="C">
         <OpenReservationElement type="FP">
@@ -1852,15 +2162,15 @@ TP
               <or:CardCode>AX</or:CardCode>
               <or:CardNumber>371449635398431</or:CardNumber>
               <or:ExpiryMonth>--12</or:ExpiryMonth>
-              <or:ExpiryYear>2020</or:ExpiryYear>
+              <or:ExpiryYear>2027</or:ExpiryYear>
               <or:ApprovalList>
                 <or:Approval>
                   <or:ManualApproval>true</or:ManualApproval>
                   <or:ResponseCode>0</or:ResponseCode>
                   <or:ApprovalCode>123456</or:ApprovalCode>
-                  <or:RequestTime>2020-04-16T12:00:00</or:RequestTime>
-                  <or:ExpiryTime>2020-04-17T12:00:00</or:ExpiryTime>
-                  <or:AirlineCode>SU</or:AirlineCode>
+                  <or:RequestTime>2022-05-24T12:00:00</or:RequestTime>
+                  <or:ExpiryTime>2022-05-25T12:00:00</or:ExpiryTime>
+                  <or:AirlineCode>EY</or:AirlineCode>
                   <or:Amount>500000</or:Amount>
                 </or:Approval>
               </or:ApprovalList>
@@ -1883,23 +2193,23 @@ TP
   <stl19:Success>OK</stl19:Success>
   <stl19:Reservation NumberInSegment="3" numberInParty="4" numberOfInfants="1">
     <stl19:BookingDetails>
-      <stl19:RecordLocator>BOMFID</stl19:RecordLocator>
-      <stl19:CreationTimestamp>2020-04-16T07:06:00</stl19:CreationTimestamp>
-      <stl19:SystemCreationTimestamp>2020-04-16T07:06:00</stl19:SystemCreationTimestamp>
+      <stl19:RecordLocator>XVLEYD</stl19:RecordLocator>
+      <stl19:CreationTimestamp>2022-05-24T12:21:00</stl19:CreationTimestamp>
+      <stl19:SystemCreationTimestamp>2022-05-24T12:21:00</stl19:SystemCreationTimestamp>
       <stl19:CreationAgentID>AWT</stl19:CreationAgentID>
-      <stl19:UpdateTimestamp>2020-04-16T07:07:02</stl19:UpdateTimestamp>
-      <stl19:PNRSequence>3</stl19:PNRSequence>
-      <stl19:FlightsRange End="2020-09-08T05:20:00" Start="2020-09-01T07:45:00"/>
+      <stl19:UpdateTimestamp>2022-05-24T12:21:31</stl19:UpdateTimestamp>
+      <stl19:PNRSequence>2</stl19:PNRSequence>
+      <stl19:FlightsRange End="2022-12-09T17:55:00" Start="2022-12-01T23:25:00"/>
       <stl19:DivideSplitDetails/>
-      <stl19:EstimatedPurgeTimestamp>2020-09-08T00:00:00</stl19:EstimatedPurgeTimestamp>
-      <stl19:UpdateToken>-14a6d420a8e47cdea44c58d6288131ebb5926402a22a13e1</stl19:UpdateToken>
+      <stl19:EstimatedPurgeTimestamp>2022-12-08T00:00:00</stl19:EstimatedPurgeTimestamp>
+      <stl19:UpdateToken>2c7975cb165eb7d1d2e1453f4b2748ef9df28d4fb3753a4b</stl19:UpdateToken>
     </stl19:BookingDetails>
     <stl19:POS AirExtras="false" InhibitCode="U">
       <stl19:Source AgentDutyCode="*" AgentSine="AWT" AirlineVendorID="AA" BookingSource="2FRH" HomePseudoCityCode="9LSC" ISOCountry="RU" PrimeHostID="1S" PseudoCityCode="2FRH"/>
     </stl19:POS>
     <stl19:PassengerReservation>
       <stl19:Passengers>
-        <stl19:Passenger elementId="pnr-2.1" id="2" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
+        <stl19:Passenger elementId="pnr-3.1" id="3" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>IVAN MR</stl19:FirstName>
           <stl19:EmailAddress id="12">
@@ -1907,56 +2217,56 @@ TP
             <stl19:Comment>TO/</stl19:Comment>
           </stl19:EmailAddress>
           <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
             <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="28" msgType="S" type="G">
               <stl19:Code>CTCM</stl19:Code>
               <stl19:FreeText>/79851234567/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCM SU HK1/79851234567/RU</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/79851234567/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+            <stl19:GenericSpecialRequest id="29" msgType="S" type="G">
               <stl19:Code>CTCE</stl19:Code>
               <stl19:FreeText>/CUSTOMER//CUSTOMER.COM/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="18" type="G">
+              <stl19:DOCSEntry id="20" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
@@ -1971,16 +2281,16 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="21" type="G">
+              <stl19:DOCSEntry id="23" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
                 <stl19:DocumentNationalityCountry>RU</stl19:DocumentNationalityCountry>
-                <stl19:DateOfBirth>2019-02-20</stl19:DateOfBirth>
+                <stl19:DateOfBirth>2022-02-20</stl19:DateOfBirth>
                 <stl19:Gender>FI</stl19:Gender>
                 <stl19:DocumentExpirationDate>2025-04-15</stl19:DocumentExpirationDate>
                 <stl19:Surname>IVANOVA</stl19:Surname>
@@ -1990,18 +2300,18 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-4.2" id="4" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
+        <stl19:Passenger elementId="pnr-5.2" id="5" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>ELENA MS</stl19:FirstName>
           <stl19:SpecialRequests>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="19" type="G">
+              <stl19:DOCSEntry id="21" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>2234567890</stl19:DocumentNumber>
@@ -2016,18 +2326,18 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-6.3" id="6" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
+        <stl19:Passenger elementId="pnr-7.3" id="7" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>ANDREY</stl19:FirstName>
           <stl19:SpecialRequests>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="20" type="G">
+              <stl19:DOCSEntry id="22" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>3234567890</stl19:DocumentNumber>
@@ -2042,135 +2352,204 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-8.4" id="8" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
+        <stl19:Passenger elementId="pnr-9.4" id="9" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>EKATERINA</stl19:FirstName>
-          <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="9" msgType="O" type="A">
-              <stl19:FreeText>INF</stl19:FreeText>
-              <stl19:AirlineCode>AA</stl19:AirlineCode>
-              <stl19:FullText>AA INF</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-          </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
       </stl19:Passengers>
       <stl19:Segments>
         <stl19:Poc>
-          <stl19:Airport>SVO</stl19:Airport>
-          <stl19:Departure>2020-09-01T07:45:00</stl19:Departure>
+          <stl19:Airport>SYD</stl19:Airport>
+          <stl19:Departure>2022-12-01T23:25:00</stl19:Departure>
         </stl19:Poc>
         <stl19:Segment id="16" sequence="1">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
-            <stl19:DepartureAirport>SVO</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
+            <stl19:DepartureAirport>SYD</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>AER</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1138</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1138</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>2463</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>2463</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*BOMGRE</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*EIDMCH</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-01T07:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-01T10:15:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1138</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-01T23:25:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T06:40:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>2463</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-              </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-                <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
-                <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
-            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:06:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
         <stl19:Segment id="17" sequence="2">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
-            <stl19:DepartureAirport>AER</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="5" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>SVO</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>LHR</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1129</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1129</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0025</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0025</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*BOMGRE</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*EIDMCH</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-08T02:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-08T05:20:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1129</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-02T10:35:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T14:10:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0025</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
+            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="18" sequence="3">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="18" isPast="false" segmentAssociationId="4" sequence="3">
+            <stl19:DepartureAirport>LHR</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0012</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType/>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0012</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*EIDMCH</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T08:30:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-08T19:20:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0012</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="19" sequence="4">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="19" isPast="false" segmentAssociationId="5" sequence="4">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>SYD</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0464</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0464</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*EIDMCH</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T22:10:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-09T17:55:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0464</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+                <stl19:Code>INFT</stl19:Code>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
+                <stl19:NumberInParty>1</stl19:NumberInParty>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+              </stl19:GenericSpecialRequest>
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
             <stl19:outboundConnection>false</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:06:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
@@ -2196,17 +2575,17 @@ TP
       </stl19:PhoneNumber>
     </stl19:PhoneNumbers>
     <stl19:Remarks>
-      <stl19:Remark elementId="pnr-26" id="26" index="1" type="REG">
+      <stl19:Remark elementId="pnr-30" id="30" index="1" type="REG">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
             <stl19:Text>TEXT REMARK</stl19:Text>
           </stl19:RemarkLine>
         </stl19:RemarkLines>
       </stl19:Remark>
-      <stl19:Remark elementId="pnr-32" id="32" index="2" type="FOP">
+      <stl19:Remark elementId="pnr-33" id="33" index="2" type="FOP">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
-            <stl19:Text>AX3XXXXXXXXXX8431¥12/20</stl19:Text>
+            <stl19:Text>AX3XXXXXXXXXX8431¥12/27</stl19:Text>
           </stl19:RemarkLine>
         </stl19:RemarkLines>
       </stl19:Remark>
@@ -2218,22 +2597,22 @@ TP
       </stl19:EmailAddress>
     </stl19:EmailAddresses>
     <stl19:OpenReservationElements>
-      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-5" id="5" type="FP">
+      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-4" id="4" type="FP">
         <or114:FormOfPayment migrated="false">
           <or114:PaymentCard>
             <or114:PaymentType>CC</or114:PaymentType>
             <or114:CardCode>AX</or114:CardCode>
             <or114:CardNumber masked="true" tokenized="true">3XXXXXXXXXX8431</or114:CardNumber>
             <or114:ExpiryMonth>--12</or114:ExpiryMonth>
-            <or114:ExpiryYear>2020</or114:ExpiryYear>
+            <or114:ExpiryYear>2027</or114:ExpiryYear>
             <or114:ApprovalList>
               <or114:Approval id="1">
                 <or114:ManualApproval>true</or114:ManualApproval>
                 <or114:ResponseCode>0</or114:ResponseCode>
                 <or114:ApprovalCode>123456</or114:ApprovalCode>
-                <or114:RequestTime>2020-04-16T12:00:00</or114:RequestTime>
-                <or114:ExpiryTime>2020-04-17T12:00:00</or114:ExpiryTime>
-                <or114:AirlineCode>SU</or114:AirlineCode>
+                <or114:RequestTime>2022-05-24T12:00:00</or114:RequestTime>
+                <or114:ExpiryTime>2022-05-25T12:00:00</or114:ExpiryTime>
+                <or114:AirlineCode>EY</or114:AirlineCode>
                 <or114:Amount>500000</or114:Amount>
                 <or114:Acquirer>Unknown</or114:Acquirer>
               </or114:Approval>
@@ -2241,66 +2620,10 @@ TP
           </or114:PaymentCard>
         </or114:FormOfPayment>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-9" id="9" type="SRVC">
-        <or114:ServiceRequest airlineCode="AA" serviceType="OSI" ssrType="AFX">
-          <or114:FreeText>INF</or114:FreeText>
-          <or114:FullText>AA INF</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOVA</or114:LastName>
-          <or114:FirstName>EKATERINA</or114:FirstName>
-          <or114:ReferenceId>4</or114:ReferenceId>
-          <or114:NameRefNumber>04.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-30" id="30" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-18" id="18" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -2320,14 +2643,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-19" id="19" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -2347,14 +2670,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOVA</or114:LastName>
           <or114:FirstName>ELENA MS</or114:FirstName>
-          <or114:ReferenceId>2</or114:ReferenceId>
           <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -2374,21 +2697,21 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>ANDREY</or114:FirstName>
-          <or114:ReferenceId>3</or114:ReferenceId>
           <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
+      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
             <or114:DocumentNumber>1234567890</or114:DocumentNumber>
             <or114:DocumentNationalityCountry>RU</or114:DocumentNationalityCountry>
             <or114:DocumentExpirationDate>15APR2025</or114:DocumentExpirationDate>
-            <or114:DateOfBirth>20FEB2019</or114:DateOfBirth>
+            <or114:DateOfBirth>20FEB2022</or114:DateOfBirth>
             <or114:Gender>FI</or114:Gender>
             <or114:LastName>IVANOVA</or114:LastName>
             <or114:FirstName>EKATERINA</or114:FirstName>
@@ -2401,58 +2724,106 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
           <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-24" id="24" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>2463</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-01</or114:DepartureDate>
+            <or114:BoardPoint>SYD</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0025</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-02</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>LHR</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-26" id="26" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="18" SegmentAssociationId="4">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0012</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>LHR</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-27" id="27" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="19" SegmentAssociationId="5">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0464</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>SYD</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-28" id="28" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/79851234567/RU</or114:FreeText>
-          <or114:FullText>CTCM SU HK1/79851234567/RU</or114:FullText>
+          <or114:FullText>CTCM EY HK1/79851234567/RU</or114:FullText>
           <or114:PassengerContactMobilePhone>
             <or114:PhoneNumber>79851234567</or114:PhoneNumber>
             <or114:Language>RU</or114:Language>
@@ -2461,15 +2832,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:Comment>COM/RU</or114:Comment>
           <or114:FreeText>/CUSTOMER//CUSTOMER.COM/RU</or114:FreeText>
-          <or114:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
           <or114:PassengerContactEmail>
             <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
             <or114:Language>RU</or114:Language>
@@ -2478,8 +2849,8 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-13" id="13" type="PSG_DETAILS_MAIL">
@@ -2494,15 +2865,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
     </stl19:OpenReservationElements>
   </stl19:Reservation>
   <stl19:Results>
     <stl19:UpdateResult Status="SUCCESS" UpdateId="">
-      <stl19:Item id="32" op="C"/>
+      <stl19:Item id="33" op="C"/>
     </stl19:UpdateResult>
   </stl19:Results>
 </stl19:UpdateReservationRS>
@@ -2517,7 +2888,7 @@ TP
   <RequestType commitTransaction="true" initialIgnore="true">Stateless</RequestType>
   <ReturnOptions IncludeUpdateDetails="true" RetrievePNR="true"/>
   <ReservationUpdateList>
-    <Locator>FNUEET</Locator>
+    <Locator>XVLLGY</Locator>
     <ReservationUpdateItem>
       <OpenReservationElementUpdate op="C">
         <OpenReservationElement type="FP">
@@ -2527,7 +2898,7 @@ TP
               <or:CardCode>AX</or:CardCode>
               <or:CardNumber>371449635398431</or:CardNumber>
               <or:ExpiryMonth>--12</or:ExpiryMonth>
-              <or:ExpiryYear>2020</or:ExpiryYear>
+              <or:ExpiryYear>2027</or:ExpiryYear>
               <or:GenerateApprovalAtTicketing>true</or:GenerateApprovalAtTicketing>
             </or:PaymentCard>
           </or:FormOfPayment>
@@ -2548,23 +2919,23 @@ TP
   <stl19:Success>OK</stl19:Success>
   <stl19:Reservation NumberInSegment="3" numberInParty="4" numberOfInfants="1">
     <stl19:BookingDetails>
-      <stl19:RecordLocator>FNUEET</stl19:RecordLocator>
-      <stl19:CreationTimestamp>2020-04-16T07:07:00</stl19:CreationTimestamp>
-      <stl19:SystemCreationTimestamp>2020-04-16T07:07:00</stl19:SystemCreationTimestamp>
+      <stl19:RecordLocator>XVLLGY</stl19:RecordLocator>
+      <stl19:CreationTimestamp>2022-05-24T12:21:00</stl19:CreationTimestamp>
+      <stl19:SystemCreationTimestamp>2022-05-24T12:21:00</stl19:SystemCreationTimestamp>
       <stl19:CreationAgentID>AWT</stl19:CreationAgentID>
-      <stl19:UpdateTimestamp>2020-04-16T07:07:40</stl19:UpdateTimestamp>
-      <stl19:PNRSequence>3</stl19:PNRSequence>
-      <stl19:FlightsRange End="2020-09-08T05:20:00" Start="2020-09-01T07:45:00"/>
+      <stl19:UpdateTimestamp>2022-05-24T12:22:06</stl19:UpdateTimestamp>
+      <stl19:PNRSequence>2</stl19:PNRSequence>
+      <stl19:FlightsRange End="2022-12-09T17:55:00" Start="2022-12-01T23:25:00"/>
       <stl19:DivideSplitDetails/>
-      <stl19:EstimatedPurgeTimestamp>2020-09-08T00:00:00</stl19:EstimatedPurgeTimestamp>
-      <stl19:UpdateToken>-14a6d420a8e47cdecf8089a110ac163502a92621a87e63c5</stl19:UpdateToken>
+      <stl19:EstimatedPurgeTimestamp>2022-12-08T00:00:00</stl19:EstimatedPurgeTimestamp>
+      <stl19:UpdateToken>2c7975cb165eb7d1a68f8421b06aca75dfe5d91d2d1f25f9</stl19:UpdateToken>
     </stl19:BookingDetails>
     <stl19:POS AirExtras="false" InhibitCode="U">
       <stl19:Source AgentDutyCode="*" AgentSine="AWT" AirlineVendorID="AA" BookingSource="2FRH" HomePseudoCityCode="9LSC" ISOCountry="RU" PrimeHostID="1S" PseudoCityCode="2FRH"/>
     </stl19:POS>
     <stl19:PassengerReservation>
       <stl19:Passengers>
-        <stl19:Passenger elementId="pnr-2.1" id="2" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
+        <stl19:Passenger elementId="pnr-3.1" id="3" nameAssocId="1" nameId="01.01" nameType="S" passengerType="ADT" withInfant="true">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>IVAN MR</stl19:FirstName>
           <stl19:EmailAddress id="12">
@@ -2572,56 +2943,56 @@ TP
             <stl19:Comment>TO/</stl19:Comment>
           </stl19:EmailAddress>
           <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>NN</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
             <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+              <stl19:Code>INFT</stl19:Code>
+              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+              <stl19:ActionCode>NN</stl19:ActionCode>
+              <stl19:NumberInParty>1</stl19:NumberInParty>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+            </stl19:GenericSpecialRequest>
+            <stl19:GenericSpecialRequest id="28" msgType="S" type="G">
               <stl19:Code>CTCM</stl19:Code>
               <stl19:FreeText>/79851234567/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCM SU HK1/79851234567/RU</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCM EY HK1/79851234567/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
+            <stl19:GenericSpecialRequest id="29" msgType="S" type="G">
               <stl19:Code>CTCE</stl19:Code>
               <stl19:FreeText>/CUSTOMER//CUSTOMER.COM/RU</stl19:FreeText>
               <stl19:ActionCode>HK</stl19:ActionCode>
               <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-            <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
-              <stl19:Code>INFT</stl19:Code>
-              <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-              <stl19:ActionCode>KK</stl19:ActionCode>
-              <stl19:NumberInParty>1</stl19:NumberInParty>
-              <stl19:AirlineCode>SU</stl19:AirlineCode>
-              <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+              <stl19:AirlineCode>EY</stl19:AirlineCode>
+              <stl19:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</stl19:FullText>
             </stl19:GenericSpecialRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="18" type="G">
+              <stl19:DOCSEntry id="20" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
@@ -2636,16 +3007,16 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="21" type="G">
+              <stl19:DOCSEntry id="23" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>1234567890</stl19:DocumentNumber>
                 <stl19:DocumentNationalityCountry>RU</stl19:DocumentNationalityCountry>
-                <stl19:DateOfBirth>2019-02-20</stl19:DateOfBirth>
+                <stl19:DateOfBirth>2022-02-20</stl19:DateOfBirth>
                 <stl19:Gender>FI</stl19:Gender>
                 <stl19:DocumentExpirationDate>2025-04-15</stl19:DocumentExpirationDate>
                 <stl19:Surname>IVANOVA</stl19:Surname>
@@ -2655,18 +3026,18 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-4.2" id="4" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
+        <stl19:Passenger elementId="pnr-5.2" id="5" nameAssocId="2" nameId="02.01" nameType="S" passengerType="ADT">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>ELENA MS</stl19:FirstName>
           <stl19:SpecialRequests>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="19" type="G">
+              <stl19:DOCSEntry id="21" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>2234567890</stl19:DocumentNumber>
@@ -2681,18 +3052,18 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-6.3" id="6" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
+        <stl19:Passenger elementId="pnr-7.3" id="7" nameAssocId="3" nameId="03.01" nameType="S" passengerType="CNN">
           <stl19:LastName>IVANOV</stl19:LastName>
           <stl19:FirstName>ANDREY</stl19:FirstName>
           <stl19:SpecialRequests>
             <stl19:APISRequest>
-              <stl19:DOCSEntry id="20" type="G">
+              <stl19:DOCSEntry id="22" type="G">
                 <stl19:DocumentType>P</stl19:DocumentType>
                 <stl19:CountryOfIssue>RU</stl19:CountryOfIssue>
                 <stl19:DocumentNumber>3234567890</stl19:DocumentNumber>
@@ -2707,135 +3078,204 @@ TP
                 <stl19:FreeText/>
                 <stl19:ActionCode>HK</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:VendorCode>SU</stl19:VendorCode>
+                <stl19:VendorCode>EY</stl19:VendorCode>
               </stl19:DOCSEntry>
             </stl19:APISRequest>
           </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
-        <stl19:Passenger elementId="pnr-8.4" id="8" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
+        <stl19:Passenger elementId="pnr-9.4" id="9" nameAssocId="4" nameId="04.01" nameType="I" passengerType="INF">
           <stl19:LastName>IVANOVA</stl19:LastName>
           <stl19:FirstName>EKATERINA</stl19:FirstName>
-          <stl19:SpecialRequests>
-            <stl19:GenericSpecialRequest id="9" msgType="O" type="A">
-              <stl19:FreeText>INF</stl19:FreeText>
-              <stl19:AirlineCode>AA</stl19:AirlineCode>
-              <stl19:FullText>AA INF</stl19:FullText>
-            </stl19:GenericSpecialRequest>
-          </stl19:SpecialRequests>
           <stl19:Seats/>
         </stl19:Passenger>
       </stl19:Passengers>
       <stl19:Segments>
         <stl19:Poc>
-          <stl19:Airport>SVO</stl19:Airport>
-          <stl19:Departure>2020-09-01T07:45:00</stl19:Departure>
+          <stl19:Airport>SYD</stl19:Airport>
+          <stl19:Departure>2022-12-01T23:25:00</stl19:Departure>
         </stl19:Poc>
         <stl19:Segment id="16" sequence="1">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
-            <stl19:DepartureAirport>SVO</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="16" isPast="false" segmentAssociationId="2" sequence="1">
+            <stl19:DepartureAirport>SYD</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>AER</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1138</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1138</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>2463</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>2463</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*FNUENU</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*XVLLPZ</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-01T07:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-01T10:15:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1138</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-01T23:25:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T06:40:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>2463</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="22" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="24" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
-              </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="29" msgType="S" type="A">
-                <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
-                <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
-            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:07:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
         <stl19:Segment id="17" sequence="2">
-          <stl19:Air CodeShare="false" DayOfWeekInd="2" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
-            <stl19:DepartureAirport>AER</stl19:DepartureAirport>
+          <stl19:Air CodeShare="false" DayOfWeekInd="5" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="17" isPast="false" segmentAssociationId="3" sequence="2">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
             <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
-            <stl19:ArrivalAirport>SVO</stl19:ArrivalAirport>
+            <stl19:ArrivalAirport>LHR</stl19:ArrivalAirport>
             <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
-            <stl19:OperatingAirlineCode>SU</stl19:OperatingAirlineCode>
-            <stl19:OperatingAirlineShortName>AEROFLOT</stl19:OperatingAirlineShortName>
-            <stl19:OperatingFlightNumber>1129</stl19:OperatingFlightNumber>
-            <stl19:EquipmentType>73H</stl19:EquipmentType>
-            <stl19:MarketingAirlineCode>SU</stl19:MarketingAirlineCode>
-            <stl19:MarketingFlightNumber>1129</stl19:MarketingFlightNumber>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0025</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0025</stl19:MarketingFlightNumber>
             <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
             <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
             <stl19:MarriageGrp>
               <stl19:Ind>0</stl19:Ind>
-              <stl19:Group>0</stl19:Group>
-              <stl19:Sequence>0</stl19:Sequence>
+              <stl19:Group>1</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
             </stl19:MarriageGrp>
             <stl19:Seats/>
-            <stl19:AirlineRefId>DCSU*FNUENU</stl19:AirlineRefId>
+            <stl19:AirlineRefId>DCEY*XVLLPZ</stl19:AirlineRefId>
             <stl19:Eticket>true</stl19:Eticket>
-            <stl19:DepartureDateTime>2020-09-08T02:45:00</stl19:DepartureDateTime>
-            <stl19:ArrivalDateTime>2020-09-08T05:20:00</stl19:ArrivalDateTime>
-            <stl19:FlightNumber>1129</stl19:FlightNumber>
+            <stl19:DepartureDateTime>2022-12-02T10:35:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-02T14:10:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0025</stl19:FlightNumber>
             <stl19:ClassOfService>Y</stl19:ClassOfService>
             <stl19:ActionCode>HK</stl19:ActionCode>
             <stl19:NumberInParty>3</stl19:NumberInParty>
             <stl19:SegmentSpecialRequests>
-              <stl19:GenericSpecialRequest id="23" msgType="S" type="G">
+              <stl19:GenericSpecialRequest id="25" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
                 <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
-              <stl19:GenericSpecialRequest id="30" msgType="S" type="A">
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
+            <stl19:outboundConnection>false</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="18" sequence="3">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="18" isPast="false" segmentAssociationId="4" sequence="3">
+            <stl19:DepartureAirport>LHR</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>AUH</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0012</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType/>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0012</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>1</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*XVLLPZ</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T08:30:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-08T19:20:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0012</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="26" msgType="S" type="G">
                 <stl19:Code>INFT</stl19:Code>
-                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB19</stl19:FreeText>
-                <stl19:ActionCode>KK</stl19:ActionCode>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
                 <stl19:NumberInParty>1</stl19:NumberInParty>
-                <stl19:AirlineCode>SU</stl19:AirlineCode>
-                <stl19:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</stl19:FullText>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
               </stl19:GenericSpecialRequest>
             </stl19:SegmentSpecialRequests>
             <stl19:inboundConnection>false</stl19:inboundConnection>
+            <stl19:outboundConnection>true</stl19:outboundConnection>
+            <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
+            <stl19:Informational>false</stl19:Informational>
+          </stl19:Air>
+        </stl19:Segment>
+        <stl19:Segment id="19" sequence="4">
+          <stl19:Air CodeShare="false" DayOfWeekInd="4" ResBookDesigCode="Y" SmokingAllowed="false" SpecialMeal="false" id="19" isPast="false" segmentAssociationId="5" sequence="4">
+            <stl19:DepartureAirport>AUH</stl19:DepartureAirport>
+            <stl19:DepartureAirportCodeContext>IATA</stl19:DepartureAirportCodeContext>
+            <stl19:ArrivalAirport>SYD</stl19:ArrivalAirport>
+            <stl19:ArrivalAirportCodeContext>IATA</stl19:ArrivalAirportCodeContext>
+            <stl19:OperatingAirlineCode>EY</stl19:OperatingAirlineCode>
+            <stl19:OperatingAirlineShortName>ETIHAD AIRWAYS</stl19:OperatingAirlineShortName>
+            <stl19:OperatingFlightNumber>0464</stl19:OperatingFlightNumber>
+            <stl19:EquipmentType>789</stl19:EquipmentType>
+            <stl19:MarketingAirlineCode>EY</stl19:MarketingAirlineCode>
+            <stl19:MarketingFlightNumber>0464</stl19:MarketingFlightNumber>
+            <stl19:OperatingClassOfService>Y</stl19:OperatingClassOfService>
+            <stl19:MarketingClassOfService>Y</stl19:MarketingClassOfService>
+            <stl19:MarriageGrp>
+              <stl19:Ind>0</stl19:Ind>
+              <stl19:Group>2</stl19:Group>
+              <stl19:Sequence>2</stl19:Sequence>
+            </stl19:MarriageGrp>
+            <stl19:Seats/>
+            <stl19:AirlineRefId>DCEY*XVLLPZ</stl19:AirlineRefId>
+            <stl19:Eticket>true</stl19:Eticket>
+            <stl19:DepartureDateTime>2022-12-08T22:10:00</stl19:DepartureDateTime>
+            <stl19:ArrivalDateTime>2022-12-09T17:55:00</stl19:ArrivalDateTime>
+            <stl19:FlightNumber>0464</stl19:FlightNumber>
+            <stl19:ClassOfService>Y</stl19:ClassOfService>
+            <stl19:ActionCode>HK</stl19:ActionCode>
+            <stl19:NumberInParty>3</stl19:NumberInParty>
+            <stl19:SegmentSpecialRequests>
+              <stl19:GenericSpecialRequest id="27" msgType="S" type="G">
+                <stl19:Code>INFT</stl19:Code>
+                <stl19:FreeText>/IVANOVA/EKATERINA/20FEB22</stl19:FreeText>
+                <stl19:ActionCode>NN</stl19:ActionCode>
+                <stl19:NumberInParty>1</stl19:NumberInParty>
+                <stl19:AirlineCode>EY</stl19:AirlineCode>
+                <stl19:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</stl19:FullText>
+              </stl19:GenericSpecialRequest>
+            </stl19:SegmentSpecialRequests>
+            <stl19:inboundConnection>true</stl19:inboundConnection>
             <stl19:outboundConnection>false</stl19:outboundConnection>
             <stl19:ScheduleChangeIndicator>false</stl19:ScheduleChangeIndicator>
-            <stl19:SegmentBookedDate>2020-04-16T07:07:00</stl19:SegmentBookedDate>
-            <stl19:Banner>MARKETED BY AEROFLOT</stl19:Banner>
+            <stl19:SegmentBookedDate>2022-05-24T12:21:00</stl19:SegmentBookedDate>
+            <stl19:Banner>MARKETED BY ETIHAD AIRWAYS</stl19:Banner>
             <stl19:Informational>false</stl19:Informational>
           </stl19:Air>
         </stl19:Segment>
@@ -2861,17 +3301,17 @@ TP
       </stl19:PhoneNumber>
     </stl19:PhoneNumbers>
     <stl19:Remarks>
-      <stl19:Remark elementId="pnr-26" id="26" index="1" type="REG">
+      <stl19:Remark elementId="pnr-30" id="30" index="1" type="REG">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
             <stl19:Text>TEXT REMARK</stl19:Text>
           </stl19:RemarkLine>
         </stl19:RemarkLines>
       </stl19:Remark>
-      <stl19:Remark elementId="pnr-32" id="32" index="2" type="FOP">
+      <stl19:Remark elementId="pnr-33" id="33" index="2" type="FOP">
         <stl19:RemarkLines>
           <stl19:RemarkLine>
-            <stl19:Text>*AX3XXXXXXXXXX8431¥12/20</stl19:Text>
+            <stl19:Text>*AX3XXXXXXXXXX8431¥12/27</stl19:Text>
           </stl19:RemarkLine>
         </stl19:RemarkLines>
       </stl19:Remark>
@@ -2883,78 +3323,22 @@ TP
       </stl19:EmailAddress>
     </stl19:EmailAddresses>
     <stl19:OpenReservationElements>
-      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-5" id="5" type="FP">
+      <or114:OpenReservationElement displayIndex="1" elementId="pnr-or-4" id="4" type="FP">
         <or114:FormOfPayment migrated="false">
           <or114:PaymentCard>
             <or114:PaymentType>CC</or114:PaymentType>
             <or114:CardCode>AX</or114:CardCode>
             <or114:CardNumber masked="true" tokenized="true">3XXXXXXXXXX8431</or114:CardNumber>
             <or114:ExpiryMonth>--12</or114:ExpiryMonth>
-            <or114:ExpiryYear>2020</or114:ExpiryYear>
+            <or114:ExpiryYear>2027</or114:ExpiryYear>
             <or114:GenerateApprovalAtTicketing>true</or114:GenerateApprovalAtTicketing>
           </or114:PaymentCard>
         </or114:FormOfPayment>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-9" id="9" type="SRVC">
-        <or114:ServiceRequest airlineCode="AA" serviceType="OSI" ssrType="AFX">
-          <or114:FreeText>INF</or114:FreeText>
-          <or114:FullText>AA INF</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOVA</or114:LastName>
-          <or114:FirstName>EKATERINA</or114:FirstName>
-          <or114:ReferenceId>4</or114:ReferenceId>
-          <or114:NameRefNumber>04.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-30" id="30" type="SRVC">
-        <or114:ServiceRequest actionCode="KK" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="AFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19 </or114:FreeText>
-          <or114:FullText>INFT SU KK1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19 </or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-18" id="18" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -2974,14 +3358,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-19" id="19" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/2234567890/RU/20JAN1980/F/15AUG2025/IVANOVA/ELENA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -3001,14 +3385,14 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOVA</or114:LastName>
           <or114:FirstName>ELENA MS</or114:FirstName>
-          <or114:ReferenceId>2</or114:ReferenceId>
           <or114:NameRefNumber>02.01</or114:NameRefNumber>
+          <or114:ReferenceId>2</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-20" id="20" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
+          <or114:FullText>DOCS EY HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
@@ -3028,21 +3412,21 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>ANDREY</or114:FirstName>
-          <or114:ReferenceId>3</or114:ReferenceId>
           <or114:NameRefNumber>03.01</or114:NameRefNumber>
+          <or114:ReferenceId>3</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-21" id="21" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
-          <or114:FullText>DOCS SU HK1/P/RU/1234567890/RU/20FEB2019/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
+      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="DOCS" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FreeText>
+          <or114:FullText>DOCS EY HK1/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA</or114:FullText>
           <or114:TravelDocument>
             <or114:Type>P</or114:Type>
             <or114:DocumentIssueCountry>RU</or114:DocumentIssueCountry>
             <or114:DocumentNumber>1234567890</or114:DocumentNumber>
             <or114:DocumentNationalityCountry>RU</or114:DocumentNationalityCountry>
             <or114:DocumentExpirationDate>15APR2025</or114:DocumentExpirationDate>
-            <or114:DateOfBirth>20FEB2019</or114:DateOfBirth>
+            <or114:DateOfBirth>20FEB2022</or114:DateOfBirth>
             <or114:Gender>FI</or114:Gender>
             <or114:LastName>IVANOVA</or114:LastName>
             <or114:FirstName>EKATERINA</or114:FirstName>
@@ -3055,58 +3439,106 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-22" id="22" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 SVOAER1138Y01SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1138</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-01</or114:DepartureDate>
-            <or114:BoardPoint>SVO</or114:BoardPoint>
-            <or114:OffPoint>AER</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
           <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
-        </or114:NameAssociation>
-      </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-23" id="23" type="SRVC">
-        <or114:ServiceRequest actionCode="NN" airlineCode="SU" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
-          <or114:FreeText>/IVANOVA/EKATERINA/20FEB19</or114:FreeText>
-          <or114:FullText>INFT SU NN1 AERSVO1129Y08SEP/IVANOVA/EKATERINA/20FEB19</or114:FullText>
-        </or114:ServiceRequest>
-        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
-          <or114:AirSegment>
-            <or114:CarrierCode>SU</or114:CarrierCode>
-            <or114:FlightNumber>1129</or114:FlightNumber>
-            <or114:DepartureDate>2020-09-08</or114:DepartureDate>
-            <or114:BoardPoint>AER</or114:BoardPoint>
-            <or114:OffPoint>SVO</or114:OffPoint>
-            <or114:ClassOfService>Y</or114:ClassOfService>
-          </or114:AirSegment>
-        </or114:SegmentAssociation>
-        <or114:NameAssociation>
-          <or114:LastName>IVANOV</or114:LastName>
-          <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
-          <or114:NameRefNumber>01.01</or114:NameRefNumber>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-24" id="24" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="16" SegmentAssociationId="2">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>2463</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-01</or114:DepartureDate>
+            <or114:BoardPoint>SYD</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="17" SegmentAssociationId="3">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0025</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-02</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>LHR</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-26" id="26" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="18" SegmentAssociationId="4">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0012</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>LHR</or114:BoardPoint>
+            <or114:OffPoint>AUH</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-27" id="27" type="SRVC">
+        <or114:ServiceRequest actionCode="NN" airlineCode="EY" code="INFT" serviceCount="1" serviceType="SSR" ssrType="GFX">
+          <or114:FreeText>/IVANOVA/EKATERINA/20FEB22</or114:FreeText>
+          <or114:FullText>INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22</or114:FullText>
+        </or114:ServiceRequest>
+        <or114:SegmentAssociation Id="19" SegmentAssociationId="5">
+          <or114:AirSegment>
+            <or114:CarrierCode>EY</or114:CarrierCode>
+            <or114:FlightNumber>0464</or114:FlightNumber>
+            <or114:DepartureDate>2022-12-08</or114:DepartureDate>
+            <or114:BoardPoint>AUH</or114:BoardPoint>
+            <or114:OffPoint>SYD</or114:OffPoint>
+            <or114:ClassOfService>Y</or114:ClassOfService>
+            <or114:BookingStatus>NN</or114:BookingStatus>
+          </or114:AirSegment>
+        </or114:SegmentAssociation>
+        <or114:NameAssociation>
+          <or114:LastName>IVANOV</or114:LastName>
+          <or114:FirstName>IVAN MR</or114:FirstName>
+          <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
+        </or114:NameAssociation>
+      </or114:OpenReservationElement>
+      <or114:OpenReservationElement elementId="pnr-28" id="28" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCM" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:FreeText>/79851234567/RU</or114:FreeText>
-          <or114:FullText>CTCM SU HK1/79851234567/RU</or114:FullText>
+          <or114:FullText>CTCM EY HK1/79851234567/RU</or114:FullText>
           <or114:PassengerContactMobilePhone>
             <or114:PhoneNumber>79851234567</or114:PhoneNumber>
             <or114:Language>RU</or114:Language>
@@ -3115,15 +3547,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
-      <or114:OpenReservationElement elementId="pnr-25" id="25" type="SRVC">
-        <or114:ServiceRequest actionCode="HK" airlineCode="SU" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
+      <or114:OpenReservationElement elementId="pnr-29" id="29" type="SRVC">
+        <or114:ServiceRequest actionCode="HK" airlineCode="EY" code="CTCE" serviceCount="1" serviceType="SSR" ssrType="GFX">
           <or114:Comment>COM/RU</or114:Comment>
           <or114:FreeText>/CUSTOMER//CUSTOMER.COM/RU</or114:FreeText>
-          <or114:FullText>CTCE SU HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
+          <or114:FullText>CTCE EY HK1/CUSTOMER//CUSTOMER.COM/RU</or114:FullText>
           <or114:PassengerContactEmail>
             <or114:Email>CUSTOMER@CUSTOMER.COM</or114:Email>
             <or114:Language>RU</or114:Language>
@@ -3132,8 +3564,8 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
       <or114:OpenReservationElement elementId="pnr-13" id="13" type="PSG_DETAILS_MAIL">
@@ -3148,15 +3580,15 @@ TP
         <or114:NameAssociation>
           <or114:LastName>IVANOV</or114:LastName>
           <or114:FirstName>IVAN MR</or114:FirstName>
-          <or114:ReferenceId>1</or114:ReferenceId>
           <or114:NameRefNumber>01.01</or114:NameRefNumber>
+          <or114:ReferenceId>1</or114:ReferenceId>
         </or114:NameAssociation>
       </or114:OpenReservationElement>
     </stl19:OpenReservationElements>
   </stl19:Reservation>
   <stl19:Results>
     <stl19:UpdateResult Status="SUCCESS" UpdateId="">
-      <stl19:Item id="32" op="C"/>
+      <stl19:Item id="33" op="C"/>
     </stl19:UpdateResult>
   </stl19:Results>
 </stl19:UpdateReservationRS>

@@ -57,14 +57,22 @@ title: Обмен билетов
     - ```I``` — женатый сегмент (продолжение предыдущего сегмента)
 - ```/OriginLocation/@LocationCode``` —  код пункта отправления
 
-{{< details title="Пример (3 места на рейсе SU1138 из Шереметьево в Сочи 15 марта в Y классе)" open=true >}}
+{{< details title="Пример (перелет LON-SYD с пересадкой)" open=true >}}
 ```XML
-<FlightSegment DepartureDateTime="2019-03-15T06:50" FlightNumber="1138" NumberInParty="3" ResBookDesigCode="Y" Status="NN">
-  <DestinationLocation LocationCode="AER"/>
-  <MarketingAirline Code="SU" FlightNumber="1138"/>
-  <MarriageGrp>O</MarriageGrp>
-  <OriginLocation LocationCode="SVO"/>
-</FlightSegment>
+<OriginDestinationInformation>
+  <FlightSegment DepartureDateTime="2022-12-01T00:00:00" FlightNumber="2463" NumberInParty="3" ResBookDesigCode="Y" Status="NN">
+    <DestinationLocation LocationCode="AUH"/>
+    <MarketingAirline Code="EY" FlightNumber="2463"/>
+    <MarriageGrp>O</MarriageGrp>
+    <OriginLocation LocationCode="SYD"/>
+  </FlightSegment>
+  <FlightSegment DepartureDateTime="2022-12-02T00:00:00" FlightNumber="25" NumberInParty="3" ResBookDesigCode="Y" Status="NN">
+    <DestinationLocation LocationCode="LHR"/>
+    <MarketingAirline Code="EY" FlightNumber="25"/>
+    <MarriageGrp>I</MarriageGrp>
+    <OriginLocation LocationCode="AUH"/>
+  </FlightSegment>
+</OriginDestinationInformation>
 ```
 {{< /details >}}
 

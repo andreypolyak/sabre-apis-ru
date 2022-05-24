@@ -26,7 +26,7 @@ aliases:
 
 Для того чтобы указать сток, на котором должен быть оформлен новый билет, используется сервис [DesignatePrinterLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/designate_printer).
 
-В качестве значения атрибута ```/DesignatePrinterRQ/Printers/Ticket/@CountryCode``` в запросе должен быть указан код стока. Сток для оформления нового билета должен совпадать со стоком, на котором был оформлен оригинальный билет. Код стока указан в ответе на запрос TravelItineraryReadRQ в поле ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/Ticketing/@eTicketNumber``` после номера билета.
+В качестве значения атрибута ```/DesignatePrinterRQ/Printers/Ticket/@CountryCode``` в запросе должен быть указан код стока. Сток для оформления нового билета должен совпадать со стоком, на котором был оформлен оригинальный билет. Код стока указан в ответе на запрос [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary) в поле ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/Ticketing/@eTicketNumber``` после номера билета.
 
 Соответствие стоков и их кодов:
 

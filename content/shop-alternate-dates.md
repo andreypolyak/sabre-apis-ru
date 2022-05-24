@@ -14,7 +14,7 @@ aliases:
 Обратите внимание на то, что использование этого сервиса требует активации для каждого iPCC. Пожалуйста, обратитесь к вашему куратору в Sabre для уточнения деталей.
 {{< /hint >}}
 
-Схема запроса и ответа сервиса BargainFinderMax_ADRQ, а также правила составления запросов совпадают с таковыми для сервиса BargainFinderMaxRQ (см. [Поиск перелетов по заданным датам](shop.html)) за исключением перечисленных ниже особенностей.
+Схема запроса и ответа сервиса [BargainFinderMax_ADRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad), а также правила составления запросов совпадают с таковыми для сервиса [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) (см. [Поиск перелетов по заданным датам](shop.html)) за исключением перечисленных ниже особенностей.
 
 ## Тип запроса
 

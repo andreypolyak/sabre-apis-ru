@@ -17,7 +17,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.f99435cde5efa46f15f527928db5713540168e4852b93abb573cbb0aa533a25f.css" integrity="sha256-&#43;ZQ1zeXvpG8V9SeSjbVxNUAWjkhSuTq7Vzy7CqUzol8=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/en.search.min.c5a0a076512a10819de7bd698657f6350ee586ac25ab709380764ae0bbc9e9fd.js" integrity="sha256-xaCgdlEqEIGd571phlf2NQ7lhqwlq3CTgHZK4LvJ6f0=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/en.search.min.57e2694763aafc009bb20aae785fbba28168a67ae037759f6cc17a49ad6b4148.js" integrity="sha256-V&#43;JpR2Oq/ACbsgqueF&#43;7ooFopnrgN3WfbMF6Sa1rQUg=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -538,7 +538,7 @@ https://github.com/alex-shpak/hugo-book
   Выбор тарифа из списка дубликатов
   <a class="anchor" href="#%d0%b2%d1%8b%d0%b1%d0%be%d1%80-%d1%82%d0%b0%d1%80%d0%b8%d1%84%d0%b0-%d0%b8%d0%b7-%d1%81%d0%bf%d0%b8%d1%81%d0%ba%d0%b0-%d0%b4%d1%83%d0%b1%d0%bb%d0%b8%d0%ba%d0%b0%d1%82%d0%be%d0%b2">#</a>
 </h2>
-<p>В некоторых случаях перевозчики могут иметь несколько тарифов с одинаковым кодом, пунктом отправления, пунктом прибытия и датой вылета. В этом случае при попытке запросить текст правил тарифа при помощи сервиса OTA_AirRulesLLSRQ ответ будет содержать элемент <code>/OTA_AirRulesRS/DuplicateFareInfo</code> с перечислением дубликатов тарифов:</p>
+<p>В некоторых случаях перевозчики могут иметь несколько тарифов с одинаковым кодом, пунктом отправления, пунктом прибытия и датой вылета. В этом случае при попытке запросить текст правил тарифа при помощи сервиса <a href="https://developer.sabre.com/docs/soap_apis/air/book/air_fare_rules">OTA_AirRulesLLSRQ</a> ответ будет содержать элемент <code>/OTA_AirRulesRS/DuplicateFareInfo</code> с перечислением дубликатов тарифов:</p>
 <details ><summary>Пример ответа с перечислением дубликатов тарифов</summary>
   <div class="markdown-inner">
     <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;OTA_AirRulesRS</span> <span style="color:#00c">Version=</span><span style="background-color:#fff0f0">&#34;2.3.0&#34;</span> <span style="color:#00c">xmlns=</span><span style="background-color:#fff0f0">&#34;http://webservices.sabre.com/sabreXML/2011/10&#34;</span> <span style="color:#00c">xmlns:stl=</span><span style="background-color:#fff0f0">&#34;http://services.sabre.com/STL/v01&#34;</span> <span style="color:#00c">xmlns:xs=</span><span style="background-color:#fff0f0">&#34;http://www.w3.org/2001/XMLSchema&#34;</span> <span style="color:#00c">xmlns:xsi=</span><span style="background-color:#fff0f0">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span><span style="color:#070">&gt;</span>
@@ -574,7 +574,7 @@ https://github.com/alex-shpak/hugo-book
   </div>
 </details>
 
-<p>Для выбора одного из предложенных тарифов необходимо повторно отправить запрос к сервису OTA_AirRulesLLSRQ, указав номер тарифа из списка в качестве значения атрибута <code>/OTA_AirRulesRQ/RuleReqInfo/@RPH</code>.</p>
+<p>Для выбора одного из предложенных тарифов необходимо повторно отправить запрос к сервису <a href="https://developer.sabre.com/docs/soap_apis/air/book/air_fare_rules">OTA_AirRulesLLSRQ</a>, указав номер тарифа из списка в качестве значения атрибута <code>/OTA_AirRulesRQ/RuleReqInfo/@RPH</code>.</p>
 <p>В случае необходимости получения только определенных категорий правил тарифа необходимо указать номера категорий пассажиров в последовательно расположенных элементах <code>/OTA_AirRulesRQ/RuleReqInfo/Category</code>.</p>
 <details ><summary>Пример запроса</summary>
   <div class="markdown-inner">

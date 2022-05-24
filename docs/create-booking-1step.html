@@ -17,7 +17,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.f99435cde5efa46f15f527928db5713540168e4852b93abb573cbb0aa533a25f.css" integrity="sha256-&#43;ZQ1zeXvpG8V9SeSjbVxNUAWjkhSuTq7Vzy7CqUzol8=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/en.search.min.c5a0a076512a10819de7bd698657f6350ee586ac25ab709380764ae0bbc9e9fd.js" integrity="sha256-xaCgdlEqEIGd571phlf2NQ7lhqwlq3CTgHZK4LvJ6f0=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/en.search.min.57e2694763aafc009bb20aae785fbba28168a67ae037759f6cc17a49ad6b4148.js" integrity="sha256-V&#43;JpR2Oq/ACbsgqueF&#43;7ooFopnrgN3WfbMF6Sa1rQUg=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -311,14 +311,22 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ol>
-<details open><summary>Пример (3 места на рейсе SU1138 из Шереметьево в Сочи 15 марта в Y классе)</summary>
+<details open><summary>Пример (перелет LON-SYD с пересадкой)</summary>
   <div class="markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;2019-03-15T06:50&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;1138&#34;</span> <span style="color:#00c">NumberInParty=</span><span style="background-color:#fff0f0">&#34;3&#34;</span> <span style="color:#00c">ResBookDesigCode=</span><span style="background-color:#fff0f0">&#34;Y&#34;</span> <span style="color:#00c">Status=</span><span style="background-color:#fff0f0">&#34;NN&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AER&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;MarketingAirline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;1138&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;MarriageGrp&gt;</span>O<span style="color:#070">&lt;/MarriageGrp&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;SVO&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/FlightSegment&gt;</span>
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;OriginDestinationInformation&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;2022-12-01T00:00:00&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;2463&#34;</span> <span style="color:#00c">NumberInParty=</span><span style="background-color:#fff0f0">&#34;3&#34;</span> <span style="color:#00c">ResBookDesigCode=</span><span style="background-color:#fff0f0">&#34;Y&#34;</span> <span style="color:#00c">Status=</span><span style="background-color:#fff0f0">&#34;NN&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AUH&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarketingAirline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;EY&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;2463&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarriageGrp&gt;</span>O<span style="color:#070">&lt;/MarriageGrp&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;SYD&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/FlightSegment&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;2022-12-02T00:00:00&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;25&#34;</span> <span style="color:#00c">NumberInParty=</span><span style="background-color:#fff0f0">&#34;3&#34;</span> <span style="color:#00c">ResBookDesigCode=</span><span style="background-color:#fff0f0">&#34;Y&#34;</span> <span style="color:#00c">Status=</span><span style="background-color:#fff0f0">&#34;NN&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;LHR&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarketingAirline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;EY&#34;</span> <span style="color:#00c">FlightNumber=</span><span style="background-color:#fff0f0">&#34;25&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;MarriageGrp&gt;</span>I<span style="color:#070">&lt;/MarriageGrp&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AUH&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/FlightSegment&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/OriginDestinationInformation&gt;</span>
 </span></span></code></pre></div>
   </div>
 </details>
@@ -327,7 +335,7 @@ https://github.com/alex-shpak/hugo-book
   Проверка статусов сегментов
   <a class="anchor" href="#%d0%bf%d1%80%d0%be%d0%b2%d0%b5%d1%80%d0%ba%d0%b0-%d1%81%d1%82%d0%b0%d1%82%d1%83%d1%81%d0%be%d0%b2-%d1%81%d0%b5%d0%b3%d0%bc%d0%b5%d0%bd%d1%82%d0%be%d0%b2">#</a>
 </h4>
-<p>Сервис CreatePassengerNameRecordRQ позволяет указать список статусов сегментов, при появлении которых выполнение запроса будет остановлено. Статусы сегментов необходимо указать в атрибутах <code>/CreatePassengerNameRecordRQ/AirBook/HaltOnStatus/@Code</code>.</p>
+<p>Сервис <a href="https://developer.sabre.com/docs/read/soap_apis/air/book/create_passenger_name_record">CreatePassengerNameRecordRQ</a> позволяет указать список статусов сегментов, при появлении которых выполнение запроса будет остановлено. Статусы сегментов необходимо указать в атрибутах <code>/CreatePassengerNameRecordRQ/AirBook/HaltOnStatus/@Code</code>.</p>
 <details open><summary>Рекомендуемый список статусов сегментов</summary>
   <div class="markdown-inner">
     <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;HaltOnStatus</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;HL&#34;</span><span style="color:#070">/&gt;</span>
@@ -427,7 +435,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%d1%80%d0%b0%d1%81%d1%87%d0%b5%d1%82-%d1%81%d1%82%d0%be%d0%b8%d0%bc%d0%be%d1%81%d1%82%d0%b8-%d0%bf%d0%be-%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%bd%d1%8b%d0%bc-%d1%82%d0%b0%d1%80%d0%b8%d1%84%d0%b0%d0%bc">#</a>
 </h4>
 <p>Алгоритм внесения информации о бренде различается в зависимости от того применяется ли один и тот же бренд для всех сегментов бронирования или несколько разных брендов применяются для разных сегментов.</p>
-<p>Для получения этой информации необходимо проанализировать ответ сервиса BargainFinderMaxRQ или RevalidateItinRQ:</p>
+<p>Для получения этой информации необходимо проанализировать ответ сервиса <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max">BargainFinderMaxRQ</a> или <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/revalidate_itinerary">RevalidateItinRQ</a>:</p>
 <ul>
 <li>если все элементы <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (для самой дешевой комбинации брендов) или <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (для дополнительных вариантов) содержат один и тот же код бренда в качестве значения атрибута <code>/@BrandID</code>, то для всего бронирования должен быть выбран один бренд</li>
 <li>если все указанные выше элементы имеют различный атрибут <code>/@BrandID</code> или некоторые из указанных элементов не имеют атрибута <code>/@BrandID</code>, то при бронировании должен применяться посегментный выбор бренда</li>
@@ -446,10 +454,10 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%d0%bf%d0%be%d1%81%d0%b5%d0%b3%d0%bc%d0%b5%d0%bd%d1%82%d0%bd%d1%8b%d0%b9-%d0%b2%d1%8b%d0%b1%d0%be%d1%80-%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%be%d0%b2">#</a>
 </h5>
 <blockquote class="book-hint warning">
-  Обратите внимание на то, что многие перевозчики имеют жесткие требования относительно комбинации различных брендов. Не рекомендуется комбинировать их самостоятельно! Результаты поиска Bargain Finder Max будут содержать только те комбинации брендов, которые разрешены перевозчиком.
+  Обратите внимание на то, что многие перевозчики имеют жесткие требования относительно комбинации различных брендов. Не рекомендуется комбинировать их самостоятельно! Результаты поиска <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max">BargainFinderMaxRQ</a> будут содержать только те комбинации брендов, которые разрешены перевозчиком.
 </blockquote>
 
-<p>Для посегментного выбора бренда в случае получения расчетов по всем брендам в результатах поиска (сервис BargainFinderMaxRQ) или при проверке стоимости и наличия мест (сервис RevalidateItinRQ) необходимо определить соответствие между элементами <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (для самой дешевой комбинации брендов) или <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (для дополнительных вариантов) и сегментами. Для этого каждый элемент <code>/FareComponent</code> содержит дочерние элементы <code>/Segment</code>, каждый из которых соответствует одному сегменту в маршруте перелета. Для установления точного соответствия между элементом <code>/Segment</code> и сегментами в путешествии используются атрибуты:</p>
+<p>Для посегментного выбора бренда в случае получения расчетов по всем брендам в результатах поиска (сервис <a href="https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max">BargainFinderMaxRQ</a>) или при проверке стоимости и наличия мест (сервис RevalidateItinRQ) необходимо определить соответствие между элементами <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (для самой дешевой комбинации брендов) или <code>/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent</code> (для дополнительных вариантов) и сегментами. Для этого каждый элемент <code>/FareComponent</code> содержит дочерние элементы <code>/Segment</code>, каждый из которых соответствует одному сегменту в маршруте перелета. Для установления точного соответствия между элементом <code>/Segment</code> и сегментами в путешествии используются атрибуты:</p>
 <ul>
 <li><code>/Segment/@LegIndex</code> — номер плеча</li>
 <li><code>/Segment/@FlightIndex</code> — номер сегмента в плече</li>
@@ -775,10 +783,10 @@ https://github.com/alex-shpak/hugo-book
 <li><code>/@ProgramID</code> — код перевозчика, выпустившего карту</li>
 <li><code>/@TravelingCarrierCode</code> — код маркетингового перевозчика, для сегментов которого будет применена карта лояльности</li>
 </ul>
-<details open><summary>Пример (у первого пассажира карта KL для сегментов SU, у второго пассажира карта SU для сегментов SU)</summary>
+<details open><summary>Пример (у первого пассажира карта KL для сегментов AF, у второго пассажира карта AF для сегментов AF)</summary>
   <div class="markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;CustLoyalty</span> <span style="color:#00c">MembershipID=</span><span style="background-color:#fff0f0">&#34;1234567890&#34;</span> <span style="color:#00c">NameNumber=</span><span style="background-color:#fff0f0">&#34;1.1&#34;</span> <span style="color:#00c">ProgramID=</span><span style="background-color:#fff0f0">&#34;KL&#34;</span> <span style="color:#00c">TravelingCarrierCode=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CustLoyalty</span> <span style="color:#00c">MembershipID=</span><span style="background-color:#fff0f0">&#34;0987654321&#34;</span> <span style="color:#00c">NameNumber=</span><span style="background-color:#fff0f0">&#34;2.1&#34;</span> <span style="color:#00c">ProgramID=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span> <span style="color:#00c">TravelingCarrierCode=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span><span style="color:#070">/&gt;</span>
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;CustLoyalty</span> <span style="color:#00c">MembershipID=</span><span style="background-color:#fff0f0">&#34;1234567890&#34;</span> <span style="color:#00c">NameNumber=</span><span style="background-color:#fff0f0">&#34;1.1&#34;</span> <span style="color:#00c">ProgramID=</span><span style="background-color:#fff0f0">&#34;KL&#34;</span> <span style="color:#00c">TravelingCarrierCode=</span><span style="background-color:#fff0f0">&#34;AF&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CustLoyalty</span> <span style="color:#00c">MembershipID=</span><span style="background-color:#fff0f0">&#34;0987654321&#34;</span> <span style="color:#00c">NameNumber=</span><span style="background-color:#fff0f0">&#34;2.1&#34;</span> <span style="color:#00c">ProgramID=</span><span style="background-color:#fff0f0">&#34;AF&#34;</span> <span style="color:#00c">TravelingCarrierCode=</span><span style="background-color:#fff0f0">&#34;AF&#34;</span><span style="color:#070">/&gt;</span>
 </span></span></code></pre></div>
   </div>
 </details>
@@ -1135,7 +1143,7 @@ https://github.com/alex-shpak/hugo-book
     <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;Service</span> <span style="color:#00c">SSR_Code=</span><span style="background-color:#fff0f0">&#34;OSI&#34;</span><span style="color:#070">&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;Text&gt;</span>OSI TEXT<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;VendorPrefs&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;Airline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;Airline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;EY&#34;</span><span style="color:#070">/&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/VendorPrefs&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#070">&lt;/Service&gt;</span>
 </span></span></code></pre></div>
@@ -1201,7 +1209,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%d0%b4%d0%be%d0%b1%d0%b0%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bd%d0%b0%d0%b7%d0%b5%d0%bc%d0%bd%d1%8b%d1%85-%d1%81%d0%b5%d0%b3%d0%bc%d0%b5%d0%bd%d1%82%d0%be%d0%b2">#</a>
 </h4>
 <p>В Sabre все сегменты в бронировании должны идти последовательно без разрывов, т.е. город отправления (<strong>не аэропорт!</strong>) следующего сегмента должен быть равен городу прибытия предыдущего сегмента. Если в бронировании есть разрывы, то необходимо вставить специальные наземные сегменты — ARUNK (Arrival Unknown).</p>
-<p>Для добавления наземных сегментов в сервисе CreatePassengerNameRecordRQ необходимо добавить в запрос элемент <code>/CreatePassengerNameRecordRQ/PostProcessing/ARUNK</code>. Этот элемент можно указывать во всех запросах. Если наземный сегмент не требуется, то он просто не будет вставлен в бронирование, при этом выполнение запроса не прервется.</p>
+<p>Для добавления наземных сегментов в сервисе <a href="https://developer.sabre.com/docs/read/soap_apis/air/book/create_passenger_name_record">CreatePassengerNameRecordRQ</a> необходимо добавить в запрос элемент <code>/CreatePassengerNameRecordRQ/PostProcessing/ARUNK</code>. Этот элемент можно указывать во всех запросах. Если наземный сегмент не требуется, то он просто не будет вставлен в бронирование, при этом выполнение запроса не прервется.</p>
 <p>По умолчанию наземные сегменты будут добавлены после момента расчета стоимости, однако, если указать значение <code>true</code> у атрибута <code>/CreatePassengerNameRecordRQ/PostProcessing/ARUNK/@priorPricing</code>, то наземные сегменты будут добавлены до момента расчета стоимости.</p>
 <p>В случае добавления наземных сегментов до момента расчета стоимости и использовании посегментного выбора брендов или тарифов рекомендуется указать значение <code>true</code> у атрибута <code>/CreatePassengerNameRecordRQ/PostProcessing/ARUNK/@keepSegments</code> для того, чтобы сохранить правильный порядок указания сегментов.</p>
 <h4 id="сохранение-бронирования">

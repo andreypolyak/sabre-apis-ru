@@ -54,20 +54,28 @@ title: Создание бронирований в 1 шаг
     - Если у предыдущего сегмента значение атрибута ```/@AvailabilityBreak``` равно ```true```, то у текущего сегмента указывается значение ```O``` (обычный сегмент)
     - Если у предыдущего сегмента нет атрибута ```/@AvailabilityBreak```, то у текущего сегмента указывается значение ```I``` (женатый сегмент)
 
-{{< details title="Пример (3 места на рейсе SU1138 из Шереметьево в Сочи 15 марта в Y классе)" open=true >}}
+{{< details title="Пример (перелет LON-SYD с пересадкой)" open=true >}}
 ```XML
-<FlightSegment DepartureDateTime="2019-03-15T06:50" FlightNumber="1138" NumberInParty="3" ResBookDesigCode="Y" Status="NN">
-  <DestinationLocation LocationCode="AER"/>
-  <MarketingAirline Code="SU" FlightNumber="1138"/>
-  <MarriageGrp>O</MarriageGrp>
-  <OriginLocation LocationCode="SVO"/>
-</FlightSegment>
+<OriginDestinationInformation>
+  <FlightSegment DepartureDateTime="2022-12-01T00:00:00" FlightNumber="2463" NumberInParty="3" ResBookDesigCode="Y" Status="NN">
+    <DestinationLocation LocationCode="AUH"/>
+    <MarketingAirline Code="EY" FlightNumber="2463"/>
+    <MarriageGrp>O</MarriageGrp>
+    <OriginLocation LocationCode="SYD"/>
+  </FlightSegment>
+  <FlightSegment DepartureDateTime="2022-12-02T00:00:00" FlightNumber="25" NumberInParty="3" ResBookDesigCode="Y" Status="NN">
+    <DestinationLocation LocationCode="LHR"/>
+    <MarketingAirline Code="EY" FlightNumber="25"/>
+    <MarriageGrp>I</MarriageGrp>
+    <OriginLocation LocationCode="AUH"/>
+  </FlightSegment>
+</OriginDestinationInformation>
 ```
 {{< /details >}}
 
 #### Проверка статусов сегментов
 
-Сервис CreatePassengerNameRecordRQ позволяет указать список статусов сегментов, при появлении которых выполнение запроса будет остановлено. Статусы сегментов необходимо указать в атрибутах ```/CreatePassengerNameRecordRQ/AirBook/HaltOnStatus/@Code```.
+Сервис [CreatePassengerNameRecordRQ](https://developer.sabre.com/docs/read/soap_apis/air/book/create_passenger_name_record) позволяет указать список статусов сегментов, при появлении которых выполнение запроса будет остановлено. Статусы сегментов необходимо указать в атрибутах ```/CreatePassengerNameRecordRQ/AirBook/HaltOnStatus/@Code```.
 
 {{< details title="Рекомендуемый список статусов сегментов" open=true >}}
 ```XML
@@ -143,7 +151,7 @@ title: Создание бронирований в 1 шаг
 
 Алгоритм внесения информации о бренде различается в зависимости от того применяется ли один и тот же бренд для всех сегментов бронирования или несколько разных брендов применяются для разных сегментов.
 
-Для получения этой информации необходимо проанализировать ответ сервиса BargainFinderMaxRQ или RevalidateItinRQ:
+Для получения этой информации необходимо проанализировать ответ сервиса [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) или [RevalidateItinRQ](https://developer.sabre.com/docs/read/soap_apis/air/search/revalidate_itinerary):
 - если все элементы ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent``` (для самой дешевой комбинации брендов) или ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent``` (для дополнительных вариантов) содержат один и тот же код бренда в качестве значения атрибута ```/@BrandID```, то для всего бронирования должен быть выбран один бренд
 - если все указанные выше элементы имеют различный атрибут ```/@BrandID``` или некоторые из указанных элементов не имеют атрибута ```/@BrandID```, то при бронировании должен применяться посегментный выбор бренда
 
@@ -158,10 +166,10 @@ title: Создание бронирований в 1 шаг
 ##### Посегментный выбор брендов
 
 {{< hint warning >}}
-Обратите внимание на то, что многие перевозчики имеют жесткие требования относительно комбинации различных брендов. Не рекомендуется комбинировать их самостоятельно! Результаты поиска Bargain Finder Max будут содержать только те комбинации брендов, которые разрешены перевозчиком.
+Обратите внимание на то, что многие перевозчики имеют жесткие требования относительно комбинации различных брендов. Не рекомендуется комбинировать их самостоятельно! Результаты поиска [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) будут содержать только те комбинации брендов, которые разрешены перевозчиком.
 {{< /hint >}}
 
-Для посегментного выбора бренда в случае получения расчетов по всем брендам в результатах поиска (сервис BargainFinderMaxRQ) или при проверке стоимости и наличия мест (сервис RevalidateItinRQ) необходимо определить соответствие между элементами ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent``` (для самой дешевой комбинации брендов) или ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent``` (для дополнительных вариантов) и сегментами. Для этого каждый элемент ```/FareComponent``` содержит дочерние элементы ```/Segment```, каждый из которых соответствует одному сегменту в маршруте перелета. Для установления точного соответствия между элементом ```/Segment``` и сегментами в путешествии используются атрибуты:
+Для посегментного выбора бренда в случае получения расчетов по всем брендам в результатах поиска (сервис [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max)) или при проверке стоимости и наличия мест (сервис RevalidateItinRQ) необходимо определить соответствие между элементами ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent``` (для самой дешевой комбинации брендов) или ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/PassengerFare/TPA_Extensions/FareComponents/FareComponent``` (для дополнительных вариантов) и сегментами. Для этого каждый элемент ```/FareComponent``` содержит дочерние элементы ```/Segment```, каждый из которых соответствует одному сегменту в маршруте перелета. Для установления точного соответствия между элементом ```/Segment``` и сегментами в путешествии используются атрибуты:
 - ```/Segment/@LegIndex``` — номер плеча
 - ```/Segment/@FlightIndex``` — номер сегмента в плече
 
@@ -415,10 +423,10 @@ title: Создание бронирований в 1 шаг
 - ```/@ProgramID``` — код перевозчика, выпустившего карту
 - ```/@TravelingCarrierCode``` — код маркетингового перевозчика, для сегментов которого будет применена карта лояльности
 
-{{< details title="Пример (у первого пассажира карта KL для сегментов SU, у второго пассажира карта SU для сегментов SU)" open=true >}}
+{{< details title="Пример (у первого пассажира карта KL для сегментов AF, у второго пассажира карта AF для сегментов AF)" open=true >}}
 ```XML
-<CustLoyalty MembershipID="1234567890" NameNumber="1.1" ProgramID="KL" TravelingCarrierCode="SU"/>
-<CustLoyalty MembershipID="0987654321" NameNumber="2.1" ProgramID="SU" TravelingCarrierCode="SU"/>
+<CustLoyalty MembershipID="1234567890" NameNumber="1.1" ProgramID="KL" TravelingCarrierCode="AF"/>
+<CustLoyalty MembershipID="0987654321" NameNumber="2.1" ProgramID="AF" TravelingCarrierCode="AF"/>
 ```
 {{< /details >}}
 
@@ -693,7 +701,7 @@ title: Создание бронирований в 1 шаг
 <Service SSR_Code="OSI">
   <Text>OSI TEXT</Text>
   <VendorPrefs>
-    <Airline Code="SU"/>
+    <Airline Code="EY"/>
   </VendorPrefs>
 </Service>
 ```
@@ -749,7 +757,7 @@ title: Создание бронирований в 1 шаг
 
 В Sabre все сегменты в бронировании должны идти последовательно без разрывов, т.е. город отправления (**не аэропорт!**) следующего сегмента должен быть равен городу прибытия предыдущего сегмента. Если в бронировании есть разрывы, то необходимо вставить специальные наземные сегменты — ARUNK (Arrival Unknown).
 
-Для добавления наземных сегментов в сервисе CreatePassengerNameRecordRQ необходимо добавить в запрос элемент ```/CreatePassengerNameRecordRQ/PostProcessing/ARUNK```. Этот элемент можно указывать во всех запросах. Если наземный сегмент не требуется, то он просто не будет вставлен в бронирование, при этом выполнение запроса не прервется.
+Для добавления наземных сегментов в сервисе [CreatePassengerNameRecordRQ](https://developer.sabre.com/docs/read/soap_apis/air/book/create_passenger_name_record) необходимо добавить в запрос элемент ```/CreatePassengerNameRecordRQ/PostProcessing/ARUNK```. Этот элемент можно указывать во всех запросах. Если наземный сегмент не требуется, то он просто не будет вставлен в бронирование, при этом выполнение запроса не прервется.
 
 По умолчанию наземные сегменты будут добавлены после момента расчета стоимости, однако, если указать значение ```true``` у атрибута ```/CreatePassengerNameRecordRQ/PostProcessing/ARUNK/@priorPricing```, то наземные сегменты будут добавлены до момента расчета стоимости.
 

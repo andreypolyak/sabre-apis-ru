@@ -8513,4 +8513,4 @@ title: Получение карты мест в салоне
 
 ## Расшифровка характеристик мест в салоне
 
-Возможные варианты характеристик мест в салоне (а также рядов, салонов и др.) описаны в [схеме сервиса](http://files.developer.sabre.com/wsdl/sabreXML1.0.00/Merchandising/EnhancedSeatMap_6_0_0.xsd) EnhancedSeatMapRQ. В схеме указано описание характеристик, а также указаны соответствующие коды стандарта [PADIS](https://www.google.com/search?q=site%3Aiata.org+padis) (Passenger and Airport Data Interchange Standards), устанавливаемый IATA.
+Возможные варианты характеристик мест в салоне (а также рядов, салонов и др.) описаны в [схеме сервиса](http://files.developer.sabre.com/wsdl/sabreXML1.0.00/Merchandising/EnhancedSeatMap_6_0_0.xsd) [EnhancedSeatMapRQ](https://developer.sabre.com/docs/read/soap_apis/air/book/seat_map). В схеме указано описание характеристик, а также указаны соответствующие коды стандарта [PADIS](https://www.google.com/search?q=site%3Aiata.org+padis) (Passenger and Airport Data Interchange Standards), устанавливаемый IATA.

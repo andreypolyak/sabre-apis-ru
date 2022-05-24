@@ -2299,8 +2299,8 @@ title: Получение структурированных правил тар
         - ```/PaxTypeInformation/@PassengerType``` — категория пассажира, для которой применим указанный тариф
 
 Список компонентов тарифа может быть получен:
-- в ответе на запрос к сервису BargainFinderMaxRQ (поиск) — элементы ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode```, содержащие атрибут ```/@FareComponentDirectionality```
-- в ответе на запрос к сервису TravelItineraryReadRQ (чтение бронирования) — элементы ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ItineraryPricing/PriceQuote/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdown/FareComponent```
+- в ответе на запрос к сервису [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) (поиск) — элементы ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode```, содержащие атрибут ```/@FareComponentDirectionality```
+- в ответе на запрос к сервису [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary) (чтение бронирования) — элементы ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ItineraryPricing/PriceQuote/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdown/FareComponent```
 
 Для получения структурированных правил для приватного тарифа также может потребоваться указание Account Code (```/StructureFareRulesRQ/PriceRequestInformation/Account/@Code```) или Corporate ID (```/StructureFareRulesRQ/PriceRequestInformation/Corporate/@ID```).
 

@@ -5,7 +5,7 @@ aliases:
 ---
 
 Операция поиска перелетов является одной из самых критичных операций с точки зрения времени ожидания ответа. Увеличение времени ожидания поисковых результатов может приводить к серьезному снижению показателя конверсии. Среднее время ожидания ответа на поисковый запрос (One Way или Round Trip) Sabre составляет 2-3 секунды. Если у вашего решения это время выше, то рекомендуется ознакомиться c перечисленными ниже рекомендациями:
-1. Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: [Bargain Finder Max](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max), [Bargain Finder Alternate Date](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad).
+1. Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max), [BargainFinderMax_ADRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad).
 2. Используйте токены вместо сессий для аутентификации в Sabre. За счет долгого времени жизни и возможности отправки параллельных запросов через один токен пропадает необходимость создавать токен перед каждым запросом. Рекомендуется создавать один токен раз в неделю или при инвалидации предыдущего и использовать его для всех всех поисковых запросов. Подробнее см. [Аутентификация](authentication.html).
 3. Используйте в качестве адреса для отправки запросов ```https://webservices.havail.sabre.com```.
 4. Используйте компрессию данных на уровне HTTP протокола для всех отправляемых запросов. Для этого необходимо указать в HTTP-заголовках запросов параметр ```Accept-Encoding``` со значением ```gzip, deflate```.
@@ -13,7 +13,7 @@ aliases:
 6. Используйте [постоянное HTTP соедиенение](https://files.developer.sabre.com/doc/developmentpatterns/Sabre-APIs-Persistent-Connections.pdf) (HTTP persistent connection).
 7. Не отправляйте несколько поисковых запросов в Sabre или другие системы для одного запроса пользователя. Если это невозможно, то не ждите выполнения всех запросов, а показывайте пользователю данные по мере их появления.
 8. Запрашивайте меньше [рекомендаций](shop.html#количество-рекомендаций), если это некритично для результатов поиска.
-9. Используйте [группированный вид ответа](shop.html#вид-ответа) (Grouped Itinerary Response, GIR) в сервисах BargainFinderMaxRQ и BargainFinderMax_ADRQ.
+9. Используйте [группированный вид ответа](shop.html#вид-ответа) (Grouped Itinerary Response, GIR) в сервисах [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) и [BargainFinderMax_ADRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad).
 10. Не используйте функции, которые увеличивают размер ответа и, как следствие, время ответа. Например, функции для получения:
     - [расчетов стоимости по всем доступным брендам](shop.html#расчет-стоимости-по-всем-доступным-брендам) (Multiple Branded Fares) — в качестве альтернативы может быть рассмотрен алгоритм выбора бренда в отдельном запросе после выбора перелета в результатах поиска. Подробнее см. [Брендированные тарифы](brands.html).
     - [дополнительных тарифов](shop.html#дополнительные-расчеты-стоимости-по-заданным-критериям) (Multiple Fares per Itinerary)

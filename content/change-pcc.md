@@ -15,7 +15,7 @@ title: Переход в другие PCC
 Обратите внимание на то, что для перехода в другой PCC требуется наличие Branch Access между ним и iPCC, в котором была создана сессия. Подробнее о Branch Access см. в разделе [Конфигурация Sabre](configuration.html).
 {{< /hint >}}
 
-В запросе к сервису ContextChangeLLSRQ необходимо указать PCC для перехода в качестве значения атрибута  ```/ContextChangeRQ/ChangeAAA/@PseudoCityCode```.
+В запросе к сервису [ContextChangeLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa) необходимо указать PCC для перехода в качестве значения атрибута  ```/ContextChangeRQ/ChangeAAA/@PseudoCityCode```.
 
 {{< details title="Пример запроса" >}}
 ```XML
