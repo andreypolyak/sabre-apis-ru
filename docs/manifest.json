@@ -1,0 +1,15 @@
+{
+  "name": "Рекомендации по работе с Sabre APIs",
+  "short_name": "Рекомендации по работе с Sabre APIs",
+  "start_url": "/sabre-apis-ru/",
+  "scope": "/sabre-apis-ru/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/sabre-apis-ru/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}

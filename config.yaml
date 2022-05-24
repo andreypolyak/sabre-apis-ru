@@ -1,0 +1,18 @@
+googleAnalytics: UA-80320390-1
+baseURL: https://andreypolyak.github.io/sabre-apis-ru
+publishDir: docs
+languageCode: ru-ru
+title: Рекомендации по работе с Sabre APIs
+uglyurls: true
+params:
+  BookTheme: light
+  BookToC: false
+  BookMenuBundle: /menu
+markup:
+  tableOfContents:
+    endLevel: 3
+    startLevel: 2
+markup:
+  highlight:
+    style: colorful
+theme: hugo-book

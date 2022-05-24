@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Рекомендации по работе с Sabre APIs</title>
+    <link>https://andreypolyak.github.io/sabre-apis-ru/</link>
+    <description>Recent content on Рекомендации по работе с Sabre APIs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language><atom:link href="https://andreypolyak.github.io/sabre-apis-ru/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Аутентификация</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/authentication.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/authentication.html</guid>
+      <description>Оглавление:  Введение Сессии  Создание сессии (SessionCreateRQ) Обновление сессии (OTA_PingRQ) Закрытие сессии (SessionCloseRQ) Получение информации об используемых сессиях (OLTMC USER DISP NAME) Использование сессий, созданных в Sabre Red (OIATH)   Токены доступа  Создание токена доступа (TokenCreateRQ)       Введение #  Для аутентификации в системе Sabre при использовании Sabre APIs могут быть использованы два механизма:
+ сессии (sessions) токены доступа (access tokens)  В таблице ниже описаны принципиальные различия двух механизмов:</description>
+    </item>
+    
+    <item>
+      <title>Брендированные тарифы</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/brands.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/brands.html</guid>
+      <description>Оглавление:  Введение Выбор брендов в результатах поиска Выбор бренда после выбора перелета в результатах поиска Создание бронирований Список услуг у брендированных тарифов     Введение #  Многие перевозчики предлагают различный набор услуг и условий перелета для разных тарифов, которые объединены в группы или бренды в зависимости от уровня предоставляемых услуг и условий перелета. Такие тарифы называются брендированными.
+На портале Air Merchandising доступен список перевозчиков, поддерживающих брендированные тарифы.</description>
+    </item>
+    
+    <item>
+      <title>Бронирование дополнительных услуг</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/book-ancillaries.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/book-ancillaries.html</guid>
+      <description>Для бронирования дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для бронирования дополнительных услуг и отправки SSR используется сервис UpdateReservationRQ.
+Параметры запроса #  В запросе необходимо указать:
+ /UpdateReservationRQ/RequestType — тип запроса. Всегда значение Stateless /UpdateReservationRQ/ReturnOptions/@IncludeUpdateDetails — признак получения деталей изменения бронирования в ответе. Всегда значение true /UpdateReservationRQ/ReturnOptions/@RetrievePNR — признак получения состояния бронирования в ответе. Всегда значение true /UpdateReservationRQ/ReservationUpdateList/Locator — код бронирования /UpdateReservationRQ/ReservationUpdateList/ReceivedFrom/AgentName — значения поля Received From.</description>
+    </item>
+    
+    <item>
+      <title>Бронирование мест в салоне</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/book-air-seats.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/book-air-seats.html</guid>
+      <description>Для бронирования мест в салоне используется сервис UpdatePassengerNameRecordRQ.
+В запросе необходимо указать:
+ /UpdatePassengerNameRecordRQ/Itinerary/@id — код бронирования (PNR Record Locator) /UpdatePassengerNameRecordRQ/SpecialReqDetails/AirSeat/Seats/Seat — место в салоне (отдельный элемент для каждого места в салоне) /@NameNumber — номер пассажира /@Number — номер места /@SegmentNumber — номер сегмента в бронировании /UpdatePassengerNameRecordRQ/PostProcessing/EndTransactionRQ/Source/@ReceivedFrom — значение поля Received From при сохранении бронирования /UpdatePassengerNameRecordRQ/PostProcessing/RedisplayReservation — получение в ответе обновленного состояния бронирования  Для выполнения операции в другом PCC его можно указать в качестве значения атрибута /UpdatePassengerNameRecordRQ/@targetCity.</description>
+    </item>
+    
+    <item>
+      <title>Возврат билетов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/refund-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/refund-ticket.html</guid>
+      <description>Оглавление:  Введение Алгоритм возврата билетов Выбор стока (DesignatePrinterLLSRQ) Выбор принтера (DesignatePrinterLLSRQ) Чтение бронирования (TravelItineraryReadRQ) Возврат билета (TKT_RefundRQ)     Введение #  Подробнее об условиях выполнения возвратов билетов см. в Обмены и возвраты.
+Алгоритм возврата билетов #  Выбор стока (DesignatePrinterLLSRQ) #  Для возврата билетов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Возврат билетов всегда должен выполняться в том же PCC, где они были оформлены!</description>
+    </item>
+    
+    <item>
+      <title>Войдирование билетов и EMD</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/void-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/void-ticket.html</guid>
+      <description>Оглавление:  Введение Войдирование билетов и EMD  Алгоритм войдирования билетов и EMD Выбор стока (DesignatePrinterLLSRQ) Выбор принтера (DesignatePrinterLLSRQ) Чтение бронирования (TravelItineraryReadRQ) Войдирование билета или EMD (VoidTicketLLSRQ) Подтверждение войдирования билета или EMD (VoidTicketLLSRQ)   Войдирование несохраненных в бронировании билетов и EMD  Алгоритм войдирования несохраненных в бронировании билетов и EMD Выбор стока (DesignatePrinterLLSRQ) Выбор принтера (DesignatePrinterLLSRQ) Чтение бронирования (TravelItineraryReadRQ) Чтение маски билета или EMD (SabreCommandLLSRQ) Войдирование билета или EMD (SabreCommandLLSRQ) Подтверждение войдирования билета или EMD (SabreCommandLLSRQ)       Введение #  Sabre позволяет войдировать (аннулировать) билет или EMD до конца того дня, в который он был оформлен (конец дня определяется по времени, установленному для PCC, в котором он был оформлен).</description>
+    </item>
+    
+    <item>
+      <title>Выбор форм оплаты</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/fop.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/fop.html</guid>
+      <description>Оглавление:  Введение Оплата банковскими картами Двойная форма оплаты Выбор формы оплаты при оформлении билетов и EMD (AirTicketRQ) Выбор формы оплаты при создании бронирования (CreatePassengerNameRecordRQ, EnhancedAirBookRQ) Выбор формы оплаты при расчете стоимости (OTA_AirPriceLLSRQ) Добавление форм оплаты в бронирования (UpdateReservationRQ)         Введение #  В Sabre существует три основных формы оплаты для билетов и EMD:
+ наличный расчет (cash) безналичный расчет (check) банковская карта (credit card)  Также существует возможность использовать одновременно две формы оплаты для одного документа.</description>
+    </item>
+    
+    <item>
+      <title>Вынужденный обмен билетов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/involuntary-exchange-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/involuntary-exchange-ticket.html</guid>
+      <description>Оглавление:  Введение Алгоритм вынужденного обмена билетов Выбор стока (DesignatePrinterLLSRQ) Выбор принтера (DesignatePrinterLLSRQ) Чтение бронирования (TravelItineraryReadRQ) Принятие изменений в расписании (EnhancedEndTransactionRQ) Отправка SSR (UpdatePassengerNameRecordRQ) Чтение бронирования (TravelItineraryReadRQ) Вынужденный обмен билета (TKT_ExchangeRQ)     Введение #  Подробнее об условиях выполнения вынужденного обмена билетов см. в Обмены и возвраты.
+Алгоритм вынужденного обмена билетов #  Выбор стока (DesignatePrinterLLSRQ) #  Для вынужденного обмена билетов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см.</description>
+    </item>
+    
+    <item>
+      <title>Деление бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/split-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/split-booking.html</guid>
+      <description>Оглавление:  Введение Алгоритм деления бронирований Чтение бронирования (TravelItineraryReadRQ) Выбор пассажиров для переноса в другое бронирование (TravelItineraryDivideLLSRQ) Добавление поля Received From в новое бронирование (EnhancedEndTransactionRQ) Сохранение нового бронирования (TravelItineraryDivideLLSRQ) Сохранение оригинального бронирования (EnhancedEndTransactionRQ)     Введение #  В некоторых случаях, например, при отказе от бронирования одного из пассажиров в PNR или при изменении условий перевозки для части пассажиров, необходимо разделить созданное бронирование. При выделении пассажиров в новый PNR автоматически перемещаются все ассоциированные с пассажиром элементы, а также номера всех оформленных билетов.</description>
+    </item>
+    
+    <item>
+      <title>Дополнительные услуги</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/ancillaries.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/ancillaries.html</guid>
+      <description>Многие перевозчики предлагают дополнительные услуги на борту воздушного судна, а также до и после перелета, доступные для бронирования через Sabre.
+На портале Air Merchandising доступен список перевозчиков, предлагающих дополнительные услуги.
+Рекомендуемый процесс бронирования дополнительных услуг:
+ Получение списка дополнительных услуг Бронирование дополнительных услуг Оформление EMD  После этого дополнительная услуга будет доступна для чтения в бронировании.
+Дополнительные услуги могут быть забронированы как до момента оформления билетов, так и после, однако в некоторых случаях может различаться стоимость и доступность дополнительных услуг в зависимости от времени их бронирования.</description>
+    </item>
+    
+    <item>
+      <title>История бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/get-history-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/get-history-booking.html</guid>
+      <description>Для получения истории бронирования используется сервис TravelItineraryHistoryLLSRQ.
+В запросе необходимо указать код бронирования (Record Locator) в качестве значения атрибута /TravelItineraryHistoryRQ/UniqueID/@ID. Перед открытием
+Ответ будет содержать все сохраненные изменения в бронировании.
+Перед отправкой запрос открытие бронирования не требуется. После выполнения запроса бронирование будет открыто в текущей сессии.
+Пример запроса &amp;lt;TravelItineraryHistoryRQ ReturnHostCommand=&amp;#34;true&amp;#34; Version=&amp;#34;2.3.0&amp;#34; xmlns=&amp;#34;http://webservices.sabre.com/sabreXML/2011/10&amp;#34;&amp;gt;  &amp;lt;UniqueID ID=&amp;#34;BWFBNR&amp;#34;/&amp;gt; &amp;lt;/TravelItineraryHistoryRQ&amp;gt;    Пример ответа &amp;lt;TravelItineraryHistoryRS Version=&amp;#34;2.3.0&amp;#34; xmlns=&amp;#34;http://webservices.sabre.com/sabreXML/2011/10&amp;#34; xmlns:stl=&amp;#34;http://services.sabre.com/STL/v01&amp;#34; xmlns:xs=&amp;#34;http://www.w3.org/2001/XMLSchema&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&amp;gt;  &amp;lt;stl:ApplicationResults status=&amp;#34;Complete&amp;#34;&amp;gt;  &amp;lt;stl:Success timeStamp=&amp;#34;2022-05-20T05:35:50-05:00&amp;#34;&amp;gt;  &amp;lt;stl:SystemSpecificResults&amp;gt;  &amp;lt;stl:HostCommand LNIATA=&amp;#34;19353B&amp;#34;&amp;gt;JX HST*BWFBNR&amp;lt;/stl:HostCommand&amp;gt;  &amp;lt;/stl:SystemSpecificResults&amp;gt;  &amp;lt;/stl:Success&amp;gt;  &amp;lt;/stl:ApplicationResults&amp;gt;  &amp;lt;HistoricalInfo RPH=&amp;#34;1&amp;#34;&amp;gt;  &amp;lt;ItineraryRef&amp;gt;  &amp;lt;Source AAA_PseudoCityCode=&amp;#34;9LSC&amp;#34; CreateDateTime=&amp;#34;2022-05-20T05:32&amp;#34; CreationAgent=&amp;#34;WT&amp;#34; CreationAgentDutyCode=&amp;#34;*&amp;#34; CreationAgentFunctionCode=&amp;#34;A&amp;#34; PseudoCityCode=&amp;#34;9LSC&amp;#34; ReceivedFrom=&amp;#34;API&amp;#34;/&amp;gt;  &amp;lt;/ItineraryRef&amp;gt;  &amp;lt;RemarkInfo&amp;gt;  &amp;lt;Remark Action=&amp;#34;A5H&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;H-SPLIT TO/053152/20MAY22 TGIVIU 03/03 02/02 IVANOV/IVAN MR&amp;lt;/Text&amp;gt;  &amp;lt;/Remark&amp;gt;  &amp;lt;/RemarkInfo&amp;gt;  &amp;lt;/HistoricalInfo&amp;gt;  &amp;lt;HistoricalInfo RPH=&amp;#34;2&amp;#34;&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A9&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;MOW74991234567-A&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A9&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;MOW79851234567-M&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR DOCS EY HK1/P/RU/1234567890/RU/20NOV1980/M/20NOV2025/IVANOV/IVAN/IVANOVICH/H&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR DOCS EY HK1/P/RU/3234567890/RU/15JAN2012/M/20NOV2025/IVANOV/ANDREY/IVANOVICH&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR DOCS EY HK1/P/RU/1234567890/RU/20FEB2022/FI/15APR2025/IVANOVA/EKATERINA/IVANOVNA&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR INFT EY NN1 SYDAUH2463Y01DEC/IVANOVA/EKATERINA/20FEB22&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR INFT EY NN1 AUHLHR0025Y02DEC/IVANOVA/EKATERINA/20FEB22&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR INFT EY NN1 LHRAUH0012Y08DEC/IVANOVA/EKATERINA/20FEB22&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR INFT EY NN1 AUHSYD0464Y08DEC/IVANOVA/EKATERINA/20FEB22&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR CTCM EY HK1/79851234567/RU&amp;lt;/Text&amp;gt;  &amp;lt;/GeneralInfo&amp;gt;  &amp;lt;GeneralInfo Action=&amp;#34;A3S&amp;#34;&amp;gt;  &amp;lt;Text&amp;gt;SSR CTCE EY HK1/CUSTOMER//CUSTOMER.</description>
+    </item>
+    
+    <item>
+      <title>Коллекция Postman</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/postman.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/postman.html</guid>
+      <description>Оглавление:  Введение Загрузка Установка Использование Скрипты и специальные переменные     Введение #  Postman — популярный бесплатный инструмент для тестирования API. Для удобства работы с Sabre APIs все примеры из данных рекомендаций доступны в виде коллекции Postman.
+Загрузка #  Для начала работы необходимо загрузить:
+ коллекция Postman с примерами из данных рекомендаций среда для отправки запросов в тестовой (CERT) среде среда для отправки запросов в боевой (PROD) среде  Установка #  Для начала работы необходимо загрузить все файлы и импортировать их в Postman, воспользовавшись кнопкой Import в левом верхнем углу программы.</description>
+    </item>
+    
+    <item>
+      <title>Конфигурация Sabre</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/configuration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/configuration.html</guid>
+      <description>Оглавление:  PCC Доступ в другой PCC (Branch Access) Настройки PCC (TJR) Учетные записи пользователей (EPR)  Обязательные настройки EPR Смена пароля и разблокировка EPR   Терминальные адреса (TA, LNIATA) Валидатор Приватные тарифы Работа с зарубежными PCC     PCC #  PCC (Pseudo City Code) — уникальный идентификатор точки продаж (офиса) в системе Sabre. Именно по этому идентификатору Sabre и перевозчики идентифицируют агентства.
+Одно агентство может иметь несколько PCC, например, для разных точек продаж или разных целей (например, для бронирования и оформления билетов).</description>
+    </item>
+    
+    <item>
+      <title>Места в салоне</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/air-seats.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/air-seats.html</guid>
+      <description>Многие перевозчики предлагают услугу бронирования мест в салоне. Данная услуга может быть как платной, так и бесплатной.
+На портале Air Merchandising доступен список перевозчиков, предлагающих бронирование мест в салоне в качестве платной услуги.
+Рекомендуемый процесс бронирования мест в салоне:
+ Получение карты мест в салоне Бронирование мест в салоне  После этого место в салоне будет доступно для чтения в бронировании.
+Места в салоне могут быть забронированы как до момента оформления билетов, так и после, однако в некоторых случаях может различаться стоимость и доступность мест в зависимости от времени их бронирования.</description>
+    </item>
+    
+    <item>
+      <title>Настройки PCC</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/tjr-settings.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/tjr-settings.html</guid>
+      <description>Оглавление:  Введение Проверка настроек Alert to Prevent Duplicate Ticketing (Предупреждение об оформлении дубликатов билетов)     Allow Ticket CAT 35 IT/BT PQ Fare (Оформление билетов по сохраненным в PQ приватным тарифам без перерасчета)     Auto Segment Arrangement (Автоматическое упорядочивание сегментов в бронированиях)     Automatically End Transaction and Redisplay the PNR at Ticketing (Автоматическое сохранение бронирований и повторное их открытие при оформлении билетов)     Automatically End Transaction at Ticketing (Автоматическое сохранение бронирований при оформлении билетов)     Multi-Ticket Shopping and Pricing (Поиск перелетов с оформлением на нескольких билетах)     Passenger Name Association (Привязка элементов бронирования к пассажирам)     Price Retention Ticketing Alert (Предупреждение об изменении стоимости билетов)     PSPT Warning Message (Предупреждение об отсутствии паспортов в бронировании)     Restrict Validating Carrier to Traditional Validating Carrier (Традиционная логика выбора валидирующего перевозчика)     Store Passenger Type in PNR (Хранение категорий пассажиров в бронированиях)     Ticket from Stored Fare (Оформление билетов по сохраненным PQ без перерасчета)     Ticket Using Multiple PQ (Оформление билетов по нескольким PQ)     Two Forms of Payment (Оформление билетов с двумя формами оплаты)     Unused Electronic Ticket Report (Формирование отчета о неиспользованных билетах)     Validating Carrier, Interline, and GSA (Новая логика выбора валидирующего перевозчика)         Введение #  У каждого PCC существует ряд настроек, которые называются TJR (Travel Journal Record).</description>
+    </item>
+    
+    <item>
+      <title>Начало работы</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/introduction.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/introduction.html</guid>
+      <description>Оглавление:  Документация  Dev Studio Рассылка Sabre APIs Sabre Central Sabre Central Marketpace Finder Справочник форматов Sabre   Сервисы Sabre  Протокол SOAP Сообщения Компрессия данных   Среды и адреса для отправки запросов Терминальные команды Примеры исходных кодов Обработка ошибок Версионирование     Документация #  Dev Studio #  Sabre Dev Studio — портал для разработчиков Sabre APIs, на котором располагается:
+ документация по сервисам общая документация примеры использования список обновлений блог  Для каждого сервиса на Dev Studio есть страница с описанием и примером запроса и ответа, а также страница с ресурсами, на которой представлены:</description>
+    </item>
+    
+    <item>
+      <title>Обмен билетов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/exchange-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/exchange-ticket.html</guid>
+      <description>Оглавление:  Введение Алгоритм обмена билетов Подготовка и расчет стоимости обмена (ExchangeBookingRQ)  Переход в другой PCC Чтение бронирования Выбор сегментов Проверка минимального стыковочного времени Расчет стоимости обмена Сравнение стоимости обмена с заданной Сохранение маски расчета стоимости обмена Завершающая обработка бронирования Задержка между обработкой билетов Пример   Отправка SSR (UpdatePassengerNameRecordRQ) Оформление билетов     Введение #  Подробнее об условиях выполнения обменов билетов см. в Обмены и возвраты.</description>
+    </item>
+    
+    <item>
+      <title>Обмены и возвраты билетов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/exchanges-refunds.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/exchanges-refunds.html</guid>
+      <description>Оглавление:  Введение Добровольный обмен билетов Вынужденный обмен билетов Добровольный возврат билетов     Введение #  Sabre APIs поддерживают следующие операции с билетами:
+ добровольный обмен билетов вынужденный обмен билетов добровольный возврат билетов  Ниже представлено краткое описание каждой из этих операций.
+Добровольный обмен билетов #  Добровольные обмены — это обмены, которые совершаются по желанию пассажира. Sabre APIs позволяют выполнять только автоматические обмены, т.е. обмены, при осуществлении которых не требуется вручную указывать размер штрафа и доборов по тарифам и таксам, а корректность расчета гарантируется Sabre.</description>
+    </item>
+    
+    <item>
+      <title>Обработка очередей</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/queues.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/queues.html</guid>
+      <description>Оглавление:  Введение Получение списка бронирований в очередях  Алгоритм получения списка бронирований в очередях Получение списка очередей (QueueCountLLSRQ) Получение списка бронирований в очереди (QueueAccessLLSRQ)   Обработка бронирований в очередях  Алгоритм обработки бронирований в очередях Чтение бронирования (TravelItineraryReadRQ) Редактирование бронирования Удаление бронирования из очереди (QueueAccessLLSRQ)   Сохранение бронирования (EnhancedEndTransactionRQ)     Введение #  Очереди в Sabre — инструмент для контроля и учета бронирований, а также уведомления об изменении их состояния.</description>
+    </item>
+    
+    <item>
+      <title>Оптимизация времени поиска</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/shop-optimization.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/shop-optimization.html</guid>
+      <description>Операция поиска перелетов является одной из самых критичных операций с точки зрения времени ожидания ответа. Увеличение времени ожидания поисковых результатов может приводить к серьезному снижению показателя конверсии. Среднее время ожидания ответа на поисковый запрос (One Way или Round Trip) Sabre составляет 2-3 секунды. Если у вашего решения это время выше, то рекомендуется ознакомиться c перечисленными ниже рекомендациями:
+ Обновите версии используемых поисковых сервисов до текущих. Текущие версии поисковых сервисов можно узнать на портале Sabre Dev Studio: Bargain Finder Max, Bargain Finder Alternate Date.</description>
+    </item>
+    
+    <item>
+      <title>Отмена бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/cancel-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/cancel-booking.html</guid>
+      <description>Оглавление:  Алгоритм отмены бронирований Чтение бронирования (TravelItineraryReadRQ) Снятие мест (OTA_CancelLLSRQ) Сохранение бронирования (EnhancedEndTransactionRQ)     Алгоритм отмены бронирований #  Чтение бронирования (TravelItineraryReadRQ) #  Для отмены бронирований в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для чтения бронирования используется сервис TravelItineraryReadRQ.
+В качестве значения атрибута /TravelItineraryReadRQ/UniqueID/@ID в запросе указывается код бронирования (PNR Record Locator).
+Пример запроса &amp;lt;TravelItineraryReadRQ Version=&amp;#34;3.</description>
+    </item>
+    
+    <item>
+      <title>Отмена дополнительных услуг</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/cancel-ancillaries.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/cancel-ancillaries.html</guid>
+      <description>Для отмены дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Обратите внимание на то, что при отмене бронирования также будут отменены ассоциированные с этими сегментами дополнительные услуги. Указанные ниже рекомендации следует применять только в том случае, если нужно отменить дополнительные услуги без отмены бронирования.  Для отмены дополнительных услуг используется сервис UpdateReservationRQ.
+Параметры запроса #  В запросе необходимо указать:</description>
+    </item>
+    
+    <item>
+      <title>Отмена мест в салоне</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/cancel-air-seats.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/cancel-air-seats.html</guid>
+      <description>Оглавление:  Алгоритм отмены мест в салоне Чтение бронирования (TravelItineraryReadRQ) Отмена мест в салоне (AirSeatCancelLLSRQ) Сохранение бронирования (EnhancedEndTransactionRQ)     Алгоритм отмены мест в салоне #  Чтение бронирования (TravelItineraryReadRQ) #  Для отмены мест в салоне в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Обратите внимание на то, что при отмене бронирования также будут отменены ассоциированные с этими сегментами места в салоне.</description>
+    </item>
+    
+    <item>
+      <title>Отправка терминальных команд</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/commands.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/commands.html</guid>
+      <description>Оглавление:  Введение Отправка терминальных команд (SabreCommandLLSRQ) Специальные символы Заполнение масок         Введение #  При работе c системой Sabre через Sabre APIs можно отправлять терминальные команды и получать на них ответы в текстовом виде, так как это делается в Sabre Red. Это может быть использовано при разработке эмулятора терминала Sabre, во время отладки, а также для отправки тех команд, для которых не существует аналогичных сервисов.</description>
+    </item>
+    
+    <item>
+      <title>Оформление билетов и EMD</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/issue-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/issue-ticket.html</guid>
+      <description>Оглавление:  Алгоритм оформления билетов и EMD Чтение бронирования (TravelItineraryReadRQ) Оформление билетов и EMD (AirTicketRQ)  Переход в другой PCC Выбор стока Выбор принтера Чтение бронирования Оформление билетов и EMD Проверка минимального стыковочного времени Пост-обработка Примеры       Алгоритм оформления билетов и EMD #  Чтение бронирования (TravelItineraryReadRQ) #  Для чтения бронирования используется сервис TravelItineraryReadRQ.
+В бронировании перед оформлением билетов и (или) EMD необходимо проверить:</description>
+    </item>
+    
+    <item>
+      <title>Перерасчет стоимости бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/reprice-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/reprice-booking.html</guid>
+      <description>Оглавление:  Введение Алгоритм перерасчета стоимости бронирований Чтение бронирования (TravelItineraryReadRQ) Удаление старых PQ (DeletePriceQuoteLLSRQ) Создание новых PQ (OTA_AirPriceLLSRQ) Сохранение бронирования (EnhancedEndTransactionRQ)     Введение #  Перерасчет стоимости бронирования — это операция удаления старых элементов расчета (PQ) и создание новых с актуальной стоимостью бронирования.
+Операция перерасчета стоимости бронирования может быть выполнена как перед моментом оформления билета, так и в любой другой момент, например:
+ перед оформлением билета, если после создания PQ прошло продолжительное время (в случае отключенной настройки Ticket from Stored Fare) перед оформлением билета, если PQ был создан в прошлые сутки или ранее (в случае включенной настройки Ticket from Stored Fare) для уведомления клиента об изменении стоимости бронирования в случае нарушения сроков тайм-лимита и т.</description>
+    </item>
+    
+    <item>
+      <title>Переход в другие PCC</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/change-pcc.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/change-pcc.html</guid>
+      <description>По умолчанию после создания сессии текущим PCC будет выбран тот PCC, в котором была создана эта сессия. Для того чтобы изменить текущий PCC нужно в него перейти. Это можно сделать двумя способами:
+ используя встроенную в некоторые сервисы возможность перехода в другой PCC:  CreatePassengerNameRecordRQ (см. Создание бронирований в 1 шаг) UpdatePassengerNameRecordRQ (см. Редактирование бронирований) AirTicketRQ (см. Оформление билетов и EMD) ExchangeBookingRQ (см. Оформление билетов и EMD)   используя сервис для перехода в другой PCC ContextChangeLLSRQ  Обратите внимание на то, что для перехода в другой PCC требуется наличие Branch Access между ним и iPCC, в котором была создана сессия.</description>
+    </item>
+    
+    <item>
+      <title>Поиск вариантов обмена</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/shop-exchange-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/shop-exchange-ticket.html</guid>
+      <description>Оглавление:  Введение Информация о поиске Билеты Маршрут и даты Перевозчики Приватные тарифы Брендированные тарифы  Информация о примененных брендированных тарифах Список услуг у найденных брендированных тарифов Черный и белый список брендов Сохранение брендов у неизменяемых сегментов   Нормы провоза багажа Дополнительные услуги Пример     Введение #  Подробнее об условиях выполнения обменов билетов см. в Обмены и возвраты.
+Информация о поиске #  Для поиска перелетов для обмена в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см.</description>
+    </item>
+    
+    <item>
+      <title>Поиск перелетов по гибким датам</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/shop-alternate-dates.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/shop-alternate-dates.html</guid>
+      <description>Оглавление:  Введение Тип запроса Маршрут и даты перелетов Количество рекомендаций Примеры     Введение #  Для поиска перелетов по заданному маршруту с гибкими датами используется сервис Bargain Finder Max Alternate Dates (BargainFinderMax_ADRQ).
+Обратите внимание на то, что использование этого сервиса требует активации для каждого iPCC. Пожалуйста, обратитесь к вашему куратору в Sabre для уточнения деталей.  Схема запроса и ответа сервиса BargainFinderMax_ADRQ, а также правила составления запросов совпадают с таковыми для сервиса BargainFinderMaxRQ (см.</description>
+    </item>
+    
+    <item>
+      <title>Поиск перелетов по заданным датам</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/shop.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/shop.html</guid>
+      <description>Оглавление:  Введение Маршрут и даты     Остановки и пересадки Пассажиры Классы обслуживания и коды тарифов     Перевозчики     Багаж     Места в салоне Брендированные тарифы     Дополнительные расчеты стоимости по заданным критериям     Разнообразие поисковой выдачи     Дополнительные услуги Обмен и возврат билетов Публичные и приватные тарифы Оформление на нескольких билетах Дополнительные прямые перелеты Air Shopping Rules Manager PCC Количество рекомендаций Вид ответа Примеры     Введение #  Для поиска перелетов по заданным датам используется сервис Bargain Finder Max (BargainFinderMaxRQ).</description>
+    </item>
+    
+    <item>
+      <title>Поиск перелетов по кодам тарифов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/shop-by-fare.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/shop-by-fare.html</guid>
+      <description>Оглавление:  Введение Алгоритм поиска перелетов по коду тарифа Общие для всех шагов элементы     Получение списка дат для вылета &amp;ldquo;Туда&amp;rdquo; Получение списка дат для вылета &amp;ldquo;Обратно&amp;rdquo; Получения списка рейсов для вылета &amp;ldquo;Туда&amp;rdquo; Получения списка рейсов для вылета &amp;ldquo;Обратно&amp;rdquo;     Введение #  Для проверки наличия мест по указанному коду тарифа в указанный промежуток дат и поиска рейсов по этому тарифу используется сервис PromotionalShoppingRQ.</description>
+    </item>
+    
+    <item>
+      <title>Поиск по расписаниям и получение данных о наличии мест</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/get-availability.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/get-availability.html</guid>
+      <description>Оглавление:  Обязательные элементы  Конкретные даты Последовательность дат   Перевозчики Пересадки Рейсы Время отправления или прибытия Другое     Обязательные элементы #  Для поиска по расписанию и получения данных о наличии мест в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для получения информации о наличии мест и расписании выполнения рейсов между парами городов, а также для получения информации о наличии мест для указанных рейсов используется сервис AirSchedulesAndAvailabilityRQ.</description>
+    </item>
+    
+    <item>
+      <title>Получение карты мест в салоне</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/get-air-seats.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/get-air-seats.html</guid>
+      <description>Для получения карты мест в салоне в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для получения карты мест используется сервис EnhancedSeatMapRQ.
+В запросе необходимо указать:
+ /EnhancedSeatMapRQ/SeatMapQueryEnhanced/RequestType — тип запроса, всегда Payload /EnhancedSeatMapRQ/SeatMapQueryEnhanced/Flight/@origin и /@destination — код аэропортов вылета и прилета /EnhancedSeatMapRQ/SeatMapQueryEnhanced/Flight/DepartureDate — дата вылета /EnhancedSeatMapRQ/SeatMapQueryEnhanced/Flight/Marketing — номер рейса /EnhancedSeatMapRQ/SeatMapQueryEnhanced/Flight/Marketing/@carrier — код маркетингового перевозчика /EnhancedSeatMapRQ/SeatMapQueryEnhanced/CabinDefinition/RBD — класс бронирования /EnhancedSeatMapRQ/SeatMapQueryEnhanced/FareAvailQualifiers — пассажир в бронировании:  /@fareBasisCode — код тарифа, к которому относится текущий сегмент /@passengerType — код категории пассажира /@accompaniedByInfantInd — признак путешествия с младенцем без места /TravellerID — номер пассажира в бронировании (1.</description>
+    </item>
+    
+    <item>
+      <title>Получение курсов валют</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/currency-rates.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/currency-rates.html</guid>
+      <description>Курсы валют можно получить, используя сервис DisplayCurrencyLLSRQ.
+В запросе необходимо указать:
+ /DisplayCurrencyRQ/CountryCode — код страны, курс валюты которой необходимо получить (например, DE для евро или US для доллара) /DisplayCurrencyRQ/CurrencyCode — код валюты (например, RUB для рубля)  Пример запроса &amp;lt;DisplayCurrencyRQ ReturnHostCommand=&amp;#34;true&amp;#34; Version=&amp;#34;2.1.0&amp;#34; xmlns=&amp;#34;http://webservices.sabre.com/sabreXML/2011/10&amp;#34;&amp;gt;  &amp;lt;CountryCode&amp;gt;DE&amp;lt;/CountryCode&amp;gt;  &amp;lt;CurrencyCode&amp;gt;RUB&amp;lt;/CurrencyCode&amp;gt; &amp;lt;/DisplayCurrencyRQ&amp;gt;    Пример ответа &amp;lt;DisplayCurrencyRS Version=&amp;#34;2.1.0&amp;#34; xmlns=&amp;#34;http://webservices.sabre.com/sabreXML/2011/10&amp;#34; xmlns:stl=&amp;#34;http://services.sabre.com/STL/v01&amp;#34; xmlns:xs=&amp;#34;http://www.w3.org/2001/XMLSchema&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&amp;gt;  &amp;lt;stl:ApplicationResults status=&amp;#34;Complete&amp;#34;&amp;gt;  &amp;lt;stl:Success timeStamp=&amp;#34;2018-04-02T14:45:17-05:00&amp;#34;&amp;gt;  &amp;lt;stl:SystemSpecificResults&amp;gt;  &amp;lt;stl:HostCommand LNIATA=&amp;#34;52D10D&amp;#34;&amp;gt;DC*DE/RUB&amp;lt;/stl:HostCommand&amp;gt;  &amp;lt;/stl:SystemSpecificResults&amp;gt;  &amp;lt;/stl:Success&amp;gt;  &amp;lt;/stl:ApplicationResults&amp;gt;  &amp;lt;Country Name=&amp;#34;RUSSIA&amp;#34; RPH=&amp;#34;1&amp;#34;&amp;gt;  &amp;lt;CurrencyCode&amp;gt;RUB&amp;lt;/CurrencyCode&amp;gt;  &amp;lt;CurrencyName&amp;gt;RUBLE&amp;lt;/CurrencyName&amp;gt;  &amp;lt;DecimalPlaces&amp;gt;0&amp;lt;/DecimalPlaces&amp;gt;  &amp;lt;Rate Type=&amp;#34;BSR&amp;#34;&amp;gt;71&amp;lt;/Rate&amp;gt;  &amp;lt;/Country&amp;gt; &amp;lt;/DisplayCurrencyRS&amp;gt;    </description>
+    </item>
+    
+    <item>
+      <title>Получение норм провоза багажа</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/baggage.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/baggage.html</guid>
+      <description>Оглавление:  Введение Получение норм провоза багажа и ручной клади в поисковой выдаче или при проверке стоимости и наличия мест (BargainFinderMaxRQ, BargainFinderMax_ADRQ, RevalidateItinRQ)     Получение норм провоза багажа и ручной клади при создании бронирования в 1 шаг (CreatePassengerNameRecordRQ) Получение норм провоза багажа и ручной клади при создании бронирования в 2 шага (EnhancedAirBookRQ) Получение норм провоза багажа и ручной клади без имеющегося бронирования (EnhancedAirBookRQ) Получение норм провоза багажа и ручной клади для открытого бронирования (OTA_AirPriceLLSRQ)     Введение #  Перевозчики файлируют информацию о нормах провоза багажа на рейсах в тарифах.</description>
+    </item>
+    
+    <item>
+      <title>Получение списка дополнительных услуг</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/get-ancillaries.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/get-ancillaries.html</guid>
+      <description>Оглавление:  Введение Общие параметры запроса списка дополнительных услуг Параметры запроса списка дополнительных услуг до оформления билетов  Пассажиры Сегменты Тарифы Пример   Параметры запроса списка дополнительных услуг после оформления билетов  Пассажиры Сегменты Пример       Введение #  Для получения списка дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для получения списка дополнительных услуг используется сервис GetAncillaryOffersRQ.</description>
+    </item>
+    
+    <item>
+      <title>Получение структурированных правил тарифов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/structure-fare-rules.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/structure-fare-rules.html</guid>
+      <description>Оглавление:  Получение информации об условиях обменов и возвратов в поисковой выдаче (BargainFinderMaxRQ) Получение информации об условиях обменов и возвратов в поисковой выдаче при поиске по гибким датам (BargainFinderMax_ADRQ) Получение информации об условиях обменов и возвратов при проверке стоимости и наличия мест (RevalidateItinRQ) Получение информации об условиях обменов и возвратов для открытого бронирования (OTA_AirPriceLLSRQ) Получение информации об условиях обменов и возвратов без имеющегося бронирования (EnhancedAirBookRQ) Получение информации об условиях обменов и возвратов, а также другой информации без имеющегося бронирования (StructureFareRulesRQ)     Получение информации об условиях обменов и возвратов в поисковой выдаче (BargainFinderMaxRQ) #  Сервис BargainFinderMaxRQ позволяет получать информацию об условиях обменов и возвратов в поисковой выдаче.</description>
+    </item>
+    
+    <item>
+      <title>Получение текста правил тарифов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/fare-rules.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/fare-rules.html</guid>
+      <description>Оглавление:  Введение     Пример Выбор тарифа из списка дубликатов Алгоритм получения данных для составления запроса  Алгоритм получения данных из ответа сервисов BargainFinderMaxRQ, BargainFinderMax_ADRQ и RevalidateItinRQ (OTA ответ) Алгоритм получения данных из ответа сервисов BargainFinderMaxRQ, BargainFinderMax_ADRQ и RevalidateItinRQ (GIR ответ) Алгоритм получения данных из ответа сервиса TravelItineraryReadRQ       Введение #  Для получение текста правил тарифов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см.</description>
+    </item>
+    
+    <item>
+      <title>Помещение бронирований в очереди</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/queue-place.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/queue-place.html</guid>
+      <description>Оглавление:  Введение Помещения бронирования в очередь при создании бронирования (PassengerDetailsRQ) Помещения бронирования в очередь при создании бронирования (CreatePassengerNameRecordRQ) Помещение бронирования в очередь (QueuePlaceLLSRQ)     Введение #  Бронирование может быть помещено в очередь по двум разным причинам:
+ автоматически при наступлении определенного события вручную после отправки специального запроса  Список системных очередей и событий, при которых бронирования будут помещены в них автоматически представлены в разделе Обработка очередей.</description>
+    </item>
+    
+    <item>
+      <title>Проверка стоимости и наличия мест</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/revalidate-itinerary.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/revalidate-itinerary.html</guid>
+      <description>Оглавление:  Введение Сегменты Пассажиры Багаж     Места в салоне Коды тарифов Классы бронирования Брендированные тарифы     Валидирующий перевозчик Дополнительные услуги Обмен и возврат билетов Публичные и приватные тарифы Оформление на нескольких билетах iPCC Режим работы Вид ответа Примеры     Введение #  Для проверки стоимости и наличия мест на определенном маршруте может быть использован сервис RevalidateItinRQ. Ниже представлены ситуации, при которых он может быть использован:</description>
+    </item>
+    
+    <item>
+      <title>Расчет стоимости возврата билетов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/price-refund-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/price-refund-ticket.html</guid>
+      <description>Подробнее об условиях выполнения возвратов билетов см. в Обмены и возвраты.
+Для расчета стоимости возврата билетов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Обратите внимание на то, что расчет стоимости возврата билетов всегда должен выполняться в том же PCC, где они были оформлены!  Для расчета стоимости возврата билета используется сервис TKT_RefundRQ. Вызов сервиса для расчета стоимости возврата билета может использоваться также для проверки возможности автоматического возврата билета через API.</description>
+    </item>
+    
+    <item>
+      <title>Редактирование бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/edit-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/edit-booking.html</guid>
+      <description>Оглавление:  Сохранение бронирования (EnhancedEndTransactionRQ) Игнорирование бронирования (IgnoreTransactionLLSRQ) Удаление элементов бронирования (UpdateReservationRQ) Добавление элементов бронирования (UpdatePassengerNameRecordRQ)     Сохранение бронирования (EnhancedEndTransactionRQ) #  Для сохранения изменений в бронировании необходимо отправить запрос к сервису EnhancedEndTransactionRQ. В результате выполнения запроса все изменения в бронировании, выполненные в текущей сессии, будут сохранены, а бронирование закрыто.
+В запросе необходимо указать:
+ /EnhancedEndTransactionRQ/EndTransaction/@Ind — признак сохранения бронирования (значение true) /EnhancedEndTransactionRQ/Source/@ReceivedFrom — значения поля Received From.</description>
+    </item>
+    
+    <item>
+      <title>Создание бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/create-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/create-booking.html</guid>
+      <description>Sabre APIs предусматривают два различных алгоритма создания бронирований:
+   Алгоритм Создание бронирований в 1 шаг Создание бронирований в 2 шага     Описание Моментальное создание бронирования Моментальное бронирование сегментов и хранение их в текущей сессии до момента получения всех данных, необходимых для создания бронирования   Схема процесса     Используемые сервисы CreatePassengerNameRecordRQ EnhancedAirBookRQ и PassengerDetailsRQ   Способы аутентификации Сессии или токены Сессии    </description>
+    </item>
+    
+    <item>
+      <title>Создание бронирований в 1 шаг</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/create-booking-1step.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/create-booking-1step.html</guid>
+      <description>Оглавление:  Переход в другой PCC Добавление сегментов     Расчет стоимости     Добавление пассажиров Добавление контактной информации     Добавление карт лояльности Добавление паспортных данных и отправка других сообщений перевозчику (SSR и OSI)     Добавление ремарок Установка тайм-лимита Завершающая обработка бронирования     Пример     Для создания бронирования в 1 шаг используется сервис CreatePassengerNameRecordRQ.</description>
+    </item>
+    
+    <item>
+      <title>Создание бронирований в 2 шага</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/create-booking-2steps.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/create-booking-2steps.html</guid>
+      <description>Оглавление:  Алгоритм создания бронирований Бронирование сегментов (EnhancedAirBookRQ)  Контроль выполнения запроса Проверка минимального стыковочного времени Предварительная обработка бронирования Добавление сегментов Расчет стоимости Завершающая обработка бронирования Пример   Добавление данных о пассажирах (PassengerDetailsRQ)  Контроль выполнения запроса Предварительная обработка бронирования Добавление пассажиров Связка пассажиров с PQ Добавление контактной информации Добавление карт лояльности Добавление паспортных данных и отправка других сообщений перевозчику (SSR и OSI) Добавление ремарок Установка тайм-лимита Завершающая обработка бронирования Пример       Алгоритм создания бронирований #  Бронирование сегментов (EnhancedAirBookRQ) #  Для создания бронирований в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см.</description>
+    </item>
+    
+    <item>
+      <title>Список сервисов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/services.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/services.html</guid>
+      <description>В разделе представлен список сервисов, используемых в данных рекомендациях. Полный список сепвисов Sabre доступен на портале Sabre Dev Studio.
+   Сервис и актуальная версия Описание Документация и WSDL (Dev Studio) Пример аналогичной терминальной команды Разделы в рекомендациях по работе с Sabre APIs     🆂&amp;nbsp;AirSchedulesAndAvailabilityRQ (5.3.1) Получение информации о наличии мест и расписаниях рейсов Запрос, Ответ, WSDL 131DECMOWLED Поиск по расписаниям и получение данных о наличии мест   🆂&amp;nbsp;AirSeatCancelLLSRQ (2.</description>
+    </item>
+    
+    <item>
+      <title>Тайм-лимиты бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/timelimit.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/timelimit.html</guid>
+      <description>Оглавление:  Введение Получение тайм-лимита Установка тайм-лимита при создании бронирования (PassengerDetailsRQ или CreatePassengerNameRecordRQ) Изменение тайм-лимита в бронировании (UpdatePassengerNameRecordRQ) Шаблоны сообщений от перевозчиков с тайм-лимитом     Введение #  Тайм-лимит — это предельный срок, устанавливаемый перевозчиком для бронирования, до наступления которого должны быть оформлены авиабилеты. Если после наступления тайм-лимита для бронирования билеты не будут оформлены, перевозчик оставляет за собой право снять места (отменить сегменты).
+Перевозчик может устанавливать тайм-лимит двумя способами:</description>
+    </item>
+    
+    <item>
+      <title>Формирование отчетов</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/report-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/report-ticket.html</guid>
+      <description>Оглавление:  Отчет о продажах (TKT_TravelAgencyReportsRQ) Отчет о неиспользованных билетах (UnusedeTicketReportLLSRQ)     Отчет о продажах (TKT_TravelAgencyReportsRQ) #  Для получения отчета о продажах используется сервис TKT_TravelAgencyReportsRQ.
+В запросе необходимо указать:
+ /DailySalesSummaryRQ/SelectionCriteria/PseudoCityCode — PCC, для которого будет сформирован отчет. Обратите внимание на то, что при формировании отчета для другого PCC будет произведена проверка наличия доступа (Branch Access, см. Конфигурация Sabre) между iPCC и указанным PCC /DailySalesSummaryRQ/SelectionCriteria/ReportDate — дата, за которую необходимо получить отчет о продажах /DailySalesSummaryRQ/SelectionCriteria/SettlementType — сток, для которого необходимо сформировать отчет.</description>
+    </item>
+    
+    <item>
+      <title>Чтение бронирований</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/get-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/get-booking.html</guid>
+      <description>Для чтения бронирования используется сервис TravelItineraryReadRQ.
+В качестве значения атрибута /TravelItineraryReadRQ/UniqueID/@ID в запросе указывается код бронирования (PNR Record Locator).
+Пример запроса &amp;lt;TravelItineraryReadRQ Version=&amp;#34;3.10.0&amp;#34; xmlns=&amp;#34;http://services.sabre.com/res/tir/v3_10&amp;#34;&amp;gt;  &amp;lt;MessagingDetails&amp;gt;  &amp;lt;SubjectAreas&amp;gt;  &amp;lt;SubjectArea&amp;gt;FULL&amp;lt;/SubjectArea&amp;gt;  &amp;lt;/SubjectAreas&amp;gt;  &amp;lt;/MessagingDetails&amp;gt;  &amp;lt;UniqueID ID=&amp;#34;TGQYEK&amp;#34;/&amp;gt; &amp;lt;/TravelItineraryReadRQ&amp;gt;    Пример ответа &amp;lt;tir310:TravelItineraryReadRS Version=&amp;#34;3.10.0&amp;#34; xmlns:or110=&amp;#34;http://services.sabre.com/res/or/v1_11&amp;#34; xmlns:stl=&amp;#34;http://services.sabre.com/STL/v01&amp;#34; xmlns:tir310=&amp;#34;http://services.sabre.com/res/tir/v3_10&amp;#34;&amp;gt;  &amp;lt;stl:ApplicationResults status=&amp;#34;Complete&amp;#34;&amp;gt;  &amp;lt;stl:Success timeStamp=&amp;#34;2022-05-20T04:59:49.752-05:00&amp;#34;/&amp;gt;  &amp;lt;/stl:ApplicationResults&amp;gt;  &amp;lt;tir310:TravelItinerary&amp;gt;  &amp;lt;tir310:CustomerInfo&amp;gt;  &amp;lt;tir310:ContactNumbers&amp;gt;  &amp;lt;tir310:ContactNumber Id=&amp;#34;14&amp;#34; LocationCode=&amp;#34;MOW&amp;#34; Phone=&amp;#34;74991234567-A&amp;#34; RPH=&amp;#34;001&amp;#34;/&amp;gt;  &amp;lt;tir310:ContactNumber Id=&amp;#34;15&amp;#34; LocationCode=&amp;#34;MOW&amp;#34; Phone=&amp;#34;79851234567-M&amp;#34; RPH=&amp;#34;002&amp;#34;/&amp;gt;  &amp;lt;/tir310:ContactNumbers&amp;gt;  &amp;lt;tir310:PersonName NameNumber=&amp;#34;01.</description>
+    </item>
+    
+    <item>
+      <title>Чтение бронирований из архива</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/get-archive-booking.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/get-archive-booking.html</guid>
+      <description>Для чтения бронирований из архива в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Через некоторое время после того, как проходит время вылета для всех сегментов в бронировании, оно попадает в архив. Бронирования, находящиеся в архиве, можно читать, но нельзя изменять.
+Для чтения бронирований из архива используется сервис Trip_SearchRQ.
+В запросе необходимо указать:
+ /Trip_SearchRQ/ReadRequests/ReservationReadRequest/LocatorCriteria/Locator/@Id — код бронирования (PNR Record Locator) /Trip_SearchRQ/ReadRequests/ReservationReadRequest/PosCriteria/@AnyBranch — признак поиска бронирования во всех PCC, с которыми у текущего PCC есть Branch Access.</description>
+    </item>
+    
+    <item>
+      <title>Чтение масок билетов и EMD</title>
+      <link>https://andreypolyak.github.io/sabre-apis-ru/get-ticket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreypolyak.github.io/sabre-apis-ru/get-ticket.html</guid>
+      <description>Оглавление:  Введение Чтение масок билетов и EMD из баз данных перевозчиков (TKT_ElectronicDocumentServicesRQ) Чтение масок билетов и EMD из базы данных Sabre (TicketingDocumentServicesRQ)     Введение #  В момент оформления билетов и EMD они сохраняются сразу в двух местах:
+ в базе данных перевозчиков в базе данных Sabre  Любые инициированные агентством изменения билетов и EMD (например, войдирование) изменяют маски билетов и EMD в обоих базах данных.</description>
+    </item>
+    
+  </channel>
+</rss>
