@@ -147,12 +147,12 @@ title: Рекомендации по работе с Sabre APIs
 
 {{< details title="**Обновление от 07.06.2019**" >}}
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- BargainFinderMaxRQ до [версии 5.1.0](https://releasenotes.developer.sabre.com/2019/03/28/bargain-finder-max-v5-1-0-on-march-28-2019)
+- BargainFinderMaxRQ до версии 5.1.0
 - BargainFinderMax_ADRQ до версии 5.1.0
-- RevalidateItinRQ до [версии 5.1.0](https://releasenotes.developer.sabre.com/2019/03/28/revalidate-itinerary-v5-1-0-on-march-28-2019)
-- ExchangeShoppingRQ до [версии 2.3.0](https://releasenotes.developer.sabre.com/2019/04/01/exchange-shopping-v2-3-0-on-april-1-2019)
-- EnhancedAirBookRQ до [версии 3.10.0](https://releasenotes.developer.sabre.com/2019/05/21/orchestrated-air-booking-v3-10-0-on-may-21-2019)
-- CreatePassengerNameRecordRQ до [версии 2.2.0](https://releasenotes.developer.sabre.com/2019/06/06/create-passenger-name-record-v2-2-0-on-june-6-2019)
+- RevalidateItinRQ до версии 5.1.0
+- ExchangeShoppingRQ до версии 2.3.0
+- EnhancedAirBookRQ до версии 3.10.0
+- CreatePassengerNameRecordRQ до версии 2.2.0
 
 В разделе [Поиск перелетов по заданным датам](shop.html) добавлено описание возможности производить поиск только брендированных или небрендированных тарифов, запрещать поиск по аэропортам в других странах при поиске альтернативных аэропортов вылета и прилета, а также получать в ответе на запрос информацию об услугах для найденных брендов.
 
@@ -170,7 +170,7 @@ title: Рекомендации по работе с Sabre APIs
 -----------
 
 {{< details title="**Обновление от 28.03.2019**" >}}
-Обновлена версия сервиса EnhancedSeatMapRQ до [версии 6.0.0](https://releasenotes.developer.sabre.com/2019/03/13/enhanced-seat-map-v6-0-0-on-march-13-2019).
+Обновлена версия сервиса EnhancedSeatMapRQ до версии 6.0.0.
 
 В разделе [Поиск перелетов по заданным датам](shop.html) добавлено:
 - описание возможности поиска комбинаций перелетов с частично известными рейсами
@@ -214,16 +214,16 @@ title: Рекомендации по работе с Sabre APIs
 
 {{< details title="**Обновление от 06.02.2019**" >}}
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- BargainFinderMaxRQ до [версии 4.3.0](https://releasenotes.developer.sabre.com/2018/09/20/bargain-finder-max-v4-3-0-on-september-20-2018)
-- BargainFinderMax_ADRQ до [версии 4.3.0](https://releasenotes.developer.sabre.com/2018/09/20/alternate-date-v4-3-0-on-september-20-2018)
-- ExchangeShoppingRQ до [версии 2.2.0](https://releasenotes.developer.sabre.com/2018/12/12/exchange-shopping-v2-2-0-on-december-12-2018)
-- PassengerDetailsRQ до [версии 3.4.0](https://releasenotes.developer.sabre.com/2018/12/23/passenger-details-v3-4-0-on-december-23-2018)
-- AirSchedulesAndAvailabilityRQ до версии [5.2.0](https://releasenotes.developer.sabre.com/2018/10/21/air-schedules-and-availability-v5-2-0-on-october-21-2018)
-- EndTransactionLLSRQ до [версии 2.0.9](https://releasenotes.developer.sabre.com/2018/09/27/end-transaction-v2-0-9-on-september-27-2018)
-- PO_AllBrandsPricingRQ до [версии 1.0.9](https://releasenotes.developer.sabre.com/2018/09/20/price-with-multiple-brands-v1-0-9-on-september-20-2018)
-- UpdateReservationRQ до [версии 1.19.0](https://releasenotes.developer.sabre.com/2018/08/16/update-itinerary-v1-19-0-on-august-16-2018)
+- BargainFinderMaxRQ до версии 4.3.0
+- BargainFinderMax_ADRQ до версии 4.3.0
+- ExchangeShoppingRQ до версии 2.2.0
+- PassengerDetailsRQ до версии 3.4.0
+- AirSchedulesAndAvailabilityRQ до версии 5.2.0
+- EndTransactionLLSRQ до версии 2.0.9
+- PO_AllBrandsPricingRQ до версии 1.0.9
+- UpdateReservationRQ до версии 1.19.0
 - GetAncillaryOffersRQ до версии 3.0.2
-- OTA_AirPriceLLSRQ до [версии 2.17.0](https://releasenotes.developer.sabre.com/2018/08/02/price-air-itinerary-v2-17-0-on-august-2-2018)
+- OTA_AirPriceLLSRQ до версии 2.17.0
 
 В разделе [Настройки PCC](tjr-settings.html) добавлено описание настроек, изменяющих логику работы с валидирующими перевозчиками Validating Carrier, Interline, and GSA и Restrict Validating Carrier to Traditional Validating Carrier.
 
@@ -256,12 +256,12 @@ title: Рекомендации по работе с Sabre APIs
 
 {{< details title="**Обновление от 03.07.2018**" >}}
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- CreatePassengerNameRecordRQ до [версии 2.1.0](https://releasenotes.developer.sabre.com/2018/06/27/create-passenger-name-record-v2-1-0-on-june-27-2018)
-- BargainFinderMaxRQ до [версии 4.2.0](https://releasenotes.developer.sabre.com/2018/06/27/bargain-finder-max-v4-2-0-on-june-27-2018)
-- BargainFinderMax_ADRQ до [версии 4.2.0](https://releasenotes.developer.sabre.com/2018/06/27/alternate-date-v4-2-0-on-june-27-2018)
-- PO_AllBrandsPricingRQ до [версии 1.0.8](https://releasenotes.developer.sabre.com/2018/06/27/price-with-multiple-brands-v1-0-8-on-june-27-2018)
-- QueueAccessLLSRQ до [версии 2.0.9](https://releasenotes.developer.sabre.com/2018/04/26/access-queue-v2-0-9-on-april-26-2018)
-- UpdateReservationRQ до [версии 1.18.0](https://releasenotes.developer.sabre.com/2018/02/21/update-itinerary-v1-18-0-on-february-21-2018)
+- CreatePassengerNameRecordRQ до версии 2.1.0
+- BargainFinderMaxRQ до версии 4.2.0
+- BargainFinderMax_ADRQ до версии 4.2.0
+- PO_AllBrandsPricingRQ до версии 1.0.8
+- QueueAccessLLSRQ до версии 2.0.9
+- UpdateReservationRQ до версии 1.18.0
 
 Разделы Получение расписаний и Проверка наличия мест объединены в раздел [Получение информации о наличии мест](get-availability.html), в котором представлены рекомендации по использованию нового сервиса [AirSchedulesAndAvailabilityRQ](https://developer.sabre.com/docs/soap_apis/air/search/air_schedules_availability).
 
@@ -300,13 +300,13 @@ title: Рекомендации по работе с Sabre APIs
 
 {{< details title="**Обновление от 06.04.2018**" >}}
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- BargainFinderMaxRQ до [версии 4.1.0](https://releasenotes.developer.sabre.com/2018/03/27/bargain-finder-max-v4-1-0-on-march-27-2018)
-- BargainFinderMax_ADRQ до [версии 4.1.0](https://releasenotes.developer.sabre.com/2018/03/27/alternate-date-v4-1-0-on-march-27-2018)
-- BargainFinderMax_ASRQ до [версии 4.1.0](https://releasenotes.developer.sabre.com/2018/03/27/alternate-airport-shop-v4-1-0-on-march-27-2018)
-- TravelitineraryReadRQ до [версии 3.10.0](https://releasenotes.developer.sabre.com/2017/11/16/get-itinerary-v3-10-0-on-november-16-2017)
-- EnhancedAirBookRQ до [версии 3.9.0](https://releasenotes.developer.sabre.com/2018/01/25/enhanced-air-book-v3-9-0-on-january-25-2018)
+- BargainFinderMaxRQ до версии 4.1.0
+- BargainFinderMax_ADRQ до версии 4.1.0
+- BargainFinderMax_ASRQ до версии 4.1.0
+- TravelitineraryReadRQ до версии 3.10.0
+- EnhancedAirBookRQ до версии 3.9.0
 - PO_AllBrandsPricingRQ до версии 1.0.6
-- StructureFareRulesRQ до [версии 1.0.4](https://releasenotes.developer.sabre.com/2018/03/27/get-structured-fare-rules-v1-0-4-on-march-27-2018)
+- StructureFareRulesRQ до версии 1.0.4
 
 В разделе [Поиск перелетов по заданным датам](shop.html) добавлены:
 - возможность задать класс обслуживания для каждого плеча по отдельности
@@ -373,15 +373,15 @@ title: Рекомендации по работе с Sabre APIs
 
 {{< details title="**Обновление от 25.12.2017**" >}}
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- BargainFinderMaxRQ до [версии 3.4.0](https://releasenotes.developer.sabre.com/2017/12/13/bargain-finder-max-v3-4-0-on-december-13-2017)
+- BargainFinderMaxRQ до версии 3.4.0
 - BargainFinderMax_ADRQ до версии 3.4.0
 - BargainFinderMax_ASRQ до версии 3.4.0
-- AirTicketRQ до [версии 1.2.0](https://releasenotes.developer.sabre.com/2017/12/14/enhanced-air-ticket-v1-2-0-on-december-14-2017)
-- AirTicketLLSRQ до [версии 2.11.0](https://releasenotes.developer.sabre.com/2017/12/06/issue-air-ticket-v2-11-0-on-december-6-2017)
-- ExchangeShoppingRQ до [версии 2.1.0](https://releasenotes.developer.sabre.com/2017/12/05/exchange-shopping-v2-1-0-on-december-5-2017)
-- QueueCountLLSRQ до [версии 2.2.1](https://releasenotes.developer.sabre.com/2017/11/16/get-queue-count-v2-2-1-on-november-16-2017)
-- OTA_AirRulesLLSRQ до [версии 2.3.0](https://releasenotes.developer.sabre.com/2017/11/16/air-fare-rules-v2-3-0-on-november-16-2017)
-- EndTransactionLLSRQ до [версии 2.0.8](https://releasenotes.developer.sabre.com/2017/11/16/end-transaction-v2-0-8-on-november-16-2017)
+- AirTicketRQ до версии 1.2.0
+- AirTicketLLSRQ до версии 2.11.0
+- ExchangeShoppingRQ до версии 2.1.0
+- QueueCountLLSRQ до версии 2.2.1
+- OTA_AirRulesLLSRQ до версии 2.3.0
+- EndTransactionLLSRQ до версии 2.0.8
 
 В разделе [Поиск перелетов по заданным датам](shop.html) добавлено описание следующих возможностей:
 - поиск в нескольких PCC
@@ -461,7 +461,7 @@ title: Рекомендации по работе с Sabre APIs
 - [Создание бронирований в 1 шаг](create-booking-1step.html) — моментальное создание бронирования, используется сервис CreatePassengerNameRecordRQ
 - [Создание бронирований в 2 шага](create-booking-2steps.html) — моментальное бронирование сегментов и хранение их в текущей сессии до момента получения всех данных, необходимых для создания бронирования, используются сервисы EnhancedAirBookRQ и PassengerDetailsRQ
 
-Обновлена версия сервиса CreatePassengerNameRecordRQ до [версии 2.0.0](https://releasenotes.developer.sabre.com/2017/07/27/create-passenger-name-record-v2-0-0-on-july-27-2017).
+Обновлена версия сервиса CreatePassengerNameRecordRQ до версии 2.0.0.
 {{< /details >}}
 
 -----------
@@ -474,15 +474,15 @@ title: Рекомендации по работе с Sabre APIs
 
 {{< details title="**Обновление от 09.08.2017**" >}}
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- BargainFinderMaxRQ до [версии 3.2.0](https://releasenotes.developer.sabre.com/2017/06/15/bargain-finder-max-v3-2-0-on-june-15-2017)
-- BargainFinderMax_ADRQ до [версии 3.2.0](https://releasenotes.developer.sabre.com/2017/06/15/alternate-date-v3-2-0-on-june-15-2017)
-- BargainFinderMax_ASRQ до [версии 3.2.0](https://releasenotes.developer.sabre.com/2017/06/15/alternate-airport-shop-v3-2-0-on-june-15-2017)
-- EnhancedAirBook до [версии 3.8.0](https://releasenotes.developer.sabre.com/2017/06/16/enhanced-air-book-v3-8-0-on-june-16-2017)
-- TravelItineraryReadRQ до [версии 3.9.0](https://releasenotes.developer.sabre.com/2017/05/12/travel-itinerary-read-v3-9-on-may-12-2017)
-- OTA_AirPriceLLSRQ до [версии 2.16.0](https://releasenotes.developer.sabre.com/2017/06/22/price-air-itinerary-v2-16-0-on-june-22-2017)
-- AirTicketRQ до [версии 1.1.0](https://releasenotes.developer.sabre.com/2017/06/22/orchestrated-air-ticket-v1-1-0-on-june-22-2017)
-- AirTicketLLSRQ до [версии 2.10.0](https://releasenotes.developer.sabre.com/2017/06/22/issue-air-ticket-v2-10-0-on-june-22-2017)
-- DeleteSpecialServiceLLSRQ до [версии 2.2.1](https://releasenotes.developer.sabre.com/2017/06/22/delete-special-service-v2-2-1-on-june-22-2017)
+- BargainFinderMaxRQ до версии 3.2.0
+- BargainFinderMax_ADRQ до версии 3.2.0
+- BargainFinderMax_ASRQ до версии 3.2.0
+- EnhancedAirBook до версии 3.8.0
+- TravelItineraryReadRQ до версии 3.9.0
+- OTA_AirPriceLLSRQ до версии 2.16.0
+- AirTicketRQ до версии 1.1.0
+- AirTicketLLSRQ до версии 2.10.0
+- DeleteSpecialServiceLLSRQ до версии 2.2.1
 
 В разделе [Оформление билетов и EMD](issue-ticket.html) добавлено описание возможности оформлять билеты и EMD в разных инструкциях в рамках одного вызова сервиса AirTicketRQ.
 
@@ -531,14 +531,14 @@ title: Рекомендации по работе с Sabre APIs
 
 {{< details title="**Обновление от 31.03.2017**" >}}
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- BargainFinderMaxRQ до [версии 3.1.0](https://releasenotes.developer.sabre.com/2017/03/30/bargain-finder-max-v3-1-0-on-march-30-2017-2)
-- BargainFinderMax_ADRQ до [версии 3.1.0](https://releasenotes.developer.sabre.com/2017/03/30/alternate-date-v3-1-0-on-march-30-2017-2)
-- EndTransactionLLSRQ до [версии 2.0.7](https://releasenotes.developer.sabre.com/2017/03/23/endtransaction-v2-0-7-on-march-23-2017)
-- OTA_AirAvailLLSRQ до [версии 2.4.0](https://releasenotes.developer.sabre.com/2017/03/23/air-availability-v2-4-0-on-march-23-2017)
-- OTA_AirPriceLLSRQ до [версии 2.15.0](https://releasenotes.developer.sabre.com/2017/03/23/price-air-itinerary-v2-15-0-on-march-23-2017)
-- OTA_AirRulesLLSRQ до [версии 2.2.1](https://releasenotes.developer.sabre.com/2017/03/23/air-fare-rules-v2-2-1-on-march-23-2017)
-- QueueAccessLLSRQ до [версии 2.0.8](https://releasenotes.developer.sabre.com/2017/03/23/access-queue-v2-0-8-on-march-23-2017)
-- RulesFromPriceLLSRQ до [версии 2.1.0](https://releasenotes.developer.sabre.com/2017/03/23/fare-rules-from-air-price-v2-1-0-on-march-23-2017)
+- BargainFinderMaxRQ до версии 3.1.0
+- BargainFinderMax_ADRQ до версии 3.1.0
+- EndTransactionLLSRQ до версии 2.0.7
+- OTA_AirAvailLLSRQ до версии 2.4.0
+- OTA_AirPriceLLSRQ до версии 2.15.0
+- OTA_AirRulesLLSRQ до версии 2.2.1
+- QueueAccessLLSRQ до версии 2.0.8
+- RulesFromPriceLLSRQ до версии 2.1.0
 
 В разделе [Поиск перелетов по заданным датам](shop.html) добавлена возможность установить применимость черных и белых списков перевозчиков ко всем сегментам перелета или хотя бы одному.
 
@@ -559,7 +559,7 @@ title: Рекомендации по работе с Sabre APIs
 
 В разделах [Поиск перелетов по заданным датам](shop.html) и [Поиск по гибким датам](shop-alternate-dates.html) добавлены новые примеры.
 
-В разделе [Формирование отчетов](report-ticket.html) обновлена версия сервиса TKT_TravelAgencyReportsRQ до [версии 1.2.2](https://releasenotes.developer.sabre.com/2016/11/03/display-audit-trail-v1-2-2-on-november-3-2016).
+В разделе [Формирование отчетов](report-ticket.html) обновлена версия сервиса TKT_TravelAgencyReportsRQ до версии 1.2.2.
 
 В разделе [Тайм-лимиты бронирований](timelimit.html) добавлен новый шаблон для SSR сообщения авиакомпании CA.
 
@@ -585,7 +585,7 @@ title: Рекомендации по работе с Sabre APIs
 -----------
 
 {{< details title="**Обновление от 25.01.2017**" >}}
-В разделе [Бронирование мест в салоне](air-seats.html) обновлена версия сервиса EnhancedSeatMapRQ до [версии 5.0.0](https://releasenotes.developer.sabre.com/2016/11/30/enhancedseatmap-v5-0-0-on), а также добавлена возможность получения карты мест для указанного тарифа и категории пассажира.
+В разделе [Бронирование мест в салоне](air-seats.html) обновлена версия сервиса EnhancedSeatMapRQ до версии 5.0.0, а также добавлена возможность получения карты мест для указанного тарифа и категории пассажира.
 {{< /details >}}
 
 -----------
@@ -619,7 +619,7 @@ title: Рекомендации по работе с Sabre APIs
 -----------
 
 {{< details title="**Обновление от 16.12.2016**" >}}
-В разделе [Поиск перелетов по заданным датам](shop.html) обновлена версия сервиса BargainFinderMaxRQ до [версии 3.0.0](https://releasenotes.developer.sabre.com/2016/12/15/bargain-finder-max-v3-0-0-on-december-15-2016-2).
+В разделе [Поиск перелетов по заданным датам](shop.html) обновлена версия сервиса BargainFinderMaxRQ до версии 3.0.0.
 
 В разделе были добавлены:
 - возможность указать тип пункта вылета (аэропорт или город)
@@ -649,9 +649,9 @@ title: Рекомендации по работе с Sabre APIs
 Обновлена структура других разделов.
 
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- AirTicketLLSRQ до [версии 2.9.0](https://releasenotes.developer.sabre.com/2016/11/10/issue-air-ticket-v2-9-0-on-november-10-2016)
-- OTA_AirPriceLLSRQ до [версии 2.14.0](https://releasenotes.developer.sabre.com/2016/11/10/price-air-itinerary-v2-14-0-on-november-10-2016)
-- TravelItineraryReadRQ до [версии 3.8.0](https://releasenotes.developer.sabre.com/2016/09/21/tir-v3-8-on-september-21-2016)
+- AirTicketLLSRQ до версии 2.9.0
+- OTA_AirPriceLLSRQ до версии 2.14.0
+- TravelItineraryReadRQ до версии 3.8.0
 {{< /details >}}
 
 -----------
@@ -694,8 +694,8 @@ title: Рекомендации по работе с Sabre APIs
 - добавлен способ поиска и бронирования тарифов группы "Бизнес Гибкий" авиакомпании S7
 
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- BargainFinderMaxRQ до [версии 1.9.7](https://releasenotes.developer.sabre.com/2016/09/28/bargain-finder-max-v1-9-7-on-september-28-2016-2)
-- EnhancedAirBookRQ до [версии 3.7.0](https://releasenotes.developer.sabre.com/2016/09/20/enhanced-air-book-v3-7-0-on-september-20-2016)
+- BargainFinderMaxRQ до версии 1.9.7
+- EnhancedAirBookRQ до версии 3.7.0
 
 В разделе [Конфигурация Sabre](configuration.html) добавлена инструкция по отключению функции "Divide in Party" для сервиса Bargain Finder Max (выдача разных классов бронирования для разных категорий пассажиров в результатах поиска).
 
