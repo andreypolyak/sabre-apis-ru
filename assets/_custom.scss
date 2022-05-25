@@ -1,21 +1,12 @@
 /* You can add custom styles here. */
 
 // @import "plugins/numbered";
-.clipboard-button {
+.clipboard-btn {
   position: absolute;
   right: 0;
   padding: 4px;
-  margin: 12px;
-  color: var(--color-link) !important;
-  border-color: var(--color-link) !important;
-  background-color: transparent;
-  border: 1px solid;
-  border-radius: 6px;
-  font-size: .875rem;
-  height: 26px !important;
-}
-.clipboard-button:focus {
-  outline: 0;
+  margin: 9px;
+  height: 32px;
 }
 .highlight {
   position: relative;
