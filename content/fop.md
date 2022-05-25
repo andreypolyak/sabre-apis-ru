@@ -516,9 +516,9 @@ TP
 
 #### Наличный расчет
 
-- ```ReservationUpdateItem/OpenReservationElementUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
-- ```ReservationUpdateItem/OpenReservationElementUpdate/OpenReservationElement``` — код добавляемого элемента. Всегда значение ```FP``` (Form of Payment, форма оплаты)
-- ```ReservationUpdateItem/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:Cash/or:Text``` — значение ```CA```
+- ```/OpenReservationElementUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
+- ```/OpenReservationElementUpdate/OpenReservationElement``` — код добавляемого элемента. Всегда значение ```FP``` (Form of Payment, форма оплаты)
+- ```/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:Cash/or:Text``` — значение ```CA```
 
 {{< details title="Пример запроса" >}}
 ```XML
@@ -1413,9 +1413,9 @@ TP
 
 #### Безналичный расчет
 
-- ```ReservationUpdateItem/OpenReservationElementUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
-- ```ReservationUpdateItem/OpenReservationElementUpdate/OpenReservationElement``` — код добавляемого элемента. Всегда значение ```FP``` (Form of Payment, форма оплаты)
-- ```ReservationUpdateItem/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:Check/or:Text``` — значение ```CK```
+- ```/OpenReservationElementUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
+- ```/OpenReservationElementUpdate/OpenReservationElement``` — код добавляемого элемента. Всегда значение ```FP``` (Form of Payment, форма оплаты)
+- ```/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:Check/or:Text``` — значение ```CK```
 
 {{< details title="Пример запроса" >}}
 ```XML
@@ -2122,29 +2122,29 @@ TP
 
 #### Банковская карта
 
-- ```ReservationUpdateItem/OpenReservationElementUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
-- ```ReservationUpdateItem/OpenReservationElementUpdate/OpenReservationElement``` — код добавляемого элемента. Всегда значение ```FP``` (Form of Payment, форма оплаты)
-- ```ReservationUpdateItem/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:PaymentCard``` — данные банковской карты:
-    - ```or:PaymentCard/or:PaymentType``` — значение ```CC```
-    - ```or:PaymentCard/or:CardCode``` — код платежной системы
-    - ```or:PaymentCard/or:CardNumber``` — номер карты
-    - ```or:PaymentCard/or:ExpiryMonth``` — месяц срока истечения действия карты (формат ```--MM```, например ```--12``` для декабря)
-    - ```or:PaymentCard/or:ExpiryYear``` — год срока истечения действия карты (формат ```YY```, например ```27``` для 2027 года)
+- ```/OpenReservationElementUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
+- ```/OpenReservationElementUpdate/OpenReservationElement``` — код добавляемого элемента. Всегда значение ```FP``` (Form of Payment, форма оплаты)
+- ```/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:PaymentCard``` — данные банковской карты:
+    - ```/or:PaymentType``` — значение ```CC```
+    - ```/or:CardCode``` — код платежной системы
+    - ```/or:CardNumber``` — номер карты
+    - ```/or:ExpiryMonth``` — месяц срока истечения действия карты (формат ```--MM```, например ```--12``` для декабря)
+    - ```/or:ExpiryYear``` — год срока истечения действия карты (формат ```YY```, например ```27``` для 2027 года)
 
 Список кодов основных платежных систем:
 - ```VI``` — Visa
 - ```CA``` — Master Card
 - ```AX``` — American Express
 
-Если необходимо передать уже полученный код авторизации, то в запросе дополнительно нужно указать элемент ```or:PaymentCard/or:ApprovalList/or:Approval```:
-- ```or:Approval/or:ManualApproval``` — индикатор использования переданного кода авторизации (значение ```true```)
-- ```or:Approval/or:ResponseCode``` — код ответа при получении кода авторизации
-- ```or:Approval/or:ApprovalCode``` — код авторизации
-- ```or:Approval/or:RequestTime``` — дата и время получения кода авторизации
-- ```or:Approval/or:ExpiryTime``` — дата и время окончания срока действия кода авторизации
-- ```or:Approval/or:AirlineCode``` — код валидирующего перевозчика, которому будет передан код авторизации
-- ```or:Approval/or:Amount/@currencyCode``` — трехбуквенный код валюты
-- ```or:Approval/or:Amount``` — сумма, для которой был получен код авторизации
+Если необходимо передать уже полученный код авторизации, то в запросе дополнительно нужно указать элемент ```/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:PaymentCard/or:ApprovalList/or:Approval```:
+- ```/or:ManualApproval``` — индикатор использования переданного кода авторизации (значение ```true```)
+- ```/or:ResponseCode``` — код ответа при получении кода авторизации
+- ```/or:ApprovalCode``` — код авторизации
+- ```/or:RequestTime``` — дата и время получения кода авторизации
+- ```/or:ExpiryTime``` — дата и время окончания срока действия кода авторизации
+- ```/or:AirlineCode``` — код валидирующего перевозчика, которому будет передан код авторизации
+- ```/or:Amount/@currencyCode``` — трехбуквенный код валюты
+- ```/or:Amount``` — сумма, для которой был получен код авторизации
 
 {{< details title="Пример запроса" >}}
 ```XML
@@ -2880,7 +2880,7 @@ TP
 ```
 {{< /details >}}
 
-Если код авторизации необходимо получить в момент оформления билетов или EMD, то в запросе дополнительно нужно указать элемент ```or:PaymentCard/or:GenerateApprovalAtTicketing``` со значением ```true```.
+Если код авторизации необходимо получить в момент оформления билетов или EMD, то в запросе дополнительно нужно указать элемент ```/OpenReservationElementUpdate/OpenReservationElement/or:FormOfPayment/or:PaymentCard/or:GenerateApprovalAtTicketing``` со значением ```true```.
 
 {{< details title="Пример запроса" >}}
 ```XML

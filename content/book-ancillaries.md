@@ -24,17 +24,17 @@ title: Бронирование дополнительных услуг
 
 - ```/AncillaryServicesUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
 - ```/AncillaryServicesUpdate/NameAssociationList``` — информация о пассажирах (одна услуга может быть забронирована сразу для нескольких пассажиров в том случае, если они имеют одинаковую категорию пассажира, а также количество требуемых услуг равно):
-    - ```/NameAssociationList/NameAssociationTag/LastName``` — фамилия пассажира
-    - ```/NameAssociationList/NameAssociationTag/FirstName``` — имя пассажира
-    - ```/NameAssociationList/NameAssociationTag/NameRefNumber``` — номер пассажира
+    - ```/NameAssociationTag/LastName``` — фамилия пассажира
+    - ```/NameAssociationTag/FirstName``` — имя пассажира
+    - ```/NameAssociationTag/NameRefNumber``` — номер пассажира
 - ```/AncillaryServicesUpdate/SegmentAssociationList``` — информация о сегментах:
-    - ```/SegmentAssociationList/SegmentAssociationTag/CarrierCode``` — маркетинговый перевозчик
-    - ```/SegmentAssociationList/SegmentAssociationTag/FlightNumber``` — номер рейса
-    - ```/SegmentAssociationList/SegmentAssociationTag/DepartureDate``` — дата вылета
-    - ```/SegmentAssociationList/SegmentAssociationTag/BoardPoint``` — аэропорт отправления
-    - ```/SegmentAssociationList/SegmentAssociationTag/OffPoint``` — аэропорт прибытия
-    - ```/SegmentAssociationList/SegmentAssociationTag/ClassOfService``` — класс бронирования
-    - ```/SegmentAssociationList/SegmentAssociationTag/BookingStatus``` — статус сегмента
+    - ```/SegmentAssociationTag/CarrierCode``` — маркетинговый перевозчик
+    - ```/SegmentAssociationTag/FlightNumber``` — номер рейса
+    - ```/SegmentAssociationTag/DepartureDate``` — дата вылета
+    - ```/SegmentAssociationTag/BoardPoint``` — аэропорт отправления
+    - ```/SegmentAssociationTag/OffPoint``` — аэропорт прибытия
+    - ```/SegmentAssociationTag/ClassOfService``` — класс бронирования
+    - ```/SegmentAssociationTag/BookingStatus``` — статус сегмента
 - ```/AncillaryServicesUpdate/CommercialName``` — название услуги (```/GetAncillaryOffersRS/AncillaryDefinition/CommercialName```)
 - ```/AncillaryServicesUpdate/RficCode``` —  RFIC код (```/GetAncillaryOffersRS/AncillaryDefinition/ReasonForIssuance/@code```)
 - ```/AncillaryServicesUpdate/RficSubcode``` — RFIC субкод (```/GetAncillaryOffersRS/AncillaryDefinition/SubCode```)
@@ -95,19 +95,19 @@ title: Бронирование дополнительных услуг
 
 Для отправки SSR необходимо добавить элемент ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/SpecialServiceRequestUpdate```, содержащий следующие элементы и атрибуты:
 
-- ```SpecialServiceRequestUpdate/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
-- ```SpecialServiceRequestUpdate/@type``` — тип SSR. Значение ```H``` для перевозчика American Airlines (AA), значение ```G``` — для всех остальных
-- ```SpecialServiceRequestUpdate/NameAssociationList/NameAssociationTag/NameRefNumber``` — номер пассажира
-- ```SpecialServiceRequestUpdate/SpecialService/Code``` — код SSR сообщения (4 буквы)
-- ```SpecialServiceRequestUpdate/SpecialService/Text``` — текст SSR сообщения
-- ```/SpecialServiceRequestUpdate/SegmentAssociationList``` — информация о сегментах:
-    - ```/SegmentAssociationList/SegmentAssociationTag/CarrierCode``` — маркетинговый перевозчик
-    - ```/SegmentAssociationList/SegmentAssociationTag/FlightNumber``` — номер рейса
-    - ```/SegmentAssociationList/SegmentAssociationTag/DepartureDate``` — дата вылета
-    - ```/SegmentAssociationList/SegmentAssociationTag/BoardPoint``` — аэропорт отправления
-    - ```/SegmentAssociationList/SegmentAssociationTag/OffPoint``` — аэропорт прибытия
-    - ```/SegmentAssociationList/SegmentAssociationTag/ClassOfService``` — класс бронирования
-    - ```/SegmentAssociationList/SegmentAssociationTag/BookingStatus``` — статус сегмента
+- ```/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
+- ```/@type``` — тип SSR. Значение ```H``` для перевозчика American Airlines (AA), значение ```G``` — для всех остальных
+- ```/NameAssociationList/NameAssociationTag/NameRefNumber``` — номер пассажира
+- ```/SpecialService/Code``` — код SSR сообщения (4 буквы)
+- ```/SpecialService/Text``` — текст SSR сообщения
+- ```/SegmentAssociationList``` — информация о сегментах:
+    - ```/SegmentAssociationTag/CarrierCode``` — маркетинговый перевозчик
+    - ```/SegmentAssociationTag/FlightNumber``` — номер рейса
+    - ```/SegmentAssociationTag/DepartureDate``` — дата вылета
+    - ```/SegmentAssociationTag/BoardPoint``` — аэропорт отправления
+    - ```/SegmentAssociationTag/OffPoint``` — аэропорт прибытия
+    - ```/SegmentAssociationTag/ClassOfService``` — класс бронирования
+    - ```/SegmentAssociationTag/BookingStatus``` — статус сегмента
 
 {{< details title="Пример отправки SSR сообщения" open=true >}}
 ```XML

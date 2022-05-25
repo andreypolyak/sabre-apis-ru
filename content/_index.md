@@ -16,6 +16,7 @@ title: Рекомендации по работе с Sabre APIs
 В разделах [Поиск перелетов по заданным датам](shop.html) и [Проверка стоимости и наличия мест](revalidate-itinerary.html) добавлено:
 - получение информации о возможности выбора места на борту (платно/бесплатно)
 - получение информации об условиях провоза ручной клади
+- получение дополнительных расчетов стоимости по заданным критериям
 
 В разделе [Получение норм провоза багажа](baggage.html) добавлено получение информации об условиях провоза ручной клади в поисковой выдаче или при проверке стоимости и наличия мест (сервисы [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max), [BargainFinderMax_ADRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/bfm_ad), [RevalidateItinRQ](https://developer.sabre.com/docs/read/soap_apis/air/search/revalidate_itinerary)).
 
@@ -321,7 +322,7 @@ title: Рекомендации по работе с Sabre APIs
 
 В разделах [Создание бронирований в 1 шаг](create-booking-1step.html) и [Создание бронирований в 2 шага](create-booking-2steps.html) убрано описание необходимости указания типа перевозчика (hosted или non-hosted) при добавлении документов и других SSR и OSI сообщений в запросах к сервисам CreatePassengerNameRecordRQ и PassengerDetailsRQ.
 
-В разделе [Бронирование дополнительных услуг](book-ancillaries.html) добавлена [ссылка](https://developer.sabre.com/files/SSR_-__Free_Text_Table_for_Air_Extras.xlsx) на список шаблонов SSR сообщений, которые требуется отправлять перевозчикам.
+В разделе [Бронирование дополнительных услуг](book-ancillaries.html) добавлена ссылка на список шаблонов SSR сообщений, которые требуется отправлять перевозчикам.
 
 В разделе [Бронирование дополнительных услуг](ancillaries.html) расширен список обязательных для заполнения элементов в запросе к сервису UpdateReservationRQ.
 
@@ -454,8 +455,6 @@ title: Рекомендации по работе с Sabre APIs
 -----------
 
 {{< details title="**Обновление от 25.08.2017**" >}}
-Создан раздел [Обработка ошибок](errors.html) с перечнем часто встречающихся ошибок и рекомендациями по их обработке. *Раздел находится в разработке.*
-
 В разделе [Бронирование мест в салоне](air-seats.html) упрощен алгоритм бронирования мест в салоне.
 
 Раздел [Создание бронирований](create-booking.html) разделен на два раздела:
@@ -724,7 +723,7 @@ title: Рекомендации по работе с Sabre APIs
 {{< details title="**Обновление от 05.09.2016**" >}}
 Добавлен раздел [Отчет о продажах](report-ticket.html) с информацией о новом сервисе для получения отчета о продажах ([TKT_TravelAgencyReportsRQ](https://developer.sabre.com/docs/read/soap_apis/air/fulfill/display_audit_trail)).
 
-В разделе [Начало работы](introduction.html) добавлена ссылка на централизованное [хранилище](http://releasenotes.developer.sabre.com/category/soap) обновлений сервисов Sabre.
+В разделе [Начало работы](introduction.html) добавлена ссылка на централизованное хранилище обновлений сервисов Sabre.
 
 В различных разделах рекомендаций обновлены версии используемых сервисов:
 - EndTransactionLLSRQ до [версии 2.0.6](http://releasenotes.developer.sabre.com/2016/08/25/end-transaction-v2-0-6-on-august-25-2016)

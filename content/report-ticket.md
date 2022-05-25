@@ -591,7 +591,7 @@ aliases:
 <UnusedeTicketReportRQ ReturnHostCommand="true" Version="2.0.0" xmlns="http://webservices.sabre.com/sabreXML/2011/10">
   <eTicketReport EndDate="03-31" StartDate="03-01">
     <VendorPrefs>
-      <Airline Code="SU"/>
+      <Airline Code="EY"/>
     </VendorPrefs>
   </eTicketReport>
 </UnusedeTicketReportRQ>
@@ -604,7 +604,7 @@ aliases:
   <stl:ApplicationResults status="Complete">
     <stl:Success timeStamp="2018-04-03T10:44:20-05:00">
       <stl:SystemSpecificResults>
-        <stl:HostCommand LNIATA="1F6146">DQB*ETU/31MAR-01MAR/ASU</stl:HostCommand>
+        <stl:HostCommand LNIATA="1F6146">DQB*ETU/31MAR-01MAR/AEY</stl:HostCommand>
       </stl:SystemSpecificResults>
     </stl:Success>
   </stl:ApplicationResults>
@@ -613,21 +613,21 @@ aliases:
       <Source AgencyName="SABRE RUSSIAN TRA" CreateDateTime="04-03" PseudoCityCode="2FRH"/>
     </CreationDetails>
     <TicketingInfo>
-      <Ticketing eTicketNumber="5555670343979">
+      <Ticketing eTicketNumber="6079419630759">
         <TicketingDetails TicketPurgeDate="06-18" TransactionDate="03-25" UnableToVerify="false">
           <PersonName>
             <Surname>IVANOV/IVAN MR</Surname>
           </PersonName>
         </TicketingDetails>
       </Ticketing>
-      <Ticketing eTicketNumber="5555670343978">
+      <Ticketing eTicketNumber="6079419630760">
         <TicketingDetails TicketPurgeDate="06-18" TransactionDate="03-28" UnableToVerify="false">
           <PersonName>
             <Surname>IVANOVA/ELENA MS</Surname>
           </PersonName>
         </TicketingDetails>
       </Ticketing>
-      <Ticketing eTicketNumber="5555670343954">
+      <Ticketing eTicketNumber="6079419630761">
         <TicketingDetails TicketPurgeDate="6-18" TransactionDate="03-30" UnableToVerify="false">
           <PersonName>
             <Surname>IVANOVA/EKATERINA</Surname>

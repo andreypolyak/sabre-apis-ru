@@ -71,7 +71,7 @@ title: Создание бронирований в 2 шага
 
 #### Алгоритм установки индикатора женатого сегмента по данным из стандартного (OTA) ответа сервиса BargainFinderMaxRQ
 1. Проассоциировать все сегменты в выбранной рекомендации с соответствующими им элементами ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode``` (```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode``` для дополнительных расчетов или ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/Tickets/Ticket/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode``` для MultiTicket рекомендаций). Количество элементов ```FareBasisCode``` будет равно количеству сегментов в рекомендации и идти они будут в том же порядке.
-2. Наличие атрибута ```FareBasisCode/@AvailabilityBreak``` означает, что следующий сегмент не является женатым с текущим. Отсутствие атрибута означает, что следующий сегмент является женатым с текущим.
+2. Наличие атрибута ```/@AvailabilityBreak``` означает, что следующий сегмент не является женатым с текущим. Отсутствие атрибута означает, что следующий сегмент является женатым с текущим.
 3. В соответствии с правилами указываются индикаторы женатого сегмента:
     - У первого сегмента всегда указывается значение ```O``` (обычный сегмент)
     - Если у предыдущего сегмента значение атрибута ```/@AvailabilityBreak``` равно ```true```, то у текущего сегмента указывается значение ```O``` (обычный сегмент)
@@ -79,7 +79,7 @@ title: Создание бронирований в 2 шага
 
 #### Алгоритм установки индикатора женатого сегмента по данным из группированного (GIR) ответа сервиса BargainFinderMaxRQ
 1. Проассоциировать все сегменты в выбранной рекомендации с соответствующими им элементами ```/GroupedItineraryResponse/ItineraryGroup/Itinerary/PricingInformation/Fare/PassengerInfo/FareComponent/Segment``` (```/GroupedItineraryResponse/ItineraryGroup/Itinerary/PricingInformation/Ticket/PricingInformation/Fare/PassengerInfo/FareComponent/Segment``` для MultiTicket рекомендаций). Количество элементов ```FareBasisCode``` будет равно количеству сегментов в рекомендации и идти они будут в том же порядке.
-2. Наличие атрибута ```Segment/@AvailabilityBreak``` означает, что следующий сегмент не является женатым с текущим. Отсутствие атрибута означает, что следующий сегмент является женатым с текущим.
+2. Наличие атрибута ```/@AvailabilityBreak``` означает, что следующий сегмент не является женатым с текущим. Отсутствие атрибута означает, что следующий сегмент является женатым с текущим.
 3. В соответствии с правилами указываются индикаторы женатого сегмента:
     - У первого сегмента всегда указывается значение ```O``` (обычный сегмент)
     - Если у предыдущего сегмента значение атрибута ```/@AvailabilityBreak``` равно ```true```, то у текущего сегмента указывается значение ```O``` (обычный сегмент)

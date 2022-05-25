@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru-ru" dir="ltr">
+<html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,9 @@
 <title>Переход в другие PCC | Рекомендации по работе с Sabre APIs</title>
 <link rel="manifest" href="/sabre-apis-ru/manifest.json">
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/sabre-apis-ru/book.min.f99435cde5efa46f15f527928db5713540168e4852b93abb573cbb0aa533a25f.css" integrity="sha256-&#43;ZQ1zeXvpG8V9SeSjbVxNUAWjkhSuTq7Vzy7CqUzol8=" crossorigin="anonymous">
+<link rel="stylesheet" href="/sabre-apis-ru/book.min.08b033ee232fe01924e38ec1c0e5b3adff46ab5a6b0e4ed529466e69e1e02d56.css" integrity="sha256-CLAz7iMv4Bkk447BwOWzrf9Gq1prDk7VKUZuaeHgLVY=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/en.search.min.57e2694763aafc009bb20aae785fbba28168a67ae037759f6cc17a49ad6b4148.js" integrity="sha256-V&#43;JpR2Oq/ACbsgqueF&#43;7ooFopnrgN3WfbMF6Sa1rQUg=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.d02378bace0707ee4cb51e556cc7767b13ec2a6287ad10a25b8bc8963b3f28b4.js" integrity="sha256-0CN4us4HB&#43;5MtR5VbMd2exPsKmKHrRCiW4vIljs/KLQ=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -53,7 +53,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <input type="text" id="book-search-input" placeholder="Поиск" aria-label="Поиск" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -69,28 +69,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p><strong>ВВЕДЕНИЕ</strong></p>
+  <p class="menu-header"><strong>ВВЕДЕНИЕ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/introduction.html">Начало работы</a></li>
 <li><a href="/sabre-apis-ru/configuration.html">Конфигурация Sabre</a></li>
 <li><a href="/sabre-apis-ru/tjr-settings.html">Настройки PCC</a></li>
 <li><a href="/sabre-apis-ru/authentication.html">Аутентификация</a></li>
 <li><a href="/sabre-apis-ru/services.html">Список сервисов</a></li>
-<li><a href="/sabre-apis-ru/postman.html">Коллекция Postman</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/postman.html">Коллекция Postman</a></li>
 </ul>
-<p><strong>ПОИСК ПЕРЕЛЕТОВ</strong></p>
+<p class="menu-header"><strong>ПОИСК ПЕРЕЛЕТОВ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/shop.html">Поиск по заданным датам</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/shop-alternate-dates.html">Поиск по гибким датам</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/shop-by-fare.html">Поиск по кодам тарифов</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/get-availability.html">Поиск по расписаниям</a> <!-- raw HTML omitted --></li>
-<li><a href="/sabre-apis-ru/shop-optimization.html">Оптимизация времени поиска</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/shop-optimization.html">Оптимизация времени поиска</a></li>
 </ul>
-<p><strong>БРОНИРОВАНИЯ</strong></p>
+<p class="menu-header"><strong>БРОНИРОВАНИЯ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/revalidate-itinerary.html">Проверка стоимости и наличия мест</a></li>
 <li><a href="/sabre-apis-ru/create-booking.html">Создание бронирований</a>
@@ -105,11 +101,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/sabre-apis-ru/edit-booking.html">Редактирование бронирований</a></li>
 <li><a href="/sabre-apis-ru/cancel-booking.html">Отмена бронирований</a></li>
 <li><a href="/sabre-apis-ru/split-booking.html">Деление бронирований</a></li>
-<li><a href="/sabre-apis-ru/get-history-booking.html">История бронирований</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/get-history-booking.html">История бронирований</a></li>
 </ul>
-<p><strong>ДОПОЛНИТЕЛЬНЫЙ КОНТЕНТ</strong></p>
+<p class="menu-header"><strong>ДОПОЛНИТЕЛЬНЫЙ КОНТЕНТ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/brands.html">Брендированные тарифы</a></li>
 <li><a href="/sabre-apis-ru/ancillaries.html">Дополнительные услуги</a>
@@ -123,13 +117,11 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/sabre-apis-ru/get-air-seats.html">Получение карты мест</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/book-air-seats.html">Бронирование мест</a> <!-- raw HTML omitted --></li>
-<li><a href="/sabre-apis-ru/cancel-air-seats.html">Отмена мест</a> <!-- raw HTML omitted -->
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/cancel-air-seats.html">Отмена мест</a> <!-- raw HTML omitted --></li>
 </ul>
 </li>
 </ul>
-<p><strong>БИЛЕТЫ И EMD</strong></p>
+<p class="menu-header"><strong>БИЛЕТЫ И EMD</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/fop.html">Выбор форм оплаты</a></li>
 <li><a href="/sabre-apis-ru/issue-ticket.html">Оформление билетов и EMD</a></li>
@@ -144,27 +136,21 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/sabre-apis-ru/refund-ticket.html">Возврат билетов</a></li>
 </ul>
 </li>
-<li><a href="/sabre-apis-ru/report-ticket.html">Формирование отчетов</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/report-ticket.html">Формирование отчетов</a></li>
 </ul>
-<p><strong>ОЧЕРЕДИ</strong></p>
+<p class="menu-header"><strong>ОЧЕРЕДИ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/queues.html">Обработка очередей</a></li>
 <li><a href="/sabre-apis-ru/queue-place.html">Помещение бронирований в очереди</a></li>
-<li><a href="/sabre-apis-ru/timelimit.html">Тайм-лимиты бронирований</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/timelimit.html">Тайм-лимиты бронирований</a></li>
 </ul>
-<p><strong>ПРАВИЛА ТАРИФОВ</strong></p>
+<p class="menu-header"><strong>ПРАВИЛА ТАРИФОВ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/fare-rules.html">Получение текста правил</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/structure-fare-rules.html">Получение структурированных правил</a> <!-- raw HTML omitted --></li>
-<li><a href="/sabre-apis-ru/baggage.html">Получение норм провоза багажа</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/baggage.html">Получение норм провоза багажа</a></li>
 </ul>
-<p><strong>ДРУГОЕ</strong></p>
+<p class="menu-header"><strong>ДРУГОЕ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/change-pcc.html"class=active>Переход в другие PCC</a></li>
 <li><a href="/sabre-apis-ru/currency-rates.html">Получение курсов валют</a></li>

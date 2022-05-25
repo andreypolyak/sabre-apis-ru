@@ -23,21 +23,21 @@ aliases:
 
 Маршрут в запросе к сервису задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation```, соответствующих плечам маршрута. Плечо может содержать один или несколько сегментов (рейсов). Для каждого плеча маршрута необходимо указать:
 
-- ```OriginDestinationInformation/@RPH``` — номер запрашиваемого плеча
-- ```OriginDestinationInformation/DepartureDateTime``` — дата и время вылета для плеча
-- ```OriginDestinationInformation/OriginLocation/@LocationCode``` — код аэропорта вылета
-- ```OriginDestinationInformation/DestinationLocation/@LocationCode``` — код аэропорта прилета
+- ```/@RPH``` — номер запрашиваемого плеча
+- ```/DepartureDateTime``` — дата и время вылета для плеча
+- ```/OriginLocation/@LocationCode``` — код аэропорта вылета
+- ```/DestinationLocation/@LocationCode``` — код аэропорта прилета
 
 Информация о сегментах, соответствующих каждому плечу, передается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/Flight```. Для каждого сегмента необходимо указать:
-- ```Flight/@ArrivalDateTime``` — дата и время прибытия рейса
-- ```Flight/@ClassOfService``` — класс бронирования
-- ```Flight/@DepartureDateTime``` — дата и время отправления рейса
-- ```Flight/@Number``` — номер рейса
-- ```Flight/@Type``` — всегда ```A```
-- ```Flight/OriginLocation/@LocationCode``` — аэропорт прибытия
-- ```Flight/DestinationLocation/@LocationCode``` — аэропорт отправления
-- ```Flight/Airline/@Marketing``` — код маркетингового перевозчика
-- ```Flight/Airline/@Operating``` — код оперирующего перевозчика
+- ```/@ArrivalDateTime``` — дата и время прибытия рейса
+- ```/@ClassOfService``` — класс бронирования
+- ```/@DepartureDateTime``` — дата и время отправления рейса
+- ```/@Number``` — номер рейса
+- ```/@Type``` — всегда ```A```
+- ```/OriginLocation/@LocationCode``` — аэропорт прибытия
+- ```/DestinationLocation/@LocationCode``` — аэропорт отправления
+- ```/Airline/@Marketing``` — код маркетингового перевозчика
+- ```/Airline/@Operating``` — код оперирующего перевозчика
 
 ## Пассажиры
 
@@ -48,8 +48,8 @@ aliases:
 {{< /hint >}}
 
 Категории пассажиров задаются в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/AirTravelerAvail/PassengerTypeQuantity```. Для каждой категории пассажира необходимо указать:
-- ```PassengerTypeQuantity/@Code``` — код категории пассажира
-- ```PassengerTypeQuantity/@Quantity``` — количество пассажиров данной категории
+- ```/@Code``` — код категории пассажира
+- ```/@Quantity``` — количество пассажиров данной категории
 
 Коды основных категорий пассажиров:
 - ```ADT``` — взрослый пассажир (от 12 лет)
@@ -93,12 +93,12 @@ aliases:
 ## Классы бронирования
 
 Черный и белый список классов бронирования (*не классов обслуживания!*) для всех рейсов в запросе задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/ClassOfService```. Для каждого класса бронирования необходимо указать:
-- ```ClassOfService/@Code``` — класс бронирования
-- ```ClassOfService/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/@Code``` — класс бронирования
+- ```/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
 
 Черный и белый список классов бронирования для каждого плеча задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/ClassOfService```. Для каждого класса бронирования необходимо указать:
-- ```ClassOfService/@Code``` — класс бронирования
-- ```ClassOfService/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/@Code``` — класс бронирования
+- ```/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
 
 Черные и белые списки классов бронирования могут быть указаны только при использовании [режимов работы](revalidate-itinerary.html#режим-работы) ```L``` и ```B```.
 
@@ -127,8 +127,12 @@ aliases:
     - ```Itin``` — для всего перелета будет использован один и тот же бренд
     - ```Leg``` — для каждого плеча перелета могут быть использованы разные бренды
 
+{{< hint warning >}}
+Обратите внимание на то, что в одном поисковом запросе невозможно одновременное получение расчетов по всем брендам и получение [дополнительных расчетов стоимости по заданным критериям](revalidate-itinerary.html#дополнительные-расчеты-стоимости-по-заданным-критериям).
+{{< /hint >}}
+
 {{< hint danger >}}
-Расчет стоимости по всем доступным брендам возможен только при использовании [режимов работы](/revalidate-itinerary.html#режим-работы) ```L``` и ```B```.
+Расчет стоимости по всем доступным брендам возможен только при использовании [режимов работы](revalidate-itinerary.html#режим-работы) ```L``` и ```B```.
 {{< /hint >}}
 
 #### Список услуг у найденных брендированных тарифов
@@ -140,18 +144,164 @@ aliases:
 #### Черный и белый список брендов
 
 Черный список брендов задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/Brand``` (для всего маршрута) или ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/BrandFilters/Brand``` (для плеча). Для каждого бренда необходимо указать:
-- ```Preference/@Code``` — код бренда
-- ```Preference/@Level``` — значение ```Unacceptable```
+- ```/@Code``` — код бренда
+- ```/@Level``` — значение ```Unacceptable```
 
 Белый список брендов задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/Brand``` (для всего маршрута) или ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/BrandFilters/Brand``` (для плеча). Для каждого бренда необходимо указать:
-- ```Preference/@Code``` — код бренда
-- ```Preference/@Level``` — значение ```Preferred```
+- ```/@Code``` — код бренда
+- ```/@Level``` — значение ```Preferred```
 
 Для корректной проверки наличия мест и расчета стоимости для рекомендаций, выбранных в результатах поиска с [расчетом по всем доступным брендам](shop.html#расчет-стоимости-по-всем-доступным-брендам), необходимо указать соответствующие коды бренды в белом списке. Обратите внимание на то, что бренд в белом списке указывается для всего плеча. Если для разных сегментов одного плеча применяются разные бренды, то белый список брендов указывать не требуется.
 
 {{< hint warning >}}
 Обратите внимание на то, что даже передав один или несколько кодов брендов в белом списке, в ответе расчет для этого плеча может быть выполнен по небрендированному тарифу. Для того чтобы этого избежать, необходимо указать значение ```Unacceptable``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/NonBrandedFares/@PreferLevel``` (для всего маршрута) или ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/BrandFilters/NonBrandedFares/@PreferLevel``` (для плеча). Для того чтобы расчет был выполнен только по небрендированным тарифам, необходимо указать значение ```Preferred``` у этого атрибута.
 {{< /hint >}}
+
+## Дополнительные расчеты стоимости по заданным критериям
+
+Ответ [RevalidateItinRQ](https://developer.sabre.com/docs/read/soap_apis/air/search/revalidate_itinerary) по умолчанию содержит расчет стоимости по самому дешевому доступному тарифу (или тарифам). Описанная ниже функциональность позволяет получить дополнительные расчеты стоимости для выбранного маршрута по указанным в запросе группам критериев. Таким образом, ответ на запрос к сервису [RevalidateItinRQ](https://developer.sabre.com/docs/read/soap_apis/air/search/revalidate_itinerary) в этом случае может содержать несколько вариантов расчета стоимости одного и того же маршрута:
+- расчет стоимости по самому дешевому доступному тарифу (или тарифам)
+- дополнительные расчеты стоимости по тарифам, выбранным по заданным в запросе группам критериев
+
+Каждая группа критериев задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters``` запроса. Всего один запрос может содержать до 10 групп критериев. Каждая группа критериев может содержать один или несколько критериев.
+
+{{< hint warning >}}
+Обратите внимание на то, что в одном запросе невозможно одновременное получение дополнительных расчетов стоимости по заданным критериям и [получение расчетов по всем брендам](revalidate-itinerary.html#расчет-стоимости-по-всем-доступным-брендам).
+{{< /hint >}}
+
+{{< hint danger >}}
+Расчет стоимости по заданным критериям возможен только при использовании [режимов работы](revalidate-itinerary.html#режим-работы) ```L``` и ```B```.
+{{< /hint >}}
+
+Ниже представлено описание доступных критериев.
+
+#### Количество и категории пассажиров
+
+Различные категории пассажиров могут быть указаны в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/PassengerTypeQuantity```. У каждого элемента нужно указать код категории пассажира (атрибут ```/@Code```) и количество пассажиров данной категории (атрибут ```/@Quantity```).
+
+{{< hint warning >}}
+Обратите внимание на то, что общее количество пассажиров в одной группе критериев не должно превышать общее количество пассажиров в основном запросе.
+{{< /hint >}}
+
+#### Использование приватных или публичных тарифов
+
+Для получения расчетов только по публичным или только по приватным тарифам необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/PublicFare/@Ind``` или ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/PrivateFare/@Ind```, соответственно.
+
+Дополнительно в качестве критериев можно указать один или несколько Account Code и Corporate ID в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/AccountCode``` и ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/CorporateID```, соответственно. Сами коды указываются в атрибутах ```/@Code``` этих элементов.
+
+По умолчанию даже с указанными Account Code или Corporate ID система может вернуть расчет по тарифу или тарифам, для расчета которого не применялись Account Code или Corporate ID, если этот тариф или тарифы дешевле, чем тарифы с Account Code или Corporate ID или, если тарифы с Account Code или Corporate ID отсутствуют или не применимы.
+
+Однако, если указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/NegotiatedFaresOnly/@Ind```, то в полученном расчете для всех тарифов будут использованы указанные Account Code или Corporate ID.
+
+Если указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/UseNegotiatedFares/@Ind```, то в полученном расчете как минимум для одного тарифа будут использованы указанные Account Code или Corporate ID.
+
+#### Обмен и возврат
+
+Условия по обмену и возврату билетов, а также получение информации об их условиях задается в элементе ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/VoluntaryChanges``` так же, как и для основного запроса (см. [Обмен и возврат билетов](shop.html#обмен-и-возврат-билетов)).
+
+#### Выбор класса обслуживания
+
+Класс обслуживания может быть указан в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/Cabin/@Type```. Допустимые варианты кодов и названий классов обслуживания:
+- ```Economy``` или ```Y``` — экономический класс
+- ```PremiumEconomy``` или ```S``` — улучшенный экономический класс
+- ```Business``` или ```C``` — бизнес класс
+- ```PremiumBusiness``` или ```J``` — улучшенный бизнес класс
+- ```First``` или ```F``` — первый класс
+- ```PremiumFirst``` или ```P``` — улучшенный первый класс
+
+Для отключения логики выбора класса обслуживания необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/JumpCabinLogic/@Disabled``` или атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/KeepSameCabin/@Enabled```. Подробнее о том, как выбирается класс обслуживания и на что влияют указанные выше параметры см. [Классы обслуживания и коды тарифов](shop.html#выбор-класса-обслуживания).
+
+#### Выбор класса бронирования
+
+Черный и белый список классов бронирования задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/ClassOfService``` так же, как и для основного запроса (см. [Черный и белый список классов бронирования](revalidate-itinerary.html#классы-бронирования)).
+
+#### Выбор кода тарифа
+
+Черный и белый список кодов тарифов задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/FareBasis``` так же, как и для основного запроса (см. [Черный и белый список кодов тарифов](revalidate-itinerary.html#коды-тарифов)).
+
+#### Выбор брендов
+
+Черный и белый список брендов задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/BrandedFareIndicators/BrandFilters/Brand``` так же, как и для основного запроса (см. [Черный и белый список брендов](revalidate-itinerary.html#черный-и-белый-список-брендов)).
+
+Для получения информации о примененных брендированных тарифах (код бренда, название бренда, код программы брендов и т.д.) необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/BrandedFareIndicators/@SingleBrandedFare```.
+
+#### Выбор тарифов с багажом
+
+Для запроса тарифов с багажом необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/Baggage/@FreePieceRequired```.
+
+{{< hint danger >}}
+Обратите внимание на то, что для рекомендаций, которые были получены в результатах при поиске тарифов с багажом и, которые не являются брендированными, требуется особый порядок выполнения расчета стоимости и бронирования. См. подробнее в разделах [Создание бронирований в 1 шаг](create-booking-1step.html#расчет-стоимости-по-кодам-тарифов), [Создание бронирований в 2 шага](create-booking-2steps.html#расчет-стоимости-по-кодам-тарифов).
+{{< /hint >}}
+
+#### Параметры плеча
+
+В запросе можно указать параметры для каждого из запрашиваемого плеч. Для этого необходимо добавить элемент ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/Leg``` и указать в нем в качестве значения атрибута ```/@Num``` номер плеча.
+
+Доступные параметры для каждого плеча:
+```/Cabin``` — класс обслуживания (см. выше доступные значения)
+```/ClassOfService``` — класс бронирования (см. выше доступные значения)
+```/FareBasis``` — код тарифа (см. выше доступные значения)
+```/BrandFilters/Brand``` — бренд (см. выше доступные значения)
+```/Baggage``` — наличие багажа
+
+#### Пример
+
+В представленном ниже примере в дополнение к основному (самому дешевому) расчету стоимости запрашивается 5 дополнительных расчетов:
+1. Расчет по тарифам с багажом
+2. Расчет по тарифам, которые можно вернуть и обменять
+3. Расчет по тарифам, которые можно вернуть и обменять со штрафом менее 1000 рублей
+4. Расчет по тарифам бизнес-класса
+5. Расчет по приватным тарифам
+
+Для всех расчетов стоимости дополнительно будет:
+- получена информация о примененных брендах
+- получена информация об условиях обменов и возвратов
+- получены тарифы только в запрашиваемом классе обслуживания
+
+{{< details title="Пример" open=true >}}
+```XML
+<FlexibleFares>
+  <FareParameters>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="Info"/>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+    <Baggage FreePieceRequired="true"/>
+  </FareParameters>
+  <FareParameters>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="All">
+      <Penalty Type="Exchange"/>
+      <Penalty Type="Refund"/>
+    </VoluntaryChanges>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+  <FareParameters>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="All">
+      <Penalty Amount="1000" CurrencyCode="RUB" Type="Exchange"/>
+      <Penalty Amount="1000" CurrencyCode="RUB" Type="Refund"/>
+    </VoluntaryChanges>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+  <FareParameters>
+    <Cabin Type="Business"/>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="Info"/>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+  <FareParameters>
+    <PrivateFare Ind="true"/>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="Info"/>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+</FlexibleFares>
+```
+{{< /details >}}
+
+#### Дополнительная информация
+
+Дополнительная информация по возможности получения дополнительных расчетов стоимости по заданным критериям доступна в [документации](http://files.developer.sabre.com/doc/providerdoc/shopping/MultipleFaresPerItinerary_DAG.pdf).
 
 ## Валидирующий перевозчик
 
@@ -254,9 +404,9 @@ aliases:
 
 По умолчанию сервис выполняет расчет стоимости по самому дешевому доступному тарифу в соответствии с запрошенными параметрами вне зависимости от того являются ли они публичными или приватными тарифами. Однако, указав значение атрибута ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PublicFare/@Ind``` или ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PrivateFare/@Ind``` равное ```true``` можно запросить расчет только по публичным или приватным тарифам, соответственно.
 
-Список кодов корпоративных скидок (Corporate ID) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/NegotiatedFareCode```. Для каждого кода необходимо указать его значение в атрибуте ```NegotiatedFareCode/@Code```. Дополнительно можно задать список перевозчиков, для которых действует данный код. Данный список задается в последовательно расположенных элементах ```NegotiatedFareCode/Supplier```. Для каждого элемента необходимо задать код перевозчика в атрибуте ```NegotiatedFareCode/Supplier/@Code```.
+Список кодов корпоративных скидок (Corporate ID) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/NegotiatedFareCode```. Для каждого кода необходимо указать его значение в атрибуте ```/@Code```. Дополнительно можно задать список перевозчиков, для которых действует данный код. Данный список задается в последовательно расположенных элементах ```/Supplier```. Для каждого элемента необходимо задать код перевозчика в атрибуте ```/Supplier/@Code```.
 
-Список аккаунт кодов (Account Code) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/AccountCode```. Для каждого аккаунт кода необходимо указать его значение в атрибуте ```AccountCode/@Code```.
+Список аккаунт кодов (Account Code) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/AccountCode```. Для каждого аккаунт кода необходимо указать его значение в атрибуте ```/@Code```.
 
 ## Оформление на нескольких билетах
 
@@ -5395,6 +5545,2957 @@ aliases:
 </OTA_AirLowFareSearchRS>
 ```
 {{< /details >}}
+
+---
+
+{{< details title="Пример запроса (расчет по заданным критериям)" >}}
+```XML
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+  <POS>
+    <Source PseudoCityCode="9LSC">
+      <RequestorID ID="1" Type="1">
+        <CompanyName Code="TN"/>
+      </RequestorID>
+    </Source>
+  </POS>
+  <OriginDestinationInformation RPH="1">
+    <DepartureDateTime>2022-12-01T00:00:00</DepartureDateTime>
+    <OriginLocation LocationCode="SYD"/>
+    <DestinationLocation LocationCode="LHR"/>
+    <TPA_Extensions>
+      <Flight ArrivalDateTime="2022-12-02T06:40:00" ClassOfService="Y" DepartureDateTime="2022-12-01T23:25:00" Number="2463" Type="A">
+        <OriginLocation LocationCode="SYD"/>
+        <DestinationLocation LocationCode="AUH"/>
+        <Airline Marketing="EY" Operating="EY"/>
+      </Flight>
+      <Flight ArrivalDateTime="2022-12-02T14:10:00" ClassOfService="Y" DepartureDateTime="2022-12-02T10:35:00" Number="25" Type="A">
+        <OriginLocation LocationCode="AUH"/>
+        <DestinationLocation LocationCode="LHR"/>
+        <Airline Marketing="EY" Operating="EY"/>
+      </Flight>
+    </TPA_Extensions>
+  </OriginDestinationInformation>
+  <OriginDestinationInformation RPH="2">
+    <DepartureDateTime>2022-12-08T00:00:00</DepartureDateTime>
+    <OriginLocation LocationCode="LHR"/>
+    <DestinationLocation LocationCode="SYD"/>
+    <TPA_Extensions>
+      <Flight ArrivalDateTime="2022-12-08T19:20:00" ClassOfService="Y" DepartureDateTime="2022-12-08T08:30:00" Number="12" Type="A">
+        <OriginLocation LocationCode="LHR"/>
+        <DestinationLocation LocationCode="AUH"/>
+        <Airline Marketing="EY" Operating="EY"/>
+      </Flight>
+      <Flight ArrivalDateTime="2022-12-09T17:55:00" ClassOfService="Y" DepartureDateTime="2022-12-08T22:10:00" Number="464" Type="A">
+        <OriginLocation LocationCode="AUH"/>
+        <DestinationLocation LocationCode="SYD"/>
+        <Airline Marketing="EY" Operating="EY"/>
+      </Flight>
+    </TPA_Extensions>
+  </OriginDestinationInformation>
+  <TravelPreferences>
+    <TPA_Extensions>
+      <SeatSelection Info="true"/>
+      <FlexibleFares>
+        <FareParameters>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+          <Baggage FreePieceRequired="true"/>
+        </FareParameters>
+        <FareParameters>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="All">
+            <Penalty Type="Exchange"/>
+            <Penalty Type="Refund"/>
+          </VoluntaryChanges>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="All">
+            <Penalty Amount="1000" CurrencyCode="RUB" Type="Exchange"/>
+            <Penalty Amount="1000" CurrencyCode="RUB" Type="Refund"/>
+          </VoluntaryChanges>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <Cabin Type="Business"/>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <PrivateFare Ind="true"/>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+      </FlexibleFares>
+      <VerificationItinCallLogic Value="L"/>
+    </TPA_Extensions>
+    <Baggage CarryOnInfo="true" Description="true" RequestType="A"/>
+  </TravelPreferences>
+  <TravelerInfoSummary>
+    <SeatsRequested>3</SeatsRequested>
+    <AirTravelerAvail>
+      <PassengerTypeQuantity Code="ADT" Quantity="2">
+        <TPA_Extensions>
+          <VoluntaryChanges Match="Info"/>
+        </TPA_Extensions>
+      </PassengerTypeQuantity>
+      <PassengerTypeQuantity Code="CNN" Quantity="1">
+        <TPA_Extensions>
+          <VoluntaryChanges Match="Info"/>
+        </TPA_Extensions>
+      </PassengerTypeQuantity>
+      <PassengerTypeQuantity Code="INF" Quantity="1">
+        <TPA_Extensions>
+          <VoluntaryChanges Match="Info"/>
+        </TPA_Extensions>
+      </PassengerTypeQuantity>
+    </AirTravelerAvail>
+    <PriceRequestInformation>
+      <TPA_Extensions>
+        <BrandedFareIndicators ReturnBrandAncillaries="true" SingleBrandedFare="true"/>
+      </TPA_Extensions>
+    </PriceRequestInformation>
+  </TravelerInfoSummary>
+</OTA_AirLowFareSearchRQ>
+```
+
+{{< details title="Пример ответа" >}}
+```XML
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Success/>
+  <Warnings>
+    <Warning Code="PROCESS" ShortText="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
+    <Warning Code="PROCESS" ShortText="MAXIMUM PENALTY IS TOO RESTRICTIVE: NO FARES WITH CHANGE PENALTY LESS THAN 1000 RUB" Type="MIP"/>
+    <Warning Code="ASE032LPSCIL6F4.ATSE.CERT.ASCINT.SABRECIRRUS.COM" MessageClass="I" ShortText="27033" Type="SERVER"/>
+    <Warning Code="TRANSACTIONID" MessageClass="I" ShortText="8890450331511438921" Type="WORKERTHREAD"/>
+    <Warning Code="RULEID" MessageClass="I" ShortText="25961" Type="DRE"/>
+    <Warning Code="RULEID" MessageClass="I" ShortText="25959" Type="DEFAULT"/>
+    <Warning Code="MIP" MessageClass="I" ShortText="MAXIMUM PENALTY IS TOO RESTRICTIVE: NO FARES WITH CHANGE PENALTY LESS THAN 1000 RUB" Type="MIP"/>
+  </Warnings>
+  <BrandFeatures>
+    <BrandFeature Application="C" CommercialName="STANDARD SEAT SELECTION" Id="1" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="STANDARD SEAT SELECTION" Id="2" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="REFUNDABLE TICKET" Id="3" ServiceGroup="BF" ServiceType="Z" SubCode="056" Vendor="ATP"/>
+    <BrandFeature Application="D" CommercialName="REFUNDABLE TICKET" Id="4" ServiceGroup="BF" ServiceType="Z" SubCode="056" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="275 PERCENT MILES EARNED" Id="5" ServiceGroup="BF" ServiceType="Z" SubCode="057" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="BID TO UPGRADE" Id="6" ServiceGroup="BF" ServiceType="Z" SubCode="058" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="CHANGEABLE TICKET" Id="7" ServiceGroup="BF" ServiceType="Z" SubCode="059" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="EXTRA LEGROOM SEAT SELECTION" Id="8" ServiceGroup="BF" ServiceType="Z" SubCode="05Z" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="EXTRA LEGROOM SEAT SELECTION" Id="9" ServiceGroup="BF" ServiceType="Z" SubCode="05Z" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="400 PERCENT MILES EARNED" Id="10" ServiceGroup="BF" ServiceType="Z" SubCode="067" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="25 PERCENT MILES EARNED" Id="11" ServiceGroup="BF" ServiceType="Z" SubCode="06A" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="50 PERCENT MILES EARNED" Id="12" ServiceGroup="BF" ServiceType="Z" SubCode="06B" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="50 PERCENT MILES EARNED" Id="13" ServiceGroup="BF" ServiceType="Z" SubCode="06B" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="75 PERCENT MILES EARNED" Id="14" ServiceGroup="BF" ServiceType="Z" SubCode="06C" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="75 PERCENT MILES EARNED" Id="15" ServiceGroup="BF" ServiceType="Z" SubCode="06C" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="100 PERCENT MILES EARNED" Id="16" ServiceGroup="BF" ServiceType="Z" SubCode="06D" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="130 PERCENT MILES EARNED" Id="17" ServiceGroup="BF" ServiceType="Z" SubCode="06F" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="130 PERCENT MILES EARNED" Id="18" ServiceGroup="BF" ServiceType="Z" SubCode="06F" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="175 PERCENT MILES EARNED" Id="19" ServiceGroup="BF" ServiceType="Z" SubCode="06G" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="200 PERCENT MILES EARNED" Id="20" ServiceGroup="BF" ServiceType="Z" SubCode="06N" Vendor="ATP"/>
+    <BrandFeature Application="D" CommercialName="FREE CHECKED BAG ALLOWANCE" Id="21" ServiceGroup="BF" ServiceType="Z" SubCode="P01" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="FREE CHECKED BAG ALLOWANCE" Id="22" ServiceGroup="BF" ServiceType="Z" SubCode="P01" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="NEIGHBOUR FREE SEAT" Id="23" ServiceGroup="BF" ServiceType="Z" SubCode="SA4" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="NEIGHBOUR FREE SEAT" Id="24" ServiceGroup="BF" ServiceType="Z" SubCode="SA4" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="HAND BAG" Id="25" ServiceGroup="BG" ServiceType="C" SubCode="010" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="GOLF EQUIPMENT UP TO 15 KG" Id="26" ServiceGroup="BG" ServiceType="C" SubCode="0D4" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="PREPAID EXCESS BAGGAGE" Id="27" ServiceGroup="BG" ServiceType="C" SubCode="0H6" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="HAND BAG PERSONAL ITEMS" Id="28" ServiceGroup="BG" ServiceType="C" SubCode="0L5" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 20KG" Id="29" ServiceGroup="BG" ServiceType="C" SubCode="A20" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 23KG" Id="30" ServiceGroup="BG" ServiceType="C" SubCode="A23" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="FREE CHECKED BAG UPTO 30KG" Id="31" ServiceGroup="BG" ServiceType="C" SubCode="A30" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 30KG" Id="32" ServiceGroup="BG" ServiceType="C" SubCode="A30" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="FREE CHECKED BAG UPTO 35KG" Id="33" ServiceGroup="BG" ServiceType="C" SubCode="A35" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 35KG" Id="34" ServiceGroup="BG" ServiceType="C" SubCode="A35" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 40KG" Id="35" ServiceGroup="BG" ServiceType="C" SubCode="A40" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="FREE CHECKED BAG UPTO 40KG" Id="36" ServiceGroup="BG" ServiceType="C" SubCode="A40" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 45KG" Id="37" ServiceGroup="BG" ServiceType="C" SubCode="A45" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 4P" Id="38" ServiceGroup="BG" ServiceType="C" SubCode="A4P" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 50KG" Id="39" ServiceGroup="BG" ServiceType="C" SubCode="A50" Vendor="ATP"/>
+    <BrandFeature Application="N" CommercialName="FREE CHECKED BAG UPTO 60KG" Id="40" ServiceGroup="BG" ServiceType="C" SubCode="A60" Vendor="ATP"/>
+    <BrandFeature Application="D" CommercialName="CHAUFFEUR DRIVE" Id="41" ServiceGroup="GT" ServiceType="F" SubCode="0BN" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="WIFI" Id="42" ServiceGroup="IE" ServiceType="F" SubCode="0CL" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="AUH ARRIVAL LOUNGE" Id="43" ServiceGroup="LG" ServiceType="F" SubCode="013" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="AUH ARRIVAL LOUNGE" Id="44" ServiceGroup="LG" ServiceType="F" SubCode="013" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="AUH BUSINESS CLASS LOUNGE" Id="45" ServiceGroup="LG" ServiceType="F" SubCode="0AG" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="AUH BUSINESS CLASS LOUNGE" Id="46" ServiceGroup="LG" ServiceType="F" SubCode="0AG" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="AUH FIRST CLASS LOUNGE" Id="47" ServiceGroup="LG" ServiceType="F" SubCode="0BX" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="FOOD AND BEVERAGE" Id="48" ServiceGroup="ML" ServiceType="F" SubCode="0B3" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="PRIORITY ACCESS" Id="49" ServiceGroup="TS" ServiceType="F" SubCode="03P" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="PRIORITY ACCESS" Id="50" ServiceGroup="TS" ServiceType="F" SubCode="03P" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="NO SHOW FEE" Id="51" ServiceGroup="TS" ServiceType="F" SubCode="0NN" Vendor="ATP"/>
+    <BrandFeature Application="D" CommercialName="NO SHOW FEE" Id="52" ServiceGroup="TS" ServiceType="F" SubCode="0NN" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="INSTANT UPGRADE" Id="53" ServiceGroup="UP" ServiceType="F" SubCode="0BJ" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="PUSH UPGRADE 48H" Id="54" ServiceGroup="UP" ServiceType="F" SubCode="OBJ" Vendor="ATP"/>
+  </BrandFeatures>
+  <PricedItineraries>
+    <PricedItinerary SequenceNumber="1">
+      <AirItinerary DirectionInd="Return">
+        <OriginDestinationOptions>
+          <OriginDestinationOption ArrivalCountry="GB" DepartureCountry="AU" ElapsedTime="1545">
+            <FlightSegment ArrivalDateTime="2022-12-02T06:40:00" DepartureDateTime="2022-12-01T23:25:00" ElapsedTime="855" FlightNumber="2463" ResBookDesigCode="V" StopQuantity="0">
+              <DepartureAirport LocationCode="SYD"/>
+              <ArrivalAirport LocationCode="AUH"/>
+              <OperatingAirline Code="EY" FlightNumber="2463"/>
+              <Equipment AirEquipType="789"/>
+              <MarketingAirline Code="EY"/>
+              <MarriageGrp>O</MarriageGrp>
+              <DepartureTimeZone GMTOffset="11"/>
+              <ArrivalTimeZone GMTOffset="4"/>
+              <TPA_Extensions>
+                <eTicket Ind="true"/>
+                <Mileage Amount="7506"/>
+              </TPA_Extensions>
+            </FlightSegment>
+            <FlightSegment ArrivalDateTime="2022-12-02T14:10:00" DepartureDateTime="2022-12-02T10:35:00" ElapsedTime="455" FlightNumber="25" ResBookDesigCode="V" StopQuantity="0">
+              <DepartureAirport LocationCode="AUH" TerminalID="3"/>
+              <ArrivalAirport LocationCode="LHR" TerminalID="3"/>
+              <OperatingAirline Code="EY" FlightNumber="25"/>
+              <Equipment AirEquipType="789"/>
+              <MarketingAirline Code="EY"/>
+              <MarriageGrp>I</MarriageGrp>
+              <DepartureTimeZone GMTOffset="4"/>
+              <ArrivalTimeZone GMTOffset="0"/>
+              <TPA_Extensions>
+                <eTicket Ind="true"/>
+                <Mileage Amount="3420"/>
+              </TPA_Extensions>
+            </FlightSegment>
+          </OriginDestinationOption>
+          <OriginDestinationOption ArrivalCountry="AU" DepartureCountry="GB" ElapsedTime="1345">
+            <FlightSegment ArrivalDateTime="2022-12-08T19:20:00" DepartureDateTime="2022-12-08T08:30:00" ElapsedTime="410" FlightNumber="12" ResBookDesigCode="Q" StopQuantity="0">
+              <DepartureAirport LocationCode="LHR" TerminalID="3"/>
+              <ArrivalAirport LocationCode="AUH" TerminalID="3"/>
+              <OperatingAirline Code="EY" FlightNumber="12"/>
+              <Equipment AirEquipType="781"/>
+              <MarketingAirline Code="EY"/>
+              <MarriageGrp>O</MarriageGrp>
+              <DepartureTimeZone GMTOffset="0"/>
+              <ArrivalTimeZone GMTOffset="4"/>
+              <TPA_Extensions>
+                <eTicket Ind="true"/>
+                <Mileage Amount="3420"/>
+              </TPA_Extensions>
+            </FlightSegment>
+            <FlightSegment ArrivalDateTime="2022-12-09T17:55:00" DepartureDateTime="2022-12-08T22:10:00" ElapsedTime="765" FlightNumber="464" ResBookDesigCode="Q" StopQuantity="0">
+              <DepartureAirport LocationCode="AUH"/>
+              <ArrivalAirport LocationCode="SYD"/>
+              <OperatingAirline Code="EY" FlightNumber="464"/>
+              <Equipment AirEquipType="789"/>
+              <MarketingAirline Code="EY"/>
+              <MarriageGrp>I</MarriageGrp>
+              <DepartureTimeZone GMTOffset="4"/>
+              <ArrivalTimeZone GMTOffset="11"/>
+              <TPA_Extensions>
+                <eTicket Ind="true"/>
+                <Mileage Amount="7506"/>
+              </TPA_Extensions>
+            </FlightSegment>
+          </OriginDestinationOption>
+        </OriginDestinationOptions>
+      </AirItinerary>
+      <AirItineraryPricingInfo BrandsOnAnyMarket="true" FareReturned="true" LastTicketDate="2022-05-26" LastTicketTime="23:59" PricingSource="WPNI1_ITIN" PricingSubSource="MIP">
+        <ItinTotalFare>
+          <BaseFare Amount="5087.00" CurrencyCode="AUD" DecimalPlaces="2"/>
+          <FareConstruction Amount="3828.99" CurrencyCode="NUC" DecimalPlaces="2"/>
+          <EquivFare Amount="211120" CurrencyCode="RUB" DecimalPlaces="0"/>
+          <Taxes>
+            <Tax Amount="45130" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+          </Taxes>
+          <TotalFare Amount="256250" CurrencyCode="RUB" DecimalPlaces="0"/>
+        </ItinTotalFare>
+        <PTC_FareBreakdowns>
+          <PTC_FareBreakdown>
+            <PassengerTypeQuantity Code="ADT" Quantity="2"/>
+            <FareBasisCodes>
+              <FareBasisCode ArrivalAirportCode="AUH" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="PRO" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">VLWRV2AU</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="AUH" GovCarrier="EY">VLWRV2AU</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AU</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AU</FareBasisCode>
+            </FareBasisCodes>
+            <PassengerFare>
+              <BaseFare Amount="1781.00" CurrencyCode="AUD"/>
+              <FareConstruction Amount="1340.88" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="73915" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <Taxes>
+                <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                <Tax Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                <TaxSummary Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TotalTax Amount="16553" CurrencyCode="RUB" DecimalPlaces="0"/>
+              </Taxes>
+              <TotalFare Amount="90468" CurrencyCode="RUB"/>
+              <PenaltiesInfo>
+                <Penalty Amount="34570" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                <Penalty Amount="34570" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                <Penalty Applicability="Before" Refundable="false" Type="Refund"/>
+                <Penalty Applicability="After" Refundable="false" Type="Refund"/>
+              </PenaltiesInfo>
+              <TPA_Extensions>
+                <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                <FareComponents>
+                  <FareComponent BrandID="YV" BrandName="ECONOMY VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                    <Segment FlightIndex="1" LegIndex="1"/>
+                    <Segment FlightIndex="2" LegIndex="1"/>
+                    <BrandFeatureRef FeatureId="7"/>
+                    <BrandFeatureRef FeatureId="4"/>
+                    <BrandFeatureRef FeatureId="21"/>
+                    <BrandFeatureRef FeatureId="1"/>
+                    <BrandFeatureRef FeatureId="8"/>
+                    <BrandFeatureRef FeatureId="23"/>
+                    <BrandFeatureRef FeatureId="6"/>
+                    <BrandFeatureRef FeatureId="11"/>
+                    <BrandFeatureRef FeatureId="13"/>
+                    <BrandFeatureRef FeatureId="14"/>
+                    <BrandFeatureRef FeatureId="16"/>
+                    <BrandFeatureRef FeatureId="17"/>
+                    <BrandFeatureRef FeatureId="19"/>
+                    <BrandFeatureRef FeatureId="20"/>
+                    <BrandFeatureRef FeatureId="5"/>
+                    <BrandFeatureRef FeatureId="10"/>
+                    <BrandFeatureRef FeatureId="25"/>
+                    <BrandFeatureRef FeatureId="28"/>
+                    <BrandFeatureRef FeatureId="29"/>
+                    <BrandFeatureRef FeatureId="30"/>
+                    <BrandFeatureRef FeatureId="31"/>
+                    <BrandFeatureRef FeatureId="34"/>
+                    <BrandFeatureRef FeatureId="35"/>
+                    <BrandFeatureRef FeatureId="37"/>
+                    <BrandFeatureRef FeatureId="39"/>
+                    <BrandFeatureRef FeatureId="40"/>
+                    <BrandFeatureRef FeatureId="38"/>
+                    <BrandFeatureRef FeatureId="26"/>
+                    <BrandFeatureRef FeatureId="27"/>
+                    <BrandFeatureRef FeatureId="41"/>
+                    <BrandFeatureRef FeatureId="42"/>
+                    <BrandFeatureRef FeatureId="46"/>
+                    <BrandFeatureRef FeatureId="47"/>
+                    <BrandFeatureRef FeatureId="43"/>
+                    <BrandFeatureRef FeatureId="48"/>
+                    <BrandFeatureRef FeatureId="52"/>
+                    <BrandFeatureRef FeatureId="49"/>
+                    <BrandFeatureRef FeatureId="53"/>
+                    <BrandFeatureRef FeatureId="54"/>
+                  </FareComponent>
+                  <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                    <Segment FlightIndex="1" LegIndex="2"/>
+                    <Segment FlightIndex="2" LegIndex="2"/>
+                    <BrandFeatureRef FeatureId="7"/>
+                    <BrandFeatureRef FeatureId="3"/>
+                    <BrandFeatureRef FeatureId="22"/>
+                    <BrandFeatureRef FeatureId="1"/>
+                    <BrandFeatureRef FeatureId="8"/>
+                    <BrandFeatureRef FeatureId="23"/>
+                    <BrandFeatureRef FeatureId="6"/>
+                    <BrandFeatureRef FeatureId="11"/>
+                    <BrandFeatureRef FeatureId="12"/>
+                    <BrandFeatureRef FeatureId="15"/>
+                    <BrandFeatureRef FeatureId="16"/>
+                    <BrandFeatureRef FeatureId="17"/>
+                    <BrandFeatureRef FeatureId="19"/>
+                    <BrandFeatureRef FeatureId="20"/>
+                    <BrandFeatureRef FeatureId="5"/>
+                    <BrandFeatureRef FeatureId="10"/>
+                    <BrandFeatureRef FeatureId="25"/>
+                    <BrandFeatureRef FeatureId="28"/>
+                    <BrandFeatureRef FeatureId="29"/>
+                    <BrandFeatureRef FeatureId="30"/>
+                    <BrandFeatureRef FeatureId="32"/>
+                    <BrandFeatureRef FeatureId="33"/>
+                    <BrandFeatureRef FeatureId="35"/>
+                    <BrandFeatureRef FeatureId="37"/>
+                    <BrandFeatureRef FeatureId="39"/>
+                    <BrandFeatureRef FeatureId="40"/>
+                    <BrandFeatureRef FeatureId="38"/>
+                    <BrandFeatureRef FeatureId="26"/>
+                    <BrandFeatureRef FeatureId="27"/>
+                    <BrandFeatureRef FeatureId="41"/>
+                    <BrandFeatureRef FeatureId="42"/>
+                    <BrandFeatureRef FeatureId="46"/>
+                    <BrandFeatureRef FeatureId="47"/>
+                    <BrandFeatureRef FeatureId="43"/>
+                    <BrandFeatureRef FeatureId="48"/>
+                    <BrandFeatureRef FeatureId="51"/>
+                    <BrandFeatureRef FeatureId="49"/>
+                    <BrandFeatureRef FeatureId="53"/>
+                    <BrandFeatureRef FeatureId="54"/>
+                  </FareComponent>
+                </FareComponents>
+                <Messages>
+                  <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ NONREF" Type="N"/>
+                  <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                  <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                  <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                  <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                </Messages>
+                <BaggageInformationList>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                    <Segment Id="0"/>
+                    <Segment Id="1"/>
+                    <Allowance Unit="kg" Weight="30"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                    <Segment Id="2"/>
+                    <Segment Id="3"/>
+                    <Allowance Unit="kg" Weight="35"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="0"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="1"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="2"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="3"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                </BaggageInformationList>
+                <SeatSelectionList>
+                  <SeatSelection Type="C">
+                    <Segment ID="0"/>
+                    <Segment ID="1"/>
+                    <Segment ID="2"/>
+                    <Segment ID="3"/>
+                  </SeatSelection>
+                </SeatSelectionList>
+              </TPA_Extensions>
+            </PassengerFare>
+            <Endorsements NonRefundableIndicator="true"/>
+            <TPA_Extensions>
+              <FareCalcLine Info="SYD EY X/AUH EY LON Q25.00 539.09EY X/AUH Q25.00EY SYD751.79NUC1340.88END ROE1.328146"/>
+            </TPA_Extensions>
+            <FareInfos>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="R"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                </TPA_Extensions>
+              </FareInfo>
+            </FareInfos>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <PassengerTypeQuantity Code="CNN" Quantity="1"/>
+            <FareBasisCodes>
+              <FareBasisCode ArrivalAirportCode="AUH" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="PRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">VLWRV2AUCH</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="AUH" GovCarrier="EY">VLWRV2AUCH</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AUCH</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AUCH</FareBasisCode>
+            </FareBasisCodes>
+            <PassengerFare>
+              <BaseFare Amount="1353.00" CurrencyCode="AUD"/>
+              <FareConstruction Amount="1018.16" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="56150" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <Taxes>
+                <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TotalTax Amount="7931" CurrencyCode="RUB" DecimalPlaces="0"/>
+              </Taxes>
+              <TotalFare Amount="64081" CurrencyCode="RUB"/>
+              <PenaltiesInfo>
+                <Penalty Amount="34570" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                <Penalty Amount="34570" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                <Penalty Applicability="Before" Refundable="false" Type="Refund"/>
+                <Penalty Applicability="After" Refundable="false" Type="Refund"/>
+              </PenaltiesInfo>
+              <TPA_Extensions>
+                <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                <FareComponents>
+                  <FareComponent BrandID="YV" BrandName="ECONOMY VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                    <Segment FlightIndex="1" LegIndex="1"/>
+                    <Segment FlightIndex="2" LegIndex="1"/>
+                    <BrandFeatureRef FeatureId="7"/>
+                    <BrandFeatureRef FeatureId="4"/>
+                    <BrandFeatureRef FeatureId="21"/>
+                    <BrandFeatureRef FeatureId="1"/>
+                    <BrandFeatureRef FeatureId="8"/>
+                    <BrandFeatureRef FeatureId="23"/>
+                    <BrandFeatureRef FeatureId="6"/>
+                    <BrandFeatureRef FeatureId="11"/>
+                    <BrandFeatureRef FeatureId="13"/>
+                    <BrandFeatureRef FeatureId="14"/>
+                    <BrandFeatureRef FeatureId="16"/>
+                    <BrandFeatureRef FeatureId="17"/>
+                    <BrandFeatureRef FeatureId="19"/>
+                    <BrandFeatureRef FeatureId="20"/>
+                    <BrandFeatureRef FeatureId="5"/>
+                    <BrandFeatureRef FeatureId="10"/>
+                    <BrandFeatureRef FeatureId="25"/>
+                    <BrandFeatureRef FeatureId="28"/>
+                    <BrandFeatureRef FeatureId="29"/>
+                    <BrandFeatureRef FeatureId="30"/>
+                    <BrandFeatureRef FeatureId="31"/>
+                    <BrandFeatureRef FeatureId="34"/>
+                    <BrandFeatureRef FeatureId="35"/>
+                    <BrandFeatureRef FeatureId="37"/>
+                    <BrandFeatureRef FeatureId="39"/>
+                    <BrandFeatureRef FeatureId="40"/>
+                    <BrandFeatureRef FeatureId="38"/>
+                    <BrandFeatureRef FeatureId="26"/>
+                    <BrandFeatureRef FeatureId="27"/>
+                    <BrandFeatureRef FeatureId="41"/>
+                    <BrandFeatureRef FeatureId="42"/>
+                    <BrandFeatureRef FeatureId="46"/>
+                    <BrandFeatureRef FeatureId="47"/>
+                    <BrandFeatureRef FeatureId="43"/>
+                    <BrandFeatureRef FeatureId="48"/>
+                    <BrandFeatureRef FeatureId="52"/>
+                    <BrandFeatureRef FeatureId="49"/>
+                    <BrandFeatureRef FeatureId="53"/>
+                    <BrandFeatureRef FeatureId="54"/>
+                  </FareComponent>
+                  <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                    <Segment FlightIndex="1" LegIndex="2"/>
+                    <Segment FlightIndex="2" LegIndex="2"/>
+                    <BrandFeatureRef FeatureId="7"/>
+                    <BrandFeatureRef FeatureId="3"/>
+                    <BrandFeatureRef FeatureId="22"/>
+                    <BrandFeatureRef FeatureId="1"/>
+                    <BrandFeatureRef FeatureId="8"/>
+                    <BrandFeatureRef FeatureId="23"/>
+                    <BrandFeatureRef FeatureId="6"/>
+                    <BrandFeatureRef FeatureId="11"/>
+                    <BrandFeatureRef FeatureId="12"/>
+                    <BrandFeatureRef FeatureId="15"/>
+                    <BrandFeatureRef FeatureId="16"/>
+                    <BrandFeatureRef FeatureId="17"/>
+                    <BrandFeatureRef FeatureId="19"/>
+                    <BrandFeatureRef FeatureId="20"/>
+                    <BrandFeatureRef FeatureId="5"/>
+                    <BrandFeatureRef FeatureId="10"/>
+                    <BrandFeatureRef FeatureId="25"/>
+                    <BrandFeatureRef FeatureId="28"/>
+                    <BrandFeatureRef FeatureId="29"/>
+                    <BrandFeatureRef FeatureId="30"/>
+                    <BrandFeatureRef FeatureId="32"/>
+                    <BrandFeatureRef FeatureId="33"/>
+                    <BrandFeatureRef FeatureId="35"/>
+                    <BrandFeatureRef FeatureId="37"/>
+                    <BrandFeatureRef FeatureId="39"/>
+                    <BrandFeatureRef FeatureId="40"/>
+                    <BrandFeatureRef FeatureId="38"/>
+                    <BrandFeatureRef FeatureId="26"/>
+                    <BrandFeatureRef FeatureId="27"/>
+                    <BrandFeatureRef FeatureId="41"/>
+                    <BrandFeatureRef FeatureId="42"/>
+                    <BrandFeatureRef FeatureId="46"/>
+                    <BrandFeatureRef FeatureId="47"/>
+                    <BrandFeatureRef FeatureId="43"/>
+                    <BrandFeatureRef FeatureId="48"/>
+                    <BrandFeatureRef FeatureId="51"/>
+                    <BrandFeatureRef FeatureId="49"/>
+                    <BrandFeatureRef FeatureId="53"/>
+                    <BrandFeatureRef FeatureId="54"/>
+                  </FareComponent>
+                </FareComponents>
+                <Messages>
+                  <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ NONREF" Type="N"/>
+                  <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                  <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                  <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                  <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                </Messages>
+                <BaggageInformationList>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                    <Segment Id="0"/>
+                    <Segment Id="1"/>
+                    <Allowance Unit="kg" Weight="30"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                    <Segment Id="2"/>
+                    <Segment Id="3"/>
+                    <Allowance Unit="kg" Weight="35"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="0"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="1"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="2"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="3"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                  </BaggageInformation>
+                </BaggageInformationList>
+                <SeatSelectionList>
+                  <SeatSelection Type="C">
+                    <Segment ID="0"/>
+                    <Segment ID="1"/>
+                    <Segment ID="2"/>
+                    <Segment ID="3"/>
+                  </SeatSelection>
+                </SeatSelectionList>
+              </TPA_Extensions>
+            </PassengerFare>
+            <Endorsements NonRefundableIndicator="true"/>
+            <TPA_Extensions>
+              <FareCalcLine Info="SYD EY X/AUH EY LON Q25.00 404.32EY X/AUH Q25.00EY SYD563.84NUC1018.16END ROE1.328146"/>
+            </TPA_Extensions>
+            <FareInfos>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="R"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                </TPA_Extensions>
+              </FareInfo>
+            </FareInfos>
+          </PTC_FareBreakdown>
+          <PTC_FareBreakdown>
+            <PassengerTypeQuantity Code="INF" Quantity="1"/>
+            <FareBasisCodes>
+              <FareBasisCode ArrivalAirportCode="AUH" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="PRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">VLWRV2AUIN</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="AUH" GovCarrier="EY">VLWRV2AUIN</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AUIN</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AUIN</FareBasisCode>
+            </FareBasisCodes>
+            <PassengerFare>
+              <BaseFare Amount="172.00" CurrencyCode="AUD"/>
+              <FareConstruction Amount="129.07" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="7140" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <Taxes>
+                <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TotalTax Amount="4093" CurrencyCode="RUB" DecimalPlaces="0"/>
+              </Taxes>
+              <TotalFare Amount="11233" CurrencyCode="RUB"/>
+              <PenaltiesInfo>
+                <Penalty Amount="34570" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                <Penalty Amount="34570" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                <Penalty Applicability="Before" Refundable="false" Type="Refund"/>
+                <Penalty Applicability="After" Refundable="false" Type="Refund"/>
+              </PenaltiesInfo>
+              <TPA_Extensions>
+                <FareComponents>
+                  <FareComponent BrandID="YV" BrandName="ECONOMY VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                    <Segment FlightIndex="1" LegIndex="1"/>
+                    <Segment FlightIndex="2" LegIndex="1"/>
+                    <BrandFeatureRef FeatureId="7"/>
+                    <BrandFeatureRef FeatureId="4"/>
+                    <BrandFeatureRef FeatureId="21"/>
+                    <BrandFeatureRef FeatureId="1"/>
+                    <BrandFeatureRef FeatureId="8"/>
+                    <BrandFeatureRef FeatureId="23"/>
+                    <BrandFeatureRef FeatureId="6"/>
+                    <BrandFeatureRef FeatureId="11"/>
+                    <BrandFeatureRef FeatureId="13"/>
+                    <BrandFeatureRef FeatureId="14"/>
+                    <BrandFeatureRef FeatureId="16"/>
+                    <BrandFeatureRef FeatureId="17"/>
+                    <BrandFeatureRef FeatureId="19"/>
+                    <BrandFeatureRef FeatureId="20"/>
+                    <BrandFeatureRef FeatureId="5"/>
+                    <BrandFeatureRef FeatureId="10"/>
+                    <BrandFeatureRef FeatureId="25"/>
+                    <BrandFeatureRef FeatureId="28"/>
+                    <BrandFeatureRef FeatureId="29"/>
+                    <BrandFeatureRef FeatureId="30"/>
+                    <BrandFeatureRef FeatureId="31"/>
+                    <BrandFeatureRef FeatureId="34"/>
+                    <BrandFeatureRef FeatureId="35"/>
+                    <BrandFeatureRef FeatureId="37"/>
+                    <BrandFeatureRef FeatureId="39"/>
+                    <BrandFeatureRef FeatureId="40"/>
+                    <BrandFeatureRef FeatureId="38"/>
+                    <BrandFeatureRef FeatureId="26"/>
+                    <BrandFeatureRef FeatureId="27"/>
+                    <BrandFeatureRef FeatureId="41"/>
+                    <BrandFeatureRef FeatureId="42"/>
+                    <BrandFeatureRef FeatureId="46"/>
+                    <BrandFeatureRef FeatureId="47"/>
+                    <BrandFeatureRef FeatureId="43"/>
+                    <BrandFeatureRef FeatureId="48"/>
+                    <BrandFeatureRef FeatureId="52"/>
+                    <BrandFeatureRef FeatureId="49"/>
+                    <BrandFeatureRef FeatureId="53"/>
+                    <BrandFeatureRef FeatureId="54"/>
+                  </FareComponent>
+                  <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                    <Segment FlightIndex="1" LegIndex="2"/>
+                    <Segment FlightIndex="2" LegIndex="2"/>
+                    <BrandFeatureRef FeatureId="7"/>
+                    <BrandFeatureRef FeatureId="3"/>
+                    <BrandFeatureRef FeatureId="22"/>
+                    <BrandFeatureRef FeatureId="1"/>
+                    <BrandFeatureRef FeatureId="8"/>
+                    <BrandFeatureRef FeatureId="23"/>
+                    <BrandFeatureRef FeatureId="6"/>
+                    <BrandFeatureRef FeatureId="11"/>
+                    <BrandFeatureRef FeatureId="12"/>
+                    <BrandFeatureRef FeatureId="15"/>
+                    <BrandFeatureRef FeatureId="16"/>
+                    <BrandFeatureRef FeatureId="17"/>
+                    <BrandFeatureRef FeatureId="19"/>
+                    <BrandFeatureRef FeatureId="20"/>
+                    <BrandFeatureRef FeatureId="5"/>
+                    <BrandFeatureRef FeatureId="10"/>
+                    <BrandFeatureRef FeatureId="25"/>
+                    <BrandFeatureRef FeatureId="28"/>
+                    <BrandFeatureRef FeatureId="29"/>
+                    <BrandFeatureRef FeatureId="30"/>
+                    <BrandFeatureRef FeatureId="32"/>
+                    <BrandFeatureRef FeatureId="33"/>
+                    <BrandFeatureRef FeatureId="35"/>
+                    <BrandFeatureRef FeatureId="37"/>
+                    <BrandFeatureRef FeatureId="39"/>
+                    <BrandFeatureRef FeatureId="40"/>
+                    <BrandFeatureRef FeatureId="38"/>
+                    <BrandFeatureRef FeatureId="26"/>
+                    <BrandFeatureRef FeatureId="27"/>
+                    <BrandFeatureRef FeatureId="41"/>
+                    <BrandFeatureRef FeatureId="42"/>
+                    <BrandFeatureRef FeatureId="46"/>
+                    <BrandFeatureRef FeatureId="47"/>
+                    <BrandFeatureRef FeatureId="43"/>
+                    <BrandFeatureRef FeatureId="48"/>
+                    <BrandFeatureRef FeatureId="51"/>
+                    <BrandFeatureRef FeatureId="49"/>
+                    <BrandFeatureRef FeatureId="53"/>
+                    <BrandFeatureRef FeatureId="54"/>
+                  </FareComponent>
+                </FareComponents>
+                <Messages>
+                  <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ NONREF" Type="N"/>
+                  <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                  <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
+                  <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                  <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                  <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                </Messages>
+                <BaggageInformationList>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                    <Segment Id="0"/>
+                    <Segment Id="1"/>
+                    <Allowance Unit="kg" Weight="10"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                    <Segment Id="2"/>
+                    <Segment Id="3"/>
+                    <Allowance Unit="kg" Weight="10"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="0"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="1"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="2"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                  </BaggageInformation>
+                  <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                    <Segment Id="3"/>
+                    <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                  </BaggageInformation>
+                </BaggageInformationList>
+                <SeatSelectionList>
+                  <SeatSelection Type="C">
+                    <Segment ID="0"/>
+                    <Segment ID="1"/>
+                    <Segment ID="2"/>
+                    <Segment ID="3"/>
+                  </SeatSelection>
+                </SeatSelectionList>
+              </TPA_Extensions>
+            </PassengerFare>
+            <Endorsements NonRefundableIndicator="true"/>
+            <TPA_Extensions>
+              <FareCalcLine Info="SYD EY X/AUH EY LON53.90EY X/AUH EY SYD75.17NUC129.07END ROE1.328146"/>
+            </TPA_Extensions>
+            <FareInfos>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="R"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                </TPA_Extensions>
+              </FareInfo>
+            </FareInfos>
+          </PTC_FareBreakdown>
+        </PTC_FareBreakdowns>
+        <FareInfos>
+          <FareInfo>
+            <FareReference>V</FareReference>
+            <TPA_Extensions>
+              <SeatsRemaining BelowMin="false" Number="8"/>
+              <Cabin Cabin="Y"/>
+              <Meal Code="R"/>
+            </TPA_Extensions>
+          </FareInfo>
+          <FareInfo>
+            <FareReference>V</FareReference>
+            <TPA_Extensions>
+              <SeatsRemaining BelowMin="false" Number="8"/>
+              <Cabin Cabin="Y"/>
+              <Meal Code="M"/>
+            </TPA_Extensions>
+          </FareInfo>
+          <FareInfo>
+            <FareReference>Q</FareReference>
+            <TPA_Extensions>
+              <SeatsRemaining BelowMin="false" Number="9"/>
+              <Cabin Cabin="Y"/>
+              <Meal Code="M"/>
+            </TPA_Extensions>
+          </FareInfo>
+          <FareInfo>
+            <FareReference>Q</FareReference>
+            <TPA_Extensions>
+              <SeatsRemaining BelowMin="false" Number="9"/>
+              <Cabin Cabin="Y"/>
+            </TPA_Extensions>
+          </FareInfo>
+        </FareInfos>
+        <TPA_Extensions>
+          <DivideInParty Indicator="false"/>
+          <ValidatingCarrier NewVcxProcess="true" SettlementMethod="BSP">
+            <Default Code="EY"/>
+          </ValidatingCarrier>
+          <ValidatingCarrier NewVcxProcess="true" SettlementMethod="TCH">
+            <Default Code="EY"/>
+          </ValidatingCarrier>
+        </TPA_Extensions>
+      </AirItineraryPricingInfo>
+      <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
+      <TPA_Extensions>
+        <AdditionalFares>
+          <AirItineraryPricingInfo BrandsOnAnyMarket="true" FareReturned="true" FlexibleFareID="1" LastTicketDate="2022-05-26" LastTicketTime="23:59" PricingSource="WPNI1_ITIN" PricingSubSource="MIP">
+            <ItinTotalFare>
+              <BaseFare Amount="5087.00" CurrencyCode="AUD" DecimalPlaces="2"/>
+              <FareConstruction Amount="3828.99" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="211120" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <Taxes>
+                <Tax Amount="45130" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+              </Taxes>
+              <TotalFare Amount="256250" CurrencyCode="RUB" DecimalPlaces="0"/>
+            </ItinTotalFare>
+            <PTC_FareBreakdowns>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="ADT" Quantity="2"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="PRO" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">VLWRV2AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="AUH" GovCarrier="EY">VLWRV2AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AU</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="1781.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="1340.88" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="73915" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <TaxSummary Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="16553" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="90468" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="34570" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="34570" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Applicability="Before" Refundable="false" Type="Refund"/>
+                    <Penalty Applicability="After" Refundable="false" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <FareComponents>
+                      <FareComponent BrandID="YV" BrandName="ECONOMY VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="4"/>
+                        <BrandFeatureRef FeatureId="21"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="13"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="31"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="52"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ NONREF" Type="N"/>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="30"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="35"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="C">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="true"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON Q25.00 539.09EY X/AUH Q25.00EY SYD751.79NUC1340.88END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>V</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="8"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>V</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="8"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="CNN" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="PRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">VLWRV2AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="AUH" GovCarrier="EY">VLWRV2AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AUCH</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="1353.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="1018.16" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="56150" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="7931" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="64081" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="34570" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="34570" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Applicability="Before" Refundable="false" Type="Refund"/>
+                    <Penalty Applicability="After" Refundable="false" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <FareComponents>
+                      <FareComponent BrandID="YV" BrandName="ECONOMY VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="4"/>
+                        <BrandFeatureRef FeatureId="21"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="13"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="31"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="52"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ NONREF" Type="N"/>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="30"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="35"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="C">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="true"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON Q25.00 404.32EY X/AUH Q25.00EY SYD563.84NUC1018.16END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>V</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="8"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>V</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="8"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="INF" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="PRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">VLWRV2AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="AUH" GovCarrier="EY">VLWRV2AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AUIN</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="172.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="129.07" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="7140" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="4093" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="11233" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="34570" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="34570" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Applicability="Before" Refundable="false" Type="Refund"/>
+                    <Penalty Applicability="After" Refundable="false" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <FareComponents>
+                      <FareComponent BrandID="YV" BrandName="ECONOMY VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="4"/>
+                        <BrandFeatureRef FeatureId="21"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="13"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="31"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="52"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ NONREF" Type="N"/>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="10"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="10"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="C">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="true"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON53.90EY X/AUH EY SYD75.17NUC129.07END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>V</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="8"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>V</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="8"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+            </PTC_FareBreakdowns>
+            <FareInfos>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="R"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>V</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="8"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                </TPA_Extensions>
+              </FareInfo>
+            </FareInfos>
+            <TPA_Extensions>
+              <DivideInParty Indicator="false"/>
+              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="BSP">
+                <Default Code="EY"/>
+              </ValidatingCarrier>
+              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="TCH">
+                <Default Code="EY"/>
+              </ValidatingCarrier>
+            </TPA_Extensions>
+          </AirItineraryPricingInfo>
+          <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
+        </AdditionalFares>
+        <AdditionalFares>
+          <AirItineraryPricingInfo BrandsOnAnyMarket="true" FareReturned="true" FlexibleFareID="2" PricingSource="WPNI1_ITIN" PricingSubSource="MIP">
+            <ItinTotalFare>
+              <BaseFare Amount="5993.00" CurrencyCode="AUD" DecimalPlaces="2"/>
+              <FareConstruction Amount="4510.31" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="248720" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <Taxes>
+                <Tax Amount="45130" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+              </Taxes>
+              <TotalFare Amount="293850" CurrencyCode="RUB" DecimalPlaces="0"/>
+            </ItinTotalFare>
+            <PTC_FareBreakdowns>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="ADT" Quantity="2"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">QLWC2AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLWC2AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AU</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="2099.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="1579.94" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="87110" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <TaxSummary Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="16553" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="103663" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="26895" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="26895" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="10045" Applicability="Before" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="10045" Applicability="After" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <FareComponents>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="35"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="35"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="C">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON Q25.00 778.15EY X/AUH Q25.00EY SYD751.79NUC1579.94END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="CNN" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLWC2AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLWC2AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AUCH</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="1591.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="1197.45" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="66030" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="7931" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="73961" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="26895" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="26895" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="10045" Applicability="Before" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="10045" Applicability="After" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">25.00</Surcharges>
+                    <FareComponents>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="35"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="35"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="7"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="C">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON Q25.00 583.61EY X/AUH Q25.00EY SYD563.84NUC1197.45END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="INF" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLWC2AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLWC2AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Q" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUGD" FareComponentFareTariff="4" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">QLXC2AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="Q" DepartureAirportCode="AUH" GovCarrier="EY">QLXC2AUIN</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="204.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="152.98" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="8470" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="4093" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="12563" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="26895" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="26895" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="Before" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="0" Applicability="After" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <FareComponents>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="YC" BrandName="ECONOMY CHOICE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="1"/>
+                        <BrandFeatureRef FeatureId="8"/>
+                        <BrandFeatureRef FeatureId="23"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="15"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="17"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="33"/>
+                        <BrandFeatureRef FeatureId="35"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="46"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="43"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="49"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="10"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="10"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="C">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON77.81EY X/AUH EY SYD75.17NUC152.98END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Q</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+            </PTC_FareBreakdowns>
+            <FareInfos>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="R"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Q</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                </TPA_Extensions>
+              </FareInfo>
+            </FareInfos>
+            <TPA_Extensions>
+              <DivideInParty Indicator="false"/>
+              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="BSP">
+                <Default Code="EY"/>
+              </ValidatingCarrier>
+              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="TCH">
+                <Default Code="EY"/>
+              </ValidatingCarrier>
+            </TPA_Extensions>
+          </AirItineraryPricingInfo>
+          <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
+        </AdditionalFares>
+        <AdditionalFares>
+          <AirItineraryPricingInfo BrandsOnAnyMarket="true" FareReturned="true" FlexibleFareID="4" LastTicketDate="2022-05-26" LastTicketTime="23:59" PricingSource="WPNI1_ITIN" PricingSubSource="MIP">
+            <ItinTotalFare>
+              <BaseFare Amount="24744.00" CurrencyCode="AUD" DecimalPlaces="2"/>
+              <FareConstruction Amount="18628.98" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="1026885" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <Taxes>
+                <Tax Amount="73381" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+              </Taxes>
+              <TotalFare Amount="1100266" CurrencyCode="RUB" DecimalPlaces="0"/>
+            </ItinTotalFare>
+            <PTC_FareBreakdowns>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="ADT" Quantity="2"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Z" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="C" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="BRO" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">ZWRV4AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Z" DepartureAirportCode="AUH" GovCarrier="EY">ZWRV4AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="W" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="C" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="BRO" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="EY">WXRV4AU</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="W" DepartureAirportCode="AUH" GovCarrier="EY">WXRV4AU</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="8383.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="6311.52" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="347895" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <TaxSummary Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="23926" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="371821" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="56025" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="56025" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="31955" Applicability="Before" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="31955" Applicability="After" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">100.00</Surcharges>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">100.00</Surcharges>
+                    <FareComponents>
+                      <FareComponent BrandID="JV" BrandName="BUSINESS VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="2"/>
+                        <BrandFeatureRef FeatureId="9"/>
+                        <BrandFeatureRef FeatureId="24"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="18"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="36"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="45"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="44"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="50"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="JV" BrandName="BUSINESS VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="2"/>
+                        <BrandFeatureRef FeatureId="9"/>
+                        <BrandFeatureRef FeatureId="24"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="18"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="36"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="45"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="44"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="50"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="40"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="40"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="F">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON Q100.00 2902.16EY X/AUH Q100.00EY SYD3209.36NUC6311.52END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Z</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="4"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Z</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="4"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="5"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="5"/>
+                      <Cabin Cabin="C"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="CNN" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Z" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="C" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="BRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">ZWRV4AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Z" DepartureAirportCode="AUH" GovCarrier="EY">ZWRV4AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="W" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="C" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="BRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">WXRV4AUCH</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="W" DepartureAirportCode="AUH" GovCarrier="EY">WXRV4AUCH</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="6354.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="4783.64" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="263695" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="542" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="78" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1299" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="2598" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="156" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="ZR2"/>
+                    <TaxSummary Amount="1084" CountryCode="AE" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="F62"/>
+                    <TaxSummary Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="21436" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="285131" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="56025" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="56025" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="31955" Applicability="Before" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="31955" Applicability="After" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">100.00</Surcharges>
+                    <Surcharges CurrencyCode="NUC" Ind="Q" Type="MISCELLANEOUS/OTHER">100.00</Surcharges>
+                    <FareComponents>
+                      <FareComponent BrandID="JV" BrandName="BUSINESS VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="2"/>
+                        <BrandFeatureRef FeatureId="9"/>
+                        <BrandFeatureRef FeatureId="24"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="18"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="36"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="45"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="44"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="50"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="JV" BrandName="BUSINESS VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="2"/>
+                        <BrandFeatureRef FeatureId="9"/>
+                        <BrandFeatureRef FeatureId="24"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="18"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="36"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="45"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="44"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="50"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="40"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="40"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="2" Unit="kg" Weight="12"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="F">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON Q100.00 2176.62EY X/AUH Q100.00EY SYD2407.02NUC4783.64END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Z</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="4"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Z</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="4"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="5"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="5"/>
+                      <Cabin Cabin="C"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="INF" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="Z" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="C" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="BRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">ZWRV4AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Z" DepartureAirportCode="AUH" GovCarrier="EY">ZWRV4AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="AUH" BookingCode="W" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="C" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="AUPR" FareComponentFareTariff="4" FareComponentFareType="BRO" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="EY">WXRV4AUIN</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="W" DepartureAirportCode="AUH" GovCarrier="EY">WXRV4AUIN</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="1624.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="1222.30" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="67400" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="4093" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="71493" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="56025" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="56025" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="Before" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="0" Applicability="After" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <FareComponents>
+                      <FareComponent BrandID="JV" BrandName="BUSINESS VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="1"/>
+                        <Segment FlightIndex="2" LegIndex="1"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="2"/>
+                        <BrandFeatureRef FeatureId="9"/>
+                        <BrandFeatureRef FeatureId="24"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="18"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="36"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="45"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="44"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="50"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                      <FareComponent BrandID="JV" BrandName="BUSINESS VALUE" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="192752" ProgramSystemCode="G">
+                        <Segment FlightIndex="1" LegIndex="2"/>
+                        <Segment FlightIndex="2" LegIndex="2"/>
+                        <BrandFeatureRef FeatureId="7"/>
+                        <BrandFeatureRef FeatureId="3"/>
+                        <BrandFeatureRef FeatureId="22"/>
+                        <BrandFeatureRef FeatureId="2"/>
+                        <BrandFeatureRef FeatureId="9"/>
+                        <BrandFeatureRef FeatureId="24"/>
+                        <BrandFeatureRef FeatureId="6"/>
+                        <BrandFeatureRef FeatureId="11"/>
+                        <BrandFeatureRef FeatureId="12"/>
+                        <BrandFeatureRef FeatureId="14"/>
+                        <BrandFeatureRef FeatureId="16"/>
+                        <BrandFeatureRef FeatureId="18"/>
+                        <BrandFeatureRef FeatureId="19"/>
+                        <BrandFeatureRef FeatureId="20"/>
+                        <BrandFeatureRef FeatureId="5"/>
+                        <BrandFeatureRef FeatureId="10"/>
+                        <BrandFeatureRef FeatureId="25"/>
+                        <BrandFeatureRef FeatureId="28"/>
+                        <BrandFeatureRef FeatureId="29"/>
+                        <BrandFeatureRef FeatureId="30"/>
+                        <BrandFeatureRef FeatureId="32"/>
+                        <BrandFeatureRef FeatureId="34"/>
+                        <BrandFeatureRef FeatureId="36"/>
+                        <BrandFeatureRef FeatureId="37"/>
+                        <BrandFeatureRef FeatureId="39"/>
+                        <BrandFeatureRef FeatureId="40"/>
+                        <BrandFeatureRef FeatureId="38"/>
+                        <BrandFeatureRef FeatureId="26"/>
+                        <BrandFeatureRef FeatureId="27"/>
+                        <BrandFeatureRef FeatureId="41"/>
+                        <BrandFeatureRef FeatureId="42"/>
+                        <BrandFeatureRef FeatureId="45"/>
+                        <BrandFeatureRef FeatureId="47"/>
+                        <BrandFeatureRef FeatureId="44"/>
+                        <BrandFeatureRef FeatureId="48"/>
+                        <BrandFeatureRef FeatureId="51"/>
+                        <BrandFeatureRef FeatureId="50"/>
+                        <BrandFeatureRef FeatureId="53"/>
+                        <BrandFeatureRef FeatureId="54"/>
+                      </FareComponent>
+                    </FareComponents>
+                    <Messages>
+                      <Message AirlineCode="EY" FailCode="0" Info="NON ENDO/ REF" Type="N"/>
+                      <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
+                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
+                      <Message FailCode="0" Info="BSP - EY" Type="W"/>
+                      <Message FailCode="0" Info="TCH - EY" Type="W"/>
+                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Unit="kg" Weight="10"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Unit="kg" Weight="10"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="EY" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Pieces="1" Unit="kg" Weight="5"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="F">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD EY X/AUH EY LON580.43EY X/AUH EY SYD641.87NUC1222.30END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Z</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="4"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="R"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Z</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="4"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="5"/>
+                      <Cabin Cabin="C"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="5"/>
+                      <Cabin Cabin="C"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+            </PTC_FareBreakdowns>
+            <FareInfos>
+              <FareInfo>
+                <FareReference>Z</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="4"/>
+                  <Cabin Cabin="C"/>
+                  <Meal Code="R"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Z</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="4"/>
+                  <Cabin Cabin="C"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>W</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="5"/>
+                  <Cabin Cabin="C"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>W</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="5"/>
+                  <Cabin Cabin="C"/>
+                </TPA_Extensions>
+              </FareInfo>
+            </FareInfos>
+            <TPA_Extensions>
+              <DivideInParty Indicator="false"/>
+              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="BSP">
+                <Default Code="EY"/>
+              </ValidatingCarrier>
+              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="TCH">
+                <Default Code="EY"/>
+              </ValidatingCarrier>
+            </TPA_Extensions>
+          </AirItineraryPricingInfo>
+          <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
+        </AdditionalFares>
+        <ValidatingCarrier Code="EY"/>
+      </TPA_Extensions>
+    </PricedItinerary>
+  </PricedItineraries>
+  <TPA_Extensions>
+    <AirlineOrderList>
+      <AirlineOrder Code="EY" SequenceNumber="1"/>
+    </AirlineOrderList>
+  </TPA_Extensions>
+</OTA_AirLowFareSearchRS>
+```
 
 ---
 

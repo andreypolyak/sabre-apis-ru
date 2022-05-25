@@ -40,13 +40,13 @@ title: Получение норм провоза багажа
 Для каждой найденной рекомендации ответ на запрос может содержать один или несколько элементов ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/ItinTotalFare/TPA_Extensions/BaggageInformationList/BaggageInformation```, который будет содержать информацию о нормах провоза багажа (если значение атрибута ```/@ProvisionType``` равно ```A```) или ручной клади (если значение атрибута ```/@ProvisionType``` равно ```B```). Для каждого элемента в атрибутах ```/BaggageInformation/Segment/@Id``` указаны номера сегментов, для которых применима норма провоза багажа.
 
 В зависимости от способа файлирования норм провоза багажа/ручной клади ответ может содержать:
-- ```/BaggageInformation/Allowance/@Pieces``` — количество мест багажа/ручной клади
-- ```/BaggageInformation/Allowance/@Weight``` — максимальный вес всех мест багажа/ручной клади
-- ```/BaggageInformation/Allowance/@Unit``` — единицы измерения, как правило в килограммах (```kg```)
-- ```/BaggageInformation/Allowance/@Description1``` — информация о максимальном весе багажа/ручной клади, как правило в формате ```UP TO XX POUNDS/YY KILOGRAMS```, где:
+- ```/Allowance/@Pieces``` — количество мест багажа/ручной клади
+- ```/Allowance/@Weight``` — максимальный вес всех мест багажа/ручной клади
+- ```/Allowance/@Unit``` — единицы измерения, как правило в килограммах (```kg```)
+- ```/Allowance/@Description1``` — информация о максимальном весе багажа/ручной клади, как правило в формате ```UP TO XX POUNDS/YY KILOGRAMS```, где:
     - ```XX``` — вес в фунтах
     - ```YY``` — вес в килограммах
-- ```/BaggageInformation/Allowance/@Description2``` — информация о максимальных размерах багажа/ручной клади, как правило в формате ```UP TO XX LINEAR INCHES/YYY LINEAR CENTIMETERS```, где:
+- ```/Allowance/@Description2``` — информация о максимальных размерах багажа/ручной клади, как правило в формате ```UP TO XX LINEAR INCHES/YYY LINEAR CENTIMETERS```, где:
     - ```XX``` — длина в дюймах
     - ```YYY``` — длина в сантиметрах
 
@@ -71,13 +71,13 @@ title: Получение норм провоза багажа
 #### GIR ответ
 
 Для каждой найденной рекомендации ответ на запрос может содержать один или несколько элементов ```/GroupedItineraryResponse/ItineraryGroup/Itinerary/PricingInformation/Fare/PassengerInfo/BaggageInformation```, который будет содержать информацию о нормах провоза багажа (если значение атрибута ```/@ProvisionType``` равно ```A```) или ручной клади (если значение атрибута ```/@ProvisionType``` равно ```B```). Для каждого элемента в атрибутах ```/BaggageInformation/Segment/@Id``` указаны номера сегментов, для которых применима норма провоза багажа. В качестве значения атрибута  ```/BaggageInformation/Allowance/@Ref``` будет указана ссылка на соответствующий элемент ```/GroupedItineraryResponse/BaggageAllowanceDesc```, в котором в зависимости от способа файлирования норм провоза багажа/ручной клади может быть указано:
-- ```/BaggageAllowanceDesc/@Pieces``` — количество мест багажа/ручной клади
-- ```/BaggageAllowanceDesc/@Weight``` — максимальный вес всех мест багажа/ручной клади
-- ```/BaggageAllowanceDesc/@Unit``` — единицы измерения, как правило в килограммах (```kg```)
-- ```/BaggageAllowanceDesc/@Description1``` — информация о максимальном весе багажа/ручной клади, как правило в формате ```UP TO XX POUNDS/YY KILOGRAMS```, где:
+- ```/@Pieces``` — количество мест багажа/ручной клади
+- ```/@Weight``` — максимальный вес всех мест багажа/ручной клади
+- ```/@Unit``` — единицы измерения, как правило в килограммах (```kg```)
+- ```/@Description1``` — информация о максимальном весе багажа/ручной клади, как правило в формате ```UP TO XX POUNDS/YY KILOGRAMS```, где:
     - ```XX``` — вес в фунтах
     - ```YY``` — вес в килограммах
-- ```/BaggageAllowanceDesc/@Description2``` — информация о максимальных размерах багажа/ручной клади, как правило в формате ```UP TO XX LINEAR INCHES/YYY LINEAR CENTIMETERS```, где:
+- ```/@Description2``` — информация о максимальных размерах багажа/ручной клади, как правило в формате ```UP TO XX LINEAR INCHES/YYY LINEAR CENTIMETERS```, где:
     - ```XX``` — длина в дюймах
     - ```YYY``` — длина в сантиметрах
 

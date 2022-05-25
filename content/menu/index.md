@@ -2,7 +2,7 @@
 headless: true
 ---
 
-**ВВЕДЕНИЕ**
+{{< menu_header "ВВЕДЕНИЕ" >}}
 
 - [Начало работы]({{< relref "/introduction" >}})
 - [Конфигурация Sabre]({{< relref "/configuration" >}})
@@ -10,18 +10,16 @@ headless: true
 - [Аутентификация]({{< relref "/authentication" >}})
 - [Список сервисов]({{< relref "/services" >}})
 - [Коллекция Postman]({{< relref "/postman" >}})
-{{< rawhtml >}}<br/><br/>{{< /rawhtml >}}
 
-**ПОИСК ПЕРЕЛЕТОВ**
+{{< menu_header "ПОИСК ПЕРЕЛЕТОВ" >}}
 
 - [Поиск по заданным датам]({{< relref "/shop" >}}) <!--Поиск перелетов по заданным датам-->
 - [Поиск по гибким датам]({{< relref "/shop-alternate-dates" >}}) <!--Поиск перелетов по гибким датам-->
 - [Поиск по кодам тарифов]({{< relref "/shop-by-fare" >}}) <!--Поиск перелетов по кодам тарифов-->
 - [Поиск по расписаниям]({{< relref "/get-availability" >}}) <!--Поиск по расписаниям и получение данных о наличии мест-->
 - [Оптимизация времени поиска]({{< relref "/shop-optimization" >}})
-{{< rawhtml >}}<br/><br/>{{< /rawhtml >}}
 
-**БРОНИРОВАНИЯ**
+{{< menu_header "БРОНИРОВАНИЯ" >}}
 
 - [Проверка стоимости и наличия мест]({{< relref "/revalidate-itinerary" >}})
 - [Создание бронирований]({{< relref "/create-booking" >}})
@@ -34,9 +32,8 @@ headless: true
 - [Отмена бронирований]({{< relref "/cancel-booking" >}})
 - [Деление бронирований]({{< relref "/split-booking" >}})
 - [История бронирований]({{< relref "/get-history-booking" >}})
-{{< rawhtml >}}<br/><br/>{{< /rawhtml >}}
 
-**ДОПОЛНИТЕЛЬНЫЙ КОНТЕНТ**
+{{< menu_header "ДОПОЛНИТЕЛЬНЫЙ КОНТЕНТ" >}}
 
 - [Брендированные тарифы]({{< relref "/brands" >}})
 - [Дополнительные услуги]({{< relref "/ancillaries" >}})
@@ -47,9 +44,8 @@ headless: true
     - [Получение карты мест]({{< relref "/get-air-seats" >}}) <!--Получение карты мест в салоне-->
     - [Бронирование мест]({{< relref "/book-air-seats" >}}) <!--Бронирование мест в салоне-->
     - [Отмена мест]({{< relref "/cancel-air-seats" >}}) <!--Отмена мест в салоне-->
-{{< rawhtml >}}<br/><br/>{{< /rawhtml >}}
 
-**БИЛЕТЫ И EMD**
+{{< menu_header "БИЛЕТЫ И EMD" >}}
 
 - [Выбор форм оплаты]({{< relref "/fop" >}})
 - [Оформление билетов и EMD]({{< relref "/issue-ticket" >}})
@@ -62,23 +58,20 @@ headless: true
     - [Расчет стоимости возврата билетов]({{< relref "/price-refund-ticket" >}})
     - [Возврат билетов]({{< relref "/refund-ticket" >}})
 - [Формирование отчетов]({{< relref "/report-ticket" >}})
-{{< rawhtml >}}<br/><br/>{{< /rawhtml >}}
 
-**ОЧЕРЕДИ**
+{{< menu_header "ОЧЕРЕДИ" >}}
 
 - [Обработка очередей]({{< relref "/queues" >}})
 - [Помещение бронирований в очереди]({{< relref "/queue-place" >}})
 - [Тайм-лимиты бронирований]({{< relref "/timelimit" >}})
-{{< rawhtml >}}<br/><br/>{{< /rawhtml >}}
 
-**ПРАВИЛА ТАРИФОВ**
+{{< menu_header "ПРАВИЛА ТАРИФОВ" >}}
 
 - [Получение текста правил]({{< relref "/fare-rules" >}}) <!--Получение текста правил тарифов-->
 - [Получение структурированных правил]({{< relref "/structure-fare-rules" >}}) <!--Получение структурированных правил тарифов-->
 - [Получение норм провоза багажа]({{< relref "/baggage" >}})
-{{< rawhtml >}}<br/><br/>{{< /rawhtml >}}
 
-**ДРУГОЕ**
+{{< menu_header "ДРУГОЕ" >}}
 
 - [Переход в другие PCC]({{< relref "/change-pcc" >}})
 - [Получение курсов валют]({{< relref "/currency-rates" >}})

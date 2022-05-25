@@ -64,7 +64,7 @@ title: Поиск вариантов обмена
     - ```/@bookingClass``` — класс бронирования
     - ```/@reservationStatus``` — статус сегмента (обычно ```HK```)
     - ```/@bookingDateTime``` — время бронирования сегмента
-    - ```/@brand``` — код бренда (требуется указать, если [бренд должен быть сохранен](/shop-exchange-ticket.html#сохранение-брендов-у-неизменяемых-сегментов))
+    - ```/@brand``` — код бренда (требуется указать, если [бренд должен быть сохранен](shop-exchange-ticket.html#сохранение-брендов-у-неизменяемых-сегментов))
     - ```/@keepBookingClass``` — признак необходимости сохранить текущий класс бронирования. Возможные значения:
       - ```true``` — класс бронирования для данного сегмента будет сохранен
       - ```false``` — класс бронирования для данного сегмента может быть изменен (значение по умолчанию)
@@ -102,12 +102,12 @@ title: Поиск вариантов обмена
 ### Черный и белый список брендов
 
 Черный список брендов задается в последовательно расположенных элементах ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/Brand``` (для всего маршрута) или ```/ExchangeShoppingRQ/OriginDestinationInformation/BrandFilters/Brand``` (для плеча). Для каждого бренда необходимо указать:
-- ```Preference/@Code``` — код бренда
-- ```Preference/@Level``` — значение ```Unacceptable```
+- ```/Preference/@Code``` — код бренда
+- ```/Preference/@Level``` — значение ```Unacceptable```
 
 Белый список брендов задается в последовательно расположенных элементах ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/Brand``` (для всего маршрута) или ```/ExchangeShoppingRQ/OriginDestinationInformation/BrandFilters/Brand``` (для плеча). Для каждого бренда необходимо указать:
-- ```Preference/@Code``` — код бренда
-- ```Preference/@Level``` — значение ```Preferred```
+- ```/Preference/@Code``` — код бренда
+- ```/Preference/@Level``` — значение ```Preferred```
 
 {{< hint warning >}}
 Обратите внимание на то, что даже передав один или несколько кодов брендов в белом списке, в ответе расчет для этого плеча может быть выполнен по небрендированному тарифу. Для того чтобы этого избежать, необходимо указать значение ```Unacceptable``` у атрибута ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/NonBrandedFares/@preferLevel``` (для всего маршрута) или ```/ExchangeShoppingRQ/OriginDestinationInformation/BrandFilters/NonBrandedFares/@preferLevel``` (для плеча). Для того чтобы расчет был выполнен только по небрендированным тарифам, необходимо указать значение ```Preferred``` у этого атрибута.

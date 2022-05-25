@@ -1050,7 +1050,7 @@ title: Отмена бронирований
 
 Вместе с сегментами будут отменены привязанные к ним дополнительные услуги.
 
-Номера сегментов могут быть получены в ответе на запрос [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary) в ```TravelItinerary/ItineraryInfo/ReservationItems/Item/@RPH```.
+Номера сегментов могут быть получены в ответе на запрос [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary) в ```/TravelItineraryReadRS/TravelItinerary/ItineraryInfo/ReservationItems/Item/@RPH```.
 
 {{< details title="Пример запроса" >}}
 ```XML

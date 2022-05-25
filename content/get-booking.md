@@ -1,5 +1,7 @@
 ---
 title: Чтение бронирований
+aliases:
+    - /read-booking
 ---
 
 Для чтения бронирования используется сервис [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/Get_Itinerary).

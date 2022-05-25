@@ -10,7 +10,7 @@ aliases:
 
 ## Введение
 
-Для поиска перелетов по заданным датам используется сервис Bargain Finder Max ([BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max)). Дополнительную информацию по работе с сервисом можно получить в [онлайн-справке](http://webservices.sabre.com/drc/providerdoc/shopping/BargainFinderMax_Help/BargainFinderMax_Help.htm).
+Для поиска перелетов по заданным датам используется сервис Bargain Finder Max ([BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max)). Дополнительную информацию по работе с сервисом можно получить в [онлайн-справке](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/help_doc).
 
 Ниже указаны некоторые обязательные и опциональные элементы запроса к сервису.
 
@@ -20,10 +20,10 @@ aliases:
 
 Маршрут в поисковом запросе задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation```, соответствующих плечам маршрута. Плечо может содержать один или несколько сегментов (рейсов). Для каждого плеча маршрута необходимо указать:
 
-- ```OriginDestinationInformation/@RPH``` — номер запрашиваемого плеча
-- ```OriginDestinationInformation/DepartureDateTime``` — дата и время вылета. Время вылета является обязательным для заполнения, рекомендуется во всех случаях указывать время ```11:00```
-- ```OriginDestinationInformation/OriginLocation/@LocationCode``` — код города или аэропорта вылета
-- ```OriginDestinationInformation/DestinationLocation/@LocationCode``` — код города или аэропорта прилета
+- ```/@RPH``` — номер запрашиваемого плеча
+- ```/DepartureDateTime``` — дата и время вылета. Время вылета является обязательным для заполнения, рекомендуется во всех случаях указывать время ```11:00```
+- ```/OriginLocation/@LocationCode``` — код города или аэропорта вылета
+- ```/DestinationLocation/@LocationCode``` — код города или аэропорта прилета
 
 {{< details title="Поиск перелетов по маршруту Сидней-Лондон-Сидней" open=true >}}
 ```XML
@@ -91,30 +91,30 @@ aliases:
 #### Время в пути и время вылета
 
 В запросе можно установить требуемый промежуток времени вылета или прилета:
-- ```OriginDestinationInformation/DepartureWindow``` — промежуток допустимого времени вылета (например, ```10002000``` для вылета в промежуток с 10:00 до 20:00)
-- ```OriginDestinationInformation/ArrivalWindow``` — промежуток допустимого времени прилета
+- ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/DepartureWindow``` — промежуток допустимого времени вылета (например, ```10002000``` для вылета в промежуток с 10:00 до 20:00)
+- ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/ArrivalWindow``` — промежуток допустимого времени прилета
 
 Время в пути для каждого плеча, включая время пересадок:
-- ```OriginDestinationInformation/TPA_Extensions/TotalTravelTime/@Min``` — минимальное время
-- ```OriginDestinationInformation/TPA_Extensions/TotalTravelTime/@Max``` — максимальное время
+- ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/TotalTravelTime/@Min``` — минимальное время
+- ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/TotalTravelTime/@Max``` — максимальное время
 
 Альтернативное время вылета:
-- ```OriginDestinationInformation/TPA_Extensions/AlternateTime/@PlusMinus``` — количество часов, на которое может отличаться время вылета у найденных рейсов относительно заданного для каждого плеча (не более ```9```)
-- ```OriginDestinationInformation/TPA_Extensions/AlternateTime/@Minus``` — количество часов, на которое может быть меньше время вылета у найденных рейсов относительно заданного для каждого плеча (не более ```72```)
+- ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/AlternateTime/@PlusMinus``` — количество часов, на которое может отличаться время вылета у найденных рейсов относительно заданного для каждого плеча (не более ```9```)
+- ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/AlternateTime/@Minus``` — количество часов, на которое может быть меньше время вылета у найденных рейсов относительно заданного для каждого плеча (не более ```72```)
 
 #### Поиск с известными рейсами
 
 Для поиска рекомендаций, в котором рейсы для одного или нескольких плеч уже известны, необходимо для каждого такого плеча указать:
 - ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/@Fixed``` — признак того, что для этого плеча будет применен указанный рейс, значение ```true```
 - ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/Flight``` — данные о рейсе:
-    - ```Flight/@ArrivalDateTime``` — дата и время прибытия рейса
-    - ```Flight/@DepartureDateTime``` — дата и время отправления рейса
-    - ```Flight/@Number``` — номер рейса
-    - ```Flight/@Type``` — всегда ```A```
-    - ```Flight/OriginLocation/@LocationCode``` — аэропорт прибытия
-    - ```Flight/DestinationLocation/@LocationCode``` — аэропорт отправления
-    - ```Flight/Airline/@Marketing``` — код маркетингового перевозчика
-    - ```Flight/Airline/@Operating``` — код оперирующего перевозчика
+    - ```/@ArrivalDateTime``` — дата и время прибытия рейса
+    - ```/@DepartureDateTime``` — дата и время отправления рейса
+    - ```/@Number``` — номер рейса
+    - ```/@Type``` — всегда ```A```
+    - ```/OriginLocation/@LocationCode``` — аэропорт прибытия
+    - ```/DestinationLocation/@LocationCode``` — аэропорт отправления
+    - ```/Airline/@Marketing``` — код маркетингового перевозчика
+    - ```/Airline/@Operating``` — код оперирующего перевозчика
 
 {{< details title="Поиск перелетов с известными рейсами на втором плече" open=true >}}
 ```XML
@@ -145,7 +145,7 @@ aliases:
 
 ## Остановки и пересадки
 
-Максимальное количество остановок (как со сменой рейса так и без нее) для всех плеч маршрута задается в атрибуте ```/OTA_AirLowFareSearchRQ/TravelPreferences/@MaxStopsQuantity```.
+Максимальное количество остановок (как со сменой рейса, так и без нее) для всех плеч маршрута задается в атрибуте ```/OTA_AirLowFareSearchRQ/TravelPreferences/@MaxStopsQuantity```.
 
 Для каждого плеча в элементе ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/ConnectionTime``` можно задать следующие атрибуты:
 - ```/@Min``` — минимальное время любой пересадки на данном плече
@@ -198,7 +198,7 @@ aliases:
     - значение ```A``` — аэропорт
     - значение ```C``` — город (вариант по умолчанию, если не указано никакое значение, а город и аэропорт имеют одинаковый код)
 
-{{< details title="Поиск перелета из Москвы в Нью-Йорк с пересадкой длиной более 24 часов в Стамбуле и временем вылета в промежутке между 10:00 и 22:00" open=true >}}
+{{< details title="Поиск перелетов MOW-NYC с пересадкой длиной более 24 часов в IST и временем вылета в промежутке 10:00—22:00" open=true >}}
 ```XML
 <OriginDestinationInformation RPH="1">
   <DepartureDateTime>2022-09-01T11:00:00</DepartureDateTime>
@@ -224,8 +224,8 @@ aliases:
 {{< /hint >}}
 
 Категории пассажиров задаются в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/AirTravelerAvail/PassengerTypeQuantity```. Для каждой категории пассажира необходимо указать:
-- ```PassengerTypeQuantity/@Code``` — код категории пассажира
-- ```PassengerTypeQuantity/@Quantity``` — количество пассажиров данной категории
+- ```/@Code``` — код категории пассажира
+- ```/@Quantity``` — количество пассажиров данной категории
 
 Коды основных категорий пассажиров:
 - ```ADT``` — взрослый пассажир (от 12 лет)
@@ -239,9 +239,11 @@ aliases:
 
 ## Классы обслуживания и коды тарифов
 
+#### Выбор класса обслуживания
+
 Класс обслуживания задается в элементе ```/OTA_AirLowFareSearchRQ/TravelPreferences/CabinPref```. В качестве атрибутов необходимо указать:
-- ```CabinPref/@PreferLevel``` — выбран предпочтительный класс обслуживания (значение ```Preferred```)
-- ```CabinPref/@Cabin``` — код или название класса обслуживания
+- ```/@PreferLevel``` — выбран предпочтительный класс обслуживания (значение ```Preferred```)
+- ```/@Cabin``` — код или название класса обслуживания
 
 Допустимые варианты кодов и названий классов обслуживания:
 - ```Economy``` или ```Y``` — экономический класс
@@ -254,8 +256,8 @@ aliases:
 По умолчанию, если в запросе не указан класс обслуживания, поиск будет производиться так, будто указан экономический класс обслуживания. 
 
 Класс обслуживания также может быть задан для каждого плеча в запросе в элементе ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/CabinPref```. В качестве атрибутов необходимо указать:
-- ```CabinPref/@PreferLevel``` — выбран предпочтительный класс обслуживания (значение ```Preferred```)
-- ```CabinPref/@Cabin``` — код или название класса обслуживания
+- ```/@PreferLevel``` — выбран предпочтительный класс обслуживания (значение ```Preferred```)
+- ```/@Cabin``` — код или название класса обслуживания
 
 Существует три различных логики выбора класса обслуживания в результатах поиска.
 
@@ -280,22 +282,22 @@ aliases:
 #### Черный и белый список классов бронирования
 
 Черный и белый список классов бронирования (*не классов обслуживания!*) для всего запрошенного маршрута задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/ClassOfService```. Для каждого класса бронирования необходимо указать:
-- ```ClassOfService/@Code``` — класс бронирования
-- ```ClassOfService/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/@Code``` — класс бронирования
+- ```/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
 
 Черный и белый список классов бронирования для каждого плеча задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/ClassOfService```. Для каждого класса бронирования необходимо указать:
-- ```ClassOfService/@Code``` — класс бронирования
-- ```ClassOfService/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/@Code``` — класс бронирования
+- ```/@PreferLevel``` — добавление класса бронирования в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
 
 #### Черный и белый список кодов тарифов
 
 Черный и белый список кодов тарифов (*не классов обслуживания!*) для всего запрошенного маршрута задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FareBasis```. Для каждого кода тарифа необходимо указать:
-- ```FareBasis/@Code``` — код тарифа
-- ```FareBasis/@PreferLevel``` — добавление кода тарифа в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/@Code``` — код тарифа
+- ```/@PreferLevel``` — добавление кода тарифа в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
 
 Черный и белый список классов бронирования для каждого плеча задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/FareBasis```. Для каждого класса бронирования необходимо указать:
-- ```FareBasis/@Code``` — код тарифа
-- ```FareBasis/@PreferLevel``` — добавление кода тарифа в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/@Code``` — код тарифа
+- ```/@PreferLevel``` — добавление кода тарифа в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
 
 Также сервис позволяет указать вместо кода тарифа маску поиска кода тарифа, в котором помимо букв латинского алфавита и цифр можно использовать следующие спецсимволы:
 - ```-``` — ноль или более символов. Например, под условия маски ```Y-OW``` подпадут тарифы ```YOW```, ```YLTOW``` и ```YSTDOW```
@@ -307,30 +309,30 @@ aliases:
 #### Черный и белый список маркетинговых и оперирующих перевозчиков для всего запрошенного маршрута
 
 Черный и белый список маркетинговых и оперирующих перевозчиков для всего запрошенного маршрута задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/VendorPref```. Для каждого перевозчика необходимо указать:
-- ```VendorPref/@Code``` — двухбуквенный код перевозчика
-- ```VendorPref/@PreferLevel``` — добавление перевозчика в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
-- ```VendorPref/@Type``` — тип перевозчика. Возможные значения:
+- ```/@Code``` — двухбуквенный код перевозчика
+- ```/@PreferLevel``` — добавление перевозчика в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/@Type``` — тип перевозчика. Возможные значения:
     - значение ```Operating``` — оперирующий перевозчик
     - значение ```Marketing``` — маркетинговый перевозчик (вариант по умолчанию в случае отсутствия любого значения)
 
 Дополнительно в запросе можно указать применимость белого списка перевозчиков: ко всем сегментам каждого найденного перелета или хотя бы к одному сегменту каждого найденного перелета. Для этого необходимо добавить элемент ```/OTA_AirLowFareSearchRQ/TravelPreferences/VendorPrefApplicability``` со следующими атрибутами:
-- ```VendorPrefApplicability/@Value``` — вариант применимости. Возможные значения:
+- ```/@Value``` — вариант применимости. Возможные значения:
     - значение ```AllSegments``` — для всех сегментов
     - значение ```AtLeastOneSegment``` — хотя бы для одного сегмента
-- ```VendorPrefApplicability/@Type``` — тип перевозчика. Возможные значения:
+- ```/@Type``` — тип перевозчика. Возможные значения:
     - значение ```Operating``` — оперирующий перевозчик
     - значение ```Marketing``` — маркетинговый перевозчик
 
 Максимум можно добавить два элемента: один для белого списка оперирующих перевозчиков и один для белого списка маркетинговых перевозчиков.
 
 Помимо этого, в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/VendorPrefPairing``` можно указать комбинации маркетинговых и оперирующих перевозчиков для черного или белого списков. Для каждого элемента необходимо указать:
-- ```VendorPrefPairing/@Applicability``` — вариант применимости. Возможные значения:
+- ```/@Applicability``` — вариант применимости. Возможные значения:
     - значение ```AllSegments``` — для всех сегментов
     - значение ```AtLeastOneSegment``` — хотя бы для одного сегмента
-- ```VendorPrefPairing/@PreferLevel``` — добавление перевозчиков в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
-- ```VendorPrefPairing/VendorPref``` — элемент с информацией о включении перевозчика в белый или черный список. Для каждого перевозчика необходимо указать:
-    - ```VendorPref/@Code``` — двухбуквенный код перевозчика
-    - ```VendorPref/@Type``` — тип перевозчика. Возможные значения:
+- ```/@PreferLevel``` — добавление перевозчиков в белый (значение ```Preferred```) или черный (значение ```Unacceptable```) список
+- ```/VendorPref``` — элемент с информацией о включении перевозчика в белый или черный список. Для каждого перевозчика необходимо указать:
+    - ```/@Code``` — двухбуквенный код перевозчика
+    - ```/@Type``` — тип перевозчика. Возможные значения:
         - значение ```Operating``` — оперирующий перевозчик
         - значение ```Marketing``` — маркетинговый перевозчик (вариант по умолчанию в случае отсутствия любого значения)
 
@@ -358,9 +360,9 @@ aliases:
 
 #### Черный и белый список альянсов для всего запрошенного маршрута
 
-Белый список альянсов для всего запрошенного маршрута задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/IncludeAlliancePref```. Для каждого альянса необходимо указать его код в атрибуте ```IncludeAlliancePref/@Code```.
+Белый список альянсов для всего запрошенного маршрута задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/IncludeAlliancePref```. Для каждого альянса необходимо указать его код в атрибуте ```/@Code```.
 
-Черный список альянсов для всего запрошенного маршрута задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/ExcludeAlliancePref```. Для каждого альянса необходимо указать его код в атрибуте ```ExcludeAlliancePref/@Code```.
+Черный список альянсов для всего запрошенного маршрута задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/ExcludeAlliancePref```. Для каждого альянса необходимо указать его код в атрибуте ```/@Code```.
 
 #### Белый список маркетинговых перевозчиков и альянсов для отдельного сегмента
 
@@ -390,12 +392,12 @@ aliases:
 В результатах поиска можно получить все рекомендации для выбранного валидирующего перевозчика. Для этого необходимо указать его код в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/ValidatingCarrier/@Code```. Обратите внимание на то, что в этом случае могут быть получены такие рекомендации, у которых при поиске без данного параметра мог быть использован другой валидирующий перевозчик.
 
 Черный список валидирующих перевозчиков задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/ValidatingCarrier/Preference```. Для каждого перевозчика необходимо указать:
-- ```Preference/@Code``` — двухбуквенный код перевозчика
-- ```Preference/@Level``` — значение ```Unacceptable```
+- ```/@Code``` — двухбуквенный код перевозчика
+- ```/@Level``` — значение ```Unacceptable```
 
 Список приоритетных валидирующих перевозчиков задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/ValidatingCarrier/Preference```. Для каждого перевозчика необходимо указать:
-- ```Preference/@Code``` — двухбуквенный код перевозчика
-- ```Preference/@Level``` — значение ```Preferred```
+- ```/@Code``` — двухбуквенный код перевозчика
+- ```/@Level``` — значение ```Preferred```
 
 Приоритетный валидирующий перевозчик будет выбран в том случае, если существует два или более валидирующих перевозчиков, которые предлагают одинаковую стоимость для одной и той же рекомендации. Если для какой-либо рекомендации перевозчик, указанный в списке приоритетных, не может быть валидирующим или он предлагает большую стоимость, то выбран будет другой валидирующий перевозчик.
 
@@ -446,12 +448,8 @@ aliases:
     - ```Itin``` — для всего перелета будет использован один и тот же бренд
     - ```Leg``` — для каждого плеча перелета могут быть использованы разные бренды
 
-{{< hint danger >}}
-Обратите внимание на то, что использование возможности получения расчетов по всем доступным брендам требует активации для каждого PCC. Пожалуйста, обратитесь к вашему куратору в Sabre для уточнения деталей.
-{{< /hint >}}
-
 {{< hint warning >}}
-Обратите внимание на то, что в одном поисковом запросе невозможно одновременное получение расчетов по всем брендам и получение [дополнительных расчетов стоимости по заданным критериям](/shop.html#дополнительные-расчеты-стоимости-по-заданным-критериям).
+Обратите внимание на то, что в одном поисковом запросе невозможно одновременное получение расчетов по всем брендам и получение [дополнительных расчетов стоимости по заданным критериям](shop.html#дополнительные-расчеты-стоимости-по-заданным-критериям).
 {{< /hint >}}
 
 #### Список услуг у найденных брендированных тарифов
@@ -463,12 +461,12 @@ aliases:
 #### Черный и белый список брендов
 
 Черный список брендов задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/Brand``` (для всего маршрута) или ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/BrandFilters/Brand``` (для плеча). Для каждого бренда необходимо указать:
-- ```Preference/@Code``` — код бренда
-- ```Preference/@Level``` — значение ```Unacceptable```
+- ```/@Code``` — код бренда
+- ```/@Level``` — значение ```Unacceptable```
 
 Белый список брендов задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/Brand``` (для всего маршрута) или ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/BrandFilters/Brand``` (для плеча). Для каждого бренда необходимо указать:
-- ```Preference/@Code``` — код бренда
-- ```Preference/@Level``` — значение ```Preferred```
+- ```/@Code``` — код бренда
+- ```/@Level``` — значение ```Preferred```
 
 {{< hint warning >}}
 Обратите внимание на то, что даже передав один или несколько кодов брендов в белом списке, в ответе расчет для этого плеча может быть выполнен по небрендированному тарифу. Для того чтобы этого избежать, необходимо указать значение ```Unacceptable``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/NonBrandedFares/@PreferLevel``` (для всего маршрута) или ```/OTA_AirLowFareSearchRQ/OriginDestinationInformation/TPA_Extensions/BrandFilters/NonBrandedFares/@PreferLevel``` (для плеча). Для того чтобы расчет был выполнен только по небрендированным тарифам, необходимо указать значение ```Preferred``` у этого атрибута.
@@ -476,26 +474,17 @@ aliases:
 
 ## Дополнительные расчеты стоимости по заданным критериям
 
-{{< hint warning >}}
-Обратите внимание на то, что в одном поисковом запросе невозможно одновременное получение дополнительных расчетов стоимости по заданным критериям и получение расчетов по всем брендам (см. выше).
-{{< /hint >}}
-
 Ответ [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) по умолчанию содержит расчет стоимости по самому дешевому доступному тарифу (или тарифам) для каждой найденной рекомендации. Описанная ниже функциональность позволяет получить дополнительные расчеты стоимости для каждой найденной рекомендации по указанным в запросе группам критериев. Таким образом, ответ на запрос к сервису [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) в этом случае может содержать несколько вариантов расчета стоимости одной и той же рекомендации:
 - расчет стоимости по самому дешевому доступному тарифу (или тарифам)
 - дополнительные расчеты стоимости по тарифам, выбранным по заданным в запросе группам критериев
 
 Каждая группа критериев задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters``` запроса. Всего один запрос может содержать до 10 групп критериев. Каждая группа критериев может содержать один или несколько критериев.
 
+{{< hint warning >}}
+Обратите внимание на то, что в одном поисковом запросе невозможно одновременное получение дополнительных расчетов стоимости по заданным критериям и [получение расчетов по всем брендам](shop.html#расчет-стоимости-по-всем-доступным-брендам).
+{{< /hint >}}
+
 Ниже представлено описание доступных критериев.
-
-#### Включение или исключение тарифов с ограничениями
-
-Для исключения из расчета тарифов с ограничениями необходимо указать значение ```false``` у одного из атрибутов:
-- ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/ResTicketing/@Ind``` — исключение тарифов с ограничениями по срокам бронирования и оформления билетов
-- ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/MinMaxStay/@Ind``` — исключение тарифов с ограничениями по срокам минимального и максимального пребывания
-- ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/RefundPenalty/@Ind``` — исключение тарифов со штрафами за возврат
-
-Для исключения любых тарифов с ограничениями необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/ExcludeRestricted/@Ind```.
 
 #### Количество и категории пассажиров
 
@@ -504,10 +493,6 @@ aliases:
 {{< hint warning >}}
 Обратите внимание на то, что общее количество пассажиров в одной группе критериев не должно превышать общее количество пассажиров в основном запросе.
 {{< /hint >}}
-
-Для того чтобы получать расчет только для указанных категорий пассажиров во всех тарифах в расчете (т.е. отключить смену категории пассажира в случае невозможности произвести расчет по указанной категории) необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/XOFares/@Ind```.
-
-Для того чтобы получить расчет для указанных категорий пассажиров хотя бы для одного тарифа в расчете необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/UsePassengerFares/@Ind```.
 
 #### Использование приватных или публичных тарифов
 
@@ -523,7 +508,7 @@ aliases:
 
 #### Обмен и возврат
 
-Получение информации об условиях обмена и возврата найденных рекомендаций, а также установка требований к условиям обмена и возврата найденных рекомендаций производится аналогично тому, как описано в разделе "Обмен и возврат". Для дополнительного расчета все требования необходимо представить в элементе ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/VoluntaryChanges``` (по аналогии с ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/AirTravelerAvail/PassengerTypeQuantity/TPA_Extensions/VoluntaryChanges``` для основного запроса).
+Условия по обмену и возврату билетов, а также получение информации об их условиях задается в элементе ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/VoluntaryChanges``` так же, как и для основного запроса (см. [Обмен и возврат билетов](shop.html#обмен-и-возврат-билетов)).
 
 #### Выбор класса обслуживания
 
@@ -535,28 +520,99 @@ aliases:
 - ```First``` или ```F``` — первый класс
 - ```PremiumFirst``` или ```P``` — улучшенный первый класс
 
-Для отключения логики выбора класса обслуживания необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/JumpCabinLogic/@Disabled``` или атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/KeepSameCabin/@Enabled```. Подробнее о том, как выбирается класс обслуживания и на что влияют указанные выше параметры см. [Классы обслуживания и коды тарифов](shop.html#классы-обслуживания-и-коды-тарифов). 
+Для отключения логики выбора класса обслуживания необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/JumpCabinLogic/@Disabled``` или атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/KeepSameCabin/@Enabled```. Подробнее о том, как выбирается класс обслуживания и на что влияют указанные выше параметры см. [Классы обслуживания и коды тарифов](shop.html#выбор-класса-обслуживания).
 
 #### Выбор класса бронирования
 
-Черный и белый список классов бронирования задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/ClassOfService``` так же, как и для основного запроса.
+Черный и белый список классов бронирования задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/ClassOfService``` так же, как и для основного запроса (см. [Черный и белый список классов бронирования](shop.html#черный-и-белый-список-классов-бронирования)).
 
 #### Выбор кода тарифа
 
-Черный и белый список кодов тарифов задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/FareBasis``` так же, как и для основного запроса.
+Черный и белый список кодов тарифов задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/FareBasis``` так же, как и для основного запроса (см. [Черный и белый список кодов тарифов](shop.html#черный-и-белый-список-кодов-тарифов)).
+
+#### Выбор брендов
+
+Черный и белый список брендов задается в элементах ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/BrandedFareIndicators/BrandFilters/Brand``` так же, как и для основного запроса (см. [Черный и белый список брендов](shop.html#черный-и-белый-список-брендов)).
+
+Для получения информации о примененных брендированных тарифах (код бренда, название бренда, код программы брендов и т.д.) необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/BrandedFareIndicators/@SingleBrandedFare```.
+
+#### Выбор тарифов с багажом
+
+Для запроса тарифов с багажом необходимо указать значение ```true``` у атрибута ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/Baggage/@FreePieceRequired```.
+
+{{< hint danger >}}
+Обратите внимание на то, что для рекомендаций, которые были получены в результатах при поиске тарифов с багажом и, которые не являются брендированными, требуется особый порядок выполнения расчета стоимости и бронирования. См. подробнее в разделах [Создание бронирований в 1 шаг](create-booking-1step.html#расчет-стоимости-по-кодам-тарифов), [Создание бронирований в 2 шага](create-booking-2steps.html#расчет-стоимости-по-кодам-тарифов).
+{{< /hint >}}
 
 #### Параметры плеча
 
 В запросе можно указать параметры для каждого из запрашиваемого плеч. Для этого необходимо добавить элемент ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/FlexibleFares/FareParameters/Leg``` и указать в нем в качестве значения атрибута ```/@Num``` номер плеча.
 
 Доступные параметры для каждого плеча:
-```Leg/Cabin``` — класс обслуживания (см. выше доступные значения)
-```Leg/ClassOfService``` — класс бронирования (см. выше доступные значения)
-```Leg/FareBasis``` — код тарифа (см. выше доступные значения)
+```/Cabin``` — класс обслуживания (см. выше доступные значения)
+```/ClassOfService``` — класс бронирования (см. выше доступные значения)
+```/FareBasis``` — код тарифа (см. выше доступные значения)
+```/BrandFilters/Brand``` — бренд (см. выше доступные значения)
+```/Baggage``` — наличие багажа
+
+#### Пример
+
+В представленном ниже примере в дополнение к основному (самому дешевому) расчету стоимости запрашивается 5 дополнительных расчетов:
+1. Расчет по тарифам с багажом
+2. Расчет по тарифам, которые можно вернуть и обменять
+3. Расчет по тарифам, которые можно вернуть и обменять со штрафом менее 1000 рублей
+4. Расчет по тарифам бизнес-класса
+5. Расчет по приватным тарифам
+
+Для всех расчетов стоимости дополнительно будет:
+- получена информация о примененных брендах
+- получена информация об условиях обменов и возвратов
+- получены тарифы только в запрашиваемом классе обслуживания
+
+{{< details title="Пример" open=true >}}
+```XML
+<FlexibleFares>
+  <FareParameters>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="Info"/>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+    <Baggage FreePieceRequired="true"/>
+  </FareParameters>
+  <FareParameters>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="All">
+      <Penalty Type="Exchange"/>
+      <Penalty Type="Refund"/>
+    </VoluntaryChanges>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+  <FareParameters>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="All">
+      <Penalty Amount="1000" CurrencyCode="RUB" Type="Exchange"/>
+      <Penalty Amount="1000" CurrencyCode="RUB" Type="Refund"/>
+    </VoluntaryChanges>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+  <FareParameters>
+    <Cabin Type="Business"/>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="Info"/>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+  <FareParameters>
+    <PrivateFare Ind="true"/>
+    <KeepSameCabin Enabled="true"/>
+    <VoluntaryChanges Match="Info"/>
+    <BrandedFareIndicators SingleBrandedFare="true"/>
+  </FareParameters>
+</FlexibleFares>
+```
+{{< /details >}}
 
 #### Дополнительная информация
 
-Дополнительная информация по функции Multiple Fares per Itinerary доступна в [документации](http://files.developer.sabre.com/doc/providerdoc/shopping/MultipleFaresPerItinerary_DAG.pdf).
+Дополнительная информация по возможности получения дополнительных расчетов стоимости по заданным критериям доступна в [документации](http://files.developer.sabre.com/doc/providerdoc/shopping/MultipleFaresPerItinerary_DAG.pdf).
 
 ## Разнообразие поисковой выдачи
 
@@ -565,6 +621,8 @@ aliases:
 - низкое время в пути
 - повышенная комиссия перевозчика
 - и т.д.
+
+{{< details title="Детали" >}}
 
 Для этого в сервисе [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) предусмотрена возможность изменения разнообразия поисковой выдачи. Для этого предлагается разбить поисковую выдачу на две части (корзины):
 - корзина с самыми дешевыми перелетами
@@ -596,13 +654,13 @@ aliases:
 
 #### Стоимость
 
-Данный критерия определяет насколько важна стоимость найденного перелета для попадания во вторую корзину.
+Данный критерия определяет то, насколько важна стоимость найденного перелета для попадания во вторую корзину.
 
 Вес критерия указывается в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/TPA_Extensions/DiversityControl/Dimensions/@PriceWeight```.
 
 #### Время в пути
 
-Данный критерий определяет насколько важно время в пути (включая время пересадок) для найденного перелета для попадания во вторую корзину.
+Данный критерий определяет то, насколько важно время в пути (включая время пересадок) для найденного перелета для попадания во вторую корзину.
 
 Вес критерия указывается в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/TPA_Extensions/DiversityControl/Dimensions/TravelTime/@Weight```.
 
@@ -612,7 +670,7 @@ aliases:
 
 #### Выбор перевозчиков
 
-Данный критерий определяет насколько важно попадание рекомендации определенного перевозчика во вторую корзину.
+Данный критерий определяет то, насколько важно попадание рекомендации определенного перевозчика во вторую корзину.
 
 Для каждого перевозчика можно указать количество или процент желаемых рекомендаций (атрибут ```/OTA_AirLowFareSearchRQ/TPA_Extensions/DiversityControl/Dimensions/Carrier/Override/@Options```) и его код (атрибут ```/OTA_AirLowFareSearchRQ/TPA_Extensions/DiversityControl/Dimensions/Carrier/Override/@Code```).
 
@@ -678,7 +736,7 @@ aliases:
 
 #### Количество пересадок
 
-Данный критерий определяет насколько важно количество пересадок в найденном перелете для попадания во вторую корзину.
+Данный критерий определяет то, насколько важно количество пересадок в найденном перелете для попадания во вторую корзину.
 
 Вес критерия указывается в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/TPA_Extensions/DiversityControl/Dimensions/StopsNumber/@Weight```.
 
@@ -687,6 +745,8 @@ aliases:
 ```(Количество прямых сегментов × 0 + Количество сегментов с технической посадкой × 0,5 + Количество сегментов с пересадками × 1) / Общее количество сегментов```
 
 Например, коэффициент для перелета из Уфы в Лондон и обратно с пересадкой в Москве составит: (4 × 1)/4 = 1. Коэффициент для перелета из Москвы в Мельбурн с технической посадкой в Куала-Лумпуре: (2 × 0,5)/2 = 0,5.
+
+{{< /details >}}
 
 ## Дополнительные услуги
 
@@ -785,9 +845,9 @@ aliases:
 
 По умолчанию [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) предлагает рекомендации с расчетом, как по публичным, так и по приватным тарифам. Однако, указав значение атрибута ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PublicFare/@Ind``` или ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/TPA_Extensions/PrivateFare/@Ind``` равное ```true``` можно запросить расчет только по публичным или приватным тарифам, соответственно.
 
-Список кодов корпоративных скидок (Corporate ID) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/NegotiatedFareCode```. Для каждого кода необходимо указать его значение в атрибуте ```NegotiatedFareCode/@Code```. Дополнительно можно задать список перевозчиков, для которых действует данный код. Данный список задается в последовательно расположенных элементах ```NegotiatedFareCode/Supplier```. Для каждого элемента необходимо задать код перевозчика в атрибуте ```NegotiatedFareCode/Supplier/@Code```.
+Список кодов корпоративных скидок (Corporate ID) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/NegotiatedFareCode```. Для каждого кода необходимо указать его значение в атрибуте ```/@Code```. Дополнительно можно задать список перевозчиков, для которых действует данный код. Данный список задается в последовательно расположенных элементах ```/Supplier```. Для каждого элемента необходимо задать код перевозчика в атрибуте ```/Supplier/@Code```.
 
-Список аккаунт кодов (Account Code) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/AccountCode```. Для каждого аккаунт кода необходимо указать его значение в атрибуте ```AccountCode/@Code```.
+Список аккаунт кодов (Account Code) задается в последовательно расположенных элементах ```/OTA_AirLowFareSearchRQ/TravelerInfoSummary/PriceRequestInformation/AccountCode```. Для каждого аккаунт кода необходимо указать его значение в атрибуте ```/@Code```.
 
 ## Оформление на нескольких билетах
 
@@ -812,12 +872,6 @@ aliases:
 ## Дополнительные прямые перелеты
 
 В поисковом запросе можно указать дополнительные прямые перелеты, которые будут добавлены к запрошенным рекомендациям. Количество прямых перелетов может быть задано как в абсолютных числах (атрибут ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/DiversityParameters/@AdditionalNonStopsNumber```), так и в процентах от общего числа рекомендаций (атрибут ```/OTA_AirLowFareSearchRQ/TravelPreferences/TPA_Extensions/DiversityParameters/@AdditionalNonStopsPercentage```). Общее количество таких рекомендаций не может превышать 100.
-
-## Air Shopping Rules Manager
-
-[Air Shopping Rules Manager](https://airshopping.havail.sabre.com) — это бесплатный продукт Sabre, который предоставляет возможность устанавливать различные параметры поисковых запросов через веб-интерфейс. Один или несколько параметров запроса могут объединены через Air Shopping Rules Manager в правила (Traveler Personas). Для того чтобы использовать это правило при отправке запросов, необходимо указать код правила в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/TPA_Extensions/IntelliSellTransaction/TravelerPersona/@Name```.
-
-Подробнее о продукте можно прочитать в [документации](http://files.developer.sabre.com/doc/providerdoc/shopping/Air_Shopping_Rules_Manager_User_Guide_2018.9.pdf).
 
 ## PCC
 
@@ -3440,21 +3494,38 @@ aliases:
       <SeatSelection Info="true"/>
       <FlexibleFares>
         <FareParameters>
-          <Cabin Type="Business"/>
           <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+          <Baggage FreePieceRequired="true"/>
         </FareParameters>
         <FareParameters>
-          <PassengerTypeQuantity Code="ADT" Quantity="2"/>
-          <PassengerTypeQuantity Code="CNN" Quantity="1"/>
-          <PassengerTypeQuantity Code="INS" Quantity="1"/>
-        </FareParameters>
-        <FareParameters>
-          <PublicFare Ind="true"/>
-        </FareParameters>
-        <FareParameters>
+          <KeepSameCabin Enabled="true"/>
           <VoluntaryChanges Match="All">
+            <Penalty Type="Exchange"/>
             <Penalty Type="Refund"/>
           </VoluntaryChanges>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="All">
+            <Penalty Amount="1000" CurrencyCode="RUB" Type="Exchange"/>
+            <Penalty Amount="1000" CurrencyCode="RUB" Type="Refund"/>
+          </VoluntaryChanges>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <Cabin Type="Business"/>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <PrivateFare Ind="true"/>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
         </FareParameters>
       </FlexibleFares>
       <DiversityParameters AdditionalNonStopsPercentage="100"/>
@@ -3500,23 +3571,26 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="160" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="200" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
-    <Warning Code="PROCESS" NumberOfOccurences="3" ShortText="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
-    <Warning Code="PROCESS" NumberOfOccurences="7" ShortText="Communication error: Transmission timeout" Type="MIP"/>
-    <Warning Code="GCB14-ISELL-TN-00-2022-05-00-133T" MessageClass="I" ShortText="27041" Type="SERVER"/>
-    <Warning Code="TRANSACTIONID" MessageClass="I" ShortText="6963420332647528730" Type="WORKERTHREAD"/>
-    <Warning Code="RULEID" MessageClass="I" ShortText="15936" Type="DRE"/>
-    <Warning Code="RULEID" MessageClass="I" ShortText="27757" Type="DEFAULT"/>
+    <Warning Code="PROCESS" NumberOfOccurences="22" ShortText="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
+    <Warning Code="PROCESS" NumberOfOccurences="2" ShortText="MAXIMUM PENALTY IS TOO RESTRICTIVE: NO FARES WITH CHANGE PENALTY LESS THAN 1000 RUB" Type="MIP"/>
+    <Warning Code="PROCESS" NumberOfOccurences="2" ShortText="NO PRIVATE FARES VALID FOR PASSENGER TYPE/CLASS OF SERVICE" Type="MIP"/>
+    <Warning Code="PROCESS" ShortText="NO SOLUTION PASSED INTERLINE TICKETING VALIDATION" Type="MIP"/>
+    <Warning Code="PROCESS" ShortText="MAXIMUM PENALTY IS TOO RESTRICTIVE: NO FARES WITH REFUND PENALTY LESS THAN 1000 RUB" Type="MIP"/>
     <Warning Code="MIP" MessageClass="I" ShortText="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
+    <Warning Code="GCC15-ISELL-TN-00-2022-05-00-DNQZ" MessageClass="I" ShortText="27033" Type="SERVER"/>
+    <Warning Code="RULEID" MessageClass="I" ShortText="27757" Type="DEFAULT"/>
+    <Warning Code="RULEID" MessageClass="I" ShortText="15936" Type="DRE"/>
+    <Warning Code="TRANSACTIONID" MessageClass="I" ShortText="8850649105640106391" Type="WORKERTHREAD"/>
   </Warnings>
   <BrandFeatures>
-    <BrandFeature Application="F" CommercialName="STANDARD SEATING" Id="1" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
-    <BrandFeature Application="C" CommercialName="CHOICE OF STANDARD SEAT" Id="2" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
-    <BrandFeature Application="F" CommercialName="STANDARD SEAT SELECTION" Id="3" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
-    <BrandFeature Application="F" CommercialName="CHOICE OF STANDARD SEAT" Id="4" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
-    <BrandFeature Application="F" CommercialName="BASIC SEAT" Id="5" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="SEAT SELECTION STANDARD ZONE" Id="1" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="CHOICE OF STANDARD SEAT" Id="2" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="STANDARD SEATING" Id="3" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
+    <BrandFeature Application="C" CommercialName="STANDARD SEAT SELECTION" Id="4" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
+    <BrandFeature Application="F" CommercialName="STANDARD SEAT SELECTION" Id="5" ServiceGroup="BF" ServiceType="Z" SubCode="050" Vendor="ATP"/>
     <!--Другие услуги-->
   </BrandFeatures>
   <PricedItineraries>
@@ -3524,7 +3598,7 @@ aliases:
       <AirItinerary DirectionInd="Return">
         <OriginDestinationOptions>
           <OriginDestinationOption ArrivalCountry="GB" DepartureCountry="AU" ElapsedTime="2460">
-            <FlightSegment ArrivalDateTime="2022-12-01T17:15:00" DepartureDateTime="2022-12-01T09:15:00" ElapsedTime="600" FlightNumber="52" ResBookDesigCode="S" StopQuantity="0">
+            <FlightSegment ArrivalDateTime="2022-12-01T17:15:00" DepartureDateTime="2022-12-01T09:15:00" ElapsedTime="600" FlightNumber="52" ResBookDesigCode="V" StopQuantity="0">
               <DepartureAirport LocationCode="SYD" TerminalID="1"/>
               <ArrivalAirport LocationCode="HND" TerminalID="3"/>
               <OperatingAirline Code="JL" FlightNumber="52"/>
@@ -3538,7 +3612,7 @@ aliases:
                 <Mileage Amount="4836"/>
               </TPA_Extensions>
             </FlightSegment>
-            <FlightSegment ArrivalDateTime="2022-12-02T15:15:00" DepartureDateTime="2022-12-02T11:30:00" ElapsedTime="765" FlightNumber="43" ResBookDesigCode="S" StopQuantity="0">
+            <FlightSegment ArrivalDateTime="2022-12-02T15:15:00" DepartureDateTime="2022-12-02T11:30:00" ElapsedTime="765" FlightNumber="43" ResBookDesigCode="V" StopQuantity="0">
               <DepartureAirport LocationCode="HND" TerminalID="3"/>
               <ArrivalAirport LocationCode="LHR" TerminalID="3"/>
               <OperatingAirline Code="JL" FlightNumber="43"/>
@@ -3586,64 +3660,59 @@ aliases:
           </OriginDestinationOption>
         </OriginDestinationOptions>
       </AirItinerary>
-      <AirItineraryPricingInfo FareReturned="true" LastTicketDate="2022-05-27" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
+      <AirItineraryPricingInfo FareReturned="true" LastTicketDate="2022-06-01" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
         <ItinTotalFare>
-          <BaseFare Amount="2144.00" CurrencyCode="AUD" DecimalPlaces="2"/>
-          <FareConstruction Amount="1613.66" CurrencyCode="NUC" DecimalPlaces="2"/>
-          <EquivFare Amount="96480" CurrencyCode="RUB" DecimalPlaces="0"/>
+          <BaseFare Amount="2517.00" CurrencyCode="AUD" DecimalPlaces="2"/>
+          <FareConstruction Amount="1893.67" CurrencyCode="NUC" DecimalPlaces="2"/>
+          <EquivFare Amount="104460" CurrencyCode="RUB" DecimalPlaces="0"/>
           <Taxes>
-            <Tax Amount="112286" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+            <Tax Amount="103432" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
           </Taxes>
-          <TotalFare Amount="208766" CurrencyCode="RUB" DecimalPlaces="0"/>
+          <TotalFare Amount="207892" CurrencyCode="RUB" DecimalPlaces="0"/>
         </ItinTotalFare>
         <PTC_FareBreakdowns>
           <PTC_FareBreakdown>
             <PassengerTypeQuantity Code="ADT" Quantity="2"/>
             <FareBasisCodes>
-              <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE</FareBasisCode>
-              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="HND" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">VNN0NPCE</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="HND" GovCarrier="JL">VNN0NPCE</FareBasisCode>
               <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE</FareBasisCode>
               <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE</FareBasisCode>
             </FareBasisCodes>
             <PassengerFare>
-              <BaseFare Amount="752.00" CurrencyCode="AUD"/>
-              <FareConstruction Amount="566.20" CurrencyCode="NUC" DecimalPlaces="2"/>
-              <EquivFare Amount="33840" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <BaseFare Amount="883.00" CurrencyCode="AUD"/>
+              <FareConstruction Amount="664.45" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="36645" CurrencyCode="RUB" DecimalPlaces="0"/>
               <Taxes>
-                <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                <Tax Amount="6678" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                <TaxSummary Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                <TaxSummary Amount="1456" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                <TaxSummary Amount="6678" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                <TotalTax Amount="39005" CurrencyCode="RUB" DecimalPlaces="0"/>
+                <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                <Tax Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <TaxSummary Amount="1354" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                <TaxSummary Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TotalTax Amount="35933" CurrencyCode="RUB" DecimalPlaces="0"/>
               </Taxes>
-              <TotalFare Amount="72845" CurrencyCode="RUB"/>
+              <TotalFare Amount="72578" CurrencyCode="RUB"/>
               <PenaltiesInfo>
                 <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
                 <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
-                <Penalty Amount="27000" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                <Penalty Amount="24900" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
                 <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
               </PenaltiesInfo>
               <TPA_Extensions>
-                <Messages>
-                  <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                  <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                  <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                </Messages>
                 <BaggageInformationList>
                   <BaggageInformation AirlineCode="JL" ProvisionType="A">
                     <Segment Id="0"/>
@@ -3684,11 +3753,11 @@ aliases:
             </PassengerFare>
             <Endorsements NonRefundableIndicator="true"/>
             <TPA_Extensions>
-              <FareCalcLine Info="SYD JL X/TYO JL LON283.10JL X/TYO JL SYD283.10NUC566.20END ROE1.328146"/>
+              <FareCalcLine Info="SYD JL X/TYO JL LON381.35JL X/TYO JL SYD283.10NUC664.45END ROE1.328146"/>
             </TPA_Extensions>
             <FareInfos>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -3696,7 +3765,7 @@ aliases:
                 </TPA_Extensions>
               </FareInfo>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -3723,47 +3792,41 @@ aliases:
           <PTC_FareBreakdown>
             <PassengerTypeQuantity Code="CNN" Quantity="1"/>
             <FareBasisCodes>
-              <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="HND" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">VNN0NPCE/CH25</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="HND" GovCarrier="JL">VNN0NPCE/CH25</FareBasisCode>
               <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
               <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
             </FareBasisCodes>
             <PassengerFare>
-              <BaseFare Amount="564.00" CurrencyCode="AUD"/>
-              <FareConstruction Amount="424.64" CurrencyCode="NUC" DecimalPlaces="2"/>
-              <EquivFare Amount="25380" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <BaseFare Amount="662.00" CurrencyCode="AUD"/>
+              <FareConstruction Amount="498.33" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="27475" CurrencyCode="RUB" DecimalPlaces="0"/>
               <Taxes>
-                <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                <TaxSummary Amount="724" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                <TotalTax Amount="28895" CurrencyCode="RUB" DecimalPlaces="0"/>
+                <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                <TaxSummary Amount="672" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TotalTax Amount="26629" CurrencyCode="RUB" DecimalPlaces="0"/>
               </Taxes>
-              <TotalFare Amount="54275" CurrencyCode="RUB"/>
+              <TotalFare Amount="54104" CurrencyCode="RUB"/>
               <PenaltiesInfo>
                 <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
                 <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
-                <Penalty Amount="27000" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                <Penalty Amount="24900" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
                 <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
               </PenaltiesInfo>
               <TPA_Extensions>
-                <Messages>
-                  <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                  <Message FailCode="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-                  <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                  <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                </Messages>
                 <BaggageInformationList>
                   <BaggageInformation AirlineCode="JL" ProvisionType="A">
                     <Segment Id="0"/>
@@ -3804,11 +3867,11 @@ aliases:
             </PassengerFare>
             <Endorsements NonRefundableIndicator="true"/>
             <TPA_Extensions>
-              <FareCalcLine Info="SYD JL X/TYO JL LON212.32JL X/TYO JL SYD212.32NUC424.64END ROE1.328146"/>
+              <FareCalcLine Info="SYD JL X/TYO JL LON286.01JL X/TYO JL SYD212.32NUC498.33END ROE1.328146"/>
             </TPA_Extensions>
             <FareInfos>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -3816,7 +3879,7 @@ aliases:
                 </TPA_Extensions>
               </FareInfo>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -3843,39 +3906,33 @@ aliases:
           <PTC_FareBreakdown>
             <PassengerTypeQuantity Code="INF" Quantity="1"/>
             <FareBasisCodes>
-              <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
-              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="HND" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">VNN0NPCE/IN90</FareBasisCode>
+              <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="HND" GovCarrier="JL">VNN0NPCE/IN90</FareBasisCode>
               <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
               <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
             </FareBasisCodes>
             <PassengerFare>
-              <BaseFare Amount="76.00" CurrencyCode="AUD"/>
-              <FareConstruction Amount="56.62" CurrencyCode="NUC" DecimalPlaces="2"/>
-              <EquivFare Amount="3420" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <BaseFare Amount="89.00" CurrencyCode="AUD"/>
+              <FareConstruction Amount="66.44" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="3695" CurrencyCode="RUB" DecimalPlaces="0"/>
               <Taxes>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                <TaxSummary Amount="924" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                <TotalTax Amount="5381" CurrencyCode="RUB" DecimalPlaces="0"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TaxSummary Amount="844" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                <TotalTax Amount="4937" CurrencyCode="RUB" DecimalPlaces="0"/>
               </Taxes>
-              <TotalFare Amount="8801" CurrencyCode="RUB"/>
+              <TotalFare Amount="8632" CurrencyCode="RUB"/>
               <PenaltiesInfo>
                 <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
                 <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
-                <Penalty Amount="27000" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                <Penalty Amount="24900" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
                 <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
               </PenaltiesInfo>
               <TPA_Extensions>
-                <Messages>
-                  <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                  <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-                  <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                  <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                </Messages>
                 <BaggageInformationList>
                   <BaggageInformation AirlineCode="JL" ProvisionType="A">
                     <Segment Id="0"/>
@@ -3916,11 +3973,11 @@ aliases:
             </PassengerFare>
             <Endorsements NonRefundableIndicator="true"/>
             <TPA_Extensions>
-              <FareCalcLine Info="SYD JL X/TYO JL LON28.31JL X/TYO JL SYD28.31NUC56.62END ROE1.328146"/>
+              <FareCalcLine Info="SYD JL X/TYO JL LON38.13JL X/TYO JL SYD28.31NUC66.44END ROE1.328146"/>
             </TPA_Extensions>
             <FareInfos>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -3928,7 +3985,7 @@ aliases:
                 </TPA_Extensions>
               </FareInfo>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -3955,7 +4012,7 @@ aliases:
         </PTC_FareBreakdowns>
         <FareInfos>
           <FareInfo>
-            <FareReference>S</FareReference>
+            <FareReference>V</FareReference>
             <TPA_Extensions>
               <SeatsRemaining BelowMin="false" Number="9"/>
               <Cabin Cabin="Y"/>
@@ -3963,7 +4020,7 @@ aliases:
             </TPA_Extensions>
           </FareInfo>
           <FareInfo>
-            <FareReference>S</FareReference>
+            <FareReference>V</FareReference>
             <TPA_Extensions>
               <SeatsRemaining BelowMin="false" Number="9"/>
               <Cabin Cabin="Y"/>
@@ -3997,58 +4054,59 @@ aliases:
       <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
       <TPA_Extensions>
         <AdditionalFares>
-          <AirItineraryPricingInfo FareReturned="true" FlexibleFareID="2" LastTicketDate="2022-05-27" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
+          <AirItineraryPricingInfo FareReturned="true" FlexibleFareID="1" LastTicketDate="2022-06-01" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
             <ItinTotalFare>
-              <BaseFare Amount="2632.00" CurrencyCode="AUD" DecimalPlaces="2"/>
-              <FareConstruction Amount="1981.68" CurrencyCode="NUC" DecimalPlaces="2"/>
-              <EquivFare Amount="118440" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <BaseFare Amount="2517.00" CurrencyCode="AUD" DecimalPlaces="2"/>
+              <FareConstruction Amount="1893.67" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="104460" CurrencyCode="RUB" DecimalPlaces="0"/>
               <Taxes>
-                <Tax Amount="135800" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+                <Tax Amount="103432" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
               </Taxes>
-              <TotalFare Amount="254240" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <TotalFare Amount="207892" CurrencyCode="RUB" DecimalPlaces="0"/>
             </ItinTotalFare>
             <PTC_FareBreakdowns>
               <PTC_FareBreakdown>
                 <PassengerTypeQuantity Code="ADT" Quantity="2"/>
                 <FareBasisCodes>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">VNN0NPCE</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="HND" GovCarrier="JL">VNN0NPCE</FareBasisCode>
                   <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE</FareBasisCode>
                   <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE</FareBasisCode>
                 </FareBasisCodes>
                 <PassengerFare>
-                  <BaseFare Amount="752.00" CurrencyCode="AUD"/>
-                  <FareConstruction Amount="566.20" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="33840" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <BaseFare Amount="883.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="664.45" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="36645" CurrencyCode="RUB" DecimalPlaces="0"/>
                   <Taxes>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                    <Tax Amount="6678" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <TaxSummary Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                    <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <TaxSummary Amount="1456" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="6678" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="39005" CurrencyCode="RUB" DecimalPlaces="0"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="1354" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="6132" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="35933" CurrencyCode="RUB" DecimalPlaces="0"/>
                   </Taxes>
-                  <TotalFare Amount="72845" CurrencyCode="RUB"/>
+                  <TotalFare Amount="72578" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="24900" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
+                  </PenaltiesInfo>
                   <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
                     <BaggageInformationList>
                       <BaggageInformation AirlineCode="JL" ProvisionType="A">
                         <Segment Id="0"/>
@@ -4089,11 +4147,11 @@ aliases:
                 </PassengerFare>
                 <Endorsements NonRefundableIndicator="true"/>
                 <TPA_Extensions>
-                  <FareCalcLine Info="SYD JL X/TYO JL LON283.10JL X/TYO JL SYD283.10NUC566.20END ROE1.328146"/>
+                  <FareCalcLine Info="SYD JL X/TYO JL LON381.35JL X/TYO JL SYD283.10NUC664.45END ROE1.328146"/>
                 </TPA_Extensions>
                 <FareInfos>
                   <FareInfo>
-                    <FareReference>S</FareReference>
+                    <FareReference>V</FareReference>
                     <TPA_Extensions>
                       <SeatsRemaining BelowMin="false" Number="9"/>
                       <Cabin Cabin="Y"/>
@@ -4101,7 +4159,7 @@ aliases:
                     </TPA_Extensions>
                   </FareInfo>
                   <FareInfo>
-                    <FareReference>S</FareReference>
+                    <FareReference>V</FareReference>
                     <TPA_Extensions>
                       <SeatsRemaining BelowMin="false" Number="9"/>
                       <Cabin Cabin="Y"/>
@@ -4128,41 +4186,41 @@ aliases:
               <PTC_FareBreakdown>
                 <PassengerTypeQuantity Code="CNN" Quantity="1"/>
                 <FareBasisCodes>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">VNN0NPCE/CH25</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="HND" GovCarrier="JL">VNN0NPCE/CH25</FareBasisCode>
                   <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
                   <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
                 </FareBasisCodes>
                 <PassengerFare>
-                  <BaseFare Amount="564.00" CurrencyCode="AUD"/>
-                  <FareConstruction Amount="424.64" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="25380" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <BaseFare Amount="662.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="498.33" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="27475" CurrencyCode="RUB" DecimalPlaces="0"/>
                   <Taxes>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <TaxSummary Amount="724" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="28895" CurrencyCode="RUB" DecimalPlaces="0"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="672" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="26629" CurrencyCode="RUB" DecimalPlaces="0"/>
                   </Taxes>
-                  <TotalFare Amount="54275" CurrencyCode="RUB"/>
+                  <TotalFare Amount="54104" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="24900" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
+                  </PenaltiesInfo>
                   <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                      <Message FailCode="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
                     <BaggageInformationList>
                       <BaggageInformation AirlineCode="JL" ProvisionType="A">
                         <Segment Id="0"/>
@@ -4203,11 +4261,11 @@ aliases:
                 </PassengerFare>
                 <Endorsements NonRefundableIndicator="true"/>
                 <TPA_Extensions>
-                  <FareCalcLine Info="SYD JL X/TYO JL LON212.32JL X/TYO JL SYD212.32NUC424.64END ROE1.328146"/>
+                  <FareCalcLine Info="SYD JL X/TYO JL LON286.01JL X/TYO JL SYD212.32NUC498.33END ROE1.328146"/>
                 </TPA_Extensions>
                 <FareInfos>
                   <FareInfo>
-                    <FareReference>S</FareReference>
+                    <FareReference>V</FareReference>
                     <TPA_Extensions>
                       <SeatsRemaining BelowMin="false" Number="9"/>
                       <Cabin Cabin="Y"/>
@@ -4215,408 +4273,7 @@ aliases:
                     </TPA_Extensions>
                   </FareInfo>
                   <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                </FareInfos>
-              </PTC_FareBreakdown>
-              <PTC_FareBreakdown>
-                <PassengerTypeQuantity Code="INS" Quantity="1"/>
-                <FareBasisCodes>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                </FareBasisCodes>
-                <PassengerFare>
-                  <BaseFare Amount="564.00" CurrencyCode="AUD"/>
-                  <FareConstruction Amount="424.64" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="25380" CurrencyCode="RUB" DecimalPlaces="0"/>
-                  <Taxes>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <TaxSummary Amount="724" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="28895" CurrencyCode="RUB" DecimalPlaces="0"/>
-                  </Taxes>
-                  <TotalFare Amount="54275" CurrencyCode="RUB"/>
-                  <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                      <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
-                    <BaggageInformationList>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
-                        <Segment Id="0"/>
-                        <Segment Id="1"/>
-                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
-                        <Segment Id="2"/>
-                        <Segment Id="3"/>
-                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="0"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="1"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="BA" ProvisionType="B">
-                        <Segment Id="2"/>
-                        <Allowance Description1="UP TO 34 LINEAR INCHES/85 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="3"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                    </BaggageInformationList>
-                    <SeatSelectionList>
-                      <SeatSelection Type="N">
-                        <Segment ID="0"/>
-                        <Segment ID="1"/>
-                        <Segment ID="2"/>
-                        <Segment ID="3"/>
-                      </SeatSelection>
-                    </SeatSelectionList>
-                  </TPA_Extensions>
-                </PassengerFare>
-                <Endorsements NonRefundableIndicator="true"/>
-                <TPA_Extensions>
-                  <FareCalcLine Info="SYD JL X/TYO JL LON212.32JL X/TYO JL SYD212.32NUC424.64END ROE1.328146"/>
-                </TPA_Extensions>
-                <FareInfos>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                </FareInfos>
-              </PTC_FareBreakdown>
-            </PTC_FareBreakdowns>
-            <FareInfos>
-              <FareInfo>
-                <FareReference>S</FareReference>
-                <TPA_Extensions>
-                  <SeatsRemaining BelowMin="false" Number="9"/>
-                  <Cabin Cabin="Y"/>
-                  <Meal Code="M"/>
-                </TPA_Extensions>
-              </FareInfo>
-              <FareInfo>
-                <FareReference>S</FareReference>
-                <TPA_Extensions>
-                  <SeatsRemaining BelowMin="false" Number="9"/>
-                  <Cabin Cabin="Y"/>
-                  <Meal Code="M"/>
-                </TPA_Extensions>
-              </FareInfo>
-              <FareInfo>
-                <FareReference>S</FareReference>
-                <TPA_Extensions>
-                  <SeatsRemaining BelowMin="false" Number="9"/>
-                  <Cabin Cabin="Y"/>
-                </TPA_Extensions>
-              </FareInfo>
-              <FareInfo>
-                <FareReference>S</FareReference>
-                <TPA_Extensions>
-                  <SeatsRemaining BelowMin="false" Number="9"/>
-                  <Cabin Cabin="Y"/>
-                  <Meal Code="M"/>
-                </TPA_Extensions>
-              </FareInfo>
-            </FareInfos>
-            <TPA_Extensions>
-              <DivideInParty Indicator="false"/>
-              <AncillaryFeeGroups Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
-              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="BSP">
-                <Default Code="JL"/>
-              </ValidatingCarrier>
-            </TPA_Extensions>
-          </AirItineraryPricingInfo>
-          <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
-        </AdditionalFares>
-        <AdditionalFares>
-          <AirItineraryPricingInfo FareReturned="true" FlexibleFareID="3" LastTicketDate="2022-05-27" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
-            <ItinTotalFare>
-              <BaseFare Amount="2144.00" CurrencyCode="AUD" DecimalPlaces="2"/>
-              <FareConstruction Amount="1613.66" CurrencyCode="NUC" DecimalPlaces="2"/>
-              <EquivFare Amount="96480" CurrencyCode="RUB" DecimalPlaces="0"/>
-              <Taxes>
-                <Tax Amount="112286" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
-              </Taxes>
-              <TotalFare Amount="208766" CurrencyCode="RUB" DecimalPlaces="0"/>
-            </ItinTotalFare>
-            <PTC_FareBreakdowns>
-              <PTC_FareBreakdown>
-                <PassengerTypeQuantity Code="ADT" Quantity="2"/>
-                <FareBasisCodes>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE</FareBasisCode>
-                </FareBasisCodes>
-                <PassengerFare>
-                  <BaseFare Amount="752.00" CurrencyCode="AUD"/>
-                  <FareConstruction Amount="566.20" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="33840" CurrencyCode="RUB" DecimalPlaces="0"/>
-                  <Taxes>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                    <Tax Amount="6678" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <TaxSummary Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                    <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <TaxSummary Amount="1456" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="6678" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="39005" CurrencyCode="RUB" DecimalPlaces="0"/>
-                  </Taxes>
-                  <TotalFare Amount="72845" CurrencyCode="RUB"/>
-                  <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
-                    <BaggageInformationList>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
-                        <Segment Id="0"/>
-                        <Segment Id="1"/>
-                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
-                        <Segment Id="2"/>
-                        <Segment Id="3"/>
-                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="0"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="1"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="BA" ProvisionType="B">
-                        <Segment Id="2"/>
-                        <Allowance Description1="UP TO 34 LINEAR INCHES/85 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="3"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                    </BaggageInformationList>
-                    <SeatSelectionList>
-                      <SeatSelection Type="N">
-                        <Segment ID="0"/>
-                        <Segment ID="1"/>
-                        <Segment ID="2"/>
-                        <Segment ID="3"/>
-                      </SeatSelection>
-                    </SeatSelectionList>
-                  </TPA_Extensions>
-                </PassengerFare>
-                <Endorsements NonRefundableIndicator="true"/>
-                <TPA_Extensions>
-                  <FareCalcLine Info="SYD JL X/TYO JL LON283.10JL X/TYO JL SYD283.10NUC566.20END ROE1.328146"/>
-                </TPA_Extensions>
-                <FareInfos>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                </FareInfos>
-              </PTC_FareBreakdown>
-              <PTC_FareBreakdown>
-                <PassengerTypeQuantity Code="CNN" Quantity="1"/>
-                <FareBasisCodes>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/CH25</FareBasisCode>
-                </FareBasisCodes>
-                <PassengerFare>
-                  <BaseFare Amount="564.00" CurrencyCode="AUD"/>
-                  <FareConstruction Amount="424.64" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="25380" CurrencyCode="RUB" DecimalPlaces="0"/>
-                  <Taxes>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <TaxSummary Amount="724" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="28895" CurrencyCode="RUB" DecimalPlaces="0"/>
-                  </Taxes>
-                  <TotalFare Amount="54275" CurrencyCode="RUB"/>
-                  <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                      <Message FailCode="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
-                    <BaggageInformationList>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
-                        <Segment Id="0"/>
-                        <Segment Id="1"/>
-                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
-                        <Segment Id="2"/>
-                        <Segment Id="3"/>
-                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="0"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="1"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="BA" ProvisionType="B">
-                        <Segment Id="2"/>
-                        <Allowance Description1="UP TO 34 LINEAR INCHES/85 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
-                        <Segment Id="3"/>
-                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
-                      </BaggageInformation>
-                    </BaggageInformationList>
-                    <SeatSelectionList>
-                      <SeatSelection Type="N">
-                        <Segment ID="0"/>
-                        <Segment ID="1"/>
-                        <Segment ID="2"/>
-                        <Segment ID="3"/>
-                      </SeatSelection>
-                    </SeatSelectionList>
-                  </TPA_Extensions>
-                </PassengerFare>
-                <Endorsements NonRefundableIndicator="true"/>
-                <TPA_Extensions>
-                  <FareCalcLine Info="SYD JL X/TYO JL LON212.32JL X/TYO JL SYD212.32NUC424.64END ROE1.328146"/>
-                </TPA_Extensions>
-                <FareInfos>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
-                    <TPA_Extensions>
-                      <SeatsRemaining BelowMin="false" Number="9"/>
-                      <Cabin Cabin="Y"/>
-                      <Meal Code="M"/>
-                    </TPA_Extensions>
-                  </FareInfo>
-                  <FareInfo>
-                    <FareReference>S</FareReference>
+                    <FareReference>V</FareReference>
                     <TPA_Extensions>
                       <SeatsRemaining BelowMin="false" Number="9"/>
                       <Cabin Cabin="Y"/>
@@ -4643,33 +4300,33 @@ aliases:
               <PTC_FareBreakdown>
                 <PassengerTypeQuantity Code="INF" Quantity="1"/>
                 <FareBasisCodes>
-                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
-                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="V" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">VNN0NPCE/IN90</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="V" DepartureAirportCode="HND" GovCarrier="JL">VNN0NPCE/IN90</FareBasisCode>
                   <FareBasisCode ArrivalAirportCode="HND" BookingCode="S" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="Y" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="XEX" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
                   <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="S" DepartureAirportCode="HND" GovCarrier="JL">SNN0NPCE/IN90</FareBasisCode>
                 </FareBasisCodes>
                 <PassengerFare>
-                  <BaseFare Amount="76.00" CurrencyCode="AUD"/>
-                  <FareConstruction Amount="56.62" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="3420" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <BaseFare Amount="89.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="66.44" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="3695" CurrencyCode="RUB" DecimalPlaces="0"/>
                   <Taxes>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TaxSummary Amount="924" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="5381" CurrencyCode="RUB" DecimalPlaces="0"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="844" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="4937" CurrencyCode="RUB" DecimalPlaces="0"/>
                   </Taxes>
-                  <TotalFare Amount="8801" CurrencyCode="RUB"/>
+                  <TotalFare Amount="8632" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="24900" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
+                  </PenaltiesInfo>
                   <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="RFND RESTR APPLY" Type="N"/>
-                      <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
                     <BaggageInformationList>
                       <BaggageInformation AirlineCode="JL" ProvisionType="A">
                         <Segment Id="0"/>
@@ -4710,11 +4367,11 @@ aliases:
                 </PassengerFare>
                 <Endorsements NonRefundableIndicator="true"/>
                 <TPA_Extensions>
-                  <FareCalcLine Info="SYD JL X/TYO JL LON28.31JL X/TYO JL SYD28.31NUC56.62END ROE1.328146"/>
+                  <FareCalcLine Info="SYD JL X/TYO JL LON38.13JL X/TYO JL SYD28.31NUC66.44END ROE1.328146"/>
                 </TPA_Extensions>
                 <FareInfos>
                   <FareInfo>
-                    <FareReference>S</FareReference>
+                    <FareReference>V</FareReference>
                     <TPA_Extensions>
                       <SeatsRemaining BelowMin="false" Number="9"/>
                       <Cabin Cabin="Y"/>
@@ -4722,7 +4379,7 @@ aliases:
                     </TPA_Extensions>
                   </FareInfo>
                   <FareInfo>
-                    <FareReference>S</FareReference>
+                    <FareReference>V</FareReference>
                     <TPA_Extensions>
                       <SeatsRemaining BelowMin="false" Number="9"/>
                       <Cabin Cabin="Y"/>
@@ -4749,7 +4406,7 @@ aliases:
             </PTC_FareBreakdowns>
             <FareInfos>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -4757,7 +4414,7 @@ aliases:
                 </TPA_Extensions>
               </FareInfo>
               <FareInfo>
-                <FareReference>S</FareReference>
+                <FareReference>V</FareReference>
                 <TPA_Extensions>
                   <SeatsRemaining BelowMin="false" Number="9"/>
                   <Cabin Cabin="Y"/>
@@ -4791,15 +4448,15 @@ aliases:
           <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
         </AdditionalFares>
         <AdditionalFares>
-          <AirItineraryPricingInfo FareReturned="true" FlexibleFareID="4" LastTicketDate="2022-11-17" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
+          <AirItineraryPricingInfo FareReturned="true" FlexibleFareID="2" LastTicketDate="2022-11-17" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
             <ItinTotalFare>
               <BaseFare Amount="36119.00" CurrencyCode="AUD" DecimalPlaces="2"/>
               <FareConstruction Amount="27194.30" CurrencyCode="NUC" DecimalPlaces="2"/>
-              <EquivFare Amount="1625355" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <EquivFare Amount="1498945" CurrencyCode="RUB" DecimalPlaces="0"/>
               <Taxes>
-                <Tax Amount="143054" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+                <Tax Amount="131683" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
               </Taxes>
-              <TotalFare Amount="1768409" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <TotalFare Amount="1630628" CurrencyCode="RUB" DecimalPlaces="0"/>
             </ItinTotalFare>
             <PTC_FareBreakdowns>
               <PTC_FareBreakdown>
@@ -4813,30 +4470,30 @@ aliases:
                 <PassengerFare>
                   <BaseFare Amount="12673.00" CurrencyCode="AUD"/>
                   <FareConstruction Amount="9541.86" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="570285" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <EquivFare Amount="525930" CurrencyCode="RUB" DecimalPlaces="0"/>
                   <Taxes>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                    <Tax Amount="14708" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <Tax Amount="728" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <TaxSummary Amount="2700" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
-                    <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <TaxSummary Amount="1456" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="14708" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="47035" CurrencyCode="RUB" DecimalPlaces="0"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="1354" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="43306" CurrencyCode="RUB" DecimalPlaces="0"/>
                   </Taxes>
-                  <TotalFare Amount="617320" CurrencyCode="RUB"/>
+                  <TotalFare Amount="569236" CurrencyCode="RUB"/>
                   <PenaltiesInfo>
                     <Penalty Amount="0" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
                     <Penalty Amount="0" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
@@ -4844,11 +4501,6 @@ aliases:
                     <Penalty Amount="0" Applicability="After" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
                   </PenaltiesInfo>
                   <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="INTL FLT TO/FM JPN/JL ONLY" Type="N"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
                     <BaggageInformationList>
                       <BaggageInformation AirlineCode="JL" ProvisionType="A">
                         <Segment Id="0"/>
@@ -4936,28 +4588,28 @@ aliases:
                 <PassengerFare>
                   <BaseFare Amount="9505.00" CurrencyCode="AUD"/>
                   <FareConstruction Amount="7156.40" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="427725" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <EquivFare Amount="394460" CurrencyCode="RUB" DecimalPlaces="0"/>
                   <Taxes>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="9945" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <Tax Amount="1450" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
-                    <Tax Amount="14708" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <Tax Amount="362" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="20814" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
-                    <TaxSummary Amount="2900" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
-                    <TaxSummary Amount="724" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
-                    <TaxSummary Amount="14708" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="43603" CurrencyCode="RUB" DecimalPlaces="0"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="672" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="40134" CurrencyCode="RUB" DecimalPlaces="0"/>
                   </Taxes>
-                  <TotalFare Amount="471328" CurrencyCode="RUB"/>
+                  <TotalFare Amount="434594" CurrencyCode="RUB"/>
                   <PenaltiesInfo>
                     <Penalty Amount="0" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
                     <Penalty Amount="0" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
@@ -4965,12 +4617,6 @@ aliases:
                     <Penalty Amount="0" Applicability="After" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
                   </PenaltiesInfo>
                   <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="INTL FLT TO/FM JPN/JL ONLY" Type="N"/>
-                      <Message FailCode="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
                     <BaggageInformationList>
                       <BaggageInformation AirlineCode="JL" ProvisionType="A">
                         <Segment Id="0"/>
@@ -5058,18 +4704,18 @@ aliases:
                 <PassengerFare>
                   <BaseFare Amount="1268.00" CurrencyCode="AUD"/>
                   <FareConstruction Amount="954.18" CurrencyCode="NUC" DecimalPlaces="2"/>
-                  <EquivFare Amount="57060" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <EquivFare Amount="52625" CurrencyCode="RUB" DecimalPlaces="0"/>
                   <Taxes>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="231" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <Tax Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TaxSummary Amount="924" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
-                    <TaxSummary Amount="4457" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
-                    <TotalTax Amount="5381" CurrencyCode="RUB" DecimalPlaces="0"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="844" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="4937" CurrencyCode="RUB" DecimalPlaces="0"/>
                   </Taxes>
-                  <TotalFare Amount="62441" CurrencyCode="RUB"/>
+                  <TotalFare Amount="57562" CurrencyCode="RUB"/>
                   <PenaltiesInfo>
                     <Penalty Amount="0" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
                     <Penalty Amount="0" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
@@ -5077,12 +4723,402 @@ aliases:
                     <Penalty Amount="0" Applicability="After" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
                   </PenaltiesInfo>
                   <TPA_Extensions>
-                    <Messages>
-                      <Message AirlineCode="JL" FailCode="0" Info="INTL FLT TO/FM JPN/JL ONLY" Type="N"/>
-                      <Message FailCode="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-                      <Message FailCode="0" Info="VALIDATING CARRIER" Type="W"/>
-                      <Message FailCode="0" Info="BSP - JL" Type="W"/>
-                    </Messages>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="BA" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 50 POUNDS/127 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="N">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD JL X/TYO JL LON477.09JL X/TYO JL SYD477.09NUC954.18END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Y</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Y</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="S"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="S"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+            </PTC_FareBreakdowns>
+            <FareInfos>
+              <FareInfo>
+                <FareReference>Y</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>Y</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="Y"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>W</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="S"/>
+                </TPA_Extensions>
+              </FareInfo>
+              <FareInfo>
+                <FareReference>W</FareReference>
+                <TPA_Extensions>
+                  <SeatsRemaining BelowMin="false" Number="9"/>
+                  <Cabin Cabin="S"/>
+                  <Meal Code="M"/>
+                </TPA_Extensions>
+              </FareInfo>
+            </FareInfos>
+            <TPA_Extensions>
+              <DivideInParty Indicator="false"/>
+              <AncillaryFeeGroups Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
+              <ValidatingCarrier NewVcxProcess="true" SettlementMethod="BSP">
+                <Default Code="JL"/>
+              </ValidatingCarrier>
+            </TPA_Extensions>
+          </AirItineraryPricingInfo>
+          <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
+        </AdditionalFares>
+        <AdditionalFares>
+          <AirItineraryPricingInfo FareReturned="true" FlexibleFareID="3" LastTicketDate="2022-11-17" LastTicketTime="23:59" PricingSource="ADVJR1" PricingSubSource="MIP">
+            <ItinTotalFare>
+              <BaseFare Amount="36119.00" CurrencyCode="AUD" DecimalPlaces="2"/>
+              <FareConstruction Amount="27194.30" CurrencyCode="NUC" DecimalPlaces="2"/>
+              <EquivFare Amount="1498945" CurrencyCode="RUB" DecimalPlaces="0"/>
+              <Taxes>
+                <Tax Amount="131683" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="TOTALTAX"/>
+              </Taxes>
+              <TotalFare Amount="1630628" CurrencyCode="RUB" DecimalPlaces="0"/>
+            </ItinTotalFare>
+            <PTC_FareBreakdowns>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="ADT" Quantity="2"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="Y" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="EU" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">YNN0NP1A</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Y" DepartureAirportCode="HND" GovCarrier="JL">YNN0NP1A</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="W" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="S" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="WU" FareComponentFareTypeBitmap="00" FareComponentVendorCode="ATP" GovCarrier="JL">WNN0NP1A</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="W" DepartureAirportCode="HND" GovCarrier="JL">WNN0NP1A</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="12673.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="9541.86" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="525930" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <Tax Amount="677" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <TaxSummary Amount="2490" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="AU"/>
+                    <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="1354" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="43306" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="569236" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="0" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="0" Applicability="After" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="BA" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Description1="UP TO 34 LINEAR INCHES/85 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="N">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD JL X/TYO JL LON4770.93JL X/TYO JL SYD4770.93NUC9541.86END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Y</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Y</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="S"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="S"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="CNN" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="Y" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="EU" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">YNN0NP1A/CH25</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Y" DepartureAirportCode="HND" GovCarrier="JL">YNN0NP1A/CH25</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="W" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="S" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="WU" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">WNN0NP1A/CH25</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="W" DepartureAirportCode="HND" GovCarrier="JL">WNN0NP1A/CH25</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="9505.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="7156.40" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="394460" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="9172" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <Tax Amount="1338" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY2"/>
+                    <Tax Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <Tax Amount="336" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="19188" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQF"/>
+                    <TaxSummary Amount="2676" CountryCode="AU" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="WY"/>
+                    <TaxSummary Amount="672" CountryCode="JP" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="SW"/>
+                    <TaxSummary Amount="13505" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="GB"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="40134" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="434594" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="0" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="0" Applicability="After" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
+                    <BaggageInformationList>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
+                        <Segment Id="0"/>
+                        <Segment Id="1"/>
+                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="A">
+                        <Segment Id="2"/>
+                        <Segment Id="3"/>
+                        <Allowance Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 80 LINEAR INCHES/203 LINEAR CENTIMETERS" Pieces="2"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="0"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="1"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="BA" ProvisionType="B">
+                        <Segment Id="2"/>
+                        <Allowance Description1="UP TO 34 LINEAR INCHES/85 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                      <BaggageInformation AirlineCode="JL" ProvisionType="B">
+                        <Segment Id="3"/>
+                        <Allowance Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" Pieces="1"/>
+                      </BaggageInformation>
+                    </BaggageInformationList>
+                    <SeatSelectionList>
+                      <SeatSelection Type="N">
+                        <Segment ID="0"/>
+                        <Segment ID="1"/>
+                        <Segment ID="2"/>
+                        <Segment ID="3"/>
+                      </SeatSelection>
+                    </SeatSelectionList>
+                  </TPA_Extensions>
+                </PassengerFare>
+                <Endorsements NonRefundableIndicator="false"/>
+                <TPA_Extensions>
+                  <FareCalcLine Info="SYD JL X/TYO JL LON3578.20JL X/TYO JL SYD3578.20NUC7156.40END ROE1.328146"/>
+                </TPA_Extensions>
+                <FareInfos>
+                  <FareInfo>
+                    <FareReference>Y</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>Y</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="Y"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="S"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                  <FareInfo>
+                    <FareReference>W</FareReference>
+                    <TPA_Extensions>
+                      <SeatsRemaining BelowMin="false" Number="9"/>
+                      <Cabin Cabin="S"/>
+                      <Meal Code="M"/>
+                    </TPA_Extensions>
+                  </FareInfo>
+                </FareInfos>
+              </PTC_FareBreakdown>
+              <PTC_FareBreakdown>
+                <PassengerTypeQuantity Code="INF" Quantity="1"/>
+                <FareBasisCodes>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="Y" DepartureAirportCode="SYD" FareComponentBeginAirport="SYD" FareComponentCabinCode="Y" FareComponentDirectionality="FROM" FareComponentEndAirport="LHR" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="EU" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">YNN0NP1A/IN90</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="LHR" AvailabilityBreak="true" BookingCode="Y" DepartureAirportCode="HND" GovCarrier="JL">YNN0NP1A/IN90</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="HND" BookingCode="W" DepartureAirportCode="LHR" FareComponentBeginAirport="LHR" FareComponentCabinCode="S" FareComponentDirectionality="TO" FareComponentEndAirport="SYD" FareComponentFareRule="2291" FareComponentFareTariff="44" FareComponentFareType="WU" FareComponentFareTypeBitmap="01" FareComponentVendorCode="ATP" GovCarrier="JL">WNN0NP1A/IN90</FareBasisCode>
+                  <FareBasisCode ArrivalAirportCode="SYD" AvailabilityBreak="true" BookingCode="W" DepartureAirportCode="HND" GovCarrier="JL">WNN0NP1A/IN90</FareBasisCode>
+                </FareBasisCodes>
+                <PassengerFare>
+                  <BaseFare Amount="1268.00" CurrencyCode="AUD"/>
+                  <FareConstruction Amount="954.18" CurrencyCode="NUC" DecimalPlaces="2"/>
+                  <EquivFare Amount="52625" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  <Taxes>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="211" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <Tax Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TaxSummary Amount="844" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="YQI"/>
+                    <TaxSummary Amount="4093" CountryCode="GB" CurrencyCode="RUB" DecimalPlaces="0" TaxCode="UB"/>
+                    <TotalTax Amount="4937" CurrencyCode="RUB" DecimalPlaces="0"/>
+                  </Taxes>
+                  <TotalFare Amount="57562" CurrencyCode="RUB"/>
+                  <PenaltiesInfo>
+                    <Penalty Amount="0" Applicability="Before" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="After" Changeable="true" CurrencyCode="RUB" DecimalPlaces="0" Type="Exchange"/>
+                    <Penalty Amount="0" Applicability="Before" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                    <Penalty Amount="0" Applicability="After" Cat16Info="true" CurrencyCode="RUB" DecimalPlaces="0" Refundable="true" Type="Refund"/>
+                  </PenaltiesInfo>
+                  <TPA_Extensions>
                     <BaggageInformationList>
                       <BaggageInformation AirlineCode="JL" ProvisionType="A">
                         <Segment Id="0"/>
@@ -5204,7 +5240,7 @@ aliases:
           <TicketingInfo TicketType="eTicket" ValidInterline="Yes"/>
         </AdditionalFares>
         <ValidatingCarrier Code="JL"/>
-        <DiversitySwapper WeighedPriceAmount="533239"/>
+        <DiversitySwapper WeighedPriceAmount="531006"/>
       </TPA_Extensions>
     </PricedItinerary>
     <!--Другие рекомендации-->
@@ -5245,21 +5281,38 @@ aliases:
       <SeatSelection Info="true"/>
       <FlexibleFares>
         <FareParameters>
-          <Cabin Type="Business"/>
           <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+          <Baggage FreePieceRequired="true"/>
         </FareParameters>
         <FareParameters>
-          <PassengerTypeQuantity Code="ADT" Quantity="2"/>
-          <PassengerTypeQuantity Code="CNN" Quantity="1"/>
-          <PassengerTypeQuantity Code="INS" Quantity="1"/>
-        </FareParameters>
-        <FareParameters>
-          <PublicFare Ind="true"/>
-        </FareParameters>
-        <FareParameters>
+          <KeepSameCabin Enabled="true"/>
           <VoluntaryChanges Match="All">
+            <Penalty Type="Exchange"/>
             <Penalty Type="Refund"/>
           </VoluntaryChanges>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="All">
+            <Penalty Amount="1000" CurrencyCode="RUB" Type="Exchange"/>
+            <Penalty Amount="1000" CurrencyCode="RUB" Type="Refund"/>
+          </VoluntaryChanges>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <Cabin Type="Business"/>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
+        </FareParameters>
+        <FareParameters>
+          <PrivateFare Ind="true"/>
+          <KeepSameCabin Enabled="true"/>
+          <VoluntaryChanges Match="Info"/>
+          <BrandedFareIndicators SingleBrandedFare="true"/>
         </FareParameters>
       </FlexibleFares>
       <DiversityParameters AdditionalNonStopsPercentage="100"/>
@@ -5306,14 +5359,17 @@ aliases:
 {{< details title="Пример ответа" >}}
 ```XML
 <GroupedItineraryResponse Version="6.5.0" xmlns="http://webservices.sabre.com/wsdl/sabreXML1.0.00/shopping/GroupedItineraryResponse" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Message Code="ASE002LPSPILABE.IDM.SGDCPROD.SABRE.COM" Severity="Info" Text="27032" Type="SERVER"/>
-  <Message Code="TRANSACTIONID" Severity="Info" Text="6963626362483069372" Type="WORKERTHREAD"/>
+  <Message Code="GCC14-ISELL-TN-00-2022-05-00-1T36" Severity="Info" Text="27032" Type="SERVER"/>
+  <Message Code="TRANSACTIONID" Severity="Info" Text="8850841971214793916" Type="WORKERTHREAD"/>
   <Message Code="RULEID" Severity="Info" Text="15936" Type="DRE"/>
   <Message Code="RULEID" Severity="Info" Text="27757" Type="DEFAULT"/>
-  <Message Code="PROCESS" NumberOfOccurences="3" Severity="Error" Text="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
-  <Message Code="PROCESS" NumberOfOccurences="6" Severity="Error" Text="Communication error: Transmission timeout" Type="MIP"/>
+  <Message Code="PROCESS" Severity="Error" Text="NO SOLUTION PASSED INTERLINE TICKETING VALIDATION" Type="MIP"/>
+  <Message Code="PROCESS" NumberOfOccurences="22" Severity="Error" Text="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
+  <Message Code="PROCESS" NumberOfOccurences="2" Severity="Error" Text="NO PRIVATE FARES VALID FOR PASSENGER TYPE/CLASS OF SERVICE" Type="MIP"/>
+  <Message Code="PROCESS" NumberOfOccurences="2" Severity="Error" Text="MAXIMUM PENALTY IS TOO RESTRICTIVE: NO FARES WITH CHANGE PENALTY LESS THAN 1000 RUB" Type="MIP"/>
+  <Message Code="PROCESS" Severity="Error" Text="MAXIMUM PENALTY IS TOO RESTRICTIVE: NO FARES WITH REFUND PENALTY LESS THAN 1000 RUB" Type="MIP"/>
   <Message Code="MIP" Severity="Info" ShortCode="MIP:5053" Text="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
-  <Statistics Itineraries="164"/>
+  <Statistics Itineraries="200"/>
   <ScheduleDesc ETicketable="true" ElapsedTime="700" Frequency="SMTWTFS" ID="1" Stops="0" TotalMilesFlown="5974">
     <Departure Airport="LHR" City="LON" Country="GB" Terminal="5" Time="13:45:00Z"/>
     <Arrival Airport="HND" City="TYO" Country="JP" DateAdjustment="1" Terminal="3" Time="10:25:00+09:00"/>
@@ -5321,800 +5377,248 @@ aliases:
       <Equipment Code="789" TypeForFirstLeg="W" TypeForLastLeg="W"/>
     </Carrier>
   </ScheduleDesc>
-  <ScheduleDesc ETicketable="true" ElapsedTime="905" Frequency="SMTWTF*" ID="2" Stops="0" TotalMilesFlown="7417">
+  <ScheduleDesc ETicketable="true" ElapsedTime="80" Frequency="SMTWTF*" ID="2" Stops="0" TotalMilesFlown="231">
+    <Departure Airport="LHR" City="LON" Country="GB" Terminal="3" Time="11:45:00Z"/>
+    <Arrival Airport="AMS" City="AMS" Country="NL" Time="14:05:00+01:00"/>
+    <Carrier Marketing="KL" MarketingFlightNumber="1010" Operating="KL" OperatingFlightNumber="1010">
+      <Equipment Code="73H" TypeForFirstLeg="N" TypeForLastLeg="N"/>
+    </Carrier>
+  </ScheduleDesc>
+  <ScheduleDesc ETicketable="true" ElapsedTime="905" Frequency="SMTWTF*" ID="3" Stops="0" TotalMilesFlown="7417">
     <Departure Airport="SFO" City="SFO" Country="US" State="CA" Terminal="I" Time="23:00:00-08:00"/>
     <Arrival Airport="SYD" City="SYD" Country="AU" DateAdjustment="2" State="NS" Terminal="1" Time="09:05:00+11:00"/>
     <Carrier Marketing="UA" MarketingFlightNumber="863" Operating="UA" OperatingFlightNumber="863">
       <Equipment Code="789" TypeForFirstLeg="W" TypeForLastLeg="W"/>
     </Carrier>
   </ScheduleDesc>
-  <ScheduleDesc ETicketable="true" ElapsedTime="630" Frequency="SMTWTF*" ID="3" Stops="0" TotalMilesFlown="5456">
+  <ScheduleDesc ETicketable="true" ElapsedTime="900" Frequency="**TWTF*" ID="4" Stops="0" TotalMilesFlown="7488" TrafficRestriction="Q">
+    <Departure Airport="LAX" City="LAX" Country="US" State="CA" Terminal="3" Time="22:30:00-08:00"/>
+    <Arrival Airport="SYD" City="SYD" Country="AU" DateAdjustment="2" State="NS" Terminal="1" Time="08:30:00+11:00"/>
+    <Carrier Alliances="*S " Disclosure="DL" Marketing="AF" MarketingFlightNumber="8958" Operating="DL" OperatingFlightNumber="41">
+      <Equipment Code="359" TypeForFirstLeg="W" TypeForLastLeg="W"/>
+    </Carrier>
+  </ScheduleDesc>
+  <ScheduleDesc ETicketable="true" ElapsedTime="630" Frequency="SMTWTF*" ID="5" Stops="0" TotalMilesFlown="5456">
     <Departure Airport="LAX" City="LAX" Country="US" State="CA" Terminal="7" Time="17:30:00-08:00"/>
     <Arrival Airport="LHR" City="LON" Country="GB" DateAdjustment="1" Terminal="2" Time="12:00:00Z"/>
     <Carrier Marketing="UA" MarketingFlightNumber="923" Operating="UA" OperatingFlightNumber="923">
       <Equipment Code="789" TypeForFirstLeg="W" TypeForLastLeg="W"/>
     </Carrier>
   </ScheduleDesc>
-  <ScheduleDesc ETicketable="true" ElapsedTime="770" Frequency="SMTWTFS" ID="4" Stops="0" TotalMilesFlown="5974">
-    <Departure Airport="HND" City="TYO" Country="JP" Terminal="3" Time="13:15:00+09:00"/>
-    <Arrival Airport="LHR" City="LON" Country="GB" Terminal="5" Time="17:05:00Z"/>
-    <Carrier Disclosure="BA" Marketing="JL" MarketingFlightNumber="7121" Operating="BA" OperatingFlightNumber="6">
-      <Equipment Code="789" TypeForFirstLeg="W" TypeForLastLeg="W"/>
-    </Carrier>
-  </ScheduleDesc>
-  <ScheduleDesc ETicketable="true" ElapsedTime="795" Frequency="S*TW*F*" ID="5" Stops="0" TotalMilesFlown="5958">
-    <Departure Airport="BKK" City="BKK" Country="TH" Time="13:20:00+07:00"/>
-    <Arrival Airport="LHR" City="LON" Country="GB" Terminal="2" Time="19:35:00Z"/>
-    <Carrier Marketing="TG" MarketingFlightNumber="916" Operating="TG" OperatingFlightNumber="916">
-      <Equipment Code="789" TypeForFirstLeg="W" TypeForLastLeg="W"/>
-    </Carrier>
-  </ScheduleDesc>
   <!--Другие рейсы-->
-  <TaxDesc Amount="252" Code="QR2" Country="AU" Currency="RUB" Description="PASSENGER SERVICE CHARGE DOMESTIC ARRIVAL" ID="1" PublishedAmount="5.59" PublishedCurrency="AUD" Station="SYD"/>
-  <TaxDesc Amount="4770" Code="YQF" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED FUEL" ID="2" PublishedAmount="106.00" PublishedCurrency="AUD" Station="SYD"/>
-  <TaxDesc Amount="58" Code="YQI" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED MISC" ID="3" PublishedAmount="0.90" PublishedCurrency="USD" Station="ICN"/>
-  <TaxDesc Amount="10356" Code="YRF" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED FUEL" ID="4" PublishedAmount="161.80" PublishedCurrency="USD" Station="SYD"/>
-  <TaxDesc Amount="291" Code="G1" Country="MY" Currency="RUB" Description="DEPARTURE LEVY" ID="5" PublishedAmount="20.00" PublishedCurrency="MYR" Station="KUL"/>
+  <TaxDesc Amount="13505" Code="GB" Country="GB" Currency="RUB" Description="AIR PASSENGER DUTY APD" ID="1" PublishedAmount="185.00" PublishedCurrency="GBP" Station="LHR"/>
+  <TaxDesc Amount="1164" Code="TS" Country="TH" Currency="RUB" Description="PASSENGER SERVICE CHARGE" ID="2" PublishedAmount="700" PublishedCurrency="THB" Station="BKK"/>
+  <TaxDesc Amount="964" Code="QA" Country="QA" Currency="RUB" Description="AIRPORT FEE INTERNATIONAL" ID="3" PublishedAmount="60.00" PublishedCurrency="QAR" Station="DOH"/>
+  <TaxDesc Amount="666" Code="YRI" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED MISC" ID="4" PublishedAmount="11.00" PublishedCurrency="EUR" Station="SYD"/>
+  <TaxDesc Amount="6132" Code="GB" Country="GB" Currency="RUB" Description="AIR PASSENGER DUTY APD" ID="5" PublishedAmount="84.00" PublishedCurrency="GBP" Station="LCY"/>
   <!--Другие таксы-->
-  <TaxSummaryDesc Amount="898" Code="I5" Country="HK" Currency="RUB" Description="AIRPORT PASSENGER SECURITY CHARGE" ID="1" PublishedAmount="55" PublishedCurrency="HKD" Station="HKG"/>
-  <TaxSummaryDesc Amount="20814" Code="YQF" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED FUEL" ID="2" PublishedAmount="221.00" PublishedCurrency="AUD" Station="SYD"/>
-  <TaxSummaryDesc Amount="291" Code="G1" Country="MY" Currency="RUB" Description="DEPARTURE LEVY" ID="3" PublishedAmount="20.00" PublishedCurrency="MYR" Station="KUL"/>
-  <TaxSummaryDesc Amount="38250" Code="YQI" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED MISC" ID="4" PublishedAmount="425.00" PublishedCurrency="AUD" Station="SYD"/>
-  <TaxSummaryDesc Amount="13735" Code="YRF" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED FUEL" ID="5" PublishedAmount="1.00" PublishedCurrency="EUR" Station="CDG"/>
+  <TaxSummaryDesc Amount="2828" Code="WY" Country="AU" Currency="RUB" Description="PASSENGER SERVICES CHARGE DEPARTURE INTERNATIONAL" ID="1" PublishedAmount="23.46" PublishedCurrency="AUD" Station="MEL"/>
+  <TaxSummaryDesc Amount="1505" Code="WG" Country="AU" Currency="RUB" Description="SAFETY AND SECURITY CHARGE DEPARTURE" ID="2" PublishedAmount="6.50" PublishedCurrency="AUD" Station="SYD"/>
+  <TaxSummaryDesc Amount="13505" Code="GB" Country="GB" Currency="RUB" Description="AIR PASSENGER DUTY APD" ID="3" PublishedAmount="185.00" PublishedCurrency="GBP" Station="LHR"/>
+  <TaxSummaryDesc Amount="1164" Code="TS" Country="TH" Currency="RUB" Description="PASSENGER SERVICE CHARGE" ID="4" PublishedAmount="700" PublishedCurrency="THB" Station="BKK"/>
+  <TaxSummaryDesc Amount="19188" Code="YQF" Currency="RUB" Description="SERVICE FEE - CARRIER-IMPOSED FUEL" ID="5" PublishedAmount="221.00" PublishedCurrency="AUD" Station="SYD"/>
   <!--Другие таксы-->
   <OBFeeDesc Amount="0" Currency="RUB" ID="1"/>
   <BrandFeatureDesc Application="F" CommercialName="PRIORITY IMMIGRATION" ID="1" ServiceGroup="TS" ServiceType="T" SubCode="0LW" Vendor="ATP"/>
-  <BrandFeatureDesc Application="F" CommercialName="75 PERCENT MILES EARNED" ID="2" ServiceGroup="BF" ServiceType="Z" SubCode="06C" Vendor="ATP"/>
-  <BrandFeatureDesc Application="F" CommercialName="GOLF EQUIPMENT UP TO 15 KG" ID="3" ServiceGroup="BG" ServiceType="C" SubCode="0D4" Vendor="ATP"/>
-  <BrandFeatureDesc Application="C" CommercialName="SECOND EXCESS BAG" ID="4" ServiceGroup="BG" ServiceType="C" SubCode="0CD" Vendor="ATP"/>
+  <BrandFeatureDesc Application="C" CommercialName="PREFERRED SEAT SELECTION" ID="2" ServiceGroup="BF" ServiceType="Z" SubCode="VS6" Vendor="ATP"/>
+  <BrandFeatureDesc Application="F" CommercialName="75 PERCENT MILES EARNED" ID="3" ServiceGroup="BF" ServiceType="Z" SubCode="06C" Vendor="ATP"/>
+  <BrandFeatureDesc Application="F" CommercialName="GOLF EQUIPMENT UP TO 15 KG" ID="4" ServiceGroup="BG" ServiceType="C" SubCode="0D4" Vendor="ATP"/>
   <BrandFeatureDesc Application="C" CommercialName="AUH BUSINESS CLASS LOUNGE" ID="5" ServiceGroup="LG" ServiceType="F" SubCode="0AG" Vendor="ATP"/>
   <!--Другие услуги-->
-  <FareComponentDesc ApplicablePricingCategories="2 3 4 5 7 8 9 10 12 15 16 18 19 23" CabinCode="Y" Direction="EH" Directionality="FROM" FareAmount="563.84" FareBasisCode="QLXC2AUCH" FareCurrency="AUD" FarePassengerType="CNN" FareRule="AUGD" FareTariff="4" FareType="XEX" FareTypeBitmap="01" GoverningCarrier="EY" ID="1" NotValidAfter="2022-12-01" NotValidBefore="2022-12-01" PublishedFareAmount="1498.00" VendorCode="ATP">
-    <Segment/>
-    <Segment/>
-    <Segment Stopover="true">
-      <Surcharge Amount="25.00" Currency="NUC" Description="MISCELLANEOUS/OTHER" Type="Q"/>
+  <FareComponentDesc ApplicablePricingCategories="2 3 4 5 7 8 9 10 12 15 16 18 19 23" CabinCode="C" Direction="EH" Directionality="TO" FareAmount="3730.38" FareBasisCode="DXAC4AUCH" FareCurrency="AUD" FarePassengerType="CNN" FareRule="AUGD" FareTariff="4" FareType="BAP" FareTypeBitmap="01" GoverningCarrier="EY" ID="1" NotValidAfter="2022-12-08" NotValidBefore="2022-12-08" PublishedFareAmount="9909.00" VendorCode="ATP">
+    <Segment>
+      <Surcharge Amount="100.00" Currency="NUC" Description="MISCELLANEOUS/OTHER" Type="Q"/>
     </Segment>
-    <Brand BrandName="ECONOMY CHOICE" Code="YC" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="125938" ProgramSystemCode="M"/>
-  </FareComponentDesc>
-  <FareComponentDesc ApplicablePricingCategories="2 3 4 5 7 8 9 10 12 15 16 18 23" CabinCode="Y" Direction="EH" Directionality="FROM" FareAmount="778.15" FareBasisCode="QLWC2AU" FareCurrency="AUD" FarePassengerType="ADT" FareRule="AUGD" FareTariff="4" FareType="XEX" FareTypeBitmap="00" GoverningCarrier="EY" ID="2" NotValidAfter="2022-12-01" NotValidBefore="2022-12-01" PublishedFareAmount="2067.00" VendorCode="ATP">
     <Segment/>
-    <Segment Stopover="true">
-      <Surcharge Amount="25.00" Currency="NUC" Description="MISCELLANEOUS/OTHER" Type="Q"/>
-    </Segment>
-    <Brand BrandName="ECONOMY CHOICE" Code="YC" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="125938" ProgramSystemCode="M"/>
+    <Brand BrandName="BUSINESS CHOICE" Code="JC" ProgramCode="CFFEY" ProgramDescription="17AUD BP30" ProgramID="125938" ProgramSystemCode="M"/>
   </FareComponentDesc>
-  <FareComponentDesc ApplicablePricingCategories="4 5 7 8 9 10 15 16 18 19" CabinCode="S" Direction="TS" Directionality="FROM" FareAmount="546.62" FareBasisCode="RNN0NPCE/CH25" FareCurrency="AUD" FarePassengerType="CNN" FareRule="2291" FareTariff="44" FareType="ZEX" FareTypeBitmap="01" GoverningCarrier="JL" ID="3" NotValidAfter="2023-12-01" PublishedFareAmount="1452.00" TicketDesignator="CH25" VendorCode="ATP">
+  <FareComponentDesc ApplicablePricingCategories="1 10 11 14 15 19 23 25 35" CabinCode="Y" Direction="EH" Directionality="TO" FareAmount="571.47" FareBasisCode="W33AURL1PO/CH25" FareCurrency="AUD" FarePassengerType="CNN" FareRule="AUPO" FareTariff="901" FareType="XEX" FareTypeBitmap="0F" GoverningCarrier="SQ" ID="2" NegotiatedFare="true" NotValidAfter="2023-12-01" PrivateFare="true" PublishedFareAmount="1518.00" TicketDesignator="CH25" VendorCode="ATP">
+    <Segment/>
+    <Segment/>
+    <Brand BrandName="ECONOMY STANDARD" Code="YCLSTD" ProgramCode="CFFSQ" ProgramDescription="SYSTEMWIDE" ProgramID="138323" ProgramSystemCode="L"/>
+  </FareComponentDesc>
+  <FareComponentDesc ApplicablePricingCategories="1 2 3 4 5 6 7 8 9 10 11 12 14 16 18 19 23" CabinCode="Y" Direction="AP" Directionality="FROM" FareAmount="1257.85" FareBasisCode="YS00AENW/CH" FareCurrency="AUD" FarePassengerType="CNN" FareRule="E9NN" FareTariff="307" FareType="EU" FareTypeBitmap="01" GoverningCarrier="VS" ID="3" NotValidAfter="2023-12-01" PublishedFareAmount="3342.00" TicketDesignator="CH" VendorCode="ATP">
+    <Segment/>
+    <Segment Stopover="true"/>
+    <Brand BrandName="ECONOMY CLASSIC FULLY FLEX" Code="YFULLFLEX" ProgramCode="CFFVS" ProgramDescription="EX ROW DEFAULT" ProgramID="136131" ProgramSystemCode="X"/>
+  </FareComponentDesc>
+  <FareComponentDesc ApplicablePricingCategories="4 5 7 8 9 10 15 16 18 19" CabinCode="S" Direction="TS" Directionality="FROM" FareAmount="546.62" FareBasisCode="RNN0NPCE/CH25" FareCurrency="AUD" FarePassengerType="CNN" FareRule="2291" FareTariff="44" FareType="ZEX" FareTypeBitmap="01" GoverningCarrier="JL" ID="4" NotValidAfter="2023-12-01" PublishedFareAmount="1452.00" TicketDesignator="CH25" VendorCode="ATP">
     <Segment/>
     <Segment Stopover="true"/>
   </FareComponentDesc>
-  <FareComponentDesc ApplicablePricingCategories="4 5 7 8 9 10 15 16 18 19" CabinCode="Y" Direction="TS" Directionality="TO" FareAmount="28.31" FareBasisCode="SNN0NPCE/IN90" FareCurrency="AUD" FarePassengerType="INF" FareRule="2291" FareTariff="44" FareType="XEX" FareTypeBitmap="01" GoverningCarrier="JL" ID="4" NotValidAfter="2023-12-01" PublishedFareAmount="76.00" TicketDesignator="IN90" VendorCode="ATP">
+  <FareComponentDesc ApplicablePricingCategories="4 5 7 8 9 10 15 16 18 19" CabinCode="Y" Direction="TS" Directionality="TO" FareAmount="28.31" FareBasisCode="SNN0NPCE/IN90" FareCurrency="AUD" FarePassengerType="INF" FareRule="2291" FareTariff="44" FareType="XEX" FareTypeBitmap="01" GoverningCarrier="JL" ID="5" NotValidAfter="2023-12-01" PublishedFareAmount="76.00" TicketDesignator="IN90" VendorCode="ATP">
     <Segment/>
     <Segment/>
-  </FareComponentDesc>
-  <FareComponentDesc ApplicablePricingCategories="4 5 7 8 9 10 16 18 19" CabinCode="C" Direction="TS" Directionality="FROM" FareAmount="267.28" FareBasisCode="DOP/IN90" FareCurrency="AUD" FarePassengerType="INF" FareRule="OP20" FareTariff="44" FareType="BX" FareTypeBitmap="01" GoverningCarrier="OZ" ID="5" NotValidAfter="2023-12-01" PublishedFareAmount="710.00" TicketDesignator="IN90" VendorCode="ATP">
-    <Segment/>
-    <Segment Stopover="true"/>
   </FareComponentDesc>
   <!--Другие компоненты тарифов-->
   <ValidatingCarrierDesc ID="1" NewVcxProcess="true" SettlementMethod="BSP">
     <Default Code="HR"/>
   </ValidatingCarrierDesc>
-  <ValidatingCarrierDesc ID="2" NewVcxProcess="true" SettlementMethod="BSP">
-    <Default Code="UA"/>
+  <ValidatingCarrierDesc ID="2" NewVcxProcess="true" SettlementMethod="TCH">
+    <Default Code="EK"/>
   </ValidatingCarrierDesc>
   <ValidatingCarrierDesc ID="3" NewVcxProcess="true" SettlementMethod="BSP">
-    <Default Code="AF"/>
+    <Default Code="QR"/>
   </ValidatingCarrierDesc>
   <ValidatingCarrierDesc ID="4" NewVcxProcess="true" SettlementMethod="BSP">
-    <Default Code="MH"/>
+    <Default Code="UA"/>
   </ValidatingCarrierDesc>
   <ValidatingCarrierDesc ID="5" NewVcxProcess="true" SettlementMethod="BSP">
-    <Default Code="UL"/>
+    <Default Code="AF"/>
   </ValidatingCarrierDesc>
   <!--Другие валидирующие перевозчики-->
-  <BaggageAllowanceDesc Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" ID="1" Pieces="1"/>
-  <BaggageAllowanceDesc ID="2" Unit="kg" Weight="40"/>
-  <BaggageAllowanceDesc Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS" ID="3" Pieces="1"/>
-  <BaggageAllowanceDesc Description1="UP TO 34 LINEAR INCHES/85 LINEAR CENTIMETERS" ID="4" Pieces="1"/>
-  <BaggageAllowanceDesc Description1="UP TO 22 POUNDS/10 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" ID="5" Pieces="1"/>
+  <BaggageAllowanceDesc ID="1" Unit="kg" Weight="30"/>
+  <BaggageAllowanceDesc Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 45 LINEAR INCHES/115 LINEAR CENTIMETERS" ID="2" Pieces="1"/>
+  <BaggageAllowanceDesc ID="3" Unit="kg" Weight="40"/>
+  <BaggageAllowanceDesc Description1="UP TO 50 POUNDS/23 KILOGRAMS" Description2="UP TO 62 LINEAR INCHES/158 LINEAR CENTIMETERS" ID="4" Pieces="1"/>
+  <BaggageAllowanceDesc Description1="UP TO 34 LINEAR INCHES/85 LINEAR CENTIMETERS" ID="5" Pieces="1"/>
   <!--Другие нормы провоза багажа-->
   <LegDesc ElapsedTime="2170" ID="1">
-    <Schedule Ref="32"/>
-    <Schedule DepartureDateAdjustment="1" Ref="6"/>
+    <Schedule Ref="42"/>
+    <Schedule DepartureDateAdjustment="1" Ref="10"/>
   </LegDesc>
   <LegDesc ElapsedTime="2035" ID="2">
-    <Schedule Ref="84"/>
-    <Schedule Ref="86"/>
+    <Schedule Ref="115"/>
+    <Schedule Ref="117"/>
   </LegDesc>
   <LegDesc ElapsedTime="2675" ID="3">
-    <Schedule Ref="25"/>
-    <Schedule DepartureDateAdjustment="1" Ref="5"/>
-  </LegDesc>
-  <LegDesc ElapsedTime="2795" ID="4">
     <Schedule Ref="34"/>
-    <Schedule DepartureDateAdjustment="2" Ref="23"/>
+    <Schedule DepartureDateAdjustment="1" Ref="7"/>
   </LegDesc>
-  <LegDesc ElapsedTime="1355" ID="5">
-    <Schedule Ref="69"/>
-    <Schedule DepartureDateAdjustment="1" Ref="107"/>
+  <LegDesc ElapsedTime="1355" ID="4">
+    <Schedule Ref="92"/>
+    <Schedule DepartureDateAdjustment="1" Ref="142"/>
+  </LegDesc>
+  <LegDesc ElapsedTime="1455" ID="5">
+    <Schedule Ref="116"/>
+    <Schedule Ref="118"/>
   </LegDesc>
   <!--Другие плечи-->
   <ItineraryGroup>
     <GroupDescription>
-      <LegDescription ArrivalLocation="LHR" DepartureDate="2022-12-01" DepartureLocation="SYD"/>
+      <LegDescription ArrivalLocation="LGW" DepartureDate="2022-12-01" DepartureLocation="SYD"/>
       <LegDescription ArrivalLocation="SYD" DepartureDate="2022-12-08" DepartureLocation="LHR"/>
     </GroupDescription>
     <Itinerary ID="1" PricingSource="ADVJR1">
-      <Leg Ref="17"/>
-      <Leg Ref="12"/>
-      <PricingInformation PricingSubsource="MIP">
-        <Fare ETicketable="true" GoverningCarriers="JL JL" LastTicketDate="2022-05-27" LastTicketTime="23:59" VITA="true" ValidatingCarrierCode="JL">
-          <PassengerInfo NonRefundable="true" PassengerNumber="2" PassengerType="ADT">
-            <FareComponent Ref="109">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="218">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="63"/>
-            <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="28"/>
-            <Tax Ref="38"/>
-            <Tax Ref="95"/>
-            <Tax Ref="95"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="45"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="50"/>
-            <TaxSummary Ref="17"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="752.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="566.20" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="33840" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="72845" TotalTaxes="39005"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="4"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <PenaltiesInfo>
-              <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="27000" Applicability="Before" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
-              <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
-            </PenaltiesInfo>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <PassengerInfo NonRefundable="true" PassengerNumber="1" PassengerType="CNN">
-            <FareComponent Ref="98">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="70">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="38"/>
-            <Tax Ref="77"/>
-            <Tax Ref="77"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="49"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="564.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="424.64" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="25380" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="54275" TotalTaxes="28895"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="4"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <PenaltiesInfo>
-              <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="27000" Applicability="Before" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
-              <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
-            </PenaltiesInfo>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <PassengerInfo NonRefundable="true" PassengerNumber="1" PassengerType="INF">
-            <FareComponent Ref="136">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="4">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="38"/>
-            <TaxSummary Ref="24"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="76.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="56.62" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="3420" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="8801" TotalTaxes="5381"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="48"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="48"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="65"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <PenaltiesInfo>
-              <Penalty Amount="0" Applicability="Before" Changeable="true" ConditionsApply="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="After" Changeable="true" ConditionsApply="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="27000" Applicability="Before" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
-              <Penalty Applicability="After" Cat16Info="true" Refundable="false" Type="Refund"/>
-            </PenaltiesInfo>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <AncillaryFeeGroup Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
-          <TotalFare BaseFareAmount="2144.00" BaseFareCurrency="AUD" ConstructionAmount="1613.66" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="96480" EquivalentCurrency="RUB" TotalPrice="208766" TotalTaxes="112286"/>
-          <ValidatingCarrier Ref="12"/>
-        </Fare>
-      </PricingInformation>
-      <PricingInformation FlexibleFare="2" PricingSubsource="MIP">
-        <Fare ETicketable="true" GoverningCarriers="JL JL" LastTicketDate="2022-05-27" LastTicketTime="23:59" VITA="true" ValidatingCarrierCode="JL">
-          <PassengerInfo NonRefundable="true" PassengerNumber="2" PassengerType="ADT">
-            <FareComponent Ref="109">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="218">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="63"/>
-            <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="28"/>
-            <Tax Ref="38"/>
-            <Tax Ref="95"/>
-            <Tax Ref="95"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="45"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="50"/>
-            <TaxSummary Ref="17"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="752.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="566.20" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="33840" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="72845" TotalTaxes="39005"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="4"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <PassengerInfo NonRefundable="true" PassengerNumber="1" PassengerType="CNN">
-            <FareComponent Ref="98">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="70">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="38"/>
-            <Tax Ref="77"/>
-            <Tax Ref="77"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="49"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="564.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="424.64" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="25380" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="54275" TotalTaxes="28895"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="4"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <PassengerInfo NonRefundable="true" PassengerNumber="1" PassengerType="INS">
-            <FareComponent Ref="231">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="261">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="38"/>
-            <Tax Ref="77"/>
-            <Tax Ref="77"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="49"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="564.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="424.64" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="25380" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="54275" TotalTaxes="28895"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="4"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <AncillaryFeeGroup Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
-          <TotalFare BaseFareAmount="2632.00" BaseFareCurrency="AUD" ConstructionAmount="1981.68" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="118440" EquivalentCurrency="RUB" TotalPrice="254240" TotalTaxes="135800"/>
-          <ValidatingCarrier Ref="12"/>
-        </Fare>
-      </PricingInformation>
-      <PricingInformation FlexibleFare="3" PricingSubsource="MIP">
-        <Fare ETicketable="true" GoverningCarriers="JL JL" LastTicketDate="2022-05-27" LastTicketTime="23:59" VITA="true" ValidatingCarrierCode="JL">
-          <PassengerInfo NonRefundable="true" PassengerNumber="2" PassengerType="ADT">
-            <FareComponent Ref="109">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="218">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="63"/>
-            <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="28"/>
-            <Tax Ref="38"/>
-            <Tax Ref="95"/>
-            <Tax Ref="95"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="45"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="50"/>
-            <TaxSummary Ref="17"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="752.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="566.20" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="33840" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="72845" TotalTaxes="39005"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="4"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <PassengerInfo NonRefundable="true" PassengerNumber="1" PassengerType="CNN">
-            <FareComponent Ref="98">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="70">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="38"/>
-            <Tax Ref="77"/>
-            <Tax Ref="77"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="49"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="564.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="424.64" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="25380" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="54275" TotalTaxes="28895"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="56"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="4"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <PassengerInfo NonRefundable="true" PassengerNumber="1" PassengerType="INF">
-            <FareComponent Ref="136">
-              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <FareComponent Ref="4">
-              <Segment BookingCode="S" CabinCode="Y" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-            </FareComponent>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="38"/>
-            <TaxSummary Ref="24"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="RFND RESTR APPLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="76.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="56.62" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="3420" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="8801" TotalTaxes="5381"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Allowance Ref="48"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-              <Allowance Ref="48"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="65"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <SeatSelection Type="N">
-              <Segment ID="0"/>
-              <Segment ID="1"/>
-              <Segment ID="2"/>
-              <Segment ID="3"/>
-            </SeatSelection>
-          </PassengerInfo>
-          <AncillaryFeeGroup Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
-          <TotalFare BaseFareAmount="2144.00" BaseFareCurrency="AUD" ConstructionAmount="1613.66" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="96480" EquivalentCurrency="RUB" TotalPrice="208766" TotalTaxes="112286"/>
-          <ValidatingCarrier Ref="12"/>
-        </Fare>
-      </PricingInformation>
-      <PricingInformation FlexibleFare="4" PricingSubsource="MIP">
-        <Fare ETicketable="true" GoverningCarriers="JL JL" LastTicketDate="2022-11-17" LastTicketTime="23:59" VITA="true" ValidatingCarrierCode="JL">
+      <Leg Ref="55"/>
+      <Leg Ref="33"/>
+      <PricingInformation BrandsOnAnyMarket="true" PricingSubsource="MIP">
+        <Fare ETicketable="true" GoverningCarriers="QR QR" VITA="true" ValidatingCarrierCode="QR">
           <PassengerInfo NonRefundable="false" PassengerNumber="2" PassengerType="ADT">
-            <FareComponent Ref="240">
-              <Segment BookingCode="Y" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="Y" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+            <FareComponent Ref="123">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
             </FareComponent>
-            <FareComponent Ref="31">
-              <Segment BookingCode="W" CabinCode="S" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="W" CabinCode="S" MealCode="M" SeatsAvailable="9"/>
+            <FareComponent Ref="209">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
             </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="63"/>
+            <Tax Ref="19"/>
+            <Tax Ref="13"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="128"/>
+            <Tax Ref="116"/>
             <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="53"/>
-            <Tax Ref="38"/>
-            <Tax Ref="95"/>
-            <Tax Ref="95"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="45"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="50"/>
-            <TaxSummary Ref="40"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="INTL FLT TO/FM JPN/JL ONLY" Type="N"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="12673.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="9541.86" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="570285" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="617320" TotalTaxes="47035"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
+            <Tax Ref="88"/>
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="95"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="91"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="63"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="1394.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="1049.04" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="57855" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="104708" TotalTaxes="46853"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
               <Segment ID="0"/>
               <Segment ID="1"/>
-              <Allowance Ref="56"/>
+              <Allowance Ref="1"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
               <Segment ID="2"/>
               <Segment ID="3"/>
-              <Allowance Ref="56"/>
+              <Allowance Ref="1"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="0"/>
-              <Allowance Ref="70"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="1"/>
-              <Allowance Ref="70"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="2"/>
-              <Allowance Ref="4"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="3"/>
-              <Allowance Ref="70"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
             <PenaltiesInfo>
-              <Penalty Amount="0" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="Before" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
-              <Penalty Amount="0" Applicability="After" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="26035" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="26035" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="29545" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="29545" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
             </PenaltiesInfo>
-            <SeatSelection Type="N">
+            <SeatSelection Type="C">
               <Segment ID="0"/>
               <Segment ID="1"/>
               <Segment ID="2"/>
@@ -6122,70 +5626,116 @@ aliases:
             </SeatSelection>
           </PassengerInfo>
           <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="CNN">
-            <FareComponent Ref="187">
-              <Segment BookingCode="Y" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="Y" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+            <FareComponent Ref="202">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
             </FareComponent>
-            <FareComponent Ref="248">
-              <Segment BookingCode="W" CabinCode="S" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="W" CabinCode="S" MealCode="M" SeatsAvailable="9"/>
+            <FareComponent Ref="138">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
             </FareComponent>
-            <Tax Ref="46"/>
-            <Tax Ref="50"/>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
+            <Tax Ref="19"/>
+            <Tax Ref="13"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="116"/>
             <Tax Ref="81"/>
-            <Tax Ref="83"/>
-            <Tax Ref="53"/>
-            <Tax Ref="38"/>
-            <Tax Ref="77"/>
-            <Tax Ref="77"/>
-            <TaxSummary Ref="2"/>
-            <TaxSummary Ref="34"/>
-            <TaxSummary Ref="49"/>
-            <TaxSummary Ref="40"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="INTL FLT TO/FM JPN/JL ONLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH CNN REQUIRES ACCOMPANYING SAME CABIN ADT" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="9505.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="7156.40" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="427725" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="471328" TotalTaxes="43603"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="95"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="911.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="685.37" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="37810" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="76041" TotalTaxes="38231"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
               <Segment ID="0"/>
               <Segment ID="1"/>
-              <Allowance Ref="56"/>
+              <Allowance Ref="1"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
               <Segment ID="2"/>
               <Segment ID="3"/>
-              <Allowance Ref="56"/>
+              <Allowance Ref="1"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="0"/>
-              <Allowance Ref="70"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="1"/>
-              <Allowance Ref="70"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="2"/>
-              <Allowance Ref="4"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
               <Segment ID="3"/>
-              <Allowance Ref="70"/>
+              <Allowance Ref="14"/>
             </BaggageInformation>
             <PenaltiesInfo>
-              <Penalty Amount="0" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="Before" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
-              <Penalty Amount="0" Applicability="After" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="26035" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="26035" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="29545" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="29545" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
             </PenaltiesInfo>
-            <SeatSelection Type="N">
+            <SeatSelection Type="C">
               <Segment ID="0"/>
               <Segment ID="1"/>
               <Segment ID="2"/>
@@ -6193,60 +5743,84 @@ aliases:
             </SeatSelection>
           </PassengerInfo>
           <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="INF">
-            <FareComponent Ref="133">
-              <Segment BookingCode="Y" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="Y" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+            <FareComponent Ref="308">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
             </FareComponent>
-            <FareComponent Ref="236">
-              <Segment BookingCode="W" CabinCode="S" SeatsAvailable="9"/>
-              <Segment AvailabilityBreak="true" BookingCode="W" CabinCode="S" MealCode="M" SeatsAvailable="9"/>
+            <FareComponent Ref="183">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
             </FareComponent>
-            <Tax Ref="26"/>
-            <Tax Ref="75"/>
-            <Tax Ref="104"/>
-            <Tax Ref="75"/>
-            <Tax Ref="38"/>
-            <TaxSummary Ref="24"/>
-            <TaxSummary Ref="27"/>
-            <CurrencyConversion ExchangeRateUsed="45" From="AUD" To="RUB"/>
-            <FareMessage Carrier="JL" Code="0" Info="INTL FLT TO/FM JPN/JL ONLY" Type="N"/>
-            <FareMessage Code="0" Info="EACH INF REQUIRES ACCOMPANYING ADT PASSENGER" Type="W"/>
-            <FareMessage Code="0" Info="VALIDATING CARRIER" Type="W"/>
-            <FareMessage Code="0" Info="BSP - JL" Type="W"/>
-            <PassengerTotalFare BaseFareAmount="1268.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="954.18" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="57060" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="62441" TotalTaxes="5381"/>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
+            <Tax Ref="107"/>
+            <Tax Ref="39"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="24"/>
+            <TaxSummary Ref="42"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="18"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="221.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="165.84" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="9175" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="18184" TotalTaxes="9009"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
               <Segment ID="0"/>
               <Segment ID="1"/>
-              <Allowance Ref="48"/>
+              <Allowance Ref="69"/>
             </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="A">
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
               <Segment ID="2"/>
               <Segment ID="3"/>
-              <Allowance Ref="48"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="0"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="1"/>
-              <Allowance Ref="70"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="BA" ProvisionType="B">
-              <Segment ID="2"/>
-              <Allowance Ref="65"/>
-            </BaggageInformation>
-            <BaggageInformation AirlineCode="JL" ProvisionType="B">
-              <Segment ID="3"/>
-              <Allowance Ref="70"/>
+              <Allowance Ref="69"/>
             </BaggageInformation>
             <PenaltiesInfo>
               <Penalty Amount="0" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
               <Penalty Amount="0" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
-              <Penalty Amount="0" Applicability="Before" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
-              <Penalty Amount="0" Applicability="After" Cat16Info="true" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="0" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="0" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
             </PenaltiesInfo>
-            <SeatSelection Type="N">
+            <SeatSelection Type="C">
               <Segment ID="0"/>
               <Segment ID="1"/>
               <Segment ID="2"/>
@@ -6254,14 +5828,1007 @@ aliases:
             </SeatSelection>
           </PassengerInfo>
           <AncillaryFeeGroup Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
-          <TotalFare BaseFareAmount="36119.00" BaseFareCurrency="AUD" ConstructionAmount="27194.30" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="1625355" EquivalentCurrency="RUB" TotalPrice="1768409" TotalTaxes="143054"/>
-          <ValidatingCarrier Ref="12"/>
+          <TotalFare BaseFareAmount="3920.00" BaseFareCurrency="AUD" ConstructionAmount="2949.29" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="162695" EquivalentCurrency="RUB" TotalPrice="303641" TotalTaxes="140946"/>
+          <ValidatingCarrier Ref="3"/>
         </Fare>
       </PricingInformation>
-      <DiversitySwapper WeighedPrice="533238.527"/>
+      <PricingInformation BrandsOnAnyMarket="true" FlexibleFare="1" PricingSubsource="MIP">
+        <Fare ETicketable="true" GoverningCarriers="QR QR" VITA="true" ValidatingCarrierCode="QR">
+          <PassengerInfo NonRefundable="false" PassengerNumber="2" PassengerType="ADT">
+            <FareComponent Ref="123">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <FareComponent Ref="209">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <Tax Ref="19"/>
+            <Tax Ref="13"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="128"/>
+            <Tax Ref="116"/>
+            <Tax Ref="81"/>
+            <Tax Ref="88"/>
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="95"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="91"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="63"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="1394.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="1049.04" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="57855" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="104708" TotalTaxes="46853"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="0"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="1"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="2"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="3"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="26035" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="26035" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="29545" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="29545" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="C">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="CNN">
+            <FareComponent Ref="202">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <FareComponent Ref="138">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <Tax Ref="19"/>
+            <Tax Ref="13"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="116"/>
+            <Tax Ref="81"/>
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="95"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="911.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="685.37" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="37810" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="76041" TotalTaxes="38231"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="0"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="1"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="2"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="3"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="26035" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="26035" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="29545" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="29545" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="C">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="INF">
+            <FareComponent Ref="308">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <FareComponent Ref="183">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <Tax Ref="107"/>
+            <Tax Ref="39"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="24"/>
+            <TaxSummary Ref="42"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="18"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="221.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="165.84" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="9175" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="18184" TotalTaxes="9009"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="69"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="69"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="0" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="0" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="0" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="0" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="C">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <AncillaryFeeGroup Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
+          <TotalFare BaseFareAmount="3920.00" BaseFareCurrency="AUD" ConstructionAmount="2949.29" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="162695" EquivalentCurrency="RUB" TotalPrice="303641" TotalTaxes="140946"/>
+          <ValidatingCarrier Ref="3"/>
+        </Fare>
+      </PricingInformation>
+      <PricingInformation BrandsOnAnyMarket="true" FlexibleFare="2" PricingSubsource="MIP">
+        <Fare ETicketable="true" GoverningCarriers="QR QR" VITA="true" ValidatingCarrierCode="QR">
+          <PassengerInfo NonRefundable="false" PassengerNumber="2" PassengerType="ADT">
+            <FareComponent Ref="123">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <FareComponent Ref="209">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <Tax Ref="19"/>
+            <Tax Ref="13"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="128"/>
+            <Tax Ref="116"/>
+            <Tax Ref="81"/>
+            <Tax Ref="88"/>
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="95"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="91"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="63"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="1394.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="1049.04" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="57855" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="104708" TotalTaxes="46853"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="0"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="1"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="2"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="3"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="26035" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="26035" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="29545" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="29545" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="C">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="CNN">
+            <FareComponent Ref="202">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <FareComponent Ref="138">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <Tax Ref="19"/>
+            <Tax Ref="13"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="116"/>
+            <Tax Ref="81"/>
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="95"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="911.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="685.37" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="37810" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="76041" TotalTaxes="38231"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="1"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="0"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="1"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="2"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="3"/>
+              <Allowance Ref="14"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="26035" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="26035" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="29545" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="29545" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="C">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="INF">
+            <FareComponent Ref="308">
+              <Segment BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="V" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <FareComponent Ref="183">
+              <Segment BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="S" CabinCode="Y" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="98"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="14"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="114"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="172"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="150"/>
+              <BrandFeature Ref="156"/>
+              <BrandFeature Ref="100"/>
+              <BrandFeature Ref="166"/>
+            </FareComponent>
+            <Tax Ref="107"/>
+            <Tax Ref="39"/>
+            <Tax Ref="118"/>
+            <Tax Ref="118"/>
+            <Tax Ref="114"/>
+            <Tax Ref="114"/>
+            <Tax Ref="24"/>
+            <TaxSummary Ref="42"/>
+            <TaxSummary Ref="36"/>
+            <TaxSummary Ref="18"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="221.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="165.84" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="9175" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="18184" TotalTaxes="9009"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="69"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="69"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="0" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="0" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="0" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="0" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="C">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <AncillaryFeeGroup Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
+          <TotalFare BaseFareAmount="3920.00" BaseFareCurrency="AUD" ConstructionAmount="2949.29" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="162695" EquivalentCurrency="RUB" TotalPrice="303641" TotalTaxes="140946"/>
+          <ValidatingCarrier Ref="3"/>
+        </Fare>
+      </PricingInformation>
+      <PricingInformation BrandsOnAnyMarket="true" FlexibleFare="4" PricingSubsource="MIP">
+        <Fare ETicketable="true" GoverningCarriers="QR QR" VITA="true" ValidatingCarrierCode="QR">
+          <PassengerInfo NonRefundable="false" PassengerNumber="2" PassengerType="ADT">
+            <FareComponent Ref="94">
+              <Segment BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="235"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="152"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="196"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="183"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="81"/>
+              <BrandFeature Ref="144"/>
+              <BrandFeature Ref="119"/>
+              <BrandFeature Ref="117"/>
+            </FareComponent>
+            <FareComponent Ref="255">
+              <Segment BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="7"/>
+              <Segment AvailabilityBreak="true" BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="7"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="235"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="152"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="196"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="183"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="81"/>
+              <BrandFeature Ref="144"/>
+              <BrandFeature Ref="119"/>
+              <BrandFeature Ref="117"/>
+            </FareComponent>
+            <Tax Ref="90"/>
+            <Tax Ref="108"/>
+            <Tax Ref="59"/>
+            <Tax Ref="59"/>
+            <Tax Ref="48"/>
+            <Tax Ref="48"/>
+            <Tax Ref="128"/>
+            <Tax Ref="116"/>
+            <Tax Ref="81"/>
+            <Tax Ref="1"/>
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="15"/>
+            <TaxSummary Ref="11"/>
+            <TaxSummary Ref="91"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="3"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="10264.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="7727.89" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="425960" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="494966" TotalTaxes="69006"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="40"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="40"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="0"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="1"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="2"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="3"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="41830" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="41830" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="44755" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="44755" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="F">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="CNN">
+            <FareComponent Ref="294">
+              <Segment BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="235"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="152"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="196"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="183"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="81"/>
+              <BrandFeature Ref="144"/>
+              <BrandFeature Ref="119"/>
+              <BrandFeature Ref="117"/>
+            </FareComponent>
+            <FareComponent Ref="135">
+              <Segment BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="7"/>
+              <Segment AvailabilityBreak="true" BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="7"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="235"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="152"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="196"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="183"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="81"/>
+              <BrandFeature Ref="144"/>
+              <BrandFeature Ref="119"/>
+              <BrandFeature Ref="117"/>
+            </FareComponent>
+            <Tax Ref="90"/>
+            <Tax Ref="108"/>
+            <Tax Ref="59"/>
+            <Tax Ref="59"/>
+            <Tax Ref="48"/>
+            <Tax Ref="48"/>
+            <Tax Ref="116"/>
+            <Tax Ref="81"/>
+            <Tax Ref="1"/>
+            <Tax Ref="24"/>
+            <Tax Ref="134"/>
+            <Tax Ref="134"/>
+            <Tax Ref="122"/>
+            <Tax Ref="101"/>
+            <Tax Ref="58"/>
+            <Tax Ref="3"/>
+            <Tax Ref="3"/>
+            <Tax Ref="106"/>
+            <Tax Ref="106"/>
+            <TaxSummary Ref="15"/>
+            <TaxSummary Ref="11"/>
+            <TaxSummary Ref="56"/>
+            <TaxSummary Ref="24"/>
+            <TaxSummary Ref="90"/>
+            <TaxSummary Ref="66"/>
+            <TaxSummary Ref="3"/>
+            <TaxSummary Ref="18"/>
+            <TaxSummary Ref="25"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="9239.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="6956.10" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="383420" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="449936" TotalTaxes="66516"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="40"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="40"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="0"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="1"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="2"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="B">
+              <Segment ID="3"/>
+              <Allowance Ref="15"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="41830" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="41830" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="44755" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="44755" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="F">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <PassengerInfo NonRefundable="false" PassengerNumber="1" PassengerType="INF">
+            <FareComponent Ref="211">
+              <Segment BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="9"/>
+              <Segment AvailabilityBreak="true" BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="9"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="235"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="152"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="196"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="183"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="81"/>
+              <BrandFeature Ref="144"/>
+              <BrandFeature Ref="119"/>
+              <BrandFeature Ref="117"/>
+            </FareComponent>
+            <FareComponent Ref="34">
+              <Segment BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="7"/>
+              <Segment AvailabilityBreak="true" BookingCode="D" CabinCode="C" MealCode="M" SeatsAvailable="7"/>
+              <BrandFeature Ref="123"/>
+              <BrandFeature Ref="108"/>
+              <BrandFeature Ref="235"/>
+              <BrandFeature Ref="191"/>
+              <BrandFeature Ref="137"/>
+              <BrandFeature Ref="152"/>
+              <BrandFeature Ref="138"/>
+              <BrandFeature Ref="182"/>
+              <BrandFeature Ref="83"/>
+              <BrandFeature Ref="89"/>
+              <BrandFeature Ref="201"/>
+              <BrandFeature Ref="8"/>
+              <BrandFeature Ref="196"/>
+              <BrandFeature Ref="176"/>
+              <BrandFeature Ref="183"/>
+              <BrandFeature Ref="192"/>
+              <BrandFeature Ref="81"/>
+              <BrandFeature Ref="144"/>
+              <BrandFeature Ref="119"/>
+              <BrandFeature Ref="117"/>
+            </FareComponent>
+            <Tax Ref="107"/>
+            <Tax Ref="39"/>
+            <Tax Ref="59"/>
+            <Tax Ref="59"/>
+            <Tax Ref="48"/>
+            <Tax Ref="48"/>
+            <Tax Ref="24"/>
+            <TaxSummary Ref="42"/>
+            <TaxSummary Ref="11"/>
+            <TaxSummary Ref="18"/>
+            <OBFee Ref="1"/>
+            <CurrencyConversion ExchangeRateUsed="41.5" From="AUD" To="RUB"/>
+            <PassengerTotalFare BaseFareAmount="1551.00" BaseFareCurrency="AUD" CommissionAmount="0" CommissionPercentage="0" ConstructionAmount="1167.68" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="64370" EquivalentCurrency="RUB" ExchangeRateOne="1.32814600" TotalFare="74547" TotalTaxes="10177"/>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Allowance Ref="69"/>
+            </BaggageInformation>
+            <BaggageInformation AirlineCode="QR" ProvisionType="A">
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+              <Allowance Ref="69"/>
+            </BaggageInformation>
+            <PenaltiesInfo>
+              <Penalty Amount="0" Applicability="Before" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="0" Applicability="After" Changeable="true" Currency="RUB" Type="Exchange"/>
+              <Penalty Amount="0" Applicability="Before" Currency="RUB" Refundable="true" Type="Refund"/>
+              <Penalty Amount="0" Applicability="After" Currency="RUB" Refundable="true" Type="Refund"/>
+            </PenaltiesInfo>
+            <SeatSelection Type="F">
+              <Segment ID="0"/>
+              <Segment ID="1"/>
+              <Segment ID="2"/>
+              <Segment ID="3"/>
+            </SeatSelection>
+          </PassengerInfo>
+          <AncillaryFeeGroup Message="AIR EXTRAS NOT APPLICABLE OR ARE UNKNOWN FOR THIS ITINERARY"/>
+          <TotalFare BaseFareAmount="31318.00" BaseFareCurrency="AUD" ConstructionAmount="23579.56" ConstructionCurrency="NUC" Currency="RUB" EquivalentAmount="1299710" EquivalentCurrency="RUB" TotalPrice="1514415" TotalTaxes="214705"/>
+          <ValidatingCarrier Ref="3"/>
+        </Fare>
+      </PricingInformation>
+      <DiversitySwapper WeighedPrice="794472.573"/>
     </Itinerary>
     <!--Другие рекомендации-->
   </ItineraryGroup>
+  <!--Другие маршруты-->
 </GroupedItineraryResponse>
 ```
 {{< /details >}}

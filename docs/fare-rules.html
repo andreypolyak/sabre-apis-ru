@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru-ru" dir="ltr">
+<html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,9 @@
 <title>Получение текста правил тарифов | Рекомендации по работе с Sabre APIs</title>
 <link rel="manifest" href="/sabre-apis-ru/manifest.json">
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/sabre-apis-ru/book.min.f99435cde5efa46f15f527928db5713540168e4852b93abb573cbb0aa533a25f.css" integrity="sha256-&#43;ZQ1zeXvpG8V9SeSjbVxNUAWjkhSuTq7Vzy7CqUzol8=" crossorigin="anonymous">
+<link rel="stylesheet" href="/sabre-apis-ru/book.min.08b033ee232fe01924e38ec1c0e5b3adff46ab5a6b0e4ed529466e69e1e02d56.css" integrity="sha256-CLAz7iMv4Bkk447BwOWzrf9Gq1prDk7VKUZuaeHgLVY=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/en.search.min.57e2694763aafc009bb20aae785fbba28168a67ae037759f6cc17a49ad6b4148.js" integrity="sha256-V&#43;JpR2Oq/ACbsgqueF&#43;7ooFopnrgN3WfbMF6Sa1rQUg=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.d02378bace0707ee4cb51e556cc7767b13ec2a6287ad10a25b8bc8963b3f28b4.js" integrity="sha256-0CN4us4HB&#43;5MtR5VbMd2exPsKmKHrRCiW4vIljs/KLQ=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -51,7 +51,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <input type="text" id="book-search-input" placeholder="Поиск" aria-label="Поиск" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
@@ -67,28 +67,24 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p><strong>ВВЕДЕНИЕ</strong></p>
+  <p class="menu-header"><strong>ВВЕДЕНИЕ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/introduction.html">Начало работы</a></li>
 <li><a href="/sabre-apis-ru/configuration.html">Конфигурация Sabre</a></li>
 <li><a href="/sabre-apis-ru/tjr-settings.html">Настройки PCC</a></li>
 <li><a href="/sabre-apis-ru/authentication.html">Аутентификация</a></li>
 <li><a href="/sabre-apis-ru/services.html">Список сервисов</a></li>
-<li><a href="/sabre-apis-ru/postman.html">Коллекция Postman</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/postman.html">Коллекция Postman</a></li>
 </ul>
-<p><strong>ПОИСК ПЕРЕЛЕТОВ</strong></p>
+<p class="menu-header"><strong>ПОИСК ПЕРЕЛЕТОВ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/shop.html">Поиск по заданным датам</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/shop-alternate-dates.html">Поиск по гибким датам</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/shop-by-fare.html">Поиск по кодам тарифов</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/get-availability.html">Поиск по расписаниям</a> <!-- raw HTML omitted --></li>
-<li><a href="/sabre-apis-ru/shop-optimization.html">Оптимизация времени поиска</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/shop-optimization.html">Оптимизация времени поиска</a></li>
 </ul>
-<p><strong>БРОНИРОВАНИЯ</strong></p>
+<p class="menu-header"><strong>БРОНИРОВАНИЯ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/revalidate-itinerary.html">Проверка стоимости и наличия мест</a></li>
 <li><a href="/sabre-apis-ru/create-booking.html">Создание бронирований</a>
@@ -103,11 +99,9 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/sabre-apis-ru/edit-booking.html">Редактирование бронирований</a></li>
 <li><a href="/sabre-apis-ru/cancel-booking.html">Отмена бронирований</a></li>
 <li><a href="/sabre-apis-ru/split-booking.html">Деление бронирований</a></li>
-<li><a href="/sabre-apis-ru/get-history-booking.html">История бронирований</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/get-history-booking.html">История бронирований</a></li>
 </ul>
-<p><strong>ДОПОЛНИТЕЛЬНЫЙ КОНТЕНТ</strong></p>
+<p class="menu-header"><strong>ДОПОЛНИТЕЛЬНЫЙ КОНТЕНТ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/brands.html">Брендированные тарифы</a></li>
 <li><a href="/sabre-apis-ru/ancillaries.html">Дополнительные услуги</a>
@@ -121,13 +115,11 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/sabre-apis-ru/get-air-seats.html">Получение карты мест</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/book-air-seats.html">Бронирование мест</a> <!-- raw HTML omitted --></li>
-<li><a href="/sabre-apis-ru/cancel-air-seats.html">Отмена мест</a> <!-- raw HTML omitted -->
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/cancel-air-seats.html">Отмена мест</a> <!-- raw HTML omitted --></li>
 </ul>
 </li>
 </ul>
-<p><strong>БИЛЕТЫ И EMD</strong></p>
+<p class="menu-header"><strong>БИЛЕТЫ И EMD</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/fop.html">Выбор форм оплаты</a></li>
 <li><a href="/sabre-apis-ru/issue-ticket.html">Оформление билетов и EMD</a></li>
@@ -142,27 +134,21 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/sabre-apis-ru/refund-ticket.html">Возврат билетов</a></li>
 </ul>
 </li>
-<li><a href="/sabre-apis-ru/report-ticket.html">Формирование отчетов</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/report-ticket.html">Формирование отчетов</a></li>
 </ul>
-<p><strong>ОЧЕРЕДИ</strong></p>
+<p class="menu-header"><strong>ОЧЕРЕДИ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/queues.html">Обработка очередей</a></li>
 <li><a href="/sabre-apis-ru/queue-place.html">Помещение бронирований в очереди</a></li>
-<li><a href="/sabre-apis-ru/timelimit.html">Тайм-лимиты бронирований</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/timelimit.html">Тайм-лимиты бронирований</a></li>
 </ul>
-<p><strong>ПРАВИЛА ТАРИФОВ</strong></p>
+<p class="menu-header"><strong>ПРАВИЛА ТАРИФОВ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/fare-rules.html"class=active>Получение текста правил</a> <!-- raw HTML omitted --></li>
 <li><a href="/sabre-apis-ru/structure-fare-rules.html">Получение структурированных правил</a> <!-- raw HTML omitted --></li>
-<li><a href="/sabre-apis-ru/baggage.html">Получение норм провоза багажа</a>
-
-<br/><br/></li>
+<li><a href="/sabre-apis-ru/baggage.html">Получение норм провоза багажа</a></li>
 </ul>
-<p><strong>ДРУГОЕ</strong></p>
+<p class="menu-header"><strong>ДРУГОЕ</strong></p>
 <ul>
 <li><a href="/sabre-apis-ru/change-pcc.html">Переход в другие PCC</a></li>
 <li><a href="/sabre-apis-ru/currency-rates.html">Получение курсов валют</a></li>
@@ -278,15 +264,15 @@ https://github.com/alex-shpak/hugo-book
   <div class="markdown-inner">
     <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;OTA_AirRulesRQ</span> <span style="color:#00c">ReturnHostCommand=</span><span style="background-color:#fff0f0">&#34;true&#34;</span> <span style="color:#00c">Version=</span><span style="background-color:#fff0f0">&#34;2.3.0&#34;</span> <span style="color:#00c">xmlns=</span><span style="background-color:#fff0f0">&#34;http://webservices.sabre.com/sabreXML/2011/10&#34;</span><span style="color:#070">&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;OriginDestinationInformation&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;09-01&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AER&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;MarketingCarrier</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;LED&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;FlightSegment</span> <span style="color:#00c">DepartureDateTime=</span><span style="background-color:#fff0f0">&#34;12-01&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;LHR&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;MarketingCarrier</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;EY&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;SYD&#34;</span><span style="color:#070">/&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;/FlightSegment&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/OriginDestinationInformation&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;RuleReqInfo&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;Category&gt;</span>16<span style="color:#070">&lt;/Category&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;FareBasis</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;YNBR&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;FareBasis</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;YLWF2AU&#34;</span><span style="color:#070">/&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/RuleReqInfo&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#070">&lt;/OTA_AirRulesRQ&gt;</span>
 </span></span></code></pre></div>
@@ -297,9 +283,9 @@ https://github.com/alex-shpak/hugo-book
   <div class="markdown-inner">
     <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;OTA_AirRulesRS</span> <span style="color:#00c">Version=</span><span style="background-color:#fff0f0">&#34;2.3.0&#34;</span> <span style="color:#00c">xmlns=</span><span style="background-color:#fff0f0">&#34;http://webservices.sabre.com/sabreXML/2011/10&#34;</span> <span style="color:#00c">xmlns:stl=</span><span style="background-color:#fff0f0">&#34;http://services.sabre.com/STL/v01&#34;</span> <span style="color:#00c">xmlns:xs=</span><span style="background-color:#fff0f0">&#34;http://www.w3.org/2001/XMLSchema&#34;</span> <span style="color:#00c">xmlns:xsi=</span><span style="background-color:#fff0f0">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span><span style="color:#070">&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;stl:ApplicationResults</span> <span style="color:#00c">status=</span><span style="background-color:#fff0f0">&#34;Complete&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;stl:Success</span> <span style="color:#00c">timeStamp=</span><span style="background-color:#fff0f0">&#34;2020-01-30T11:41:49-06:00&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;stl:Success</span> <span style="color:#00c">timeStamp=</span><span style="background-color:#fff0f0">&#34;2022-05-24T12:43:16-05:00&#34;</span><span style="color:#070">&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;stl:SystemSpecificResults&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;stl:HostCommand</span> <span style="color:#00c">LNIATA=</span><span style="background-color:#fff0f0">&#34;222222&#34;</span><span style="color:#070">&gt;</span>RDLEDAER01SEPYNBR-SU*16<span style="color:#070">&lt;/stl:HostCommand&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;stl:HostCommand</span> <span style="color:#00c">LNIATA=</span><span style="background-color:#fff0f0">&#34;222222&#34;</span><span style="color:#070">&gt;</span>RDSYDLHR01DECYLWF2AU-EY*16<span style="color:#070">&lt;/stl:HostCommand&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/stl:SystemSpecificResults&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;/stl:Success&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/stl:ApplicationResults&gt;</span>
@@ -309,223 +295,223 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>V FARE BASIS     BK    FARE   TRAVEL-TICKET AP  MINMAX  RTG<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Line</span> <span style="color:#00c">Type=</span><span style="background-color:#fff0f0">&#34;Fare&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>1   YNBR           Y R    68600 E21MY         -/  -/365   15<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>1   YLWF2AU        Y R   168785     ----      -    -/12M EH01<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Line</span> <span style="color:#00c">Type=</span><span style="background-color:#fff0f0">&#34;Passenger Type&#34;</span><span style="color:#070">&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>PASSENGER TYPE-ADT                 AUTO PRICE-YES<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Line</span> <span style="color:#00c">Type=</span><span style="background-color:#fff0f0">&#34;Origin Destination&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>FROM-LED TO-AER    CXR-SU    TVL-01SEP20  RULE-ENR1 IPREURD/304<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>FROM-SYD TO-LON    CXR-EY    TVL-01DEC22  RULE-AUGD IPREUAS/4<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Line</span> <span style="color:#00c">Type=</span><span style="background-color:#fff0f0">&#34;Fare Basis&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>FARE BASIS-YNBR              SPECIAL FARE  DIS-E   VENDOR-ATP<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>FARE BASIS-YLWF2AU           NORMAL FARE  DIS-N   VENDOR-ATP<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Line</span> <span style="color:#00c">Type=</span><span style="background-color:#fff0f0">&#34;Fare Type&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>FARE TYPE-SB      RT-BUDGET FARE<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>FARE TYPE-ER      RT-ECONOMY RESTRICTED<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Line</span> <span style="color:#00c">Type=</span><span style="background-color:#fff0f0">&#34;Currency&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>RUB    68600  0015  E21MAY20 D-INFINITY   FC-YNBR  FN-16<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>AUD  4067.00  0113  E16MAY22 D-INFINITY   FC-YLWF2AU  FN-C1<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Line</span> <span style="color:#00c">Type=</span><span style="background-color:#fff0f0">&#34;System Dates&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>SYSTEM DATES - CREATED 05SEP19/0923  EXPIRES INFINITY<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>SYSTEM DATES - CREATED 15MAY22/1009  EXPIRES INFINITY<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Line&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;ParsedData&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;CurrencyLine&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Amount&gt;</span>68600<span style="color:#070">&lt;/Amount&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;CurrencyCode&gt;</span>RUB<span style="color:#070">&lt;/CurrencyCode&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Amount&gt;</span>4067.00<span style="color:#070">&lt;/Amount&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;CurrencyCode&gt;</span>AUD<span style="color:#070">&lt;/CurrencyCode&gt;</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Discontinue&gt;</span>INFINITY<span style="color:#070">&lt;/Discontinue&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Effective&gt;</span>2020-05-21<span style="color:#070">&lt;/Effective&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareClass&gt;</span>YNBR<span style="color:#070">&lt;/FareClass&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;RoutingNumberOrMPM&gt;</span>0015<span style="color:#070">&lt;/RoutingNumberOrMPM&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;TariffDescriptionNumber&gt;</span>16<span style="color:#070">&lt;/TariffDescriptionNumber&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Effective&gt;</span>2022-05-16<span style="color:#070">&lt;/Effective&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareClass&gt;</span>YLWF2AU<span style="color:#070">&lt;/FareClass&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;RoutingNumberOrMPM&gt;</span>0113<span style="color:#070">&lt;/RoutingNumberOrMPM&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;TariffDescriptionNumber&gt;</span>C1<span style="color:#070">&lt;/TariffDescriptionNumber&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;/CurrencyLine&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;FareBasisLine&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;DisplayType</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;E&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareBasis</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;YNBR&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;DisplayType</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;N&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareBasis</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;YLWF2AU&#34;</span><span style="color:#070">/&gt;</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareVendor&gt;</span>ATP<span style="color:#070">&lt;/FareVendor&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Text&gt;</span>SPECIAL FARE<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Text&gt;</span>NORMAL FARE<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;/FareBasisLine&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;FareTypeLine&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareDescription</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;RT&#34;</span><span style="color:#070">&gt;</span>BUDGET FARE<span style="color:#070">&lt;/FareDescription&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareType&gt;</span>SB<span style="color:#070">&lt;/FareType&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareDescription</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;RT&#34;</span><span style="color:#070">&gt;</span>ECONOMY RESTRICTED<span style="color:#070">&lt;/FareDescription&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;FareType&gt;</span>ER<span style="color:#070">&lt;/FareType&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;/FareTypeLine&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;OriginDestinationLine&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Airline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;SU&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;AER&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;LED&#34;</span><span style="color:#070">/&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Rule&gt;</span>ENR1<span style="color:#070">&lt;/Rule&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;TariffDescriptionNumber&gt;</span>IPREURD/304<span style="color:#070">&lt;/TariffDescriptionNumber&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;TravelDate&gt;</span>2020-09-01<span style="color:#070">&lt;/TravelDate&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Airline</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;EY&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;DestinationLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;LON&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;OriginLocation</span> <span style="color:#00c">LocationCode=</span><span style="background-color:#fff0f0">&#34;SYD&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;Rule&gt;</span>AUGD<span style="color:#070">&lt;/Rule&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;TariffDescriptionNumber&gt;</span>IPREUAS/4<span style="color:#070">&lt;/TariffDescriptionNumber&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;TravelDate&gt;</span>2022-12-01<span style="color:#070">&lt;/TravelDate&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;/OriginDestinationLine&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;PassengerTypeLine&gt;</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;AutoPrice&gt;</span>YES<span style="color:#070">&lt;/AutoPrice&gt;</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;PassengerType</span> <span style="color:#00c">Code=</span><span style="background-color:#fff0f0">&#34;ADT&#34;</span><span style="color:#070">/&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;/PassengerTypeLine&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;SystemDatesLine&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;CreateDateTime&gt;</span>2019-09-05T09:23<span style="color:#070">&lt;/CreateDateTime&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;CreateDateTime&gt;</span>2022-05-15T10:09<span style="color:#070">&lt;/CreateDateTime&gt;</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#070">&lt;ExpireDateTime&gt;</span>INFINITY<span style="color:#070">&lt;/ExpireDateTime&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;/SystemDatesLine&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/ParsedData&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;/Header&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;Rules&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Paragraph</span> <span style="color:#00c">RPH=</span><span style="background-color:#fff0f0">&#34;16&#34;</span> <span style="color:#00c">Title=</span><span style="background-color:#fff0f0">&#34;PENALTIES&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>FARE RULE
-</span></span><span style="display:flex;"><span>CANCELLATIONS
-</span></span><span style="display:flex;"><span>ANY TIME
-</span></span><span style="display:flex;"><span>TICKET IS NON-REFUNDABLE IN CASE OF CANCEL/NO-SHOW/
-</span></span><span style="display:flex;"><span>REFUND.
+</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;Text&gt;</span>*SPECIAL EMERGENCY RULES
+</span></span><span style="display:flex;"><span>*SUBJECT TO CHANGE AT ANYTIME
+</span></span><span style="display:flex;"><span>NOTE - TEXT BELOW NOT VALIDATED FOR AUTOPRICING.
+</span></span><span style="display:flex;"><span>SEE FARE RULE FOR CANCELLATION/NO SHOW PENALTY
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>FOR TICKET ISSUED/REISSUED ON/BEFORE 31MAY22
+</span></span><span style="display:flex;"><span>ALL NEW TRAVEL TO BE COMPLETED ON/BEFORE 30SEP22.
 </span></span><span style="display:flex;"><span>CHANGES
 </span></span><span style="display:flex;"><span>ANY TIME
-</span></span><span style="display:flex;"><span>CHARGE RUB 2600 FOR REISSUE/REVALIDATION.
-</span></span><span style="display:flex;"><span>CHANGES NOT PERMITTED IN CASE OF NO-SHOW.
+</span></span><span style="display:flex;"><span>CHANGES PERMITTED FOR REISSUE/REVALIDATION.
 </span></span><span style="display:flex;"><span>NOTE - TEXT BELOW NOT VALIDATED FOR AUTOPRICING.
-</span></span><span style="display:flex;"><span>NOT LATER THAN 30 MINUTES AFTER DEPARTURE OF THE
-</span></span><span style="display:flex;"><span>ORIGINALLY SCHEDULED FLIGHT.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>CHANGE PERMITTED WITHIN SAME BRAND LITE - FARES
-</span></span><span style="display:flex;"><span>WITH PREFIX -NB/-NO.
-</span></span><span style="display:flex;"><span>IF CHANGE IS MADE FOR TOTALY UNUSED TICKET BRAND
-</span></span><span style="display:flex;"><span>LITE CAN BE EXCHANGED TO BRAND BUDGET/SAVER -
-</span></span><span style="display:flex;"><span>FARES WITH PREFIX -VU/-VO.
-</span></span><span style="display:flex;"><span>//
-</span></span><span style="display:flex;"><span>1.WHEN THE FIRST TICKETED FLIGHT COUPON IS
-</span></span><span style="display:flex;"><span>CHANGED - THE ENTIRE TICKET MUST BE RE-PRICED
-</span></span><span style="display:flex;"><span>USING -CURRENT- FARES IN EFFECT ON THE DATE OF NEW
-</span></span><span style="display:flex;"><span>TICKET ISSUANCE.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>NEW FARE AMOUNT SHOULD BE EQUAL OR HIGHER THAN
-</span></span><span style="display:flex;"><span>PREVIOUS AMOUNT.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>ANY DIFFERENCE IN FARES PLUS CHANGE FEE MUST BE
-</span></span><span style="display:flex;"><span>COLLECTED.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>ALL RULE PROVISIONS OF THE NEW FARE INCLUDING
-</span></span><span style="display:flex;"><span>ADVANCE PURCHASE/MIN STAY/MAX STAY/
-</span></span><span style="display:flex;"><span>SEASONALITY/ETC MUST BE MET.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>2. WHEN CHANGES ARE MADE TO OTHER THAN THE FIRST
-</span></span><span style="display:flex;"><span>TICKETED FLIGHT COUPON - THE ENTIRE TICKET MUST
-</span></span><span style="display:flex;"><span>BE RE-PRICED USING -HISTORICAL- FARES IN EFFECT
-</span></span><span style="display:flex;"><span>ON THE DATE OF ORIGINAL TICKET ISSUE.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>NEW FARE AMOUNT SHOULD BE EQUAL OR HIGHER THAN
-</span></span><span style="display:flex;"><span>PREVIOUS AMOUNT.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>ANY DIFFERENCE IN FARES PLUS CHANGE FEE MUST BE
-</span></span><span style="display:flex;"><span>COLLECTED.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>ALL RULE PROVISIONS OF THE NEW FARE INCLUDING
-</span></span><span style="display:flex;"><span>ADVANCE PURCHASE/MIN STAY/MAX STAY/
-</span></span><span style="display:flex;"><span>SEASONALITY/ETC MUST BE MET.
+</span></span><span style="display:flex;"><span>DIFFERENCE IN FARE MAY APPLY FOR FEW SCENARIOS.
+</span></span><span style="display:flex;"><span>FOR ANY COVID RELATED POLICY
+</span></span><span style="display:flex;"><span>INFORMATION AVAILABLE ON ETIHAD.COM/
+</span></span><span style="display:flex;"><span>DESTINATION GUIDE TO BE CONSIDERED AS THE SOURCE
+</span></span><span style="display:flex;"><span>FOR TRAVEL RESTRICTIONS/BANS.
 </span></span><span style="display:flex;"><span>GENERAL RULE - APPLY UNLESS OTHERWISE SPECIFIED
+</span></span><span style="display:flex;"><span>CHANGES
+</span></span><span style="display:flex;"><span>ANY TIME
+</span></span><span style="display:flex;"><span>CHANGES PERMITTED FOR REISSUE/REVALIDATION.
+</span></span><span style="display:flex;"><span>WAIVED FOR DEATH OF PASSENGER OR FAMILY MEMBER.
 </span></span><span style="display:flex;"><span>NOTE - TEXT BELOW NOT VALIDATED FOR AUTOPRICING.
-</span></span><span style="display:flex;"><span>// CANCELLATION PROVISIONS //
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>CHARGE APPLY PER TRANSACTION.
-</span></span><span style="display:flex;"><span>CHILD DISCOUNT DOES NOT APPLY.
-</span></span><span style="display:flex;"><span>INFANT WITHOUT A SEAT FREE OF CHARGE.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>RULES FOR CANCELLATION APPLY BY PRICING UNIT.
-</span></span><span style="display:flex;"><span>ONLY FARE IN SAME BRAND CAN BE USED FOR REFUND
-</span></span><span style="display:flex;"><span>PROCEDURE OF PARTLY USED TICKET.
-</span></span><span style="display:flex;"><span>FARES DIVIDED INTO BRANDS BY FOLLOWING -
-</span></span><span style="display:flex;"><span>PROMO - FARES WITH PREFIX -SX/-SO
-</span></span><span style="display:flex;"><span>BUDGET/SAVER - FARES WITH PREFIX -VU/-VO/
-</span></span><span style="display:flex;"><span>OPTIMUM/CLASSIC - FARES WITH PREFIX -CL/-CO
-</span></span><span style="display:flex;"><span>MAXIMUM/FLEX - FARES WITH PREFIX -FM/-FO
-</span></span><span style="display:flex;"><span>//
-</span></span><span style="display:flex;"><span>WHEN COMBINING ON A HALF ROUNDTRIP BASIS THE MOST
-</span></span><span style="display:flex;"><span>RESTRICTIVE CANCELLATION CONDITIONS APPLIES FOR
-</span></span><span style="display:flex;"><span>THE ENTIRE PRICING UNIT.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>PENALTIES WAIVED IN CASE OF INVOLUNTARY REFUND.
-</span></span><span style="display:flex;"><span>CONTACT CARRIER FOR DETAILS.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>IF REFUND PERMITTED FLIGHTS SEGMENTS MUST BE
-</span></span><span style="display:flex;"><span>CANCELLED NO LATER THAN CHECK-IN CLOSE TIME.
-</span></span><span style="display:flex;"><span>IN SUCH CASE A REFUND MAY BE REQUESTED DURING
-</span></span><span style="display:flex;"><span>TICKET VALIDITY PERIOD.
-</span></span><span style="display:flex;"><span>OTHERWISE NO-SHOW PROVISIONS APPLY.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>VOLUNTARY REFUND OF UNUSED FEES AND TAXES
-</span></span><span style="display:flex;"><span>PERMITTED DURING TICKET VALIDITY PERIOD.
-</span></span><span style="display:flex;"><span>EXCEPT-
-</span></span><span style="display:flex;"><span>FOR TICKETS THAT HAVE NO REFUND VALUE AT THE
-</span></span><span style="display:flex;"><span>MOMENT OF TICKET ISSUE /WHERE FARE IS NON-
-</span></span><span style="display:flex;"><span>REFUNDABLE ANY TIME/. IN THIS CASE YQ/YR
-</span></span><span style="display:flex;"><span>SURCHARGES ARE ALSO NON-REFUNDABLE.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>FOR TICKETS THAT HAVE NO REFUND VALUE AT THE
-</span></span><span style="display:flex;"><span>MOMENT OF TICKET ISSUE /WHERE FARE IS NON-
-</span></span><span style="display:flex;"><span>REFUNDABLE ANY TIME/IN CASE OF NO-SHOW ALL OTHERS
-</span></span><span style="display:flex;"><span>TAXES AND SURCHARGES ARE ALSO NON-REFUNDABLE.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>PERIOD VALIDITY FOR SPECIAL FARE WILL BE FARE MAX
-</span></span><span style="display:flex;"><span>STAY FROM THE DATE ON THE FIRST FLIGHT COUPON.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>IN CASE OF CANCELLATION AFTER DEPARTURE REFUND
-</span></span><span style="display:flex;"><span>THE DIFFERENCE BETWEEN THE FARE PAID AND THE
-</span></span><span style="display:flex;"><span>APPLICABLE FARE FLOWN. REFUND FEE APPLIES.
-</span></span><span style="display:flex;"><span>WHEN RECALCULATING FARES FOR TRANSPORTATION USED
-</span></span><span style="display:flex;"><span>FARES IN LOWER RBD THAN SHOWN IN USED COUPONS
-</span></span><span style="display:flex;"><span>CANNOT APPLY.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>FOR EACH USED PORTION OF 9B WITHIN GERMANY 35EUR
-</span></span><span style="display:flex;"><span>FOR ECONOMY AND 65EUR FOR BUSINESS CLASS OF
-</span></span><span style="display:flex;"><span>SERVICE SHOULD BE RETAINED FOR PARTLY USED TICKET.
-</span></span><span style="display:flex;"><span>ALL OTHER CHARGES SHOULD BE COLLECTED BASED UPON
-</span></span><span style="display:flex;"><span>THE RULE AND FARE USED.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>ANY APPLICABLE FARE OF OTHER AIRLINE
-</span></span><span style="display:flex;"><span>WHOSE PORTION HAD BEEN USED MAY BE APPLIED FOR
-</span></span><span style="display:flex;"><span>REFUND PROCEDURE OF PARTLY USED TICKET ISSUED IN
-</span></span><span style="display:flex;"><span>BRAND OPTIMUM/CLASSIC - FARES WITH PREFIX -CL/-CO.
-</span></span><span style="display:flex;"><span>REFUND CAN ONLY BE MADE THROUGH ISSUING OFFICE.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>// CHANGES PROVISIONS //
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>CHARGE APPLY PER TRANSACTION.
-</span></span><span style="display:flex;"><span>CHILD DISCOUNT DOES NOT APPLY.
-</span></span><span style="display:flex;"><span>INFANT WITHOUT A SEAT FREE OF CHARGE.
-</span></span><span style="display:flex;"><span>CHANGE PERMITTED ONLY WITHIN SAME BRAND.
-</span></span><span style="display:flex;"><span>//EXCEPTION -
-</span></span><span style="display:flex;"><span>IF CHANGE IS MADE FOR TOTALY UNUSED TICKET BRAND
-</span></span><span style="display:flex;"><span>LITE CAN BE EXCHANGED TO BRAND SAVER AND BRAND
-</span></span><span style="display:flex;"><span>SAVER CAN BE EXCHANGED TO BRAND LITE//
-</span></span><span style="display:flex;"><span>FARES DIVIDED INTO BRANDS BY FOLLOWING -
-</span></span><span style="display:flex;"><span>PROMO - FARES WITH PREFIX -SX/-SO
-</span></span><span style="display:flex;"><span>LITE - FARES WITH PREFIX -NB/-NO
-</span></span><span style="display:flex;"><span>BUDGET/SAVER - FARES WITH PREFIX -VU/-VO/-PX
-</span></span><span style="display:flex;"><span>OPTIMUM/CLASSIC - FARES WITH PREFIX -CL/-CO
-</span></span><span style="display:flex;"><span>MAXIMUM/FLEX - FARES WITH PREFIX -FM/-FO
-</span></span><span style="display:flex;"><span>//
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>CHANGE IS A ROUTING/DATE/FLIGHT/BOOKING CLASS/FARE
-</span></span><span style="display:flex;"><span>MODIFICATION.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>RULES FOR CHANGES APPLY BY FARE
-</span></span><span style="display:flex;"><span>COMPONENT/DIRECTION.
-</span></span><span style="display:flex;"><span>IN CASE OF COMBINATION CHARGE THE HIGHEST FEE OF
-</span></span><span style="display:flex;"><span>ALL CHANGED FARE COMPONENTS.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>WHENEVER A NONREFUNDABLE FARE TICKET IS REISSUED
-</span></span><span style="display:flex;"><span>A NONREFUNDABLE NOTATION MUST BE MADE IN THE
-</span></span><span style="display:flex;"><span>ENDORSEMENT BOX OF THE NEW TICKET.
-</span></span><span style="display:flex;"><span>THE ORIGINAL NONREFUNDABLE VALUE REMAINS
-</span></span><span style="display:flex;"><span>NONREFUNDABLE FOR ANY SUBSEQUENT REISSUES.
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>NEW RESERVATION AND REISSUANCE MUST BE MADE NOT
-</span></span><span style="display:flex;"><span>LATER THAN 30 MINUTES AFTER DEPARTURE OF THE
-</span></span><span style="display:flex;"><span>ORIGINALLY SCHEDULED FLIGHT.
-</span></span><span style="display:flex;"><span>OTHERWISE REFER TO REFUND RULES.
-</span></span><span style="display:flex;"><span>EXCEPTION - FOR FARES WHICH ALLOW TO MAKE CHANGES
-</span></span><span style="display:flex;"><span>IN CASE OF NO-SHOW REISSUE LATER THAN 30 MINUTES
-</span></span><span style="display:flex;"><span>AFTER DEPARTURE OF THE
-</span></span><span style="display:flex;"><span>ORIGINALLY SCHEDULED FLIGHT PERMITTED WITHIN
-</span></span><span style="display:flex;"><span>TICKET VALIDITY PERIOD UNDER THE SAME CONDITIONS
-</span></span><span style="display:flex;"><span>AS NO-SHOW.<span style="color:#070">&lt;/Text&gt;</span>
+</span></span><span style="display:flex;"><span>DATE CHANGES FOR REISSUE/REVALIDATION ARE
+</span></span><span style="display:flex;"><span>PERMITTED AT FREE OF COST.
+</span></span><span style="display:flex;"><span>CHANGES RESULTING IN A DIFFERENT BOOKING CLASS/
+</span></span><span style="display:flex;"><span>SEASONALITY/ ROUTING OR TRAVEL VALIDITY WILL
+</span></span><span style="display:flex;"><span>REQUIRE A REISSUE AND ADDITIONAL FARE/TAX
+</span></span><span style="display:flex;"><span>DIFFERENCES MUST BE COLLECTED.
+</span></span><span style="display:flex;"><span>-----------------------------------------------
+</span></span><span style="display:flex;"><span>OFFICIAL DOCUMENTATION REQUIRED IN THE CASE OF
+</span></span><span style="display:flex;"><span>DEATH OF PASSENGER/FAMILY MEMBER
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>ONE DATE CHANGE PERMITTED FOC WHEN RETURN DATE
+</span></span><span style="display:flex;"><span>OUT OF RANGE.
+</span></span><span style="display:flex;"><span>RETURN DATE MUST BE SPECIFIED AT TIME OF ORIGINAL
+</span></span><span style="display:flex;"><span>BOOKING.
+</span></span><span style="display:flex;"><span>IF ORIGINAL RBD IS NOT AVAILABLE THEN ANY FARE
+</span></span><span style="display:flex;"><span>DIFFERENCE SHALL APPLY.
+</span></span><span style="display:flex;"><span>-------------------------------------------------
+</span></span><span style="display:flex;"><span>CANCELLATIONS
+</span></span><span style="display:flex;"><span>BEFORE DEPARTURE
+</span></span><span style="display:flex;"><span>CANCELLATIONS PERMITTED FOR CANCEL.
+</span></span><span style="display:flex;"><span>WAIVED FOR DEATH OF PASSENGER OR FAMILY MEMBER.
+</span></span><span style="display:flex;"><span>NOTE - TEXT BELOW NOT VALIDATED FOR AUTOPRICING.
+</span></span><span style="display:flex;"><span>OFFICIAL DOCUMENTATION REQUIRED IN THE CASE OF
+</span></span><span style="display:flex;"><span>DEATH OF PASSENGER/FAMILY MEMBER
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>IN CASES WHERE THE APPLICABLE PENALTIES ARE
+</span></span><span style="display:flex;"><span>HIGHER THAN THE SUM OF BASE FARE AND FUEL
+</span></span><span style="display:flex;"><span>SURCHARGE - ONLY THE BASE FARE AND FUEL SURCHARGE
+</span></span><span style="display:flex;"><span>TO BE RETAINED. GOVERNMENT TAXES AND AIRPORT
+</span></span><span style="display:flex;"><span>CHARGES TO BE REFUNDED IN FULL
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>FOR NON-REFUNDABLE TICKETS  - ONLY THE BASE FARE
+</span></span><span style="display:flex;"><span>AND FUEL SURCHARGE TO BE RETAINED. UNUTILIZED
+</span></span><span style="display:flex;"><span>GOVERNMENT TAXES AND AIRPORT CHARGES TO BE
+</span></span><span style="display:flex;"><span>REFUNDED IN FULL
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>TICKETS ISSUED 7 DAYS OR MORE PRIOR TO A FLIGHTS
+</span></span><span style="display:flex;"><span>SCHEDULED DEPARTURE CAN BE CANCELLED/REFUNDED
+</span></span><span style="display:flex;"><span>WITHOUT PENALTY UP TO 24 HOURS AFTER A TICKET IS
+</span></span><span style="display:flex;"><span>ISSUED.
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>AFTER DEPARTURE
+</span></span><span style="display:flex;"><span>CANCELLATIONS PERMITTED FOR CANCEL.
+</span></span><span style="display:flex;"><span>WAIVED FOR DEATH OF PASSENGER OR FAMILY MEMBER.
+</span></span><span style="display:flex;"><span>NOTE - TEXT BELOW NOT VALIDATED FOR AUTOPRICING.
+</span></span><span style="display:flex;"><span>DEDUCT APPLICABLE ONE WAY FARE FOR THE JOURNEY
+</span></span><span style="display:flex;"><span>TRAVELED.
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>OFFICIAL DOCUMENTATION REQUIRED IN THE CASE OF
+</span></span><span style="display:flex;"><span>DEATH OF PASSENGER/FAMILY MEMBER
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>IN CASES WHERE THE APPLICABLE PENALTIES ARE
+</span></span><span style="display:flex;"><span>HIGHER THAN THE SUM OF BASE FARE AND FUEL
+</span></span><span style="display:flex;"><span>SURCHARGE - ONLY THE BASE FARE AND FUEL SURCHARGE
+</span></span><span style="display:flex;"><span>TO BE RETAINED. GOVERNMENT TAXES AND AIRPORT
+</span></span><span style="display:flex;"><span>CHARGES TO BE REFUNDED IN FULL
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>FOR NON-REFUNDABLE TICKETS  - ONLY THE BASE FARE
+</span></span><span style="display:flex;"><span>AND FUEL SURCHARGE TO BE RETAINED. UNUTILIZED
+</span></span><span style="display:flex;"><span>GOVERNMENT TAXES AND AIRPORT CHARGES TO BE
+</span></span><span style="display:flex;"><span>REFUNDED IN FULL
+</span></span><span style="display:flex;"><span>CHANGES
+</span></span><span style="display:flex;"><span>ANY TIME
+</span></span><span style="display:flex;"><span>CHARGE AUD 300.00 FOR NO-SHOW.
+</span></span><span style="display:flex;"><span>WAIVED FOR DEATH OF PASSENGER OR FAMILY MEMBER.
+</span></span><span style="display:flex;"><span>NOTE - TEXT BELOW NOT VALIDATED FOR AUTOPRICING.
+</span></span><span style="display:flex;"><span>NO NOSHOW FEE APPLIES FOR AN INFANT NOT OCCUPYING
+</span></span><span style="display:flex;"><span>A SEAT
+</span></span><span style="display:flex;"><span>NOSHOW FEES ARE NOT WAIVED IN THE CASE OF ILLNESS
+</span></span><span style="display:flex;"><span>OF THE PASSENGER OR AN IMMEDIATE FAMILY MEMBER.
+</span></span><span style="display:flex;"><span>NOSHOW FEES ARE WAIVED IN THE CASE OF DEATH OF
+</span></span><span style="display:flex;"><span>THE PASSENGER OR AN IMMEDIATE FAMILY MEMBER OF
+</span></span><span style="display:flex;"><span>THE PASSENGER. A VALID DEATH CERTIFICATE OR COPY
+</span></span><span style="display:flex;"><span>THERE OF IS REQUIRED DULY EXECUTED BY THE
+</span></span><span style="display:flex;"><span>COMPETENT AUTHORITIES I.E. THOSE DESIGNATED TO
+</span></span><span style="display:flex;"><span>ISSUE DEATH CERTIFICATES UNDER APPLICABLE LAWS OF
+</span></span><span style="display:flex;"><span>THE COUNTRY CONCERNED IN THE COUNTRY IN WHICH THE
+</span></span><span style="display:flex;"><span>DEATH OCCURRED. IN THE CASE OF NOSHOW FEES AN
+</span></span><span style="display:flex;"><span>IMMEDIATE FAMILY MEMBER SHALL BE CONFINED TO THE
+</span></span><span style="display:flex;"><span>SPOUSE CHILD PARENT BROTHER OR SISTER OF THE
+</span></span><span style="display:flex;"><span>PASSENGER.
+</span></span><span style="display:flex;"><span>-----------------------------------------------
+</span></span><span style="display:flex;"><span>ONE DATE CHANGE PERMITTED FOC WHEN RETURN DATE
+</span></span><span style="display:flex;"><span>OUT OF RANGE.
+</span></span><span style="display:flex;"><span>RETURN DATE MUST BE SPECIFIED AT TIME OF ORIGINAL
+</span></span><span style="display:flex;"><span>BOOKING.
+</span></span><span style="display:flex;"><span>IF ORIGINAL RBD IS NOT AVAILABLE THEN ANY FARE
+</span></span><span style="display:flex;"><span>DIFFERENCE SHALL APPLY.
+</span></span><span style="display:flex;"><span>-------------------------------------------------
+</span></span><span style="display:flex;"><span>IF A NO SHOW TICKET IS PROCESSED FOR ANY
+</span></span><span style="display:flex;"><span>CHANGES/REFUND THEN THE PENALTIES OF
+</span></span><span style="display:flex;"><span>CHANGE /REFUND WITHIN 96 HOURS BEFORE
+</span></span><span style="display:flex;"><span>DEPARTURE OF A FLIGHT WILL BE APPLICABLE
+</span></span><span style="display:flex;"><span>IN ADDITION TO THE NO SHOW CHARGE.
+</span></span><span style="display:flex;"><span>CANCELLATIONS
+</span></span><span style="display:flex;"><span>ANY TIME
+</span></span><span style="display:flex;"><span>CHARGE AUD 300.00 FOR NO-SHOW.
+</span></span><span style="display:flex;"><span>WAIVED FOR DEATH OF PASSENGER OR FAMILY MEMBER.
+</span></span><span style="display:flex;"><span>NOTE - TEXT BELOW NOT VALIDATED FOR AUTOPRICING.
+</span></span><span style="display:flex;"><span>NO NOSHOW FEE APPLIES FOR AN INFANT NOT OCCUPYING
+</span></span><span style="display:flex;"><span>A SEAT
+</span></span><span style="display:flex;"><span>NOSHOW FEES ARE NOT WAIVED IN THE CASE OF ILLNESS
+</span></span><span style="display:flex;"><span>OF THE PASSENGER OR AN IMMEDIATE FAMILY MEMBER.
+</span></span><span style="display:flex;"><span>NOSHOW FEES ARE WAIVED IN THE CASE OF DEATH OF
+</span></span><span style="display:flex;"><span>THE PASSENGER OR AN IMMEDIATE FAMILY MEMBER OF
+</span></span><span style="display:flex;"><span>THE PASSENGER. A VALID DEATH CERTIFICATE OR COPY
+</span></span><span style="display:flex;"><span>THERE OF IS REQUIRED DULY EXECUTED BY THE
+</span></span><span style="display:flex;"><span>COMPETENT AUTHORITIES I.E. THOSE DESIGNATED TO
+</span></span><span style="display:flex;"><span>ISSUE DEATH CERTIFICATES UNDER APPLICABLE LAWS OF
+</span></span><span style="display:flex;"><span>THE COUNTRY CONCERNED IN THE COUNTRY IN WHICH THE
+</span></span><span style="display:flex;"><span>DEATH OCCURRED. IN THE CASE OF NOSHOW FEES AN
+</span></span><span style="display:flex;"><span>IMMEDIATE FAMILY MEMBER SHALL BE CONFINED TO THE
+</span></span><span style="display:flex;"><span>SPOUSE CHILD PARENT BROTHER OR SISTER OF THE
+</span></span><span style="display:flex;"><span>PASSENGER.
+</span></span><span style="display:flex;"><span>-------------------------------------------------
+</span></span><span style="display:flex;"><span>IF A NO SHOW TICKET IS PROCESSED FOR ANY
+</span></span><span style="display:flex;"><span>CHANGES/REFUND THEN THE PENALTIES OF
+</span></span><span style="display:flex;"><span>CHANGE /REFUND WITHIN 96 HOURS BEFORE
+</span></span><span style="display:flex;"><span>DEPARTURE OF A FLIGHT WILL BE APPLICABLE
+</span></span><span style="display:flex;"><span>IN ADDITION TO THE NO SHOW CHARGE.
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>OFFICIAL DOCUMENTATION REQUIRED IN THE CASE OF
+</span></span><span style="display:flex;"><span>DEATH OF PASSENGER/FAMILY MEMBER
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>IN CASES WHERE THE APPLICABLE PENALTIES ARE
+</span></span><span style="display:flex;"><span>HIGHER THAN THE SUM OF BASE FARE AND FUEL
+</span></span><span style="display:flex;"><span>SURCHARGE - ONLY THE BASE FARE AND FUEL SURCHARGE
+</span></span><span style="display:flex;"><span>TO BE RETAINED. GOVERNMENT TAXES AND AIRPORT
+</span></span><span style="display:flex;"><span>CHARGES TO BE REFUNDED IN FULL
+</span></span><span style="display:flex;"><span>--------------------------------------------------
+</span></span><span style="display:flex;"><span>FOR NON-REFUNDABLE TICKETS  - ONLY THE BASE FARE
+</span></span><span style="display:flex;"><span>AND FUEL SURCHARGE TO BE RETAINED. UNUTILIZED
+</span></span><span style="display:flex;"><span>GOVERNMENT TAXES AND AIRPORT CHARGES TO BE
+</span></span><span style="display:flex;"><span>REFUNDED IN FULL
+</span></span><span style="display:flex;"><span>.<span style="color:#070">&lt;/Text&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/Paragraph&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;/Rules&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/FareRuleInfo&gt;</span>
