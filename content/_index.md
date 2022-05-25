@@ -726,12 +726,12 @@ title: Рекомендации по работе с Sabre APIs
 В разделе [Начало работы](introduction.html) добавлена ссылка на централизованное хранилище обновлений сервисов Sabre.
 
 В различных разделах рекомендаций обновлены версии используемых сервисов:
-- EndTransactionLLSRQ до [версии 2.0.6](http://releasenotes.developer.sabre.com/2016/08/25/end-transaction-v2-0-6-on-august-25-2016)
-- OTA_CancelLLSRQ до [версии 2.0.2](http://releasenotes.developer.sabre.com/2016/08/25/cancel-itinerary-segments-v2-0-2-on-august-25-2016)
-- DeletePriceQuoteLLSRQ до [версии 2.1.0](http://releasenotes.developer.sabre.com/2016/08/25/delete-price-quote-v2-1-0-on-august-25-2016)
-- QueueAccessLLSRQ до [версии 2.0.7](http://releasenotes.developer.sabre.com/2016/08/25/access-queue-v2-0-7-on-august-25-2016)
-- AirTicketLLSRQ до [версии 2.8.0](http://releasenotes.developer.sabre.com/2016/08/25/issue-air-ticket-v2-8-0-on-august-25-2016)
-- OTA_AirPriceLLSRQ до [версии 2.13.0](http://releasenotes.developer.sabre.com/2016/08/25/price-air-itinerary-v2-13-0-on-august-25-2016)
+- EndTransactionLLSRQ до версии 2.0.6
+- OTA_CancelLLSRQ до версии 2.0.2
+- DeletePriceQuoteLLSRQ до версии 2.1.0
+- QueueAccessLLSRQ до версии 2.0.7
+- AirTicketLLSRQ до версии 2.8.0
+- OTA_AirPriceLLSRQ до версии 2.13.0
 {{< /details >}}
 
 -----------
