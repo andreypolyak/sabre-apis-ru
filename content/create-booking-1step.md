@@ -35,10 +35,14 @@ title: Создание бронирований в 1 шаг
 - ```/OriginLocation/@LocationCode``` —  код пункта отправления
 
 {{< hint danger >}}
-Обратите внимание на необходимость корректного заполнения индикатора женатого сегмента! В противном случае, перевозчик может не подтвердить места при создании бронирования. Информацию для заполнения можно взять из ответа на запрос к сервису [BargainFinderMaxRQ](shop.html).
+Обратите внимание на необходимость корректного заполнения индикатора женатого сегмента! В противном случае, перевозчик может не подтвердить места при создании бронирования. Информацию для заполнения можно взять из ответа на запрос к сервису [BargainFinderMaxRQ](shop.html) или [RevalidateItinRQ](revalidate-itinerary.html).
 {{< /hint >}}
 
-#### Алгоритм установки индикатора женатого сегмента по данным из стандартного (OTA) ответа сервиса BargainFinderMaxRQ
+#### Алгоритм установки индикатора женатого сегмента по данным из стандартного (OTA) ответа сервисов BargainFinderMaxRQ и RevalidateItinRQ (кроме запросов, в которых запрошен поиск с оформлением на нескольких билетах в режиме SCHS)
+Указывается значение из элемента ```
+/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItinerary/OriginDestinationOptions/OriginDestinationOption/FlightSegment/MarriageGrp```.
+
+#### Алгоритм установки индикатора женатого сегмента по данным из стандартного (OTA) ответа сервисов BargainFinderMaxRQ и RevalidateItinRQ (для запросов, в которых запрошен поиск с оформлением на нескольких билетах в режиме SCHS)
 1. Проассоциировать все сегменты в выбранной рекомендации с соответствующими им элементами ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode``` (```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode``` для дополнительных расчетов или ```/OTA_AirLowFareSearchRS/PricedItineraries/PricedItinerary/TPA_Extensions/AdditionalFares/AirItineraryPricingInfo/Tickets/Ticket/AirItineraryPricingInfo/PTC_FareBreakdowns/PTC_FareBreakdown/FareBasisCodes/FareBasisCode``` для MultiTicket рекомендаций). Количество элементов ```FareBasisCode``` будет равно количеству сегментов в рекомендации и идти они будут в том же порядке.
 2. Наличие атрибута ```/@AvailabilityBreak``` означает, что следующий сегмент не является женатым с текущим. Отсутствие атрибута означает, что следующий сегмент является женатым с текущим.
 3. В соответствии с правилами указываются индикаторы женатого сегмента:
@@ -46,7 +50,7 @@ title: Создание бронирований в 1 шаг
     - Если у предыдущего сегмента значение атрибута ```/@AvailabilityBreak``` равно ```true```, то у текущего сегмента указывается значение ```O``` (обычный сегмент)
     - Если у предыдущего сегмента нет атрибута ```/@AvailabilityBreak```, то у текущего сегмента указывается значение ```I``` (женатый сегмент)
 
-#### Алгоритм установки индикатора женатого сегмента по данным из группированного (GIR) ответа сервиса BargainFinderMaxRQ
+#### Алгоритм установки индикатора женатого сегмента по данным из группированного (GIR) ответа сервисов BargainFinderMaxRQ и RevalidateItinRQ
 1. Проассоциировать все сегменты в выбранной рекомендации с соответствующими им элементами ```/GroupedItineraryResponse/ItineraryGroup/Itinerary/PricingInformation/Fare/PassengerInfo/FareComponent/Segment``` (```/GroupedItineraryResponse/ItineraryGroup/Itinerary/PricingInformation/Ticket/PricingInformation/Fare/PassengerInfo/FareComponent/Segment``` для MultiTicket рекомендаций). Количество элементов ```FareBasisCode``` будет равно количеству сегментов в рекомендации и идти они будут в том же порядке.
 2. Наличие атрибута ```/@AvailabilityBreak``` означает, что следующий сегмент не является женатым с текущим. Отсутствие атрибута означает, что следующий сегмент является женатым с текущим.
 3. В соответствии с правилами указываются индикаторы женатого сегмента:

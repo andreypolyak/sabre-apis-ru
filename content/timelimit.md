@@ -28,7 +28,7 @@ title: Тайм-лимиты бронирований
 1. Отправить запрос на чтение бронирование [TravelItineraryReadRQ](https://developer.sabre.com/docs/soap_apis/management/itinerary/get_itinerary)
 2. Получить список SSR сообщений. Они будут находиться в последовательно расположенных элементах ```/TravelItineraryReadRS/TravelItinerary/SpecialServiceInfo```
 3. Отфильтровать SSR сообщения, которые имеют тип ```AFX``` (```/TravelItineraryReadRS/TravelItinerary/SpecialServiceInfo/@Type```) и код ```OTHS``` или ```ADTK``` (```/TravelItineraryReadRS/TravelItinerary/SpecialServiceInfo/Service/@SSR_Type```). В них могут находиться необходимые сообщения с тайм-лимитом
-4. Для получения тайм-лимита из текста (```/TravelItineraryReadRS/TravelItinerary/SpecialServiceInfo/Service/Text```) SSR сообщений сравнить их с известными шаблонами такого рода сообщений (см. ниже)
+4. Для получения структурированной информации о тайм-лимите из текста (```/TravelItineraryReadRS/TravelItinerary/SpecialServiceInfo/Service/Text```) SSR сообщения требуется проверить их при помощи регулярных выражений из [списка](timelimit.html#регулярные-выражения-для-поиска-сообщений-с-тайм-лимитом-от-перевозчиков) в данном разделе
 
 В некоторых случаях установленные в тарифе тайм-лимиты могут не совпадать с тайм-лимитами переданными в SSR сообщениях. Как правило перевозчики в этом случае предлагают считать тайм-лимитом более раннее время.
 
@@ -1286,221 +1286,171 @@ title: Тайм-лимиты бронирований
 ```
 {{< /details >}}
 
-## Шаблоны сообщений от перевозчиков с тайм-лимитом
+## Регулярные выражения для поиска сообщений с тайм-лимитом от перевозчиков
 
-В данном разделе представлены шаблоны сообщений от перевозчиков, содержащие тайм-лимиты.
+В данном разделе представлены [регулярные выражения](https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F) для поиска сообщений с тайм-лимитом от более чем 150 перевозчиков. Для проверки и тестирования регулярных выражений можно использовать сервис [regex101](https://regex101.com/).
 
 {{< hint danger >}}
 Обратите внимание на то, что представленный список может содержать ошибочные или неточные данные, поскольку содержимое сообщений может быть в любой момент изменено перевозчиком.
 {{< /hint >}}
 
-Данные также доступны для загрузки в формате [xlsx](/sabre-apis-ru/assets/ssr/Timelimit%20SSR%20templates.xlsx) и [csv](/sabre-apis-ru/assets/ssr/Timelimit%20SSR%20templates.csv).
+Регулярные выражения используют именованные группы для поиска необходимых переменных внутри сообщения перевозчика. В зависимости от сообщения могут быть найдены следующие именованные группы:
+- ```carrier``` — код маркетингового перевозчика, который отправил сообщение
+- ```full_year``` — год наступления тайм-лимита. 4 цифры, например ```2022```
+- ```year``` — год наступления тайм-лимита. 2 цифры, например ```22```
+- ```month``` — месяц наступления тайм-лимита. 3 буквы, например ```MAY```
+- ```day``` — день наступления тайм-лимита. 2 цифры, например ```30```
+- ```hour``` — час наступления тайм-лимита. 2 цифры, например ```23```
+- ```minute``` — минута наступления тайм-лимита. 2 цифры, например ```59```
+- ```location``` — код города или аэропорта часового пояса. 3 буквы, например ```MOW```
+- ```timezone``` — часовой пояс. Возможные значения:
+    - ```Z``` — UTC+0
+    - ```GMT``` — UTC+0
+    - ```UTC``` — UTC+0
+    - ```CST``` — UTC-6
+    - ```CDT``` — UTC-5
+    - ```HDQ``` — часовой пояс авиакомпании
 
-Таблица содержит 3 столбца:
-- ***Авиакомпания*** — код авиакомпании, отправляющей SSR сообщения с таким шаблоном
-- ***Часовой пояс*** — информация о часовом поясе времени тайм-лимита. Возможные значения:
-    - *GMT* — часовой пояс GMT (время по Гринвичу)
-    - *CST (GMT-6)* — часовой пояс CST (Central Standard Time)
-    - *Город в сообщении* — используется часовой пояс того города, что указан в сообщении
-    - *Штат в сообщении* — используется часовой пояс того штата в США, что указан в сообщении
-    - *Страна в сообщении* — используется часовой пояс той страны, что указана в сообщении
-    - *Не указан* — информация о часовом поясе не указана в сообщении
-    - *Не требуется* — информация о часовом поясе не требуется, поскольку тайм-лимит указан, относительно текущего времени
-- ***Шаблон*** — шаблон сообщения, присылаемого перевозчиком. Шаблон содержит постоянную часть и переменные, которые выделены фигурными скобками. Возможные названия переменных:
-    - ```{yyyy}``` — год наступления тайм-лимита (4 цифры)
-    - ```{yy}``` — год наступления тайм-лимита (2 цифры)
-    - ```{MMM}``` — месяц наступления тайм-лимита (3 буквы)
-    - ```{dd}``` — день наступления тайм-лимита (2 цифры)
-    - ```{ddd}``` — день недели наступления тайм-лимита (3 буквы)
-    - ```{HH}``` — час наступления тайм-лимита (2 цифры)
-    - ```{+HH}``` — часов до наступления тайм-лимита (2 цифры)
-    - ```{mm}``` — минуты наступления тайм-лимита (2 цифры)
-    - ```{cty}``` — город или аэропорт часового пояса (3 буквы)
-    - ```{country}``` — страна часового пояса (2 буквы)
-    - ```{state}``` — штат США часового пояса (2 буквы)
-    - ```{fltyy}``` — год вылета рейса (2 цифры)
-    - ```{fltMMM}``` — месяц вылета рейса (3 буквы)
-    - ```{fltdd}``` — день вылета рейса (2 цифры)
-    - ```{fltnum}``` — номер рейса (1-4 цифры)
-    - ```{cls}``` — класс бронирования рейса (1 буква)
-    - ```{msgyy}``` — год отправки сообщения (2 цифры)
-    - ```{msgMMM}``` — месяц отправки сообщения (3 буквы)
-    - ```{msgMM}``` — месяц отправки сообщения (2 цифры)
-    - ```{msgdd}``` — день отправки сообщения (2 цифры)
-    - ```{msgHH}``` — часы отправки сообщения (2 цифры)
-    - ```{msgmm}``` — минуты отправки сообщения (2 цифры)
-    - ```{segstat}``` — статус сегмента (2 буквы)
-    - ```{paxnum}``` — количество мест (1 цифра)
-    - ```{*}``` — случайный символ (количество звездочек соответствует количеству символов)
+{{< hint danger >}}
+Обратите внимание на то, что не во всех сообщениях может содержаться вся информация о тайм-лимите. Например, некоторые перевозчики не сообщают в своих сообщениях чаосовй пояс для времени тайм-лимита.
+{{< /hint >}}
 
-| Авиакомпания | Часовой пояс | Шаблон |
-| ------------ | ------------ | ------ |
-| 3K  | GMT | ```1S SUBJ CXL ON/BEFORE {dd}{MMM} {HH}{mm}Z WITHOUT PAYMENT``` |
-| 3U  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL 3U{fltnum} {cls}{fltdd}{fltMMM}``` |
-| 4U  | GMT | ```1S TO 4U ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD``` |
-| 5N  | GMT | ```1S 5N-{fltnum}/{fltdd}{fltMMM}{fltyy} BY {dd}{MMM}/{HH}{mm}Z OR CNL``` |
-| 5N  | GMT | ```1S TO 5N BY {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE CANCELLED``` |
-| 6H  | Город в сообщении | ```1S TO 6H BY {cty}{HH}{mm}/{dd}{MMM} OTHERWISE WILL BE XLD``` |
-| 7R  | GMT | ```1S TO 7R BY {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE CANCELLED``` |
-| 8M  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| 8Q  | GMT | ```1S PLS ADTK OR CNL 8Q FLIGHT BY {dd}{MMM} {HH} {mm} GMT``` |
-| 9U  | Город в сообщении | ```1S.ISSUE TICKETS BY {dd}{MMM} {HH}{mm} LT {cty} OR CANX``` |
-| 9W  | Город в сообщении | ```1S TO 9W BY {dd}{MMM}{yy} {HH}{mm}{cty} {dd}{MMM}{yy} {HH}{mm}{country} ELSE WILL BE XXLD``` |
-| A3  | Город в сообщении | ```1S AUTO XX IF ELECTRONIC TKT NR NOT RCVD BY {dd}{MMM}{yy} {HH}{mm} {cty} LT``` |
-| A3  | Город в сообщении | ```1S A3/OA AUTO XX IF ELECTRONIC TKT NR NOT RCVD BY {dd}{MMM}{yy} {HH}{mm} {cty} LT``` |
-| A9  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| AB  | GMT | ```1S AB WILL CXL OR SEND ADM IF NO TKT IS ISSUED BY {HH}{mm}GMT0/{dd}{MMM}{yy}``` |
-| AC  | Страна в сообщении  | ```PLADV TICKET NBR BY {dd}{MMM}{yy} {HH}{mm}{country} TO AVOID``` |
-| AD  | GMT | ```1S TO AD ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD``` |
-| AE  | Город в сообщении | ```1S PLS TKT BY {HH}{mm}/{dd}{MMM}{yy} {cty} OR ITIN WILL BE AUTO-CANCELED BY CI/AE``` |
-| AF  | Не указан | ```1S TO AF BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| AH  | Город в сообщении | ```AA  AHTL/ PLS ADVS TKT BY {dd}{MMM}{yy} {HH} {mm} {cty} LT``` |
-| AI  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY AI BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| AM  | Город в сообщении | ```PLS ADV TKT BY {dd}{MMM} {HH}{mm} {cty} OR PNR WILL BE CNL``` |
-| AR  | CST (GMT-6) | ```1S PLS ADV TKNO BY {HH}{mm} {dd}{MMM} CST OR WILL XXL SET {msgdd}{msgMMM}{msgyy}``` |
-| AT  | Не указан | ```1S ADTK BY {HH}{mm} LOCAL TIME/{dd}{MMM}{yyyy} OR SPACE WILL BE CXLD``` |
-| AV  | GMT | ```1S PLEASE SEND AVTA TKNA BY {HH}{mm}/{dd}{MMM} GMT USING ATN ENTRY``` |
-| AY  | Город в сообщении | ```1S IF NO TKT IS ISSUED BY {dd}{MMM}{yyyy}/{HH}{mm} {cty} TIME``` |
-| AZ  | Город в сообщении | ```1S TO AZ BY {dd}{MMM} {HH}{mm} {cty} OR AZ FLTS WILL BE CNLD``` |
-| AZ  | Не указан | ```1S TO AZ BY {dd}{MMM} OR AZ FLTS WILL BE CNLD``` |
-| B2  | Не указан | ```1S PLS ADV TKTNUMBR FOR B2 BY {dd}{MMM} {HH}{mm} OR AUTOCNL``` |
-| B2  | Не указан | ```1S PLS ADV TKTNUMBR FOR B2 IN {cls} CLASS BY {dd}{MMM} {HH}{mm} OR AUTOCNL``` |
-| B6  | Штат в сообщении  | ```1S PLS TICKET OR CANCEL BY {dd}{MMM}{yy} {HH}{mm}{country}{state} PER GDS``` |
-| B6  | Страна в сообщении  | ```1S PLS TKT BY {dd}{MMM}{yy} {HH}{mm}{country} PER B6 AND SU BILATERAL``` |
-| BA  | Не указан | ```1S ATTN FROM BA - ENTER VALID TICKET NBR BY {dd}{MMM}{yy}``` |
-| BA  | Не указан | ```1S AGT/BA PLS ENTER GENUINE TICKET NUMBER IN PNR BY {dd}{MMM}{yy}``` |
-| BD  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL BD{fltnum} {cls}{fltdd}{fltMMM}``` |
-| BG  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY BG BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| BJ  | GMT | ```1S PLS ADTK OR CNL BJ FLIGHT BY {HH} {mm} / {dd}{MMM} GMT``` |
-| BT  | GMT | ```1S PLS ADTK BY {dd}{MMM}{yy} {HH}{mm}Z OR BT SPACE WILL BE CANCELLED``` |
-| BT  | GMT | ```1S REMINDER PLS ADTK BY {dd}{MMM}{yy} {HH}{mm}Z OR BT SPACE WILL BE CANCELLED``` |
-| CA  | Не указан | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL CA ALL SEGS``` |
-| CA  | Не указан | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL CA NON-TKT SEGS``` |
-| CI  | Город в сообщении | ```1S PLS TKT BY {HH}{mm}/{dd}{MMM}{yy} {cty} OR ITIN WILL BE AUTO-CANCELED BY CI/AE``` |
-| CM  | Не указан | ```1S {segstat}{paxnum}. PLS SEND TKT NUMBER IN OSI/SSR {HH}{mm}/{dd}{MMM}``` |
-| CX  | GMT | ```1S ADV TKT NBR TO CX/KA BY {dd}{MMM} {HH}{mm} GMT OR SUBJECT TO CANCEL``` |
-| CX  | GMT | ```1S ADV TKT NBR TO CX/KA BY {dd}{MMM} GMT {HH}{mm} OR SUBJECT TO CANCEL``` |
-| CZ  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL CZ BOOKING``` |
-| DE  | GMT | ```1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}``` |
-| DK  | GMT | ```1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}``` |
-| DL  | Город в сообщении | ```AA {segstat}{paxnum}. PLS TKT BY {HH}{mm} {dd}{MMM}{yy} {cty}``` |
-| DL  | Город в сообщении | ```1S {segstat}{paxnum}. PLS TKT BY {HH}{mm} {dd}{MMM}{yy} {cty}``` |
-| DV  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY DV BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| EK  | Город в сообщении | ```AA  RITK/ADTKT BY {dd}{MMM} {HH}{mm} {cty} LT``` |
-| EK  | Город в сообщении | ```AA  RITK/ADTKT BY {dd}{MMM} {HH}{mm} {cty} LT ELSE BKG WILL BE XXLD``` |
-| EL  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY EL BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| EW  | GMT | ```1S TO EW ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD``` |
-| EY  | Город в сообщении | ```1S ADTK BY {dd}{MMM}{yy} {HH}{mm} {cty} LT OR EY SPACE WILL BE CXLD``` |
-| F9  | GMT | ```1S TO F9 ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD``` |
-| FB  | Не указан | ```1S ADTK BY {HH}{mm} LOCAL TIME/{dd}{MMM}{yyyy} OR SPACE WILL BE CXLD``` |
-| FI  | GMT | ```1S PLS ADV TKT NBRS LATEST {dd}{MMM}{yy} {HH}{mm} GMT FI SEGMENTS OR ACC TO FARERULE IF EARLIER``` |
-| FJ  | GMT | ```1S PLS ADTK ADV FJ TKTG DETAILS BY {dd}{MMM}{yy} {HH}{mm}Z``` |
-| FM  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL FM{fltnum} {cls}{fltdd}{fltMMM}``` |
-| G3  | GMT | ```1S SUBJ CXL ON/BEFORE {dd}{MMM} {HH}{mm}Z WITHOUT PAYMENT``` |
-| GA  | Не указан | ```ADTK 1S TO GA BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| GF  | GMT | ```1S BY {dd}{MMM}{yy} {HH}{mm}GMT OR GF WILL CANCEL``` |
-| GS  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL GS{fltnum} {cls}{fltdd}{fltMMM}``` |
-| H1  | GMT | ```1S PLS ISSUE TKT AND ADV TKT NUMBER LATEST BY {dd}{MMM}{yy} {HH}{mm}Z OTHERWISE THIS PNR WILL BE CXLD WITHOUT ANY FURTHER NOTIFICATION``` |
-| HO  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL HO{fltnum} {cls}{fltdd}{fltMMM}``` |
-| HQ  | GMT | ```1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}``` |
-| HU  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL HU{fltnum} {cls}{fltdd}{fltMMM}``` |
-| HX  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL HX{fltnum} {cls}{fltdd}{fltMMM}``` |
-| HY  | Город в сообщении | ```1S.ISSUE TICKETS BY {dd}{MMM} {HH}{mm} LT {cty} OR CANX``` |
-| HZ  | GMT | ```1S TO HZ BY {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE CANCELLED``` |
-| IB  | GMT | ```1S IB REMINDS YOU TO ISSUE AND ADV E-TKT IN PNR BY {dd}{MMM}{yyyy} {HH}{mm} GMT0``` |
-| IG  | GMT | ```1S.ISSUE TICKETS BY {dd}{MMM} {HH}{mm} LT {cty} OR CANX``` |
-| IZ  | GMT | ```1S IZ PLZ PAY BY {dd}{MMM}{yy} {HH}{mm} GMT TO AVOID CANCELLATION``` |
-| J2  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY J2 BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| JD  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL JD{fltnum} {cls}{fltdd}{fltMMM}``` |
-| JL  | Не указан | ```AA JL {cls}-CLS BY XX {dd}{MMM} XX USING SSR OR WILL BE XLD``` |
-| JP  | Не указан | ```1S PLS TKT BY {HH}{mm}/{dd}{MMM}{yy} OR ITIN WILL BE AUTO-CANCELED BY JP``` |
-| JU  | Не указан | ```1S {****} ROBOTAUTO-PROCESS {dd}{MMM}{yyyy}/{HH}{mm} - SET {msgMM}/{msgdd}/{msgyy} {msgHH}{msgmm}``` |
-| K6  | Город в сообщении | ```1S PLEASE TICKET OR CANX BY {dd}{MMM}{yy} {HH}{mm}{cty}``` |
-| KA  | GMT | ```1S ADV TKT NBR TO CX/KA BY {dd}{MMM} {HH}{mm} GMT OR SUBJECT TO CANCEL``` |
-| KA  | GMT | ```1S ADV TKT NBR TO CX/KA BY {dd}{MMM} GMT {HH}{mm} OR SUBJECT TO CANCEL``` |
-| KC  | Город в сообщении | ```1S UNTIL {dd}{MMM}{yyyy}/{HH}{mm}/{cty}//{dd}{MMM}{yyyy}/{HH}{mm}/{cty} OR XXLD``` |
-| KE  | Город в сообщении | ```1S TO KE BY {dd}{MMM} {HH}{mm} {cty} OTHERWISE WILL BE XLD``` |
-| KK  | Город в сообщении | ```1S TO KK BY {cty}{HH}{mm}/{dd}{MMM} OTHERWISE WILL BE XLD``` |
-| KL  | GMT | ```1S TO KL BY {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE WILL BE XXLD``` |
-| KM  | Не указан | ```1S KM SECTORS EXPIRE ON {dd}{MMM}``` |
-| KQ  | GMT | ```1S TO KQ BY {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE WILL BE XXLD``` |
-| KQ  | GMT | ```1S TO KQ/KL BY {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE WILL BE XXLD``` |
-| LA  | Город в сообщении | ```1S PLS ADV TKT NBR BEFORE {dd}{MMM}{yy} {HH}{mm} {cty} LT OR AUTO CNL``` |
-| LH  | GMT | ```1S PLS ISS AUTOMATIC TKT BY {dd}{MMM}{yy}/{HH}{mm}Z OR LH OPTG/MKTG SEGS WILL BE XLD. APPLIC FARE RULE APPLIES IF ITDEMANDS EARLIER TKTG.``` |
-| LO  | Не указан | ```1S PLS ISSUE TKT BY {HH}{mm}/{dd}{MMM} OR LO ITIN WILL BE CXLD``` |
-| LX  | GMT | ```1S PLS ADV TKT NBR FOR ITIN BY {dd}{MMM}{yy}/{HH}{mm}Z OR LX OPTG/MKTG FLTS WILL BE CNLD  {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}``` |
-| LY  | Не указан | ```1S ADTK TO LY BY {dd}{MMM}{yyyy}/{HH}{mm} OR SPACE WILL BE CXLD AUTOMATICALLY``` |
-| MF  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL MF{fltnum} {cls}{fltdd}{fltMMM}``` |
-| MH  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY MH BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| MI  | Не указан | ```1S TO MI BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| MK  | Не указан | ```1S PLS ADV TKT NO BY {HH}{mm}/{dd}{MMM}{yyyy} OR MK WILL CXL.``` |
-| MS  | Не указан | ```1S TO MS BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| MT  | GMT | ```1S PLS ISSUE TIX FOR ALL DE/MT/HQ/DK SEGMENTS UNTIL {dd}{MMM}{yy}/{HH}{mm}Z OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED/ {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}``` |
-| MU  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL MU{fltnum} {cls}{fltdd}{fltMMM}``` |
-| NH  | Город в сообщении | ```1S TO NH BY {dd}{MMM} {HH}{mm} {cty} TIME ZONE OTHERWISE WILL BE XLD``` |
-| NT  | Город в сообщении | ```1S ADTK BY {HH}{mm} {cty}/{dd}{MMM}{yy} OR NT SPACE WILL BE CXLD``` |
-| NX  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL NX{fltnum} {cls}{fltdd}{fltMMM}``` |
-| OD  | Город в сообщении | ```1S SS/{cty}  {HH}{mm}/{dd}{MMM}``` |
-| OK  | GMT | ```1S OK CANCELS IF NO TKT ADVISED BY {dd}{MMM} {HH}{mm}UTC``` |
-| OK  | Не указан | ```1S KK1 TO OK BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE CANCELLED``` |
-| OM  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY OM BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| OS  | GMT | ```1S PLS ADV TKT NBRS OF OS SEG LATEST {dd}{MMM}{yy} {HH}{mm}GMT OR SEG WILL BE CANX``` |
-| OY  | GMT | ```1S TO OY ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD``` |
-| OY  | GMT | ```SUBJ CXL ON/BEFORE {dd}{MMM} {HH}{mm}Z WITHOUT PAYMENT``` |
-| OZ  | Не указан | ```1S TO OZ BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| PC  | GMT | ```1S ADV TKNE OR XX BY {dd}{MMM} {HH} {mm} GMT``` |
-| PG  | Город в сообщении | ```1S ADV TKTNBR BY {dd}{MMM}{yy} {HH}{mm} {cty} OR SEG WILL BE CXLD``` |
-| PN  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL PN{fltnum} {cls}{fltdd}{fltMMM}``` |
-| PR  | Город в сообщении | ```1S ADV TKT BY {dd}{MMM}{yy} {HH}{mm} {cty} OR SEG WILL BE CXLD``` |
-| PS  | Не указан | ```1S TO PS BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| PS  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY PS BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| QF  | Не указан | ```1S ADTK NO LATER THAN {dd}{MMM} TO AVOID CANCELLATION``` |
-| QR  | Не указан | ```1S PLS TICKET BY {HH}{mm}/{dd}{MMM}{yyyy} LCLT AT BOARD POINT OR QR WILL CXL``` |
-| QS  | Город в сообщении | ```1S TO QS BY {dd}{MMM} {HH}{mm} {cty} TIME ZONE OTHERWISE WILL BE XLD``` |
-| R3  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY R3 BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| RJ  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E OR FA NOT RCVD BY RJ BY {dd}{MMM}{yy} {HH}{mm} {cty} LT``` |
-| RJ  | Не указан | ```1S TO RJ BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| RO  | Не указан | ```1S ADTK BY {HH}{mm}/{dd}{MMM}{yyyy} OR RO SPACE WILL BE CXLD``` |
-| RS  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY RS BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| S4  | Город в сообщении | ```1S ADTK BY {HH}{mm} {cty}/{dd}{MMM}{yy} OR SP-S4 SPACE WILL BE CXLD``` |
-| S7  | Город в сообщении | ```1S.ISSUE TKT BY {dd}{MMM} {HH}{mm} LT {cty} OR PNR WILL BE CXLD``` |
-| S7  | Не указан | ```1S TO  S7  BY {dd}{MMM} OTHERWISE WILL BE XLD``` |
-| SA  | Не указан | ```SSR OTHS 1S PLS ADV TKT NO BY {HH}{mm}/{dd}{MMM}{yyyy} MOW OR SAA WILL CXL``` |
-| SK  | Город в сообщении | ```1S ADTK WITHIN TKT DEADLINE OR SK WILL CNL AT {HH}{mm} {cty}/{dd}{MMM}{yy}``` |
-| SN  | GMT | ```1S PLS ADV TKT NBR FOR ITIN BY {dd}{MMM}{yy}/{HH}{mm}Z OR SN OPTG/MKTG FLTS WILL BE CNLD  {msgdd}{msgMMM}{msgyy}{msgHH}{msgmm}``` |
-| SP  | Город в сообщении | ```1S ADTK BY {HH}{mm} {cty}/{dd}{MMM}{yy} OR SP-S4 SPACE WILL BE CXLD``` |
-| SQ  | Не указан | ```1S TO SQ BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| ST  | GMT | ```1S AUTO XX IF SSR TKNE NOT RCVD BY {HH}{mm}/{dd}{MMM}/UTC``` |
-| SU  | Не указан | ```1S ATTN LAST DAY FOR TICKETING {dd}{MMM}{yy} OR PNR WILL BE CNLD``` |
-| SU  | Не требуется  | ```1S ATTN TKT MUST BE COMPLETED WITHIN {+HH} HOURS AFTER RES``` |
-| SU  | Не требуется  | ```1S ATTN CRT FLT TKT MUST BE COMPLETED WITHIN {+HH}H AFTER RES``` |
-| SU  | Город в сообщении | ```1S ADV TKT BY {HH}{mm} {cty} {dd}{MMM} OR PNR WILL BE CXLD``` |
-| SU  | Не указан | ```1S ATTN CRIT FLT LAST DAY FOR TICKETING {dd}{MMM}``` |
-| SU  | Город в сообщении | ```1S SS/{cty}  {HH}{mm}/{dd}{MMM}-{ddd}``` |
-| SV  | Не указан | ```1S TO SV BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| SW  | GMT | ```1S PLS ADTK OR CNL SW FLIGHT BY {dd}{MMM} {HH} {mm} GMT``` |
-| SX  | GMT | ```1S AUTO XX IF SSR TKNE NOT RCVD BY {HH}{mm}/{dd}{MMM}/UTC``` |
-| TA  | GMT | ```1S PLEASE SEND AVTA TKNA BY {HH}{mm}/{dd}{MMM} GMT USING ATN ENTRY``` |
-| TG  | Не указан | ```1S TO TG BY {dd}{MMM} {HH}{mm} OTHERWISE WILL BE XLD``` |
-| TK  | Не указан | ```AA TO  TK BY {dd}{MMM} {HH}{mm} IRC-2/ADV OTO TKT``` |
-| TK  | Не указан | ```AA TO  TK BY {dd}{MMM} {HH}{mm} IRC-2/ADV MORE TKT``` |
-| TN  | Город в сообщении | ```1S PLS TKT BY {HH}{mm}/{dd}{MMM}{yy} {cty} OR ITIN WILL BE AUTO-CANCELED BY TN``` |
-| TP  | Город в сообщении | ```1S ADTK BY {HH}{mm} {cty}/{dd}{MMM}{yy} OR TP SPACE WILL BE CXLD``` |
-| TR  | GMT | ```1S SUBJ CXL ON/BEFORE {dd}{MMM} {HH}{mm}Z WITHOUT PAYMENT``` |
-| TR  | GMT | ```1S TO TR ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD``` |
-| U6  | Город в сообщении | ```1S PLS ISSUE TKT BY {HH}{mm} {dd}{MMM}{yy}/{cty} OR SUBJECT TO AUTOCXL BY U6``` |
-| UA  | Не указан | ```1S {segstat}{paxnum}.TKT UASEGS BY {dd}{MMM}{yy} TO AVOID AUTO CXL /EARLIER``` |
-| UL  | Город в сообщении | ```1S PLS TKT BY {HH}{mm}/{dd}{MMM}/{cty} OR ITIN WILL BE AUTO-CANCELED BY UL``` |
-| UT  | GMT | ```1S UT-{fltnum}/{fltdd}{fltMMM}{fltyy} BY {dd}{MMM}/{HH}{mm}Z OR CNL``` |
-| UT  | GMT | ```1S TO UT BY {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE CANCELLED``` |
-| UX  | Не указан | ```1S PLS REMEMBER TO ADTK BY {HH}{mm}/{dd}{MMM}{yyyy} OR XX PNR/ UXSPCTRL``` |
-| VN  | Город в сообщении | ```1S ADV TKT BY {dd}{MMM}{yy} {HH}{mm}{cty}RU OR WL BE CXLD``` |
-| VS  | Не указан | ```1S {segstat}{paxnum}.UNTKTDVS SEGS MAY CANX {dd}{MM}{yy}``` |
-| VT  | Город в сообщении | ```1S AUTO XX IF SSR TKNA/E/M/C NOT RCVD BY VT BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| VX  | CST (GMT-6) | ```1S ADV TKT NBR BEFORE {dd}{MMM}{yy} {HH}{mm} CST OR VX SEG WILL BE CXL``` |
-| VY  | GMT | ```1S TO VY ON/BEFORE {dd}{MMM} {HH}{mm}Z OTHERWISE WILL BE XLD``` |
-| W2  | GMT | ```1S AUTO XX IF SSR TKNE NOT RCVD BY {HH}{mm}/{dd}{MMM}/UTC``` |
-| XQ  | Город в сообщении | ```1S ADTK OR BKG WILL BE CNLD BY {HH}{mm}/{dd}{MMM}/{cty} LT``` |
-| YE  | GMT | ```1S AUTO XX IF SSR TKNE NOT RCVD BY {HH}{mm}/{dd}{MMM}/UTC``` |
-| ZH  | Город в сообщении | ```1S BY {cty}{dd}{MMM}{yy}/{HH}{mm} OR CXL ZH{fltnum} {cls}{fltdd}{fltMMM}``` |
-| ZM  | GMT | ```1S ADV TKNE OR XX BY {dd}{MMM} {HH} {mm} GMT``` |
+В представленных ниже текстовых файлах на каждой строке располагается отдельное регулярное выражение для проверки сообщений. Из-за различий в синтаксисе именованных групп для разных языков программирования предложены разные регулярные выражения:
+- Python, PHP, Golang используют синтаксис ```(?P<имя>выражение)``` для именованных групп
+- C#, Java, Javascript используют синтаксис ```(?<имя>выражение)``` для именованных групп
+
+{{< details title="Python, PHP, Golang" >}}
+```
+^(1S )?(?P<carrier>\w\w) PLZ PAY BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<timezone>Z|UTC|GMT|HDQ|CST) TO AVOID CANCELLATION$
+^(1S )?(?P<carrier>\w\w) REMINDS YOU TO ISSUE AND ADV E-TKT IN PNR BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<full_year>20[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<timezone>Z|UTC|GMT|HDQ|CST)0$
+^(1S )?(?P<carrier>\w\w) REQUIERE EMISION E INCLUSION DEL E-TKT EN PNR ANTES DEL (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<full_year>20[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<timezone>Z|UTC|GMT|HDQ|CST)0$
+^(1S )?(?P<carrier>\w\w) TTL EXPIRE ON (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)\/(?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) \/\/.*$
+^(1S )?(?P<carrier>\w\w) WILL CANCEL IF NO TKT BY (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?(?P<carrier>\w\w)\/\w\w AUTO XX IF ELECTRONIC TKT NR NOT RCVD BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) LT$
+^(1S )?(?P<location>\w{3}) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)\/(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$
+^(1S )?.REMINDER (?P<carrier>\w\w) SEGS SUBJ TO CXL ON (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)$
+^(1S )?.RI PLSSEND TKT NUMBER BEFORE (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?.TKT (?P<carrier>\w\w)SEGS BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) TO AVOID AUTO CXL \/EARLIER$
+^(1S )?.UNTKTD(?P<carrier>\w\w) SEGS MAY CANX (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) TKT PER FARE RULES TO AVOID AD$
+^(1S )?.UNTKTD(?P<carrier>\w\w) SEGS WILL CX (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) TKT PER FARE RULES TO AVOID ADM$
+^(1S )?ADTK BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) LT OR (?P<carrier>\w\w) SPACE WILL BE CXLD$
+^(1S )?ADTK BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) LT (?P<timezone>Z|UTC|GMT|HDQ|CST) OR (?P<carrier>\w\w) SPACE WILL BE CXLD$
+^(1S )?ADTK BY (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<location>\w{3}) LT ELSE (?P<carrier>\w\w) WILL XXL$
+^(1S )?ADTK BY (0?[1-9]|[12]\d|3[01])(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)([2-9]\d) ([0-2]\d)([0-5]\d)HDQ (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<location>\w{3}) PER.*$
+^(1S )?ADTK NO LATER THAN (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) TO AVOID CANCELLATION$
+^(1S )?ADTK OR BKG WILL BE CNLD BY (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)\/(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\/(?P<location>\w{3}) LT$
+^(1S )?ADV TKNE OR XX BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d) (?P<minute>[0-5]\d) (?P<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?ADV TKT BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<location>\w{3})\w\w OR WL BE CXLD$
+^(1S )?AGT\/(?P<carrier>\w\w) PLS ENTER GENUINE TICKET NUMBER IN PNR BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)$
+^(1S )?AGT\/(?P<carrier>\w\w) PLS ENTER TICKET NUMBER IN PNR BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) OR RISK CANCELLATION$
+^(1S )?AGT\/(?P<carrier>\w\w) PLS TICKET ACCORDING TO FARE RULES AND ENTER GENUINE TICKET NUMBER IN PNR BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)$
+^(1S )?AUTO XX IF SSR TKNE NOT RCVD BY (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)\/(?P<location>\w{3}) LT$
+^(1S )?AUTO XX IF SSR TKNE NOT RCVD BY (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)\/(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\/(?P<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?BY (?P<location>\w{3})(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)\/(?P<hour>[0-2]\d)(?P<minute>[0-5]\d) OR CXL (?P<carrier>\w\w).*$
+^(1S )?ISSUE TICKETS FOR (?P<carrier>\w\w) FLIGHTS BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?PLEASE INSERT TKT NUMBER BY (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)\/(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<location>\w{3})$
+^(1S )?PLS ADTK BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<timezone>Z|UTC|GMT|HDQ|CST) OR SEATS WILL BE XLD$
+^(1S )?PLS ADTK BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<location>\w{3}) (0?[1-9]|[12]\d|3[01])(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)([2-9]\d) ([0-2]\d)([0-5]\d)\w{3}$
+^(1S )?PLS ADTK BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) OR (?P<carrier>\w\w) SPACE WILL BE CANCELLED$
+^(1S )?PLS ADTK OR CNL (?P<carrier>\w\w) FLIGHT BY (?P<hour>[0-2]\d) (?P<minute>[0-5]\d) \/ (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?PLS ADV TKT BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) OR PNR WILL BE CNL$
+^(1S )?PLS ADV TKT NBR BEFORE (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) LT OR AUTO CNL$
+^(1S )?PLS ADV TKT NBR BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)\/(?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) OR (?P<carrier>\w\w) OPTG\/MKTG FLTS WILL BE CANX \/ APPLIC FARE RULE APPLIES IF IT DEMANDS EARLIER TKTG$
+^(1S )?PLS ADV TKT NBR BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)\/(?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) OR (?P<carrier>\w\w) OPTG\/MKTG FLTS WILL BE CANX \/ APPLIC FARE RULE APPLIES IF IT DEMANDS$
+^(1S )?PLS ADV TKT NBR OR (?P<carrier>\w\w) SPACE WILL BE CXLD BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}).*$
+^(1S )?PLS ADV TKT OR XX PNR TL(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC).*(?P<carrier>\w\w)$
+^(1S )?PLS ADV TKTNUMBR FOR (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) OR AUTOCNL$
+^(1S )?PLS ADVISE (?P<carrier>\w\w) TKT NUMBERS BY (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$
+^(1S )?PLS ISSUE ETKT LATEST (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<timezone>Z|UTC|GMT|HDQ|CST) OR (?P<carrier>\w\w) SEG WILL BE XLD$
+^(1S )?PLS ISSUE TIX FOR ALL (?P<carrier>\w\w) SEGMENTS UNTIL (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d)\/(?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED\/.*$
+^(1S )?PLS TKT BY (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) LST OR (?P<carrier>\w\w) SEGS WILL BE CXLD$
+^(1S )?PLS TKT OR CXL (?P<carrier>\w\w) FLT BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<location>\w{3}) PER.*$
+^(1S )?RITK\/ADTKT BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) LT ELSE BKG WILL BE XXLD$
+^(1S )?RITK\/ADTKT BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) LT FARE RULE APPLIES IF$
+^(1S )?RITK\/ADTKT BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) LT$
+^(1S )?RITK\/ADTKT BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<year>[2-9]\d) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) LT ELSE BKG WILL BE$
+^(1S )?SUBJ CXL ON\/BEFORE (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) WITHOUT PAYMENT$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) OR (?P<carrier>\w\w) FLTS WILL BE CNLD$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) OTHERWISE MAY BE XLD$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) OTHERWISE WILL BE XLD$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) (?P<location>\w{3}) TIME ZONE OTHERWISE WILL BE XLD$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) IRC-2\/ADV OTO TKT$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) OTHERWISE WILL BE CANCELLED$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) TKT REMINDER OR ITIN MAY XL$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE WILL BE CANCELLED$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE WILL BE XLD$
+^(1S )?TO (?P<carrier>\w\w) BY (?P<location>\w{3})(?P<hour>[0-2]\d)(?P<minute>[0-5]\d)\/(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) OTHERWISE WILL BE XLD$
+^(1S )?TO (?P<carrier>\w\w) BY(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<hour>[0-2]\d)(?P<minute>[0-5]\d) OTHERWISE WILL BE CANCELLED$
+^(1S )?TO (?P<carrier>\w\w) BY(?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?P<hour>[0-2]\d)(?P<minute>[0-5]\d) OTHERWISE WILL BE XLND$
+^(1S )?TO (?P<carrier>\w\w) ON\/BEFORE (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d) OTHERWISE WILL BE XLD$
+^(1S )?TO (?P<carrier>\w\w) ON\/BEFORE (?P<day>0?[1-9]|[12]\d|3[01])(?P<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?P<hour>[0-2]\d)(?P<minute>[0-5]\d)(?P<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE WILL BE XLD$
+```
+{{< /details >}}
+
+{{< details title="C#, Java, Javascript" >}}
+```
+^(1S )?(?<carrier>\w\w) PLZ PAY BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<timezone>Z|UTC|GMT|HDQ|CST) TO AVOID CANCELLATION$
+^(1S )?(?<carrier>\w\w) REMINDS YOU TO ISSUE AND ADV E-TKT IN PNR BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<full_year>20[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<timezone>Z|UTC|GMT|HDQ|CST)0$
+^(1S )?(?<carrier>\w\w) REQUIERE EMISION E INCLUSION DEL E-TKT EN PNR ANTES DEL (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<full_year>20[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<timezone>Z|UTC|GMT|HDQ|CST)0$
+^(1S )?(?<carrier>\w\w) TTL EXPIRE ON (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)\/(?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) \/\/.*$
+^(1S )?(?<carrier>\w\w) WILL CANCEL IF NO TKT BY (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?(?<carrier>\w\w)\/\w\w AUTO XX IF ELECTRONIC TKT NR NOT RCVD BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) LT$
+^(1S )?(?<location>\w{3}) (?<hour>[0-2]\d)(?<minute>[0-5]\d)\/(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$
+^(1S )?.REMINDER (?<carrier>\w\w) SEGS SUBJ TO CXL ON (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)$
+^(1S )?.RI PLSSEND TKT NUMBER BEFORE (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?.TKT (?<carrier>\w\w)SEGS BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) TO AVOID AUTO CXL \/EARLIER$
+^(1S )?.UNTKTD(?<carrier>\w\w) SEGS MAY CANX (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) TKT PER FARE RULES TO AVOID AD$
+^(1S )?.UNTKTD(?<carrier>\w\w) SEGS WILL CX (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) TKT PER FARE RULES TO AVOID ADM$
+^(1S )?ADTK BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) LT OR (?<carrier>\w\w) SPACE WILL BE CXLD$
+^(1S )?ADTK BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) LT (?<timezone>Z|UTC|GMT|HDQ|CST) OR (?<carrier>\w\w) SPACE WILL BE CXLD$
+^(1S )?ADTK BY (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<location>\w{3}) LT ELSE (?<carrier>\w\w) WILL XXL$
+^(1S )?ADTK BY (0?[1-9]|[12]\d|3[01])(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)([2-9]\d) ([0-2]\d)([0-5]\d)HDQ (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<location>\w{3}) PER.*$
+^(1S )?ADTK NO LATER THAN (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) TO AVOID CANCELLATION$
+^(1S )?ADTK OR BKG WILL BE CNLD BY (?<hour>[0-2]\d)(?<minute>[0-5]\d)\/(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\/(?<location>\w{3}) LT$
+^(1S )?ADV TKNE OR XX BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d) (?<minute>[0-5]\d) (?<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?ADV TKT BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<location>\w{3})\w\w OR WL BE CXLD$
+^(1S )?AGT\/(?<carrier>\w\w) PLS ENTER GENUINE TICKET NUMBER IN PNR BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)$
+^(1S )?AGT\/(?<carrier>\w\w) PLS ENTER TICKET NUMBER IN PNR BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) OR RISK CANCELLATION$
+^(1S )?AGT\/(?<carrier>\w\w) PLS TICKET ACCORDING TO FARE RULES AND ENTER GENUINE TICKET NUMBER IN PNR BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)$
+^(1S )?AUTO XX IF SSR TKNE NOT RCVD BY (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)\/(?<location>\w{3}) LT$
+^(1S )?AUTO XX IF SSR TKNE NOT RCVD BY (?<hour>[0-2]\d)(?<minute>[0-5]\d)\/(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\/(?<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?BY (?<location>\w{3})(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)\/(?<hour>[0-2]\d)(?<minute>[0-5]\d) OR CXL (?<carrier>\w\w).*$
+^(1S )?ISSUE TICKETS FOR (?<carrier>\w\w) FLIGHTS BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?PLEASE INSERT TKT NUMBER BY (?<hour>[0-2]\d)(?<minute>[0-5]\d)\/(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<location>\w{3})$
+^(1S )?PLS ADTK BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<timezone>Z|UTC|GMT|HDQ|CST) OR SEATS WILL BE XLD$
+^(1S )?PLS ADTK BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<location>\w{3}) (0?[1-9]|[12]\d|3[01])(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)([2-9]\d) ([0-2]\d)([0-5]\d)\w{3}$
+^(1S )?PLS ADTK BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) OR (?<carrier>\w\w) SPACE WILL BE CANCELLED$
+^(1S )?PLS ADTK OR CNL (?<carrier>\w\w) FLIGHT BY (?<hour>[0-2]\d) (?<minute>[0-5]\d) \/ (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<timezone>Z|UTC|GMT|HDQ|CST)$
+^(1S )?PLS ADV TKT BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) OR PNR WILL BE CNL$
+^(1S )?PLS ADV TKT NBR BEFORE (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) LT OR AUTO CNL$
+^(1S )?PLS ADV TKT NBR BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)\/(?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) OR (?<carrier>\w\w) OPTG\/MKTG FLTS WILL BE CANX \/ APPLIC FARE RULE APPLIES IF IT DEMANDS EARLIER TKTG$
+^(1S )?PLS ADV TKT NBR BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)\/(?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) OR (?<carrier>\w\w) OPTG\/MKTG FLTS WILL BE CANX \/ APPLIC FARE RULE APPLIES IF IT DEMANDS$
+^(1S )?PLS ADV TKT NBR OR (?<carrier>\w\w) SPACE WILL BE CXLD BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}).*$
+^(1S )?PLS ADV TKT OR XX PNR TL(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC).*(?<carrier>\w\w)$
+^(1S )?PLS ADV TKTNUMBR FOR (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) OR AUTOCNL$
+^(1S )?PLS ADVISE (?<carrier>\w\w) TKT NUMBERS BY (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$
+^(1S )?PLS ISSUE ETKT LATEST (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<timezone>Z|UTC|GMT|HDQ|CST) OR (?<carrier>\w\w) SEG WILL BE XLD$
+^(1S )?PLS ISSUE TIX FOR ALL (?<carrier>\w\w) SEGMENTS UNTIL (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d)\/(?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE UNTICKETED SEGMENTS WILL BE CANCELLED\/.*$
+^(1S )?PLS TKT BY (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) LST OR (?<carrier>\w\w) SEGS WILL BE CXLD$
+^(1S )?PLS TKT OR CXL (?<carrier>\w\w) FLT BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<location>\w{3}) PER.*$
+^(1S )?RITK\/ADTKT BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) LT ELSE BKG WILL BE XXLD$
+^(1S )?RITK\/ADTKT BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) LT FARE RULE APPLIES IF$
+^(1S )?RITK\/ADTKT BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) LT$
+^(1S )?RITK\/ADTKT BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<year>[2-9]\d) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) LT ELSE BKG WILL BE$
+^(1S )?SUBJ CXL ON\/BEFORE (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) WITHOUT PAYMENT$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) OR (?<carrier>\w\w) FLTS WILL BE CNLD$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) OTHERWISE MAY BE XLD$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) OTHERWISE WILL BE XLD$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) (?<location>\w{3}) TIME ZONE OTHERWISE WILL BE XLD$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) IRC-2\/ADV OTO TKT$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) OTHERWISE WILL BE CANCELLED$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) TKT REMINDER OR ITIN MAY XL$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE WILL BE CANCELLED$
+^(1S )?TO (?<carrier>\w\w) BY (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE WILL BE XLD$
+^(1S )?TO (?<carrier>\w\w) BY (?<location>\w{3})(?<hour>[0-2]\d)(?<minute>[0-5]\d)\/(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) OTHERWISE WILL BE XLD$
+^(1S )?TO (?<carrier>\w\w) BY(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<hour>[0-2]\d)(?<minute>[0-5]\d) OTHERWISE WILL BE CANCELLED$
+^(1S )?TO (?<carrier>\w\w) BY(?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?<hour>[0-2]\d)(?<minute>[0-5]\d) OTHERWISE WILL BE XLND$
+^(1S )?TO (?<carrier>\w\w) ON\/BEFORE (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d) OTHERWISE WILL BE XLD$
+^(1S )?TO (?<carrier>\w\w) ON\/BEFORE (?<day>0?[1-9]|[12]\d|3[01])(?<month>JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) (?<hour>[0-2]\d)(?<minute>[0-5]\d)(?<timezone>Z|UTC|GMT|HDQ|CST) OTHERWISE WILL BE XLD$
+```
+{{< /details >}}
