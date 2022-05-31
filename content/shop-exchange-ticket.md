@@ -6,7 +6,7 @@ title: Поиск вариантов обмена
 
 ## Введение
 
-Подробнее об условиях выполнения обменов билетов см. в [Обмены и возвраты](exchanges-refunds.html#добровольный-обмен-билетов).
+Подробнее об условиях выполнения обменов билетов см. [Обмены и возвраты](exchanges-refunds.html#добровольный-обмен-билетов).
 
 ## Информация о поиске
 
@@ -89,17 +89,17 @@ title: Поиск вариантов обмена
 
 ## Брендированные тарифы
 
-### Информация о примененных брендированных тарифах
+#### Информация о примененных брендированных тарифах
 
 По умолчанию ответ на запрос не содержит информацию о примененных брендированных тарифах (код бренда, название бренда, код программы брендов и т.д.). Для того чтобы получить эту информацию, необходимо указать значение ```true``` у атрибута ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/@singleBrandedFare```.
 
-### Список услуг у найденных брендированных тарифов
+#### Список услуг у найденных брендированных тарифов
 
 Для получения списка услуг у найденных брендированных тарифов необходимо указать значение ```true``` у атрибута ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/@returnBrandAncillaries```. Эта опция может быть запрошена только при запросе информации о примененных брендированных тарифах (```/@SingleBrandedFare```) или при получении расчетов по всем доступным брендам (```/@MultipleBrandedFares```).
 
 Подробнее см. в разделе [Брендированные тарифы](brands.html#список-услуг-у-брендированных-тарифов).
 
-### Черный и белый список брендов
+#### Черный и белый список брендов
 
 Черный список брендов задается в последовательно расположенных элементах ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/Brand``` (для всего маршрута) или ```/ExchangeShoppingRQ/OriginDestinationInformation/BrandFilters/Brand``` (для плеча). Для каждого бренда необходимо указать:
 - ```/Preference/@Code``` — код бренда
@@ -113,7 +113,7 @@ title: Поиск вариантов обмена
 Обратите внимание на то, что даже передав один или несколько кодов брендов в белом списке, в ответе расчет для этого плеча может быть выполнен по небрендированному тарифу. Для того чтобы этого избежать, необходимо указать значение ```Unacceptable``` у атрибута ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/BrandFilters/NonBrandedFares/@preferLevel``` (для всего маршрута) или ```/ExchangeShoppingRQ/OriginDestinationInformation/BrandFilters/NonBrandedFares/@preferLevel``` (для плеча). Для того чтобы расчет был выполнен только по небрендированным тарифам, необходимо указать значение ```Preferred``` у этого атрибута.
 {{< /hint >}}
 
-### Сохранение брендов у неизменяемых сегментов
+#### Сохранение брендов у неизменяемых сегментов
 
 Для сохранения бренда у неизменяемых сегментов необходимо указать значение ```true``` у атрибута ```/ExchangeShoppingRQ/TravelPreferences/PriceRequestInformation/TPA_Extensions/BrandedFareIndicators/@keepOriginalBrand```, а также указать код бренда для этих сегментов в качестве значения атрибута ```/ExchangeShoppingRQ/OriginDestinationInformation/RelatedSegment/@brand```.
 
@@ -140,7 +140,7 @@ title: Поиск вариантов обмена
 - ```ML``` — питание и напитки
 - ```UN``` — несопровождаемые дети
 
-Подробнее о дополнительных услугах см. в [Бронирование дополнительных услуг](ancillaries.html).
+Подробнее о дополнительных услугах см. [Бронирование дополнительных услуг](ancillaries.html).
 
 ## Пример
 

@@ -765,7 +765,7 @@ aliases:
 - ```ML``` — питание и напитки
 - ```UN``` — несопровождаемые дети
 
-Подробнее о дополнительных услугах см. в [Дополнительные услуги](ancillaries.html).
+Подробнее о дополнительных услугах см. [Дополнительные услуги](ancillaries.html).
 
 ## Обмен и возврат билетов
 
@@ -895,7 +895,7 @@ aliases:
 
 В случае использования этой опции один PCC будет основным и должен быть задан в качестве значения атрибута ```/OTA_AirLowFareSearchRQ/POS/Source/@PseudoCityCode``` (см. выше). Для каждого дополнительного PCC (всего не более 4) должен быть создан элемент ```/OTA_AirLowFareSearchRQ/TPA_Extensions/AlternatePCC```, у которого в качестве значения атрибута ```/@PseudoCityCode``` указан PCC.
 
-Подробнее о поиске в нескольких PCC см. в [документации](http://webservices.sabre.com/drc/providerdoc/shopping/BargainFinderMax_Help/Content/Features/ShopAcrossMultPCCs/Shop_Across_Multiple_PCCs_DAG.pdf).
+Подробнее о поиске в нескольких PCC см. [документации](http://webservices.sabre.com/drc/providerdoc/shopping/BargainFinderMax_Help/Content/Features/ShopAcrossMultPCCs/Shop_Across_Multiple_PCCs_DAG.pdf).
 
 {{< hint danger >}}
 Обратите внимание на то, что использование данной опции требует активации. Пожалуйста, обратитесь к вашему куратору в Sabre для уточнения деталей.
