@@ -19,7 +19,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.40a2b28f8374ae122c4a4894aa16325ce6669ad94e178071bb43ac6c4a548cd5.css" integrity="sha256-QKKyj4N0rhIsSkiUqhYyXOZmmtlOF4Bxu0OsbEpUjNU=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/ru.search.min.6bf2c82d5ad362dffa3ee874d3f471a15a74dfd4235f3216f09469a3c8a5b043.js" integrity="sha256-a/LILVrTYt/6Puh00/RxoVp039QjXzIW8JRpo8ilsEM=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.01f8d7f59686cf2bc7bbb4d7d3d9134eea836717fe3075bd67aeb75306c2c881.js" integrity="sha256-AfjX9ZaGzyvHu7TX09kTTuqDZxf&#43;MHW9Z663UwbCyIE=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -368,8 +368,8 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>В Sabre существует две среды для работы:</p>
 <ul>
-<li><strong>CERT</strong>. Тестовая среда для разработки и отладки приложений. В этой среде можно создавать тестовые бронирования и оформлять билеты без необходимости их отмены. Среда подключена к тестовым средам перевозчиков, поэтому некоторые действия могут быть недоступны в ней (см. ниже). Адрес для отправки запросов: <code>https://sws-crt.cert.havail.sabre.com</code></li>
-<li><strong>RES</strong>. &ldquo;Боевая&rdquo; среда для использования в приложениях. Среда подключена к боевым средам перевозчиков. Адрес для отправки запросов: <code>https://webservices.havail.sabre.com</code></li>
+<li><strong>CERT</strong>. Тестовая среда для разработки и отладки приложений. В этой среде можно создавать тестовые бронирования и оформлять билеты без необходимости их отмены. Среда подключена к тестовым средам перевозчиков, поэтому некоторые действия могут быть недоступны в ней (см. ниже). Адрес для отправки запросов: <code>https://webservices.cert.platform.sabre.com</code></li>
+<li><strong>PROD</strong>. &ldquo;Боевая&rdquo; среда для использования в приложениях. Среда подключена к боевым средам перевозчиков. Адрес для отправки запросов: <code>https://webservices.platform.sabre.com</code></li>
 </ul>
 <p>Каждой среде соответствует специальная сборка терминала Sabre Red: <a href="http://updatesite.my.sabre.com/updatesite/installers/jre/srw.html">PROD</a>, <a href="http://updatesite.my.cert.sabre.com/updatesite/installers/jre/srw.html">CERT</a>.</p>
 <p>Среды независимы друг от друга, это означает, что в случае выполнения каких-либо изменений в одной среде (создание бронирования, изменение настроек, создание или изменение учетных записей и т.д.), эти изменения не попадут в другую среду. Однако, два раза в год тестовая среда очищается и на ней разворачивается выполненный ранее слепок из боевой среды. Агентства заранее уведомляются об этом <a href="introduction.html#%d1%80%d0%b0%d1%81%d1%81%d1%8b%d0%bb%d0%ba%d0%b0-sabre-apis">рассылкой</a>.</p>
