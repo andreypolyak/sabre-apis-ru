@@ -2,13 +2,17 @@
 title: Бронирование дополнительных услуг
 ---
 
+{{< toc >}}
+
+## Введение
+
 {{< hint warning >}}
 Для бронирования дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису [ContextChangeLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa) (см. [Переход в другие PCC](change-pcc.html)).
 {{< /hint >}}
 
 Для бронирования дополнительных услуг и отправки SSR используется сервис [UpdateReservationRQ](https://developer.sabre.com/docs/read/soap_apis/management/itinerary/update_itinerary).
 
-#### Параметры запроса
+## Параметры запроса
 
 В запросе необходимо указать:
 
@@ -18,7 +22,7 @@ title: Бронирование дополнительных услуг
 - ```/UpdateReservationRQ/ReservationUpdateList/Locator``` — код бронирования
 - ```/UpdateReservationRQ/ReservationUpdateList/ReceivedFrom/AgentName``` — значения поля Received From. Используется для идентификации инициатора изменений в истории бронирования
 
-#### Бронирование дополнительных услуг
+## Информация об услуге
 
 Для каждой бронируемой дополнительной услуги необходимо добавить элемент ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate```, содержащий следующие элементы и атрибуты (в скобках обозначен соответствующий элемент из ответа на запрос к сервису [GetAncillaryOffersRQ](get-ancillaries.html)):
 
@@ -39,6 +43,8 @@ title: Бронирование дополнительных услуг
 - ```/AncillaryServicesUpdate/RficCode``` —  RFIC код (```/GetAncillaryOffersRS/AncillaryDefinition/ReasonForIssuance/@code```)
 - ```/AncillaryServicesUpdate/RficSubcode``` — RFIC субкод (```/GetAncillaryOffersRS/AncillaryDefinition/SubCode```)
 - ```/AncillaryServicesUpdate/SSRCode``` — код требуемого SSR сообщения (```/GetAncillaryOffersRS/AncillaryDefinition/SpecialService```)
+- ```/AncillaryServicesUpdate/ProductText``` — текст SSR сообщения (подробнее см. раздел [Отправка SSR](book-ancillaries.html#отправка-ssr))
+- ```/AncillaryServicesUpdate/ProductTextDetails``` — значение переменных в SSR сообщении (подробнее см. раздел [Отправка SSR](book-ancillaries.html#отправка-ssr))
 - ```/AncillaryServicesUpdate/OwningCarrierCode``` — код перевозчика, продающего услугу (```/GetAncillaryOffersRS/AncillaryDefinition/Airline```)
 - ```/AncillaryServicesUpdate/BookingIndicator``` — индикатор бронирования (```/GetAncillaryOffersRS/AncillaryDefinition/BookingMethod/@code```)
 - ```/AncillaryServicesUpdate/Vendor``` — код системы, в которой размещена дополнительная услуга (```/GetAncillaryOffersRS/AncillaryDefinition/Vendor```)
@@ -83,66 +89,154 @@ title: Бронирование дополнительных услуг
     - ```ACCEPT_ANY_PRICE``` — забронировать в любом случае
     - ```ACCEPT_LOWER_PRICE``` — забронировать услугу только если ее реальная стоимость ниже указанной в запросе
 
-#### Отправка SSR
-
-Некоторые перевозчики требуют отправлять SSR сообщения для получения подтверждения дополнительных услуг. Определить необходимость отправки SSR сообщения для подтверждения дополнительных услуг можно по значению элемента ```/GetAncillaryOffersRS/AncillaryDefinition/SpecialService``` в ответе на запрос к сервису [GetAncillaryOffersRQ](https://developer.sabre.com/docs/soap_apis/air/search/get_ancillary_offers) (см. [Получение списка дополнительных услуг](get-ancillaries.html)). Если значение элемента равно ```ASVC```, то отправлять SSR не нужно. Во всех остальных случаях в этом элементе будет указан код SSR сообщения.
-
-Некоторые перевозчики так же требуют отправлять SSR сообщения с текстом. Определить необходимость отправки текста в SSR сообщении можно по значению атрибута ```/GetAncillaryOffersRS/AncillaryDefinition/SpecialServiceDetails/@type```. Возможные значения:
-- ```STRUCTURED``` — требуется текст сообщения в формате, установленном перевозчиком
-- ```NOTALLOWED``` — сообщения с текстом не разрешаются
-- ```REQUIRED``` — требуется текст сообщения в любом формате
-- ```OPTIONAL``` — текст сообщения опционален
-
-Для отправки SSR необходимо добавить элемент ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/SpecialServiceRequestUpdate```, содержащий следующие элементы и атрибуты:
-
-- ```/@op``` — код типа операции. Всегда значение ```C``` (Create, создание)
-- ```/@type``` — тип SSR. Значение ```H``` для перевозчика American Airlines (AA), значение ```G``` — для всех остальных
-- ```/NameAssociationList/NameAssociationTag/NameRefNumber``` — номер пассажира
-- ```/SpecialService/Code``` — код SSR сообщения (4 буквы)
-- ```/SpecialService/Text``` — текст SSR сообщения
-- ```/SegmentAssociationList``` — информация о сегментах:
-    - ```/SegmentAssociationTag/CarrierCode``` — маркетинговый перевозчик
-    - ```/SegmentAssociationTag/FlightNumber``` — номер рейса
-    - ```/SegmentAssociationTag/DepartureDate``` — дата вылета
-    - ```/SegmentAssociationTag/BoardPoint``` — аэропорт отправления
-    - ```/SegmentAssociationTag/OffPoint``` — аэропорт прибытия
-    - ```/SegmentAssociationTag/ClassOfService``` — класс бронирования
-    - ```/SegmentAssociationTag/BookingStatus``` — статус сегмента
-
-{{< details title="Пример отправки SSR сообщения" open=true >}}
-```XML
-<ReservationUpdateItem>
-  <SpecialServiceRequestUpdate op="C" type="G">
-    <NameAssociationList>
-      <NameAssociationTag>
-        <NameRefNumber>01.01</NameRefNumber>
-      </NameAssociationTag>
-    </NameAssociationList>
-    <SegmentAssociationList>
-      <SegmentAssociationTag>
-        <CarrierCode>AF</CarrierCode>
-        <FlightNumber>1845</FlightNumber>
-        <DepartureDate>2020-09-01</DepartureDate>
-        <BoardPoint>SVO</BoardPoint>
-        <OffPoint>CDG</OffPoint>
-        <ClassOfService>E</ClassOfService>
-        <BookingStatus>HK</BookingStatus>
-      </SegmentAssociationTag>
-    </SegmentAssociationList>
-    <SpecialService>
-      <Code>ABAG</Code>
-      <Text>PREPAID</Text>
-    </SpecialService>
-  </SpecialServiceRequestUpdate>
-</ReservationUpdateItem>
-```
-{{< /details >}}
-
 {{< hint danger >}}
 Обратите внимание на то, что для дополнительных услуг обязательно требуется оформление EMD. EMD должны быть оформлены в бронировании после оформления билетов. Процесс оформления EMD подробно описан в разделе [Оформление билетов и EMD](issue-ticket.html).
 {{< /hint >}}
 
-#### Пример
+## Отправка SSR
+
+{{< hint danger >}}
+Обратите внимание на то, что данный рекомендованный процесс бронирования услуг разработан с учетом того, что в PCC, в котором производится бронирование услуг, включена настройка [Auto SSR](tjr-settings.html#auto-ssr-автоматизация-отправки-ssr-сообщений-при-бронировании-дополнительных-услуг).
+{{< /hint >}}
+
+Некоторые перевозчики требуют отправлять SSR сообщения для получения подтверждения дополнительных услуг. Определить необходимость отправки SSR сообщения для подтверждения дополнительных услуг можно по значению элемента ```/GetAncillaryOffersRS/AncillaryDefinition/SpecialService``` в ответе на запрос к сервису [GetAncillaryOffersRQ](https://developer.sabre.com/docs/soap_apis/air/search/get_ancillary_offers) (см. [Получение списка дополнительных услуг](get-ancillaries.html)). Если значение элемента равно ```ASVC```, то отправлять SSR не нужно. Во всех остальных случаях в этом элементе будет указан код требуемого SSR сообщения.
+
+SSR сообщение может содержать или не содержать текст сообщения. Определить необходимость отправки текста в SSR сообщении, а также его формат можно по значению атрибута ```/GetAncillaryOffersRS/AncillaryDefinition/SpecialServiceDetails/@type```. Ниже представлены возможные значения этого атрибута.
+
+#### Значение ```REQUIRED```
+
+Перевозчик требует обязательное добавление текста в SSR сообщение, при этом текст может быть указан агентством самостоятельно, требований к его содержимому не предъявляется.
+
+{{< details title="Часть ответа GetAncillaryOffersRQ" open=true >}}
+```XML
+<SpecialServiceDetails type="REQUIRED"/>
+```
+{{< /details >}}
+
+В этом случае обязательно требуется указать текст SSR сообщения в виде значения элемента ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText```.
+
+{{< details title="Часть запроса к UpdateReservationRQ" open=true >}}
+```XML
+<ProductText>PREPAID</ProductText>
+```
+{{< /details >}}
+
+#### Значение ```OPTIONAL```
+
+Перевозчик не требует обязательное добавление текста в SSR сообщение, но оно может быть отправлено опционально на усмотрение агентства.
+
+{{< details title="Часть ответа GetAncillaryOffersRQ" open=true >}}
+```XML
+<SpecialServiceDetails type="OPTIONAL"/>
+```
+{{< /details >}}
+
+В этом случае опционально можно указать текст SSR сообщения в виде значения элемента ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText```.
+
+{{< details title="Часть запроса к UpdateReservationRQ" open=true >}}
+```XML
+<ProductText>PREPAID</ProductText>
+```
+{{< /details >}}
+
+#### Значение ```STRUCTURED```
+
+Перевозчик требует обязательное добавление текста заданного шаблона в SSR сообщение. В этом случае у элемента ```/GetAncillaryOffersRS/AncillaryDefinition/SpecialServiceDetails``` будет присутствовать атрибут ```/@pattern```, содержащий шаблон для текста SSR сообщения. Текст шаблона может содержать переменные (указываются в фигурных скобках, например ```{WEIGHT}```) и постоянные значения (остальной текст вне фигурных скобок). Переменные, в свою очередь, должны или заполняться агентством (тогда в ответе будет присутствовать элемент ```/GetAncillaryOffersRS/AncillaryDefinition/CharacteristicProperty```, у которого атрибут ```/@name``` будет равен имени переменной) или генерироваться автоматически при отправке SSR сообщения (тогда соответствующего элемента ```/CharacteristicProperty``` не будет).
+
+Элемент ```/GetAncillaryOffersRS/AncillaryDefinition/CharacteristicProperty``` может содержать следующие атрибуты:
+- ```/@name``` — имя переменной
+- ```/@optional``` — обязательность заполнения переменной (значения ```true``` или ```false```)
+- ```/@type``` — тип переменной:
+    - ```DECIMAL``` — число
+    - ```TEXT``` — строка
+    - ```ENUM``` — перечисление (допустимые варианты будут перечислены в элементах ```/GetAncillaryOffersRS/AncillaryDefinition/CharacteristicProperty/CharacteristicPropertyValue```)
+- ```/@unit``` — единица измерения (только для чисел)
+- ```/@min``` — минимальное значение (только для чисел)
+- ```/@max``` — максимальное значение (только для чисел)
+
+{{< details title="Часть ответа GetAncillaryOffersRQ (в тексте всегда передается PREPAID)" open=true >}}
+```XML
+<SpecialServiceDetails pattern="PREPAID" type="STRUCTURED"/>
+```
+{{< /details >}}
+
+В этом случае передавать элементы ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText``` или ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails``` не требуется, т.к. отправленное SSR сообщение будет сгенерировано автоматически.
+
+-----------
+
+{{< details title="Часть ответа GetAncillaryOffersRQ (в тексте автоматически будут проставлены значения переменных RFIC, RFISC, COMMERCIALNAME)" open=true >}}
+```XML
+<SpecialServiceDetails pattern="{RFIC}/{RFISC}/{COMMERCIALNAME}" type="STRUCTURED"/>
+```
+{{< /details >}}
+
+В этом случае передавать элементы ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText``` или ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails``` не требуется, т.к. отправленное SSR сообщение будет сгенерировано автоматически.
+
+-----------
+
+{{< details title="Часть ответа GetAncillaryOffersRQ (в тексте всегда будет строка UM, а также агентство должно внести возраст ребенка)" open=true >}}
+```XML
+<SpecialServiceDetails pattern="UM{AGE}" type="STRUCTURED">
+<CharacteristicProperty min="2" max="16" name="AGE" optional="false" type="DECIMAL"/>
+```
+{{< /details >}}
+
+В этом случае необходимо указать элемент ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails```, который будет содержать одну переменную с возрастом ребенка:
+
+{{< details title="Часть запроса к UpdateReservationRQ" open=true >}}
+```XML
+<ProductTextDetails>
+  <ProductTextDetailsItem ItemName="AGE" ItemValue="14"/>
+</ProductTextDetails>
+```
+{{< /details >}}
+
+-----------
+
+{{< details title="Часть ответа GetAncillaryOffersRQ (агентство должно внести 5 переменных: WIDTH, HEIGHT, WEIGHT, LENGTH, KEYWORD)" open=true >}}
+```XML
+<SpecialServiceDetails pattern="{KEYWORD}{LENGTH}{LENGTHUNIT}{WIDTH} {WIDTHUNIT}{HEIGHT}{HEIGHTUNIT}{WEIGHT}{WEIGHTUNIT}" type="STRUCTURED">
+<CharacteristicProperty unit="CM" min="0" max="30" name="WIDTH" optional="false" type="DECIMAL"/>
+<CharacteristicProperty unit="CM" min="0" max="24" name="HEIGHT" optional="false" type="DECIMAL"/>
+<CharacteristicProperty unit="KG" min="0" max="8" name="WEIGHT" optional="false" type="DECIMAL"/>
+<CharacteristicProperty unit="CM" min="0" max="40" name="LENGTH" optional="false" type="DECIMAL"/>
+<CharacteristicProperty min="0" max="0" name="KEYWORD" optional="false" type="ENUM">
+  <CharacteristicPropertyValue>CAT</CharacteristicPropertyValue>
+  <CharacteristicPropertyValue>DOG</CharacteristicPropertyValue>
+  <CharacteristicPropertyValue>KITTENS</CharacteristicPropertyValue>
+  <CharacteristicPropertyValue>PUPPIES</CharacteristicPropertyValue>
+</CharacteristicProperty>
+```
+{{< /details >}}
+
+В этом случае необходимо указать элемент ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails```, который будет содержать 5 переменных:
+
+{{< details title="Часть запроса к UpdateReservationRQ" open=true >}}
+```XML
+<ProductTextDetails>
+  <ProductTextDetailsItem ItemName="WIDTH" ItemValue="15"/>
+  <ProductTextDetailsItem ItemName="HEIGHT" ItemValue="12"/>
+  <ProductTextDetailsItem ItemName="WEIGHT" ItemValue="4"/>
+  <ProductTextDetailsItem ItemName="LENGTH" ItemValue="20"/>
+  <ProductTextDetailsItem ItemName="KEYWORD" ItemValue="CAT"/>
+</ProductTextDetails>
+
+```
+{{< /details >}}
+
+#### Значение ```NOTALLOWED```
+
+Перевозчик не разрешает добавление текста в SSR сообщение.
+
+{{< details title="Часть ответа GetAncillaryOffersRQ" open=true >}}
+```XML
+<SpecialServiceDetails type="NOTALLOWED"/>
+```
+{{< /details >}}
+
+В этом случае передавать элементы ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText``` или ```/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails``` не требуется.
+
+## Пример
 
 {{< details title="Пример запроса" >}}
 ```XML

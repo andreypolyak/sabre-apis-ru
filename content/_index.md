@@ -6,6 +6,19 @@ title: Рекомендации по работе с Sabre APIs
 
 ## Обновления
 
+{{< details title="**Обновление от 27.07.2022**" open=true >}}
+В разделе [Настройки PCC](tjr-settings.html#auto-ssr-автоматизация-отправки-ssr-сообщений-при-бронировании-дополнительных-услуг) добавлена настройка Auto SSR для автоматизации отправки SSR сообщений при бронировании дополнительных услуг. В разделе [Бронирование дополнительных услуг](book-ancillaries.html) добавлено описание влияния этой настройки на процесс бронирования дополнительных услуг.
+
+В разделе [Поиск перелетов по заданным датам](shop.html#классы-обслуживания-и-коды-тарифов) добавлена описание возможности запретить понижать класс обслуживания при поиске перелетов (элемент ```/AvoidCabinDowngrade```).
+
+В различных разделах рекомендаций обновлены версии используемых сервисов:
+- BargainFinderMaxRQ до [версии 6.6.0](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max/release-note)
+- RevalidateItinRQ до [версии 6.6.0](https://developer.sabre.com/docs/soap_apis/air/search/revalidate_itinerary/release-note)
+- AirSchedulesAndAvailabilityRQ до [версии 6.0.0](https://developer.sabre.com/docs/soap_apis/air/search/air_schedules_availability/release-note)
+{{< /details >}}
+
+-----------
+
 {{< details title="**Обновление от 03.06.2022**" open=true >}}
 В разделе [Начало работы](introduction.html) указаны новые адреса для отправки запросов:
 - **CERT**: ```https://webservices.cert.platform.sabre.com```

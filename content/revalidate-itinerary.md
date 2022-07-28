@@ -457,7 +457,7 @@ aliases:
 
 {{< details title="Пример запроса (L режим)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -537,7 +537,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="ASE032LPSCIL6F4.ATSE.CERT.ASCINT.SABRECIRRUS.COM" MessageClass="I" ShortText="27034" Type="SERVER"/>
@@ -1338,7 +1338,7 @@ aliases:
 
 {{< details title="Пример запроса (M режим)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -1418,7 +1418,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="GCA14-ISELL-TN-00-2022-05-00-D9NQ" MessageClass="I" ShortText="27040" Type="SERVER"/>
@@ -2219,7 +2219,7 @@ aliases:
 
 {{< details title="Пример запроса (B режим)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -2299,7 +2299,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="GCA14-ISELL-TN-00-2022-05-00-J0KV" MessageClass="I" ShortText="27038" Type="SERVER"/>
@@ -3780,7 +3780,7 @@ aliases:
 
 {{< details title="Пример запроса (расчет по заданному тарифу)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -3862,7 +3862,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="ASE032LPSCIL63F.ATSE.CERT.ASCINT.SABRECIRRUS.COM" MessageClass="I" ShortText="27133" Type="SERVER"/>
@@ -4663,7 +4663,7 @@ aliases:
 
 {{< details title="Пример запроса (расчет по заданному бренду)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -4749,7 +4749,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="GCA14-ISELL-TN-00-2022-05-00-D9NQ" MessageClass="I" ShortText="27034" Type="SERVER"/>
@@ -5550,7 +5550,7 @@ aliases:
 
 {{< details title="Пример запроса (расчет по заданным критериям)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -5665,7 +5665,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="PROCESS" ShortText="NO COMBINABLE FARES FOR CLASS USED" Type="MIP"/>
@@ -8501,7 +8501,7 @@ aliases:
 
 {{< details title="Пример запроса (расчет по всем доступным брендам)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -8581,7 +8581,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="ASE032LPSCIL63F.ATSE.CERT.ASCINT.SABRECIRRUS.COM" MessageClass="I" ShortText="27142" Type="SERVER"/>
@@ -13451,7 +13451,7 @@ aliases:
 
 {{< details title="Пример запроса (оформление на нескольких билетах (SOW))" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -13534,7 +13534,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="2" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="2" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="GCA14-ISELL-TN-00-2022-05-00-D9NQ" MessageClass="I" ShortText="27035" Type="SERVER"/>
@@ -15113,7 +15113,7 @@ aliases:
 
 {{< details title="Пример запроса (оформление на нескольких билетах (SCHS))" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="OTA" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -15196,7 +15196,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OTA_AirLowFareSearchRS AvailableItinCount="0" BrandedOneWayItinCount="0" DepartedItinCount="0" PricedItinCount="1" SimpleOneWayItinCount="0" SoldOutItinCount="0" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Success/>
   <Warnings>
     <Warning Code="GCA14-ISELL-TN-00-2022-05-00-D9NQ" MessageClass="I" ShortText="27040" Type="SERVER"/>
@@ -15997,7 +15997,7 @@ aliases:
 
 {{< details title="Пример запроса (GIR ответ)" >}}
 ```XML
-<OTA_AirLowFareSearchRQ ResponseType="GIR" Version="6.5.0" xmlns="http://www.opentravel.org/OTA/2003/05">
+<OTA_AirLowFareSearchRQ ResponseType="GIR" Version="6.6.0" xmlns="http://www.opentravel.org/OTA/2003/05">
   <POS>
     <Source PseudoCityCode="9LSC">
       <RequestorID ID="1" Type="1">
@@ -16077,7 +16077,7 @@ aliases:
 
 {{< details title="Пример ответа" >}}
 ```XML
-<GroupedItineraryResponse Version="6.5.0" xmlns="http://webservices.sabre.com/wsdl/sabreXML1.0.00/shopping/GroupedItineraryResponse" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<GroupedItineraryResponse Version="6.6.0" xmlns="http://webservices.sabre.com/wsdl/sabreXML1.0.00/shopping/GroupedItineraryResponse" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Message Code="GCA14-ISELL-TN-00-2022-05-00-D9NQ" Severity="Info" Text="27038" Type="SERVER"/>
   <Message Code="TRANSACTIONID" Severity="Info" Text="6978281194287783682" Type="WORKERTHREAD"/>
   <Message Code="RULEID" Severity="Info" Text="25961" Type="DRE"/>

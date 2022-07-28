@@ -17,11 +17,7 @@ aliases:
 ## Выбор стока (DesignatePrinterLLSRQ)
 
 {{< hint warning >}}
-Для вынужденного обмена билетов в других PCC предварительно требуется отправить запрос к сервису [ContextChangeLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa) (см. [Переход в другие PCC](change-pcc.html)).
-{{< /hint >}}
-
-{{< hint danger >}}
-Вынужденный обмен билетов всегда должен выполняться в том же PCC, где они были оформлены!
+Для вынужденного обмена билетов в других PCC предварительно требуется отправить запрос к сервису [ContextChangeLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa) (см. [Переход в другие PCC](change-pcc.html)). Вынужденный обмен билетов всегда должен выполняться в том же PCC, где они были оформлены!
 {{< /hint >}}
 
 Для того чтобы указать сток, на котором должен быть оформлен новый билет, используется сервис [DesignatePrinterLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/designate_printer).
@@ -4634,7 +4630,7 @@ aliases:
 {{< /details >}}
 
 {{< hint danger >}}
-Обратите внимание на то, что данный рекомендованный процесс возврата билетов разработан с учетом того, что в PCC, в котором производится возврат билетов включена настройка [Automatically End Transaction at Ticketing](tjr-settings.html#automatically-end-transaction-at-ticketing-автоматическое-сохранение-бронирований-при-оформлении-билетов).
+Обратите внимание на то, что данный рекомендованный процесс возврата билетов разработан с учетом того, что в PCC, в котором производится возврат билетов, включена настройка [Automatically End Transaction at Ticketing](tjr-settings.html#automatically-end-transaction-at-ticketing-автоматическое-сохранение-бронирований-при-оформлении-билетов).
 
 Если эта настройка не включена, то после отправки запроса на возврат билета необходимо сохранить бронирование при помощи запроса к сервису [EnhancedEndTransactionRQ](https://developer.sabre.com/docs/soap_apis/utility/reservation/enhanced_end_transaction) (см. [Редактирование бронирований](edit-booking.html)).
 

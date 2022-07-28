@@ -11,14 +11,10 @@ title: Поиск вариантов обмена
 ## Информация о поиске
 
 {{< hint warning >}}
-Для поиска перелетов для обмена в других PCC предварительно требуется отправить запрос к сервису [ContextChangeLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa) (см. [Переход в другие PCC](change-pcc.html)).
+Для вариантов обмена в других PCC предварительно требуется отправить запрос к сервису [ContextChangeLLSRQ](https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa) (см. [Переход в другие PCC](change-pcc.html)). Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!
 {{< /hint >}}
 
-{{< hint danger >}}
-Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!
-{{< /hint >}}
-
-Для поиска перелетов для обмена используется сервис [ExchangeShoppingRQ](https://developer.sabre.com/docs/read/soap_apis/air/search/exchange_shopping).
+Для вариантов обмена используется сервис [ExchangeShoppingRQ](https://developer.sabre.com/docs/read/soap_apis/air/search/exchange_shopping).
 
 В запросе требуется указать:
 - ```/ExchangeShoppingRQ/STL_Header.RQ``` — пустой элемент

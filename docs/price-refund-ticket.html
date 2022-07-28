@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Подробнее об условиях выполнения возвратов билетов см. Обмены и возвраты.
-Для расчета стоимости возврата билетов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Обратите внимание на то, что расчет стоимости возврата билетов всегда должен выполняться в том же PCC, где они были оформлены!  Для расчета стоимости возврата билета используется сервис TKT_RefundRQ. Вызов сервиса для расчета стоимости возврата билета может использоваться также для проверки возможности автоматического возврата билета через API.">
+Для расчета стоимости возврата билетов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC). Расчет стоимости возврата билетов всегда должен выполняться в том же PCC, где они были оформлены!  Для расчета стоимости возврата билета используется сервис TKT_RefundRQ. Вызов сервиса для расчета стоимости возврата билета может использоваться также для проверки возможности автоматического возврата билета через API.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Расчет стоимости возврата билетов" />
 <meta property="og:description" content="Подробнее об условиях выполнения возвратов билетов см. Обмены и возвраты.
-Для расчета стоимости возврата билетов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Обратите внимание на то, что расчет стоимости возврата билетов всегда должен выполняться в том же PCC, где они были оформлены!  Для расчета стоимости возврата билета используется сервис TKT_RefundRQ. Вызов сервиса для расчета стоимости возврата билета может использоваться также для проверки возможности автоматического возврата билета через API." />
+Для расчета стоимости возврата билетов в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC). Расчет стоимости возврата билетов всегда должен выполняться в том же PCC, где они были оформлены!  Для расчета стоимости возврата билета используется сервис TKT_RefundRQ. Вызов сервиса для расчета стоимости возврата билета может использоваться также для проверки возможности автоматического возврата билета через API." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andreypolyak.github.io/sabre-apis-ru/price-refund-ticket.html" /><meta property="article:section" content="" />
 
@@ -19,7 +19,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.40a2b28f8374ae122c4a4894aa16325ce6669ad94e178071bb43ac6c4a548cd5.css" integrity="sha256-QKKyj4N0rhIsSkiUqhYyXOZmmtlOF4Bxu0OsbEpUjNU=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/ru.search.min.01f8d7f59686cf2bc7bbb4d7d3d9134eea836717fe3075bd67aeb75306c2c881.js" integrity="sha256-AfjX9ZaGzyvHu7TX09kTTuqDZxf&#43;MHW9Z663UwbCyIE=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.64569b2fb29778947266efd0fd7c9ef41f1e36a1abd9277f347ca796bb61c127.js" integrity="sha256-ZFabL7KXeJRyZu/Q/Xye9B8eNqGr2Sd/NHynlrthwSc=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -200,11 +200,7 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><p>Подробнее об условиях выполнения возвратов билетов см. <a href="exchanges-refunds.html#%d0%b4%d0%be%d0%b1%d1%80%d0%be%d0%b2%d0%be%d0%bb%d1%8c%d0%bd%d1%8b%d0%b9-%d0%b2%d0%be%d0%b7%d0%b2%d1%80%d0%b0%d1%82-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%be%d0%b2">Обмены и возвраты</a>.</p>
 <blockquote class="book-hint warning">
-  Для расчета стоимости возврата билетов в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>).
-</blockquote>
-
-<blockquote class="book-hint danger">
-  Обратите внимание на то, что расчет стоимости возврата билетов всегда должен выполняться в том же PCC, где они были оформлены!
+  Для расчета стоимости возврата билетов в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>). Расчет стоимости возврата билетов всегда должен выполняться в том же PCC, где они были оформлены!
 </blockquote>
 
 <p>Для расчета стоимости возврата билета используется сервис <a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/auto_price_air_refunds">TKT_RefundRQ</a>. Вызов сервиса для расчета стоимости возврата билета может использоваться также для проверки возможности автоматического возврата билета через API.</p>

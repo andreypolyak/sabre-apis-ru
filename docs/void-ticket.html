@@ -17,7 +17,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.40a2b28f8374ae122c4a4894aa16325ce6669ad94e178071bb43ac6c4a548cd5.css" integrity="sha256-QKKyj4N0rhIsSkiUqhYyXOZmmtlOF4Bxu0OsbEpUjNU=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/ru.search.min.01f8d7f59686cf2bc7bbb4d7d3d9134eea836717fe3075bd67aeb75306c2c881.js" integrity="sha256-AfjX9ZaGzyvHu7TX09kTTuqDZxf&#43;MHW9Z663UwbCyIE=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.64569b2fb29778947266efd0fd7c9ef41f1e36a1abd9277f347ca796bb61c127.js" integrity="sha256-ZFabL7KXeJRyZu/Q/Xye9B8eNqGr2Sd/NHynlrthwSc=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -251,11 +251,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%d0%b2%d1%8b%d0%b1%d0%be%d1%80-%d1%81%d1%82%d0%be%d0%ba%d0%b0-designateprinterllsrq">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  Для войдирования билетов и EMD в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>).
-</blockquote>
-
-<blockquote class="book-hint danger">
-  Войдирование билетов и EMD всегда должно выполняться в том же PCC, где они были оформлены!
+  Для войдирования билетов и EMD в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>). Войдирование билетов и EMD всегда должно выполняться в том же PCC, где они были оформлены!
 </blockquote>
 
 <p>Для того чтобы указать сток, на котором должен быть войдирован билет или EMD, используется сервис <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/designate_printer">DesignatePrinterLLSRQ</a>.</p>
@@ -2076,7 +2072,7 @@ https://github.com/alex-shpak/hugo-book
 </details>
 
 <blockquote class="book-hint danger">
-  <p>Обратите внимание на то, что данный рекомендованный процесс войдирования билетов и EMD разработан с учетом того, что в PCC, в котором производится оформление билетов включена настройка <a href="tjr-settings.html#automatically-end-transaction-at-ticketing-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b5-%d1%81%d0%be%d1%85%d1%80%d0%b0%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b9-%d0%bf%d1%80%d0%b8-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%be%d0%b2">Automatically End Transaction at Ticketing</a>.</p>
+  <p>Обратите внимание на то, что данный рекомендованный процесс войдирования билетов и EMD разработан с учетом того, что в PCC, в котором производится оформление билетов, включена настройка <a href="tjr-settings.html#automatically-end-transaction-at-ticketing-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b5-%d1%81%d0%be%d1%85%d1%80%d0%b0%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b9-%d0%bf%d1%80%d0%b8-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%be%d0%b2">Automatically End Transaction at Ticketing</a>.</p>
 <p>Если эта настройка не включена, то после отправки повторного запроса на подтверждение войдирования билета или EMD необходимо сохранить бронирование при помощи запроса к сервису <a href="https://developer.sabre.com/docs/soap_apis/utility/reservation/enhanced_end_transaction">EnhancedEndTransactionRQ</a> (см. <a href="edit-booking.html">Редактирование бронирований</a>).</p>
 <p>Если эта настройка не включена, но включена настройка <a href="tjr-settings.html#automatically-end-transaction-and-redisplay-the-pnr-at-ticketing-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b5-%d1%81%d0%be%d1%85%d1%80%d0%b0%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%bf%d0%be%d0%b2%d1%82%d0%be%d1%80%d0%bd%d0%be%d0%b5-%d0%b8%d1%85-%d0%be%d1%82%d0%ba%d1%80%d1%8b%d1%82%d0%b8%d0%b5-%d0%bf%d1%80%d0%b8-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%be%d0%b2">Automatically End Transaction and Redisplay the PNR at Ticketing</a>, то сохранение и чтение бронирования после войдирования билетов или EMD не требуется, но может потребоваться игнорирование бронирования при помощи запроса к сервису <a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/ignore_transaction">IgnoreTransactionLLSRQ</a> (см. <a href="edit-booking.html">Редактирование бронирований</a>).</p>
 
@@ -2096,11 +2092,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%d0%b2%d1%8b%d0%b1%d0%be%d1%80-%d1%81%d1%82%d0%be%d0%ba%d0%b0-designateprinterllsrq-1">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  Для войдирования билетов и EMD в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>).
-</blockquote>
-
-<blockquote class="book-hint danger">
-  Войдирование билетов и EMD всегда должно выполняться в том же PCC, где они были оформлены!
+  Для войдирования билетов и EMD в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>). Войдирование билетов и EMD всегда должно выполняться в том же PCC, где они были оформлены!
 </blockquote>
 
 <p>Для того чтобы указать сток, на котором должен быть войдирован билет или EMD, используется сервис <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/designate_printer">DesignatePrinterLLSRQ</a>.</p>
@@ -3974,7 +3966,7 @@ https://github.com/alex-shpak/hugo-book
 </details>
 
 <blockquote class="book-hint danger">
-  <p>Обратите внимание на то, что данный рекомендованный процесс войдирования билетов и EMD разработан с учетом того, что в PCC, в котором производится оформление билетов включена настройка <a href="tjr-settings.html#automatically-end-transaction-at-ticketing-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b5-%d1%81%d0%be%d1%85%d1%80%d0%b0%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b9-%d0%bf%d1%80%d0%b8-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%be%d0%b2">Automatically End Transaction at Ticketing</a>.</p>
+  <p>Обратите внимание на то, что данный рекомендованный процесс войдирования билетов и EMD разработан с учетом того, что в PCC, в котором производится оформление билетов, включена настройка <a href="tjr-settings.html#automatically-end-transaction-at-ticketing-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b5-%d1%81%d0%be%d1%85%d1%80%d0%b0%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b9-%d0%bf%d1%80%d0%b8-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%be%d0%b2">Automatically End Transaction at Ticketing</a>.</p>
 <p>Если эта настройка не включена, то после отправки повторного запроса на подтверждение войдирования билета или EMD необходимо сохранить бронирование при помощи запроса к сервису <a href="https://developer.sabre.com/docs/soap_apis/utility/reservation/enhanced_end_transaction">EnhancedEndTransactionRQ</a> (см. <a href="edit-booking.html">Редактирование бронирований</a>).</p>
 <p>Если эта настройка не включена, но включена настройка <a href="tjr-settings.html#automatically-end-transaction-and-redisplay-the-pnr-at-ticketing-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b5-%d1%81%d0%be%d1%85%d1%80%d0%b0%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%bf%d0%be%d0%b2%d1%82%d0%be%d1%80%d0%bd%d0%be%d0%b5-%d0%b8%d1%85-%d0%be%d1%82%d0%ba%d1%80%d1%8b%d1%82%d0%b8%d0%b5-%d0%bf%d1%80%d0%b8-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%be%d0%b2">Automatically End Transaction and Redisplay the PNR at Ticketing</a>, то сохранение и чтение бронирования после войдирования билетов или EMD не требуется, но может потребоваться игнорирование бронирования при помощи запроса к сервису <a href="https://developer.sabre.com/docs/soap_apis/management/itinerary/ignore_transaction">IgnoreTransactionLLSRQ</a> (см. <a href="edit-booking.html">Редактирование бронирований</a>).</p>
 

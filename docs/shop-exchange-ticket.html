@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Оглавление:  Введение Информация о поиске Билеты Маршрут и даты Перевозчики Приватные тарифы Брендированные тарифы     Нормы провоза багажа Дополнительные услуги Пример     Введение #  Подробнее об условиях выполнения обменов билетов см. Обмены и возвраты.
-Информация о поиске #  Для поиска перелетов для обмена в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!">
+Информация о поиске #  Для вариантов обмена в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC). Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Поиск вариантов обмена" />
 <meta property="og:description" content="Оглавление:  Введение Информация о поиске Билеты Маршрут и даты Перевозчики Приватные тарифы Брендированные тарифы     Нормы провоза багажа Дополнительные услуги Пример     Введение #  Подробнее об условиях выполнения обменов билетов см. Обмены и возвраты.
-Информация о поиске #  Для поиска перелетов для обмена в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!" />
+Информация о поиске #  Для вариантов обмена в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC). Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andreypolyak.github.io/sabre-apis-ru/shop-exchange-ticket.html" /><meta property="article:section" content="" />
 
@@ -19,7 +19,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.40a2b28f8374ae122c4a4894aa16325ce6669ad94e178071bb43ac6c4a548cd5.css" integrity="sha256-QKKyj4N0rhIsSkiUqhYyXOZmmtlOF4Bxu0OsbEpUjNU=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/ru.search.min.01f8d7f59686cf2bc7bbb4d7d3d9134eea836717fe3075bd67aeb75306c2c881.js" integrity="sha256-AfjX9ZaGzyvHu7TX09kTTuqDZxf&#43;MHW9Z663UwbCyIE=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.64569b2fb29778947266efd0fd7c9ef41f1e36a1abd9277f347ca796bb61c127.js" integrity="sha256-ZFabL7KXeJRyZu/Q/Xye9B8eNqGr2Sd/NHynlrthwSc=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -229,14 +229,10 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f-%d0%be-%d0%bf%d0%be%d0%b8%d1%81%d0%ba%d0%b5">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  Для поиска перелетов для обмена в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>).
+  Для вариантов обмена в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>). Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!
 </blockquote>
 
-<blockquote class="book-hint danger">
-  Поиск вариантов обмена билетов всегда должен выполняться в том же PCC, где они были оформлены!
-</blockquote>
-
-<p>Для поиска перелетов для обмена используется сервис <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/exchange_shopping">ExchangeShoppingRQ</a>.</p>
+<p>Для вариантов обмена используется сервис <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/exchange_shopping">ExchangeShoppingRQ</a>.</p>
 <p>В запросе требуется указать:</p>
 <ul>
 <li><code>/ExchangeShoppingRQ/STL_Header.RQ</code> — пустой элемент</li>

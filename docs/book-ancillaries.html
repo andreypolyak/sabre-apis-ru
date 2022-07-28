@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Для бронирования дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для бронирования дополнительных услуг и отправки SSR используется сервис UpdateReservationRQ.
+<meta name="description" content="Оглавление:  Введение Параметры запроса Информация об услуге Отправка SSR     Пример     Введение #  Для бронирования дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для бронирования дополнительных услуг и отправки SSR используется сервис UpdateReservationRQ.
 Параметры запроса #  В запросе необходимо указать:
- /UpdateReservationRQ/RequestType — тип запроса. Всегда значение Stateless /UpdateReservationRQ/ReturnOptions/@IncludeUpdateDetails — признак получения деталей изменения бронирования в ответе. Всегда значение true /UpdateReservationRQ/ReturnOptions/@RetrievePNR — признак получения состояния бронирования в ответе. Всегда значение true /UpdateReservationRQ/ReservationUpdateList/Locator — код бронирования /UpdateReservationRQ/ReservationUpdateList/ReceivedFrom/AgentName — значения поля Received From.">
+ /UpdateReservationRQ/RequestType — тип запроса. Всегда значение Stateless /UpdateReservationRQ/ReturnOptions/@IncludeUpdateDetails — признак получения деталей изменения бронирования в ответе.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Бронирование дополнительных услуг" />
-<meta property="og:description" content="Для бронирования дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для бронирования дополнительных услуг и отправки SSR используется сервис UpdateReservationRQ.
+<meta property="og:description" content="Оглавление:  Введение Параметры запроса Информация об услуге Отправка SSR     Пример     Введение #  Для бронирования дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису ContextChangeLLSRQ (см. Переход в другие PCC).  Для бронирования дополнительных услуг и отправки SSR используется сервис UpdateReservationRQ.
 Параметры запроса #  В запросе необходимо указать:
- /UpdateReservationRQ/RequestType — тип запроса. Всегда значение Stateless /UpdateReservationRQ/ReturnOptions/@IncludeUpdateDetails — признак получения деталей изменения бронирования в ответе. Всегда значение true /UpdateReservationRQ/ReturnOptions/@RetrievePNR — признак получения состояния бронирования в ответе. Всегда значение true /UpdateReservationRQ/ReservationUpdateList/Locator — код бронирования /UpdateReservationRQ/ReservationUpdateList/ReceivedFrom/AgentName — значения поля Received From." />
+ /UpdateReservationRQ/RequestType — тип запроса. Всегда значение Stateless /UpdateReservationRQ/ReturnOptions/@IncludeUpdateDetails — признак получения деталей изменения бронирования в ответе." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andreypolyak.github.io/sabre-apis-ru/book-ancillaries.html" /><meta property="article:section" content="" />
 
@@ -21,7 +21,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.40a2b28f8374ae122c4a4894aa16325ce6669ad94e178071bb43ac6c4a548cd5.css" integrity="sha256-QKKyj4N0rhIsSkiUqhYyXOZmmtlOF4Bxu0OsbEpUjNU=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/ru.search.min.01f8d7f59686cf2bc7bbb4d7d3d9134eea836717fe3075bd67aeb75306c2c881.js" integrity="sha256-AfjX9ZaGzyvHu7TX09kTTuqDZxf&#43;MHW9Z663UwbCyIE=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.64569b2fb29778947266efd0fd7c9ef41f1e36a1abd9277f347ca796bb61c127.js" integrity="sha256-ZFabL7KXeJRyZu/Q/Xye9B8eNqGr2Sd/NHynlrthwSc=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -200,15 +200,35 @@ https://github.com/alex-shpak/hugo-book
 
       <h1>Бронирование дополнительных услуг</h1>
       
-  <article class="markdown"><blockquote class="book-hint warning">
+  <article class="markdown"><hr>
+<div>
+    <h3>Оглавление:</h3>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#введение">Введение</a></li>
+    <li><a href="#параметры-запроса">Параметры запроса</a></li>
+    <li><a href="#информация-об-услуге">Информация об услуге</a></li>
+    <li><a href="#отправка-ssr">Отправка SSR</a>
+      
+    </li>
+    <li><a href="#пример">Пример</a></li>
+  </ul>
+</nav>
+</div>
+<hr>
+<h2 id="введение">
+  Введение
+  <a class="anchor" href="#%d0%b2%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d0%b5">#</a>
+</h2>
+<blockquote class="book-hint warning">
   Для бронирования дополнительных услуг в других PCC предварительно требуется отправить запрос к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/management/utility/change_aaa">ContextChangeLLSRQ</a> (см. <a href="change-pcc.html">Переход в другие PCC</a>).
 </blockquote>
 
 <p>Для бронирования дополнительных услуг и отправки SSR используется сервис <a href="https://developer.sabre.com/docs/read/soap_apis/management/itinerary/update_itinerary">UpdateReservationRQ</a>.</p>
-<h4 id="параметры-запроса">
+<h2 id="параметры-запроса">
   Параметры запроса
   <a class="anchor" href="#%d0%bf%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d1%82%d1%80%d1%8b-%d0%b7%d0%b0%d0%bf%d1%80%d0%be%d1%81%d0%b0">#</a>
-</h4>
+</h2>
 <p>В запросе необходимо указать:</p>
 <ul>
 <li><code>/UpdateReservationRQ/RequestType</code> — тип запроса. Всегда значение <code>Stateless</code></li>
@@ -217,10 +237,10 @@ https://github.com/alex-shpak/hugo-book
 <li><code>/UpdateReservationRQ/ReservationUpdateList/Locator</code> — код бронирования</li>
 <li><code>/UpdateReservationRQ/ReservationUpdateList/ReceivedFrom/AgentName</code> — значения поля Received From. Используется для идентификации инициатора изменений в истории бронирования</li>
 </ul>
-<h4 id="бронирование-дополнительных-услуг">
-  Бронирование дополнительных услуг
-  <a class="anchor" href="#%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b4%d0%be%d0%bf%d0%be%d0%bb%d0%bd%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d1%83%d1%81%d0%bb%d1%83%d0%b3">#</a>
-</h4>
+<h2 id="информация-об-услуге">
+  Информация об услуге
+  <a class="anchor" href="#%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f-%d0%be%d0%b1-%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b5">#</a>
+</h2>
 <p>Для каждой бронируемой дополнительной услуги необходимо добавить элемент <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate</code>, содержащий следующие элементы и атрибуты (в скобках обозначен соответствующий элемент из ответа на запрос к сервису <a href="get-ancillaries.html">GetAncillaryOffersRQ</a>):</p>
 <ul>
 <li><code>/AncillaryServicesUpdate/@op</code> — код типа операции. Всегда значение <code>C</code> (Create, создание)</li>
@@ -246,6 +266,8 @@ https://github.com/alex-shpak/hugo-book
 <li><code>/AncillaryServicesUpdate/RficCode</code> —  RFIC код (<code>/GetAncillaryOffersRS/AncillaryDefinition/ReasonForIssuance/@code</code>)</li>
 <li><code>/AncillaryServicesUpdate/RficSubcode</code> — RFIC субкод (<code>/GetAncillaryOffersRS/AncillaryDefinition/SubCode</code>)</li>
 <li><code>/AncillaryServicesUpdate/SSRCode</code> — код требуемого SSR сообщения (<code>/GetAncillaryOffersRS/AncillaryDefinition/SpecialService</code>)</li>
+<li><code>/AncillaryServicesUpdate/ProductText</code> — текст SSR сообщения (подробнее см. раздел <a href="book-ancillaries.html#%d0%be%d1%82%d0%bf%d1%80%d0%b0%d0%b2%d0%ba%d0%b0-ssr">Отправка SSR</a>)</li>
+<li><code>/AncillaryServicesUpdate/ProductTextDetails</code> — значение переменных в SSR сообщении (подробнее см. раздел <a href="book-ancillaries.html#%d0%be%d1%82%d0%bf%d1%80%d0%b0%d0%b2%d0%ba%d0%b0-ssr">Отправка SSR</a>)</li>
 <li><code>/AncillaryServicesUpdate/OwningCarrierCode</code> — код перевозчика, продающего услугу (<code>/GetAncillaryOffersRS/AncillaryDefinition/Airline</code>)</li>
 <li><code>/AncillaryServicesUpdate/BookingIndicator</code> — индикатор бронирования (<code>/GetAncillaryOffersRS/AncillaryDefinition/BookingMethod/@code</code>)</li>
 <li><code>/AncillaryServicesUpdate/Vendor</code> — код системы, в которой размещена дополнительная услуга (<code>/GetAncillaryOffersRS/AncillaryDefinition/Vendor</code>)</li>
@@ -293,75 +315,165 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h4 id="отправка-ssr">
-  Отправка SSR
-  <a class="anchor" href="#%d0%be%d1%82%d0%bf%d1%80%d0%b0%d0%b2%d0%ba%d0%b0-ssr">#</a>
-</h4>
-<p>Некоторые перевозчики требуют отправлять SSR сообщения для получения подтверждения дополнительных услуг. Определить необходимость отправки SSR сообщения для подтверждения дополнительных услуг можно по значению элемента <code>/GetAncillaryOffersRS/AncillaryDefinition/SpecialService</code> в ответе на запрос к сервису <a href="https://developer.sabre.com/docs/soap_apis/air/search/get_ancillary_offers">GetAncillaryOffersRQ</a> (см. <a href="get-ancillaries.html">Получение списка дополнительных услуг</a>). Если значение элемента равно <code>ASVC</code>, то отправлять SSR не нужно. Во всех остальных случаях в этом элементе будет указан код SSR сообщения.</p>
-<p>Некоторые перевозчики так же требуют отправлять SSR сообщения с текстом. Определить необходимость отправки текста в SSR сообщении можно по значению атрибута <code>/GetAncillaryOffersRS/AncillaryDefinition/SpecialServiceDetails/@type</code>. Возможные значения:</p>
-<ul>
-<li><code>STRUCTURED</code> — требуется текст сообщения в формате, установленном перевозчиком</li>
-<li><code>NOTALLOWED</code> — сообщения с текстом не разрешаются</li>
-<li><code>REQUIRED</code> — требуется текст сообщения в любом формате</li>
-<li><code>OPTIONAL</code> — текст сообщения опционален</li>
-</ul>
-<p>Для отправки SSR необходимо добавить элемент <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/SpecialServiceRequestUpdate</code>, содержащий следующие элементы и атрибуты:</p>
-<ul>
-<li><code>/@op</code> — код типа операции. Всегда значение <code>C</code> (Create, создание)</li>
-<li><code>/@type</code> — тип SSR. Значение <code>H</code> для перевозчика American Airlines (AA), значение <code>G</code> — для всех остальных</li>
-<li><code>/NameAssociationList/NameAssociationTag/NameRefNumber</code> — номер пассажира</li>
-<li><code>/SpecialService/Code</code> — код SSR сообщения (4 буквы)</li>
-<li><code>/SpecialService/Text</code> — текст SSR сообщения</li>
-<li><code>/SegmentAssociationList</code> — информация о сегментах:
-<ul>
-<li><code>/SegmentAssociationTag/CarrierCode</code> — маркетинговый перевозчик</li>
-<li><code>/SegmentAssociationTag/FlightNumber</code> — номер рейса</li>
-<li><code>/SegmentAssociationTag/DepartureDate</code> — дата вылета</li>
-<li><code>/SegmentAssociationTag/BoardPoint</code> — аэропорт отправления</li>
-<li><code>/SegmentAssociationTag/OffPoint</code> — аэропорт прибытия</li>
-<li><code>/SegmentAssociationTag/ClassOfService</code> — класс бронирования</li>
-<li><code>/SegmentAssociationTag/BookingStatus</code> — статус сегмента</li>
-</ul>
-</li>
-</ul>
-<details open><summary>Пример отправки SSR сообщения</summary>
-  <div class="markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;ReservationUpdateItem&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;SpecialServiceRequestUpdate</span> <span style="color:#00c">op=</span><span style="background-color:#fff0f0">&#34;C&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;G&#34;</span><span style="color:#070">&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;NameAssociationList&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;NameAssociationTag&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;NameRefNumber&gt;</span>01.01<span style="color:#070">&lt;/NameRefNumber&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/NameAssociationTag&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;/NameAssociationList&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;SegmentAssociationList&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;SegmentAssociationTag&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;CarrierCode&gt;</span>AF<span style="color:#070">&lt;/CarrierCode&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;FlightNumber&gt;</span>1845<span style="color:#070">&lt;/FlightNumber&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;DepartureDate&gt;</span>2020-09-01<span style="color:#070">&lt;/DepartureDate&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;BoardPoint&gt;</span>SVO<span style="color:#070">&lt;/BoardPoint&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;OffPoint&gt;</span>CDG<span style="color:#070">&lt;/OffPoint&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;ClassOfService&gt;</span>E<span style="color:#070">&lt;/ClassOfService&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#070">&lt;BookingStatus&gt;</span>HK<span style="color:#070">&lt;/BookingStatus&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;/SegmentAssociationTag&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;/SegmentAssociationList&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;SpecialService&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Code&gt;</span>ABAG<span style="color:#070">&lt;/Code&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#070">&lt;Text&gt;</span>PREPAID<span style="color:#070">&lt;/Text&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#070">&lt;/SpecialService&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;/SpecialServiceRequestUpdate&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/ReservationUpdateItem&gt;</span>
-</span></span></code></pre></div>
-  </div>
-</details>
-
 <blockquote class="book-hint danger">
   Обратите внимание на то, что для дополнительных услуг обязательно требуется оформление EMD. EMD должны быть оформлены в бронировании после оформления билетов. Процесс оформления EMD подробно описан в разделе <a href="issue-ticket.html">Оформление билетов и EMD</a>.
 </blockquote>
 
-<h4 id="пример">
+<h2 id="отправка-ssr">
+  Отправка SSR
+  <a class="anchor" href="#%d0%be%d1%82%d0%bf%d1%80%d0%b0%d0%b2%d0%ba%d0%b0-ssr">#</a>
+</h2>
+<blockquote class="book-hint danger">
+  Обратите внимание на то, что данный рекомендованный процесс бронирования услуг разработан с учетом того, что в PCC, в котором производится бронирование услуг, включена настройка <a href="tjr-settings.html#auto-ssr-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f-%d0%be%d1%82%d0%bf%d1%80%d0%b0%d0%b2%d0%ba%d0%b8-ssr-%d1%81%d0%be%d0%be%d0%b1%d1%89%d0%b5%d0%bd%d0%b8%d0%b9-%d0%bf%d1%80%d0%b8-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b8-%d0%b4%d0%be%d0%bf%d0%be%d0%bb%d0%bd%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d1%83%d1%81%d0%bb%d1%83%d0%b3">Auto SSR</a>.
+</blockquote>
+
+<p>Некоторые перевозчики требуют отправлять SSR сообщения для получения подтверждения дополнительных услуг. Определить необходимость отправки SSR сообщения для подтверждения дополнительных услуг можно по значению элемента <code>/GetAncillaryOffersRS/AncillaryDefinition/SpecialService</code> в ответе на запрос к сервису <a href="https://developer.sabre.com/docs/soap_apis/air/search/get_ancillary_offers">GetAncillaryOffersRQ</a> (см. <a href="get-ancillaries.html">Получение списка дополнительных услуг</a>). Если значение элемента равно <code>ASVC</code>, то отправлять SSR не нужно. Во всех остальных случаях в этом элементе будет указан код требуемого SSR сообщения.</p>
+<p>SSR сообщение может содержать или не содержать текст сообщения. Определить необходимость отправки текста в SSR сообщении, а также его формат можно по значению атрибута <code>/GetAncillaryOffersRS/AncillaryDefinition/SpecialServiceDetails/@type</code>. Ниже представлены возможные значения этого атрибута.</p>
+<h4 id="значение-required">
+  Значение <code>REQUIRED</code>
+  <a class="anchor" href="#%d0%b7%d0%bd%d0%b0%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-required">#</a>
+</h4>
+<p>Перевозчик требует обязательное добавление текста в SSR сообщение, при этом текст может быть указан агентством самостоятельно, требований к его содержимому не предъявляется.</p>
+<details open><summary>Часть ответа GetAncillaryOffersRQ</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SpecialServiceDetails</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;REQUIRED&#34;</span><span style="color:#070">/&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<p>В этом случае обязательно требуется указать текст SSR сообщения в виде значения элемента <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText</code>.</p>
+<details open><summary>Часть запроса к UpdateReservationRQ</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;ProductText&gt;</span>PREPAID<span style="color:#070">&lt;/ProductText&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h4 id="значение-optional">
+  Значение <code>OPTIONAL</code>
+  <a class="anchor" href="#%d0%b7%d0%bd%d0%b0%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-optional">#</a>
+</h4>
+<p>Перевозчик не требует обязательное добавление текста в SSR сообщение, но оно может быть отправлено опционально на усмотрение агентства.</p>
+<details open><summary>Часть ответа GetAncillaryOffersRQ</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SpecialServiceDetails</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;OPTIONAL&#34;</span><span style="color:#070">/&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<p>В этом случае опционально можно указать текст SSR сообщения в виде значения элемента <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText</code>.</p>
+<details open><summary>Часть запроса к UpdateReservationRQ</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;ProductText&gt;</span>PREPAID<span style="color:#070">&lt;/ProductText&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h4 id="значение-structured">
+  Значение <code>STRUCTURED</code>
+  <a class="anchor" href="#%d0%b7%d0%bd%d0%b0%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-structured">#</a>
+</h4>
+<p>Перевозчик требует обязательное добавление текста заданного шаблона в SSR сообщение. В этом случае у элемента <code>/GetAncillaryOffersRS/AncillaryDefinition/SpecialServiceDetails</code> будет присутствовать атрибут <code>/@pattern</code>, содержащий шаблон для текста SSR сообщения. Текст шаблона может содержать переменные (указываются в фигурных скобках, например <code>{WEIGHT}</code>) и постоянные значения (остальной текст вне фигурных скобок). Переменные, в свою очередь, должны или заполняться агентством (тогда в ответе будет присутствовать элемент <code>/GetAncillaryOffersRS/AncillaryDefinition/CharacteristicProperty</code>, у которого атрибут <code>/@name</code> будет равен имени переменной) или генерироваться автоматически при отправке SSR сообщения (тогда соответствующего элемента <code>/CharacteristicProperty</code> не будет).</p>
+<p>Элемент <code>/GetAncillaryOffersRS/AncillaryDefinition/CharacteristicProperty</code> может содержать следующие атрибуты:</p>
+<ul>
+<li><code>/@name</code> — имя переменной</li>
+<li><code>/@optional</code> — обязательность заполнения переменной (значения <code>true</code> или <code>false</code>)</li>
+<li><code>/@type</code> — тип переменной:
+<ul>
+<li><code>DECIMAL</code> — число</li>
+<li><code>TEXT</code> — строка</li>
+<li><code>ENUM</code> — перечисление (допустимые варианты будут перечислены в элементах <code>/GetAncillaryOffersRS/AncillaryDefinition/CharacteristicProperty/CharacteristicPropertyValue</code>)</li>
+</ul>
+</li>
+<li><code>/@unit</code> — единица измерения (только для чисел)</li>
+<li><code>/@min</code> — минимальное значение (только для чисел)</li>
+<li><code>/@max</code> — максимальное значение (только для чисел)</li>
+</ul>
+<details open><summary>Часть ответа GetAncillaryOffersRQ (в тексте всегда передается PREPAID)</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SpecialServiceDetails</span> <span style="color:#00c">pattern=</span><span style="background-color:#fff0f0">&#34;PREPAID&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;STRUCTURED&#34;</span><span style="color:#070">/&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<p>В этом случае передавать элементы <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText</code> или <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails</code> не требуется, т.к. отправленное SSR сообщение будет сгенерировано автоматически.</p>
+<hr>
+<details open><summary>Часть ответа GetAncillaryOffersRQ (в тексте автоматически будут проставлены значения переменных RFIC, RFISC, COMMERCIALNAME)</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SpecialServiceDetails</span> <span style="color:#00c">pattern=</span><span style="background-color:#fff0f0">&#34;{RFIC}/{RFISC}/{COMMERCIALNAME}&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;STRUCTURED&#34;</span><span style="color:#070">/&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<p>В этом случае передавать элементы <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText</code> или <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails</code> не требуется, т.к. отправленное SSR сообщение будет сгенерировано автоматически.</p>
+<hr>
+<details open><summary>Часть ответа GetAncillaryOffersRQ (в тексте всегда будет строка UM, а также агентство должно внести возраст ребенка)</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SpecialServiceDetails</span> <span style="color:#00c">pattern=</span><span style="background-color:#fff0f0">&#34;UM{AGE}&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;STRUCTURED&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CharacteristicProperty</span> <span style="color:#00c">min=</span><span style="background-color:#fff0f0">&#34;2&#34;</span> <span style="color:#00c">max=</span><span style="background-color:#fff0f0">&#34;16&#34;</span> <span style="color:#00c">name=</span><span style="background-color:#fff0f0">&#34;AGE&#34;</span> <span style="color:#00c">optional=</span><span style="background-color:#fff0f0">&#34;false&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;DECIMAL&#34;</span><span style="color:#070">/&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<p>В этом случае необходимо указать элемент <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails</code>, который будет содержать одну переменную с возрастом ребенка:</p>
+<details open><summary>Часть запроса к UpdateReservationRQ</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;ProductTextDetails&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;ProductTextDetailsItem</span> <span style="color:#00c">ItemName=</span><span style="background-color:#fff0f0">&#34;AGE&#34;</span> <span style="color:#00c">ItemValue=</span><span style="background-color:#fff0f0">&#34;14&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/ProductTextDetails&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<hr>
+<details open><summary>Часть ответа GetAncillaryOffersRQ (агентство должно внести 5 переменных: WIDTH, HEIGHT, WEIGHT, LENGTH, KEYWORD)</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SpecialServiceDetails</span> <span style="color:#00c">pattern=</span><span style="background-color:#fff0f0">&#34;{KEYWORD}{LENGTH}{LENGTHUNIT}{WIDTH} {WIDTHUNIT}{HEIGHT}{HEIGHTUNIT}{WEIGHT}{WEIGHTUNIT}&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;STRUCTURED&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CharacteristicProperty</span> <span style="color:#00c">unit=</span><span style="background-color:#fff0f0">&#34;CM&#34;</span> <span style="color:#00c">min=</span><span style="background-color:#fff0f0">&#34;0&#34;</span> <span style="color:#00c">max=</span><span style="background-color:#fff0f0">&#34;30&#34;</span> <span style="color:#00c">name=</span><span style="background-color:#fff0f0">&#34;WIDTH&#34;</span> <span style="color:#00c">optional=</span><span style="background-color:#fff0f0">&#34;false&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;DECIMAL&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CharacteristicProperty</span> <span style="color:#00c">unit=</span><span style="background-color:#fff0f0">&#34;CM&#34;</span> <span style="color:#00c">min=</span><span style="background-color:#fff0f0">&#34;0&#34;</span> <span style="color:#00c">max=</span><span style="background-color:#fff0f0">&#34;24&#34;</span> <span style="color:#00c">name=</span><span style="background-color:#fff0f0">&#34;HEIGHT&#34;</span> <span style="color:#00c">optional=</span><span style="background-color:#fff0f0">&#34;false&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;DECIMAL&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CharacteristicProperty</span> <span style="color:#00c">unit=</span><span style="background-color:#fff0f0">&#34;KG&#34;</span> <span style="color:#00c">min=</span><span style="background-color:#fff0f0">&#34;0&#34;</span> <span style="color:#00c">max=</span><span style="background-color:#fff0f0">&#34;8&#34;</span> <span style="color:#00c">name=</span><span style="background-color:#fff0f0">&#34;WEIGHT&#34;</span> <span style="color:#00c">optional=</span><span style="background-color:#fff0f0">&#34;false&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;DECIMAL&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CharacteristicProperty</span> <span style="color:#00c">unit=</span><span style="background-color:#fff0f0">&#34;CM&#34;</span> <span style="color:#00c">min=</span><span style="background-color:#fff0f0">&#34;0&#34;</span> <span style="color:#00c">max=</span><span style="background-color:#fff0f0">&#34;40&#34;</span> <span style="color:#00c">name=</span><span style="background-color:#fff0f0">&#34;LENGTH&#34;</span> <span style="color:#00c">optional=</span><span style="background-color:#fff0f0">&#34;false&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;DECIMAL&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;CharacteristicProperty</span> <span style="color:#00c">min=</span><span style="background-color:#fff0f0">&#34;0&#34;</span> <span style="color:#00c">max=</span><span style="background-color:#fff0f0">&#34;0&#34;</span> <span style="color:#00c">name=</span><span style="background-color:#fff0f0">&#34;KEYWORD&#34;</span> <span style="color:#00c">optional=</span><span style="background-color:#fff0f0">&#34;false&#34;</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;ENUM&#34;</span><span style="color:#070">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;CharacteristicPropertyValue&gt;</span>CAT<span style="color:#070">&lt;/CharacteristicPropertyValue&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;CharacteristicPropertyValue&gt;</span>DOG<span style="color:#070">&lt;/CharacteristicPropertyValue&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;CharacteristicPropertyValue&gt;</span>KITTENS<span style="color:#070">&lt;/CharacteristicPropertyValue&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;CharacteristicPropertyValue&gt;</span>PUPPIES<span style="color:#070">&lt;/CharacteristicPropertyValue&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/CharacteristicProperty&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<p>В этом случае необходимо указать элемент <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails</code>, который будет содержать 5 переменных:</p>
+<details open><summary>Часть запроса к UpdateReservationRQ</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;ProductTextDetails&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;ProductTextDetailsItem</span> <span style="color:#00c">ItemName=</span><span style="background-color:#fff0f0">&#34;WIDTH&#34;</span> <span style="color:#00c">ItemValue=</span><span style="background-color:#fff0f0">&#34;15&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;ProductTextDetailsItem</span> <span style="color:#00c">ItemName=</span><span style="background-color:#fff0f0">&#34;HEIGHT&#34;</span> <span style="color:#00c">ItemValue=</span><span style="background-color:#fff0f0">&#34;12&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;ProductTextDetailsItem</span> <span style="color:#00c">ItemName=</span><span style="background-color:#fff0f0">&#34;WEIGHT&#34;</span> <span style="color:#00c">ItemValue=</span><span style="background-color:#fff0f0">&#34;4&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;ProductTextDetailsItem</span> <span style="color:#00c">ItemName=</span><span style="background-color:#fff0f0">&#34;LENGTH&#34;</span> <span style="color:#00c">ItemValue=</span><span style="background-color:#fff0f0">&#34;20&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#070">&lt;ProductTextDetailsItem</span> <span style="color:#00c">ItemName=</span><span style="background-color:#fff0f0">&#34;KEYWORD&#34;</span> <span style="color:#00c">ItemValue=</span><span style="background-color:#fff0f0">&#34;CAT&#34;</span><span style="color:#070">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#070">&lt;/ProductTextDetails&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h4 id="значение-notallowed">
+  Значение <code>NOTALLOWED</code>
+  <a class="anchor" href="#%d0%b7%d0%bd%d0%b0%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-notallowed">#</a>
+</h4>
+<p>Перевозчик не разрешает добавление текста в SSR сообщение.</p>
+<details open><summary>Часть ответа GetAncillaryOffersRQ</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;SpecialServiceDetails</span> <span style="color:#00c">type=</span><span style="background-color:#fff0f0">&#34;NOTALLOWED&#34;</span><span style="color:#070">/&gt;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<p>В этом случае передавать элементы <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductText</code> или <code>/UpdateReservationRQ/ReservationUpdateList/ReservationUpdateItem/AncillaryServicesUpdate/ProductTextDetails</code> не требуется.</p>
+<h2 id="пример">
   Пример
   <a class="anchor" href="#%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80">#</a>
-</h4>
+</h2>
 <details ><summary>Пример запроса</summary>
   <div class="markdown-inner">
     <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#070">&lt;UpdateReservationRQ</span> <span style="color:#00c">Version=</span><span style="background-color:#fff0f0">&#34;1.19.0&#34;</span> <span style="color:#00c">xmlns=</span><span style="background-color:#fff0f0">&#34;http://webservices.sabre.com/pnrbuilder/v1_19&#34;</span><span style="color:#070">&gt;</span>
