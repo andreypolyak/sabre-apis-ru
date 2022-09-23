@@ -6,6 +6,16 @@ title: Рекомендации по работе с Sabre APIs
 
 ## Обновления
 
+{{< details title="**Обновление от 23.09.2022**" open=true >}}
+В разделе [Поиск вариантов обмена](shop-exchange-ticket.html#переход-в-другой-pcc) добавлено описание возможности перехода в другой PCC в запросе к сервису [ExchangeShoppingRQ](https://developer.sabre.com/docs/read/soap_apis/air/search/exchange_shopping).
+
+В разделе [Обмен билетов](exchange-ticket.html#отправка-ssr-сообщений) добавлено описание отправки SSR сообщений в запросе к сервису [ExchangeBookingRQ](https://developer.sabre.com/docs/read/soap_apis/air/fulfill/exchange_booking).
+
+Обновлена версия сервиса ExchangeShoppingRQ до [версии 2.5.0](https://developer.sabre.com/docs/soap_apis/air/search/exchange_shopping/release-note).
+{{< /details >}}
+
+-----------
+
 {{< details title="**Обновление от 27.07.2022**" open=true >}}
 В разделе [Настройки PCC](tjr-settings.html#auto-ssr-автоматизация-отправки-ssr-сообщений-при-бронировании-дополнительных-услуг) добавлена настройка Auto SSR для автоматизации отправки SSR сообщений при бронировании дополнительных услуг. В разделе [Бронирование дополнительных услуг](book-ancillaries.html) добавлено описание влияния этой настройки на процесс бронирования дополнительных услуг.
 
@@ -27,7 +37,7 @@ title: Рекомендации по работе с Sabre APIs
 
 -----------
 
-{{< details title="**Обновление от 26.05.2022**" open=true >}}
+{{< details title="**Обновление от 26.05.2022**" >}}
 В разделе [Тайм-лимиты бронирований](timelimit.html#регулярные-выражения-для-поиска-сообщений-с-тайм-лимитом-от-перевозчиков) добавлены регулярные выражения для парсинга тайм-лимитов в SSR сообщениях перевозчиков.
 
 В разделах [Создание бронирований в 1 шаг](create-booking-1step.html#алгоритм-установки-индикатора-женатого-сегмента-по-данным-из-стандартного-ota-ответа-сервисов-bargainfindermaxrq-и-revalidateitinrq-кроме-запросов-в-которых-запрошен-поиск-с-оформлением-на-нескольких-билетах-в-режиме-schs) и [Создание бронирований в 2 шага](create-booking-2steps.html#алгоритм-установки-индикатора-женатого-сегмента-по-данным-из-стандартного-ota-ответа-сервисов-bargainfindermaxrq-и-revalidateitinrq-кроме-запросов-в-которых-запрошен-поиск-с-оформлением-на-нескольких-билетах-в-режиме-schs) упрощено описание алгоритмов установки индикатора женатого сегмента.
@@ -35,7 +45,7 @@ title: Рекомендации по работе с Sabre APIs
 
 -----------
 
-{{< details title="**Обновление от 24.05.2022**" open=true >}}
+{{< details title="**Обновление от 24.05.2022**" >}}
 Изменен движок сайта.
 
 В разделах [Редактирование бронирований](edit-booking.html) (сервисы [EnhancedEndTransactionRQ](https://developer.sabre.com/docs/soap_apis/utility/reservation/enhanced_end_transaction) и [UpdatePassengerNameRecordRQ](https://developer.sabre.com/docs/soap_apis/air/book/update_passenger_name_record)) и [Обмен билетов](exchange-ticket.html) (сервис [ExchangeBookingRQ](https://developer.sabre.com/docs/read/soap_apis/air/fulfill/exchange_booking)) добавлено описание возможности остановить выполнение запроса в случае наличия в бронировании сегментов с нарушением правил минимального стыковочного времени (атрибут ```/@haltOnInvalidMCT```).

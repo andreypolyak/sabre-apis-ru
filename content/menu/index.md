@@ -52,7 +52,7 @@ headless: true
 - [Чтение масок билетов и EMD]({{< relref "/get-ticket" >}})
 - [Войдирование билетов и EMD]({{< relref "/void-ticket" >}})
 - [Обмены и возвраты билетов]({{< relref "/exchanges-refunds" >}})
-    - [Поиск вариантов обмена]({{< relref "/shop-exchange-ticket" >}}) <!--Поиск вариантов обмена-->
+    - [Поиск вариантов обмена]({{< relref "/shop-exchange-ticket" >}})
     - [Обмен билетов]({{< relref "/exchange-ticket" >}})
     - [Вынужденный обмен билетов]({{< relref "/involuntary-exchange-ticket" >}})
     - [Расчет стоимости возврата билетов]({{< relref "/price-refund-ticket" >}})

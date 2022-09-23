@@ -6,7 +6,7 @@ title: Получение структурированных правил тар
 
 ## Получение информации об условиях обменов и возвратов в поисковой выдаче (BargainFinderMaxRQ)
 
-Сервис [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) позволяет получать информацию об условиях обменов и возвратов в поисковой выдаче. См. [Проверка стоимости и наличия мест](revalidate-itinerary.html#обмен-и-возврат-билетов).
+Сервис [BargainFinderMaxRQ](https://developer.sabre.com/docs/soap_apis/air/search/bargain_finder_max) позволяет получать информацию об условиях обменов и возвратов в поисковой выдаче. См. [Поиск перелетов по заданным датам](shop.html#обмен-и-возврат-билетов).
 
 ## Получение информации об условиях обменов и возвратов в поисковой выдаче при поиске по гибким датам (BargainFinderMax_ADRQ)
 

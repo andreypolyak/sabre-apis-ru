@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Цель данных рекомендаций — описать основные понятия и подходы при использовании Sabre APIs для построения B2B и B2C решений, предназначенных для бронирования авиабилетов. Следует учитывать, что данные рекомендации не заменяют собой документацию по Sabre APIs и системе Sabre, но дополняет их. Руководство ориентировано на разработчиков программного обеспечения, однако составлено с учетом того, что разработку также сопровождает специалист, прошедший тренинг по работе в системе Sabre.
-Обновления #  Обновление от 27.07.2022 В разделе Настройки PCC добавлена настройка Auto SSR для автоматизации отправки SSR сообщений при бронировании дополнительных услуг.">
+Обновления #  Обновление от 23.09.2022 В разделе Поиск вариантов обмена добавлено описание возможности перехода в другой PCC в запросе к сервису ExchangeShoppingRQ.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Рекомендации по работе с Sabre APIs" />
 <meta property="og:description" content="" />
@@ -17,7 +17,7 @@
 <link rel="icon" href="/sabre-apis-ru/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/sabre-apis-ru/book.min.40a2b28f8374ae122c4a4894aa16325ce6669ad94e178071bb43ac6c4a548cd5.css" integrity="sha256-QKKyj4N0rhIsSkiUqhYyXOZmmtlOF4Bxu0OsbEpUjNU=" crossorigin="anonymous">
   <script defer src="/sabre-apis-ru/flexsearch.min.js"></script>
-  <script defer src="/sabre-apis-ru/ru.search.min.64569b2fb29778947266efd0fd7c9ef41f1e36a1abd9277f347ca796bb61c127.js" integrity="sha256-ZFabL7KXeJRyZu/Q/Xye9B8eNqGr2Sd/NHynlrthwSc=" crossorigin="anonymous"></script>
+  <script defer src="/sabre-apis-ru/ru.search.min.76cb2944d102685447f20eeb998d0d636deb51280ddacb095a9048c29e3cdb54.js" integrity="sha256-dsspRNECaFRH8g7rmY0NY23rUSgN2ssJWpBIwp4821Q=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -202,6 +202,16 @@ https://github.com/alex-shpak/hugo-book
   Обновления
   <a class="anchor" href="#%d0%be%d0%b1%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f">#</a>
 </h2>
+<details open><summary><strong>Обновление от 23.09.2022</strong></summary>
+  <div class="markdown-inner">
+    <p>В разделе <a href="shop-exchange-ticket.html#%d0%bf%d0%b5%d1%80%d0%b5%d1%85%d0%be%d0%b4-%d0%b2-%d0%b4%d1%80%d1%83%d0%b3%d0%be%d0%b9-pcc">Поиск вариантов обмена</a> добавлено описание возможности перехода в другой PCC в запросе к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/air/search/exchange_shopping">ExchangeShoppingRQ</a>.</p>
+<p>В разделе <a href="exchange-ticket.html#%d0%be%d1%82%d0%bf%d1%80%d0%b0%d0%b2%d0%ba%d0%b0-ssr-%d1%81%d0%be%d0%be%d0%b1%d1%89%d0%b5%d0%bd%d0%b8%d0%b9">Обмен билетов</a> добавлено описание отправки SSR сообщений в запросе к сервису <a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/exchange_booking">ExchangeBookingRQ</a>.</p>
+<p>Обновлена версия сервиса ExchangeShoppingRQ до <a href="https://developer.sabre.com/docs/soap_apis/air/search/exchange_shopping/release-note">версии 2.5.0</a>.</p>
+
+  </div>
+</details>
+
+<hr>
 <details open><summary><strong>Обновление от 27.07.2022</strong></summary>
   <div class="markdown-inner">
     <p>В разделе <a href="tjr-settings.html#auto-ssr-%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f-%d0%be%d1%82%d0%bf%d1%80%d0%b0%d0%b2%d0%ba%d0%b8-ssr-%d1%81%d0%be%d0%be%d0%b1%d1%89%d0%b5%d0%bd%d0%b8%d0%b9-%d0%bf%d1%80%d0%b8-%d0%b1%d1%80%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b8-%d0%b4%d0%be%d0%bf%d0%be%d0%bb%d0%bd%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d1%83%d1%81%d0%bb%d1%83%d0%b3">Настройки PCC</a> добавлена настройка Auto SSR для автоматизации отправки SSR сообщений при бронировании дополнительных услуг. В разделе <a href="book-ancillaries.html">Бронирование дополнительных услуг</a> добавлено описание влияния этой настройки на процесс бронирования дополнительных услуг.</p>
@@ -229,7 +239,7 @@ https://github.com/alex-shpak/hugo-book
 </details>
 
 <hr>
-<details open><summary><strong>Обновление от 26.05.2022</strong></summary>
+<details ><summary><strong>Обновление от 26.05.2022</strong></summary>
   <div class="markdown-inner">
     <p>В разделе <a href="timelimit.html#%d1%80%d0%b5%d0%b3%d1%83%d0%bb%d1%8f%d1%80%d0%bd%d1%8b%d0%b5-%d0%b2%d1%8b%d1%80%d0%b0%d0%b6%d0%b5%d0%bd%d0%b8%d1%8f-%d0%b4%d0%bb%d1%8f-%d0%bf%d0%be%d0%b8%d1%81%d0%ba%d0%b0-%d1%81%d0%be%d0%be%d0%b1%d1%89%d0%b5%d0%bd%d0%b8%d0%b9-%d1%81-%d1%82%d0%b0%d0%b9%d0%bc-%d0%bb%d0%b8%d0%bc%d0%b8%d1%82%d0%be%d0%bc-%d0%be%d1%82-%d0%bf%d0%b5%d1%80%d0%b5%d0%b2%d0%be%d0%b7%d1%87%d0%b8%d0%ba%d0%be%d0%b2">Тайм-лимиты бронирований</a> добавлены регулярные выражения для парсинга тайм-лимитов в SSR сообщениях перевозчиков.</p>
 <p>В разделах <a href="create-booking-1step.html#%d0%b0%d0%bb%d0%b3%d0%be%d1%80%d0%b8%d1%82%d0%bc-%d1%83%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%b8-%d0%b8%d0%bd%d0%b4%d0%b8%d0%ba%d0%b0%d1%82%d0%be%d1%80%d0%b0-%d0%b6%d0%b5%d0%bd%d0%b0%d1%82%d0%be%d0%b3%d0%be-%d1%81%d0%b5%d0%b3%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%bf%d0%be-%d0%b4%d0%b0%d0%bd%d0%bd%d1%8b%d0%bc-%d0%b8%d0%b7-%d1%81%d1%82%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d1%82%d0%bd%d0%be%d0%b3%d0%be-ota-%d0%be%d1%82%d0%b2%d0%b5%d1%82%d0%b0-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81%d0%be%d0%b2-bargainfindermaxrq-%d0%b8-revalidateitinrq-%d0%ba%d1%80%d0%be%d0%bc%d0%b5-%d0%b7%d0%b0%d0%bf%d1%80%d0%be%d1%81%d0%be%d0%b2-%d0%b2-%d0%ba%d0%be%d1%82%d0%be%d1%80%d1%8b%d1%85-%d0%b7%d0%b0%d0%bf%d1%80%d0%be%d1%88%d0%b5%d0%bd-%d0%bf%d0%be%d0%b8%d1%81%d0%ba-%d1%81-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5%d0%bc-%d0%bd%d0%b0-%d0%bd%d0%b5%d1%81%d0%ba%d0%be%d0%bb%d1%8c%d0%ba%d0%b8%d1%85-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%b0%d1%85-%d0%b2-%d1%80%d0%b5%d0%b6%d0%b8%d0%bc%d0%b5-schs">Создание бронирований в 1 шаг</a> и <a href="create-booking-2steps.html#%d0%b0%d0%bb%d0%b3%d0%be%d1%80%d0%b8%d1%82%d0%bc-%d1%83%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%b8-%d0%b8%d0%bd%d0%b4%d0%b8%d0%ba%d0%b0%d1%82%d0%be%d1%80%d0%b0-%d0%b6%d0%b5%d0%bd%d0%b0%d1%82%d0%be%d0%b3%d0%be-%d1%81%d0%b5%d0%b3%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%bf%d0%be-%d0%b4%d0%b0%d0%bd%d0%bd%d1%8b%d0%bc-%d0%b8%d0%b7-%d1%81%d1%82%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d1%82%d0%bd%d0%be%d0%b3%d0%be-ota-%d0%be%d1%82%d0%b2%d0%b5%d1%82%d0%b0-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81%d0%be%d0%b2-bargainfindermaxrq-%d0%b8-revalidateitinrq-%d0%ba%d1%80%d0%be%d0%bc%d0%b5-%d0%b7%d0%b0%d0%bf%d1%80%d0%be%d1%81%d0%be%d0%b2-%d0%b2-%d0%ba%d0%be%d1%82%d0%be%d1%80%d1%8b%d1%85-%d0%b7%d0%b0%d0%bf%d1%80%d0%be%d1%88%d0%b5%d0%bd-%d0%bf%d0%be%d0%b8%d1%81%d0%ba-%d1%81-%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5%d0%bc-%d0%bd%d0%b0-%d0%bd%d0%b5%d1%81%d0%ba%d0%be%d0%bb%d1%8c%d0%ba%d0%b8%d1%85-%d0%b1%d0%b8%d0%bb%d0%b5%d1%82%d0%b0%d1%85-%d0%b2-%d1%80%d0%b5%d0%b6%d0%b8%d0%bc%d0%b5-schs">Создание бронирований в 2 шага</a> упрощено описание алгоритмов установки индикатора женатого сегмента.</p>
@@ -238,7 +248,7 @@ https://github.com/alex-shpak/hugo-book
 </details>
 
 <hr>
-<details open><summary><strong>Обновление от 24.05.2022</strong></summary>
+<details ><summary><strong>Обновление от 24.05.2022</strong></summary>
   <div class="markdown-inner">
     <p>Изменен движок сайта.</p>
 <p>В разделах <a href="edit-booking.html">Редактирование бронирований</a> (сервисы <a href="https://developer.sabre.com/docs/soap_apis/utility/reservation/enhanced_end_transaction">EnhancedEndTransactionRQ</a> и <a href="https://developer.sabre.com/docs/soap_apis/air/book/update_passenger_name_record">UpdatePassengerNameRecordRQ</a>) и <a href="exchange-ticket.html">Обмен билетов</a> (сервис <a href="https://developer.sabre.com/docs/read/soap_apis/air/fulfill/exchange_booking">ExchangeBookingRQ</a>) добавлено описание возможности остановить выполнение запроса в случае наличия в бронировании сегментов с нарушением правил минимального стыковочного времени (атрибут <code>/@haltOnInvalidMCT</code>).</p>
